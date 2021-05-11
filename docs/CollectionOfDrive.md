@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to [**[]OpenGraphDrive**](OpenGraphDrive.md) |  | [optional] 
+**Value** | Pointer to [**[]Drive**](Drive.md) |  | [optional] 
 **OdataNextLink** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *CollectionOfDrive) GetValue() []OpenGraphDrive`
+`func (o *CollectionOfDrive) GetValue() []Drive`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *CollectionOfDrive) GetValueOk() (*[]OpenGraphDrive, bool)`
+`func (o *CollectionOfDrive) GetValueOk() (*[]Drive, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *CollectionOfDrive) SetValue(v []OpenGraphDrive)`
+`func (o *CollectionOfDrive) SetValue(v []Drive)`
 
 SetValue sets Value field to given value.
 

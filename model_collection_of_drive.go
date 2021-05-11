@@ -16,7 +16,7 @@ import (
 
 // CollectionOfDrive struct for CollectionOfDrive
 type CollectionOfDrive struct {
-	Value *[]OpenGraphDrive `json:"value,omitempty"`
+	Value *[]Drive `json:"value,omitempty"`
 	OdataNextLink *string `json:"@odata.nextLink,omitempty"`
 }
 
@@ -38,9 +38,9 @@ func NewCollectionOfDriveWithDefaults() *CollectionOfDrive {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *CollectionOfDrive) GetValue() []OpenGraphDrive {
+func (o *CollectionOfDrive) GetValue() []Drive {
 	if o == nil || o.Value == nil {
-		var ret []OpenGraphDrive
+		var ret []Drive
 		return ret
 	}
 	return *o.Value
@@ -48,7 +48,7 @@ func (o *CollectionOfDrive) GetValue() []OpenGraphDrive {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CollectionOfDrive) GetValueOk() (*[]OpenGraphDrive, bool) {
+func (o *CollectionOfDrive) GetValueOk() (*[]Drive, bool) {
 	if o == nil || o.Value == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *CollectionOfDrive) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given []OpenGraphDrive and assigns it to the Value field.
-func (o *CollectionOfDrive) SetValue(v []OpenGraphDrive) {
+// SetValue gets a reference to the given []Drive and assigns it to the Value field.
+func (o *CollectionOfDrive) SetValue(v []Drive) {
 	o.Value = &v
 }
 

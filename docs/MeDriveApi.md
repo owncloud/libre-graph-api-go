@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## MeCreateDrives
 
-> OpenGraphDrive MeCreateDrives(ctx).OpenGraphDrive(openGraphDrive).Execute()
+> Drive MeCreateDrives(ctx).Drive(drive).Execute()
 
 Create new navigation property to drives for me
 
@@ -28,16 +28,16 @@ import (
 )
 
 func main() {
-    openGraphDrive := *openapiclient.NewOpenGraphDrive() // OpenGraphDrive | New navigation property
+    drive := *openapiclient.NewDrive() // Drive | New navigation property
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MeDriveApi.MeCreateDrives(context.Background()).OpenGraphDrive(openGraphDrive).Execute()
+    resp, r, err := api_client.MeDriveApi.MeCreateDrives(context.Background()).Drive(drive).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MeDriveApi.MeCreateDrives``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MeCreateDrives`: OpenGraphDrive
+    // response from `MeCreateDrives`: Drive
     fmt.Fprintf(os.Stdout, "Response from `MeDriveApi.MeCreateDrives`: %v\n", resp)
 }
 ```
@@ -53,11 +53,11 @@ Other parameters are passed through a pointer to a apiMeCreateDrivesRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **openGraphDrive** | [**OpenGraphDrive**](OpenGraphDrive.md) | New navigation property | 
+ **drive** | [**Drive**](Drive.md) | New navigation property | 
 
 ### Return type
 
-[**OpenGraphDrive**](OpenGraphDrive.md)
+[**Drive**](Drive.md)
 
 ### Authorization
 

@@ -142,7 +142,7 @@ func (r ApiMeDriveRootGetRootRequest) Select_(select_ []string) ApiMeDriveRootGe
 	return r
 }
 
-func (r ApiMeDriveRootGetRootRequest) Execute() (OpenGraphDriveItem, *_nethttp.Response, error) {
+func (r ApiMeDriveRootGetRootRequest) Execute() (DriveItem, *_nethttp.Response, error) {
 	return r.ApiService.MeDriveRootGetRootExecute(r)
 }
 
@@ -160,16 +160,16 @@ func (a *MeDriveRootApiService) MeDriveRootGetRoot(ctx _context.Context) ApiMeDr
 
 /*
  * Execute executes the request
- * @return OpenGraphDriveItem
+ * @return DriveItem
  */
-func (a *MeDriveRootApiService) MeDriveRootGetRootExecute(r ApiMeDriveRootGetRootRequest) (OpenGraphDriveItem, *_nethttp.Response, error) {
+func (a *MeDriveRootApiService) MeDriveRootGetRootExecute(r ApiMeDriveRootGetRootRequest) (DriveItem, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  OpenGraphDriveItem
+		localVarReturnValue  DriveItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootApiService.MeDriveRootGetRoot")
@@ -250,11 +250,11 @@ func (a *MeDriveRootApiService) MeDriveRootGetRootExecute(r ApiMeDriveRootGetRoo
 type ApiMeDriveRootUpdateRootRequest struct {
 	ctx _context.Context
 	ApiService *MeDriveRootApiService
-	openGraphDriveItem *OpenGraphDriveItem
+	driveItem *DriveItem
 }
 
-func (r ApiMeDriveRootUpdateRootRequest) OpenGraphDriveItem(openGraphDriveItem OpenGraphDriveItem) ApiMeDriveRootUpdateRootRequest {
-	r.openGraphDriveItem = &openGraphDriveItem
+func (r ApiMeDriveRootUpdateRootRequest) DriveItem(driveItem DriveItem) ApiMeDriveRootUpdateRootRequest {
+	r.driveItem = &driveItem
 	return r
 }
 
@@ -296,8 +296,8 @@ func (a *MeDriveRootApiService) MeDriveRootUpdateRootExecute(r ApiMeDriveRootUpd
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	if r.openGraphDriveItem == nil {
-		return nil, reportError("openGraphDriveItem is required and must be specified")
+	if r.driveItem == nil {
+		return nil, reportError("driveItem is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -318,7 +318,7 @@ func (a *MeDriveRootApiService) MeDriveRootUpdateRootExecute(r ApiMeDriveRootUpd
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.openGraphDriveItem
+	localVarPostBody = r.driveItem
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err

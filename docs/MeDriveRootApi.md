@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ## MeDriveRootGetRoot
 
-> OpenGraphDriveItem MeDriveRootGetRoot(ctx).Select_(select_).Execute()
+> DriveItem MeDriveRootGetRoot(ctx).Select_(select_).Execute()
 
 Get root from drive
 
@@ -100,7 +100,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootApi.MeDriveRootGetRoot``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MeDriveRootGetRoot`: OpenGraphDriveItem
+    // response from `MeDriveRootGetRoot`: DriveItem
     fmt.Fprintf(os.Stdout, "Response from `MeDriveRootApi.MeDriveRootGetRoot`: %v\n", resp)
 }
 ```
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OpenGraphDriveItem**](OpenGraphDriveItem.md)
+[**DriveItem**](DriveItem.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## MeDriveRootUpdateRoot
 
-> MeDriveRootUpdateRoot(ctx).OpenGraphDriveItem(openGraphDriveItem).Execute()
+> MeDriveRootUpdateRoot(ctx).DriveItem(driveItem).Execute()
 
 Update the navigation property root in drive
 
@@ -155,11 +155,11 @@ import (
 )
 
 func main() {
-    openGraphDriveItem := *openapiclient.NewOpenGraphDriveItem() // OpenGraphDriveItem | New navigation property values
+    driveItem := *openapiclient.NewDriveItem() // DriveItem | New navigation property values
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MeDriveRootApi.MeDriveRootUpdateRoot(context.Background()).OpenGraphDriveItem(openGraphDriveItem).Execute()
+    resp, r, err := api_client.MeDriveRootApi.MeDriveRootUpdateRoot(context.Background()).DriveItem(driveItem).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootApi.MeDriveRootUpdateRoot``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -178,7 +178,7 @@ Other parameters are passed through a pointer to a apiMeDriveRootUpdateRootReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **openGraphDriveItem** | [**OpenGraphDriveItem**](OpenGraphDriveItem.md) | New navigation property values | 
+ **driveItem** | [**DriveItem**](DriveItem.md) | New navigation property values | 
 
 ### Return type
 

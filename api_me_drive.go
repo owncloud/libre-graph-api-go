@@ -29,15 +29,15 @@ type MeDriveApiService service
 type ApiMeCreateDrivesRequest struct {
 	ctx _context.Context
 	ApiService *MeDriveApiService
-	openGraphDrive *OpenGraphDrive
+	drive *Drive
 }
 
-func (r ApiMeCreateDrivesRequest) OpenGraphDrive(openGraphDrive OpenGraphDrive) ApiMeCreateDrivesRequest {
-	r.openGraphDrive = &openGraphDrive
+func (r ApiMeCreateDrivesRequest) Drive(drive Drive) ApiMeCreateDrivesRequest {
+	r.drive = &drive
 	return r
 }
 
-func (r ApiMeCreateDrivesRequest) Execute() (OpenGraphDrive, *_nethttp.Response, error) {
+func (r ApiMeCreateDrivesRequest) Execute() (Drive, *_nethttp.Response, error) {
 	return r.ApiService.MeCreateDrivesExecute(r)
 }
 
@@ -55,16 +55,16 @@ func (a *MeDriveApiService) MeCreateDrives(ctx _context.Context) ApiMeCreateDriv
 
 /*
  * Execute executes the request
- * @return OpenGraphDrive
+ * @return Drive
  */
-func (a *MeDriveApiService) MeCreateDrivesExecute(r ApiMeCreateDrivesRequest) (OpenGraphDrive, *_nethttp.Response, error) {
+func (a *MeDriveApiService) MeCreateDrivesExecute(r ApiMeCreateDrivesRequest) (Drive, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  OpenGraphDrive
+		localVarReturnValue  Drive
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveApiService.MeCreateDrives")
@@ -77,8 +77,8 @@ func (a *MeDriveApiService) MeCreateDrivesExecute(r ApiMeCreateDrivesRequest) (O
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	if r.openGraphDrive == nil {
-		return localVarReturnValue, nil, reportError("openGraphDrive is required and must be specified")
+	if r.drive == nil {
+		return localVarReturnValue, nil, reportError("drive is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -99,7 +99,7 @@ func (a *MeDriveApiService) MeCreateDrivesExecute(r ApiMeCreateDrivesRequest) (O
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.openGraphDrive
+	localVarPostBody = r.drive
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

@@ -153,7 +153,7 @@ func (r ApiMeDrivesGetDriveRequest) Expand(expand []string) ApiMeDrivesGetDriveR
 	return r
 }
 
-func (r ApiMeDrivesGetDriveRequest) Execute() (OpenGraphDrive, *_nethttp.Response, error) {
+func (r ApiMeDrivesGetDriveRequest) Execute() (Drive, *_nethttp.Response, error) {
 	return r.ApiService.MeDrivesGetDriveExecute(r)
 }
 
@@ -173,16 +173,16 @@ func (a *MeDrivesApiService) MeDrivesGetDrive(ctx _context.Context, driveId stri
 
 /*
  * Execute executes the request
- * @return OpenGraphDrive
+ * @return Drive
  */
-func (a *MeDrivesApiService) MeDrivesGetDriveExecute(r ApiMeDrivesGetDriveRequest) (OpenGraphDrive, *_nethttp.Response, error) {
+func (a *MeDrivesApiService) MeDrivesGetDriveExecute(r ApiMeDrivesGetDriveRequest) (Drive, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  OpenGraphDrive
+		localVarReturnValue  Drive
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDrivesApiService.MeDrivesGetDrive")
@@ -268,11 +268,11 @@ type ApiMeDrivesUpdateDriveRequest struct {
 	ctx _context.Context
 	ApiService *MeDrivesApiService
 	driveId string
-	openGraphDrive *OpenGraphDrive
+	drive *Drive
 }
 
-func (r ApiMeDrivesUpdateDriveRequest) OpenGraphDrive(openGraphDrive OpenGraphDrive) ApiMeDrivesUpdateDriveRequest {
-	r.openGraphDrive = &openGraphDrive
+func (r ApiMeDrivesUpdateDriveRequest) Drive(drive Drive) ApiMeDrivesUpdateDriveRequest {
+	r.drive = &drive
 	return r
 }
 
@@ -317,8 +317,8 @@ func (a *MeDrivesApiService) MeDrivesUpdateDriveExecute(r ApiMeDrivesUpdateDrive
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	if r.openGraphDrive == nil {
-		return nil, reportError("openGraphDrive is required and must be specified")
+	if r.drive == nil {
+		return nil, reportError("drive is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -339,7 +339,7 @@ func (a *MeDrivesApiService) MeDrivesUpdateDriveExecute(r ApiMeDrivesUpdateDrive
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.openGraphDrive
+	localVarPostBody = r.drive
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err

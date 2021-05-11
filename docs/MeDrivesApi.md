@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## MeDrivesGetDrive
 
-> OpenGraphDrive MeDrivesGetDrive(ctx, driveId).Select_(select_).Expand(expand).Execute()
+> Drive MeDrivesGetDrive(ctx, driveId).Select_(select_).Expand(expand).Execute()
 
 Get drive by id
 
@@ -108,7 +108,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.MeDrivesGetDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MeDrivesGetDrive`: OpenGraphDrive
+    // response from `MeDrivesGetDrive`: Drive
     fmt.Fprintf(os.Stdout, "Response from `MeDrivesApi.MeDrivesGetDrive`: %v\n", resp)
 }
 ```
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OpenGraphDrive**](OpenGraphDrive.md)
+[**Drive**](Drive.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## MeDrivesUpdateDrive
 
-> MeDrivesUpdateDrive(ctx, driveId).OpenGraphDrive(openGraphDrive).Execute()
+> MeDrivesUpdateDrive(ctx, driveId).Drive(drive).Execute()
 
 Update the navigation property of a specific drive
 
@@ -170,11 +170,11 @@ import (
 
 func main() {
     driveId := "driveId_example" // string | key: id of drive
-    openGraphDrive := *openapiclient.NewOpenGraphDrive() // OpenGraphDrive | New navigation property values
+    drive := *openapiclient.NewDrive() // Drive | New navigation property values
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MeDrivesApi.MeDrivesUpdateDrive(context.Background(), driveId).OpenGraphDrive(openGraphDrive).Execute()
+    resp, r, err := api_client.MeDrivesApi.MeDrivesUpdateDrive(context.Background(), driveId).Drive(drive).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.MeDrivesUpdateDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -198,7 +198,7 @@ Other parameters are passed through a pointer to a apiMeDrivesUpdateDriveRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **openGraphDrive** | [**OpenGraphDrive**](OpenGraphDrive.md) | New navigation property values | 
+ **drive** | [**Drive**](Drive.md) | New navigation property values | 
 
 ### Return type
 

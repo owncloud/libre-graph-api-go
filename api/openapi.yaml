@@ -135,7 +135,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/open.graph.drive'
+              $ref: '#/components/schemas/drive'
         description: New navigation property
         required: true
       responses:
@@ -143,7 +143,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/open.graph.drive'
+                $ref: '#/components/schemas/drive'
           description: Created navigation property.
         default:
           content:
@@ -252,7 +252,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/open.graph.drive'
+                $ref: '#/components/schemas/drive'
           description: Retrieved navigation property
           links:
             root:
@@ -285,7 +285,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/open.graph.drive'
+              $ref: '#/components/schemas/drive'
         description: New navigation property values
         required: true
       responses:
@@ -388,7 +388,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/open.graph.driveItem'
+                $ref: '#/components/schemas/driveItem'
           description: Retrieved navigation property
         default:
           content:
@@ -406,7 +406,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/open.graph.driveItem'
+              $ref: '#/components/schemas/driveItem'
         description: New navigation property values
         required: true
       responses:
@@ -480,15 +480,15 @@ components:
             $ref: '#/components/schemas/odata.error'
       description: error
   schemas:
-    open.graph.drive:
+    drive:
       allOf:
-      - $ref: '#/components/schemas/open.graph.baseItem'
-      - $ref: '#/components/schemas/open_graph_drive_allOf'
-    open.graph.baseItem:
+      - $ref: '#/components/schemas/baseItem'
+      - $ref: '#/components/schemas/drive_allOf'
+    baseItem:
       allOf:
-      - $ref: '#/components/schemas/open.graph.entity'
-      - $ref: '#/components/schemas/open_graph_baseItem_allOf'
-    open.graph.entity:
+      - $ref: '#/components/schemas/entity'
+      - $ref: '#/components/schemas/baseItem_allOf'
+    entity:
       discriminator:
         propertyName: id
       properties:
@@ -497,25 +497,25 @@ components:
           readOnly: true
           type: string
       type: object
-    open.graph.identitySet:
+    identitySet:
       properties:
         application:
           allOf:
-          - $ref: '#/components/schemas/open.graph.identity'
+          - $ref: '#/components/schemas/identity'
           description: Optional. The application associated with this action.
           nullable: false
         device:
           allOf:
-          - $ref: '#/components/schemas/open.graph.identity'
+          - $ref: '#/components/schemas/identity'
           description: Optional. The device associated with this action.
           nullable: false
         user:
           allOf:
-          - $ref: '#/components/schemas/open.graph.identity'
+          - $ref: '#/components/schemas/identity'
           description: Optional. The user associated with this action.
           nullable: false
       type: object
-    open.graph.identity:
+    identity:
       properties:
         displayName:
           description: The identity's display name. Note that this may not always
@@ -528,11 +528,11 @@ components:
           description: Unique identifier for the identity.
           type: string
       type: object
-    open.graph.user:
+    user:
       allOf:
-      - $ref: '#/components/schemas/open.graph.directoryObject'
-      - $ref: '#/components/schemas/open_graph_user_allOf'
-    open.graph.itemReference:
+      - $ref: '#/components/schemas/directoryObject'
+      - $ref: '#/components/schemas/user_allOf'
+    itemReference:
       properties:
         driveId:
           description: Unique identifier of the drive instance that contains the item.
@@ -567,22 +567,22 @@ components:
           nullable: false
           type: string
       type: object
-    open.graph.driveItem:
+    driveItem:
       allOf:
-      - $ref: '#/components/schemas/open.graph.baseItem'
-      - $ref: '#/components/schemas/open_graph_driveItem_allOf'
-    open.graph.deleted:
+      - $ref: '#/components/schemas/baseItem'
+      - $ref: '#/components/schemas/driveItem_allOf'
+    deleted:
       properties:
         state:
           description: Represents the state of the deleted item.
           nullable: false
           type: string
       type: object
-    open.graph.file:
+    file:
       properties:
         hashes:
           allOf:
-          - $ref: '#/components/schemas/open.graph.hashes'
+          - $ref: '#/components/schemas/hashes'
           description: Hashes of the file's binary content, if available. Read-only.
           nullable: false
           readOnly: true
@@ -597,7 +597,7 @@ components:
           nullable: false
           type: boolean
       type: object
-    open.graph.fileSystemInfo:
+    fileSystemInfo:
       properties:
         createdDateTime:
           description: The UTC date and time the file was created on a client.
@@ -619,7 +619,7 @@ components:
           pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
           type: string
       type: object
-    open.graph.folder:
+    folder:
       properties:
         childCount:
           description: Number of children contained immediately within this container.
@@ -629,12 +629,12 @@ components:
           type: integer
         view:
           allOf:
-          - $ref: '#/components/schemas/open.graph.folderView'
+          - $ref: '#/components/schemas/folderView'
           description: A collection of properties defining the recommended view for
             the folder.
           nullable: false
       type: object
-    open.graph.image:
+    image:
       properties:
         height:
           description: Optional. Height of the image, in pixels. Read-only.
@@ -651,13 +651,13 @@ components:
           readOnly: true
           type: integer
       type: object
-    open.graph.root:
+    root:
       type: object
-    open.graph.directoryObject:
+    directoryObject:
       allOf:
-      - $ref: '#/components/schemas/open.graph.entity'
-      - $ref: '#/components/schemas/open_graph_directoryObject_allOf'
-    open.graph.quota:
+      - $ref: '#/components/schemas/entity'
+      - $ref: '#/components/schemas/directoryObject_allOf'
+    quota:
       properties:
         deleted:
           description: Total space consumed by files in the recycle bin, in bytes.
@@ -681,7 +681,7 @@ components:
           type: string
         storagePlanInformation:
           allOf:
-          - $ref: '#/components/schemas/open.graph.storagePlanInformation'
+          - $ref: '#/components/schemas/storagePlanInformation'
           description: Information about the drive's storage quota plans.
           nullable: false
         total:
@@ -697,7 +697,7 @@ components:
           readOnly: true
           type: integer
       type: object
-    open.graph.storagePlanInformation:
+    storagePlanInformation:
       properties:
         upgradeAvailable:
           description: Indicates if there are higher storage quota plans available.
@@ -705,7 +705,7 @@ components:
           nullable: false
           type: boolean
       type: object
-    open.graph.hashes:
+    hashes:
       properties:
         crc32Hash:
           description: The CRC32 value of the file (if available). Read-only.
@@ -728,7 +728,7 @@ components:
           nullable: false
           type: string
       type: object
-    open.graph.folderView:
+    folderView:
       properties:
         sortBy:
           description: The method by which the folder should be sorted.
@@ -794,14 +794,14 @@ components:
       properties:
         value:
           items:
-            $ref: '#/components/schemas/open.graph.drive'
+            $ref: '#/components/schemas/drive'
           maxItems: 100
           type: array
         '@odata.nextLink':
           type: string
       title: Collection of drive
       type: object
-    open_graph_drive_allOf:
+    drive_allOf:
       properties:
         driveType:
           description: Describes the type of drive represented by this resource. Values
@@ -814,18 +814,18 @@ components:
           type: string
         owner:
           allOf:
-          - $ref: '#/components/schemas/open.graph.identitySet'
+          - $ref: '#/components/schemas/identitySet'
           description: Optional. The user account that owns the drive. Read-only.
           nullable: false
           readOnly: true
         oCCoOwner:
           allOf:
-          - $ref: '#/components/schemas/open.graph.identitySet'
+          - $ref: '#/components/schemas/identitySet'
           description: Optional. The user account that owns the drive.
           nullable: false
         quota:
           allOf:
-          - $ref: '#/components/schemas/open.graph.quota'
+          - $ref: '#/components/schemas/quota'
           description: Optional. Information about the drive's storage space quota.
             Read-only.
           nullable: false
@@ -833,21 +833,21 @@ components:
         items:
           description: All items contained in the drive. Read-only. Nullable.
           items:
-            $ref: '#/components/schemas/open.graph.driveItem'
+            $ref: '#/components/schemas/driveItem'
           readOnly: true
           type: array
         root:
           allOf:
-          - $ref: '#/components/schemas/open.graph.driveItem'
+          - $ref: '#/components/schemas/driveItem'
           description: The root folder of the drive. Read-only.
           nullable: false
           readOnly: true
       type: object
-    open_graph_baseItem_allOf:
+    baseItem_allOf:
       properties:
         createdBy:
           allOf:
-          - $ref: '#/components/schemas/open.graph.identitySet'
+          - $ref: '#/components/schemas/identitySet'
           description: Identity of the user, device, or application which created
             the item. Read-only.
           nullable: false
@@ -869,7 +869,7 @@ components:
           type: string
         lastModifiedBy:
           allOf:
-          - $ref: '#/components/schemas/open.graph.identitySet'
+          - $ref: '#/components/schemas/identitySet'
           description: Identity of the user, device, and application which last modified
             the item. Read-only.
           nullable: false
@@ -886,7 +886,7 @@ components:
           type: string
         parentReference:
           allOf:
-          - $ref: '#/components/schemas/open.graph.itemReference'
+          - $ref: '#/components/schemas/itemReference'
           description: Parent information, if the item has a parent. Read-write.
           nullable: false
         webUrl:
@@ -896,18 +896,18 @@ components:
           type: string
         createdByUser:
           allOf:
-          - $ref: '#/components/schemas/open.graph.user'
+          - $ref: '#/components/schemas/user'
           description: Identity of the user who created the item. Read-only.
           nullable: false
           readOnly: true
         lastModifiedByUser:
           allOf:
-          - $ref: '#/components/schemas/open.graph.user'
+          - $ref: '#/components/schemas/user'
           description: Identity of the user who last modified the item. Read-only.
           nullable: false
           readOnly: true
       type: object
-    open_graph_user_allOf:
+    user_allOf:
       description: Represents an Active Directory user object.
       properties:
         accountEnabled:
@@ -1080,19 +1080,19 @@ components:
           type: string
         drive:
           allOf:
-          - $ref: '#/components/schemas/open.graph.drive'
+          - $ref: '#/components/schemas/drive'
           description: The user's HomeDrive. Read-only.
           nullable: false
           readOnly: true
         drives:
           description: A collection of drives available for this user. Read-only.
           items:
-            $ref: '#/components/schemas/open.graph.drive'
+            $ref: '#/components/schemas/drive'
           maxItems: 100
           readOnly: true
           type: array
       type: object
-    open_graph_driveItem_allOf:
+    driveItem_allOf:
       properties:
         content:
           description: The content stream, if the item represents a file.
@@ -1108,36 +1108,36 @@ components:
           type: string
         deleted:
           allOf:
-          - $ref: '#/components/schemas/open.graph.deleted'
+          - $ref: '#/components/schemas/deleted'
           description: Information about the deleted state of the item. Read-only.
           nullable: false
           readOnly: true
         file:
           allOf:
-          - $ref: '#/components/schemas/open.graph.file'
+          - $ref: '#/components/schemas/file'
           description: File metadata, if the item is a file. Read-only.
           nullable: false
           readOnly: true
         fileSystemInfo:
           allOf:
-          - $ref: '#/components/schemas/open.graph.fileSystemInfo'
+          - $ref: '#/components/schemas/fileSystemInfo'
           description: File system information on client. Read-write.
           nullable: false
         folder:
           allOf:
-          - $ref: '#/components/schemas/open.graph.folder'
+          - $ref: '#/components/schemas/folder'
           description: Folder metadata, if the item is a folder. Read-only.
           nullable: false
           readOnly: true
         image:
           allOf:
-          - $ref: '#/components/schemas/open.graph.image'
+          - $ref: '#/components/schemas/image'
           description: Image metadata, if the item is an image. Read-only.
           nullable: false
           readOnly: true
         root:
           allOf:
-          - $ref: '#/components/schemas/open.graph.root'
+          - $ref: '#/components/schemas/root'
           description: If this property is non-null, it indicates that the driveItem
             is the top-most driveItem in the drive.
           nullable: false
@@ -1156,11 +1156,11 @@ components:
           description: Collection containing Item objects for the immediate children
             of Item. Only items representing folders have children. Read-only. Nullable.
           items:
-            $ref: '#/components/schemas/open.graph.driveItem'
+            $ref: '#/components/schemas/driveItem'
           readOnly: true
           type: array
       type: object
-    open_graph_directoryObject_allOf:
+    directoryObject_allOf:
       description: Represents an Active Directory object. The directoryObject type
         is the base type for many other directory entity types.
       properties:
