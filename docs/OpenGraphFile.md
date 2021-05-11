@@ -1,4 +1,4 @@
-# File
+# OpenGraphFile
 
 ## Properties
 
@@ -10,95 +10,95 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewFile
+### NewOpenGraphFile
 
-`func NewFile() *File`
+`func NewOpenGraphFile() *OpenGraphFile`
 
-NewFile instantiates a new File object
+NewOpenGraphFile instantiates a new OpenGraphFile object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewFileWithDefaults
+### NewOpenGraphFileWithDefaults
 
-`func NewFileWithDefaults() *File`
+`func NewOpenGraphFileWithDefaults() *OpenGraphFile`
 
-NewFileWithDefaults instantiates a new File object
+NewOpenGraphFileWithDefaults instantiates a new OpenGraphFile object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetHashes
 
-`func (o *File) GetHashes() Hashes`
+`func (o *OpenGraphFile) GetHashes() Hashes`
 
 GetHashes returns the Hashes field if non-nil, zero value otherwise.
 
 ### GetHashesOk
 
-`func (o *File) GetHashesOk() (*Hashes, bool)`
+`func (o *OpenGraphFile) GetHashesOk() (*Hashes, bool)`
 
 GetHashesOk returns a tuple with the Hashes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHashes
 
-`func (o *File) SetHashes(v Hashes)`
+`func (o *OpenGraphFile) SetHashes(v Hashes)`
 
 SetHashes sets Hashes field to given value.
 
 ### HasHashes
 
-`func (o *File) HasHashes() bool`
+`func (o *OpenGraphFile) HasHashes() bool`
 
 HasHashes returns a boolean if a field has been set.
 
 ### GetMimeType
 
-`func (o *File) GetMimeType() string`
+`func (o *OpenGraphFile) GetMimeType() string`
 
 GetMimeType returns the MimeType field if non-nil, zero value otherwise.
 
 ### GetMimeTypeOk
 
-`func (o *File) GetMimeTypeOk() (*string, bool)`
+`func (o *OpenGraphFile) GetMimeTypeOk() (*string, bool)`
 
 GetMimeTypeOk returns a tuple with the MimeType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMimeType
 
-`func (o *File) SetMimeType(v string)`
+`func (o *OpenGraphFile) SetMimeType(v string)`
 
 SetMimeType sets MimeType field to given value.
 
 ### HasMimeType
 
-`func (o *File) HasMimeType() bool`
+`func (o *OpenGraphFile) HasMimeType() bool`
 
 HasMimeType returns a boolean if a field has been set.
 
 ### GetProcessingMetadata
 
-`func (o *File) GetProcessingMetadata() bool`
+`func (o *OpenGraphFile) GetProcessingMetadata() bool`
 
 GetProcessingMetadata returns the ProcessingMetadata field if non-nil, zero value otherwise.
 
 ### GetProcessingMetadataOk
 
-`func (o *File) GetProcessingMetadataOk() (*bool, bool)`
+`func (o *OpenGraphFile) GetProcessingMetadataOk() (*bool, bool)`
 
 GetProcessingMetadataOk returns a tuple with the ProcessingMetadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProcessingMetadata
 
-`func (o *File) SetProcessingMetadata(v bool)`
+`func (o *OpenGraphFile) SetProcessingMetadata(v bool)`
 
 SetProcessingMetadata sets ProcessingMetadata field to given value.
 
 ### HasProcessingMetadata
 
-`func (o *File) HasProcessingMetadata() bool`
+`func (o *OpenGraphFile) HasProcessingMetadata() bool`
 
 HasProcessingMetadata returns a boolean if a field has been set.
 

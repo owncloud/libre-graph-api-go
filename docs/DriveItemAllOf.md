@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Content** | Pointer to **string** | The content stream, if the item represents a file. | [optional] 
 **CTag** | Pointer to **string** | An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only. | [optional] [readonly] 
 **Deleted** | Pointer to [**Deleted**](deleted.md) | Information about the deleted state of the item. Read-only. | [optional] [readonly] 
-**File** | Pointer to [***os.File**](*os.File.md) | File metadata, if the item is a file. Read-only. | [optional] [readonly] 
+**File** | Pointer to [**OpenGraphFile**](openGraphFile.md) | File metadata, if the item is a file. Read-only. | [optional] [readonly] 
 **FileSystemInfo** | Pointer to [**FileSystemInfo**](fileSystemInfo.md) | File system information on client. Read-write. | [optional] 
 **Folder** | Pointer to [**Folder**](folder.md) | Folder metadata, if the item is a folder. Read-only. | [optional] [readonly] 
 **Image** | Pointer to [**Image**](image.md) | Image metadata, if the item is an image. Read-only. | [optional] [readonly] 
@@ -112,20 +112,20 @@ HasDeleted returns a boolean if a field has been set.
 
 ### GetFile
 
-`func (o *DriveItemAllOf) GetFile() *os.File`
+`func (o *DriveItemAllOf) GetFile() OpenGraphFile`
 
 GetFile returns the File field if non-nil, zero value otherwise.
 
 ### GetFileOk
 
-`func (o *DriveItemAllOf) GetFileOk() (**os.File, bool)`
+`func (o *DriveItemAllOf) GetFileOk() (*OpenGraphFile, bool)`
 
 GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFile
 
-`func (o *DriveItemAllOf) SetFile(v *os.File)`
+`func (o *DriveItemAllOf) SetFile(v OpenGraphFile)`
 
 SetFile sets File field to given value.
 
