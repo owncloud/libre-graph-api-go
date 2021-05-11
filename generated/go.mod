@@ -1,4 +1,4 @@
-module github.com/owncloud/open-graph-api-go
+module github.com/owncloud/open-graph-api-go/generated
 
 go 1.13
 
