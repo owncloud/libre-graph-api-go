@@ -17,25 +17,25 @@ import (
 // OpenGraphDriveItemAllOf struct for OpenGraphDriveItemAllOf
 type OpenGraphDriveItemAllOf struct {
 	// The content stream, if the item represents a file.
-	Content NullableString `json:"content,omitempty"`
+	Content *string `json:"content,omitempty"`
 	// An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
-	CTag NullableString `json:"cTag,omitempty"`
+	CTag *string `json:"cTag,omitempty"`
 	// Information about the deleted state of the item. Read-only.
-	Deleted NullableAnyOfopenGraphDeleted `json:"deleted,omitempty"`
+	Deleted *OpenGraphDeleted `json:"deleted,omitempty"`
 	// File metadata, if the item is a file. Read-only.
-	File NullableAnyOfopenGraphFile `json:"file,omitempty"`
+	File *OpenGraphFile `json:"file,omitempty"`
 	// File system information on client. Read-write.
-	FileSystemInfo NullableAnyOfopenGraphFileSystemInfo `json:"fileSystemInfo,omitempty"`
+	FileSystemInfo *OpenGraphFileSystemInfo `json:"fileSystemInfo,omitempty"`
 	// Folder metadata, if the item is a folder. Read-only.
-	Folder NullableAnyOfopenGraphFolder `json:"folder,omitempty"`
+	Folder *OpenGraphFolder `json:"folder,omitempty"`
 	// Image metadata, if the item is an image. Read-only.
-	Image NullableAnyOfopenGraphImage `json:"image,omitempty"`
+	Image *OpenGraphImage `json:"image,omitempty"`
 	// If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
-	Root NullableAnyOfobject `json:"root,omitempty"`
+	Root *map[string]interface{} `json:"root,omitempty"`
 	// Size of the item in bytes. Read-only.
-	Size NullableInt64 `json:"size,omitempty"`
+	Size *int64 `json:"size,omitempty"`
 	// WebDAV compatible URL for the item. Read-only.
-	WebDavUrl NullableString `json:"webDavUrl,omitempty"`
+	WebDavUrl *string `json:"webDavUrl,omitempty"`
 	// Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
 	Children *[]OpenGraphDriveItem `json:"children,omitempty"`
 }
@@ -57,424 +57,324 @@ func NewOpenGraphDriveItemAllOfWithDefaults() *OpenGraphDriveItemAllOf {
 	return &this
 }
 
-// GetContent returns the Content field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetContent returns the Content field value if set, zero value otherwise.
 func (o *OpenGraphDriveItemAllOf) GetContent() string {
-	if o == nil || o.Content.Get() == nil {
+	if o == nil || o.Content == nil {
 		var ret string
 		return ret
 	}
-	return *o.Content.Get()
+	return *o.Content
 }
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphDriveItemAllOf) GetContentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Content == nil {
 		return nil, false
 	}
-	return o.Content.Get(), o.Content.IsSet()
+	return o.Content, true
 }
 
 // HasContent returns a boolean if a field has been set.
 func (o *OpenGraphDriveItemAllOf) HasContent() bool {
-	if o != nil && o.Content.IsSet() {
+	if o != nil && o.Content != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetContent gets a reference to the given NullableString and assigns it to the Content field.
+// SetContent gets a reference to the given string and assigns it to the Content field.
 func (o *OpenGraphDriveItemAllOf) SetContent(v string) {
-	o.Content.Set(&v)
-}
-// SetContentNil sets the value for Content to be an explicit nil
-func (o *OpenGraphDriveItemAllOf) SetContentNil() {
-	o.Content.Set(nil)
+	o.Content = &v
 }
 
-// UnsetContent ensures that no value is present for Content, not even an explicit nil
-func (o *OpenGraphDriveItemAllOf) UnsetContent() {
-	o.Content.Unset()
-}
-
-// GetCTag returns the CTag field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetCTag returns the CTag field value if set, zero value otherwise.
 func (o *OpenGraphDriveItemAllOf) GetCTag() string {
-	if o == nil || o.CTag.Get() == nil {
+	if o == nil || o.CTag == nil {
 		var ret string
 		return ret
 	}
-	return *o.CTag.Get()
+	return *o.CTag
 }
 
 // GetCTagOk returns a tuple with the CTag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphDriveItemAllOf) GetCTagOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.CTag == nil {
 		return nil, false
 	}
-	return o.CTag.Get(), o.CTag.IsSet()
+	return o.CTag, true
 }
 
 // HasCTag returns a boolean if a field has been set.
 func (o *OpenGraphDriveItemAllOf) HasCTag() bool {
-	if o != nil && o.CTag.IsSet() {
+	if o != nil && o.CTag != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCTag gets a reference to the given NullableString and assigns it to the CTag field.
+// SetCTag gets a reference to the given string and assigns it to the CTag field.
 func (o *OpenGraphDriveItemAllOf) SetCTag(v string) {
-	o.CTag.Set(&v)
-}
-// SetCTagNil sets the value for CTag to be an explicit nil
-func (o *OpenGraphDriveItemAllOf) SetCTagNil() {
-	o.CTag.Set(nil)
+	o.CTag = &v
 }
 
-// UnsetCTag ensures that no value is present for CTag, not even an explicit nil
-func (o *OpenGraphDriveItemAllOf) UnsetCTag() {
-	o.CTag.Unset()
-}
-
-// GetDeleted returns the Deleted field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphDriveItemAllOf) GetDeleted() AnyOfopenGraphDeleted {
-	if o == nil || o.Deleted.Get() == nil {
-		var ret AnyOfopenGraphDeleted
+// GetDeleted returns the Deleted field value if set, zero value otherwise.
+func (o *OpenGraphDriveItemAllOf) GetDeleted() OpenGraphDeleted {
+	if o == nil || o.Deleted == nil {
+		var ret OpenGraphDeleted
 		return ret
 	}
-	return *o.Deleted.Get()
+	return *o.Deleted
 }
 
 // GetDeletedOk returns a tuple with the Deleted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphDriveItemAllOf) GetDeletedOk() (*AnyOfopenGraphDeleted, bool) {
-	if o == nil  {
+func (o *OpenGraphDriveItemAllOf) GetDeletedOk() (*OpenGraphDeleted, bool) {
+	if o == nil || o.Deleted == nil {
 		return nil, false
 	}
-	return o.Deleted.Get(), o.Deleted.IsSet()
+	return o.Deleted, true
 }
 
 // HasDeleted returns a boolean if a field has been set.
 func (o *OpenGraphDriveItemAllOf) HasDeleted() bool {
-	if o != nil && o.Deleted.IsSet() {
+	if o != nil && o.Deleted != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDeleted gets a reference to the given NullableAnyOfopenGraphDeleted and assigns it to the Deleted field.
-func (o *OpenGraphDriveItemAllOf) SetDeleted(v AnyOfopenGraphDeleted) {
-	o.Deleted.Set(&v)
-}
-// SetDeletedNil sets the value for Deleted to be an explicit nil
-func (o *OpenGraphDriveItemAllOf) SetDeletedNil() {
-	o.Deleted.Set(nil)
+// SetDeleted gets a reference to the given OpenGraphDeleted and assigns it to the Deleted field.
+func (o *OpenGraphDriveItemAllOf) SetDeleted(v OpenGraphDeleted) {
+	o.Deleted = &v
 }
 
-// UnsetDeleted ensures that no value is present for Deleted, not even an explicit nil
-func (o *OpenGraphDriveItemAllOf) UnsetDeleted() {
-	o.Deleted.Unset()
-}
-
-// GetFile returns the File field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphDriveItemAllOf) GetFile() AnyOfopenGraphFile {
-	if o == nil || o.File.Get() == nil {
-		var ret AnyOfopenGraphFile
+// GetFile returns the File field value if set, zero value otherwise.
+func (o *OpenGraphDriveItemAllOf) GetFile() OpenGraphFile {
+	if o == nil || o.File == nil {
+		var ret OpenGraphFile
 		return ret
 	}
-	return *o.File.Get()
+	return *o.File
 }
 
 // GetFileOk returns a tuple with the File field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphDriveItemAllOf) GetFileOk() (*AnyOfopenGraphFile, bool) {
-	if o == nil  {
+func (o *OpenGraphDriveItemAllOf) GetFileOk() (*OpenGraphFile, bool) {
+	if o == nil || o.File == nil {
 		return nil, false
 	}
-	return o.File.Get(), o.File.IsSet()
+	return o.File, true
 }
 
 // HasFile returns a boolean if a field has been set.
 func (o *OpenGraphDriveItemAllOf) HasFile() bool {
-	if o != nil && o.File.IsSet() {
+	if o != nil && o.File != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetFile gets a reference to the given NullableAnyOfopenGraphFile and assigns it to the File field.
-func (o *OpenGraphDriveItemAllOf) SetFile(v AnyOfopenGraphFile) {
-	o.File.Set(&v)
-}
-// SetFileNil sets the value for File to be an explicit nil
-func (o *OpenGraphDriveItemAllOf) SetFileNil() {
-	o.File.Set(nil)
+// SetFile gets a reference to the given OpenGraphFile and assigns it to the File field.
+func (o *OpenGraphDriveItemAllOf) SetFile(v OpenGraphFile) {
+	o.File = &v
 }
 
-// UnsetFile ensures that no value is present for File, not even an explicit nil
-func (o *OpenGraphDriveItemAllOf) UnsetFile() {
-	o.File.Unset()
-}
-
-// GetFileSystemInfo returns the FileSystemInfo field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphDriveItemAllOf) GetFileSystemInfo() AnyOfopenGraphFileSystemInfo {
-	if o == nil || o.FileSystemInfo.Get() == nil {
-		var ret AnyOfopenGraphFileSystemInfo
+// GetFileSystemInfo returns the FileSystemInfo field value if set, zero value otherwise.
+func (o *OpenGraphDriveItemAllOf) GetFileSystemInfo() OpenGraphFileSystemInfo {
+	if o == nil || o.FileSystemInfo == nil {
+		var ret OpenGraphFileSystemInfo
 		return ret
 	}
-	return *o.FileSystemInfo.Get()
+	return *o.FileSystemInfo
 }
 
 // GetFileSystemInfoOk returns a tuple with the FileSystemInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphDriveItemAllOf) GetFileSystemInfoOk() (*AnyOfopenGraphFileSystemInfo, bool) {
-	if o == nil  {
+func (o *OpenGraphDriveItemAllOf) GetFileSystemInfoOk() (*OpenGraphFileSystemInfo, bool) {
+	if o == nil || o.FileSystemInfo == nil {
 		return nil, false
 	}
-	return o.FileSystemInfo.Get(), o.FileSystemInfo.IsSet()
+	return o.FileSystemInfo, true
 }
 
 // HasFileSystemInfo returns a boolean if a field has been set.
 func (o *OpenGraphDriveItemAllOf) HasFileSystemInfo() bool {
-	if o != nil && o.FileSystemInfo.IsSet() {
+	if o != nil && o.FileSystemInfo != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetFileSystemInfo gets a reference to the given NullableAnyOfopenGraphFileSystemInfo and assigns it to the FileSystemInfo field.
-func (o *OpenGraphDriveItemAllOf) SetFileSystemInfo(v AnyOfopenGraphFileSystemInfo) {
-	o.FileSystemInfo.Set(&v)
-}
-// SetFileSystemInfoNil sets the value for FileSystemInfo to be an explicit nil
-func (o *OpenGraphDriveItemAllOf) SetFileSystemInfoNil() {
-	o.FileSystemInfo.Set(nil)
+// SetFileSystemInfo gets a reference to the given OpenGraphFileSystemInfo and assigns it to the FileSystemInfo field.
+func (o *OpenGraphDriveItemAllOf) SetFileSystemInfo(v OpenGraphFileSystemInfo) {
+	o.FileSystemInfo = &v
 }
 
-// UnsetFileSystemInfo ensures that no value is present for FileSystemInfo, not even an explicit nil
-func (o *OpenGraphDriveItemAllOf) UnsetFileSystemInfo() {
-	o.FileSystemInfo.Unset()
-}
-
-// GetFolder returns the Folder field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphDriveItemAllOf) GetFolder() AnyOfopenGraphFolder {
-	if o == nil || o.Folder.Get() == nil {
-		var ret AnyOfopenGraphFolder
+// GetFolder returns the Folder field value if set, zero value otherwise.
+func (o *OpenGraphDriveItemAllOf) GetFolder() OpenGraphFolder {
+	if o == nil || o.Folder == nil {
+		var ret OpenGraphFolder
 		return ret
 	}
-	return *o.Folder.Get()
+	return *o.Folder
 }
 
 // GetFolderOk returns a tuple with the Folder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphDriveItemAllOf) GetFolderOk() (*AnyOfopenGraphFolder, bool) {
-	if o == nil  {
+func (o *OpenGraphDriveItemAllOf) GetFolderOk() (*OpenGraphFolder, bool) {
+	if o == nil || o.Folder == nil {
 		return nil, false
 	}
-	return o.Folder.Get(), o.Folder.IsSet()
+	return o.Folder, true
 }
 
 // HasFolder returns a boolean if a field has been set.
 func (o *OpenGraphDriveItemAllOf) HasFolder() bool {
-	if o != nil && o.Folder.IsSet() {
+	if o != nil && o.Folder != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetFolder gets a reference to the given NullableAnyOfopenGraphFolder and assigns it to the Folder field.
-func (o *OpenGraphDriveItemAllOf) SetFolder(v AnyOfopenGraphFolder) {
-	o.Folder.Set(&v)
-}
-// SetFolderNil sets the value for Folder to be an explicit nil
-func (o *OpenGraphDriveItemAllOf) SetFolderNil() {
-	o.Folder.Set(nil)
+// SetFolder gets a reference to the given OpenGraphFolder and assigns it to the Folder field.
+func (o *OpenGraphDriveItemAllOf) SetFolder(v OpenGraphFolder) {
+	o.Folder = &v
 }
 
-// UnsetFolder ensures that no value is present for Folder, not even an explicit nil
-func (o *OpenGraphDriveItemAllOf) UnsetFolder() {
-	o.Folder.Unset()
-}
-
-// GetImage returns the Image field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphDriveItemAllOf) GetImage() AnyOfopenGraphImage {
-	if o == nil || o.Image.Get() == nil {
-		var ret AnyOfopenGraphImage
+// GetImage returns the Image field value if set, zero value otherwise.
+func (o *OpenGraphDriveItemAllOf) GetImage() OpenGraphImage {
+	if o == nil || o.Image == nil {
+		var ret OpenGraphImage
 		return ret
 	}
-	return *o.Image.Get()
+	return *o.Image
 }
 
 // GetImageOk returns a tuple with the Image field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphDriveItemAllOf) GetImageOk() (*AnyOfopenGraphImage, bool) {
-	if o == nil  {
+func (o *OpenGraphDriveItemAllOf) GetImageOk() (*OpenGraphImage, bool) {
+	if o == nil || o.Image == nil {
 		return nil, false
 	}
-	return o.Image.Get(), o.Image.IsSet()
+	return o.Image, true
 }
 
 // HasImage returns a boolean if a field has been set.
 func (o *OpenGraphDriveItemAllOf) HasImage() bool {
-	if o != nil && o.Image.IsSet() {
+	if o != nil && o.Image != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetImage gets a reference to the given NullableAnyOfopenGraphImage and assigns it to the Image field.
-func (o *OpenGraphDriveItemAllOf) SetImage(v AnyOfopenGraphImage) {
-	o.Image.Set(&v)
-}
-// SetImageNil sets the value for Image to be an explicit nil
-func (o *OpenGraphDriveItemAllOf) SetImageNil() {
-	o.Image.Set(nil)
+// SetImage gets a reference to the given OpenGraphImage and assigns it to the Image field.
+func (o *OpenGraphDriveItemAllOf) SetImage(v OpenGraphImage) {
+	o.Image = &v
 }
 
-// UnsetImage ensures that no value is present for Image, not even an explicit nil
-func (o *OpenGraphDriveItemAllOf) UnsetImage() {
-	o.Image.Unset()
-}
-
-// GetRoot returns the Root field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphDriveItemAllOf) GetRoot() AnyOfobject {
-	if o == nil || o.Root.Get() == nil {
-		var ret AnyOfobject
+// GetRoot returns the Root field value if set, zero value otherwise.
+func (o *OpenGraphDriveItemAllOf) GetRoot() map[string]interface{} {
+	if o == nil || o.Root == nil {
+		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Root.Get()
+	return *o.Root
 }
 
 // GetRootOk returns a tuple with the Root field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphDriveItemAllOf) GetRootOk() (*AnyOfobject, bool) {
-	if o == nil  {
+func (o *OpenGraphDriveItemAllOf) GetRootOk() (*map[string]interface{}, bool) {
+	if o == nil || o.Root == nil {
 		return nil, false
 	}
-	return o.Root.Get(), o.Root.IsSet()
+	return o.Root, true
 }
 
 // HasRoot returns a boolean if a field has been set.
 func (o *OpenGraphDriveItemAllOf) HasRoot() bool {
-	if o != nil && o.Root.IsSet() {
+	if o != nil && o.Root != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRoot gets a reference to the given NullableAnyOfobject and assigns it to the Root field.
-func (o *OpenGraphDriveItemAllOf) SetRoot(v AnyOfobject) {
-	o.Root.Set(&v)
-}
-// SetRootNil sets the value for Root to be an explicit nil
-func (o *OpenGraphDriveItemAllOf) SetRootNil() {
-	o.Root.Set(nil)
+// SetRoot gets a reference to the given map[string]interface{} and assigns it to the Root field.
+func (o *OpenGraphDriveItemAllOf) SetRoot(v map[string]interface{}) {
+	o.Root = &v
 }
 
-// UnsetRoot ensures that no value is present for Root, not even an explicit nil
-func (o *OpenGraphDriveItemAllOf) UnsetRoot() {
-	o.Root.Unset()
-}
-
-// GetSize returns the Size field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSize returns the Size field value if set, zero value otherwise.
 func (o *OpenGraphDriveItemAllOf) GetSize() int64 {
-	if o == nil || o.Size.Get() == nil {
+	if o == nil || o.Size == nil {
 		var ret int64
 		return ret
 	}
-	return *o.Size.Get()
+	return *o.Size
 }
 
 // GetSizeOk returns a tuple with the Size field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphDriveItemAllOf) GetSizeOk() (*int64, bool) {
-	if o == nil  {
+	if o == nil || o.Size == nil {
 		return nil, false
 	}
-	return o.Size.Get(), o.Size.IsSet()
+	return o.Size, true
 }
 
 // HasSize returns a boolean if a field has been set.
 func (o *OpenGraphDriveItemAllOf) HasSize() bool {
-	if o != nil && o.Size.IsSet() {
+	if o != nil && o.Size != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSize gets a reference to the given NullableInt64 and assigns it to the Size field.
+// SetSize gets a reference to the given int64 and assigns it to the Size field.
 func (o *OpenGraphDriveItemAllOf) SetSize(v int64) {
-	o.Size.Set(&v)
-}
-// SetSizeNil sets the value for Size to be an explicit nil
-func (o *OpenGraphDriveItemAllOf) SetSizeNil() {
-	o.Size.Set(nil)
+	o.Size = &v
 }
 
-// UnsetSize ensures that no value is present for Size, not even an explicit nil
-func (o *OpenGraphDriveItemAllOf) UnsetSize() {
-	o.Size.Unset()
-}
-
-// GetWebDavUrl returns the WebDavUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetWebDavUrl returns the WebDavUrl field value if set, zero value otherwise.
 func (o *OpenGraphDriveItemAllOf) GetWebDavUrl() string {
-	if o == nil || o.WebDavUrl.Get() == nil {
+	if o == nil || o.WebDavUrl == nil {
 		var ret string
 		return ret
 	}
-	return *o.WebDavUrl.Get()
+	return *o.WebDavUrl
 }
 
 // GetWebDavUrlOk returns a tuple with the WebDavUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphDriveItemAllOf) GetWebDavUrlOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.WebDavUrl == nil {
 		return nil, false
 	}
-	return o.WebDavUrl.Get(), o.WebDavUrl.IsSet()
+	return o.WebDavUrl, true
 }
 
 // HasWebDavUrl returns a boolean if a field has been set.
 func (o *OpenGraphDriveItemAllOf) HasWebDavUrl() bool {
-	if o != nil && o.WebDavUrl.IsSet() {
+	if o != nil && o.WebDavUrl != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetWebDavUrl gets a reference to the given NullableString and assigns it to the WebDavUrl field.
+// SetWebDavUrl gets a reference to the given string and assigns it to the WebDavUrl field.
 func (o *OpenGraphDriveItemAllOf) SetWebDavUrl(v string) {
-	o.WebDavUrl.Set(&v)
-}
-// SetWebDavUrlNil sets the value for WebDavUrl to be an explicit nil
-func (o *OpenGraphDriveItemAllOf) SetWebDavUrlNil() {
-	o.WebDavUrl.Set(nil)
-}
-
-// UnsetWebDavUrl ensures that no value is present for WebDavUrl, not even an explicit nil
-func (o *OpenGraphDriveItemAllOf) UnsetWebDavUrl() {
-	o.WebDavUrl.Unset()
+	o.WebDavUrl = &v
 }
 
 // GetChildren returns the Children field value if set, zero value otherwise.
@@ -511,35 +411,35 @@ func (o *OpenGraphDriveItemAllOf) SetChildren(v []OpenGraphDriveItem) {
 
 func (o OpenGraphDriveItemAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Content.IsSet() {
-		toSerialize["content"] = o.Content.Get()
+	if o.Content != nil {
+		toSerialize["content"] = o.Content
 	}
-	if o.CTag.IsSet() {
-		toSerialize["cTag"] = o.CTag.Get()
+	if o.CTag != nil {
+		toSerialize["cTag"] = o.CTag
 	}
-	if o.Deleted.IsSet() {
-		toSerialize["deleted"] = o.Deleted.Get()
+	if o.Deleted != nil {
+		toSerialize["deleted"] = o.Deleted
 	}
-	if o.File.IsSet() {
-		toSerialize["file"] = o.File.Get()
+	if o.File != nil {
+		toSerialize["file"] = o.File
 	}
-	if o.FileSystemInfo.IsSet() {
-		toSerialize["fileSystemInfo"] = o.FileSystemInfo.Get()
+	if o.FileSystemInfo != nil {
+		toSerialize["fileSystemInfo"] = o.FileSystemInfo
 	}
-	if o.Folder.IsSet() {
-		toSerialize["folder"] = o.Folder.Get()
+	if o.Folder != nil {
+		toSerialize["folder"] = o.Folder
 	}
-	if o.Image.IsSet() {
-		toSerialize["image"] = o.Image.Get()
+	if o.Image != nil {
+		toSerialize["image"] = o.Image
 	}
-	if o.Root.IsSet() {
-		toSerialize["root"] = o.Root.Get()
+	if o.Root != nil {
+		toSerialize["root"] = o.Root
 	}
-	if o.Size.IsSet() {
-		toSerialize["size"] = o.Size.Get()
+	if o.Size != nil {
+		toSerialize["size"] = o.Size
 	}
-	if o.WebDavUrl.IsSet() {
-		toSerialize["webDavUrl"] = o.WebDavUrl.Get()
+	if o.WebDavUrl != nil {
+		toSerialize["webDavUrl"] = o.WebDavUrl
 	}
 	if o.Children != nil {
 		toSerialize["children"] = o.Children

@@ -17,11 +17,11 @@ import (
 // OpenGraphFolderView struct for OpenGraphFolderView
 type OpenGraphFolderView struct {
 	// The method by which the folder should be sorted.
-	SortBy NullableString `json:"sortBy,omitempty"`
+	SortBy *string `json:"sortBy,omitempty"`
 	// If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending.
-	SortOrder NullableString `json:"sortOrder,omitempty"`
+	SortOrder *string `json:"sortOrder,omitempty"`
 	// The type of view that should be used to represent the folder.
-	ViewType NullableString `json:"viewType,omitempty"`
+	ViewType *string `json:"viewType,omitempty"`
 }
 
 // NewOpenGraphFolderView instantiates a new OpenGraphFolderView object
@@ -41,142 +41,112 @@ func NewOpenGraphFolderViewWithDefaults() *OpenGraphFolderView {
 	return &this
 }
 
-// GetSortBy returns the SortBy field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSortBy returns the SortBy field value if set, zero value otherwise.
 func (o *OpenGraphFolderView) GetSortBy() string {
-	if o == nil || o.SortBy.Get() == nil {
+	if o == nil || o.SortBy == nil {
 		var ret string
 		return ret
 	}
-	return *o.SortBy.Get()
+	return *o.SortBy
 }
 
 // GetSortByOk returns a tuple with the SortBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphFolderView) GetSortByOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.SortBy == nil {
 		return nil, false
 	}
-	return o.SortBy.Get(), o.SortBy.IsSet()
+	return o.SortBy, true
 }
 
 // HasSortBy returns a boolean if a field has been set.
 func (o *OpenGraphFolderView) HasSortBy() bool {
-	if o != nil && o.SortBy.IsSet() {
+	if o != nil && o.SortBy != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSortBy gets a reference to the given NullableString and assigns it to the SortBy field.
+// SetSortBy gets a reference to the given string and assigns it to the SortBy field.
 func (o *OpenGraphFolderView) SetSortBy(v string) {
-	o.SortBy.Set(&v)
-}
-// SetSortByNil sets the value for SortBy to be an explicit nil
-func (o *OpenGraphFolderView) SetSortByNil() {
-	o.SortBy.Set(nil)
+	o.SortBy = &v
 }
 
-// UnsetSortBy ensures that no value is present for SortBy, not even an explicit nil
-func (o *OpenGraphFolderView) UnsetSortBy() {
-	o.SortBy.Unset()
-}
-
-// GetSortOrder returns the SortOrder field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSortOrder returns the SortOrder field value if set, zero value otherwise.
 func (o *OpenGraphFolderView) GetSortOrder() string {
-	if o == nil || o.SortOrder.Get() == nil {
+	if o == nil || o.SortOrder == nil {
 		var ret string
 		return ret
 	}
-	return *o.SortOrder.Get()
+	return *o.SortOrder
 }
 
 // GetSortOrderOk returns a tuple with the SortOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphFolderView) GetSortOrderOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.SortOrder == nil {
 		return nil, false
 	}
-	return o.SortOrder.Get(), o.SortOrder.IsSet()
+	return o.SortOrder, true
 }
 
 // HasSortOrder returns a boolean if a field has been set.
 func (o *OpenGraphFolderView) HasSortOrder() bool {
-	if o != nil && o.SortOrder.IsSet() {
+	if o != nil && o.SortOrder != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSortOrder gets a reference to the given NullableString and assigns it to the SortOrder field.
+// SetSortOrder gets a reference to the given string and assigns it to the SortOrder field.
 func (o *OpenGraphFolderView) SetSortOrder(v string) {
-	o.SortOrder.Set(&v)
-}
-// SetSortOrderNil sets the value for SortOrder to be an explicit nil
-func (o *OpenGraphFolderView) SetSortOrderNil() {
-	o.SortOrder.Set(nil)
+	o.SortOrder = &v
 }
 
-// UnsetSortOrder ensures that no value is present for SortOrder, not even an explicit nil
-func (o *OpenGraphFolderView) UnsetSortOrder() {
-	o.SortOrder.Unset()
-}
-
-// GetViewType returns the ViewType field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetViewType returns the ViewType field value if set, zero value otherwise.
 func (o *OpenGraphFolderView) GetViewType() string {
-	if o == nil || o.ViewType.Get() == nil {
+	if o == nil || o.ViewType == nil {
 		var ret string
 		return ret
 	}
-	return *o.ViewType.Get()
+	return *o.ViewType
 }
 
 // GetViewTypeOk returns a tuple with the ViewType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphFolderView) GetViewTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.ViewType == nil {
 		return nil, false
 	}
-	return o.ViewType.Get(), o.ViewType.IsSet()
+	return o.ViewType, true
 }
 
 // HasViewType returns a boolean if a field has been set.
 func (o *OpenGraphFolderView) HasViewType() bool {
-	if o != nil && o.ViewType.IsSet() {
+	if o != nil && o.ViewType != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetViewType gets a reference to the given NullableString and assigns it to the ViewType field.
+// SetViewType gets a reference to the given string and assigns it to the ViewType field.
 func (o *OpenGraphFolderView) SetViewType(v string) {
-	o.ViewType.Set(&v)
-}
-// SetViewTypeNil sets the value for ViewType to be an explicit nil
-func (o *OpenGraphFolderView) SetViewTypeNil() {
-	o.ViewType.Set(nil)
-}
-
-// UnsetViewType ensures that no value is present for ViewType, not even an explicit nil
-func (o *OpenGraphFolderView) UnsetViewType() {
-	o.ViewType.Unset()
+	o.ViewType = &v
 }
 
 func (o OpenGraphFolderView) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SortBy.IsSet() {
-		toSerialize["sortBy"] = o.SortBy.Get()
+	if o.SortBy != nil {
+		toSerialize["sortBy"] = o.SortBy
 	}
-	if o.SortOrder.IsSet() {
-		toSerialize["sortOrder"] = o.SortOrder.Get()
+	if o.SortOrder != nil {
+		toSerialize["sortOrder"] = o.SortOrder
 	}
-	if o.ViewType.IsSet() {
-		toSerialize["viewType"] = o.ViewType.Get()
+	if o.ViewType != nil {
+		toSerialize["viewType"] = o.ViewType
 	}
 	return json.Marshal(toSerialize)
 }

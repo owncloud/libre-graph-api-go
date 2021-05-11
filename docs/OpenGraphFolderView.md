@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SortBy** | Pointer to **NullableString** | The method by which the folder should be sorted. | [optional] 
-**SortOrder** | Pointer to **NullableString** | If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending. | [optional] 
-**ViewType** | Pointer to **NullableString** | The type of view that should be used to represent the folder. | [optional] 
+**SortBy** | Pointer to **string** | The method by which the folder should be sorted. | [optional] 
+**SortOrder** | Pointer to **string** | If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending. | [optional] 
+**ViewType** | Pointer to **string** | The type of view that should be used to represent the folder. | [optional] 
 
 ## Methods
 
@@ -52,16 +52,6 @@ SetSortBy sets SortBy field to given value.
 
 HasSortBy returns a boolean if a field has been set.
 
-### SetSortByNil
-
-`func (o *OpenGraphFolderView) SetSortByNil(b bool)`
-
- SetSortByNil sets the value for SortBy to be an explicit nil
-
-### UnsetSortBy
-`func (o *OpenGraphFolderView) UnsetSortBy()`
-
-UnsetSortBy ensures that no value is present for SortBy, not even an explicit nil
 ### GetSortOrder
 
 `func (o *OpenGraphFolderView) GetSortOrder() string`
@@ -87,16 +77,6 @@ SetSortOrder sets SortOrder field to given value.
 
 HasSortOrder returns a boolean if a field has been set.
 
-### SetSortOrderNil
-
-`func (o *OpenGraphFolderView) SetSortOrderNil(b bool)`
-
- SetSortOrderNil sets the value for SortOrder to be an explicit nil
-
-### UnsetSortOrder
-`func (o *OpenGraphFolderView) UnsetSortOrder()`
-
-UnsetSortOrder ensures that no value is present for SortOrder, not even an explicit nil
 ### GetViewType
 
 `func (o *OpenGraphFolderView) GetViewType() string`
@@ -122,16 +102,6 @@ SetViewType sets ViewType field to given value.
 
 HasViewType returns a boolean if a field has been set.
 
-### SetViewTypeNil
-
-`func (o *OpenGraphFolderView) SetViewTypeNil(b bool)`
-
- SetViewTypeNil sets the value for ViewType to be an explicit nil
-
-### UnsetViewType
-`func (o *OpenGraphFolderView) UnsetViewType()`
-
-UnsetViewType ensures that no value is present for ViewType, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,17 +17,17 @@ import (
 // OpenGraphItemReference struct for OpenGraphItemReference
 type OpenGraphItemReference struct {
 	// Unique identifier of the drive instance that contains the item. Read-only.
-	DriveId NullableString `json:"driveId,omitempty"`
+	DriveId *string `json:"driveId,omitempty"`
 	// Identifies the type of drive. See [drive][] resource for values. Read-only.
-	DriveType NullableString `json:"driveType,omitempty"`
+	DriveType *string `json:"driveType,omitempty"`
 	// Unique identifier of the item in the drive. Read-only.
-	Id NullableString `json:"id,omitempty"`
+	Id *string `json:"id,omitempty"`
 	// The name of the item being referenced. Read-only.
-	Name NullableString `json:"name,omitempty"`
+	Name *string `json:"name,omitempty"`
 	// Path that can be used to navigate to the item. Read-only.
-	Path NullableString `json:"path,omitempty"`
+	Path *string `json:"path,omitempty"`
 	// A unique identifier for a shared resource that can be accessed via the [Shares][] API.
-	ShareId NullableString `json:"shareId,omitempty"`
+	ShareId *string `json:"shareId,omitempty"`
 }
 
 // NewOpenGraphItemReference instantiates a new OpenGraphItemReference object
@@ -47,277 +47,217 @@ func NewOpenGraphItemReferenceWithDefaults() *OpenGraphItemReference {
 	return &this
 }
 
-// GetDriveId returns the DriveId field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDriveId returns the DriveId field value if set, zero value otherwise.
 func (o *OpenGraphItemReference) GetDriveId() string {
-	if o == nil || o.DriveId.Get() == nil {
+	if o == nil || o.DriveId == nil {
 		var ret string
 		return ret
 	}
-	return *o.DriveId.Get()
+	return *o.DriveId
 }
 
 // GetDriveIdOk returns a tuple with the DriveId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphItemReference) GetDriveIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.DriveId == nil {
 		return nil, false
 	}
-	return o.DriveId.Get(), o.DriveId.IsSet()
+	return o.DriveId, true
 }
 
 // HasDriveId returns a boolean if a field has been set.
 func (o *OpenGraphItemReference) HasDriveId() bool {
-	if o != nil && o.DriveId.IsSet() {
+	if o != nil && o.DriveId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDriveId gets a reference to the given NullableString and assigns it to the DriveId field.
+// SetDriveId gets a reference to the given string and assigns it to the DriveId field.
 func (o *OpenGraphItemReference) SetDriveId(v string) {
-	o.DriveId.Set(&v)
-}
-// SetDriveIdNil sets the value for DriveId to be an explicit nil
-func (o *OpenGraphItemReference) SetDriveIdNil() {
-	o.DriveId.Set(nil)
+	o.DriveId = &v
 }
 
-// UnsetDriveId ensures that no value is present for DriveId, not even an explicit nil
-func (o *OpenGraphItemReference) UnsetDriveId() {
-	o.DriveId.Unset()
-}
-
-// GetDriveType returns the DriveType field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDriveType returns the DriveType field value if set, zero value otherwise.
 func (o *OpenGraphItemReference) GetDriveType() string {
-	if o == nil || o.DriveType.Get() == nil {
+	if o == nil || o.DriveType == nil {
 		var ret string
 		return ret
 	}
-	return *o.DriveType.Get()
+	return *o.DriveType
 }
 
 // GetDriveTypeOk returns a tuple with the DriveType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphItemReference) GetDriveTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.DriveType == nil {
 		return nil, false
 	}
-	return o.DriveType.Get(), o.DriveType.IsSet()
+	return o.DriveType, true
 }
 
 // HasDriveType returns a boolean if a field has been set.
 func (o *OpenGraphItemReference) HasDriveType() bool {
-	if o != nil && o.DriveType.IsSet() {
+	if o != nil && o.DriveType != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDriveType gets a reference to the given NullableString and assigns it to the DriveType field.
+// SetDriveType gets a reference to the given string and assigns it to the DriveType field.
 func (o *OpenGraphItemReference) SetDriveType(v string) {
-	o.DriveType.Set(&v)
-}
-// SetDriveTypeNil sets the value for DriveType to be an explicit nil
-func (o *OpenGraphItemReference) SetDriveTypeNil() {
-	o.DriveType.Set(nil)
+	o.DriveType = &v
 }
 
-// UnsetDriveType ensures that no value is present for DriveType, not even an explicit nil
-func (o *OpenGraphItemReference) UnsetDriveType() {
-	o.DriveType.Unset()
-}
-
-// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetId returns the Id field value if set, zero value otherwise.
 func (o *OpenGraphItemReference) GetId() string {
-	if o == nil || o.Id.Get() == nil {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id.Get()
+	return *o.Id
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphItemReference) GetIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.Id.Get(), o.Id.IsSet()
+	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *OpenGraphItemReference) HasId() bool {
-	if o != nil && o.Id.IsSet() {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given NullableString and assigns it to the Id field.
+// SetId gets a reference to the given string and assigns it to the Id field.
 func (o *OpenGraphItemReference) SetId(v string) {
-	o.Id.Set(&v)
-}
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *OpenGraphItemReference) SetIdNil() {
-	o.Id.Set(nil)
+	o.Id = &v
 }
 
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *OpenGraphItemReference) UnsetId() {
-	o.Id.Unset()
-}
-
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *OpenGraphItemReference) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+	if o == nil || o.Name == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name.Get()
+	return *o.Name
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphItemReference) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Name == nil {
 		return nil, false
 	}
-	return o.Name.Get(), o.Name.IsSet()
+	return o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *OpenGraphItemReference) HasName() bool {
-	if o != nil && o.Name.IsSet() {
+	if o != nil && o.Name != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *OpenGraphItemReference) SetName(v string) {
-	o.Name.Set(&v)
-}
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *OpenGraphItemReference) SetNameNil() {
-	o.Name.Set(nil)
+	o.Name = &v
 }
 
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *OpenGraphItemReference) UnsetName() {
-	o.Name.Unset()
-}
-
-// GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetPath returns the Path field value if set, zero value otherwise.
 func (o *OpenGraphItemReference) GetPath() string {
-	if o == nil || o.Path.Get() == nil {
+	if o == nil || o.Path == nil {
 		var ret string
 		return ret
 	}
-	return *o.Path.Get()
+	return *o.Path
 }
 
 // GetPathOk returns a tuple with the Path field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphItemReference) GetPathOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Path == nil {
 		return nil, false
 	}
-	return o.Path.Get(), o.Path.IsSet()
+	return o.Path, true
 }
 
 // HasPath returns a boolean if a field has been set.
 func (o *OpenGraphItemReference) HasPath() bool {
-	if o != nil && o.Path.IsSet() {
+	if o != nil && o.Path != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPath gets a reference to the given NullableString and assigns it to the Path field.
+// SetPath gets a reference to the given string and assigns it to the Path field.
 func (o *OpenGraphItemReference) SetPath(v string) {
-	o.Path.Set(&v)
-}
-// SetPathNil sets the value for Path to be an explicit nil
-func (o *OpenGraphItemReference) SetPathNil() {
-	o.Path.Set(nil)
+	o.Path = &v
 }
 
-// UnsetPath ensures that no value is present for Path, not even an explicit nil
-func (o *OpenGraphItemReference) UnsetPath() {
-	o.Path.Unset()
-}
-
-// GetShareId returns the ShareId field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetShareId returns the ShareId field value if set, zero value otherwise.
 func (o *OpenGraphItemReference) GetShareId() string {
-	if o == nil || o.ShareId.Get() == nil {
+	if o == nil || o.ShareId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ShareId.Get()
+	return *o.ShareId
 }
 
 // GetShareIdOk returns a tuple with the ShareId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphItemReference) GetShareIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.ShareId == nil {
 		return nil, false
 	}
-	return o.ShareId.Get(), o.ShareId.IsSet()
+	return o.ShareId, true
 }
 
 // HasShareId returns a boolean if a field has been set.
 func (o *OpenGraphItemReference) HasShareId() bool {
-	if o != nil && o.ShareId.IsSet() {
+	if o != nil && o.ShareId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetShareId gets a reference to the given NullableString and assigns it to the ShareId field.
+// SetShareId gets a reference to the given string and assigns it to the ShareId field.
 func (o *OpenGraphItemReference) SetShareId(v string) {
-	o.ShareId.Set(&v)
-}
-// SetShareIdNil sets the value for ShareId to be an explicit nil
-func (o *OpenGraphItemReference) SetShareIdNil() {
-	o.ShareId.Set(nil)
-}
-
-// UnsetShareId ensures that no value is present for ShareId, not even an explicit nil
-func (o *OpenGraphItemReference) UnsetShareId() {
-	o.ShareId.Unset()
+	o.ShareId = &v
 }
 
 func (o OpenGraphItemReference) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DriveId.IsSet() {
-		toSerialize["driveId"] = o.DriveId.Get()
+	if o.DriveId != nil {
+		toSerialize["driveId"] = o.DriveId
 	}
-	if o.DriveType.IsSet() {
-		toSerialize["driveType"] = o.DriveType.Get()
+	if o.DriveType != nil {
+		toSerialize["driveType"] = o.DriveType
 	}
-	if o.Id.IsSet() {
-		toSerialize["id"] = o.Id.Get()
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
-	if o.Name.IsSet() {
-		toSerialize["name"] = o.Name.Get()
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
-	if o.Path.IsSet() {
-		toSerialize["path"] = o.Path.Get()
+	if o.Path != nil {
+		toSerialize["path"] = o.Path
 	}
-	if o.ShareId.IsSet() {
-		toSerialize["shareId"] = o.ShareId.Get()
+	if o.ShareId != nil {
+		toSerialize["shareId"] = o.ShareId
 	}
 	return json.Marshal(toSerialize)
 }

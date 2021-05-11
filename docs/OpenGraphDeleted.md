@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**State** | Pointer to **NullableString** | Represents the state of the deleted item. | [optional] 
+**State** | Pointer to **string** | Represents the state of the deleted item. | [optional] 
 
 ## Methods
 
@@ -50,16 +50,6 @@ SetState sets State field to given value.
 
 HasState returns a boolean if a field has been set.
 
-### SetStateNil
-
-`func (o *OpenGraphDeleted) SetStateNil(b bool)`
-
- SetStateNil sets the value for State to be an explicit nil
-
-### UnsetState
-`func (o *OpenGraphDeleted) UnsetState()`
-
-UnsetState ensures that no value is present for State, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

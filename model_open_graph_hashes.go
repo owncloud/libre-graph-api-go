@@ -17,13 +17,13 @@ import (
 // OpenGraphHashes struct for OpenGraphHashes
 type OpenGraphHashes struct {
 	// The CRC32 value of the file (if available). Read-only.
-	Crc32Hash NullableString `json:"crc32Hash,omitempty"`
+	Crc32Hash *string `json:"crc32Hash,omitempty"`
 	// A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
-	QuickXorHash NullableString `json:"quickXorHash,omitempty"`
+	QuickXorHash *string `json:"quickXorHash,omitempty"`
 	// SHA1 hash for the contents of the file (if available). Read-only.
-	Sha1Hash NullableString `json:"sha1Hash,omitempty"`
+	Sha1Hash *string `json:"sha1Hash,omitempty"`
 	// SHA256 hash for the contents of the file (if available). Read-only.
-	Sha256Hash NullableString `json:"sha256Hash,omitempty"`
+	Sha256Hash *string `json:"sha256Hash,omitempty"`
 }
 
 // NewOpenGraphHashes instantiates a new OpenGraphHashes object
@@ -43,187 +43,147 @@ func NewOpenGraphHashesWithDefaults() *OpenGraphHashes {
 	return &this
 }
 
-// GetCrc32Hash returns the Crc32Hash field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetCrc32Hash returns the Crc32Hash field value if set, zero value otherwise.
 func (o *OpenGraphHashes) GetCrc32Hash() string {
-	if o == nil || o.Crc32Hash.Get() == nil {
+	if o == nil || o.Crc32Hash == nil {
 		var ret string
 		return ret
 	}
-	return *o.Crc32Hash.Get()
+	return *o.Crc32Hash
 }
 
 // GetCrc32HashOk returns a tuple with the Crc32Hash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphHashes) GetCrc32HashOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Crc32Hash == nil {
 		return nil, false
 	}
-	return o.Crc32Hash.Get(), o.Crc32Hash.IsSet()
+	return o.Crc32Hash, true
 }
 
 // HasCrc32Hash returns a boolean if a field has been set.
 func (o *OpenGraphHashes) HasCrc32Hash() bool {
-	if o != nil && o.Crc32Hash.IsSet() {
+	if o != nil && o.Crc32Hash != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCrc32Hash gets a reference to the given NullableString and assigns it to the Crc32Hash field.
+// SetCrc32Hash gets a reference to the given string and assigns it to the Crc32Hash field.
 func (o *OpenGraphHashes) SetCrc32Hash(v string) {
-	o.Crc32Hash.Set(&v)
-}
-// SetCrc32HashNil sets the value for Crc32Hash to be an explicit nil
-func (o *OpenGraphHashes) SetCrc32HashNil() {
-	o.Crc32Hash.Set(nil)
+	o.Crc32Hash = &v
 }
 
-// UnsetCrc32Hash ensures that no value is present for Crc32Hash, not even an explicit nil
-func (o *OpenGraphHashes) UnsetCrc32Hash() {
-	o.Crc32Hash.Unset()
-}
-
-// GetQuickXorHash returns the QuickXorHash field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetQuickXorHash returns the QuickXorHash field value if set, zero value otherwise.
 func (o *OpenGraphHashes) GetQuickXorHash() string {
-	if o == nil || o.QuickXorHash.Get() == nil {
+	if o == nil || o.QuickXorHash == nil {
 		var ret string
 		return ret
 	}
-	return *o.QuickXorHash.Get()
+	return *o.QuickXorHash
 }
 
 // GetQuickXorHashOk returns a tuple with the QuickXorHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphHashes) GetQuickXorHashOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.QuickXorHash == nil {
 		return nil, false
 	}
-	return o.QuickXorHash.Get(), o.QuickXorHash.IsSet()
+	return o.QuickXorHash, true
 }
 
 // HasQuickXorHash returns a boolean if a field has been set.
 func (o *OpenGraphHashes) HasQuickXorHash() bool {
-	if o != nil && o.QuickXorHash.IsSet() {
+	if o != nil && o.QuickXorHash != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetQuickXorHash gets a reference to the given NullableString and assigns it to the QuickXorHash field.
+// SetQuickXorHash gets a reference to the given string and assigns it to the QuickXorHash field.
 func (o *OpenGraphHashes) SetQuickXorHash(v string) {
-	o.QuickXorHash.Set(&v)
-}
-// SetQuickXorHashNil sets the value for QuickXorHash to be an explicit nil
-func (o *OpenGraphHashes) SetQuickXorHashNil() {
-	o.QuickXorHash.Set(nil)
+	o.QuickXorHash = &v
 }
 
-// UnsetQuickXorHash ensures that no value is present for QuickXorHash, not even an explicit nil
-func (o *OpenGraphHashes) UnsetQuickXorHash() {
-	o.QuickXorHash.Unset()
-}
-
-// GetSha1Hash returns the Sha1Hash field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSha1Hash returns the Sha1Hash field value if set, zero value otherwise.
 func (o *OpenGraphHashes) GetSha1Hash() string {
-	if o == nil || o.Sha1Hash.Get() == nil {
+	if o == nil || o.Sha1Hash == nil {
 		var ret string
 		return ret
 	}
-	return *o.Sha1Hash.Get()
+	return *o.Sha1Hash
 }
 
 // GetSha1HashOk returns a tuple with the Sha1Hash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphHashes) GetSha1HashOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Sha1Hash == nil {
 		return nil, false
 	}
-	return o.Sha1Hash.Get(), o.Sha1Hash.IsSet()
+	return o.Sha1Hash, true
 }
 
 // HasSha1Hash returns a boolean if a field has been set.
 func (o *OpenGraphHashes) HasSha1Hash() bool {
-	if o != nil && o.Sha1Hash.IsSet() {
+	if o != nil && o.Sha1Hash != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSha1Hash gets a reference to the given NullableString and assigns it to the Sha1Hash field.
+// SetSha1Hash gets a reference to the given string and assigns it to the Sha1Hash field.
 func (o *OpenGraphHashes) SetSha1Hash(v string) {
-	o.Sha1Hash.Set(&v)
-}
-// SetSha1HashNil sets the value for Sha1Hash to be an explicit nil
-func (o *OpenGraphHashes) SetSha1HashNil() {
-	o.Sha1Hash.Set(nil)
+	o.Sha1Hash = &v
 }
 
-// UnsetSha1Hash ensures that no value is present for Sha1Hash, not even an explicit nil
-func (o *OpenGraphHashes) UnsetSha1Hash() {
-	o.Sha1Hash.Unset()
-}
-
-// GetSha256Hash returns the Sha256Hash field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSha256Hash returns the Sha256Hash field value if set, zero value otherwise.
 func (o *OpenGraphHashes) GetSha256Hash() string {
-	if o == nil || o.Sha256Hash.Get() == nil {
+	if o == nil || o.Sha256Hash == nil {
 		var ret string
 		return ret
 	}
-	return *o.Sha256Hash.Get()
+	return *o.Sha256Hash
 }
 
 // GetSha256HashOk returns a tuple with the Sha256Hash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphHashes) GetSha256HashOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Sha256Hash == nil {
 		return nil, false
 	}
-	return o.Sha256Hash.Get(), o.Sha256Hash.IsSet()
+	return o.Sha256Hash, true
 }
 
 // HasSha256Hash returns a boolean if a field has been set.
 func (o *OpenGraphHashes) HasSha256Hash() bool {
-	if o != nil && o.Sha256Hash.IsSet() {
+	if o != nil && o.Sha256Hash != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSha256Hash gets a reference to the given NullableString and assigns it to the Sha256Hash field.
+// SetSha256Hash gets a reference to the given string and assigns it to the Sha256Hash field.
 func (o *OpenGraphHashes) SetSha256Hash(v string) {
-	o.Sha256Hash.Set(&v)
-}
-// SetSha256HashNil sets the value for Sha256Hash to be an explicit nil
-func (o *OpenGraphHashes) SetSha256HashNil() {
-	o.Sha256Hash.Set(nil)
-}
-
-// UnsetSha256Hash ensures that no value is present for Sha256Hash, not even an explicit nil
-func (o *OpenGraphHashes) UnsetSha256Hash() {
-	o.Sha256Hash.Unset()
+	o.Sha256Hash = &v
 }
 
 func (o OpenGraphHashes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Crc32Hash.IsSet() {
-		toSerialize["crc32Hash"] = o.Crc32Hash.Get()
+	if o.Crc32Hash != nil {
+		toSerialize["crc32Hash"] = o.Crc32Hash
 	}
-	if o.QuickXorHash.IsSet() {
-		toSerialize["quickXorHash"] = o.QuickXorHash.Get()
+	if o.QuickXorHash != nil {
+		toSerialize["quickXorHash"] = o.QuickXorHash
 	}
-	if o.Sha1Hash.IsSet() {
-		toSerialize["sha1Hash"] = o.Sha1Hash.Get()
+	if o.Sha1Hash != nil {
+		toSerialize["sha1Hash"] = o.Sha1Hash
 	}
-	if o.Sha256Hash.IsSet() {
-		toSerialize["sha256Hash"] = o.Sha256Hash.Get()
+	if o.Sha256Hash != nil {
+		toSerialize["sha256Hash"] = o.Sha256Hash
 	}
 	return json.Marshal(toSerialize)
 }

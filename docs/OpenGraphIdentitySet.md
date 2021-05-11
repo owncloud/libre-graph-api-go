@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Application** | Pointer to [**NullableAnyOfopenGraphIdentity**](anyOf&lt;open.graph.identity&gt;.md) | Optional. The application associated with this action. | [optional] 
-**Device** | Pointer to [**NullableAnyOfopenGraphIdentity**](anyOf&lt;open.graph.identity&gt;.md) | Optional. The device associated with this action. | [optional] 
-**User** | Pointer to [**NullableAnyOfopenGraphIdentity**](anyOf&lt;open.graph.identity&gt;.md) | Optional. The user associated with this action. | [optional] 
+**Application** | Pointer to [**OpenGraphIdentity**](open.graph.identity.md) | Optional. The application associated with this action. | [optional] 
+**Device** | Pointer to [**OpenGraphIdentity**](open.graph.identity.md) | Optional. The device associated with this action. | [optional] 
+**User** | Pointer to [**OpenGraphIdentity**](open.graph.identity.md) | Optional. The user associated with this action. | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetApplication
 
-`func (o *OpenGraphIdentitySet) GetApplication() AnyOfopenGraphIdentity`
+`func (o *OpenGraphIdentitySet) GetApplication() OpenGraphIdentity`
 
 GetApplication returns the Application field if non-nil, zero value otherwise.
 
 ### GetApplicationOk
 
-`func (o *OpenGraphIdentitySet) GetApplicationOk() (*AnyOfopenGraphIdentity, bool)`
+`func (o *OpenGraphIdentitySet) GetApplicationOk() (*OpenGraphIdentity, bool)`
 
 GetApplicationOk returns a tuple with the Application field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApplication
 
-`func (o *OpenGraphIdentitySet) SetApplication(v AnyOfopenGraphIdentity)`
+`func (o *OpenGraphIdentitySet) SetApplication(v OpenGraphIdentity)`
 
 SetApplication sets Application field to given value.
 
@@ -52,32 +52,22 @@ SetApplication sets Application field to given value.
 
 HasApplication returns a boolean if a field has been set.
 
-### SetApplicationNil
-
-`func (o *OpenGraphIdentitySet) SetApplicationNil(b bool)`
-
- SetApplicationNil sets the value for Application to be an explicit nil
-
-### UnsetApplication
-`func (o *OpenGraphIdentitySet) UnsetApplication()`
-
-UnsetApplication ensures that no value is present for Application, not even an explicit nil
 ### GetDevice
 
-`func (o *OpenGraphIdentitySet) GetDevice() AnyOfopenGraphIdentity`
+`func (o *OpenGraphIdentitySet) GetDevice() OpenGraphIdentity`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *OpenGraphIdentitySet) GetDeviceOk() (*AnyOfopenGraphIdentity, bool)`
+`func (o *OpenGraphIdentitySet) GetDeviceOk() (*OpenGraphIdentity, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *OpenGraphIdentitySet) SetDevice(v AnyOfopenGraphIdentity)`
+`func (o *OpenGraphIdentitySet) SetDevice(v OpenGraphIdentity)`
 
 SetDevice sets Device field to given value.
 
@@ -87,32 +77,22 @@ SetDevice sets Device field to given value.
 
 HasDevice returns a boolean if a field has been set.
 
-### SetDeviceNil
-
-`func (o *OpenGraphIdentitySet) SetDeviceNil(b bool)`
-
- SetDeviceNil sets the value for Device to be an explicit nil
-
-### UnsetDevice
-`func (o *OpenGraphIdentitySet) UnsetDevice()`
-
-UnsetDevice ensures that no value is present for Device, not even an explicit nil
 ### GetUser
 
-`func (o *OpenGraphIdentitySet) GetUser() AnyOfopenGraphIdentity`
+`func (o *OpenGraphIdentitySet) GetUser() OpenGraphIdentity`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *OpenGraphIdentitySet) GetUserOk() (*AnyOfopenGraphIdentity, bool)`
+`func (o *OpenGraphIdentitySet) GetUserOk() (*OpenGraphIdentity, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *OpenGraphIdentitySet) SetUser(v AnyOfopenGraphIdentity)`
+`func (o *OpenGraphIdentitySet) SetUser(v OpenGraphIdentity)`
 
 SetUser sets User field to given value.
 
@@ -122,16 +102,6 @@ SetUser sets User field to given value.
 
 HasUser returns a boolean if a field has been set.
 
-### SetUserNil
-
-`func (o *OpenGraphIdentitySet) SetUserNil(b bool)`
-
- SetUserNil sets the value for User to be an explicit nil
-
-### UnsetUser
-`func (o *OpenGraphIdentitySet) UnsetUser()`
-
-UnsetUser ensures that no value is present for User, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

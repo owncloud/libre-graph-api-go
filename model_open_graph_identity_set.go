@@ -17,11 +17,11 @@ import (
 // OpenGraphIdentitySet struct for OpenGraphIdentitySet
 type OpenGraphIdentitySet struct {
 	// Optional. The application associated with this action.
-	Application NullableAnyOfopenGraphIdentity `json:"application,omitempty"`
+	Application *OpenGraphIdentity `json:"application,omitempty"`
 	// Optional. The device associated with this action.
-	Device NullableAnyOfopenGraphIdentity `json:"device,omitempty"`
+	Device *OpenGraphIdentity `json:"device,omitempty"`
 	// Optional. The user associated with this action.
-	User NullableAnyOfopenGraphIdentity `json:"user,omitempty"`
+	User *OpenGraphIdentity `json:"user,omitempty"`
 }
 
 // NewOpenGraphIdentitySet instantiates a new OpenGraphIdentitySet object
@@ -41,142 +41,112 @@ func NewOpenGraphIdentitySetWithDefaults() *OpenGraphIdentitySet {
 	return &this
 }
 
-// GetApplication returns the Application field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphIdentitySet) GetApplication() AnyOfopenGraphIdentity {
-	if o == nil || o.Application.Get() == nil {
-		var ret AnyOfopenGraphIdentity
+// GetApplication returns the Application field value if set, zero value otherwise.
+func (o *OpenGraphIdentitySet) GetApplication() OpenGraphIdentity {
+	if o == nil || o.Application == nil {
+		var ret OpenGraphIdentity
 		return ret
 	}
-	return *o.Application.Get()
+	return *o.Application
 }
 
 // GetApplicationOk returns a tuple with the Application field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphIdentitySet) GetApplicationOk() (*AnyOfopenGraphIdentity, bool) {
-	if o == nil  {
+func (o *OpenGraphIdentitySet) GetApplicationOk() (*OpenGraphIdentity, bool) {
+	if o == nil || o.Application == nil {
 		return nil, false
 	}
-	return o.Application.Get(), o.Application.IsSet()
+	return o.Application, true
 }
 
 // HasApplication returns a boolean if a field has been set.
 func (o *OpenGraphIdentitySet) HasApplication() bool {
-	if o != nil && o.Application.IsSet() {
+	if o != nil && o.Application != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetApplication gets a reference to the given NullableAnyOfopenGraphIdentity and assigns it to the Application field.
-func (o *OpenGraphIdentitySet) SetApplication(v AnyOfopenGraphIdentity) {
-	o.Application.Set(&v)
-}
-// SetApplicationNil sets the value for Application to be an explicit nil
-func (o *OpenGraphIdentitySet) SetApplicationNil() {
-	o.Application.Set(nil)
+// SetApplication gets a reference to the given OpenGraphIdentity and assigns it to the Application field.
+func (o *OpenGraphIdentitySet) SetApplication(v OpenGraphIdentity) {
+	o.Application = &v
 }
 
-// UnsetApplication ensures that no value is present for Application, not even an explicit nil
-func (o *OpenGraphIdentitySet) UnsetApplication() {
-	o.Application.Unset()
-}
-
-// GetDevice returns the Device field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphIdentitySet) GetDevice() AnyOfopenGraphIdentity {
-	if o == nil || o.Device.Get() == nil {
-		var ret AnyOfopenGraphIdentity
+// GetDevice returns the Device field value if set, zero value otherwise.
+func (o *OpenGraphIdentitySet) GetDevice() OpenGraphIdentity {
+	if o == nil || o.Device == nil {
+		var ret OpenGraphIdentity
 		return ret
 	}
-	return *o.Device.Get()
+	return *o.Device
 }
 
 // GetDeviceOk returns a tuple with the Device field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphIdentitySet) GetDeviceOk() (*AnyOfopenGraphIdentity, bool) {
-	if o == nil  {
+func (o *OpenGraphIdentitySet) GetDeviceOk() (*OpenGraphIdentity, bool) {
+	if o == nil || o.Device == nil {
 		return nil, false
 	}
-	return o.Device.Get(), o.Device.IsSet()
+	return o.Device, true
 }
 
 // HasDevice returns a boolean if a field has been set.
 func (o *OpenGraphIdentitySet) HasDevice() bool {
-	if o != nil && o.Device.IsSet() {
+	if o != nil && o.Device != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDevice gets a reference to the given NullableAnyOfopenGraphIdentity and assigns it to the Device field.
-func (o *OpenGraphIdentitySet) SetDevice(v AnyOfopenGraphIdentity) {
-	o.Device.Set(&v)
-}
-// SetDeviceNil sets the value for Device to be an explicit nil
-func (o *OpenGraphIdentitySet) SetDeviceNil() {
-	o.Device.Set(nil)
+// SetDevice gets a reference to the given OpenGraphIdentity and assigns it to the Device field.
+func (o *OpenGraphIdentitySet) SetDevice(v OpenGraphIdentity) {
+	o.Device = &v
 }
 
-// UnsetDevice ensures that no value is present for Device, not even an explicit nil
-func (o *OpenGraphIdentitySet) UnsetDevice() {
-	o.Device.Unset()
-}
-
-// GetUser returns the User field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphIdentitySet) GetUser() AnyOfopenGraphIdentity {
-	if o == nil || o.User.Get() == nil {
-		var ret AnyOfopenGraphIdentity
+// GetUser returns the User field value if set, zero value otherwise.
+func (o *OpenGraphIdentitySet) GetUser() OpenGraphIdentity {
+	if o == nil || o.User == nil {
+		var ret OpenGraphIdentity
 		return ret
 	}
-	return *o.User.Get()
+	return *o.User
 }
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphIdentitySet) GetUserOk() (*AnyOfopenGraphIdentity, bool) {
-	if o == nil  {
+func (o *OpenGraphIdentitySet) GetUserOk() (*OpenGraphIdentity, bool) {
+	if o == nil || o.User == nil {
 		return nil, false
 	}
-	return o.User.Get(), o.User.IsSet()
+	return o.User, true
 }
 
 // HasUser returns a boolean if a field has been set.
 func (o *OpenGraphIdentitySet) HasUser() bool {
-	if o != nil && o.User.IsSet() {
+	if o != nil && o.User != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUser gets a reference to the given NullableAnyOfopenGraphIdentity and assigns it to the User field.
-func (o *OpenGraphIdentitySet) SetUser(v AnyOfopenGraphIdentity) {
-	o.User.Set(&v)
-}
-// SetUserNil sets the value for User to be an explicit nil
-func (o *OpenGraphIdentitySet) SetUserNil() {
-	o.User.Set(nil)
-}
-
-// UnsetUser ensures that no value is present for User, not even an explicit nil
-func (o *OpenGraphIdentitySet) UnsetUser() {
-	o.User.Unset()
+// SetUser gets a reference to the given OpenGraphIdentity and assigns it to the User field.
+func (o *OpenGraphIdentitySet) SetUser(v OpenGraphIdentity) {
+	o.User = &v
 }
 
 func (o OpenGraphIdentitySet) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Application.IsSet() {
-		toSerialize["application"] = o.Application.Get()
+	if o.Application != nil {
+		toSerialize["application"] = o.Application
 	}
-	if o.Device.IsSet() {
-		toSerialize["device"] = o.Device.Get()
+	if o.Device != nil {
+		toSerialize["device"] = o.Device
 	}
-	if o.User.IsSet() {
-		toSerialize["user"] = o.User.Get()
+	if o.User != nil {
+		toSerialize["user"] = o.User
 	}
 	return json.Marshal(toSerialize)
 }

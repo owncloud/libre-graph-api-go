@@ -4,33 +4,33 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccountEnabled** | Pointer to **NullableBool** | true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter. | [optional] 
+**AccountEnabled** | Pointer to **bool** | true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter. | [optional] 
 **BusinessPhones** | Pointer to **[]string** | The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory. | [optional] 
-**City** | Pointer to **NullableString** | The city in which the user is located. Returned only on $select. Supports $filter. | [optional] 
-**CompanyName** | Pointer to **NullableString** | The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. | [optional] 
-**Country** | Pointer to **NullableString** | The country/region in which the user is located; for example, &#39;US&#39; or &#39;UK&#39;. Returned only on $select. Supports $filter. | [optional] 
-**CreatedDateTime** | Pointer to **NullableTime** | The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn&#39;t be determined for the user. Returned only on $select. Read-only. Supports $filter. | [optional] [readonly] 
-**Department** | Pointer to **NullableString** | The name for the department in which the user works. Returned only on $select. Supports $filter. | [optional] 
-**DisplayName** | Pointer to **NullableString** | The name displayed in the address book for the user. This value is usually the combination of the user&#39;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby. | [optional] 
-**FaxNumber** | Pointer to **NullableString** | The fax number of the user. Returned only on $select. | [optional] 
-**GivenName** | Pointer to **NullableString** | The given name (first name) of the user. Returned by default. Supports $filter. | [optional] 
-**LastPasswordChangeDateTime** | Pointer to **NullableTime** | The time when this user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select. Read-only. | [optional] [readonly] 
-**LegalAgeGroupClassification** | Pointer to **NullableString** | Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select. | [optional] 
-**Mail** | Pointer to **NullableString** | The SMTP address for the user, for example, &#39;jeff@contoso.onowncloud.com&#39;. Returned by default. Supports $filter and endsWith. | [optional] 
-**MailNickname** | Pointer to **NullableString** | The mail alias for the user. This property must be specified when a user is created. Returned only on $select. Supports $filter. | [optional] 
-**MobilePhone** | Pointer to **NullableString** | The primary cellular telephone number for the user. Returned by default. Read-only for users synced from on-premises directory. | [optional] 
-**OfficeLocation** | Pointer to **NullableString** | The office location in the user&#39;s place of business. Returned by default. | [optional] 
-**PostalCode** | Pointer to **NullableString** | The postal code for the user&#39;s postal address. The postal code is specific to the user&#39;s country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select. | [optional] 
-**PreferredLanguage** | Pointer to **NullableString** | The preferred language for the user. Should follow ISO 639-1 Code; for example &#39;en-US&#39;. Returned by default. | [optional] 
-**State** | Pointer to **NullableString** | The state or province in the user&#39;s address. Returned only on $select. Supports $filter. | [optional] 
-**StreetAddress** | Pointer to **NullableString** | The street address of the user&#39;s place of business. Returned only on $select. | [optional] 
-**Surname** | Pointer to **NullableString** | The user&#39;s surname (family name or last name). Returned by default. Supports $filter. | [optional] 
-**UsageLocation** | Pointer to **NullableString** | A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: &#39;US&#39;, &#39;JP&#39;, and &#39;GB&#39;. Not nullable. Returned only on $select. Supports $filter. | [optional] 
-**UserPrincipalName** | Pointer to **NullableString** | The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user&#39;s email name. The general format is alias@domain, where domain must be present in the tenant&#39;s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Returned by default. Supports $filter, $orderby, and endsWith. | [optional] 
-**UserType** | Pointer to **NullableString** | A string value that can be used to classify user types in your directory, such as &#39;Member&#39; and &#39;Guest&#39;. Returned only on $select. Supports $filter. | [optional] 
-**AboutMe** | Pointer to **NullableString** | A freeform text entry field for the user to describe themselves. Returned only on $select. | [optional] 
+**City** | Pointer to **string** | The city in which the user is located. Returned only on $select. Supports $filter. | [optional] 
+**CompanyName** | Pointer to **string** | The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. | [optional] 
+**Country** | Pointer to **string** | The country/region in which the user is located; for example, &#39;US&#39; or &#39;UK&#39;. Returned only on $select. Supports $filter. | [optional] 
+**CreatedDateTime** | Pointer to **time.Time** | The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn&#39;t be determined for the user. Returned only on $select. Read-only. Supports $filter. | [optional] [readonly] 
+**Department** | Pointer to **string** | The name for the department in which the user works. Returned only on $select. Supports $filter. | [optional] 
+**DisplayName** | Pointer to **string** | The name displayed in the address book for the user. This value is usually the combination of the user&#39;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby. | [optional] 
+**FaxNumber** | Pointer to **string** | The fax number of the user. Returned only on $select. | [optional] 
+**GivenName** | Pointer to **string** | The given name (first name) of the user. Returned by default. Supports $filter. | [optional] 
+**LastPasswordChangeDateTime** | Pointer to **time.Time** | The time when this user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select. Read-only. | [optional] [readonly] 
+**LegalAgeGroupClassification** | Pointer to **string** | Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select. | [optional] 
+**Mail** | Pointer to **string** | The SMTP address for the user, for example, &#39;jeff@contoso.onowncloud.com&#39;. Returned by default. Supports $filter and endsWith. | [optional] 
+**MailNickname** | Pointer to **string** | The mail alias for the user. This property must be specified when a user is created. Returned only on $select. Supports $filter. | [optional] 
+**MobilePhone** | Pointer to **string** | The primary cellular telephone number for the user. Returned by default. Read-only for users synced from on-premises directory. | [optional] 
+**OfficeLocation** | Pointer to **string** | The office location in the user&#39;s place of business. Returned by default. | [optional] 
+**PostalCode** | Pointer to **string** | The postal code for the user&#39;s postal address. The postal code is specific to the user&#39;s country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select. | [optional] 
+**PreferredLanguage** | Pointer to **string** | The preferred language for the user. Should follow ISO 639-1 Code; for example &#39;en-US&#39;. Returned by default. | [optional] 
+**State** | Pointer to **string** | The state or province in the user&#39;s address. Returned only on $select. Supports $filter. | [optional] 
+**StreetAddress** | Pointer to **string** | The street address of the user&#39;s place of business. Returned only on $select. | [optional] 
+**Surname** | Pointer to **string** | The user&#39;s surname (family name or last name). Returned by default. Supports $filter. | [optional] 
+**UsageLocation** | Pointer to **string** | A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: &#39;US&#39;, &#39;JP&#39;, and &#39;GB&#39;. Not nullable. Returned only on $select. Supports $filter. | [optional] 
+**UserPrincipalName** | Pointer to **string** | The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user&#39;s email name. The general format is alias@domain, where domain must be present in the tenant&#39;s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Returned by default. Supports $filter, $orderby, and endsWith. | [optional] 
+**UserType** | Pointer to **string** | A string value that can be used to classify user types in your directory, such as &#39;Member&#39; and &#39;Guest&#39;. Returned only on $select. Supports $filter. | [optional] 
+**AboutMe** | Pointer to **string** | A freeform text entry field for the user to describe themselves. Returned only on $select. | [optional] 
 **Birthday** | Pointer to **time.Time** | The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select. | [optional] 
-**Drive** | Pointer to [**NullableAnyOfopenGraphDrive**](anyOf&lt;open.graph.drive&gt;.md) | The user&#39;s HomeDrive. Read-only. | [optional] [readonly] 
+**Drive** | Pointer to [**OpenGraphDrive**](open.graph.drive.md) | The user&#39;s HomeDrive. Read-only. | [optional] [readonly] 
 **Drives** | Pointer to [**[]OpenGraphDrive**](OpenGraphDrive.md) | A collection of drives available for this user. Read-only. | [optional] [readonly] 
 
 ## Methods
@@ -77,16 +77,6 @@ SetAccountEnabled sets AccountEnabled field to given value.
 
 HasAccountEnabled returns a boolean if a field has been set.
 
-### SetAccountEnabledNil
-
-`func (o *OpenGraphUser) SetAccountEnabledNil(b bool)`
-
- SetAccountEnabledNil sets the value for AccountEnabled to be an explicit nil
-
-### UnsetAccountEnabled
-`func (o *OpenGraphUser) UnsetAccountEnabled()`
-
-UnsetAccountEnabled ensures that no value is present for AccountEnabled, not even an explicit nil
 ### GetBusinessPhones
 
 `func (o *OpenGraphUser) GetBusinessPhones() []string`
@@ -137,16 +127,6 @@ SetCity sets City field to given value.
 
 HasCity returns a boolean if a field has been set.
 
-### SetCityNil
-
-`func (o *OpenGraphUser) SetCityNil(b bool)`
-
- SetCityNil sets the value for City to be an explicit nil
-
-### UnsetCity
-`func (o *OpenGraphUser) UnsetCity()`
-
-UnsetCity ensures that no value is present for City, not even an explicit nil
 ### GetCompanyName
 
 `func (o *OpenGraphUser) GetCompanyName() string`
@@ -172,16 +152,6 @@ SetCompanyName sets CompanyName field to given value.
 
 HasCompanyName returns a boolean if a field has been set.
 
-### SetCompanyNameNil
-
-`func (o *OpenGraphUser) SetCompanyNameNil(b bool)`
-
- SetCompanyNameNil sets the value for CompanyName to be an explicit nil
-
-### UnsetCompanyName
-`func (o *OpenGraphUser) UnsetCompanyName()`
-
-UnsetCompanyName ensures that no value is present for CompanyName, not even an explicit nil
 ### GetCountry
 
 `func (o *OpenGraphUser) GetCountry() string`
@@ -207,16 +177,6 @@ SetCountry sets Country field to given value.
 
 HasCountry returns a boolean if a field has been set.
 
-### SetCountryNil
-
-`func (o *OpenGraphUser) SetCountryNil(b bool)`
-
- SetCountryNil sets the value for Country to be an explicit nil
-
-### UnsetCountry
-`func (o *OpenGraphUser) UnsetCountry()`
-
-UnsetCountry ensures that no value is present for Country, not even an explicit nil
 ### GetCreatedDateTime
 
 `func (o *OpenGraphUser) GetCreatedDateTime() time.Time`
@@ -242,16 +202,6 @@ SetCreatedDateTime sets CreatedDateTime field to given value.
 
 HasCreatedDateTime returns a boolean if a field has been set.
 
-### SetCreatedDateTimeNil
-
-`func (o *OpenGraphUser) SetCreatedDateTimeNil(b bool)`
-
- SetCreatedDateTimeNil sets the value for CreatedDateTime to be an explicit nil
-
-### UnsetCreatedDateTime
-`func (o *OpenGraphUser) UnsetCreatedDateTime()`
-
-UnsetCreatedDateTime ensures that no value is present for CreatedDateTime, not even an explicit nil
 ### GetDepartment
 
 `func (o *OpenGraphUser) GetDepartment() string`
@@ -277,16 +227,6 @@ SetDepartment sets Department field to given value.
 
 HasDepartment returns a boolean if a field has been set.
 
-### SetDepartmentNil
-
-`func (o *OpenGraphUser) SetDepartmentNil(b bool)`
-
- SetDepartmentNil sets the value for Department to be an explicit nil
-
-### UnsetDepartment
-`func (o *OpenGraphUser) UnsetDepartment()`
-
-UnsetDepartment ensures that no value is present for Department, not even an explicit nil
 ### GetDisplayName
 
 `func (o *OpenGraphUser) GetDisplayName() string`
@@ -312,16 +252,6 @@ SetDisplayName sets DisplayName field to given value.
 
 HasDisplayName returns a boolean if a field has been set.
 
-### SetDisplayNameNil
-
-`func (o *OpenGraphUser) SetDisplayNameNil(b bool)`
-
- SetDisplayNameNil sets the value for DisplayName to be an explicit nil
-
-### UnsetDisplayName
-`func (o *OpenGraphUser) UnsetDisplayName()`
-
-UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
 ### GetFaxNumber
 
 `func (o *OpenGraphUser) GetFaxNumber() string`
@@ -347,16 +277,6 @@ SetFaxNumber sets FaxNumber field to given value.
 
 HasFaxNumber returns a boolean if a field has been set.
 
-### SetFaxNumberNil
-
-`func (o *OpenGraphUser) SetFaxNumberNil(b bool)`
-
- SetFaxNumberNil sets the value for FaxNumber to be an explicit nil
-
-### UnsetFaxNumber
-`func (o *OpenGraphUser) UnsetFaxNumber()`
-
-UnsetFaxNumber ensures that no value is present for FaxNumber, not even an explicit nil
 ### GetGivenName
 
 `func (o *OpenGraphUser) GetGivenName() string`
@@ -382,16 +302,6 @@ SetGivenName sets GivenName field to given value.
 
 HasGivenName returns a boolean if a field has been set.
 
-### SetGivenNameNil
-
-`func (o *OpenGraphUser) SetGivenNameNil(b bool)`
-
- SetGivenNameNil sets the value for GivenName to be an explicit nil
-
-### UnsetGivenName
-`func (o *OpenGraphUser) UnsetGivenName()`
-
-UnsetGivenName ensures that no value is present for GivenName, not even an explicit nil
 ### GetLastPasswordChangeDateTime
 
 `func (o *OpenGraphUser) GetLastPasswordChangeDateTime() time.Time`
@@ -417,16 +327,6 @@ SetLastPasswordChangeDateTime sets LastPasswordChangeDateTime field to given val
 
 HasLastPasswordChangeDateTime returns a boolean if a field has been set.
 
-### SetLastPasswordChangeDateTimeNil
-
-`func (o *OpenGraphUser) SetLastPasswordChangeDateTimeNil(b bool)`
-
- SetLastPasswordChangeDateTimeNil sets the value for LastPasswordChangeDateTime to be an explicit nil
-
-### UnsetLastPasswordChangeDateTime
-`func (o *OpenGraphUser) UnsetLastPasswordChangeDateTime()`
-
-UnsetLastPasswordChangeDateTime ensures that no value is present for LastPasswordChangeDateTime, not even an explicit nil
 ### GetLegalAgeGroupClassification
 
 `func (o *OpenGraphUser) GetLegalAgeGroupClassification() string`
@@ -452,16 +352,6 @@ SetLegalAgeGroupClassification sets LegalAgeGroupClassification field to given v
 
 HasLegalAgeGroupClassification returns a boolean if a field has been set.
 
-### SetLegalAgeGroupClassificationNil
-
-`func (o *OpenGraphUser) SetLegalAgeGroupClassificationNil(b bool)`
-
- SetLegalAgeGroupClassificationNil sets the value for LegalAgeGroupClassification to be an explicit nil
-
-### UnsetLegalAgeGroupClassification
-`func (o *OpenGraphUser) UnsetLegalAgeGroupClassification()`
-
-UnsetLegalAgeGroupClassification ensures that no value is present for LegalAgeGroupClassification, not even an explicit nil
 ### GetMail
 
 `func (o *OpenGraphUser) GetMail() string`
@@ -487,16 +377,6 @@ SetMail sets Mail field to given value.
 
 HasMail returns a boolean if a field has been set.
 
-### SetMailNil
-
-`func (o *OpenGraphUser) SetMailNil(b bool)`
-
- SetMailNil sets the value for Mail to be an explicit nil
-
-### UnsetMail
-`func (o *OpenGraphUser) UnsetMail()`
-
-UnsetMail ensures that no value is present for Mail, not even an explicit nil
 ### GetMailNickname
 
 `func (o *OpenGraphUser) GetMailNickname() string`
@@ -522,16 +402,6 @@ SetMailNickname sets MailNickname field to given value.
 
 HasMailNickname returns a boolean if a field has been set.
 
-### SetMailNicknameNil
-
-`func (o *OpenGraphUser) SetMailNicknameNil(b bool)`
-
- SetMailNicknameNil sets the value for MailNickname to be an explicit nil
-
-### UnsetMailNickname
-`func (o *OpenGraphUser) UnsetMailNickname()`
-
-UnsetMailNickname ensures that no value is present for MailNickname, not even an explicit nil
 ### GetMobilePhone
 
 `func (o *OpenGraphUser) GetMobilePhone() string`
@@ -557,16 +427,6 @@ SetMobilePhone sets MobilePhone field to given value.
 
 HasMobilePhone returns a boolean if a field has been set.
 
-### SetMobilePhoneNil
-
-`func (o *OpenGraphUser) SetMobilePhoneNil(b bool)`
-
- SetMobilePhoneNil sets the value for MobilePhone to be an explicit nil
-
-### UnsetMobilePhone
-`func (o *OpenGraphUser) UnsetMobilePhone()`
-
-UnsetMobilePhone ensures that no value is present for MobilePhone, not even an explicit nil
 ### GetOfficeLocation
 
 `func (o *OpenGraphUser) GetOfficeLocation() string`
@@ -592,16 +452,6 @@ SetOfficeLocation sets OfficeLocation field to given value.
 
 HasOfficeLocation returns a boolean if a field has been set.
 
-### SetOfficeLocationNil
-
-`func (o *OpenGraphUser) SetOfficeLocationNil(b bool)`
-
- SetOfficeLocationNil sets the value for OfficeLocation to be an explicit nil
-
-### UnsetOfficeLocation
-`func (o *OpenGraphUser) UnsetOfficeLocation()`
-
-UnsetOfficeLocation ensures that no value is present for OfficeLocation, not even an explicit nil
 ### GetPostalCode
 
 `func (o *OpenGraphUser) GetPostalCode() string`
@@ -627,16 +477,6 @@ SetPostalCode sets PostalCode field to given value.
 
 HasPostalCode returns a boolean if a field has been set.
 
-### SetPostalCodeNil
-
-`func (o *OpenGraphUser) SetPostalCodeNil(b bool)`
-
- SetPostalCodeNil sets the value for PostalCode to be an explicit nil
-
-### UnsetPostalCode
-`func (o *OpenGraphUser) UnsetPostalCode()`
-
-UnsetPostalCode ensures that no value is present for PostalCode, not even an explicit nil
 ### GetPreferredLanguage
 
 `func (o *OpenGraphUser) GetPreferredLanguage() string`
@@ -662,16 +502,6 @@ SetPreferredLanguage sets PreferredLanguage field to given value.
 
 HasPreferredLanguage returns a boolean if a field has been set.
 
-### SetPreferredLanguageNil
-
-`func (o *OpenGraphUser) SetPreferredLanguageNil(b bool)`
-
- SetPreferredLanguageNil sets the value for PreferredLanguage to be an explicit nil
-
-### UnsetPreferredLanguage
-`func (o *OpenGraphUser) UnsetPreferredLanguage()`
-
-UnsetPreferredLanguage ensures that no value is present for PreferredLanguage, not even an explicit nil
 ### GetState
 
 `func (o *OpenGraphUser) GetState() string`
@@ -697,16 +527,6 @@ SetState sets State field to given value.
 
 HasState returns a boolean if a field has been set.
 
-### SetStateNil
-
-`func (o *OpenGraphUser) SetStateNil(b bool)`
-
- SetStateNil sets the value for State to be an explicit nil
-
-### UnsetState
-`func (o *OpenGraphUser) UnsetState()`
-
-UnsetState ensures that no value is present for State, not even an explicit nil
 ### GetStreetAddress
 
 `func (o *OpenGraphUser) GetStreetAddress() string`
@@ -732,16 +552,6 @@ SetStreetAddress sets StreetAddress field to given value.
 
 HasStreetAddress returns a boolean if a field has been set.
 
-### SetStreetAddressNil
-
-`func (o *OpenGraphUser) SetStreetAddressNil(b bool)`
-
- SetStreetAddressNil sets the value for StreetAddress to be an explicit nil
-
-### UnsetStreetAddress
-`func (o *OpenGraphUser) UnsetStreetAddress()`
-
-UnsetStreetAddress ensures that no value is present for StreetAddress, not even an explicit nil
 ### GetSurname
 
 `func (o *OpenGraphUser) GetSurname() string`
@@ -767,16 +577,6 @@ SetSurname sets Surname field to given value.
 
 HasSurname returns a boolean if a field has been set.
 
-### SetSurnameNil
-
-`func (o *OpenGraphUser) SetSurnameNil(b bool)`
-
- SetSurnameNil sets the value for Surname to be an explicit nil
-
-### UnsetSurname
-`func (o *OpenGraphUser) UnsetSurname()`
-
-UnsetSurname ensures that no value is present for Surname, not even an explicit nil
 ### GetUsageLocation
 
 `func (o *OpenGraphUser) GetUsageLocation() string`
@@ -802,16 +602,6 @@ SetUsageLocation sets UsageLocation field to given value.
 
 HasUsageLocation returns a boolean if a field has been set.
 
-### SetUsageLocationNil
-
-`func (o *OpenGraphUser) SetUsageLocationNil(b bool)`
-
- SetUsageLocationNil sets the value for UsageLocation to be an explicit nil
-
-### UnsetUsageLocation
-`func (o *OpenGraphUser) UnsetUsageLocation()`
-
-UnsetUsageLocation ensures that no value is present for UsageLocation, not even an explicit nil
 ### GetUserPrincipalName
 
 `func (o *OpenGraphUser) GetUserPrincipalName() string`
@@ -837,16 +627,6 @@ SetUserPrincipalName sets UserPrincipalName field to given value.
 
 HasUserPrincipalName returns a boolean if a field has been set.
 
-### SetUserPrincipalNameNil
-
-`func (o *OpenGraphUser) SetUserPrincipalNameNil(b bool)`
-
- SetUserPrincipalNameNil sets the value for UserPrincipalName to be an explicit nil
-
-### UnsetUserPrincipalName
-`func (o *OpenGraphUser) UnsetUserPrincipalName()`
-
-UnsetUserPrincipalName ensures that no value is present for UserPrincipalName, not even an explicit nil
 ### GetUserType
 
 `func (o *OpenGraphUser) GetUserType() string`
@@ -872,16 +652,6 @@ SetUserType sets UserType field to given value.
 
 HasUserType returns a boolean if a field has been set.
 
-### SetUserTypeNil
-
-`func (o *OpenGraphUser) SetUserTypeNil(b bool)`
-
- SetUserTypeNil sets the value for UserType to be an explicit nil
-
-### UnsetUserType
-`func (o *OpenGraphUser) UnsetUserType()`
-
-UnsetUserType ensures that no value is present for UserType, not even an explicit nil
 ### GetAboutMe
 
 `func (o *OpenGraphUser) GetAboutMe() string`
@@ -907,16 +677,6 @@ SetAboutMe sets AboutMe field to given value.
 
 HasAboutMe returns a boolean if a field has been set.
 
-### SetAboutMeNil
-
-`func (o *OpenGraphUser) SetAboutMeNil(b bool)`
-
- SetAboutMeNil sets the value for AboutMe to be an explicit nil
-
-### UnsetAboutMe
-`func (o *OpenGraphUser) UnsetAboutMe()`
-
-UnsetAboutMe ensures that no value is present for AboutMe, not even an explicit nil
 ### GetBirthday
 
 `func (o *OpenGraphUser) GetBirthday() time.Time`
@@ -944,20 +704,20 @@ HasBirthday returns a boolean if a field has been set.
 
 ### GetDrive
 
-`func (o *OpenGraphUser) GetDrive() AnyOfopenGraphDrive`
+`func (o *OpenGraphUser) GetDrive() OpenGraphDrive`
 
 GetDrive returns the Drive field if non-nil, zero value otherwise.
 
 ### GetDriveOk
 
-`func (o *OpenGraphUser) GetDriveOk() (*AnyOfopenGraphDrive, bool)`
+`func (o *OpenGraphUser) GetDriveOk() (*OpenGraphDrive, bool)`
 
 GetDriveOk returns a tuple with the Drive field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDrive
 
-`func (o *OpenGraphUser) SetDrive(v AnyOfopenGraphDrive)`
+`func (o *OpenGraphUser) SetDrive(v OpenGraphDrive)`
 
 SetDrive sets Drive field to given value.
 
@@ -967,16 +727,6 @@ SetDrive sets Drive field to given value.
 
 HasDrive returns a boolean if a field has been set.
 
-### SetDriveNil
-
-`func (o *OpenGraphUser) SetDriveNil(b bool)`
-
- SetDriveNil sets the value for Drive to be an explicit nil
-
-### UnsetDrive
-`func (o *OpenGraphUser) UnsetDrive()`
-
-UnsetDrive ensures that no value is present for Drive, not even an explicit nil
 ### GetDrives
 
 `func (o *OpenGraphUser) GetDrives() []OpenGraphDrive`

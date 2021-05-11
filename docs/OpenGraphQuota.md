@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Deleted** | Pointer to **NullableInt64** | Total space consumed by files in the recycle bin, in bytes. Read-only. | [optional] [readonly] 
-**Remaining** | Pointer to **NullableInt64** | Total space remaining before reaching the quota limit, in bytes. Read-only. | [optional] [readonly] 
-**State** | Pointer to **NullableString** | Enumeration value that indicates the state of the storage space. Read-only. | [optional] [readonly] 
-**StoragePlanInformation** | Pointer to [**NullableAnyOfopenGraphStoragePlanInformation**](anyOf&lt;open.graph.storagePlanInformation&gt;.md) | Information about the drive&#39;s storage quota plans. | [optional] 
-**Total** | Pointer to **NullableInt64** | Total allowed storage space, in bytes. Read-only. | [optional] [readonly] 
-**Used** | Pointer to **NullableInt64** | Total space used, in bytes. Read-only. | [optional] [readonly] 
+**Deleted** | Pointer to **int64** | Total space consumed by files in the recycle bin, in bytes. Read-only. | [optional] [readonly] 
+**Remaining** | Pointer to **int64** | Total space remaining before reaching the quota limit, in bytes. Read-only. | [optional] [readonly] 
+**State** | Pointer to **string** | Enumeration value that indicates the state of the storage space. Read-only. | [optional] [readonly] 
+**StoragePlanInformation** | Pointer to [**OpenGraphStoragePlanInformation**](open.graph.storagePlanInformation.md) | Information about the drive&#39;s storage quota plans. | [optional] 
+**Total** | Pointer to **int64** | Total allowed storage space, in bytes. Read-only. | [optional] [readonly] 
+**Used** | Pointer to **int64** | Total space used, in bytes. Read-only. | [optional] [readonly] 
 
 ## Methods
 
@@ -55,16 +55,6 @@ SetDeleted sets Deleted field to given value.
 
 HasDeleted returns a boolean if a field has been set.
 
-### SetDeletedNil
-
-`func (o *OpenGraphQuota) SetDeletedNil(b bool)`
-
- SetDeletedNil sets the value for Deleted to be an explicit nil
-
-### UnsetDeleted
-`func (o *OpenGraphQuota) UnsetDeleted()`
-
-UnsetDeleted ensures that no value is present for Deleted, not even an explicit nil
 ### GetRemaining
 
 `func (o *OpenGraphQuota) GetRemaining() int64`
@@ -90,16 +80,6 @@ SetRemaining sets Remaining field to given value.
 
 HasRemaining returns a boolean if a field has been set.
 
-### SetRemainingNil
-
-`func (o *OpenGraphQuota) SetRemainingNil(b bool)`
-
- SetRemainingNil sets the value for Remaining to be an explicit nil
-
-### UnsetRemaining
-`func (o *OpenGraphQuota) UnsetRemaining()`
-
-UnsetRemaining ensures that no value is present for Remaining, not even an explicit nil
 ### GetState
 
 `func (o *OpenGraphQuota) GetState() string`
@@ -125,32 +105,22 @@ SetState sets State field to given value.
 
 HasState returns a boolean if a field has been set.
 
-### SetStateNil
-
-`func (o *OpenGraphQuota) SetStateNil(b bool)`
-
- SetStateNil sets the value for State to be an explicit nil
-
-### UnsetState
-`func (o *OpenGraphQuota) UnsetState()`
-
-UnsetState ensures that no value is present for State, not even an explicit nil
 ### GetStoragePlanInformation
 
-`func (o *OpenGraphQuota) GetStoragePlanInformation() AnyOfopenGraphStoragePlanInformation`
+`func (o *OpenGraphQuota) GetStoragePlanInformation() OpenGraphStoragePlanInformation`
 
 GetStoragePlanInformation returns the StoragePlanInformation field if non-nil, zero value otherwise.
 
 ### GetStoragePlanInformationOk
 
-`func (o *OpenGraphQuota) GetStoragePlanInformationOk() (*AnyOfopenGraphStoragePlanInformation, bool)`
+`func (o *OpenGraphQuota) GetStoragePlanInformationOk() (*OpenGraphStoragePlanInformation, bool)`
 
 GetStoragePlanInformationOk returns a tuple with the StoragePlanInformation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStoragePlanInformation
 
-`func (o *OpenGraphQuota) SetStoragePlanInformation(v AnyOfopenGraphStoragePlanInformation)`
+`func (o *OpenGraphQuota) SetStoragePlanInformation(v OpenGraphStoragePlanInformation)`
 
 SetStoragePlanInformation sets StoragePlanInformation field to given value.
 
@@ -160,16 +130,6 @@ SetStoragePlanInformation sets StoragePlanInformation field to given value.
 
 HasStoragePlanInformation returns a boolean if a field has been set.
 
-### SetStoragePlanInformationNil
-
-`func (o *OpenGraphQuota) SetStoragePlanInformationNil(b bool)`
-
- SetStoragePlanInformationNil sets the value for StoragePlanInformation to be an explicit nil
-
-### UnsetStoragePlanInformation
-`func (o *OpenGraphQuota) UnsetStoragePlanInformation()`
-
-UnsetStoragePlanInformation ensures that no value is present for StoragePlanInformation, not even an explicit nil
 ### GetTotal
 
 `func (o *OpenGraphQuota) GetTotal() int64`
@@ -195,16 +155,6 @@ SetTotal sets Total field to given value.
 
 HasTotal returns a boolean if a field has been set.
 
-### SetTotalNil
-
-`func (o *OpenGraphQuota) SetTotalNil(b bool)`
-
- SetTotalNil sets the value for Total to be an explicit nil
-
-### UnsetTotal
-`func (o *OpenGraphQuota) UnsetTotal()`
-
-UnsetTotal ensures that no value is present for Total, not even an explicit nil
 ### GetUsed
 
 `func (o *OpenGraphQuota) GetUsed() int64`
@@ -230,16 +180,6 @@ SetUsed sets Used field to given value.
 
 HasUsed returns a boolean if a field has been set.
 
-### SetUsedNil
-
-`func (o *OpenGraphQuota) SetUsedNil(b bool)`
-
- SetUsedNil sets the value for Used to be an explicit nil
-
-### UnsetUsed
-`func (o *OpenGraphQuota) UnsetUsed()`
-
-UnsetUsed ensures that no value is present for Used, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

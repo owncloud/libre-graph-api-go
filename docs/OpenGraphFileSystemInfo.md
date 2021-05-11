@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedDateTime** | Pointer to **NullableTime** | The UTC date and time the file was created on a client. | [optional] 
-**LastAccessedDateTime** | Pointer to **NullableTime** | The UTC date and time the file was last accessed. Available for the recent file list only. | [optional] 
-**LastModifiedDateTime** | Pointer to **NullableTime** | The UTC date and time the file was last modified on a client. | [optional] 
+**CreatedDateTime** | Pointer to **time.Time** | The UTC date and time the file was created on a client. | [optional] 
+**LastAccessedDateTime** | Pointer to **time.Time** | The UTC date and time the file was last accessed. Available for the recent file list only. | [optional] 
+**LastModifiedDateTime** | Pointer to **time.Time** | The UTC date and time the file was last modified on a client. | [optional] 
 
 ## Methods
 
@@ -52,16 +52,6 @@ SetCreatedDateTime sets CreatedDateTime field to given value.
 
 HasCreatedDateTime returns a boolean if a field has been set.
 
-### SetCreatedDateTimeNil
-
-`func (o *OpenGraphFileSystemInfo) SetCreatedDateTimeNil(b bool)`
-
- SetCreatedDateTimeNil sets the value for CreatedDateTime to be an explicit nil
-
-### UnsetCreatedDateTime
-`func (o *OpenGraphFileSystemInfo) UnsetCreatedDateTime()`
-
-UnsetCreatedDateTime ensures that no value is present for CreatedDateTime, not even an explicit nil
 ### GetLastAccessedDateTime
 
 `func (o *OpenGraphFileSystemInfo) GetLastAccessedDateTime() time.Time`
@@ -87,16 +77,6 @@ SetLastAccessedDateTime sets LastAccessedDateTime field to given value.
 
 HasLastAccessedDateTime returns a boolean if a field has been set.
 
-### SetLastAccessedDateTimeNil
-
-`func (o *OpenGraphFileSystemInfo) SetLastAccessedDateTimeNil(b bool)`
-
- SetLastAccessedDateTimeNil sets the value for LastAccessedDateTime to be an explicit nil
-
-### UnsetLastAccessedDateTime
-`func (o *OpenGraphFileSystemInfo) UnsetLastAccessedDateTime()`
-
-UnsetLastAccessedDateTime ensures that no value is present for LastAccessedDateTime, not even an explicit nil
 ### GetLastModifiedDateTime
 
 `func (o *OpenGraphFileSystemInfo) GetLastModifiedDateTime() time.Time`
@@ -122,16 +102,6 @@ SetLastModifiedDateTime sets LastModifiedDateTime field to given value.
 
 HasLastModifiedDateTime returns a boolean if a field has been set.
 
-### SetLastModifiedDateTimeNil
-
-`func (o *OpenGraphFileSystemInfo) SetLastModifiedDateTimeNil(b bool)`
-
- SetLastModifiedDateTimeNil sets the value for LastModifiedDateTime to be an explicit nil
-
-### UnsetLastModifiedDateTime
-`func (o *OpenGraphFileSystemInfo) UnsetLastModifiedDateTime()`
-
-UnsetLastModifiedDateTime ensures that no value is present for LastModifiedDateTime, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

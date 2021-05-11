@@ -17,7 +17,7 @@ import (
 // OpenGraphStoragePlanInformation struct for OpenGraphStoragePlanInformation
 type OpenGraphStoragePlanInformation struct {
 	// Indicates if there are higher storage quota plans available. Read-only.
-	UpgradeAvailable NullableBool `json:"upgradeAvailable,omitempty"`
+	UpgradeAvailable *bool `json:"upgradeAvailable,omitempty"`
 }
 
 // NewOpenGraphStoragePlanInformation instantiates a new OpenGraphStoragePlanInformation object
@@ -37,52 +37,42 @@ func NewOpenGraphStoragePlanInformationWithDefaults() *OpenGraphStoragePlanInfor
 	return &this
 }
 
-// GetUpgradeAvailable returns the UpgradeAvailable field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetUpgradeAvailable returns the UpgradeAvailable field value if set, zero value otherwise.
 func (o *OpenGraphStoragePlanInformation) GetUpgradeAvailable() bool {
-	if o == nil || o.UpgradeAvailable.Get() == nil {
+	if o == nil || o.UpgradeAvailable == nil {
 		var ret bool
 		return ret
 	}
-	return *o.UpgradeAvailable.Get()
+	return *o.UpgradeAvailable
 }
 
 // GetUpgradeAvailableOk returns a tuple with the UpgradeAvailable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphStoragePlanInformation) GetUpgradeAvailableOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil || o.UpgradeAvailable == nil {
 		return nil, false
 	}
-	return o.UpgradeAvailable.Get(), o.UpgradeAvailable.IsSet()
+	return o.UpgradeAvailable, true
 }
 
 // HasUpgradeAvailable returns a boolean if a field has been set.
 func (o *OpenGraphStoragePlanInformation) HasUpgradeAvailable() bool {
-	if o != nil && o.UpgradeAvailable.IsSet() {
+	if o != nil && o.UpgradeAvailable != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUpgradeAvailable gets a reference to the given NullableBool and assigns it to the UpgradeAvailable field.
+// SetUpgradeAvailable gets a reference to the given bool and assigns it to the UpgradeAvailable field.
 func (o *OpenGraphStoragePlanInformation) SetUpgradeAvailable(v bool) {
-	o.UpgradeAvailable.Set(&v)
-}
-// SetUpgradeAvailableNil sets the value for UpgradeAvailable to be an explicit nil
-func (o *OpenGraphStoragePlanInformation) SetUpgradeAvailableNil() {
-	o.UpgradeAvailable.Set(nil)
-}
-
-// UnsetUpgradeAvailable ensures that no value is present for UpgradeAvailable, not even an explicit nil
-func (o *OpenGraphStoragePlanInformation) UnsetUpgradeAvailable() {
-	o.UpgradeAvailable.Unset()
+	o.UpgradeAvailable = &v
 }
 
 func (o OpenGraphStoragePlanInformation) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.UpgradeAvailable.IsSet() {
-		toSerialize["upgradeAvailable"] = o.UpgradeAvailable.Get()
+	if o.UpgradeAvailable != nil {
+		toSerialize["upgradeAvailable"] = o.UpgradeAvailable
 	}
 	return json.Marshal(toSerialize)
 }

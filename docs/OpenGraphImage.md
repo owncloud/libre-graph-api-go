@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Height** | Pointer to **NullableInt32** | Optional. Height of the image, in pixels. Read-only. | [optional] [readonly] 
-**Width** | Pointer to **NullableInt32** | Optional. Width of the image, in pixels. Read-only. | [optional] [readonly] 
+**Height** | Pointer to **int32** | Optional. Height of the image, in pixels. Read-only. | [optional] [readonly] 
+**Width** | Pointer to **int32** | Optional. Width of the image, in pixels. Read-only. | [optional] [readonly] 
 
 ## Methods
 
@@ -51,16 +51,6 @@ SetHeight sets Height field to given value.
 
 HasHeight returns a boolean if a field has been set.
 
-### SetHeightNil
-
-`func (o *OpenGraphImage) SetHeightNil(b bool)`
-
- SetHeightNil sets the value for Height to be an explicit nil
-
-### UnsetHeight
-`func (o *OpenGraphImage) UnsetHeight()`
-
-UnsetHeight ensures that no value is present for Height, not even an explicit nil
 ### GetWidth
 
 `func (o *OpenGraphImage) GetWidth() int32`
@@ -86,16 +76,6 @@ SetWidth sets Width field to given value.
 
 HasWidth returns a boolean if a field has been set.
 
-### SetWidthNil
-
-`func (o *OpenGraphImage) SetWidthNil(b bool)`
-
- SetWidthNil sets the value for Width to be an explicit nil
-
-### UnsetWidth
-`func (o *OpenGraphImage) UnsetWidth()`
-
-UnsetWidth ensures that no value is present for Width, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

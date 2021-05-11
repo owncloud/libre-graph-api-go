@@ -17,7 +17,7 @@ import (
 // OpenGraphIdentity struct for OpenGraphIdentity
 type OpenGraphIdentity struct {
 	// The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-	DisplayName NullableString `json:"displayName,omitempty"`
+	DisplayName *string `json:"displayName,omitempty"`
 	// Unique identifier for the identity.
 	Id *string `json:"id,omitempty"`
 }
@@ -39,46 +39,36 @@ func NewOpenGraphIdentityWithDefaults() *OpenGraphIdentity {
 	return &this
 }
 
-// GetDisplayName returns the DisplayName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
 func (o *OpenGraphIdentity) GetDisplayName() string {
-	if o == nil || o.DisplayName.Get() == nil {
+	if o == nil || o.DisplayName == nil {
 		var ret string
 		return ret
 	}
-	return *o.DisplayName.Get()
+	return *o.DisplayName
 }
 
 // GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphIdentity) GetDisplayNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.DisplayName == nil {
 		return nil, false
 	}
-	return o.DisplayName.Get(), o.DisplayName.IsSet()
+	return o.DisplayName, true
 }
 
 // HasDisplayName returns a boolean if a field has been set.
 func (o *OpenGraphIdentity) HasDisplayName() bool {
-	if o != nil && o.DisplayName.IsSet() {
+	if o != nil && o.DisplayName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDisplayName gets a reference to the given NullableString and assigns it to the DisplayName field.
+// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *OpenGraphIdentity) SetDisplayName(v string) {
-	o.DisplayName.Set(&v)
-}
-// SetDisplayNameNil sets the value for DisplayName to be an explicit nil
-func (o *OpenGraphIdentity) SetDisplayNameNil() {
-	o.DisplayName.Set(nil)
-}
-
-// UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
-func (o *OpenGraphIdentity) UnsetDisplayName() {
-	o.DisplayName.Unset()
+	o.DisplayName = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -115,8 +105,8 @@ func (o *OpenGraphIdentity) SetId(v string) {
 
 func (o OpenGraphIdentity) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DisplayName.IsSet() {
-		toSerialize["displayName"] = o.DisplayName.Get()
+	if o.DisplayName != nil {
+		toSerialize["displayName"] = o.DisplayName
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeletedDateTime** | Pointer to **NullableTime** |  | [optional] 
+**DeletedDateTime** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
 
@@ -50,16 +50,6 @@ SetDeletedDateTime sets DeletedDateTime field to given value.
 
 HasDeletedDateTime returns a boolean if a field has been set.
 
-### SetDeletedDateTimeNil
-
-`func (o *OpenGraphDirectoryObjectAllOf) SetDeletedDateTimeNil(b bool)`
-
- SetDeletedDateTimeNil sets the value for DeletedDateTime to be an explicit nil
-
-### UnsetDeletedDateTime
-`func (o *OpenGraphDirectoryObjectAllOf) UnsetDeletedDateTime()`
-
-UnsetDeletedDateTime ensures that no value is present for DeletedDateTime, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

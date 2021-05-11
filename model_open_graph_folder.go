@@ -17,9 +17,9 @@ import (
 // OpenGraphFolder struct for OpenGraphFolder
 type OpenGraphFolder struct {
 	// Number of children contained immediately within this container.
-	ChildCount NullableInt32 `json:"childCount,omitempty"`
+	ChildCount *int32 `json:"childCount,omitempty"`
 	// A collection of properties defining the recommended view for the folder.
-	View NullableAnyOfopenGraphFolderView `json:"view,omitempty"`
+	View *OpenGraphFolderView `json:"view,omitempty"`
 }
 
 // NewOpenGraphFolder instantiates a new OpenGraphFolder object
@@ -39,97 +39,77 @@ func NewOpenGraphFolderWithDefaults() *OpenGraphFolder {
 	return &this
 }
 
-// GetChildCount returns the ChildCount field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetChildCount returns the ChildCount field value if set, zero value otherwise.
 func (o *OpenGraphFolder) GetChildCount() int32 {
-	if o == nil || o.ChildCount.Get() == nil {
+	if o == nil || o.ChildCount == nil {
 		var ret int32
 		return ret
 	}
-	return *o.ChildCount.Get()
+	return *o.ChildCount
 }
 
 // GetChildCountOk returns a tuple with the ChildCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphFolder) GetChildCountOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil || o.ChildCount == nil {
 		return nil, false
 	}
-	return o.ChildCount.Get(), o.ChildCount.IsSet()
+	return o.ChildCount, true
 }
 
 // HasChildCount returns a boolean if a field has been set.
 func (o *OpenGraphFolder) HasChildCount() bool {
-	if o != nil && o.ChildCount.IsSet() {
+	if o != nil && o.ChildCount != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetChildCount gets a reference to the given NullableInt32 and assigns it to the ChildCount field.
+// SetChildCount gets a reference to the given int32 and assigns it to the ChildCount field.
 func (o *OpenGraphFolder) SetChildCount(v int32) {
-	o.ChildCount.Set(&v)
-}
-// SetChildCountNil sets the value for ChildCount to be an explicit nil
-func (o *OpenGraphFolder) SetChildCountNil() {
-	o.ChildCount.Set(nil)
+	o.ChildCount = &v
 }
 
-// UnsetChildCount ensures that no value is present for ChildCount, not even an explicit nil
-func (o *OpenGraphFolder) UnsetChildCount() {
-	o.ChildCount.Unset()
-}
-
-// GetView returns the View field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphFolder) GetView() AnyOfopenGraphFolderView {
-	if o == nil || o.View.Get() == nil {
-		var ret AnyOfopenGraphFolderView
+// GetView returns the View field value if set, zero value otherwise.
+func (o *OpenGraphFolder) GetView() OpenGraphFolderView {
+	if o == nil || o.View == nil {
+		var ret OpenGraphFolderView
 		return ret
 	}
-	return *o.View.Get()
+	return *o.View
 }
 
 // GetViewOk returns a tuple with the View field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphFolder) GetViewOk() (*AnyOfopenGraphFolderView, bool) {
-	if o == nil  {
+func (o *OpenGraphFolder) GetViewOk() (*OpenGraphFolderView, bool) {
+	if o == nil || o.View == nil {
 		return nil, false
 	}
-	return o.View.Get(), o.View.IsSet()
+	return o.View, true
 }
 
 // HasView returns a boolean if a field has been set.
 func (o *OpenGraphFolder) HasView() bool {
-	if o != nil && o.View.IsSet() {
+	if o != nil && o.View != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetView gets a reference to the given NullableAnyOfopenGraphFolderView and assigns it to the View field.
-func (o *OpenGraphFolder) SetView(v AnyOfopenGraphFolderView) {
-	o.View.Set(&v)
-}
-// SetViewNil sets the value for View to be an explicit nil
-func (o *OpenGraphFolder) SetViewNil() {
-	o.View.Set(nil)
-}
-
-// UnsetView ensures that no value is present for View, not even an explicit nil
-func (o *OpenGraphFolder) UnsetView() {
-	o.View.Unset()
+// SetView gets a reference to the given OpenGraphFolderView and assigns it to the View field.
+func (o *OpenGraphFolder) SetView(v OpenGraphFolderView) {
+	o.View = &v
 }
 
 func (o OpenGraphFolder) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ChildCount.IsSet() {
-		toSerialize["childCount"] = o.ChildCount.Get()
+	if o.ChildCount != nil {
+		toSerialize["childCount"] = o.ChildCount
 	}
-	if o.View.IsSet() {
-		toSerialize["view"] = o.View.Get()
+	if o.View != nil {
+		toSerialize["view"] = o.View
 	}
 	return json.Marshal(toSerialize)
 }

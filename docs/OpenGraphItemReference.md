@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DriveId** | Pointer to **NullableString** | Unique identifier of the drive instance that contains the item. Read-only. | [optional] [readonly] 
-**DriveType** | Pointer to **NullableString** | Identifies the type of drive. See [drive][] resource for values. Read-only. | [optional] [readonly] 
-**Id** | Pointer to **NullableString** | Unique identifier of the item in the drive. Read-only. | [optional] [readonly] 
-**Name** | Pointer to **NullableString** | The name of the item being referenced. Read-only. | [optional] [readonly] 
-**Path** | Pointer to **NullableString** | Path that can be used to navigate to the item. Read-only. | [optional] [readonly] 
-**ShareId** | Pointer to **NullableString** | A unique identifier for a shared resource that can be accessed via the [Shares][] API. | [optional] 
+**DriveId** | Pointer to **string** | Unique identifier of the drive instance that contains the item. Read-only. | [optional] [readonly] 
+**DriveType** | Pointer to **string** | Identifies the type of drive. See [drive][] resource for values. Read-only. | [optional] [readonly] 
+**Id** | Pointer to **string** | Unique identifier of the item in the drive. Read-only. | [optional] [readonly] 
+**Name** | Pointer to **string** | The name of the item being referenced. Read-only. | [optional] [readonly] 
+**Path** | Pointer to **string** | Path that can be used to navigate to the item. Read-only. | [optional] [readonly] 
+**ShareId** | Pointer to **string** | A unique identifier for a shared resource that can be accessed via the [Shares][] API. | [optional] 
 
 ## Methods
 
@@ -55,16 +55,6 @@ SetDriveId sets DriveId field to given value.
 
 HasDriveId returns a boolean if a field has been set.
 
-### SetDriveIdNil
-
-`func (o *OpenGraphItemReference) SetDriveIdNil(b bool)`
-
- SetDriveIdNil sets the value for DriveId to be an explicit nil
-
-### UnsetDriveId
-`func (o *OpenGraphItemReference) UnsetDriveId()`
-
-UnsetDriveId ensures that no value is present for DriveId, not even an explicit nil
 ### GetDriveType
 
 `func (o *OpenGraphItemReference) GetDriveType() string`
@@ -90,16 +80,6 @@ SetDriveType sets DriveType field to given value.
 
 HasDriveType returns a boolean if a field has been set.
 
-### SetDriveTypeNil
-
-`func (o *OpenGraphItemReference) SetDriveTypeNil(b bool)`
-
- SetDriveTypeNil sets the value for DriveType to be an explicit nil
-
-### UnsetDriveType
-`func (o *OpenGraphItemReference) UnsetDriveType()`
-
-UnsetDriveType ensures that no value is present for DriveType, not even an explicit nil
 ### GetId
 
 `func (o *OpenGraphItemReference) GetId() string`
@@ -125,16 +105,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### SetIdNil
-
-`func (o *OpenGraphItemReference) SetIdNil(b bool)`
-
- SetIdNil sets the value for Id to be an explicit nil
-
-### UnsetId
-`func (o *OpenGraphItemReference) UnsetId()`
-
-UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetName
 
 `func (o *OpenGraphItemReference) GetName() string`
@@ -160,16 +130,6 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### SetNameNil
-
-`func (o *OpenGraphItemReference) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *OpenGraphItemReference) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetPath
 
 `func (o *OpenGraphItemReference) GetPath() string`
@@ -195,16 +155,6 @@ SetPath sets Path field to given value.
 
 HasPath returns a boolean if a field has been set.
 
-### SetPathNil
-
-`func (o *OpenGraphItemReference) SetPathNil(b bool)`
-
- SetPathNil sets the value for Path to be an explicit nil
-
-### UnsetPath
-`func (o *OpenGraphItemReference) UnsetPath()`
-
-UnsetPath ensures that no value is present for Path, not even an explicit nil
 ### GetShareId
 
 `func (o *OpenGraphItemReference) GetShareId() string`
@@ -230,16 +180,6 @@ SetShareId sets ShareId field to given value.
 
 HasShareId returns a boolean if a field has been set.
 
-### SetShareIdNil
-
-`func (o *OpenGraphItemReference) SetShareIdNil(b bool)`
-
- SetShareIdNil sets the value for ShareId to be an explicit nil
-
-### UnsetShareId
-`func (o *OpenGraphItemReference) UnsetShareId()`
-
-UnsetShareId ensures that no value is present for ShareId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

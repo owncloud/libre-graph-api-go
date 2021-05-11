@@ -19,59 +19,59 @@ import (
 type OpenGraphUser struct {
 	OpenGraphDirectoryObject
 	// true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter.
-	AccountEnabled NullableBool `json:"accountEnabled,omitempty"`
+	AccountEnabled *bool `json:"accountEnabled,omitempty"`
 	// The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory.
 	BusinessPhones *[]string `json:"businessPhones,omitempty"`
 	// The city in which the user is located. Returned only on $select. Supports $filter.
-	City NullableString `json:"city,omitempty"`
+	City *string `json:"city,omitempty"`
 	// The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select.
-	CompanyName NullableString `json:"companyName,omitempty"`
+	CompanyName *string `json:"companyName,omitempty"`
 	// The country/region in which the user is located; for example, 'US' or 'UK'. Returned only on $select. Supports $filter.
-	Country NullableString `json:"country,omitempty"`
+	Country *string `json:"country,omitempty"`
 	// The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Returned only on $select. Read-only. Supports $filter.
-	CreatedDateTime NullableTime `json:"createdDateTime,omitempty"`
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// The name for the department in which the user works. Returned only on $select. Supports $filter.
-	Department NullableString `json:"department,omitempty"`
+	Department *string `json:"department,omitempty"`
 	// The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.
-	DisplayName NullableString `json:"displayName,omitempty"`
+	DisplayName *string `json:"displayName,omitempty"`
 	// The fax number of the user. Returned only on $select.
-	FaxNumber NullableString `json:"faxNumber,omitempty"`
+	FaxNumber *string `json:"faxNumber,omitempty"`
 	// The given name (first name) of the user. Returned by default. Supports $filter.
-	GivenName NullableString `json:"givenName,omitempty"`
+	GivenName *string `json:"givenName,omitempty"`
 	// The time when this user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select. Read-only.
-	LastPasswordChangeDateTime NullableTime `json:"lastPasswordChangeDateTime,omitempty"`
+	LastPasswordChangeDateTime *time.Time `json:"lastPasswordChangeDateTime,omitempty"`
 	// Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select.
-	LegalAgeGroupClassification NullableString `json:"legalAgeGroupClassification,omitempty"`
+	LegalAgeGroupClassification *string `json:"legalAgeGroupClassification,omitempty"`
 	// The SMTP address for the user, for example, 'jeff@contoso.onowncloud.com'. Returned by default. Supports $filter and endsWith.
-	Mail NullableString `json:"mail,omitempty"`
+	Mail *string `json:"mail,omitempty"`
 	// The mail alias for the user. This property must be specified when a user is created. Returned only on $select. Supports $filter.
-	MailNickname NullableString `json:"mailNickname,omitempty"`
+	MailNickname *string `json:"mailNickname,omitempty"`
 	// The primary cellular telephone number for the user. Returned by default. Read-only for users synced from on-premises directory.
-	MobilePhone NullableString `json:"mobilePhone,omitempty"`
+	MobilePhone *string `json:"mobilePhone,omitempty"`
 	// The office location in the user's place of business. Returned by default.
-	OfficeLocation NullableString `json:"officeLocation,omitempty"`
+	OfficeLocation *string `json:"officeLocation,omitempty"`
 	// The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select.
-	PostalCode NullableString `json:"postalCode,omitempty"`
+	PostalCode *string `json:"postalCode,omitempty"`
 	// The preferred language for the user. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
-	PreferredLanguage NullableString `json:"preferredLanguage,omitempty"`
+	PreferredLanguage *string `json:"preferredLanguage,omitempty"`
 	// The state or province in the user's address. Returned only on $select. Supports $filter.
-	State NullableString `json:"state,omitempty"`
+	State *string `json:"state,omitempty"`
 	// The street address of the user's place of business. Returned only on $select.
-	StreetAddress NullableString `json:"streetAddress,omitempty"`
+	StreetAddress *string `json:"streetAddress,omitempty"`
 	// The user's surname (family name or last name). Returned by default. Supports $filter.
-	Surname NullableString `json:"surname,omitempty"`
+	Surname *string `json:"surname,omitempty"`
 	// A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: 'US', 'JP', and 'GB'. Not nullable. Returned only on $select. Supports $filter.
-	UsageLocation NullableString `json:"usageLocation,omitempty"`
+	UsageLocation *string `json:"usageLocation,omitempty"`
 	// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Returned by default. Supports $filter, $orderby, and endsWith.
-	UserPrincipalName NullableString `json:"userPrincipalName,omitempty"`
+	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 	// A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Returned only on $select. Supports $filter.
-	UserType NullableString `json:"userType,omitempty"`
+	UserType *string `json:"userType,omitempty"`
 	// A freeform text entry field for the user to describe themselves. Returned only on $select.
-	AboutMe NullableString `json:"aboutMe,omitempty"`
+	AboutMe *string `json:"aboutMe,omitempty"`
 	// The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
 	Birthday *time.Time `json:"birthday,omitempty"`
 	// The user's HomeDrive. Read-only.
-	Drive NullableAnyOfopenGraphDrive `json:"drive,omitempty"`
+	Drive *OpenGraphDrive `json:"drive,omitempty"`
 	// A collection of drives available for this user. Read-only.
 	Drives *[]OpenGraphDrive `json:"drives,omitempty"`
 }
@@ -93,46 +93,36 @@ func NewOpenGraphUserWithDefaults() *OpenGraphUser {
 	return &this
 }
 
-// GetAccountEnabled returns the AccountEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetAccountEnabled returns the AccountEnabled field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetAccountEnabled() bool {
-	if o == nil || o.AccountEnabled.Get() == nil {
+	if o == nil || o.AccountEnabled == nil {
 		var ret bool
 		return ret
 	}
-	return *o.AccountEnabled.Get()
+	return *o.AccountEnabled
 }
 
 // GetAccountEnabledOk returns a tuple with the AccountEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetAccountEnabledOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil || o.AccountEnabled == nil {
 		return nil, false
 	}
-	return o.AccountEnabled.Get(), o.AccountEnabled.IsSet()
+	return o.AccountEnabled, true
 }
 
 // HasAccountEnabled returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasAccountEnabled() bool {
-	if o != nil && o.AccountEnabled.IsSet() {
+	if o != nil && o.AccountEnabled != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetAccountEnabled gets a reference to the given NullableBool and assigns it to the AccountEnabled field.
+// SetAccountEnabled gets a reference to the given bool and assigns it to the AccountEnabled field.
 func (o *OpenGraphUser) SetAccountEnabled(v bool) {
-	o.AccountEnabled.Set(&v)
-}
-// SetAccountEnabledNil sets the value for AccountEnabled to be an explicit nil
-func (o *OpenGraphUser) SetAccountEnabledNil() {
-	o.AccountEnabled.Set(nil)
-}
-
-// UnsetAccountEnabled ensures that no value is present for AccountEnabled, not even an explicit nil
-func (o *OpenGraphUser) UnsetAccountEnabled() {
-	o.AccountEnabled.Unset()
+	o.AccountEnabled = &v
 }
 
 // GetBusinessPhones returns the BusinessPhones field value if set, zero value otherwise.
@@ -167,970 +157,740 @@ func (o *OpenGraphUser) SetBusinessPhones(v []string) {
 	o.BusinessPhones = &v
 }
 
-// GetCity returns the City field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetCity returns the City field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetCity() string {
-	if o == nil || o.City.Get() == nil {
+	if o == nil || o.City == nil {
 		var ret string
 		return ret
 	}
-	return *o.City.Get()
+	return *o.City
 }
 
 // GetCityOk returns a tuple with the City field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetCityOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.City == nil {
 		return nil, false
 	}
-	return o.City.Get(), o.City.IsSet()
+	return o.City, true
 }
 
 // HasCity returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasCity() bool {
-	if o != nil && o.City.IsSet() {
+	if o != nil && o.City != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCity gets a reference to the given NullableString and assigns it to the City field.
+// SetCity gets a reference to the given string and assigns it to the City field.
 func (o *OpenGraphUser) SetCity(v string) {
-	o.City.Set(&v)
-}
-// SetCityNil sets the value for City to be an explicit nil
-func (o *OpenGraphUser) SetCityNil() {
-	o.City.Set(nil)
+	o.City = &v
 }
 
-// UnsetCity ensures that no value is present for City, not even an explicit nil
-func (o *OpenGraphUser) UnsetCity() {
-	o.City.Unset()
-}
-
-// GetCompanyName returns the CompanyName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetCompanyName returns the CompanyName field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetCompanyName() string {
-	if o == nil || o.CompanyName.Get() == nil {
+	if o == nil || o.CompanyName == nil {
 		var ret string
 		return ret
 	}
-	return *o.CompanyName.Get()
+	return *o.CompanyName
 }
 
 // GetCompanyNameOk returns a tuple with the CompanyName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetCompanyNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.CompanyName == nil {
 		return nil, false
 	}
-	return o.CompanyName.Get(), o.CompanyName.IsSet()
+	return o.CompanyName, true
 }
 
 // HasCompanyName returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasCompanyName() bool {
-	if o != nil && o.CompanyName.IsSet() {
+	if o != nil && o.CompanyName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCompanyName gets a reference to the given NullableString and assigns it to the CompanyName field.
+// SetCompanyName gets a reference to the given string and assigns it to the CompanyName field.
 func (o *OpenGraphUser) SetCompanyName(v string) {
-	o.CompanyName.Set(&v)
-}
-// SetCompanyNameNil sets the value for CompanyName to be an explicit nil
-func (o *OpenGraphUser) SetCompanyNameNil() {
-	o.CompanyName.Set(nil)
+	o.CompanyName = &v
 }
 
-// UnsetCompanyName ensures that no value is present for CompanyName, not even an explicit nil
-func (o *OpenGraphUser) UnsetCompanyName() {
-	o.CompanyName.Unset()
-}
-
-// GetCountry returns the Country field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetCountry returns the Country field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetCountry() string {
-	if o == nil || o.Country.Get() == nil {
+	if o == nil || o.Country == nil {
 		var ret string
 		return ret
 	}
-	return *o.Country.Get()
+	return *o.Country
 }
 
 // GetCountryOk returns a tuple with the Country field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetCountryOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Country == nil {
 		return nil, false
 	}
-	return o.Country.Get(), o.Country.IsSet()
+	return o.Country, true
 }
 
 // HasCountry returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasCountry() bool {
-	if o != nil && o.Country.IsSet() {
+	if o != nil && o.Country != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCountry gets a reference to the given NullableString and assigns it to the Country field.
+// SetCountry gets a reference to the given string and assigns it to the Country field.
 func (o *OpenGraphUser) SetCountry(v string) {
-	o.Country.Set(&v)
-}
-// SetCountryNil sets the value for Country to be an explicit nil
-func (o *OpenGraphUser) SetCountryNil() {
-	o.Country.Set(nil)
+	o.Country = &v
 }
 
-// UnsetCountry ensures that no value is present for Country, not even an explicit nil
-func (o *OpenGraphUser) UnsetCountry() {
-	o.Country.Unset()
-}
-
-// GetCreatedDateTime returns the CreatedDateTime field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetCreatedDateTime returns the CreatedDateTime field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetCreatedDateTime() time.Time {
-	if o == nil || o.CreatedDateTime.Get() == nil {
+	if o == nil || o.CreatedDateTime == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.CreatedDateTime.Get()
+	return *o.CreatedDateTime
 }
 
 // GetCreatedDateTimeOk returns a tuple with the CreatedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetCreatedDateTimeOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil || o.CreatedDateTime == nil {
 		return nil, false
 	}
-	return o.CreatedDateTime.Get(), o.CreatedDateTime.IsSet()
+	return o.CreatedDateTime, true
 }
 
 // HasCreatedDateTime returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasCreatedDateTime() bool {
-	if o != nil && o.CreatedDateTime.IsSet() {
+	if o != nil && o.CreatedDateTime != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedDateTime gets a reference to the given NullableTime and assigns it to the CreatedDateTime field.
+// SetCreatedDateTime gets a reference to the given time.Time and assigns it to the CreatedDateTime field.
 func (o *OpenGraphUser) SetCreatedDateTime(v time.Time) {
-	o.CreatedDateTime.Set(&v)
-}
-// SetCreatedDateTimeNil sets the value for CreatedDateTime to be an explicit nil
-func (o *OpenGraphUser) SetCreatedDateTimeNil() {
-	o.CreatedDateTime.Set(nil)
+	o.CreatedDateTime = &v
 }
 
-// UnsetCreatedDateTime ensures that no value is present for CreatedDateTime, not even an explicit nil
-func (o *OpenGraphUser) UnsetCreatedDateTime() {
-	o.CreatedDateTime.Unset()
-}
-
-// GetDepartment returns the Department field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDepartment returns the Department field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetDepartment() string {
-	if o == nil || o.Department.Get() == nil {
+	if o == nil || o.Department == nil {
 		var ret string
 		return ret
 	}
-	return *o.Department.Get()
+	return *o.Department
 }
 
 // GetDepartmentOk returns a tuple with the Department field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetDepartmentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Department == nil {
 		return nil, false
 	}
-	return o.Department.Get(), o.Department.IsSet()
+	return o.Department, true
 }
 
 // HasDepartment returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasDepartment() bool {
-	if o != nil && o.Department.IsSet() {
+	if o != nil && o.Department != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDepartment gets a reference to the given NullableString and assigns it to the Department field.
+// SetDepartment gets a reference to the given string and assigns it to the Department field.
 func (o *OpenGraphUser) SetDepartment(v string) {
-	o.Department.Set(&v)
-}
-// SetDepartmentNil sets the value for Department to be an explicit nil
-func (o *OpenGraphUser) SetDepartmentNil() {
-	o.Department.Set(nil)
+	o.Department = &v
 }
 
-// UnsetDepartment ensures that no value is present for Department, not even an explicit nil
-func (o *OpenGraphUser) UnsetDepartment() {
-	o.Department.Unset()
-}
-
-// GetDisplayName returns the DisplayName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetDisplayName() string {
-	if o == nil || o.DisplayName.Get() == nil {
+	if o == nil || o.DisplayName == nil {
 		var ret string
 		return ret
 	}
-	return *o.DisplayName.Get()
+	return *o.DisplayName
 }
 
 // GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetDisplayNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.DisplayName == nil {
 		return nil, false
 	}
-	return o.DisplayName.Get(), o.DisplayName.IsSet()
+	return o.DisplayName, true
 }
 
 // HasDisplayName returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasDisplayName() bool {
-	if o != nil && o.DisplayName.IsSet() {
+	if o != nil && o.DisplayName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDisplayName gets a reference to the given NullableString and assigns it to the DisplayName field.
+// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *OpenGraphUser) SetDisplayName(v string) {
-	o.DisplayName.Set(&v)
-}
-// SetDisplayNameNil sets the value for DisplayName to be an explicit nil
-func (o *OpenGraphUser) SetDisplayNameNil() {
-	o.DisplayName.Set(nil)
+	o.DisplayName = &v
 }
 
-// UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
-func (o *OpenGraphUser) UnsetDisplayName() {
-	o.DisplayName.Unset()
-}
-
-// GetFaxNumber returns the FaxNumber field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetFaxNumber returns the FaxNumber field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetFaxNumber() string {
-	if o == nil || o.FaxNumber.Get() == nil {
+	if o == nil || o.FaxNumber == nil {
 		var ret string
 		return ret
 	}
-	return *o.FaxNumber.Get()
+	return *o.FaxNumber
 }
 
 // GetFaxNumberOk returns a tuple with the FaxNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetFaxNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.FaxNumber == nil {
 		return nil, false
 	}
-	return o.FaxNumber.Get(), o.FaxNumber.IsSet()
+	return o.FaxNumber, true
 }
 
 // HasFaxNumber returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasFaxNumber() bool {
-	if o != nil && o.FaxNumber.IsSet() {
+	if o != nil && o.FaxNumber != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetFaxNumber gets a reference to the given NullableString and assigns it to the FaxNumber field.
+// SetFaxNumber gets a reference to the given string and assigns it to the FaxNumber field.
 func (o *OpenGraphUser) SetFaxNumber(v string) {
-	o.FaxNumber.Set(&v)
-}
-// SetFaxNumberNil sets the value for FaxNumber to be an explicit nil
-func (o *OpenGraphUser) SetFaxNumberNil() {
-	o.FaxNumber.Set(nil)
+	o.FaxNumber = &v
 }
 
-// UnsetFaxNumber ensures that no value is present for FaxNumber, not even an explicit nil
-func (o *OpenGraphUser) UnsetFaxNumber() {
-	o.FaxNumber.Unset()
-}
-
-// GetGivenName returns the GivenName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetGivenName returns the GivenName field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetGivenName() string {
-	if o == nil || o.GivenName.Get() == nil {
+	if o == nil || o.GivenName == nil {
 		var ret string
 		return ret
 	}
-	return *o.GivenName.Get()
+	return *o.GivenName
 }
 
 // GetGivenNameOk returns a tuple with the GivenName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetGivenNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.GivenName == nil {
 		return nil, false
 	}
-	return o.GivenName.Get(), o.GivenName.IsSet()
+	return o.GivenName, true
 }
 
 // HasGivenName returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasGivenName() bool {
-	if o != nil && o.GivenName.IsSet() {
+	if o != nil && o.GivenName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetGivenName gets a reference to the given NullableString and assigns it to the GivenName field.
+// SetGivenName gets a reference to the given string and assigns it to the GivenName field.
 func (o *OpenGraphUser) SetGivenName(v string) {
-	o.GivenName.Set(&v)
-}
-// SetGivenNameNil sets the value for GivenName to be an explicit nil
-func (o *OpenGraphUser) SetGivenNameNil() {
-	o.GivenName.Set(nil)
+	o.GivenName = &v
 }
 
-// UnsetGivenName ensures that no value is present for GivenName, not even an explicit nil
-func (o *OpenGraphUser) UnsetGivenName() {
-	o.GivenName.Unset()
-}
-
-// GetLastPasswordChangeDateTime returns the LastPasswordChangeDateTime field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetLastPasswordChangeDateTime returns the LastPasswordChangeDateTime field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetLastPasswordChangeDateTime() time.Time {
-	if o == nil || o.LastPasswordChangeDateTime.Get() == nil {
+	if o == nil || o.LastPasswordChangeDateTime == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastPasswordChangeDateTime.Get()
+	return *o.LastPasswordChangeDateTime
 }
 
 // GetLastPasswordChangeDateTimeOk returns a tuple with the LastPasswordChangeDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetLastPasswordChangeDateTimeOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil || o.LastPasswordChangeDateTime == nil {
 		return nil, false
 	}
-	return o.LastPasswordChangeDateTime.Get(), o.LastPasswordChangeDateTime.IsSet()
+	return o.LastPasswordChangeDateTime, true
 }
 
 // HasLastPasswordChangeDateTime returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasLastPasswordChangeDateTime() bool {
-	if o != nil && o.LastPasswordChangeDateTime.IsSet() {
+	if o != nil && o.LastPasswordChangeDateTime != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetLastPasswordChangeDateTime gets a reference to the given NullableTime and assigns it to the LastPasswordChangeDateTime field.
+// SetLastPasswordChangeDateTime gets a reference to the given time.Time and assigns it to the LastPasswordChangeDateTime field.
 func (o *OpenGraphUser) SetLastPasswordChangeDateTime(v time.Time) {
-	o.LastPasswordChangeDateTime.Set(&v)
-}
-// SetLastPasswordChangeDateTimeNil sets the value for LastPasswordChangeDateTime to be an explicit nil
-func (o *OpenGraphUser) SetLastPasswordChangeDateTimeNil() {
-	o.LastPasswordChangeDateTime.Set(nil)
+	o.LastPasswordChangeDateTime = &v
 }
 
-// UnsetLastPasswordChangeDateTime ensures that no value is present for LastPasswordChangeDateTime, not even an explicit nil
-func (o *OpenGraphUser) UnsetLastPasswordChangeDateTime() {
-	o.LastPasswordChangeDateTime.Unset()
-}
-
-// GetLegalAgeGroupClassification returns the LegalAgeGroupClassification field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetLegalAgeGroupClassification returns the LegalAgeGroupClassification field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetLegalAgeGroupClassification() string {
-	if o == nil || o.LegalAgeGroupClassification.Get() == nil {
+	if o == nil || o.LegalAgeGroupClassification == nil {
 		var ret string
 		return ret
 	}
-	return *o.LegalAgeGroupClassification.Get()
+	return *o.LegalAgeGroupClassification
 }
 
 // GetLegalAgeGroupClassificationOk returns a tuple with the LegalAgeGroupClassification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetLegalAgeGroupClassificationOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.LegalAgeGroupClassification == nil {
 		return nil, false
 	}
-	return o.LegalAgeGroupClassification.Get(), o.LegalAgeGroupClassification.IsSet()
+	return o.LegalAgeGroupClassification, true
 }
 
 // HasLegalAgeGroupClassification returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasLegalAgeGroupClassification() bool {
-	if o != nil && o.LegalAgeGroupClassification.IsSet() {
+	if o != nil && o.LegalAgeGroupClassification != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetLegalAgeGroupClassification gets a reference to the given NullableString and assigns it to the LegalAgeGroupClassification field.
+// SetLegalAgeGroupClassification gets a reference to the given string and assigns it to the LegalAgeGroupClassification field.
 func (o *OpenGraphUser) SetLegalAgeGroupClassification(v string) {
-	o.LegalAgeGroupClassification.Set(&v)
-}
-// SetLegalAgeGroupClassificationNil sets the value for LegalAgeGroupClassification to be an explicit nil
-func (o *OpenGraphUser) SetLegalAgeGroupClassificationNil() {
-	o.LegalAgeGroupClassification.Set(nil)
+	o.LegalAgeGroupClassification = &v
 }
 
-// UnsetLegalAgeGroupClassification ensures that no value is present for LegalAgeGroupClassification, not even an explicit nil
-func (o *OpenGraphUser) UnsetLegalAgeGroupClassification() {
-	o.LegalAgeGroupClassification.Unset()
-}
-
-// GetMail returns the Mail field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetMail returns the Mail field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetMail() string {
-	if o == nil || o.Mail.Get() == nil {
+	if o == nil || o.Mail == nil {
 		var ret string
 		return ret
 	}
-	return *o.Mail.Get()
+	return *o.Mail
 }
 
 // GetMailOk returns a tuple with the Mail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetMailOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Mail == nil {
 		return nil, false
 	}
-	return o.Mail.Get(), o.Mail.IsSet()
+	return o.Mail, true
 }
 
 // HasMail returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasMail() bool {
-	if o != nil && o.Mail.IsSet() {
+	if o != nil && o.Mail != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetMail gets a reference to the given NullableString and assigns it to the Mail field.
+// SetMail gets a reference to the given string and assigns it to the Mail field.
 func (o *OpenGraphUser) SetMail(v string) {
-	o.Mail.Set(&v)
-}
-// SetMailNil sets the value for Mail to be an explicit nil
-func (o *OpenGraphUser) SetMailNil() {
-	o.Mail.Set(nil)
+	o.Mail = &v
 }
 
-// UnsetMail ensures that no value is present for Mail, not even an explicit nil
-func (o *OpenGraphUser) UnsetMail() {
-	o.Mail.Unset()
-}
-
-// GetMailNickname returns the MailNickname field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetMailNickname returns the MailNickname field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetMailNickname() string {
-	if o == nil || o.MailNickname.Get() == nil {
+	if o == nil || o.MailNickname == nil {
 		var ret string
 		return ret
 	}
-	return *o.MailNickname.Get()
+	return *o.MailNickname
 }
 
 // GetMailNicknameOk returns a tuple with the MailNickname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetMailNicknameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.MailNickname == nil {
 		return nil, false
 	}
-	return o.MailNickname.Get(), o.MailNickname.IsSet()
+	return o.MailNickname, true
 }
 
 // HasMailNickname returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasMailNickname() bool {
-	if o != nil && o.MailNickname.IsSet() {
+	if o != nil && o.MailNickname != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetMailNickname gets a reference to the given NullableString and assigns it to the MailNickname field.
+// SetMailNickname gets a reference to the given string and assigns it to the MailNickname field.
 func (o *OpenGraphUser) SetMailNickname(v string) {
-	o.MailNickname.Set(&v)
-}
-// SetMailNicknameNil sets the value for MailNickname to be an explicit nil
-func (o *OpenGraphUser) SetMailNicknameNil() {
-	o.MailNickname.Set(nil)
+	o.MailNickname = &v
 }
 
-// UnsetMailNickname ensures that no value is present for MailNickname, not even an explicit nil
-func (o *OpenGraphUser) UnsetMailNickname() {
-	o.MailNickname.Unset()
-}
-
-// GetMobilePhone returns the MobilePhone field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetMobilePhone returns the MobilePhone field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetMobilePhone() string {
-	if o == nil || o.MobilePhone.Get() == nil {
+	if o == nil || o.MobilePhone == nil {
 		var ret string
 		return ret
 	}
-	return *o.MobilePhone.Get()
+	return *o.MobilePhone
 }
 
 // GetMobilePhoneOk returns a tuple with the MobilePhone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetMobilePhoneOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.MobilePhone == nil {
 		return nil, false
 	}
-	return o.MobilePhone.Get(), o.MobilePhone.IsSet()
+	return o.MobilePhone, true
 }
 
 // HasMobilePhone returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasMobilePhone() bool {
-	if o != nil && o.MobilePhone.IsSet() {
+	if o != nil && o.MobilePhone != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetMobilePhone gets a reference to the given NullableString and assigns it to the MobilePhone field.
+// SetMobilePhone gets a reference to the given string and assigns it to the MobilePhone field.
 func (o *OpenGraphUser) SetMobilePhone(v string) {
-	o.MobilePhone.Set(&v)
-}
-// SetMobilePhoneNil sets the value for MobilePhone to be an explicit nil
-func (o *OpenGraphUser) SetMobilePhoneNil() {
-	o.MobilePhone.Set(nil)
+	o.MobilePhone = &v
 }
 
-// UnsetMobilePhone ensures that no value is present for MobilePhone, not even an explicit nil
-func (o *OpenGraphUser) UnsetMobilePhone() {
-	o.MobilePhone.Unset()
-}
-
-// GetOfficeLocation returns the OfficeLocation field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetOfficeLocation returns the OfficeLocation field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetOfficeLocation() string {
-	if o == nil || o.OfficeLocation.Get() == nil {
+	if o == nil || o.OfficeLocation == nil {
 		var ret string
 		return ret
 	}
-	return *o.OfficeLocation.Get()
+	return *o.OfficeLocation
 }
 
 // GetOfficeLocationOk returns a tuple with the OfficeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetOfficeLocationOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.OfficeLocation == nil {
 		return nil, false
 	}
-	return o.OfficeLocation.Get(), o.OfficeLocation.IsSet()
+	return o.OfficeLocation, true
 }
 
 // HasOfficeLocation returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasOfficeLocation() bool {
-	if o != nil && o.OfficeLocation.IsSet() {
+	if o != nil && o.OfficeLocation != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOfficeLocation gets a reference to the given NullableString and assigns it to the OfficeLocation field.
+// SetOfficeLocation gets a reference to the given string and assigns it to the OfficeLocation field.
 func (o *OpenGraphUser) SetOfficeLocation(v string) {
-	o.OfficeLocation.Set(&v)
-}
-// SetOfficeLocationNil sets the value for OfficeLocation to be an explicit nil
-func (o *OpenGraphUser) SetOfficeLocationNil() {
-	o.OfficeLocation.Set(nil)
+	o.OfficeLocation = &v
 }
 
-// UnsetOfficeLocation ensures that no value is present for OfficeLocation, not even an explicit nil
-func (o *OpenGraphUser) UnsetOfficeLocation() {
-	o.OfficeLocation.Unset()
-}
-
-// GetPostalCode returns the PostalCode field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetPostalCode returns the PostalCode field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetPostalCode() string {
-	if o == nil || o.PostalCode.Get() == nil {
+	if o == nil || o.PostalCode == nil {
 		var ret string
 		return ret
 	}
-	return *o.PostalCode.Get()
+	return *o.PostalCode
 }
 
 // GetPostalCodeOk returns a tuple with the PostalCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetPostalCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.PostalCode == nil {
 		return nil, false
 	}
-	return o.PostalCode.Get(), o.PostalCode.IsSet()
+	return o.PostalCode, true
 }
 
 // HasPostalCode returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasPostalCode() bool {
-	if o != nil && o.PostalCode.IsSet() {
+	if o != nil && o.PostalCode != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPostalCode gets a reference to the given NullableString and assigns it to the PostalCode field.
+// SetPostalCode gets a reference to the given string and assigns it to the PostalCode field.
 func (o *OpenGraphUser) SetPostalCode(v string) {
-	o.PostalCode.Set(&v)
-}
-// SetPostalCodeNil sets the value for PostalCode to be an explicit nil
-func (o *OpenGraphUser) SetPostalCodeNil() {
-	o.PostalCode.Set(nil)
+	o.PostalCode = &v
 }
 
-// UnsetPostalCode ensures that no value is present for PostalCode, not even an explicit nil
-func (o *OpenGraphUser) UnsetPostalCode() {
-	o.PostalCode.Unset()
-}
-
-// GetPreferredLanguage returns the PreferredLanguage field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetPreferredLanguage returns the PreferredLanguage field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetPreferredLanguage() string {
-	if o == nil || o.PreferredLanguage.Get() == nil {
+	if o == nil || o.PreferredLanguage == nil {
 		var ret string
 		return ret
 	}
-	return *o.PreferredLanguage.Get()
+	return *o.PreferredLanguage
 }
 
 // GetPreferredLanguageOk returns a tuple with the PreferredLanguage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetPreferredLanguageOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.PreferredLanguage == nil {
 		return nil, false
 	}
-	return o.PreferredLanguage.Get(), o.PreferredLanguage.IsSet()
+	return o.PreferredLanguage, true
 }
 
 // HasPreferredLanguage returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasPreferredLanguage() bool {
-	if o != nil && o.PreferredLanguage.IsSet() {
+	if o != nil && o.PreferredLanguage != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPreferredLanguage gets a reference to the given NullableString and assigns it to the PreferredLanguage field.
+// SetPreferredLanguage gets a reference to the given string and assigns it to the PreferredLanguage field.
 func (o *OpenGraphUser) SetPreferredLanguage(v string) {
-	o.PreferredLanguage.Set(&v)
-}
-// SetPreferredLanguageNil sets the value for PreferredLanguage to be an explicit nil
-func (o *OpenGraphUser) SetPreferredLanguageNil() {
-	o.PreferredLanguage.Set(nil)
+	o.PreferredLanguage = &v
 }
 
-// UnsetPreferredLanguage ensures that no value is present for PreferredLanguage, not even an explicit nil
-func (o *OpenGraphUser) UnsetPreferredLanguage() {
-	o.PreferredLanguage.Unset()
-}
-
-// GetState returns the State field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetState returns the State field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetState() string {
-	if o == nil || o.State.Get() == nil {
+	if o == nil || o.State == nil {
 		var ret string
 		return ret
 	}
-	return *o.State.Get()
+	return *o.State
 }
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetStateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.State == nil {
 		return nil, false
 	}
-	return o.State.Get(), o.State.IsSet()
+	return o.State, true
 }
 
 // HasState returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasState() bool {
-	if o != nil && o.State.IsSet() {
+	if o != nil && o.State != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetState gets a reference to the given NullableString and assigns it to the State field.
+// SetState gets a reference to the given string and assigns it to the State field.
 func (o *OpenGraphUser) SetState(v string) {
-	o.State.Set(&v)
-}
-// SetStateNil sets the value for State to be an explicit nil
-func (o *OpenGraphUser) SetStateNil() {
-	o.State.Set(nil)
+	o.State = &v
 }
 
-// UnsetState ensures that no value is present for State, not even an explicit nil
-func (o *OpenGraphUser) UnsetState() {
-	o.State.Unset()
-}
-
-// GetStreetAddress returns the StreetAddress field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetStreetAddress returns the StreetAddress field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetStreetAddress() string {
-	if o == nil || o.StreetAddress.Get() == nil {
+	if o == nil || o.StreetAddress == nil {
 		var ret string
 		return ret
 	}
-	return *o.StreetAddress.Get()
+	return *o.StreetAddress
 }
 
 // GetStreetAddressOk returns a tuple with the StreetAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetStreetAddressOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.StreetAddress == nil {
 		return nil, false
 	}
-	return o.StreetAddress.Get(), o.StreetAddress.IsSet()
+	return o.StreetAddress, true
 }
 
 // HasStreetAddress returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasStreetAddress() bool {
-	if o != nil && o.StreetAddress.IsSet() {
+	if o != nil && o.StreetAddress != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetStreetAddress gets a reference to the given NullableString and assigns it to the StreetAddress field.
+// SetStreetAddress gets a reference to the given string and assigns it to the StreetAddress field.
 func (o *OpenGraphUser) SetStreetAddress(v string) {
-	o.StreetAddress.Set(&v)
-}
-// SetStreetAddressNil sets the value for StreetAddress to be an explicit nil
-func (o *OpenGraphUser) SetStreetAddressNil() {
-	o.StreetAddress.Set(nil)
+	o.StreetAddress = &v
 }
 
-// UnsetStreetAddress ensures that no value is present for StreetAddress, not even an explicit nil
-func (o *OpenGraphUser) UnsetStreetAddress() {
-	o.StreetAddress.Unset()
-}
-
-// GetSurname returns the Surname field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSurname returns the Surname field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetSurname() string {
-	if o == nil || o.Surname.Get() == nil {
+	if o == nil || o.Surname == nil {
 		var ret string
 		return ret
 	}
-	return *o.Surname.Get()
+	return *o.Surname
 }
 
 // GetSurnameOk returns a tuple with the Surname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetSurnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Surname == nil {
 		return nil, false
 	}
-	return o.Surname.Get(), o.Surname.IsSet()
+	return o.Surname, true
 }
 
 // HasSurname returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasSurname() bool {
-	if o != nil && o.Surname.IsSet() {
+	if o != nil && o.Surname != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSurname gets a reference to the given NullableString and assigns it to the Surname field.
+// SetSurname gets a reference to the given string and assigns it to the Surname field.
 func (o *OpenGraphUser) SetSurname(v string) {
-	o.Surname.Set(&v)
-}
-// SetSurnameNil sets the value for Surname to be an explicit nil
-func (o *OpenGraphUser) SetSurnameNil() {
-	o.Surname.Set(nil)
+	o.Surname = &v
 }
 
-// UnsetSurname ensures that no value is present for Surname, not even an explicit nil
-func (o *OpenGraphUser) UnsetSurname() {
-	o.Surname.Unset()
-}
-
-// GetUsageLocation returns the UsageLocation field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetUsageLocation returns the UsageLocation field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetUsageLocation() string {
-	if o == nil || o.UsageLocation.Get() == nil {
+	if o == nil || o.UsageLocation == nil {
 		var ret string
 		return ret
 	}
-	return *o.UsageLocation.Get()
+	return *o.UsageLocation
 }
 
 // GetUsageLocationOk returns a tuple with the UsageLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetUsageLocationOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.UsageLocation == nil {
 		return nil, false
 	}
-	return o.UsageLocation.Get(), o.UsageLocation.IsSet()
+	return o.UsageLocation, true
 }
 
 // HasUsageLocation returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasUsageLocation() bool {
-	if o != nil && o.UsageLocation.IsSet() {
+	if o != nil && o.UsageLocation != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUsageLocation gets a reference to the given NullableString and assigns it to the UsageLocation field.
+// SetUsageLocation gets a reference to the given string and assigns it to the UsageLocation field.
 func (o *OpenGraphUser) SetUsageLocation(v string) {
-	o.UsageLocation.Set(&v)
-}
-// SetUsageLocationNil sets the value for UsageLocation to be an explicit nil
-func (o *OpenGraphUser) SetUsageLocationNil() {
-	o.UsageLocation.Set(nil)
+	o.UsageLocation = &v
 }
 
-// UnsetUsageLocation ensures that no value is present for UsageLocation, not even an explicit nil
-func (o *OpenGraphUser) UnsetUsageLocation() {
-	o.UsageLocation.Unset()
-}
-
-// GetUserPrincipalName returns the UserPrincipalName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetUserPrincipalName returns the UserPrincipalName field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetUserPrincipalName() string {
-	if o == nil || o.UserPrincipalName.Get() == nil {
+	if o == nil || o.UserPrincipalName == nil {
 		var ret string
 		return ret
 	}
-	return *o.UserPrincipalName.Get()
+	return *o.UserPrincipalName
 }
 
 // GetUserPrincipalNameOk returns a tuple with the UserPrincipalName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetUserPrincipalNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.UserPrincipalName == nil {
 		return nil, false
 	}
-	return o.UserPrincipalName.Get(), o.UserPrincipalName.IsSet()
+	return o.UserPrincipalName, true
 }
 
 // HasUserPrincipalName returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasUserPrincipalName() bool {
-	if o != nil && o.UserPrincipalName.IsSet() {
+	if o != nil && o.UserPrincipalName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUserPrincipalName gets a reference to the given NullableString and assigns it to the UserPrincipalName field.
+// SetUserPrincipalName gets a reference to the given string and assigns it to the UserPrincipalName field.
 func (o *OpenGraphUser) SetUserPrincipalName(v string) {
-	o.UserPrincipalName.Set(&v)
-}
-// SetUserPrincipalNameNil sets the value for UserPrincipalName to be an explicit nil
-func (o *OpenGraphUser) SetUserPrincipalNameNil() {
-	o.UserPrincipalName.Set(nil)
+	o.UserPrincipalName = &v
 }
 
-// UnsetUserPrincipalName ensures that no value is present for UserPrincipalName, not even an explicit nil
-func (o *OpenGraphUser) UnsetUserPrincipalName() {
-	o.UserPrincipalName.Unset()
-}
-
-// GetUserType returns the UserType field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetUserType returns the UserType field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetUserType() string {
-	if o == nil || o.UserType.Get() == nil {
+	if o == nil || o.UserType == nil {
 		var ret string
 		return ret
 	}
-	return *o.UserType.Get()
+	return *o.UserType
 }
 
 // GetUserTypeOk returns a tuple with the UserType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetUserTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.UserType == nil {
 		return nil, false
 	}
-	return o.UserType.Get(), o.UserType.IsSet()
+	return o.UserType, true
 }
 
 // HasUserType returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasUserType() bool {
-	if o != nil && o.UserType.IsSet() {
+	if o != nil && o.UserType != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUserType gets a reference to the given NullableString and assigns it to the UserType field.
+// SetUserType gets a reference to the given string and assigns it to the UserType field.
 func (o *OpenGraphUser) SetUserType(v string) {
-	o.UserType.Set(&v)
-}
-// SetUserTypeNil sets the value for UserType to be an explicit nil
-func (o *OpenGraphUser) SetUserTypeNil() {
-	o.UserType.Set(nil)
+	o.UserType = &v
 }
 
-// UnsetUserType ensures that no value is present for UserType, not even an explicit nil
-func (o *OpenGraphUser) UnsetUserType() {
-	o.UserType.Unset()
-}
-
-// GetAboutMe returns the AboutMe field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetAboutMe returns the AboutMe field value if set, zero value otherwise.
 func (o *OpenGraphUser) GetAboutMe() string {
-	if o == nil || o.AboutMe.Get() == nil {
+	if o == nil || o.AboutMe == nil {
 		var ret string
 		return ret
 	}
-	return *o.AboutMe.Get()
+	return *o.AboutMe
 }
 
 // GetAboutMeOk returns a tuple with the AboutMe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphUser) GetAboutMeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.AboutMe == nil {
 		return nil, false
 	}
-	return o.AboutMe.Get(), o.AboutMe.IsSet()
+	return o.AboutMe, true
 }
 
 // HasAboutMe returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasAboutMe() bool {
-	if o != nil && o.AboutMe.IsSet() {
+	if o != nil && o.AboutMe != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetAboutMe gets a reference to the given NullableString and assigns it to the AboutMe field.
+// SetAboutMe gets a reference to the given string and assigns it to the AboutMe field.
 func (o *OpenGraphUser) SetAboutMe(v string) {
-	o.AboutMe.Set(&v)
-}
-// SetAboutMeNil sets the value for AboutMe to be an explicit nil
-func (o *OpenGraphUser) SetAboutMeNil() {
-	o.AboutMe.Set(nil)
-}
-
-// UnsetAboutMe ensures that no value is present for AboutMe, not even an explicit nil
-func (o *OpenGraphUser) UnsetAboutMe() {
-	o.AboutMe.Unset()
+	o.AboutMe = &v
 }
 
 // GetBirthday returns the Birthday field value if set, zero value otherwise.
@@ -1165,46 +925,36 @@ func (o *OpenGraphUser) SetBirthday(v time.Time) {
 	o.Birthday = &v
 }
 
-// GetDrive returns the Drive field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphUser) GetDrive() AnyOfopenGraphDrive {
-	if o == nil || o.Drive.Get() == nil {
-		var ret AnyOfopenGraphDrive
+// GetDrive returns the Drive field value if set, zero value otherwise.
+func (o *OpenGraphUser) GetDrive() OpenGraphDrive {
+	if o == nil || o.Drive == nil {
+		var ret OpenGraphDrive
 		return ret
 	}
-	return *o.Drive.Get()
+	return *o.Drive
 }
 
 // GetDriveOk returns a tuple with the Drive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphUser) GetDriveOk() (*AnyOfopenGraphDrive, bool) {
-	if o == nil  {
+func (o *OpenGraphUser) GetDriveOk() (*OpenGraphDrive, bool) {
+	if o == nil || o.Drive == nil {
 		return nil, false
 	}
-	return o.Drive.Get(), o.Drive.IsSet()
+	return o.Drive, true
 }
 
 // HasDrive returns a boolean if a field has been set.
 func (o *OpenGraphUser) HasDrive() bool {
-	if o != nil && o.Drive.IsSet() {
+	if o != nil && o.Drive != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDrive gets a reference to the given NullableAnyOfopenGraphDrive and assigns it to the Drive field.
-func (o *OpenGraphUser) SetDrive(v AnyOfopenGraphDrive) {
-	o.Drive.Set(&v)
-}
-// SetDriveNil sets the value for Drive to be an explicit nil
-func (o *OpenGraphUser) SetDriveNil() {
-	o.Drive.Set(nil)
-}
-
-// UnsetDrive ensures that no value is present for Drive, not even an explicit nil
-func (o *OpenGraphUser) UnsetDrive() {
-	o.Drive.Unset()
+// SetDrive gets a reference to the given OpenGraphDrive and assigns it to the Drive field.
+func (o *OpenGraphUser) SetDrive(v OpenGraphDrive) {
+	o.Drive = &v
 }
 
 // GetDrives returns the Drives field value if set, zero value otherwise.
@@ -1249,86 +999,86 @@ func (o OpenGraphUser) MarshalJSON() ([]byte, error) {
 	if errOpenGraphDirectoryObject != nil {
 		return []byte{}, errOpenGraphDirectoryObject
 	}
-	if o.AccountEnabled.IsSet() {
-		toSerialize["accountEnabled"] = o.AccountEnabled.Get()
+	if o.AccountEnabled != nil {
+		toSerialize["accountEnabled"] = o.AccountEnabled
 	}
 	if o.BusinessPhones != nil {
 		toSerialize["businessPhones"] = o.BusinessPhones
 	}
-	if o.City.IsSet() {
-		toSerialize["city"] = o.City.Get()
+	if o.City != nil {
+		toSerialize["city"] = o.City
 	}
-	if o.CompanyName.IsSet() {
-		toSerialize["companyName"] = o.CompanyName.Get()
+	if o.CompanyName != nil {
+		toSerialize["companyName"] = o.CompanyName
 	}
-	if o.Country.IsSet() {
-		toSerialize["country"] = o.Country.Get()
+	if o.Country != nil {
+		toSerialize["country"] = o.Country
 	}
-	if o.CreatedDateTime.IsSet() {
-		toSerialize["createdDateTime"] = o.CreatedDateTime.Get()
+	if o.CreatedDateTime != nil {
+		toSerialize["createdDateTime"] = o.CreatedDateTime
 	}
-	if o.Department.IsSet() {
-		toSerialize["department"] = o.Department.Get()
+	if o.Department != nil {
+		toSerialize["department"] = o.Department
 	}
-	if o.DisplayName.IsSet() {
-		toSerialize["displayName"] = o.DisplayName.Get()
+	if o.DisplayName != nil {
+		toSerialize["displayName"] = o.DisplayName
 	}
-	if o.FaxNumber.IsSet() {
-		toSerialize["faxNumber"] = o.FaxNumber.Get()
+	if o.FaxNumber != nil {
+		toSerialize["faxNumber"] = o.FaxNumber
 	}
-	if o.GivenName.IsSet() {
-		toSerialize["givenName"] = o.GivenName.Get()
+	if o.GivenName != nil {
+		toSerialize["givenName"] = o.GivenName
 	}
-	if o.LastPasswordChangeDateTime.IsSet() {
-		toSerialize["lastPasswordChangeDateTime"] = o.LastPasswordChangeDateTime.Get()
+	if o.LastPasswordChangeDateTime != nil {
+		toSerialize["lastPasswordChangeDateTime"] = o.LastPasswordChangeDateTime
 	}
-	if o.LegalAgeGroupClassification.IsSet() {
-		toSerialize["legalAgeGroupClassification"] = o.LegalAgeGroupClassification.Get()
+	if o.LegalAgeGroupClassification != nil {
+		toSerialize["legalAgeGroupClassification"] = o.LegalAgeGroupClassification
 	}
-	if o.Mail.IsSet() {
-		toSerialize["mail"] = o.Mail.Get()
+	if o.Mail != nil {
+		toSerialize["mail"] = o.Mail
 	}
-	if o.MailNickname.IsSet() {
-		toSerialize["mailNickname"] = o.MailNickname.Get()
+	if o.MailNickname != nil {
+		toSerialize["mailNickname"] = o.MailNickname
 	}
-	if o.MobilePhone.IsSet() {
-		toSerialize["mobilePhone"] = o.MobilePhone.Get()
+	if o.MobilePhone != nil {
+		toSerialize["mobilePhone"] = o.MobilePhone
 	}
-	if o.OfficeLocation.IsSet() {
-		toSerialize["officeLocation"] = o.OfficeLocation.Get()
+	if o.OfficeLocation != nil {
+		toSerialize["officeLocation"] = o.OfficeLocation
 	}
-	if o.PostalCode.IsSet() {
-		toSerialize["postalCode"] = o.PostalCode.Get()
+	if o.PostalCode != nil {
+		toSerialize["postalCode"] = o.PostalCode
 	}
-	if o.PreferredLanguage.IsSet() {
-		toSerialize["preferredLanguage"] = o.PreferredLanguage.Get()
+	if o.PreferredLanguage != nil {
+		toSerialize["preferredLanguage"] = o.PreferredLanguage
 	}
-	if o.State.IsSet() {
-		toSerialize["state"] = o.State.Get()
+	if o.State != nil {
+		toSerialize["state"] = o.State
 	}
-	if o.StreetAddress.IsSet() {
-		toSerialize["streetAddress"] = o.StreetAddress.Get()
+	if o.StreetAddress != nil {
+		toSerialize["streetAddress"] = o.StreetAddress
 	}
-	if o.Surname.IsSet() {
-		toSerialize["surname"] = o.Surname.Get()
+	if o.Surname != nil {
+		toSerialize["surname"] = o.Surname
 	}
-	if o.UsageLocation.IsSet() {
-		toSerialize["usageLocation"] = o.UsageLocation.Get()
+	if o.UsageLocation != nil {
+		toSerialize["usageLocation"] = o.UsageLocation
 	}
-	if o.UserPrincipalName.IsSet() {
-		toSerialize["userPrincipalName"] = o.UserPrincipalName.Get()
+	if o.UserPrincipalName != nil {
+		toSerialize["userPrincipalName"] = o.UserPrincipalName
 	}
-	if o.UserType.IsSet() {
-		toSerialize["userType"] = o.UserType.Get()
+	if o.UserType != nil {
+		toSerialize["userType"] = o.UserType
 	}
-	if o.AboutMe.IsSet() {
-		toSerialize["aboutMe"] = o.AboutMe.Get()
+	if o.AboutMe != nil {
+		toSerialize["aboutMe"] = o.AboutMe
 	}
 	if o.Birthday != nil {
 		toSerialize["birthday"] = o.Birthday
 	}
-	if o.Drive.IsSet() {
-		toSerialize["drive"] = o.Drive.Get()
+	if o.Drive != nil {
+		toSerialize["drive"] = o.Drive
 	}
 	if o.Drives != nil {
 		toSerialize["drives"] = o.Drives

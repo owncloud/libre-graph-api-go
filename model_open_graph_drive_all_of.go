@@ -17,19 +17,19 @@ import (
 // OpenGraphDriveAllOf struct for OpenGraphDriveAllOf
 type OpenGraphDriveAllOf struct {
 	// Describes the type of drive represented by this resource. Values are \"personal\" for users home spaces, \"projectSpace\" or \"shares\". Read-only.
-	DriveType NullableString `json:"driveType,omitempty"`
+	DriveType *string `json:"driveType,omitempty"`
 	// Describes the status of the drive.
 	OCDriveStatus *string `json:"oCDriveStatus,omitempty"`
 	// Optional. The user account that owns the drive. Read-only.
-	Owner NullableAnyOfopenGraphIdentitySet `json:"owner,omitempty"`
+	Owner *OpenGraphIdentitySet `json:"owner,omitempty"`
 	// Optional. The user account that owns the drive.
-	OCCoOwner NullableAnyOfopenGraphIdentitySet `json:"oCCoOwner,omitempty"`
+	OCCoOwner *OpenGraphIdentitySet `json:"oCCoOwner,omitempty"`
 	// Optional. Information about the drive's storage space quota. Read-only.
-	Quota NullableAnyOfopenGraphQuota `json:"quota,omitempty"`
+	Quota *OpenGraphQuota `json:"quota,omitempty"`
 	// All items contained in the drive. Read-only. Nullable.
 	Items *[]OpenGraphDriveItem `json:"items,omitempty"`
 	// The root folder of the drive. Read-only.
-	Root NullableAnyOfopenGraphDriveItem `json:"root,omitempty"`
+	Root *OpenGraphDriveItem `json:"root,omitempty"`
 }
 
 // NewOpenGraphDriveAllOf instantiates a new OpenGraphDriveAllOf object
@@ -49,46 +49,36 @@ func NewOpenGraphDriveAllOfWithDefaults() *OpenGraphDriveAllOf {
 	return &this
 }
 
-// GetDriveType returns the DriveType field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDriveType returns the DriveType field value if set, zero value otherwise.
 func (o *OpenGraphDriveAllOf) GetDriveType() string {
-	if o == nil || o.DriveType.Get() == nil {
+	if o == nil || o.DriveType == nil {
 		var ret string
 		return ret
 	}
-	return *o.DriveType.Get()
+	return *o.DriveType
 }
 
 // GetDriveTypeOk returns a tuple with the DriveType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphDriveAllOf) GetDriveTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.DriveType == nil {
 		return nil, false
 	}
-	return o.DriveType.Get(), o.DriveType.IsSet()
+	return o.DriveType, true
 }
 
 // HasDriveType returns a boolean if a field has been set.
 func (o *OpenGraphDriveAllOf) HasDriveType() bool {
-	if o != nil && o.DriveType.IsSet() {
+	if o != nil && o.DriveType != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDriveType gets a reference to the given NullableString and assigns it to the DriveType field.
+// SetDriveType gets a reference to the given string and assigns it to the DriveType field.
 func (o *OpenGraphDriveAllOf) SetDriveType(v string) {
-	o.DriveType.Set(&v)
-}
-// SetDriveTypeNil sets the value for DriveType to be an explicit nil
-func (o *OpenGraphDriveAllOf) SetDriveTypeNil() {
-	o.DriveType.Set(nil)
-}
-
-// UnsetDriveType ensures that no value is present for DriveType, not even an explicit nil
-func (o *OpenGraphDriveAllOf) UnsetDriveType() {
-	o.DriveType.Unset()
+	o.DriveType = &v
 }
 
 // GetOCDriveStatus returns the OCDriveStatus field value if set, zero value otherwise.
@@ -123,130 +113,100 @@ func (o *OpenGraphDriveAllOf) SetOCDriveStatus(v string) {
 	o.OCDriveStatus = &v
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphDriveAllOf) GetOwner() AnyOfopenGraphIdentitySet {
-	if o == nil || o.Owner.Get() == nil {
-		var ret AnyOfopenGraphIdentitySet
+// GetOwner returns the Owner field value if set, zero value otherwise.
+func (o *OpenGraphDriveAllOf) GetOwner() OpenGraphIdentitySet {
+	if o == nil || o.Owner == nil {
+		var ret OpenGraphIdentitySet
 		return ret
 	}
-	return *o.Owner.Get()
+	return *o.Owner
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphDriveAllOf) GetOwnerOk() (*AnyOfopenGraphIdentitySet, bool) {
-	if o == nil  {
+func (o *OpenGraphDriveAllOf) GetOwnerOk() (*OpenGraphIdentitySet, bool) {
+	if o == nil || o.Owner == nil {
 		return nil, false
 	}
-	return o.Owner.Get(), o.Owner.IsSet()
+	return o.Owner, true
 }
 
 // HasOwner returns a boolean if a field has been set.
 func (o *OpenGraphDriveAllOf) HasOwner() bool {
-	if o != nil && o.Owner.IsSet() {
+	if o != nil && o.Owner != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given NullableAnyOfopenGraphIdentitySet and assigns it to the Owner field.
-func (o *OpenGraphDriveAllOf) SetOwner(v AnyOfopenGraphIdentitySet) {
-	o.Owner.Set(&v)
-}
-// SetOwnerNil sets the value for Owner to be an explicit nil
-func (o *OpenGraphDriveAllOf) SetOwnerNil() {
-	o.Owner.Set(nil)
+// SetOwner gets a reference to the given OpenGraphIdentitySet and assigns it to the Owner field.
+func (o *OpenGraphDriveAllOf) SetOwner(v OpenGraphIdentitySet) {
+	o.Owner = &v
 }
 
-// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
-func (o *OpenGraphDriveAllOf) UnsetOwner() {
-	o.Owner.Unset()
-}
-
-// GetOCCoOwner returns the OCCoOwner field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphDriveAllOf) GetOCCoOwner() AnyOfopenGraphIdentitySet {
-	if o == nil || o.OCCoOwner.Get() == nil {
-		var ret AnyOfopenGraphIdentitySet
+// GetOCCoOwner returns the OCCoOwner field value if set, zero value otherwise.
+func (o *OpenGraphDriveAllOf) GetOCCoOwner() OpenGraphIdentitySet {
+	if o == nil || o.OCCoOwner == nil {
+		var ret OpenGraphIdentitySet
 		return ret
 	}
-	return *o.OCCoOwner.Get()
+	return *o.OCCoOwner
 }
 
 // GetOCCoOwnerOk returns a tuple with the OCCoOwner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphDriveAllOf) GetOCCoOwnerOk() (*AnyOfopenGraphIdentitySet, bool) {
-	if o == nil  {
+func (o *OpenGraphDriveAllOf) GetOCCoOwnerOk() (*OpenGraphIdentitySet, bool) {
+	if o == nil || o.OCCoOwner == nil {
 		return nil, false
 	}
-	return o.OCCoOwner.Get(), o.OCCoOwner.IsSet()
+	return o.OCCoOwner, true
 }
 
 // HasOCCoOwner returns a boolean if a field has been set.
 func (o *OpenGraphDriveAllOf) HasOCCoOwner() bool {
-	if o != nil && o.OCCoOwner.IsSet() {
+	if o != nil && o.OCCoOwner != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOCCoOwner gets a reference to the given NullableAnyOfopenGraphIdentitySet and assigns it to the OCCoOwner field.
-func (o *OpenGraphDriveAllOf) SetOCCoOwner(v AnyOfopenGraphIdentitySet) {
-	o.OCCoOwner.Set(&v)
-}
-// SetOCCoOwnerNil sets the value for OCCoOwner to be an explicit nil
-func (o *OpenGraphDriveAllOf) SetOCCoOwnerNil() {
-	o.OCCoOwner.Set(nil)
+// SetOCCoOwner gets a reference to the given OpenGraphIdentitySet and assigns it to the OCCoOwner field.
+func (o *OpenGraphDriveAllOf) SetOCCoOwner(v OpenGraphIdentitySet) {
+	o.OCCoOwner = &v
 }
 
-// UnsetOCCoOwner ensures that no value is present for OCCoOwner, not even an explicit nil
-func (o *OpenGraphDriveAllOf) UnsetOCCoOwner() {
-	o.OCCoOwner.Unset()
-}
-
-// GetQuota returns the Quota field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphDriveAllOf) GetQuota() AnyOfopenGraphQuota {
-	if o == nil || o.Quota.Get() == nil {
-		var ret AnyOfopenGraphQuota
+// GetQuota returns the Quota field value if set, zero value otherwise.
+func (o *OpenGraphDriveAllOf) GetQuota() OpenGraphQuota {
+	if o == nil || o.Quota == nil {
+		var ret OpenGraphQuota
 		return ret
 	}
-	return *o.Quota.Get()
+	return *o.Quota
 }
 
 // GetQuotaOk returns a tuple with the Quota field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphDriveAllOf) GetQuotaOk() (*AnyOfopenGraphQuota, bool) {
-	if o == nil  {
+func (o *OpenGraphDriveAllOf) GetQuotaOk() (*OpenGraphQuota, bool) {
+	if o == nil || o.Quota == nil {
 		return nil, false
 	}
-	return o.Quota.Get(), o.Quota.IsSet()
+	return o.Quota, true
 }
 
 // HasQuota returns a boolean if a field has been set.
 func (o *OpenGraphDriveAllOf) HasQuota() bool {
-	if o != nil && o.Quota.IsSet() {
+	if o != nil && o.Quota != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetQuota gets a reference to the given NullableAnyOfopenGraphQuota and assigns it to the Quota field.
-func (o *OpenGraphDriveAllOf) SetQuota(v AnyOfopenGraphQuota) {
-	o.Quota.Set(&v)
-}
-// SetQuotaNil sets the value for Quota to be an explicit nil
-func (o *OpenGraphDriveAllOf) SetQuotaNil() {
-	o.Quota.Set(nil)
-}
-
-// UnsetQuota ensures that no value is present for Quota, not even an explicit nil
-func (o *OpenGraphDriveAllOf) UnsetQuota() {
-	o.Quota.Unset()
+// SetQuota gets a reference to the given OpenGraphQuota and assigns it to the Quota field.
+func (o *OpenGraphDriveAllOf) SetQuota(v OpenGraphQuota) {
+	o.Quota = &v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
@@ -281,70 +241,60 @@ func (o *OpenGraphDriveAllOf) SetItems(v []OpenGraphDriveItem) {
 	o.Items = &v
 }
 
-// GetRoot returns the Root field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphDriveAllOf) GetRoot() AnyOfopenGraphDriveItem {
-	if o == nil || o.Root.Get() == nil {
-		var ret AnyOfopenGraphDriveItem
+// GetRoot returns the Root field value if set, zero value otherwise.
+func (o *OpenGraphDriveAllOf) GetRoot() OpenGraphDriveItem {
+	if o == nil || o.Root == nil {
+		var ret OpenGraphDriveItem
 		return ret
 	}
-	return *o.Root.Get()
+	return *o.Root
 }
 
 // GetRootOk returns a tuple with the Root field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphDriveAllOf) GetRootOk() (*AnyOfopenGraphDriveItem, bool) {
-	if o == nil  {
+func (o *OpenGraphDriveAllOf) GetRootOk() (*OpenGraphDriveItem, bool) {
+	if o == nil || o.Root == nil {
 		return nil, false
 	}
-	return o.Root.Get(), o.Root.IsSet()
+	return o.Root, true
 }
 
 // HasRoot returns a boolean if a field has been set.
 func (o *OpenGraphDriveAllOf) HasRoot() bool {
-	if o != nil && o.Root.IsSet() {
+	if o != nil && o.Root != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRoot gets a reference to the given NullableAnyOfopenGraphDriveItem and assigns it to the Root field.
-func (o *OpenGraphDriveAllOf) SetRoot(v AnyOfopenGraphDriveItem) {
-	o.Root.Set(&v)
-}
-// SetRootNil sets the value for Root to be an explicit nil
-func (o *OpenGraphDriveAllOf) SetRootNil() {
-	o.Root.Set(nil)
-}
-
-// UnsetRoot ensures that no value is present for Root, not even an explicit nil
-func (o *OpenGraphDriveAllOf) UnsetRoot() {
-	o.Root.Unset()
+// SetRoot gets a reference to the given OpenGraphDriveItem and assigns it to the Root field.
+func (o *OpenGraphDriveAllOf) SetRoot(v OpenGraphDriveItem) {
+	o.Root = &v
 }
 
 func (o OpenGraphDriveAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DriveType.IsSet() {
-		toSerialize["driveType"] = o.DriveType.Get()
+	if o.DriveType != nil {
+		toSerialize["driveType"] = o.DriveType
 	}
 	if o.OCDriveStatus != nil {
 		toSerialize["oCDriveStatus"] = o.OCDriveStatus
 	}
-	if o.Owner.IsSet() {
-		toSerialize["owner"] = o.Owner.Get()
+	if o.Owner != nil {
+		toSerialize["owner"] = o.Owner
 	}
-	if o.OCCoOwner.IsSet() {
-		toSerialize["oCCoOwner"] = o.OCCoOwner.Get()
+	if o.OCCoOwner != nil {
+		toSerialize["oCCoOwner"] = o.OCCoOwner
 	}
-	if o.Quota.IsSet() {
-		toSerialize["quota"] = o.Quota.Get()
+	if o.Quota != nil {
+		toSerialize["quota"] = o.Quota
 	}
 	if o.Items != nil {
 		toSerialize["items"] = o.Items
 	}
-	if o.Root.IsSet() {
-		toSerialize["root"] = o.Root.Get()
+	if o.Root != nil {
+		toSerialize["root"] = o.Root
 	}
 	return json.Marshal(toSerialize)
 }

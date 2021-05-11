@@ -17,7 +17,7 @@ import (
 // OpenGraphDeleted struct for OpenGraphDeleted
 type OpenGraphDeleted struct {
 	// Represents the state of the deleted item.
-	State NullableString `json:"state,omitempty"`
+	State *string `json:"state,omitempty"`
 }
 
 // NewOpenGraphDeleted instantiates a new OpenGraphDeleted object
@@ -37,52 +37,42 @@ func NewOpenGraphDeletedWithDefaults() *OpenGraphDeleted {
 	return &this
 }
 
-// GetState returns the State field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetState returns the State field value if set, zero value otherwise.
 func (o *OpenGraphDeleted) GetState() string {
-	if o == nil || o.State.Get() == nil {
+	if o == nil || o.State == nil {
 		var ret string
 		return ret
 	}
-	return *o.State.Get()
+	return *o.State
 }
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphDeleted) GetStateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.State == nil {
 		return nil, false
 	}
-	return o.State.Get(), o.State.IsSet()
+	return o.State, true
 }
 
 // HasState returns a boolean if a field has been set.
 func (o *OpenGraphDeleted) HasState() bool {
-	if o != nil && o.State.IsSet() {
+	if o != nil && o.State != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetState gets a reference to the given NullableString and assigns it to the State field.
+// SetState gets a reference to the given string and assigns it to the State field.
 func (o *OpenGraphDeleted) SetState(v string) {
-	o.State.Set(&v)
-}
-// SetStateNil sets the value for State to be an explicit nil
-func (o *OpenGraphDeleted) SetStateNil() {
-	o.State.Set(nil)
-}
-
-// UnsetState ensures that no value is present for State, not even an explicit nil
-func (o *OpenGraphDeleted) UnsetState() {
-	o.State.Unset()
+	o.State = &v
 }
 
 func (o OpenGraphDeleted) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.State.IsSet() {
-		toSerialize["state"] = o.State.Get()
+	if o.State != nil {
+		toSerialize["state"] = o.State
 	}
 	return json.Marshal(toSerialize)
 }

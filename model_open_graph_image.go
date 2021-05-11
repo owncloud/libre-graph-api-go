@@ -17,9 +17,9 @@ import (
 // OpenGraphImage struct for OpenGraphImage
 type OpenGraphImage struct {
 	// Optional. Height of the image, in pixels. Read-only.
-	Height NullableInt32 `json:"height,omitempty"`
+	Height *int32 `json:"height,omitempty"`
 	// Optional. Width of the image, in pixels. Read-only.
-	Width NullableInt32 `json:"width,omitempty"`
+	Width *int32 `json:"width,omitempty"`
 }
 
 // NewOpenGraphImage instantiates a new OpenGraphImage object
@@ -39,97 +39,77 @@ func NewOpenGraphImageWithDefaults() *OpenGraphImage {
 	return &this
 }
 
-// GetHeight returns the Height field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetHeight returns the Height field value if set, zero value otherwise.
 func (o *OpenGraphImage) GetHeight() int32 {
-	if o == nil || o.Height.Get() == nil {
+	if o == nil || o.Height == nil {
 		var ret int32
 		return ret
 	}
-	return *o.Height.Get()
+	return *o.Height
 }
 
 // GetHeightOk returns a tuple with the Height field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphImage) GetHeightOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil || o.Height == nil {
 		return nil, false
 	}
-	return o.Height.Get(), o.Height.IsSet()
+	return o.Height, true
 }
 
 // HasHeight returns a boolean if a field has been set.
 func (o *OpenGraphImage) HasHeight() bool {
-	if o != nil && o.Height.IsSet() {
+	if o != nil && o.Height != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHeight gets a reference to the given NullableInt32 and assigns it to the Height field.
+// SetHeight gets a reference to the given int32 and assigns it to the Height field.
 func (o *OpenGraphImage) SetHeight(v int32) {
-	o.Height.Set(&v)
-}
-// SetHeightNil sets the value for Height to be an explicit nil
-func (o *OpenGraphImage) SetHeightNil() {
-	o.Height.Set(nil)
+	o.Height = &v
 }
 
-// UnsetHeight ensures that no value is present for Height, not even an explicit nil
-func (o *OpenGraphImage) UnsetHeight() {
-	o.Height.Unset()
-}
-
-// GetWidth returns the Width field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetWidth returns the Width field value if set, zero value otherwise.
 func (o *OpenGraphImage) GetWidth() int32 {
-	if o == nil || o.Width.Get() == nil {
+	if o == nil || o.Width == nil {
 		var ret int32
 		return ret
 	}
-	return *o.Width.Get()
+	return *o.Width
 }
 
 // GetWidthOk returns a tuple with the Width field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphImage) GetWidthOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil || o.Width == nil {
 		return nil, false
 	}
-	return o.Width.Get(), o.Width.IsSet()
+	return o.Width, true
 }
 
 // HasWidth returns a boolean if a field has been set.
 func (o *OpenGraphImage) HasWidth() bool {
-	if o != nil && o.Width.IsSet() {
+	if o != nil && o.Width != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetWidth gets a reference to the given NullableInt32 and assigns it to the Width field.
+// SetWidth gets a reference to the given int32 and assigns it to the Width field.
 func (o *OpenGraphImage) SetWidth(v int32) {
-	o.Width.Set(&v)
-}
-// SetWidthNil sets the value for Width to be an explicit nil
-func (o *OpenGraphImage) SetWidthNil() {
-	o.Width.Set(nil)
-}
-
-// UnsetWidth ensures that no value is present for Width, not even an explicit nil
-func (o *OpenGraphImage) UnsetWidth() {
-	o.Width.Unset()
+	o.Width = &v
 }
 
 func (o OpenGraphImage) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Height.IsSet() {
-		toSerialize["height"] = o.Height.Get()
+	if o.Height != nil {
+		toSerialize["height"] = o.Height
 	}
-	if o.Width.IsSet() {
-		toSerialize["width"] = o.Width.Get()
+	if o.Width != nil {
+		toSerialize["width"] = o.Width
 	}
 	return json.Marshal(toSerialize)
 }

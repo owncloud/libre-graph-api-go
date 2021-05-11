@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DriveType** | Pointer to **NullableString** | Describes the type of drive represented by this resource. Values are \&quot;personal\&quot; for users home spaces, \&quot;projectSpace\&quot; or \&quot;shares\&quot;. Read-only. | [optional] [readonly] 
+**DriveType** | Pointer to **string** | Describes the type of drive represented by this resource. Values are \&quot;personal\&quot; for users home spaces, \&quot;projectSpace\&quot; or \&quot;shares\&quot;. Read-only. | [optional] [readonly] 
 **OCDriveStatus** | Pointer to **string** | Describes the status of the drive. | [optional] 
-**Owner** | Pointer to [**NullableAnyOfopenGraphIdentitySet**](anyOf&lt;open.graph.identitySet&gt;.md) | Optional. The user account that owns the drive. Read-only. | [optional] [readonly] 
-**OCCoOwner** | Pointer to [**NullableAnyOfopenGraphIdentitySet**](anyOf&lt;open.graph.identitySet&gt;.md) | Optional. The user account that owns the drive. | [optional] 
-**Quota** | Pointer to [**NullableAnyOfopenGraphQuota**](anyOf&lt;open.graph.quota&gt;.md) | Optional. Information about the drive&#39;s storage space quota. Read-only. | [optional] [readonly] 
+**Owner** | Pointer to [**OpenGraphIdentitySet**](open.graph.identitySet.md) | Optional. The user account that owns the drive. Read-only. | [optional] [readonly] 
+**OCCoOwner** | Pointer to [**OpenGraphIdentitySet**](open.graph.identitySet.md) | Optional. The user account that owns the drive. | [optional] 
+**Quota** | Pointer to [**OpenGraphQuota**](open.graph.quota.md) | Optional. Information about the drive&#39;s storage space quota. Read-only. | [optional] [readonly] 
 **Items** | Pointer to [**[]OpenGraphDriveItem**](OpenGraphDriveItem.md) | All items contained in the drive. Read-only. Nullable. | [optional] [readonly] 
-**Root** | Pointer to [**NullableAnyOfopenGraphDriveItem**](anyOf&lt;open.graph.driveItem&gt;.md) | The root folder of the drive. Read-only. | [optional] [readonly] 
+**Root** | Pointer to [**OpenGraphDriveItem**](open.graph.driveItem.md) | The root folder of the drive. Read-only. | [optional] [readonly] 
 
 ## Methods
 
@@ -56,16 +56,6 @@ SetDriveType sets DriveType field to given value.
 
 HasDriveType returns a boolean if a field has been set.
 
-### SetDriveTypeNil
-
-`func (o *OpenGraphDriveAllOf) SetDriveTypeNil(b bool)`
-
- SetDriveTypeNil sets the value for DriveType to be an explicit nil
-
-### UnsetDriveType
-`func (o *OpenGraphDriveAllOf) UnsetDriveType()`
-
-UnsetDriveType ensures that no value is present for DriveType, not even an explicit nil
 ### GetOCDriveStatus
 
 `func (o *OpenGraphDriveAllOf) GetOCDriveStatus() string`
@@ -93,20 +83,20 @@ HasOCDriveStatus returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *OpenGraphDriveAllOf) GetOwner() AnyOfopenGraphIdentitySet`
+`func (o *OpenGraphDriveAllOf) GetOwner() OpenGraphIdentitySet`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *OpenGraphDriveAllOf) GetOwnerOk() (*AnyOfopenGraphIdentitySet, bool)`
+`func (o *OpenGraphDriveAllOf) GetOwnerOk() (*OpenGraphIdentitySet, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *OpenGraphDriveAllOf) SetOwner(v AnyOfopenGraphIdentitySet)`
+`func (o *OpenGraphDriveAllOf) SetOwner(v OpenGraphIdentitySet)`
 
 SetOwner sets Owner field to given value.
 
@@ -116,32 +106,22 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
-### SetOwnerNil
-
-`func (o *OpenGraphDriveAllOf) SetOwnerNil(b bool)`
-
- SetOwnerNil sets the value for Owner to be an explicit nil
-
-### UnsetOwner
-`func (o *OpenGraphDriveAllOf) UnsetOwner()`
-
-UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetOCCoOwner
 
-`func (o *OpenGraphDriveAllOf) GetOCCoOwner() AnyOfopenGraphIdentitySet`
+`func (o *OpenGraphDriveAllOf) GetOCCoOwner() OpenGraphIdentitySet`
 
 GetOCCoOwner returns the OCCoOwner field if non-nil, zero value otherwise.
 
 ### GetOCCoOwnerOk
 
-`func (o *OpenGraphDriveAllOf) GetOCCoOwnerOk() (*AnyOfopenGraphIdentitySet, bool)`
+`func (o *OpenGraphDriveAllOf) GetOCCoOwnerOk() (*OpenGraphIdentitySet, bool)`
 
 GetOCCoOwnerOk returns a tuple with the OCCoOwner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOCCoOwner
 
-`func (o *OpenGraphDriveAllOf) SetOCCoOwner(v AnyOfopenGraphIdentitySet)`
+`func (o *OpenGraphDriveAllOf) SetOCCoOwner(v OpenGraphIdentitySet)`
 
 SetOCCoOwner sets OCCoOwner field to given value.
 
@@ -151,32 +131,22 @@ SetOCCoOwner sets OCCoOwner field to given value.
 
 HasOCCoOwner returns a boolean if a field has been set.
 
-### SetOCCoOwnerNil
-
-`func (o *OpenGraphDriveAllOf) SetOCCoOwnerNil(b bool)`
-
- SetOCCoOwnerNil sets the value for OCCoOwner to be an explicit nil
-
-### UnsetOCCoOwner
-`func (o *OpenGraphDriveAllOf) UnsetOCCoOwner()`
-
-UnsetOCCoOwner ensures that no value is present for OCCoOwner, not even an explicit nil
 ### GetQuota
 
-`func (o *OpenGraphDriveAllOf) GetQuota() AnyOfopenGraphQuota`
+`func (o *OpenGraphDriveAllOf) GetQuota() OpenGraphQuota`
 
 GetQuota returns the Quota field if non-nil, zero value otherwise.
 
 ### GetQuotaOk
 
-`func (o *OpenGraphDriveAllOf) GetQuotaOk() (*AnyOfopenGraphQuota, bool)`
+`func (o *OpenGraphDriveAllOf) GetQuotaOk() (*OpenGraphQuota, bool)`
 
 GetQuotaOk returns a tuple with the Quota field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuota
 
-`func (o *OpenGraphDriveAllOf) SetQuota(v AnyOfopenGraphQuota)`
+`func (o *OpenGraphDriveAllOf) SetQuota(v OpenGraphQuota)`
 
 SetQuota sets Quota field to given value.
 
@@ -186,16 +156,6 @@ SetQuota sets Quota field to given value.
 
 HasQuota returns a boolean if a field has been set.
 
-### SetQuotaNil
-
-`func (o *OpenGraphDriveAllOf) SetQuotaNil(b bool)`
-
- SetQuotaNil sets the value for Quota to be an explicit nil
-
-### UnsetQuota
-`func (o *OpenGraphDriveAllOf) UnsetQuota()`
-
-UnsetQuota ensures that no value is present for Quota, not even an explicit nil
 ### GetItems
 
 `func (o *OpenGraphDriveAllOf) GetItems() []OpenGraphDriveItem`
@@ -223,20 +183,20 @@ HasItems returns a boolean if a field has been set.
 
 ### GetRoot
 
-`func (o *OpenGraphDriveAllOf) GetRoot() AnyOfopenGraphDriveItem`
+`func (o *OpenGraphDriveAllOf) GetRoot() OpenGraphDriveItem`
 
 GetRoot returns the Root field if non-nil, zero value otherwise.
 
 ### GetRootOk
 
-`func (o *OpenGraphDriveAllOf) GetRootOk() (*AnyOfopenGraphDriveItem, bool)`
+`func (o *OpenGraphDriveAllOf) GetRootOk() (*OpenGraphDriveItem, bool)`
 
 GetRootOk returns a tuple with the Root field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoot
 
-`func (o *OpenGraphDriveAllOf) SetRoot(v AnyOfopenGraphDriveItem)`
+`func (o *OpenGraphDriveAllOf) SetRoot(v OpenGraphDriveItem)`
 
 SetRoot sets Root field to given value.
 
@@ -246,16 +206,6 @@ SetRoot sets Root field to given value.
 
 HasRoot returns a boolean if a field has been set.
 
-### SetRootNil
-
-`func (o *OpenGraphDriveAllOf) SetRootNil(b bool)`
-
- SetRootNil sets the value for Root to be an explicit nil
-
-### UnsetRoot
-`func (o *OpenGraphDriveAllOf) UnsetRoot()`
-
-UnsetRoot ensures that no value is present for Root, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

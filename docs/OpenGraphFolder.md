@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChildCount** | Pointer to **NullableInt32** | Number of children contained immediately within this container. | [optional] 
-**View** | Pointer to [**NullableAnyOfopenGraphFolderView**](anyOf&lt;open.graph.folderView&gt;.md) | A collection of properties defining the recommended view for the folder. | [optional] 
+**ChildCount** | Pointer to **int32** | Number of children contained immediately within this container. | [optional] 
+**View** | Pointer to [**OpenGraphFolderView**](open.graph.folderView.md) | A collection of properties defining the recommended view for the folder. | [optional] 
 
 ## Methods
 
@@ -51,32 +51,22 @@ SetChildCount sets ChildCount field to given value.
 
 HasChildCount returns a boolean if a field has been set.
 
-### SetChildCountNil
-
-`func (o *OpenGraphFolder) SetChildCountNil(b bool)`
-
- SetChildCountNil sets the value for ChildCount to be an explicit nil
-
-### UnsetChildCount
-`func (o *OpenGraphFolder) UnsetChildCount()`
-
-UnsetChildCount ensures that no value is present for ChildCount, not even an explicit nil
 ### GetView
 
-`func (o *OpenGraphFolder) GetView() AnyOfopenGraphFolderView`
+`func (o *OpenGraphFolder) GetView() OpenGraphFolderView`
 
 GetView returns the View field if non-nil, zero value otherwise.
 
 ### GetViewOk
 
-`func (o *OpenGraphFolder) GetViewOk() (*AnyOfopenGraphFolderView, bool)`
+`func (o *OpenGraphFolder) GetViewOk() (*OpenGraphFolderView, bool)`
 
 GetViewOk returns a tuple with the View field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetView
 
-`func (o *OpenGraphFolder) SetView(v AnyOfopenGraphFolderView)`
+`func (o *OpenGraphFolder) SetView(v OpenGraphFolderView)`
 
 SetView sets View field to given value.
 
@@ -86,16 +76,6 @@ SetView sets View field to given value.
 
 HasView returns a boolean if a field has been set.
 
-### SetViewNil
-
-`func (o *OpenGraphFolder) SetViewNil(b bool)`
-
- SetViewNil sets the value for View to be an explicit nil
-
-### UnsetView
-`func (o *OpenGraphFolder) UnsetView()`
-
-UnsetView ensures that no value is present for View, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

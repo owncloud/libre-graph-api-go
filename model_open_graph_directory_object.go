@@ -18,7 +18,7 @@ import (
 // OpenGraphDirectoryObject struct for OpenGraphDirectoryObject
 type OpenGraphDirectoryObject struct {
 	OpenGraphEntity
-	DeletedDateTime NullableTime `json:"deletedDateTime,omitempty"`
+	DeletedDateTime *time.Time `json:"deletedDateTime,omitempty"`
 }
 
 // NewOpenGraphDirectoryObject instantiates a new OpenGraphDirectoryObject object
@@ -38,46 +38,36 @@ func NewOpenGraphDirectoryObjectWithDefaults() *OpenGraphDirectoryObject {
 	return &this
 }
 
-// GetDeletedDateTime returns the DeletedDateTime field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDeletedDateTime returns the DeletedDateTime field value if set, zero value otherwise.
 func (o *OpenGraphDirectoryObject) GetDeletedDateTime() time.Time {
-	if o == nil || o.DeletedDateTime.Get() == nil {
+	if o == nil || o.DeletedDateTime == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.DeletedDateTime.Get()
+	return *o.DeletedDateTime
 }
 
 // GetDeletedDateTimeOk returns a tuple with the DeletedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphDirectoryObject) GetDeletedDateTimeOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil || o.DeletedDateTime == nil {
 		return nil, false
 	}
-	return o.DeletedDateTime.Get(), o.DeletedDateTime.IsSet()
+	return o.DeletedDateTime, true
 }
 
 // HasDeletedDateTime returns a boolean if a field has been set.
 func (o *OpenGraphDirectoryObject) HasDeletedDateTime() bool {
-	if o != nil && o.DeletedDateTime.IsSet() {
+	if o != nil && o.DeletedDateTime != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDeletedDateTime gets a reference to the given NullableTime and assigns it to the DeletedDateTime field.
+// SetDeletedDateTime gets a reference to the given time.Time and assigns it to the DeletedDateTime field.
 func (o *OpenGraphDirectoryObject) SetDeletedDateTime(v time.Time) {
-	o.DeletedDateTime.Set(&v)
-}
-// SetDeletedDateTimeNil sets the value for DeletedDateTime to be an explicit nil
-func (o *OpenGraphDirectoryObject) SetDeletedDateTimeNil() {
-	o.DeletedDateTime.Set(nil)
-}
-
-// UnsetDeletedDateTime ensures that no value is present for DeletedDateTime, not even an explicit nil
-func (o *OpenGraphDirectoryObject) UnsetDeletedDateTime() {
-	o.DeletedDateTime.Unset()
+	o.DeletedDateTime = &v
 }
 
 func (o OpenGraphDirectoryObject) MarshalJSON() ([]byte, error) {
@@ -90,8 +80,8 @@ func (o OpenGraphDirectoryObject) MarshalJSON() ([]byte, error) {
 	if errOpenGraphEntity != nil {
 		return []byte{}, errOpenGraphEntity
 	}
-	if o.DeletedDateTime.IsSet() {
-		toSerialize["deletedDateTime"] = o.DeletedDateTime.Get()
+	if o.DeletedDateTime != nil {
+		toSerialize["deletedDateTime"] = o.DeletedDateTime
 	}
 	return json.Marshal(toSerialize)
 }

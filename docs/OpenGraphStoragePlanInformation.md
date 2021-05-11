@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UpgradeAvailable** | Pointer to **NullableBool** | Indicates if there are higher storage quota plans available. Read-only. | [optional] 
+**UpgradeAvailable** | Pointer to **bool** | Indicates if there are higher storage quota plans available. Read-only. | [optional] 
 
 ## Methods
 
@@ -50,16 +50,6 @@ SetUpgradeAvailable sets UpgradeAvailable field to given value.
 
 HasUpgradeAvailable returns a boolean if a field has been set.
 
-### SetUpgradeAvailableNil
-
-`func (o *OpenGraphStoragePlanInformation) SetUpgradeAvailableNil(b bool)`
-
- SetUpgradeAvailableNil sets the value for UpgradeAvailable to be an explicit nil
-
-### UnsetUpgradeAvailable
-`func (o *OpenGraphStoragePlanInformation) UnsetUpgradeAvailable()`
-
-UnsetUpgradeAvailable ensures that no value is present for UpgradeAvailable, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

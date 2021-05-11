@@ -17,10 +17,10 @@ import (
 // OpenGraphFile struct for OpenGraphFile
 type OpenGraphFile struct {
 	// Hashes of the file's binary content, if available. Read-only.
-	Hashes NullableAnyOfopenGraphHashes `json:"hashes,omitempty"`
+	Hashes *OpenGraphHashes `json:"hashes,omitempty"`
 	// The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.
-	MimeType NullableString `json:"mimeType,omitempty"`
-	ProcessingMetadata NullableBool `json:"processingMetadata,omitempty"`
+	MimeType *string `json:"mimeType,omitempty"`
+	ProcessingMetadata *bool `json:"processingMetadata,omitempty"`
 }
 
 // NewOpenGraphFile instantiates a new OpenGraphFile object
@@ -40,142 +40,112 @@ func NewOpenGraphFileWithDefaults() *OpenGraphFile {
 	return &this
 }
 
-// GetHashes returns the Hashes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *OpenGraphFile) GetHashes() AnyOfopenGraphHashes {
-	if o == nil || o.Hashes.Get() == nil {
-		var ret AnyOfopenGraphHashes
+// GetHashes returns the Hashes field value if set, zero value otherwise.
+func (o *OpenGraphFile) GetHashes() OpenGraphHashes {
+	if o == nil || o.Hashes == nil {
+		var ret OpenGraphHashes
 		return ret
 	}
-	return *o.Hashes.Get()
+	return *o.Hashes
 }
 
 // GetHashesOk returns a tuple with the Hashes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OpenGraphFile) GetHashesOk() (*AnyOfopenGraphHashes, bool) {
-	if o == nil  {
+func (o *OpenGraphFile) GetHashesOk() (*OpenGraphHashes, bool) {
+	if o == nil || o.Hashes == nil {
 		return nil, false
 	}
-	return o.Hashes.Get(), o.Hashes.IsSet()
+	return o.Hashes, true
 }
 
 // HasHashes returns a boolean if a field has been set.
 func (o *OpenGraphFile) HasHashes() bool {
-	if o != nil && o.Hashes.IsSet() {
+	if o != nil && o.Hashes != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHashes gets a reference to the given NullableAnyOfopenGraphHashes and assigns it to the Hashes field.
-func (o *OpenGraphFile) SetHashes(v AnyOfopenGraphHashes) {
-	o.Hashes.Set(&v)
-}
-// SetHashesNil sets the value for Hashes to be an explicit nil
-func (o *OpenGraphFile) SetHashesNil() {
-	o.Hashes.Set(nil)
+// SetHashes gets a reference to the given OpenGraphHashes and assigns it to the Hashes field.
+func (o *OpenGraphFile) SetHashes(v OpenGraphHashes) {
+	o.Hashes = &v
 }
 
-// UnsetHashes ensures that no value is present for Hashes, not even an explicit nil
-func (o *OpenGraphFile) UnsetHashes() {
-	o.Hashes.Unset()
-}
-
-// GetMimeType returns the MimeType field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetMimeType returns the MimeType field value if set, zero value otherwise.
 func (o *OpenGraphFile) GetMimeType() string {
-	if o == nil || o.MimeType.Get() == nil {
+	if o == nil || o.MimeType == nil {
 		var ret string
 		return ret
 	}
-	return *o.MimeType.Get()
+	return *o.MimeType
 }
 
 // GetMimeTypeOk returns a tuple with the MimeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphFile) GetMimeTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.MimeType == nil {
 		return nil, false
 	}
-	return o.MimeType.Get(), o.MimeType.IsSet()
+	return o.MimeType, true
 }
 
 // HasMimeType returns a boolean if a field has been set.
 func (o *OpenGraphFile) HasMimeType() bool {
-	if o != nil && o.MimeType.IsSet() {
+	if o != nil && o.MimeType != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetMimeType gets a reference to the given NullableString and assigns it to the MimeType field.
+// SetMimeType gets a reference to the given string and assigns it to the MimeType field.
 func (o *OpenGraphFile) SetMimeType(v string) {
-	o.MimeType.Set(&v)
-}
-// SetMimeTypeNil sets the value for MimeType to be an explicit nil
-func (o *OpenGraphFile) SetMimeTypeNil() {
-	o.MimeType.Set(nil)
+	o.MimeType = &v
 }
 
-// UnsetMimeType ensures that no value is present for MimeType, not even an explicit nil
-func (o *OpenGraphFile) UnsetMimeType() {
-	o.MimeType.Unset()
-}
-
-// GetProcessingMetadata returns the ProcessingMetadata field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetProcessingMetadata returns the ProcessingMetadata field value if set, zero value otherwise.
 func (o *OpenGraphFile) GetProcessingMetadata() bool {
-	if o == nil || o.ProcessingMetadata.Get() == nil {
+	if o == nil || o.ProcessingMetadata == nil {
 		var ret bool
 		return ret
 	}
-	return *o.ProcessingMetadata.Get()
+	return *o.ProcessingMetadata
 }
 
 // GetProcessingMetadataOk returns a tuple with the ProcessingMetadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphFile) GetProcessingMetadataOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil || o.ProcessingMetadata == nil {
 		return nil, false
 	}
-	return o.ProcessingMetadata.Get(), o.ProcessingMetadata.IsSet()
+	return o.ProcessingMetadata, true
 }
 
 // HasProcessingMetadata returns a boolean if a field has been set.
 func (o *OpenGraphFile) HasProcessingMetadata() bool {
-	if o != nil && o.ProcessingMetadata.IsSet() {
+	if o != nil && o.ProcessingMetadata != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetProcessingMetadata gets a reference to the given NullableBool and assigns it to the ProcessingMetadata field.
+// SetProcessingMetadata gets a reference to the given bool and assigns it to the ProcessingMetadata field.
 func (o *OpenGraphFile) SetProcessingMetadata(v bool) {
-	o.ProcessingMetadata.Set(&v)
-}
-// SetProcessingMetadataNil sets the value for ProcessingMetadata to be an explicit nil
-func (o *OpenGraphFile) SetProcessingMetadataNil() {
-	o.ProcessingMetadata.Set(nil)
-}
-
-// UnsetProcessingMetadata ensures that no value is present for ProcessingMetadata, not even an explicit nil
-func (o *OpenGraphFile) UnsetProcessingMetadata() {
-	o.ProcessingMetadata.Unset()
+	o.ProcessingMetadata = &v
 }
 
 func (o OpenGraphFile) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Hashes.IsSet() {
-		toSerialize["hashes"] = o.Hashes.Get()
+	if o.Hashes != nil {
+		toSerialize["hashes"] = o.Hashes
 	}
-	if o.MimeType.IsSet() {
-		toSerialize["mimeType"] = o.MimeType.Get()
+	if o.MimeType != nil {
+		toSerialize["mimeType"] = o.MimeType
 	}
-	if o.ProcessingMetadata.IsSet() {
-		toSerialize["processingMetadata"] = o.ProcessingMetadata.Get()
+	if o.ProcessingMetadata != nil {
+		toSerialize["processingMetadata"] = o.ProcessingMetadata
 	}
 	return json.Marshal(toSerialize)
 }

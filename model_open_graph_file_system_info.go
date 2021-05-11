@@ -18,11 +18,11 @@ import (
 // OpenGraphFileSystemInfo struct for OpenGraphFileSystemInfo
 type OpenGraphFileSystemInfo struct {
 	// The UTC date and time the file was created on a client.
-	CreatedDateTime NullableTime `json:"createdDateTime,omitempty"`
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// The UTC date and time the file was last accessed. Available for the recent file list only.
-	LastAccessedDateTime NullableTime `json:"lastAccessedDateTime,omitempty"`
+	LastAccessedDateTime *time.Time `json:"lastAccessedDateTime,omitempty"`
 	// The UTC date and time the file was last modified on a client.
-	LastModifiedDateTime NullableTime `json:"lastModifiedDateTime,omitempty"`
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 }
 
 // NewOpenGraphFileSystemInfo instantiates a new OpenGraphFileSystemInfo object
@@ -42,142 +42,112 @@ func NewOpenGraphFileSystemInfoWithDefaults() *OpenGraphFileSystemInfo {
 	return &this
 }
 
-// GetCreatedDateTime returns the CreatedDateTime field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetCreatedDateTime returns the CreatedDateTime field value if set, zero value otherwise.
 func (o *OpenGraphFileSystemInfo) GetCreatedDateTime() time.Time {
-	if o == nil || o.CreatedDateTime.Get() == nil {
+	if o == nil || o.CreatedDateTime == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.CreatedDateTime.Get()
+	return *o.CreatedDateTime
 }
 
 // GetCreatedDateTimeOk returns a tuple with the CreatedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphFileSystemInfo) GetCreatedDateTimeOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil || o.CreatedDateTime == nil {
 		return nil, false
 	}
-	return o.CreatedDateTime.Get(), o.CreatedDateTime.IsSet()
+	return o.CreatedDateTime, true
 }
 
 // HasCreatedDateTime returns a boolean if a field has been set.
 func (o *OpenGraphFileSystemInfo) HasCreatedDateTime() bool {
-	if o != nil && o.CreatedDateTime.IsSet() {
+	if o != nil && o.CreatedDateTime != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedDateTime gets a reference to the given NullableTime and assigns it to the CreatedDateTime field.
+// SetCreatedDateTime gets a reference to the given time.Time and assigns it to the CreatedDateTime field.
 func (o *OpenGraphFileSystemInfo) SetCreatedDateTime(v time.Time) {
-	o.CreatedDateTime.Set(&v)
-}
-// SetCreatedDateTimeNil sets the value for CreatedDateTime to be an explicit nil
-func (o *OpenGraphFileSystemInfo) SetCreatedDateTimeNil() {
-	o.CreatedDateTime.Set(nil)
+	o.CreatedDateTime = &v
 }
 
-// UnsetCreatedDateTime ensures that no value is present for CreatedDateTime, not even an explicit nil
-func (o *OpenGraphFileSystemInfo) UnsetCreatedDateTime() {
-	o.CreatedDateTime.Unset()
-}
-
-// GetLastAccessedDateTime returns the LastAccessedDateTime field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetLastAccessedDateTime returns the LastAccessedDateTime field value if set, zero value otherwise.
 func (o *OpenGraphFileSystemInfo) GetLastAccessedDateTime() time.Time {
-	if o == nil || o.LastAccessedDateTime.Get() == nil {
+	if o == nil || o.LastAccessedDateTime == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastAccessedDateTime.Get()
+	return *o.LastAccessedDateTime
 }
 
 // GetLastAccessedDateTimeOk returns a tuple with the LastAccessedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphFileSystemInfo) GetLastAccessedDateTimeOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil || o.LastAccessedDateTime == nil {
 		return nil, false
 	}
-	return o.LastAccessedDateTime.Get(), o.LastAccessedDateTime.IsSet()
+	return o.LastAccessedDateTime, true
 }
 
 // HasLastAccessedDateTime returns a boolean if a field has been set.
 func (o *OpenGraphFileSystemInfo) HasLastAccessedDateTime() bool {
-	if o != nil && o.LastAccessedDateTime.IsSet() {
+	if o != nil && o.LastAccessedDateTime != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetLastAccessedDateTime gets a reference to the given NullableTime and assigns it to the LastAccessedDateTime field.
+// SetLastAccessedDateTime gets a reference to the given time.Time and assigns it to the LastAccessedDateTime field.
 func (o *OpenGraphFileSystemInfo) SetLastAccessedDateTime(v time.Time) {
-	o.LastAccessedDateTime.Set(&v)
-}
-// SetLastAccessedDateTimeNil sets the value for LastAccessedDateTime to be an explicit nil
-func (o *OpenGraphFileSystemInfo) SetLastAccessedDateTimeNil() {
-	o.LastAccessedDateTime.Set(nil)
+	o.LastAccessedDateTime = &v
 }
 
-// UnsetLastAccessedDateTime ensures that no value is present for LastAccessedDateTime, not even an explicit nil
-func (o *OpenGraphFileSystemInfo) UnsetLastAccessedDateTime() {
-	o.LastAccessedDateTime.Unset()
-}
-
-// GetLastModifiedDateTime returns the LastModifiedDateTime field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetLastModifiedDateTime returns the LastModifiedDateTime field value if set, zero value otherwise.
 func (o *OpenGraphFileSystemInfo) GetLastModifiedDateTime() time.Time {
-	if o == nil || o.LastModifiedDateTime.Get() == nil {
+	if o == nil || o.LastModifiedDateTime == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastModifiedDateTime.Get()
+	return *o.LastModifiedDateTime
 }
 
 // GetLastModifiedDateTimeOk returns a tuple with the LastModifiedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OpenGraphFileSystemInfo) GetLastModifiedDateTimeOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil || o.LastModifiedDateTime == nil {
 		return nil, false
 	}
-	return o.LastModifiedDateTime.Get(), o.LastModifiedDateTime.IsSet()
+	return o.LastModifiedDateTime, true
 }
 
 // HasLastModifiedDateTime returns a boolean if a field has been set.
 func (o *OpenGraphFileSystemInfo) HasLastModifiedDateTime() bool {
-	if o != nil && o.LastModifiedDateTime.IsSet() {
+	if o != nil && o.LastModifiedDateTime != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetLastModifiedDateTime gets a reference to the given NullableTime and assigns it to the LastModifiedDateTime field.
+// SetLastModifiedDateTime gets a reference to the given time.Time and assigns it to the LastModifiedDateTime field.
 func (o *OpenGraphFileSystemInfo) SetLastModifiedDateTime(v time.Time) {
-	o.LastModifiedDateTime.Set(&v)
-}
-// SetLastModifiedDateTimeNil sets the value for LastModifiedDateTime to be an explicit nil
-func (o *OpenGraphFileSystemInfo) SetLastModifiedDateTimeNil() {
-	o.LastModifiedDateTime.Set(nil)
-}
-
-// UnsetLastModifiedDateTime ensures that no value is present for LastModifiedDateTime, not even an explicit nil
-func (o *OpenGraphFileSystemInfo) UnsetLastModifiedDateTime() {
-	o.LastModifiedDateTime.Unset()
+	o.LastModifiedDateTime = &v
 }
 
 func (o OpenGraphFileSystemInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CreatedDateTime.IsSet() {
-		toSerialize["createdDateTime"] = o.CreatedDateTime.Get()
+	if o.CreatedDateTime != nil {
+		toSerialize["createdDateTime"] = o.CreatedDateTime
 	}
-	if o.LastAccessedDateTime.IsSet() {
-		toSerialize["lastAccessedDateTime"] = o.LastAccessedDateTime.Get()
+	if o.LastAccessedDateTime != nil {
+		toSerialize["lastAccessedDateTime"] = o.LastAccessedDateTime
 	}
-	if o.LastModifiedDateTime.IsSet() {
-		toSerialize["lastModifiedDateTime"] = o.LastModifiedDateTime.Get()
+	if o.LastModifiedDateTime != nil {
+		toSerialize["lastModifiedDateTime"] = o.LastModifiedDateTime
 	}
 	return json.Marshal(toSerialize)
 }

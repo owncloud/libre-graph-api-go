@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedBy** | Pointer to [**NullableAnyOfopenGraphIdentitySet**](anyOf&lt;open.graph.identitySet&gt;.md) | Identity of the user, device, or application which created the item. Read-only. | [optional] [readonly] 
+**CreatedBy** | Pointer to [**OpenGraphIdentitySet**](open.graph.identitySet.md) | Identity of the user, device, or application which created the item. Read-only. | [optional] [readonly] 
 **CreatedDateTime** | Pointer to **time.Time** | Date and time of item creation. Read-only. | [optional] [readonly] 
-**Description** | Pointer to **NullableString** | Provides a user-visible description of the item. Optional. | [optional] 
-**ETag** | Pointer to **NullableString** | ETag for the item. Read-only. | [optional] [readonly] 
-**LastModifiedBy** | Pointer to [**NullableAnyOfopenGraphIdentitySet**](anyOf&lt;open.graph.identitySet&gt;.md) | Identity of the user, device, and application which last modified the item. Read-only. | [optional] [readonly] 
+**Description** | Pointer to **string** | Provides a user-visible description of the item. Optional. | [optional] 
+**ETag** | Pointer to **string** | ETag for the item. Read-only. | [optional] [readonly] 
+**LastModifiedBy** | Pointer to [**OpenGraphIdentitySet**](open.graph.identitySet.md) | Identity of the user, device, and application which last modified the item. Read-only. | [optional] [readonly] 
 **LastModifiedDateTime** | Pointer to **time.Time** | Date and time the item was last modified. Read-only. | [optional] [readonly] 
-**Name** | Pointer to **NullableString** | The name of the item. Read-write. | [optional] 
-**ParentReference** | Pointer to [**NullableAnyOfopenGraphItemReference**](anyOf&lt;open.graph.itemReference&gt;.md) | Parent information, if the item has a parent. Read-write. | [optional] 
-**WebUrl** | Pointer to **NullableString** | URL that displays the resource in the browser. Read-only. | [optional] [readonly] 
-**CreatedByUser** | Pointer to [**NullableAnyOfopenGraphUser**](anyOf&lt;open.graph.user&gt;.md) | Identity of the user who created the item. Read-only. | [optional] [readonly] 
-**LastModifiedByUser** | Pointer to [**NullableAnyOfopenGraphUser**](anyOf&lt;open.graph.user&gt;.md) | Identity of the user who last modified the item. Read-only. | [optional] [readonly] 
+**Name** | Pointer to **string** | The name of the item. Read-write. | [optional] 
+**ParentReference** | Pointer to [**OpenGraphItemReference**](open.graph.itemReference.md) | Parent information, if the item has a parent. Read-write. | [optional] 
+**WebUrl** | Pointer to **string** | URL that displays the resource in the browser. Read-only. | [optional] [readonly] 
+**CreatedByUser** | Pointer to [**OpenGraphUser**](open.graph.user.md) | Identity of the user who created the item. Read-only. | [optional] [readonly] 
+**LastModifiedByUser** | Pointer to [**OpenGraphUser**](open.graph.user.md) | Identity of the user who last modified the item. Read-only. | [optional] [readonly] 
 
 ## Methods
 
@@ -37,20 +37,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCreatedBy
 
-`func (o *OpenGraphBaseItem) GetCreatedBy() AnyOfopenGraphIdentitySet`
+`func (o *OpenGraphBaseItem) GetCreatedBy() OpenGraphIdentitySet`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *OpenGraphBaseItem) GetCreatedByOk() (*AnyOfopenGraphIdentitySet, bool)`
+`func (o *OpenGraphBaseItem) GetCreatedByOk() (*OpenGraphIdentitySet, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *OpenGraphBaseItem) SetCreatedBy(v AnyOfopenGraphIdentitySet)`
+`func (o *OpenGraphBaseItem) SetCreatedBy(v OpenGraphIdentitySet)`
 
 SetCreatedBy sets CreatedBy field to given value.
 
@@ -60,16 +60,6 @@ SetCreatedBy sets CreatedBy field to given value.
 
 HasCreatedBy returns a boolean if a field has been set.
 
-### SetCreatedByNil
-
-`func (o *OpenGraphBaseItem) SetCreatedByNil(b bool)`
-
- SetCreatedByNil sets the value for CreatedBy to be an explicit nil
-
-### UnsetCreatedBy
-`func (o *OpenGraphBaseItem) UnsetCreatedBy()`
-
-UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
 ### GetCreatedDateTime
 
 `func (o *OpenGraphBaseItem) GetCreatedDateTime() time.Time`
@@ -120,16 +110,6 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
-### SetDescriptionNil
-
-`func (o *OpenGraphBaseItem) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *OpenGraphBaseItem) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetETag
 
 `func (o *OpenGraphBaseItem) GetETag() string`
@@ -155,32 +135,22 @@ SetETag sets ETag field to given value.
 
 HasETag returns a boolean if a field has been set.
 
-### SetETagNil
-
-`func (o *OpenGraphBaseItem) SetETagNil(b bool)`
-
- SetETagNil sets the value for ETag to be an explicit nil
-
-### UnsetETag
-`func (o *OpenGraphBaseItem) UnsetETag()`
-
-UnsetETag ensures that no value is present for ETag, not even an explicit nil
 ### GetLastModifiedBy
 
-`func (o *OpenGraphBaseItem) GetLastModifiedBy() AnyOfopenGraphIdentitySet`
+`func (o *OpenGraphBaseItem) GetLastModifiedBy() OpenGraphIdentitySet`
 
 GetLastModifiedBy returns the LastModifiedBy field if non-nil, zero value otherwise.
 
 ### GetLastModifiedByOk
 
-`func (o *OpenGraphBaseItem) GetLastModifiedByOk() (*AnyOfopenGraphIdentitySet, bool)`
+`func (o *OpenGraphBaseItem) GetLastModifiedByOk() (*OpenGraphIdentitySet, bool)`
 
 GetLastModifiedByOk returns a tuple with the LastModifiedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastModifiedBy
 
-`func (o *OpenGraphBaseItem) SetLastModifiedBy(v AnyOfopenGraphIdentitySet)`
+`func (o *OpenGraphBaseItem) SetLastModifiedBy(v OpenGraphIdentitySet)`
 
 SetLastModifiedBy sets LastModifiedBy field to given value.
 
@@ -190,16 +160,6 @@ SetLastModifiedBy sets LastModifiedBy field to given value.
 
 HasLastModifiedBy returns a boolean if a field has been set.
 
-### SetLastModifiedByNil
-
-`func (o *OpenGraphBaseItem) SetLastModifiedByNil(b bool)`
-
- SetLastModifiedByNil sets the value for LastModifiedBy to be an explicit nil
-
-### UnsetLastModifiedBy
-`func (o *OpenGraphBaseItem) UnsetLastModifiedBy()`
-
-UnsetLastModifiedBy ensures that no value is present for LastModifiedBy, not even an explicit nil
 ### GetLastModifiedDateTime
 
 `func (o *OpenGraphBaseItem) GetLastModifiedDateTime() time.Time`
@@ -250,32 +210,22 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### SetNameNil
-
-`func (o *OpenGraphBaseItem) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *OpenGraphBaseItem) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetParentReference
 
-`func (o *OpenGraphBaseItem) GetParentReference() AnyOfopenGraphItemReference`
+`func (o *OpenGraphBaseItem) GetParentReference() OpenGraphItemReference`
 
 GetParentReference returns the ParentReference field if non-nil, zero value otherwise.
 
 ### GetParentReferenceOk
 
-`func (o *OpenGraphBaseItem) GetParentReferenceOk() (*AnyOfopenGraphItemReference, bool)`
+`func (o *OpenGraphBaseItem) GetParentReferenceOk() (*OpenGraphItemReference, bool)`
 
 GetParentReferenceOk returns a tuple with the ParentReference field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParentReference
 
-`func (o *OpenGraphBaseItem) SetParentReference(v AnyOfopenGraphItemReference)`
+`func (o *OpenGraphBaseItem) SetParentReference(v OpenGraphItemReference)`
 
 SetParentReference sets ParentReference field to given value.
 
@@ -285,16 +235,6 @@ SetParentReference sets ParentReference field to given value.
 
 HasParentReference returns a boolean if a field has been set.
 
-### SetParentReferenceNil
-
-`func (o *OpenGraphBaseItem) SetParentReferenceNil(b bool)`
-
- SetParentReferenceNil sets the value for ParentReference to be an explicit nil
-
-### UnsetParentReference
-`func (o *OpenGraphBaseItem) UnsetParentReference()`
-
-UnsetParentReference ensures that no value is present for ParentReference, not even an explicit nil
 ### GetWebUrl
 
 `func (o *OpenGraphBaseItem) GetWebUrl() string`
@@ -320,32 +260,22 @@ SetWebUrl sets WebUrl field to given value.
 
 HasWebUrl returns a boolean if a field has been set.
 
-### SetWebUrlNil
-
-`func (o *OpenGraphBaseItem) SetWebUrlNil(b bool)`
-
- SetWebUrlNil sets the value for WebUrl to be an explicit nil
-
-### UnsetWebUrl
-`func (o *OpenGraphBaseItem) UnsetWebUrl()`
-
-UnsetWebUrl ensures that no value is present for WebUrl, not even an explicit nil
 ### GetCreatedByUser
 
-`func (o *OpenGraphBaseItem) GetCreatedByUser() AnyOfopenGraphUser`
+`func (o *OpenGraphBaseItem) GetCreatedByUser() OpenGraphUser`
 
 GetCreatedByUser returns the CreatedByUser field if non-nil, zero value otherwise.
 
 ### GetCreatedByUserOk
 
-`func (o *OpenGraphBaseItem) GetCreatedByUserOk() (*AnyOfopenGraphUser, bool)`
+`func (o *OpenGraphBaseItem) GetCreatedByUserOk() (*OpenGraphUser, bool)`
 
 GetCreatedByUserOk returns a tuple with the CreatedByUser field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedByUser
 
-`func (o *OpenGraphBaseItem) SetCreatedByUser(v AnyOfopenGraphUser)`
+`func (o *OpenGraphBaseItem) SetCreatedByUser(v OpenGraphUser)`
 
 SetCreatedByUser sets CreatedByUser field to given value.
 
@@ -355,32 +285,22 @@ SetCreatedByUser sets CreatedByUser field to given value.
 
 HasCreatedByUser returns a boolean if a field has been set.
 
-### SetCreatedByUserNil
-
-`func (o *OpenGraphBaseItem) SetCreatedByUserNil(b bool)`
-
- SetCreatedByUserNil sets the value for CreatedByUser to be an explicit nil
-
-### UnsetCreatedByUser
-`func (o *OpenGraphBaseItem) UnsetCreatedByUser()`
-
-UnsetCreatedByUser ensures that no value is present for CreatedByUser, not even an explicit nil
 ### GetLastModifiedByUser
 
-`func (o *OpenGraphBaseItem) GetLastModifiedByUser() AnyOfopenGraphUser`
+`func (o *OpenGraphBaseItem) GetLastModifiedByUser() OpenGraphUser`
 
 GetLastModifiedByUser returns the LastModifiedByUser field if non-nil, zero value otherwise.
 
 ### GetLastModifiedByUserOk
 
-`func (o *OpenGraphBaseItem) GetLastModifiedByUserOk() (*AnyOfopenGraphUser, bool)`
+`func (o *OpenGraphBaseItem) GetLastModifiedByUserOk() (*OpenGraphUser, bool)`
 
 GetLastModifiedByUserOk returns a tuple with the LastModifiedByUser field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastModifiedByUser
 
-`func (o *OpenGraphBaseItem) SetLastModifiedByUser(v AnyOfopenGraphUser)`
+`func (o *OpenGraphBaseItem) SetLastModifiedByUser(v OpenGraphUser)`
 
 SetLastModifiedByUser sets LastModifiedByUser field to given value.
 
@@ -390,16 +310,6 @@ SetLastModifiedByUser sets LastModifiedByUser field to given value.
 
 HasLastModifiedByUser returns a boolean if a field has been set.
 
-### SetLastModifiedByUserNil
-
-`func (o *OpenGraphBaseItem) SetLastModifiedByUserNil(b bool)`
-
- SetLastModifiedByUserNil sets the value for LastModifiedByUser to be an explicit nil
-
-### UnsetLastModifiedByUser
-`func (o *OpenGraphBaseItem) UnsetLastModifiedByUser()`
-
-UnsetLastModifiedByUser ensures that no value is present for LastModifiedByUser, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

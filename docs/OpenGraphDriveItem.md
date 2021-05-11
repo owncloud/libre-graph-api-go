@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Content** | Pointer to **NullableString** | The content stream, if the item represents a file. | [optional] 
-**CTag** | Pointer to **NullableString** | An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only. | [optional] [readonly] 
-**Deleted** | Pointer to [**NullableAnyOfopenGraphDeleted**](anyOf&lt;open.graph.deleted&gt;.md) | Information about the deleted state of the item. Read-only. | [optional] [readonly] 
-**File** | Pointer to [**NullableAnyOfopenGraphFile**](anyOf&lt;open.graph.file&gt;.md) | File metadata, if the item is a file. Read-only. | [optional] [readonly] 
-**FileSystemInfo** | Pointer to [**NullableAnyOfopenGraphFileSystemInfo**](anyOf&lt;open.graph.fileSystemInfo&gt;.md) | File system information on client. Read-write. | [optional] 
-**Folder** | Pointer to [**NullableAnyOfopenGraphFolder**](anyOf&lt;open.graph.folder&gt;.md) | Folder metadata, if the item is a folder. Read-only. | [optional] [readonly] 
-**Image** | Pointer to [**NullableAnyOfopenGraphImage**](anyOf&lt;open.graph.image&gt;.md) | Image metadata, if the item is an image. Read-only. | [optional] [readonly] 
-**Root** | Pointer to [**NullableAnyOfobject**](anyOf&lt;object&gt;.md) | If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive. | [optional] 
-**Size** | Pointer to **NullableInt64** | Size of the item in bytes. Read-only. | [optional] [readonly] 
-**WebDavUrl** | Pointer to **NullableString** | WebDAV compatible URL for the item. Read-only. | [optional] [readonly] 
+**Content** | Pointer to **string** | The content stream, if the item represents a file. | [optional] 
+**CTag** | Pointer to **string** | An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only. | [optional] [readonly] 
+**Deleted** | Pointer to [**OpenGraphDeleted**](open.graph.deleted.md) | Information about the deleted state of the item. Read-only. | [optional] [readonly] 
+**File** | Pointer to [**OpenGraphFile**](open.graph.file.md) | File metadata, if the item is a file. Read-only. | [optional] [readonly] 
+**FileSystemInfo** | Pointer to [**OpenGraphFileSystemInfo**](open.graph.fileSystemInfo.md) | File system information on client. Read-write. | [optional] 
+**Folder** | Pointer to [**OpenGraphFolder**](open.graph.folder.md) | Folder metadata, if the item is a folder. Read-only. | [optional] [readonly] 
+**Image** | Pointer to [**OpenGraphImage**](open.graph.image.md) | Image metadata, if the item is an image. Read-only. | [optional] [readonly] 
+**Root** | Pointer to **map[string]interface{}** | If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive. | [optional] 
+**Size** | Pointer to **int64** | Size of the item in bytes. Read-only. | [optional] [readonly] 
+**WebDavUrl** | Pointer to **string** | WebDAV compatible URL for the item. Read-only. | [optional] [readonly] 
 **Children** | Pointer to [**[]OpenGraphDriveItem**](OpenGraphDriveItem.md) | Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable. | [optional] [readonly] 
 
 ## Methods
@@ -60,16 +60,6 @@ SetContent sets Content field to given value.
 
 HasContent returns a boolean if a field has been set.
 
-### SetContentNil
-
-`func (o *OpenGraphDriveItem) SetContentNil(b bool)`
-
- SetContentNil sets the value for Content to be an explicit nil
-
-### UnsetContent
-`func (o *OpenGraphDriveItem) UnsetContent()`
-
-UnsetContent ensures that no value is present for Content, not even an explicit nil
 ### GetCTag
 
 `func (o *OpenGraphDriveItem) GetCTag() string`
@@ -95,32 +85,22 @@ SetCTag sets CTag field to given value.
 
 HasCTag returns a boolean if a field has been set.
 
-### SetCTagNil
-
-`func (o *OpenGraphDriveItem) SetCTagNil(b bool)`
-
- SetCTagNil sets the value for CTag to be an explicit nil
-
-### UnsetCTag
-`func (o *OpenGraphDriveItem) UnsetCTag()`
-
-UnsetCTag ensures that no value is present for CTag, not even an explicit nil
 ### GetDeleted
 
-`func (o *OpenGraphDriveItem) GetDeleted() AnyOfopenGraphDeleted`
+`func (o *OpenGraphDriveItem) GetDeleted() OpenGraphDeleted`
 
 GetDeleted returns the Deleted field if non-nil, zero value otherwise.
 
 ### GetDeletedOk
 
-`func (o *OpenGraphDriveItem) GetDeletedOk() (*AnyOfopenGraphDeleted, bool)`
+`func (o *OpenGraphDriveItem) GetDeletedOk() (*OpenGraphDeleted, bool)`
 
 GetDeletedOk returns a tuple with the Deleted field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeleted
 
-`func (o *OpenGraphDriveItem) SetDeleted(v AnyOfopenGraphDeleted)`
+`func (o *OpenGraphDriveItem) SetDeleted(v OpenGraphDeleted)`
 
 SetDeleted sets Deleted field to given value.
 
@@ -130,32 +110,22 @@ SetDeleted sets Deleted field to given value.
 
 HasDeleted returns a boolean if a field has been set.
 
-### SetDeletedNil
-
-`func (o *OpenGraphDriveItem) SetDeletedNil(b bool)`
-
- SetDeletedNil sets the value for Deleted to be an explicit nil
-
-### UnsetDeleted
-`func (o *OpenGraphDriveItem) UnsetDeleted()`
-
-UnsetDeleted ensures that no value is present for Deleted, not even an explicit nil
 ### GetFile
 
-`func (o *OpenGraphDriveItem) GetFile() AnyOfopenGraphFile`
+`func (o *OpenGraphDriveItem) GetFile() OpenGraphFile`
 
 GetFile returns the File field if non-nil, zero value otherwise.
 
 ### GetFileOk
 
-`func (o *OpenGraphDriveItem) GetFileOk() (*AnyOfopenGraphFile, bool)`
+`func (o *OpenGraphDriveItem) GetFileOk() (*OpenGraphFile, bool)`
 
 GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFile
 
-`func (o *OpenGraphDriveItem) SetFile(v AnyOfopenGraphFile)`
+`func (o *OpenGraphDriveItem) SetFile(v OpenGraphFile)`
 
 SetFile sets File field to given value.
 
@@ -165,32 +135,22 @@ SetFile sets File field to given value.
 
 HasFile returns a boolean if a field has been set.
 
-### SetFileNil
-
-`func (o *OpenGraphDriveItem) SetFileNil(b bool)`
-
- SetFileNil sets the value for File to be an explicit nil
-
-### UnsetFile
-`func (o *OpenGraphDriveItem) UnsetFile()`
-
-UnsetFile ensures that no value is present for File, not even an explicit nil
 ### GetFileSystemInfo
 
-`func (o *OpenGraphDriveItem) GetFileSystemInfo() AnyOfopenGraphFileSystemInfo`
+`func (o *OpenGraphDriveItem) GetFileSystemInfo() OpenGraphFileSystemInfo`
 
 GetFileSystemInfo returns the FileSystemInfo field if non-nil, zero value otherwise.
 
 ### GetFileSystemInfoOk
 
-`func (o *OpenGraphDriveItem) GetFileSystemInfoOk() (*AnyOfopenGraphFileSystemInfo, bool)`
+`func (o *OpenGraphDriveItem) GetFileSystemInfoOk() (*OpenGraphFileSystemInfo, bool)`
 
 GetFileSystemInfoOk returns a tuple with the FileSystemInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFileSystemInfo
 
-`func (o *OpenGraphDriveItem) SetFileSystemInfo(v AnyOfopenGraphFileSystemInfo)`
+`func (o *OpenGraphDriveItem) SetFileSystemInfo(v OpenGraphFileSystemInfo)`
 
 SetFileSystemInfo sets FileSystemInfo field to given value.
 
@@ -200,32 +160,22 @@ SetFileSystemInfo sets FileSystemInfo field to given value.
 
 HasFileSystemInfo returns a boolean if a field has been set.
 
-### SetFileSystemInfoNil
-
-`func (o *OpenGraphDriveItem) SetFileSystemInfoNil(b bool)`
-
- SetFileSystemInfoNil sets the value for FileSystemInfo to be an explicit nil
-
-### UnsetFileSystemInfo
-`func (o *OpenGraphDriveItem) UnsetFileSystemInfo()`
-
-UnsetFileSystemInfo ensures that no value is present for FileSystemInfo, not even an explicit nil
 ### GetFolder
 
-`func (o *OpenGraphDriveItem) GetFolder() AnyOfopenGraphFolder`
+`func (o *OpenGraphDriveItem) GetFolder() OpenGraphFolder`
 
 GetFolder returns the Folder field if non-nil, zero value otherwise.
 
 ### GetFolderOk
 
-`func (o *OpenGraphDriveItem) GetFolderOk() (*AnyOfopenGraphFolder, bool)`
+`func (o *OpenGraphDriveItem) GetFolderOk() (*OpenGraphFolder, bool)`
 
 GetFolderOk returns a tuple with the Folder field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFolder
 
-`func (o *OpenGraphDriveItem) SetFolder(v AnyOfopenGraphFolder)`
+`func (o *OpenGraphDriveItem) SetFolder(v OpenGraphFolder)`
 
 SetFolder sets Folder field to given value.
 
@@ -235,32 +185,22 @@ SetFolder sets Folder field to given value.
 
 HasFolder returns a boolean if a field has been set.
 
-### SetFolderNil
-
-`func (o *OpenGraphDriveItem) SetFolderNil(b bool)`
-
- SetFolderNil sets the value for Folder to be an explicit nil
-
-### UnsetFolder
-`func (o *OpenGraphDriveItem) UnsetFolder()`
-
-UnsetFolder ensures that no value is present for Folder, not even an explicit nil
 ### GetImage
 
-`func (o *OpenGraphDriveItem) GetImage() AnyOfopenGraphImage`
+`func (o *OpenGraphDriveItem) GetImage() OpenGraphImage`
 
 GetImage returns the Image field if non-nil, zero value otherwise.
 
 ### GetImageOk
 
-`func (o *OpenGraphDriveItem) GetImageOk() (*AnyOfopenGraphImage, bool)`
+`func (o *OpenGraphDriveItem) GetImageOk() (*OpenGraphImage, bool)`
 
 GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImage
 
-`func (o *OpenGraphDriveItem) SetImage(v AnyOfopenGraphImage)`
+`func (o *OpenGraphDriveItem) SetImage(v OpenGraphImage)`
 
 SetImage sets Image field to given value.
 
@@ -270,32 +210,22 @@ SetImage sets Image field to given value.
 
 HasImage returns a boolean if a field has been set.
 
-### SetImageNil
-
-`func (o *OpenGraphDriveItem) SetImageNil(b bool)`
-
- SetImageNil sets the value for Image to be an explicit nil
-
-### UnsetImage
-`func (o *OpenGraphDriveItem) UnsetImage()`
-
-UnsetImage ensures that no value is present for Image, not even an explicit nil
 ### GetRoot
 
-`func (o *OpenGraphDriveItem) GetRoot() AnyOfobject`
+`func (o *OpenGraphDriveItem) GetRoot() map[string]interface{}`
 
 GetRoot returns the Root field if non-nil, zero value otherwise.
 
 ### GetRootOk
 
-`func (o *OpenGraphDriveItem) GetRootOk() (*AnyOfobject, bool)`
+`func (o *OpenGraphDriveItem) GetRootOk() (*map[string]interface{}, bool)`
 
 GetRootOk returns a tuple with the Root field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoot
 
-`func (o *OpenGraphDriveItem) SetRoot(v AnyOfobject)`
+`func (o *OpenGraphDriveItem) SetRoot(v map[string]interface{})`
 
 SetRoot sets Root field to given value.
 
@@ -305,16 +235,6 @@ SetRoot sets Root field to given value.
 
 HasRoot returns a boolean if a field has been set.
 
-### SetRootNil
-
-`func (o *OpenGraphDriveItem) SetRootNil(b bool)`
-
- SetRootNil sets the value for Root to be an explicit nil
-
-### UnsetRoot
-`func (o *OpenGraphDriveItem) UnsetRoot()`
-
-UnsetRoot ensures that no value is present for Root, not even an explicit nil
 ### GetSize
 
 `func (o *OpenGraphDriveItem) GetSize() int64`
@@ -340,16 +260,6 @@ SetSize sets Size field to given value.
 
 HasSize returns a boolean if a field has been set.
 
-### SetSizeNil
-
-`func (o *OpenGraphDriveItem) SetSizeNil(b bool)`
-
- SetSizeNil sets the value for Size to be an explicit nil
-
-### UnsetSize
-`func (o *OpenGraphDriveItem) UnsetSize()`
-
-UnsetSize ensures that no value is present for Size, not even an explicit nil
 ### GetWebDavUrl
 
 `func (o *OpenGraphDriveItem) GetWebDavUrl() string`
@@ -375,16 +285,6 @@ SetWebDavUrl sets WebDavUrl field to given value.
 
 HasWebDavUrl returns a boolean if a field has been set.
 
-### SetWebDavUrlNil
-
-`func (o *OpenGraphDriveItem) SetWebDavUrlNil(b bool)`
-
- SetWebDavUrlNil sets the value for WebDavUrl to be an explicit nil
-
-### UnsetWebDavUrl
-`func (o *OpenGraphDriveItem) UnsetWebDavUrl()`
-
-UnsetWebDavUrl ensures that no value is present for WebDavUrl, not even an explicit nil
 ### GetChildren
 
 `func (o *OpenGraphDriveItem) GetChildren() []OpenGraphDriveItem`
