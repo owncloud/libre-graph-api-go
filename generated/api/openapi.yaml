@@ -1,0 +1,1176 @@
+openapi: 3.0.1
+info:
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  title: Open Graph API
+  version: v0.0
+servers:
+- description: open Graph API
+  url: https://owncloud.dev/open-graph-api/
+security:
+- bearerAuth: []
+paths:
+  /me/drives:
+    get:
+      operationId: me.ListDrives
+      parameters:
+      - description: Show only the first n items
+        example: 50
+        explode: true
+        in: query
+        name: $top
+        required: false
+        schema:
+          minimum: 0
+          type: integer
+        style: form
+      - description: Skip the first n items
+        explode: true
+        in: query
+        name: $skip
+        required: false
+        schema:
+          minimum: 0
+          type: integer
+        style: form
+      - description: Search items by search phrases
+        explode: true
+        in: query
+        name: $search
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter items by property values
+        explode: true
+        in: query
+        name: $filter
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Include count of items
+        explode: true
+        in: query
+        name: $count
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: Select properties to be returned
+        explode: false
+        in: query
+        name: $select
+        required: false
+        schema:
+          items:
+            enum:
+            - id
+            - createdBy
+            - createdDateTime
+            - description
+            - eTag
+            - lastModifiedBy
+            - lastModifiedDateTime
+            - name
+            - parentReference
+            - webUrl
+            - driveType
+            - oCDriveStatus
+            - owner
+            - oCCoOwner
+            - quota
+            - createdByUser
+            - lastModifiedByUser
+            - root
+            type: string
+          maxItems: 18
+          type: array
+          uniqueItems: true
+        style: form
+      - description: Expand related entities
+        explode: false
+        in: query
+        name: $expand
+        required: false
+        schema:
+          items:
+            enum:
+            - '*'
+            - root
+            type: string
+          maxItems: 2
+          type: array
+          uniqueItems: true
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection_of_drive'
+          description: Retrieved navigation property
+          links:
+            root:
+              operationId: me.drive.root.GetRoot
+              parameters:
+                drive-id: $request.path.drive-id
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Get drives from me
+      tags:
+      - me.drive
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      operationId: me.CreateDrives
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/open.graph.drive'
+        description: New navigation property
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/open.graph.drive'
+          description: Created navigation property.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Create new navigation property to drives for me
+      tags:
+      - me.drive
+      x-ms-docs-operation-type: operation
+  /me/drives/{drive-id}:
+    delete:
+      operationId: me.drives.DeleteDrive
+      parameters:
+      - description: 'key: id of drive'
+        explode: false
+        in: path
+        name: drive-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: drive
+      - description: ETag
+        explode: false
+        in: header
+        name: If-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: Success
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Delete a specific navigation property drive
+      tags:
+      - me.drives
+      x-ms-docs-operation-type: operation
+    get:
+      operationId: me.drives.GetDrive
+      parameters:
+      - description: 'key: id of drive'
+        explode: false
+        in: path
+        name: drive-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: drive
+      - description: Select properties to be returned
+        explode: false
+        in: query
+        name: $select
+        required: false
+        schema:
+          items:
+            enum:
+            - id
+            - createdBy
+            - createdDateTime
+            - description
+            - eTag
+            - lastModifiedBy
+            - lastModifiedDateTime
+            - name
+            - parentReference
+            - webUrl
+            - driveType
+            - oCDriveStatus
+            - owner
+            - oCCoOwner
+            - quota
+            - createdByUser
+            - lastModifiedByUser
+            - root
+            type: string
+          maxItems: 18
+          type: array
+          uniqueItems: true
+        style: form
+      - description: Expand related entities
+        explode: false
+        in: query
+        name: $expand
+        required: false
+        schema:
+          items:
+            enum:
+            - '*'
+            - root
+            type: string
+          maxItems: 2
+          type: array
+          uniqueItems: true
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/open.graph.drive'
+          description: Retrieved navigation property
+          links:
+            root:
+              operationId: me.drive.root.GetRoot
+              parameters:
+                drive-id: $request.path.drive-id
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Get drive by id
+      tags:
+      - me.drives
+      x-ms-docs-operation-type: operation
+    patch:
+      operationId: me.drives.UpdateDrive
+      parameters:
+      - description: 'key: id of drive'
+        explode: false
+        in: path
+        name: drive-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: drive
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/open.graph.drive'
+        description: New navigation property values
+        required: true
+      responses:
+        "204":
+          description: Success
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Update the navigation property of a specific drive
+      tags:
+      - me.drives
+      x-ms-docs-operation-type: operation
+  /drive/root:
+    delete:
+      operationId: me.drive.root.DeleteRoot
+      parameters:
+      - description: ETag
+        explode: false
+        in: header
+        name: If-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: Success
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Delete navigation property root for drive
+      tags:
+      - me.drive.root
+      x-ms-docs-operation-type: operation
+    get:
+      operationId: me.drive.root.GetRoot
+      parameters:
+      - description: Select properties to be returned
+        explode: false
+        in: query
+        name: $select
+        required: false
+        schema:
+          items:
+            enum:
+            - id
+            - createdBy
+            - createdDateTime
+            - description
+            - eTag
+            - lastModifiedBy
+            - lastModifiedDateTime
+            - name
+            - parentReference
+            - webUrl
+            - audio
+            - content
+            - cTag
+            - deleted
+            - file
+            - fileSystemInfo
+            - folder
+            - image
+            - location
+            - package
+            - pendingOperations
+            - photo
+            - publication
+            - remoteItem
+            - root
+            - searchResult
+            - shared
+            - sharepointIds
+            - size
+            - specialFolder
+            - video
+            - webDavUrl
+            - createdByUser
+            - lastModifiedByUser
+            - workbook
+            - analytics
+            - children
+            - listItem
+            - permissions
+            - subscriptions
+            - thumbnails
+            - versions
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/open.graph.driveItem'
+          description: Retrieved navigation property
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Get root from drive
+      tags:
+      - me.drive.root
+      x-ms-docs-operation-type: operation
+    patch:
+      operationId: me.drive.root.UpdateRoot
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/open.graph.driveItem'
+        description: New navigation property values
+        required: true
+      responses:
+        "204":
+          description: Success
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Update the navigation property root in drive
+      tags:
+      - me.drive.root
+      x-ms-docs-operation-type: operation
+components:
+  parameters:
+    top:
+      description: Show only the first n items
+      example: 50
+      explode: true
+      in: query
+      name: $top
+      required: false
+      schema:
+        minimum: 0
+        type: integer
+      style: form
+    skip:
+      description: Skip the first n items
+      explode: true
+      in: query
+      name: $skip
+      required: false
+      schema:
+        minimum: 0
+        type: integer
+      style: form
+    search:
+      description: Search items by search phrases
+      explode: true
+      in: query
+      name: $search
+      required: false
+      schema:
+        type: string
+      style: form
+    filter:
+      description: Filter items by property values
+      explode: true
+      in: query
+      name: $filter
+      required: false
+      schema:
+        type: string
+      style: form
+    count:
+      description: Include count of items
+      explode: true
+      in: query
+      name: $count
+      required: false
+      schema:
+        type: boolean
+      style: form
+  responses:
+    error:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+      description: error
+  schemas:
+    open.graph.drive:
+      allOf:
+      - $ref: '#/components/schemas/open.graph.baseItem'
+      - $ref: '#/components/schemas/open_graph_drive_allOf'
+    open.graph.baseItem:
+      allOf:
+      - $ref: '#/components/schemas/open.graph.entity'
+      - $ref: '#/components/schemas/open_graph_baseItem_allOf'
+    open.graph.entity:
+      discriminator:
+        propertyName: id
+      properties:
+        id:
+          description: Read-only.
+          readOnly: true
+          type: string
+      type: object
+    open.graph.identitySet:
+      properties:
+        application:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.identity'
+          description: Optional. The application associated with this action.
+          nullable: true
+        device:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.identity'
+          description: Optional. The device associated with this action.
+          nullable: true
+        user:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.identity'
+          description: Optional. The user associated with this action.
+          nullable: true
+      type: object
+    open.graph.identity:
+      properties:
+        displayName:
+          description: The identity's display name. Note that this may not always
+            be available or up to date. For example, if a user changes their display
+            name, the API may show the new value in a future response, but the items
+            associated with the user won't show up as having changed when using delta.
+          nullable: true
+          type: string
+        id:
+          description: Unique identifier for the identity.
+          type: string
+      type: object
+    open.graph.user:
+      allOf:
+      - $ref: '#/components/schemas/open.graph.directoryObject'
+      - $ref: '#/components/schemas/open_graph_user_allOf'
+    open.graph.itemReference:
+      properties:
+        driveId:
+          description: Unique identifier of the drive instance that contains the item.
+            Read-only.
+          nullable: true
+          readOnly: true
+          type: string
+        driveType:
+          description: Identifies the type of drive. See [drive][] resource for values.
+            Read-only.
+          nullable: true
+          readOnly: true
+          type: string
+        id:
+          description: Unique identifier of the item in the drive. Read-only.
+          nullable: true
+          readOnly: true
+          type: string
+        name:
+          description: The name of the item being referenced. Read-only.
+          nullable: true
+          readOnly: true
+          type: string
+        path:
+          description: Path that can be used to navigate to the item. Read-only.
+          nullable: true
+          readOnly: true
+          type: string
+        shareId:
+          description: A unique identifier for a shared resource that can be accessed
+            via the [Shares][] API.
+          nullable: true
+          type: string
+      type: object
+    open.graph.driveItem:
+      allOf:
+      - $ref: '#/components/schemas/open.graph.baseItem'
+      - $ref: '#/components/schemas/open_graph_driveItem_allOf'
+    open.graph.deleted:
+      properties:
+        state:
+          description: Represents the state of the deleted item.
+          nullable: true
+          type: string
+      type: object
+    open.graph.file:
+      properties:
+        hashes:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.hashes'
+          description: Hashes of the file's binary content, if available. Read-only.
+          nullable: true
+          readOnly: true
+        mimeType:
+          description: The MIME type for the file. This is determined by logic on
+            the server and might not be the value provided when the file was uploaded.
+            Read-only.
+          nullable: true
+          readOnly: true
+          type: string
+        processingMetadata:
+          nullable: true
+          type: boolean
+      type: object
+    open.graph.fileSystemInfo:
+      properties:
+        createdDateTime:
+          description: The UTC date and time the file was created on a client.
+          format: date-time
+          nullable: true
+          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          type: string
+        lastAccessedDateTime:
+          description: The UTC date and time the file was last accessed. Available
+            for the recent file list only.
+          format: date-time
+          nullable: true
+          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          type: string
+        lastModifiedDateTime:
+          description: The UTC date and time the file was last modified on a client.
+          format: date-time
+          nullable: true
+          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          type: string
+      type: object
+    open.graph.folder:
+      properties:
+        childCount:
+          description: Number of children contained immediately within this container.
+          format: int32
+          maximum: 2147483647
+          nullable: true
+          type: integer
+        view:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.folderView'
+          description: A collection of properties defining the recommended view for
+            the folder.
+          nullable: true
+      type: object
+    open.graph.image:
+      properties:
+        height:
+          description: Optional. Height of the image, in pixels. Read-only.
+          format: int32
+          maximum: 2147483647
+          nullable: true
+          readOnly: true
+          type: integer
+        width:
+          description: Optional. Width of the image, in pixels. Read-only.
+          format: int32
+          maximum: 2147483647
+          nullable: true
+          readOnly: true
+          type: integer
+      type: object
+    open.graph.root:
+      type: object
+    open.graph.directoryObject:
+      allOf:
+      - $ref: '#/components/schemas/open.graph.entity'
+      - $ref: '#/components/schemas/open_graph_directoryObject_allOf'
+    open.graph.quota:
+      properties:
+        deleted:
+          description: Total space consumed by files in the recycle bin, in bytes.
+            Read-only.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+        remaining:
+          description: Total space remaining before reaching the quota limit, in bytes.
+            Read-only.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+        state:
+          description: Enumeration value that indicates the state of the storage space.
+            Read-only.
+          nullable: true
+          readOnly: true
+          type: string
+        storagePlanInformation:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.storagePlanInformation'
+          description: Information about the drive's storage quota plans.
+          nullable: true
+        total:
+          description: Total allowed storage space, in bytes. Read-only.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+        used:
+          description: Total space used, in bytes. Read-only.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+      type: object
+    open.graph.storagePlanInformation:
+      properties:
+        upgradeAvailable:
+          description: Indicates if there are higher storage quota plans available.
+            Read-only.
+          nullable: true
+          type: boolean
+      type: object
+    open.graph.hashes:
+      properties:
+        crc32Hash:
+          description: The CRC32 value of the file (if available). Read-only.
+          maxLength: 8
+          nullable: true
+          type: string
+        quickXorHash:
+          description: A proprietary hash of the file that can be used to determine
+            if the contents of the file have changed (if available). Read-only.
+          nullable: true
+          type: string
+        sha1Hash:
+          description: SHA1 hash for the contents of the file (if available). Read-only.
+          maxLength: 40
+          nullable: true
+          type: string
+        sha256Hash:
+          description: SHA256 hash for the contents of the file (if available). Read-only.
+          maxLength: 160
+          nullable: true
+          type: string
+      type: object
+    open.graph.folderView:
+      properties:
+        sortBy:
+          description: The method by which the folder should be sorted.
+          nullable: true
+          type: string
+        sortOrder:
+          description: If true, indicates that items should be sorted in descending
+            order. Otherwise, items should be sorted ascending.
+          nullable: true
+          type: string
+        viewType:
+          description: The type of view that should be used to represent the folder.
+          nullable: true
+          type: string
+      type: object
+    odata.error:
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+      required:
+      - error
+      type: object
+    odata.error.main:
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+          type: array
+        innererror:
+          description: The structure of this object is service-specific
+          type: object
+      required:
+      - code
+      - message
+      type: object
+    odata.error.detail:
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+      required:
+      - code
+      - message
+      type: object
+    Collection_of_drive:
+      example:
+        '@odata.nextLink': '@odata.nextLink'
+        value:
+        - null
+        - null
+        - null
+        - null
+        - null
+      properties:
+        value:
+          items:
+            $ref: '#/components/schemas/open.graph.drive'
+          maxItems: 100
+          type: array
+        '@odata.nextLink':
+          type: string
+      title: Collection of drive
+      type: object
+    open_graph_drive_allOf:
+      properties:
+        driveType:
+          description: Describes the type of drive represented by this resource. Values
+            are "personal" for users home spaces, "projectSpace" or "shares". Read-only.
+          nullable: true
+          readOnly: true
+          type: string
+        oCDriveStatus:
+          description: Describes the status of the drive.
+          type: string
+        owner:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.identitySet'
+          description: Optional. The user account that owns the drive. Read-only.
+          nullable: true
+          readOnly: true
+        oCCoOwner:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.identitySet'
+          description: Optional. The user account that owns the drive.
+          nullable: true
+        quota:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.quota'
+          description: Optional. Information about the drive's storage space quota.
+            Read-only.
+          nullable: true
+          readOnly: true
+        items:
+          description: All items contained in the drive. Read-only. Nullable.
+          items:
+            $ref: '#/components/schemas/open.graph.driveItem'
+          readOnly: true
+          type: array
+        root:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.driveItem'
+          description: The root folder of the drive. Read-only.
+          nullable: true
+          readOnly: true
+      type: object
+    open_graph_baseItem_allOf:
+      properties:
+        createdBy:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.identitySet'
+          description: Identity of the user, device, or application which created
+            the item. Read-only.
+          nullable: true
+          readOnly: true
+        createdDateTime:
+          description: Date and time of item creation. Read-only.
+          format: date-time
+          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          readOnly: true
+          type: string
+        description:
+          description: Provides a user-visible description of the item. Optional.
+          nullable: true
+          type: string
+        eTag:
+          description: ETag for the item. Read-only.
+          nullable: true
+          readOnly: true
+          type: string
+        lastModifiedBy:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.identitySet'
+          description: Identity of the user, device, and application which last modified
+            the item. Read-only.
+          nullable: true
+          readOnly: true
+        lastModifiedDateTime:
+          description: Date and time the item was last modified. Read-only.
+          format: date-time
+          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          readOnly: true
+          type: string
+        name:
+          description: The name of the item. Read-write.
+          nullable: true
+          type: string
+        parentReference:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.itemReference'
+          description: Parent information, if the item has a parent. Read-write.
+          nullable: true
+        webUrl:
+          description: URL that displays the resource in the browser. Read-only.
+          nullable: true
+          readOnly: true
+          type: string
+        createdByUser:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.user'
+          description: Identity of the user who created the item. Read-only.
+          nullable: true
+          readOnly: true
+        lastModifiedByUser:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.user'
+          description: Identity of the user who last modified the item. Read-only.
+          nullable: true
+          readOnly: true
+      type: object
+    open_graph_user_allOf:
+      description: Represents an Active Directory user object.
+      properties:
+        accountEnabled:
+          description: true if the account is enabled; otherwise, false. This property
+            is required when a user is created. Returned only on $select. Supports
+            $filter.
+          nullable: true
+          type: boolean
+        businessPhones:
+          description: The telephone numbers for the user. Only one number can be
+            set for this property. Returned by default. Read-only for users synced
+            from on-premises directory.
+          items:
+            type: string
+          type: array
+        city:
+          description: The city in which the user is located. Returned only on $select.
+            Supports $filter.
+          nullable: true
+          type: string
+        companyName:
+          description: The company name which the user is associated. This property
+            can be useful for describing the company that an external user comes from.
+            The maximum length of the company name is 64 characters.Returned only
+            on $select.
+          nullable: true
+          type: string
+        country:
+          description: The country/region in which the user is located; for example,
+            'US' or 'UK'. Returned only on $select. Supports $filter.
+          maxLength: 3
+          nullable: true
+          type: string
+        createdDateTime:
+          description: The date and time the user was created. The value cannot be
+            modified and is automatically populated when the entity is created. The
+            DateTimeOffset type represents date and time information using ISO 8601
+            format and is always in UTC time. Property is nullable. A null value indicates
+            that an accurate creation time couldn't be determined for the user. Returned
+            only on $select. Read-only. Supports $filter.
+          format: date-time
+          nullable: true
+          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          readOnly: true
+          type: string
+        department:
+          description: The name for the department in which the user works. Returned
+            only on $select. Supports $filter.
+          nullable: true
+          type: string
+        displayName:
+          description: The name displayed in the address book for the user. This value
+            is usually the combination of the user's first name, middle initial, and
+            last name. This property is required when a user is created and it cannot
+            be cleared during updates. Returned by default. Supports $filter and $orderby.
+          nullable: true
+          type: string
+        faxNumber:
+          description: The fax number of the user. Returned only on $select.
+          nullable: true
+          type: string
+        givenName:
+          description: The given name (first name) of the user. Returned by default.
+            Supports $filter.
+          nullable: true
+          type: string
+        lastPasswordChangeDateTime:
+          description: The time when this user last changed their password. The Timestamp
+            type represents date and time information using ISO 8601 format and is
+            always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            Returned only on $select. Read-only.
+          format: date-time
+          nullable: true
+          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          readOnly: true
+          type: string
+        legalAgeGroupClassification:
+          description: 'Used by enterprise applications to determine the legal age
+            group of the user. This property is read-only and calculated based on
+            ageGroup and consentProvidedForMinor properties. Allowed values: null,
+            minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired,
+            notAdult and adult. Refer to the legal age group property definitions
+            for further information. Returned only on $select.'
+          nullable: true
+          type: string
+        mail:
+          description: The SMTP address for the user, for example, 'jeff@contoso.onowncloud.com'.
+            Returned by default. Supports $filter and endsWith.
+          nullable: true
+          type: string
+        mailNickname:
+          description: The mail alias for the user. This property must be specified
+            when a user is created. Returned only on $select. Supports $filter.
+          nullable: true
+          type: string
+        mobilePhone:
+          description: The primary cellular telephone number for the user. Returned
+            by default. Read-only for users synced from on-premises directory.
+          nullable: true
+          type: string
+        officeLocation:
+          description: The office location in the user's place of business. Returned
+            by default.
+          nullable: true
+          type: string
+        postalCode:
+          description: The postal code for the user's postal address. The postal code
+            is specific to the user's country/region. In the United States of America,
+            this attribute contains the ZIP code. Returned only on $select.
+          nullable: true
+          type: string
+        preferredLanguage:
+          description: The preferred language for the user. Should follow ISO 639-1
+            Code; for example 'en-US'. Returned by default.
+          maxLength: 7
+          nullable: true
+          pattern: ^[a-z]{2}(-[A-Z]{2})?$
+          type: string
+        state:
+          description: The state or province in the user's address. Returned only
+            on $select. Supports $filter.
+          nullable: true
+          type: string
+        streetAddress:
+          description: The street address of the user's place of business. Returned
+            only on $select.
+          nullable: true
+          type: string
+        surname:
+          description: The user's surname (family name or last name). Returned by
+            default. Supports $filter.
+          nullable: true
+          type: string
+        usageLocation:
+          description: 'A two letter country code (ISO standard 3166). Required for
+            users that will be assigned licenses due to legal requirement to check
+            for availability of services in countries.  Examples include: ''US'',
+            ''JP'', and ''GB''. Not nullable. Returned only on $select. Supports $filter.'
+          maxLength: 3
+          nullable: true
+          type: string
+        userPrincipalName:
+          description: The user principal name (UPN) of the user. The UPN is an Internet-style
+            login name for the user based on the Internet standard RFC 822. By convention,
+            this should map to the user's email name. The general format is alias@domain,
+            where domain must be present in the tenant's collection of verified domains.
+            This property is required when a user is created. The verified domains
+            for the tenant can be accessed from the verifiedDomains property of organization.
+            Returned by default. Supports $filter, $orderby, and endsWith.
+          nullable: true
+          type: string
+        userType:
+          description: A string value that can be used to classify user types in your
+            directory, such as 'Member' and 'Guest'. Returned only on $select. Supports
+            $filter.
+          nullable: true
+          type: string
+        aboutMe:
+          description: A freeform text entry field for the user to describe themselves.
+            Returned only on $select.
+          nullable: true
+          type: string
+        birthday:
+          description: The birthday of the user. The Timestamp type represents date
+            and time information using ISO 8601 format and is always in UTC time.
+            For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned
+            only on $select.
+          format: date-time
+          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          type: string
+        drive:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.drive'
+          description: The user's HomeDrive. Read-only.
+          nullable: true
+          readOnly: true
+        drives:
+          description: A collection of drives available for this user. Read-only.
+          items:
+            $ref: '#/components/schemas/open.graph.drive'
+          maxItems: 100
+          readOnly: true
+          type: array
+      type: object
+    open_graph_driveItem_allOf:
+      properties:
+        content:
+          description: The content stream, if the item represents a file.
+          format: base64url
+          nullable: true
+          type: string
+        cTag:
+          description: An eTag for the content of the item. This eTag is not changed
+            if only the metadata is changed. Note This property is not returned if
+            the item is a folder. Read-only.
+          nullable: true
+          readOnly: true
+          type: string
+        deleted:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.deleted'
+          description: Information about the deleted state of the item. Read-only.
+          nullable: true
+          readOnly: true
+        file:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.file'
+          description: File metadata, if the item is a file. Read-only.
+          nullable: true
+          readOnly: true
+        fileSystemInfo:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.fileSystemInfo'
+          description: File system information on client. Read-write.
+          nullable: true
+        folder:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.folder'
+          description: Folder metadata, if the item is a folder. Read-only.
+          nullable: true
+          readOnly: true
+        image:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.image'
+          description: Image metadata, if the item is an image. Read-only.
+          nullable: true
+          readOnly: true
+        root:
+          anyOf:
+          - $ref: '#/components/schemas/open.graph.root'
+          description: If this property is non-null, it indicates that the driveItem
+            is the top-most driveItem in the drive.
+          nullable: true
+        size:
+          description: Size of the item in bytes. Read-only.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+        webDavUrl:
+          description: WebDAV compatible URL for the item. Read-only.
+          nullable: true
+          readOnly: true
+          type: string
+        children:
+          description: Collection containing Item objects for the immediate children
+            of Item. Only items representing folders have children. Read-only. Nullable.
+          items:
+            $ref: '#/components/schemas/open.graph.driveItem'
+          readOnly: true
+          type: array
+      type: object
+    open_graph_directoryObject_allOf:
+      description: Represents an Active Directory object. The directoryObject type
+        is the base type for many other directory entity types.
+      properties:
+        deletedDateTime:
+          format: date-time
+          nullable: true
+          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          type: string
+      type: object
+  securitySchemes:
+    bearerAuth:
+      scheme: bearer
+      type: http
