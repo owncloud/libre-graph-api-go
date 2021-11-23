@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Hashes** | Pointer to [**Hashes**](hashes.md) | Hashes of the file&#39;s binary content, if available. Read-only. | [optional] [readonly] 
+**Hashes** | Pointer to [**Hashes**](Hashes.md) |  | [optional] 
 **MimeType** | Pointer to **string** | The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only. | [optional] [readonly] 
 **ProcessingMetadata** | Pointer to **bool** |  | [optional] 
 

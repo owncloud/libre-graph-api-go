@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DriveType** | Pointer to **string** | Describes the type of drive represented by this resource. Values are \&quot;personal\&quot; for users home spaces, \&quot;projectSpace\&quot; or \&quot;shares\&quot;. Read-only. | [optional] [readonly] 
 **OCDriveStatus** | Pointer to **string** | Describes the status of the drive. | [optional] 
-**Owner** | Pointer to [**IdentitySet**](identitySet.md) | Optional. The user account that owns the drive. Read-only. | [optional] [readonly] 
-**OCCoOwner** | Pointer to [**IdentitySet**](identitySet.md) | Optional. The user account that owns the drive. | [optional] 
-**Quota** | Pointer to [**Quota**](quota.md) | Optional. Information about the drive&#39;s storage space quota. Read-only. | [optional] [readonly] 
+**Owner** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
+**OCCoOwner** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
+**Quota** | Pointer to [**Quota**](Quota.md) |  | [optional] 
 **Items** | Pointer to [**[]DriveItem**](DriveItem.md) | All items contained in the drive. Read-only. Nullable. | [optional] [readonly] 
-**Root** | Pointer to [**DriveItem**](driveItem.md) | The root folder of the drive. Read-only. | [optional] [readonly] 
+**Root** | Pointer to [**DriveItem**](DriveItem.md) |  | [optional] 
 
 ## Methods
 

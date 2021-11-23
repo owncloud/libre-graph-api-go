@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **UserType** | Pointer to **string** | A string value that can be used to classify user types in your directory, such as &#39;Member&#39; and &#39;Guest&#39;. Returned only on $select. Supports $filter. | [optional] 
 **AboutMe** | Pointer to **string** | A freeform text entry field for the user to describe themselves. Returned only on $select. | [optional] 
 **Birthday** | Pointer to **time.Time** | The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select. | [optional] 
-**Drive** | Pointer to [**Drive**](drive.md) | The user&#39;s HomeDrive. Read-only. | [optional] [readonly] 
+**Drive** | Pointer to [**Drive**](Drive.md) |  | [optional] 
 **Drives** | Pointer to [**[]Drive**](Drive.md) | A collection of drives available for this user. Read-only. | [optional] [readonly] 
 
 ## Methods

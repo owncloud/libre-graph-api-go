@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Application** | Pointer to [**Identity**](identity.md) | Optional. The application associated with this action. | [optional] 
-**Device** | Pointer to [**Identity**](identity.md) | Optional. The device associated with this action. | [optional] 
-**User** | Pointer to [**Identity**](identity.md) | Optional. The user associated with this action. | [optional] 
+**Application** | Pointer to [**Identity**](Identity.md) |  | [optional] 
+**Device** | Pointer to [**Identity**](Identity.md) |  | [optional] 
+**User** | Pointer to [**Identity**](Identity.md) |  | [optional] 
 
 ## Methods
 

@@ -1,6 +1,6 @@
 # \MeDriveApi
 
-All URIs are relative to *https://owncloud.dev/open-graph-api*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 

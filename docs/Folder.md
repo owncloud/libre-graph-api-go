@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ChildCount** | Pointer to **int32** | Number of children contained immediately within this container. | [optional] 
-**View** | Pointer to [**FolderView**](folderView.md) | A collection of properties defining the recommended view for the folder. | [optional] 
+**View** | Pointer to [**FolderView**](FolderView.md) |  | [optional] 
 
 ## Methods
 

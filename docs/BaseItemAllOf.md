@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedBy** | Pointer to [**IdentitySet**](identitySet.md) | Identity of the user, device, or application which created the item. Read-only. | [optional] [readonly] 
+**CreatedBy** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
 **CreatedDateTime** | Pointer to **time.Time** | Date and time of item creation. Read-only. | [optional] [readonly] 
 **Description** | Pointer to **string** | Provides a user-visible description of the item. Optional. | [optional] 
 **ETag** | Pointer to **string** | ETag for the item. Read-only. | [optional] [readonly] 
-**LastModifiedBy** | Pointer to [**IdentitySet**](identitySet.md) | Identity of the user, device, and application which last modified the item. Read-only. | [optional] [readonly] 
+**LastModifiedBy** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
 **LastModifiedDateTime** | Pointer to **time.Time** | Date and time the item was last modified. Read-only. | [optional] [readonly] 
 **Name** | Pointer to **string** | The name of the item. Read-write. | [optional] 
-**ParentReference** | Pointer to [**ItemReference**](itemReference.md) | Parent information, if the item has a parent. Read-write. | [optional] 
+**ParentReference** | Pointer to [**ItemReference**](ItemReference.md) |  | [optional] 
 **WebUrl** | Pointer to **string** | URL that displays the resource in the browser. Read-only. | [optional] [readonly] 
-**CreatedByUser** | Pointer to [**User**](user.md) | Identity of the user who created the item. Read-only. | [optional] [readonly] 
-**LastModifiedByUser** | Pointer to [**User**](user.md) | Identity of the user who last modified the item. Read-only. | [optional] [readonly] 
+**CreatedByUser** | Pointer to [**User**](User.md) |  | [optional] 
+**LastModifiedByUser** | Pointer to [**User**](User.md) |  | [optional] 
 
 ## Methods
 
