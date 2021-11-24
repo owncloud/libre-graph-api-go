@@ -4,7 +4,7 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: Open Graph API
-  version: v0.0
+  version: v0.1.0
 servers:
 - description: ownCloud Infinite Scale Latest
   url: https://ocis.ocis-traefik.latest.owncloud.works/
@@ -77,9 +77,7 @@ paths:
             - parentReference
             - webUrl
             - driveType
-            - oCDriveStatus
             - owner
-            - oCCoOwner
             - quota
             - createdByUser
             - lastModifiedByUser
@@ -113,7 +111,7 @@ paths:
           description: Retrieved navigation property
           links:
             root:
-              operationId: me.drive.root.GetRoot
+              operationId: me.drive.GetRoot
               parameters:
                 drive-id: $request.path.drive-id
         default:
@@ -124,40 +122,14 @@ paths:
           description: error
       summary: Get drives from me
       tags:
-      - me.drive
+      - me.drives
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      operationId: me.CreateDrives
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/drive'
-        description: New navigation property
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/drive'
-          description: Created navigation property.
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/odata.error'
-          description: error
-      summary: Create new navigation property to drives for me
-      tags:
-      - me.drive
-      x-ms-docs-operation-type: operation
-  /me/drives/{drive-id}:
+  /drives/{drive-id}:
     delete:
-      operationId: me.drives.DeleteDrive
+      operationId: drives.DeleteDrive
       parameters:
       - description: 'key: id of drive'
         explode: false
@@ -187,10 +159,10 @@ paths:
           description: error
       summary: Delete a specific navigation property drive
       tags:
-      - me.drives
+      - drives
       x-ms-docs-operation-type: operation
     get:
-      operationId: me.drives.GetDrive
+      operationId: drives.GetDrive
       parameters:
       - description: 'key: id of drive'
         explode: false
@@ -220,9 +192,7 @@ paths:
             - parentReference
             - webUrl
             - driveType
-            - oCDriveStatus
             - owner
-            - oCCoOwner
             - quota
             - createdByUser
             - lastModifiedByUser
@@ -256,7 +226,7 @@ paths:
           description: Retrieved navigation property
           links:
             root:
-              operationId: me.drive.root.GetRoot
+              operationId: drive.root.GetRoot
               parameters:
                 drive-id: $request.path.drive-id
         default:
@@ -267,10 +237,10 @@ paths:
           description: error
       summary: Get drive by id
       tags:
-      - me.drives
+      - drives
       x-ms-docs-operation-type: operation
     patch:
-      operationId: me.drives.UpdateDrive
+      operationId: drives.UpdateDrive
       parameters:
       - description: 'key: id of drive'
         explode: false
@@ -299,96 +269,39 @@ paths:
           description: error
       summary: Update the navigation property of a specific drive
       tags:
-      - me.drives
+      - drives
       x-ms-docs-operation-type: operation
-  /drive/root:
-    delete:
-      operationId: me.drive.root.DeleteRoot
-      parameters:
-      - description: ETag
-        explode: false
-        in: header
-        name: If-Match
-        required: false
-        schema:
-          type: string
-        style: simple
+    post:
+      operationId: drives.CreateDrive
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/drive'
+        description: New navigation property values
+        required: true
       responses:
-        "204":
-          description: Success
+        "201":
+          description: Created
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
-      summary: Delete navigation property root for drive
+      summary: Create a new navigation property of a specific drive
       tags:
-      - me.drive.root
+      - drives
       x-ms-docs-operation-type: operation
+  /me/drive:
     get:
-      operationId: me.drive.root.GetRoot
-      parameters:
-      - description: Select properties to be returned
-        explode: false
-        in: query
-        name: $select
-        required: false
-        schema:
-          items:
-            enum:
-            - id
-            - createdBy
-            - createdDateTime
-            - description
-            - eTag
-            - lastModifiedBy
-            - lastModifiedDateTime
-            - name
-            - parentReference
-            - webUrl
-            - audio
-            - content
-            - cTag
-            - deleted
-            - file
-            - fileSystemInfo
-            - folder
-            - image
-            - location
-            - package
-            - pendingOperations
-            - photo
-            - publication
-            - remoteItem
-            - root
-            - searchResult
-            - shared
-            - sharepointIds
-            - size
-            - specialFolder
-            - video
-            - webDavUrl
-            - createdByUser
-            - lastModifiedByUser
-            - workbook
-            - analytics
-            - children
-            - listItem
-            - permissions
-            - subscriptions
-            - thumbnails
-            - versions
-            type: string
-          type: array
-          uniqueItems: true
-        style: form
+      operationId: me.drive.GetHome
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/driveItem'
+                $ref: '#/components/schemas/drive'
           description: Retrieved navigation property
         default:
           content:
@@ -396,31 +309,49 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
-      summary: Get root from drive
+      summary: Get home drive for user
       tags:
-      - me.drive.root
+      - me.drive
       x-ms-docs-operation-type: operation
-    patch:
-      operationId: me.drive.root.UpdateRoot
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/driveItem'
-        description: New navigation property values
-        required: true
+  /me/drive/root:
+    get:
+      operationId: me.drive.GetRoot
       responses:
-        "204":
-          description: Success
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/driveItem'
+          description: Retrieved resource
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
-      summary: Update the navigation property root in drive
+      summary: Get root from home drive
       tags:
       - me.drive.root
+      x-ms-docs-operation-type: operation
+  /me/drive/root/children:
+    get:
+      operationId: me.drive.root.GetChildren
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection_of_driveItems'
+          description: Retrieved resource list
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Get children from drive
+      tags:
+      - me.drive.root.children
       x-ms-docs-operation-type: operation
 components:
   parameters:
@@ -567,7 +498,7 @@ components:
       allOf:
       - $ref: '#/components/schemas/baseItem'
       - $ref: '#/components/schemas/driveItem_allOf'
-      description: The root folder of the drive. Read-only.
+      description: Reprensents a resource inside a drive. Read-only.
       nullable: false
       readOnly: true
     deleted:
@@ -689,8 +620,6 @@ components:
           nullable: false
           readOnly: true
           type: string
-        storagePlanInformation:
-          $ref: '#/components/schemas/storagePlanInformation'
         total:
           description: Total allowed storage space, in bytes. Read-only.
           format: int64
@@ -704,16 +633,6 @@ components:
           readOnly: true
           type: integer
       readOnly: true
-      type: object
-    storagePlanInformation:
-      description: Information about the drive's storage quota plans.
-      nullable: false
-      properties:
-        upgradeAvailable:
-          description: Indicates if there are higher storage quota plans available.
-            Read-only.
-          nullable: false
-          type: boolean
       type: object
     hashes:
       description: Hashes of the file's binary content, if available. Read-only.
@@ -817,20 +736,34 @@ components:
           type: string
       title: Collection of drive
       type: object
+    Collection_of_driveItems:
+      example:
+        '@odata.nextLink': '@odata.nextLink'
+        value:
+        - null
+        - null
+        - null
+        - null
+        - null
+      properties:
+        value:
+          items:
+            $ref: '#/components/schemas/driveItem'
+          maxItems: 100
+          type: array
+        '@odata.nextLink':
+          type: string
+      title: Collection of driveItems
+      type: object
     drive_allOf:
       properties:
         driveType:
           description: Describes the type of drive represented by this resource. Values
-            are "personal" for users home spaces, "projectSpace" or "shares". Read-only.
+            are "personal" for users home spaces, "project" or "share". Read-only.
           nullable: false
           readOnly: true
           type: string
-        oCDriveStatus:
-          description: Describes the status of the drive.
-          type: string
         owner:
-          $ref: '#/components/schemas/identitySet'
-        oCCoOwner:
           $ref: '#/components/schemas/identitySet'
         quota:
           $ref: '#/components/schemas/quota'

@@ -23,48 +23,48 @@ var (
 	_ _context.Context
 )
 
-// MeDriveApiService MeDriveApi service
-type MeDriveApiService service
+// MeDriveRootChildrenApiService MeDriveRootChildrenApi service
+type MeDriveRootChildrenApiService service
 
-type ApiMeDriveGetHomeRequest struct {
+type ApiMeDriveRootGetChildrenRequest struct {
 	ctx _context.Context
-	ApiService *MeDriveApiService
+	ApiService *MeDriveRootChildrenApiService
 }
 
 
-func (r ApiMeDriveGetHomeRequest) Execute() (Drive, *_nethttp.Response, error) {
-	return r.ApiService.MeDriveGetHomeExecute(r)
+func (r ApiMeDriveRootGetChildrenRequest) Execute() (CollectionOfDriveItems, *_nethttp.Response, error) {
+	return r.ApiService.MeDriveRootGetChildrenExecute(r)
 }
 
 /*
-MeDriveGetHome Get home drive for user
+MeDriveRootGetChildren Get children from drive
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMeDriveGetHomeRequest
+ @return ApiMeDriveRootGetChildrenRequest
 */
-func (a *MeDriveApiService) MeDriveGetHome(ctx _context.Context) ApiMeDriveGetHomeRequest {
-	return ApiMeDriveGetHomeRequest{
+func (a *MeDriveRootChildrenApiService) MeDriveRootGetChildren(ctx _context.Context) ApiMeDriveRootGetChildrenRequest {
+	return ApiMeDriveRootGetChildrenRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Drive
-func (a *MeDriveApiService) MeDriveGetHomeExecute(r ApiMeDriveGetHomeRequest) (Drive, *_nethttp.Response, error) {
+//  @return CollectionOfDriveItems
+func (a *MeDriveRootChildrenApiService) MeDriveRootGetChildrenExecute(r ApiMeDriveRootGetChildrenRequest) (CollectionOfDriveItems, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  Drive
+		localVarReturnValue  CollectionOfDriveItems
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveApiService.MeDriveGetHome")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootChildrenApiService.MeDriveRootGetChildren")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/me/drive"
+	localVarPath := localBasePath + "/me/drive/root/children"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}

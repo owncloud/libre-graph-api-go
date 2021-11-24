@@ -4,10 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DriveType** | Pointer to **string** | Describes the type of drive represented by this resource. Values are \&quot;personal\&quot; for users home spaces, \&quot;projectSpace\&quot; or \&quot;shares\&quot;. Read-only. | [optional] [readonly] 
-**OCDriveStatus** | Pointer to **string** | Describes the status of the drive. | [optional] 
+**DriveType** | Pointer to **string** | Describes the type of drive represented by this resource. Values are \&quot;personal\&quot; for users home spaces, \&quot;project\&quot; or \&quot;share\&quot;. Read-only. | [optional] [readonly] 
 **Owner** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
-**OCCoOwner** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
 **Quota** | Pointer to [**Quota**](Quota.md) |  | [optional] 
 **Items** | Pointer to [**[]DriveItem**](DriveItem.md) | All items contained in the drive. Read-only. Nullable. | [optional] [readonly] 
 **Root** | Pointer to [**DriveItem**](DriveItem.md) |  | [optional] 
@@ -56,31 +54,6 @@ SetDriveType sets DriveType field to given value.
 
 HasDriveType returns a boolean if a field has been set.
 
-### GetOCDriveStatus
-
-`func (o *Drive) GetOCDriveStatus() string`
-
-GetOCDriveStatus returns the OCDriveStatus field if non-nil, zero value otherwise.
-
-### GetOCDriveStatusOk
-
-`func (o *Drive) GetOCDriveStatusOk() (*string, bool)`
-
-GetOCDriveStatusOk returns a tuple with the OCDriveStatus field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOCDriveStatus
-
-`func (o *Drive) SetOCDriveStatus(v string)`
-
-SetOCDriveStatus sets OCDriveStatus field to given value.
-
-### HasOCDriveStatus
-
-`func (o *Drive) HasOCDriveStatus() bool`
-
-HasOCDriveStatus returns a boolean if a field has been set.
-
 ### GetOwner
 
 `func (o *Drive) GetOwner() IdentitySet`
@@ -105,31 +78,6 @@ SetOwner sets Owner field to given value.
 `func (o *Drive) HasOwner() bool`
 
 HasOwner returns a boolean if a field has been set.
-
-### GetOCCoOwner
-
-`func (o *Drive) GetOCCoOwner() IdentitySet`
-
-GetOCCoOwner returns the OCCoOwner field if non-nil, zero value otherwise.
-
-### GetOCCoOwnerOk
-
-`func (o *Drive) GetOCCoOwnerOk() (*IdentitySet, bool)`
-
-GetOCCoOwnerOk returns a tuple with the OCCoOwner field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOCCoOwner
-
-`func (o *Drive) SetOCCoOwner(v IdentitySet)`
-
-SetOCCoOwner sets OCCoOwner field to given value.
-
-### HasOCCoOwner
-
-`func (o *Drive) HasOCCoOwner() bool`
-
-HasOCCoOwner returns a boolean if a field has been set.
 
 ### GetQuota
 

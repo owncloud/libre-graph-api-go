@@ -4,17 +4,15 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MeDrivesDeleteDrive**](MeDrivesApi.md#MeDrivesDeleteDrive) | **Delete** /me/drives/{drive-id} | Delete a specific navigation property drive
-[**MeDrivesGetDrive**](MeDrivesApi.md#MeDrivesGetDrive) | **Get** /me/drives/{drive-id} | Get drive by id
-[**MeDrivesUpdateDrive**](MeDrivesApi.md#MeDrivesUpdateDrive) | **Patch** /me/drives/{drive-id} | Update the navigation property of a specific drive
+[**MeListDrives**](MeDrivesApi.md#MeListDrives) | **Get** /me/drives | Get drives from me
 
 
 
-## MeDrivesDeleteDrive
+## MeListDrives
 
-> MeDrivesDeleteDrive(ctx, driveId).IfMatch(ifMatch).Execute()
+> CollectionOfDrive MeListDrives(ctx).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
 
-Delete a specific navigation property drive
+Get drives from me
 
 ### Example
 
@@ -29,112 +27,48 @@ import (
 )
 
 func main() {
-    driveId := "driveId_example" // string | key: id of drive
-    ifMatch := "ifMatch_example" // string | ETag (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MeDrivesApi.MeDrivesDeleteDrive(context.Background(), driveId).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.MeDrivesDeleteDrive``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**driveId** | **string** | key: id of drive | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMeDrivesDeleteDriveRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ifMatch** | **string** | ETag | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MeDrivesGetDrive
-
-> Drive MeDrivesGetDrive(ctx, driveId).Select_(select_).Expand(expand).Execute()
-
-Get drive by id
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    driveId := "driveId_example" // string | key: id of drive
+    top := int32(50) // int32 | Show only the first n items (optional)
+    skip := int32(56) // int32 | Skip the first n items (optional)
+    search := "search_example" // string | Search items by search phrases (optional)
+    filter := "filter_example" // string | Filter items by property values (optional)
+    count := true // bool | Include count of items (optional)
     select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
     expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MeDrivesApi.MeDrivesGetDrive(context.Background(), driveId).Select_(select_).Expand(expand).Execute()
+    resp, r, err := api_client.MeDrivesApi.MeListDrives(context.Background()).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.MeDrivesGetDrive``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.MeListDrives``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MeDrivesGetDrive`: Drive
-    fmt.Fprintf(os.Stdout, "Response from `MeDrivesApi.MeDrivesGetDrive`: %v\n", resp)
+    // response from `MeListDrives`: CollectionOfDrive
+    fmt.Fprintf(os.Stdout, "Response from `MeDrivesApi.MeListDrives`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**driveId** | **string** | key: id of drive | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiMeDrivesGetDriveRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMeListDrivesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
+ **top** | **int32** | Show only the first n items | 
+ **skip** | **int32** | Skip the first n items | 
+ **search** | **string** | Search items by search phrases | 
+ **filter** | **string** | Filter items by property values | 
+ **count** | **bool** | Include count of items | 
  **select_** | **[]string** | Select properties to be returned | 
  **expand** | **[]string** | Expand related entities | 
 
 ### Return type
 
-[**Drive**](Drive.md)
+[**CollectionOfDrive**](CollectionOfDrive.md)
 
 ### Authorization
 
@@ -143,74 +77,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MeDrivesUpdateDrive
-
-> MeDrivesUpdateDrive(ctx, driveId).Drive(drive).Execute()
-
-Update the navigation property of a specific drive
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    driveId := "driveId_example" // string | key: id of drive
-    drive := *openapiclient.NewDrive() // Drive | New navigation property values
-
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MeDrivesApi.MeDrivesUpdateDrive(context.Background(), driveId).Drive(drive).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.MeDrivesUpdateDrive``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**driveId** | **string** | key: id of drive | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMeDrivesUpdateDriveRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **drive** | [**Drive**](Drive.md) | New navigation property values | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

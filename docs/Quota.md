@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **Deleted** | Pointer to **int64** | Total space consumed by files in the recycle bin, in bytes. Read-only. | [optional] [readonly] 
 **Remaining** | Pointer to **int64** | Total space remaining before reaching the quota limit, in bytes. Read-only. | [optional] [readonly] 
 **State** | Pointer to **string** | Enumeration value that indicates the state of the storage space. Read-only. | [optional] [readonly] 
-**StoragePlanInformation** | Pointer to [**StoragePlanInformation**](StoragePlanInformation.md) |  | [optional] 
 **Total** | Pointer to **int64** | Total allowed storage space, in bytes. Read-only. | [optional] [readonly] 
 **Used** | Pointer to **int64** | Total space used, in bytes. Read-only. | [optional] [readonly] 
 
@@ -104,31 +103,6 @@ SetState sets State field to given value.
 `func (o *Quota) HasState() bool`
 
 HasState returns a boolean if a field has been set.
-
-### GetStoragePlanInformation
-
-`func (o *Quota) GetStoragePlanInformation() StoragePlanInformation`
-
-GetStoragePlanInformation returns the StoragePlanInformation field if non-nil, zero value otherwise.
-
-### GetStoragePlanInformationOk
-
-`func (o *Quota) GetStoragePlanInformationOk() (*StoragePlanInformation, bool)`
-
-GetStoragePlanInformationOk returns a tuple with the StoragePlanInformation field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStoragePlanInformation
-
-`func (o *Quota) SetStoragePlanInformation(v StoragePlanInformation)`
-
-SetStoragePlanInformation sets StoragePlanInformation field to given value.
-
-### HasStoragePlanInformation
-
-`func (o *Quota) HasStoragePlanInformation() bool`
-
-HasStoragePlanInformation returns a boolean if a field has been set.
 
 ### GetTotal
 

@@ -1,18 +1,18 @@
-# \MeDriveApi
+# \MeDriveRootChildrenApi
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MeDriveGetHome**](MeDriveApi.md#MeDriveGetHome) | **Get** /me/drive | Get home drive for user
+[**MeDriveRootGetChildren**](MeDriveRootChildrenApi.md#MeDriveRootGetChildren) | **Get** /me/drive/root/children | Get children from drive
 
 
 
-## MeDriveGetHome
+## MeDriveRootGetChildren
 
-> Drive MeDriveGetHome(ctx).Execute()
+> CollectionOfDriveItems MeDriveRootGetChildren(ctx).Execute()
 
-Get home drive for user
+Get children from drive
 
 ### Example
 
@@ -30,13 +30,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MeDriveApi.MeDriveGetHome(context.Background()).Execute()
+    resp, r, err := api_client.MeDriveRootChildrenApi.MeDriveRootGetChildren(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveApi.MeDriveGetHome``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootChildrenApi.MeDriveRootGetChildren``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MeDriveGetHome`: Drive
-    fmt.Fprintf(os.Stdout, "Response from `MeDriveApi.MeDriveGetHome`: %v\n", resp)
+    // response from `MeDriveRootGetChildren`: CollectionOfDriveItems
+    fmt.Fprintf(os.Stdout, "Response from `MeDriveRootChildrenApi.MeDriveRootGetChildren`: %v\n", resp)
 }
 ```
 
@@ -46,12 +46,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiMeDriveGetHomeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMeDriveRootGetChildrenRequest struct via the builder pattern
 
 
 ### Return type
 
-[**Drive**](Drive.md)
+[**CollectionOfDriveItems**](CollectionOfDriveItems.md)
 
 ### Authorization
 
