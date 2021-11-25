@@ -4,7 +4,7 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DrivesCreateDrive**](DrivesApi.md#DrivesCreateDrive) | **Post** /drives/{drive-id} | Create a new navigation property of a specific drive
+[**DrivesCreateDrive**](DrivesApi.md#DrivesCreateDrive) | **Post** /drives | Create a new navigation property of a specific drive
 [**DrivesDeleteDrive**](DrivesApi.md#DrivesDeleteDrive) | **Delete** /drives/{drive-id} | Delete a specific navigation property drive
 [**DrivesGetDrive**](DrivesApi.md#DrivesGetDrive) | **Get** /drives/{drive-id} | Get drive by id
 [**DrivesUpdateDrive**](DrivesApi.md#DrivesUpdateDrive) | **Patch** /drives/{drive-id} | Update the navigation property of a specific drive

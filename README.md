@@ -78,7 +78,7 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DrivesApi* | [**DrivesCreateDrive**](docs/DrivesApi.md#drivescreatedrive) | **Post** /drives/{drive-id} | Create a new navigation property of a specific drive
+*DrivesApi* | [**DrivesCreateDrive**](docs/DrivesApi.md#drivescreatedrive) | **Post** /drives | Create a new navigation property of a specific drive
 *DrivesApi* | [**DrivesDeleteDrive**](docs/DrivesApi.md#drivesdeletedrive) | **Delete** /drives/{drive-id} | Delete a specific navigation property drive
 *DrivesApi* | [**DrivesGetDrive**](docs/DrivesApi.md#drivesgetdrive) | **Get** /drives/{drive-id} | Get drive by id
 *DrivesApi* | [**DrivesUpdateDrive**](docs/DrivesApi.md#drivesupdatedrive) | **Patch** /drives/{drive-id} | Update the navigation property of a specific drive

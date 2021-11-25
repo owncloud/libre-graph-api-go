@@ -127,6 +127,29 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
+  /drives:
+    post:
+      operationId: drives.CreateDrive
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/drive'
+        description: New navigation property values
+        required: true
+      responses:
+        "201":
+          description: Created
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Create a new navigation property of a specific drive
+      tags:
+      - drives
+      x-ms-docs-operation-type: operation
   /drives/{drive-id}:
     delete:
       operationId: drives.DeleteDrive
@@ -268,28 +291,6 @@ paths:
                 $ref: '#/components/schemas/odata.error'
           description: error
       summary: Update the navigation property of a specific drive
-      tags:
-      - drives
-      x-ms-docs-operation-type: operation
-    post:
-      operationId: drives.CreateDrive
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/drive'
-        description: New navigation property values
-        required: true
-      responses:
-        "201":
-          description: Created
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/odata.error'
-          description: error
-      summary: Create a new navigation property of a specific drive
       tags:
       - drives
       x-ms-docs-operation-type: operation

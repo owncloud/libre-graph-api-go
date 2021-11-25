@@ -69,7 +69,7 @@ func (a *DrivesApiService) DrivesCreateDriveExecute(r ApiDrivesCreateDriveReques
 		return nil, GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/drives/{drive-id}"
+	localVarPath := localBasePath + "/drives"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
