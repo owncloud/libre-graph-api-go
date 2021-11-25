@@ -17,7 +17,6 @@ import (
 
 // DirectoryObject struct for DirectoryObject
 type DirectoryObject struct {
-	Entity
 	DeletedDateTime *time.Time `json:"deletedDateTime,omitempty"`
 }
 
@@ -72,14 +71,6 @@ func (o *DirectoryObject) SetDeletedDateTime(v time.Time) {
 
 func (o DirectoryObject) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	serializedEntity, errEntity := json.Marshal(o.Entity)
-	if errEntity != nil {
-		return []byte{}, errEntity
-	}
-	errEntity = json.Unmarshal([]byte(serializedEntity), &toSerialize)
-	if errEntity != nil {
-		return []byte{}, errEntity
-	}
 	if o.DeletedDateTime != nil {
 		toSerialize["deletedDateTime"] = o.DeletedDateTime
 	}

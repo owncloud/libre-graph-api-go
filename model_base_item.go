@@ -17,7 +17,6 @@ import (
 
 // BaseItem struct for BaseItem
 type BaseItem struct {
-	Entity
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// Date and time of item creation. Read-only.
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
@@ -408,14 +407,6 @@ func (o *BaseItem) SetLastModifiedByUser(v User) {
 
 func (o BaseItem) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	serializedEntity, errEntity := json.Marshal(o.Entity)
-	if errEntity != nil {
-		return []byte{}, errEntity
-	}
-	errEntity = json.Unmarshal([]byte(serializedEntity), &toSerialize)
-	if errEntity != nil {
-		return []byte{}, errEntity
-	}
 	if o.CreatedBy != nil {
 		toSerialize["createdBy"] = o.CreatedBy
 	}

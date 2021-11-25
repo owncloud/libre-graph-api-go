@@ -16,7 +16,6 @@ import (
 
 // Drive The user's HomeDrive. Read-only.
 type Drive struct {
-	BaseItem
 	// Describes the type of drive represented by this resource. Values are \"personal\" for users home spaces, \"project\" or \"share\". Read-only.
 	DriveType *string `json:"driveType,omitempty"`
 	Owner *IdentitySet `json:"owner,omitempty"`
@@ -205,14 +204,6 @@ func (o *Drive) SetRoot(v DriveItem) {
 
 func (o Drive) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	serializedBaseItem, errBaseItem := json.Marshal(o.BaseItem)
-	if errBaseItem != nil {
-		return []byte{}, errBaseItem
-	}
-	errBaseItem = json.Unmarshal([]byte(serializedBaseItem), &toSerialize)
-	if errBaseItem != nil {
-		return []byte{}, errBaseItem
-	}
 	if o.DriveType != nil {
 		toSerialize["driveType"] = o.DriveType
 	}

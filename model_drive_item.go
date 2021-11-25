@@ -16,7 +16,6 @@ import (
 
 // DriveItem Reprensents a resource inside a drive. Read-only.
 type DriveItem struct {
-	BaseItem
 	// The content stream, if the item represents a file.
 	Content *string `json:"content,omitempty"`
 	// An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
@@ -407,14 +406,6 @@ func (o *DriveItem) SetChildren(v []DriveItem) {
 
 func (o DriveItem) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	serializedBaseItem, errBaseItem := json.Marshal(o.BaseItem)
-	if errBaseItem != nil {
-		return []byte{}, errBaseItem
-	}
-	errBaseItem = json.Unmarshal([]byte(serializedBaseItem), &toSerialize)
-	if errBaseItem != nil {
-		return []byte{}, errBaseItem
-	}
 	if o.Content != nil {
 		toSerialize["content"] = o.Content
 	}

@@ -17,7 +17,6 @@ import (
 
 // User struct for User
 type User struct {
-	DirectoryObject
 	// true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter.
 	AccountEnabled *bool `json:"accountEnabled,omitempty"`
 	// The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory.
@@ -990,14 +989,6 @@ func (o *User) SetDrives(v []Drive) {
 
 func (o User) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	serializedDirectoryObject, errDirectoryObject := json.Marshal(o.DirectoryObject)
-	if errDirectoryObject != nil {
-		return []byte{}, errDirectoryObject
-	}
-	errDirectoryObject = json.Unmarshal([]byte(serializedDirectoryObject), &toSerialize)
-	if errDirectoryObject != nil {
-		return []byte{}, errDirectoryObject
-	}
 	if o.AccountEnabled != nil {
 		toSerialize["accountEnabled"] = o.AccountEnabled
 	}
