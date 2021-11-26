@@ -1,4 +1,4 @@
-# DriveAllOf
+# DriveInline
 
 ## Properties
 
@@ -12,145 +12,145 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewDriveAllOf
+### NewDriveInline
 
-`func NewDriveAllOf() *DriveAllOf`
+`func NewDriveInline() *DriveInline`
 
-NewDriveAllOf instantiates a new DriveAllOf object
+NewDriveInline instantiates a new DriveInline object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewDriveAllOfWithDefaults
+### NewDriveInlineWithDefaults
 
-`func NewDriveAllOfWithDefaults() *DriveAllOf`
+`func NewDriveInlineWithDefaults() *DriveInline`
 
-NewDriveAllOfWithDefaults instantiates a new DriveAllOf object
+NewDriveInlineWithDefaults instantiates a new DriveInline object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetDriveType
 
-`func (o *DriveAllOf) GetDriveType() string`
+`func (o *DriveInline) GetDriveType() string`
 
 GetDriveType returns the DriveType field if non-nil, zero value otherwise.
 
 ### GetDriveTypeOk
 
-`func (o *DriveAllOf) GetDriveTypeOk() (*string, bool)`
+`func (o *DriveInline) GetDriveTypeOk() (*string, bool)`
 
 GetDriveTypeOk returns a tuple with the DriveType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDriveType
 
-`func (o *DriveAllOf) SetDriveType(v string)`
+`func (o *DriveInline) SetDriveType(v string)`
 
 SetDriveType sets DriveType field to given value.
 
 ### HasDriveType
 
-`func (o *DriveAllOf) HasDriveType() bool`
+`func (o *DriveInline) HasDriveType() bool`
 
 HasDriveType returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *DriveAllOf) GetOwner() IdentitySet`
+`func (o *DriveInline) GetOwner() IdentitySet`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *DriveAllOf) GetOwnerOk() (*IdentitySet, bool)`
+`func (o *DriveInline) GetOwnerOk() (*IdentitySet, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *DriveAllOf) SetOwner(v IdentitySet)`
+`func (o *DriveInline) SetOwner(v IdentitySet)`
 
 SetOwner sets Owner field to given value.
 
 ### HasOwner
 
-`func (o *DriveAllOf) HasOwner() bool`
+`func (o *DriveInline) HasOwner() bool`
 
 HasOwner returns a boolean if a field has been set.
 
 ### GetQuota
 
-`func (o *DriveAllOf) GetQuota() Quota`
+`func (o *DriveInline) GetQuota() Quota`
 
 GetQuota returns the Quota field if non-nil, zero value otherwise.
 
 ### GetQuotaOk
 
-`func (o *DriveAllOf) GetQuotaOk() (*Quota, bool)`
+`func (o *DriveInline) GetQuotaOk() (*Quota, bool)`
 
 GetQuotaOk returns a tuple with the Quota field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuota
 
-`func (o *DriveAllOf) SetQuota(v Quota)`
+`func (o *DriveInline) SetQuota(v Quota)`
 
 SetQuota sets Quota field to given value.
 
 ### HasQuota
 
-`func (o *DriveAllOf) HasQuota() bool`
+`func (o *DriveInline) HasQuota() bool`
 
 HasQuota returns a boolean if a field has been set.
 
 ### GetItems
 
-`func (o *DriveAllOf) GetItems() []DriveItem`
+`func (o *DriveInline) GetItems() []DriveItem`
 
 GetItems returns the Items field if non-nil, zero value otherwise.
 
 ### GetItemsOk
 
-`func (o *DriveAllOf) GetItemsOk() (*[]DriveItem, bool)`
+`func (o *DriveInline) GetItemsOk() (*[]DriveItem, bool)`
 
 GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetItems
 
-`func (o *DriveAllOf) SetItems(v []DriveItem)`
+`func (o *DriveInline) SetItems(v []DriveItem)`
 
 SetItems sets Items field to given value.
 
 ### HasItems
 
-`func (o *DriveAllOf) HasItems() bool`
+`func (o *DriveInline) HasItems() bool`
 
 HasItems returns a boolean if a field has been set.
 
 ### GetRoot
 
-`func (o *DriveAllOf) GetRoot() DriveItem`
+`func (o *DriveInline) GetRoot() DriveItem`
 
 GetRoot returns the Root field if non-nil, zero value otherwise.
 
 ### GetRootOk
 
-`func (o *DriveAllOf) GetRootOk() (*DriveItem, bool)`
+`func (o *DriveInline) GetRootOk() (*DriveItem, bool)`
 
 GetRootOk returns a tuple with the Root field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoot
 
-`func (o *DriveAllOf) SetRoot(v DriveItem)`
+`func (o *DriveInline) SetRoot(v DriveItem)`
 
 SetRoot sets Root field to given value.
 
 ### HasRoot
 
-`func (o *DriveAllOf) HasRoot() bool`
+`func (o *DriveInline) HasRoot() bool`
 
 HasRoot returns a boolean if a field has been set.
 

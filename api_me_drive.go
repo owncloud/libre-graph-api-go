@@ -37,7 +37,7 @@ func (r ApiMeDriveGetHomeRequest) Execute() (Drive, *_nethttp.Response, error) {
 }
 
 /*
-MeDriveGetHome Get home drive for user
+MeDriveGetHome Get personal space for user
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiMeDriveGetHomeRequest

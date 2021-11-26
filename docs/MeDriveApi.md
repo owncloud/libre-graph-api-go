@@ -4,7 +4,7 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MeDriveGetHome**](MeDriveApi.md#MeDriveGetHome) | **Get** /me/drive | Get home drive for user
+[**MeDriveGetHome**](MeDriveApi.md#MeDriveGetHome) | **Get** /me/drive | Get personal space for user
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > Drive MeDriveGetHome(ctx).Execute()
 
-Get home drive for user
+Get personal space for user
 
 ### Example
 

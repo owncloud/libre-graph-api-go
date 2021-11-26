@@ -1,4 +1,4 @@
-# DirectoryObjectAllOf
+# DirectoryObjectInline
 
 ## Properties
 
@@ -8,45 +8,45 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewDirectoryObjectAllOf
+### NewDirectoryObjectInline
 
-`func NewDirectoryObjectAllOf() *DirectoryObjectAllOf`
+`func NewDirectoryObjectInline() *DirectoryObjectInline`
 
-NewDirectoryObjectAllOf instantiates a new DirectoryObjectAllOf object
+NewDirectoryObjectInline instantiates a new DirectoryObjectInline object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewDirectoryObjectAllOfWithDefaults
+### NewDirectoryObjectInlineWithDefaults
 
-`func NewDirectoryObjectAllOfWithDefaults() *DirectoryObjectAllOf`
+`func NewDirectoryObjectInlineWithDefaults() *DirectoryObjectInline`
 
-NewDirectoryObjectAllOfWithDefaults instantiates a new DirectoryObjectAllOf object
+NewDirectoryObjectInlineWithDefaults instantiates a new DirectoryObjectInline object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetDeletedDateTime
 
-`func (o *DirectoryObjectAllOf) GetDeletedDateTime() time.Time`
+`func (o *DirectoryObjectInline) GetDeletedDateTime() time.Time`
 
 GetDeletedDateTime returns the DeletedDateTime field if non-nil, zero value otherwise.
 
 ### GetDeletedDateTimeOk
 
-`func (o *DirectoryObjectAllOf) GetDeletedDateTimeOk() (*time.Time, bool)`
+`func (o *DirectoryObjectInline) GetDeletedDateTimeOk() (*time.Time, bool)`
 
 GetDeletedDateTimeOk returns a tuple with the DeletedDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeletedDateTime
 
-`func (o *DirectoryObjectAllOf) SetDeletedDateTime(v time.Time)`
+`func (o *DirectoryObjectInline) SetDeletedDateTime(v time.Time)`
 
 SetDeletedDateTime sets DeletedDateTime field to given value.
 
 ### HasDeletedDateTime
 
-`func (o *DirectoryObjectAllOf) HasDeletedDateTime() bool`
+`func (o *DirectoryObjectInline) HasDeletedDateTime() bool`
 
 HasDeletedDateTime returns a boolean if a field has been set.
 

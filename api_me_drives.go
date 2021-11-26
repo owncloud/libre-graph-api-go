@@ -74,7 +74,7 @@ func (r ApiMeListDrivesRequest) Expand(expand []string) ApiMeListDrivesRequest {
 	return r
 }
 
-func (r ApiMeListDrivesRequest) Execute() (CollectionOfDrive, *_nethttp.Response, error) {
+func (r ApiMeListDrivesRequest) Execute() (CollectionOfDrives, *_nethttp.Response, error) {
 	return r.ApiService.MeListDrivesExecute(r)
 }
 
@@ -92,13 +92,13 @@ func (a *MeDrivesApiService) MeListDrives(ctx _context.Context) ApiMeListDrivesR
 }
 
 // Execute executes the request
-//  @return CollectionOfDrive
-func (a *MeDrivesApiService) MeListDrivesExecute(r ApiMeListDrivesRequest) (CollectionOfDrive, *_nethttp.Response, error) {
+//  @return CollectionOfDrives
+func (a *MeDrivesApiService) MeListDrivesExecute(r ApiMeListDrivesRequest) (CollectionOfDrives, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  CollectionOfDrive
+		localVarReturnValue  CollectionOfDrives
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDrivesApiService.MeListDrives")

@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **string** | Read-only. | [optional] [readonly] 
+**DeletedDateTime** | Pointer to **time.Time** |  | [optional] 
 **AccountEnabled** | Pointer to **bool** | true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter. | [optional] 
 **BusinessPhones** | Pointer to **[]string** | The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory. | [optional] 
 **City** | Pointer to **string** | The city in which the user is located. Returned only on $select. Supports $filter. | [optional] 
@@ -51,6 +53,56 @@ will change when the set of required properties is changed
 NewUserWithDefaults instantiates a new User object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *User) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *User) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *User) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *User) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetDeletedDateTime
+
+`func (o *User) GetDeletedDateTime() time.Time`
+
+GetDeletedDateTime returns the DeletedDateTime field if non-nil, zero value otherwise.
+
+### GetDeletedDateTimeOk
+
+`func (o *User) GetDeletedDateTimeOk() (*time.Time, bool)`
+
+GetDeletedDateTimeOk returns a tuple with the DeletedDateTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeletedDateTime
+
+`func (o *User) SetDeletedDateTime(v time.Time)`
+
+SetDeletedDateTime sets DeletedDateTime field to given value.
+
+### HasDeletedDateTime
+
+`func (o *User) HasDeletedDateTime() bool`
+
+HasDeletedDateTime returns a boolean if a field has been set.
 
 ### GetAccountEnabled
 

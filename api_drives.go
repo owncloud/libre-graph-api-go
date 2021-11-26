@@ -33,7 +33,7 @@ type ApiDrivesCreateDriveRequest struct {
 	drive *Drive
 }
 
-// New navigation property values
+// New space property values
 func (r ApiDrivesCreateDriveRequest) Drive(drive Drive) ApiDrivesCreateDriveRequest {
 	r.drive = &drive
 	return r
@@ -44,7 +44,7 @@ func (r ApiDrivesCreateDriveRequest) Execute() (*_nethttp.Response, error) {
 }
 
 /*
-DrivesCreateDrive Create a new navigation property of a specific drive
+DrivesCreateDrive Create a new space of a specific type
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDrivesCreateDriveRequest
@@ -150,7 +150,7 @@ func (r ApiDrivesDeleteDriveRequest) Execute() (*_nethttp.Response, error) {
 }
 
 /*
-DrivesDeleteDrive Delete a specific navigation property drive
+DrivesDeleteDrive Delete a specific space
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param driveId key: id of drive
@@ -373,7 +373,7 @@ type ApiDrivesUpdateDriveRequest struct {
 	drive *Drive
 }
 
-// New navigation property values
+// New space values
 func (r ApiDrivesUpdateDriveRequest) Drive(drive Drive) ApiDrivesUpdateDriveRequest {
 	r.drive = &drive
 	return r
@@ -384,7 +384,7 @@ func (r ApiDrivesUpdateDriveRequest) Execute() (*_nethttp.Response, error) {
 }
 
 /*
-DrivesUpdateDrive Update the navigation property of a specific drive
+DrivesUpdateDrive Update the space
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param driveId key: id of drive

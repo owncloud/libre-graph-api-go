@@ -15,8 +15,8 @@ import (
 	"time"
 )
 
-// BaseItemAllOf struct for BaseItemAllOf
-type BaseItemAllOf struct {
+// BaseItemInline struct for BaseItemInline
+type BaseItemInline struct {
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// Date and time of item creation. Read-only.
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
@@ -36,25 +36,25 @@ type BaseItemAllOf struct {
 	LastModifiedByUser *User `json:"lastModifiedByUser,omitempty"`
 }
 
-// NewBaseItemAllOf instantiates a new BaseItemAllOf object
+// NewBaseItemInline instantiates a new BaseItemInline object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBaseItemAllOf() *BaseItemAllOf {
-	this := BaseItemAllOf{}
+func NewBaseItemInline() *BaseItemInline {
+	this := BaseItemInline{}
 	return &this
 }
 
-// NewBaseItemAllOfWithDefaults instantiates a new BaseItemAllOf object
+// NewBaseItemInlineWithDefaults instantiates a new BaseItemInline object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewBaseItemAllOfWithDefaults() *BaseItemAllOf {
-	this := BaseItemAllOf{}
+func NewBaseItemInlineWithDefaults() *BaseItemInline {
+	this := BaseItemInline{}
 	return &this
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *BaseItemAllOf) GetCreatedBy() IdentitySet {
+func (o *BaseItemInline) GetCreatedBy() IdentitySet {
 	if o == nil || o.CreatedBy == nil {
 		var ret IdentitySet
 		return ret
@@ -64,7 +64,7 @@ func (o *BaseItemAllOf) GetCreatedBy() IdentitySet {
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BaseItemAllOf) GetCreatedByOk() (*IdentitySet, bool) {
+func (o *BaseItemInline) GetCreatedByOk() (*IdentitySet, bool) {
 	if o == nil || o.CreatedBy == nil {
 		return nil, false
 	}
@@ -72,7 +72,7 @@ func (o *BaseItemAllOf) GetCreatedByOk() (*IdentitySet, bool) {
 }
 
 // HasCreatedBy returns a boolean if a field has been set.
-func (o *BaseItemAllOf) HasCreatedBy() bool {
+func (o *BaseItemInline) HasCreatedBy() bool {
 	if o != nil && o.CreatedBy != nil {
 		return true
 	}
@@ -81,12 +81,12 @@ func (o *BaseItemAllOf) HasCreatedBy() bool {
 }
 
 // SetCreatedBy gets a reference to the given IdentitySet and assigns it to the CreatedBy field.
-func (o *BaseItemAllOf) SetCreatedBy(v IdentitySet) {
+func (o *BaseItemInline) SetCreatedBy(v IdentitySet) {
 	o.CreatedBy = &v
 }
 
 // GetCreatedDateTime returns the CreatedDateTime field value if set, zero value otherwise.
-func (o *BaseItemAllOf) GetCreatedDateTime() time.Time {
+func (o *BaseItemInline) GetCreatedDateTime() time.Time {
 	if o == nil || o.CreatedDateTime == nil {
 		var ret time.Time
 		return ret
@@ -96,7 +96,7 @@ func (o *BaseItemAllOf) GetCreatedDateTime() time.Time {
 
 // GetCreatedDateTimeOk returns a tuple with the CreatedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BaseItemAllOf) GetCreatedDateTimeOk() (*time.Time, bool) {
+func (o *BaseItemInline) GetCreatedDateTimeOk() (*time.Time, bool) {
 	if o == nil || o.CreatedDateTime == nil {
 		return nil, false
 	}
@@ -104,7 +104,7 @@ func (o *BaseItemAllOf) GetCreatedDateTimeOk() (*time.Time, bool) {
 }
 
 // HasCreatedDateTime returns a boolean if a field has been set.
-func (o *BaseItemAllOf) HasCreatedDateTime() bool {
+func (o *BaseItemInline) HasCreatedDateTime() bool {
 	if o != nil && o.CreatedDateTime != nil {
 		return true
 	}
@@ -113,12 +113,12 @@ func (o *BaseItemAllOf) HasCreatedDateTime() bool {
 }
 
 // SetCreatedDateTime gets a reference to the given time.Time and assigns it to the CreatedDateTime field.
-func (o *BaseItemAllOf) SetCreatedDateTime(v time.Time) {
+func (o *BaseItemInline) SetCreatedDateTime(v time.Time) {
 	o.CreatedDateTime = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
-func (o *BaseItemAllOf) GetDescription() string {
+func (o *BaseItemInline) GetDescription() string {
 	if o == nil || o.Description == nil {
 		var ret string
 		return ret
@@ -128,7 +128,7 @@ func (o *BaseItemAllOf) GetDescription() string {
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BaseItemAllOf) GetDescriptionOk() (*string, bool) {
+func (o *BaseItemInline) GetDescriptionOk() (*string, bool) {
 	if o == nil || o.Description == nil {
 		return nil, false
 	}
@@ -136,7 +136,7 @@ func (o *BaseItemAllOf) GetDescriptionOk() (*string, bool) {
 }
 
 // HasDescription returns a boolean if a field has been set.
-func (o *BaseItemAllOf) HasDescription() bool {
+func (o *BaseItemInline) HasDescription() bool {
 	if o != nil && o.Description != nil {
 		return true
 	}
@@ -145,12 +145,12 @@ func (o *BaseItemAllOf) HasDescription() bool {
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *BaseItemAllOf) SetDescription(v string) {
+func (o *BaseItemInline) SetDescription(v string) {
 	o.Description = &v
 }
 
 // GetETag returns the ETag field value if set, zero value otherwise.
-func (o *BaseItemAllOf) GetETag() string {
+func (o *BaseItemInline) GetETag() string {
 	if o == nil || o.ETag == nil {
 		var ret string
 		return ret
@@ -160,7 +160,7 @@ func (o *BaseItemAllOf) GetETag() string {
 
 // GetETagOk returns a tuple with the ETag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BaseItemAllOf) GetETagOk() (*string, bool) {
+func (o *BaseItemInline) GetETagOk() (*string, bool) {
 	if o == nil || o.ETag == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *BaseItemAllOf) GetETagOk() (*string, bool) {
 }
 
 // HasETag returns a boolean if a field has been set.
-func (o *BaseItemAllOf) HasETag() bool {
+func (o *BaseItemInline) HasETag() bool {
 	if o != nil && o.ETag != nil {
 		return true
 	}
@@ -177,12 +177,12 @@ func (o *BaseItemAllOf) HasETag() bool {
 }
 
 // SetETag gets a reference to the given string and assigns it to the ETag field.
-func (o *BaseItemAllOf) SetETag(v string) {
+func (o *BaseItemInline) SetETag(v string) {
 	o.ETag = &v
 }
 
 // GetLastModifiedBy returns the LastModifiedBy field value if set, zero value otherwise.
-func (o *BaseItemAllOf) GetLastModifiedBy() IdentitySet {
+func (o *BaseItemInline) GetLastModifiedBy() IdentitySet {
 	if o == nil || o.LastModifiedBy == nil {
 		var ret IdentitySet
 		return ret
@@ -192,7 +192,7 @@ func (o *BaseItemAllOf) GetLastModifiedBy() IdentitySet {
 
 // GetLastModifiedByOk returns a tuple with the LastModifiedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BaseItemAllOf) GetLastModifiedByOk() (*IdentitySet, bool) {
+func (o *BaseItemInline) GetLastModifiedByOk() (*IdentitySet, bool) {
 	if o == nil || o.LastModifiedBy == nil {
 		return nil, false
 	}
@@ -200,7 +200,7 @@ func (o *BaseItemAllOf) GetLastModifiedByOk() (*IdentitySet, bool) {
 }
 
 // HasLastModifiedBy returns a boolean if a field has been set.
-func (o *BaseItemAllOf) HasLastModifiedBy() bool {
+func (o *BaseItemInline) HasLastModifiedBy() bool {
 	if o != nil && o.LastModifiedBy != nil {
 		return true
 	}
@@ -209,12 +209,12 @@ func (o *BaseItemAllOf) HasLastModifiedBy() bool {
 }
 
 // SetLastModifiedBy gets a reference to the given IdentitySet and assigns it to the LastModifiedBy field.
-func (o *BaseItemAllOf) SetLastModifiedBy(v IdentitySet) {
+func (o *BaseItemInline) SetLastModifiedBy(v IdentitySet) {
 	o.LastModifiedBy = &v
 }
 
 // GetLastModifiedDateTime returns the LastModifiedDateTime field value if set, zero value otherwise.
-func (o *BaseItemAllOf) GetLastModifiedDateTime() time.Time {
+func (o *BaseItemInline) GetLastModifiedDateTime() time.Time {
 	if o == nil || o.LastModifiedDateTime == nil {
 		var ret time.Time
 		return ret
@@ -224,7 +224,7 @@ func (o *BaseItemAllOf) GetLastModifiedDateTime() time.Time {
 
 // GetLastModifiedDateTimeOk returns a tuple with the LastModifiedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BaseItemAllOf) GetLastModifiedDateTimeOk() (*time.Time, bool) {
+func (o *BaseItemInline) GetLastModifiedDateTimeOk() (*time.Time, bool) {
 	if o == nil || o.LastModifiedDateTime == nil {
 		return nil, false
 	}
@@ -232,7 +232,7 @@ func (o *BaseItemAllOf) GetLastModifiedDateTimeOk() (*time.Time, bool) {
 }
 
 // HasLastModifiedDateTime returns a boolean if a field has been set.
-func (o *BaseItemAllOf) HasLastModifiedDateTime() bool {
+func (o *BaseItemInline) HasLastModifiedDateTime() bool {
 	if o != nil && o.LastModifiedDateTime != nil {
 		return true
 	}
@@ -241,12 +241,12 @@ func (o *BaseItemAllOf) HasLastModifiedDateTime() bool {
 }
 
 // SetLastModifiedDateTime gets a reference to the given time.Time and assigns it to the LastModifiedDateTime field.
-func (o *BaseItemAllOf) SetLastModifiedDateTime(v time.Time) {
+func (o *BaseItemInline) SetLastModifiedDateTime(v time.Time) {
 	o.LastModifiedDateTime = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *BaseItemAllOf) GetName() string {
+func (o *BaseItemInline) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -256,7 +256,7 @@ func (o *BaseItemAllOf) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BaseItemAllOf) GetNameOk() (*string, bool) {
+func (o *BaseItemInline) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -264,7 +264,7 @@ func (o *BaseItemAllOf) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *BaseItemAllOf) HasName() bool {
+func (o *BaseItemInline) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -273,12 +273,12 @@ func (o *BaseItemAllOf) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *BaseItemAllOf) SetName(v string) {
+func (o *BaseItemInline) SetName(v string) {
 	o.Name = &v
 }
 
 // GetParentReference returns the ParentReference field value if set, zero value otherwise.
-func (o *BaseItemAllOf) GetParentReference() ItemReference {
+func (o *BaseItemInline) GetParentReference() ItemReference {
 	if o == nil || o.ParentReference == nil {
 		var ret ItemReference
 		return ret
@@ -288,7 +288,7 @@ func (o *BaseItemAllOf) GetParentReference() ItemReference {
 
 // GetParentReferenceOk returns a tuple with the ParentReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BaseItemAllOf) GetParentReferenceOk() (*ItemReference, bool) {
+func (o *BaseItemInline) GetParentReferenceOk() (*ItemReference, bool) {
 	if o == nil || o.ParentReference == nil {
 		return nil, false
 	}
@@ -296,7 +296,7 @@ func (o *BaseItemAllOf) GetParentReferenceOk() (*ItemReference, bool) {
 }
 
 // HasParentReference returns a boolean if a field has been set.
-func (o *BaseItemAllOf) HasParentReference() bool {
+func (o *BaseItemInline) HasParentReference() bool {
 	if o != nil && o.ParentReference != nil {
 		return true
 	}
@@ -305,12 +305,12 @@ func (o *BaseItemAllOf) HasParentReference() bool {
 }
 
 // SetParentReference gets a reference to the given ItemReference and assigns it to the ParentReference field.
-func (o *BaseItemAllOf) SetParentReference(v ItemReference) {
+func (o *BaseItemInline) SetParentReference(v ItemReference) {
 	o.ParentReference = &v
 }
 
 // GetWebUrl returns the WebUrl field value if set, zero value otherwise.
-func (o *BaseItemAllOf) GetWebUrl() string {
+func (o *BaseItemInline) GetWebUrl() string {
 	if o == nil || o.WebUrl == nil {
 		var ret string
 		return ret
@@ -320,7 +320,7 @@ func (o *BaseItemAllOf) GetWebUrl() string {
 
 // GetWebUrlOk returns a tuple with the WebUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BaseItemAllOf) GetWebUrlOk() (*string, bool) {
+func (o *BaseItemInline) GetWebUrlOk() (*string, bool) {
 	if o == nil || o.WebUrl == nil {
 		return nil, false
 	}
@@ -328,7 +328,7 @@ func (o *BaseItemAllOf) GetWebUrlOk() (*string, bool) {
 }
 
 // HasWebUrl returns a boolean if a field has been set.
-func (o *BaseItemAllOf) HasWebUrl() bool {
+func (o *BaseItemInline) HasWebUrl() bool {
 	if o != nil && o.WebUrl != nil {
 		return true
 	}
@@ -337,12 +337,12 @@ func (o *BaseItemAllOf) HasWebUrl() bool {
 }
 
 // SetWebUrl gets a reference to the given string and assigns it to the WebUrl field.
-func (o *BaseItemAllOf) SetWebUrl(v string) {
+func (o *BaseItemInline) SetWebUrl(v string) {
 	o.WebUrl = &v
 }
 
 // GetCreatedByUser returns the CreatedByUser field value if set, zero value otherwise.
-func (o *BaseItemAllOf) GetCreatedByUser() User {
+func (o *BaseItemInline) GetCreatedByUser() User {
 	if o == nil || o.CreatedByUser == nil {
 		var ret User
 		return ret
@@ -352,7 +352,7 @@ func (o *BaseItemAllOf) GetCreatedByUser() User {
 
 // GetCreatedByUserOk returns a tuple with the CreatedByUser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BaseItemAllOf) GetCreatedByUserOk() (*User, bool) {
+func (o *BaseItemInline) GetCreatedByUserOk() (*User, bool) {
 	if o == nil || o.CreatedByUser == nil {
 		return nil, false
 	}
@@ -360,7 +360,7 @@ func (o *BaseItemAllOf) GetCreatedByUserOk() (*User, bool) {
 }
 
 // HasCreatedByUser returns a boolean if a field has been set.
-func (o *BaseItemAllOf) HasCreatedByUser() bool {
+func (o *BaseItemInline) HasCreatedByUser() bool {
 	if o != nil && o.CreatedByUser != nil {
 		return true
 	}
@@ -369,12 +369,12 @@ func (o *BaseItemAllOf) HasCreatedByUser() bool {
 }
 
 // SetCreatedByUser gets a reference to the given User and assigns it to the CreatedByUser field.
-func (o *BaseItemAllOf) SetCreatedByUser(v User) {
+func (o *BaseItemInline) SetCreatedByUser(v User) {
 	o.CreatedByUser = &v
 }
 
 // GetLastModifiedByUser returns the LastModifiedByUser field value if set, zero value otherwise.
-func (o *BaseItemAllOf) GetLastModifiedByUser() User {
+func (o *BaseItemInline) GetLastModifiedByUser() User {
 	if o == nil || o.LastModifiedByUser == nil {
 		var ret User
 		return ret
@@ -384,7 +384,7 @@ func (o *BaseItemAllOf) GetLastModifiedByUser() User {
 
 // GetLastModifiedByUserOk returns a tuple with the LastModifiedByUser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BaseItemAllOf) GetLastModifiedByUserOk() (*User, bool) {
+func (o *BaseItemInline) GetLastModifiedByUserOk() (*User, bool) {
 	if o == nil || o.LastModifiedByUser == nil {
 		return nil, false
 	}
@@ -392,7 +392,7 @@ func (o *BaseItemAllOf) GetLastModifiedByUserOk() (*User, bool) {
 }
 
 // HasLastModifiedByUser returns a boolean if a field has been set.
-func (o *BaseItemAllOf) HasLastModifiedByUser() bool {
+func (o *BaseItemInline) HasLastModifiedByUser() bool {
 	if o != nil && o.LastModifiedByUser != nil {
 		return true
 	}
@@ -401,11 +401,11 @@ func (o *BaseItemAllOf) HasLastModifiedByUser() bool {
 }
 
 // SetLastModifiedByUser gets a reference to the given User and assigns it to the LastModifiedByUser field.
-func (o *BaseItemAllOf) SetLastModifiedByUser(v User) {
+func (o *BaseItemInline) SetLastModifiedByUser(v User) {
 	o.LastModifiedByUser = &v
 }
 
-func (o BaseItemAllOf) MarshalJSON() ([]byte, error) {
+func (o BaseItemInline) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CreatedBy != nil {
 		toSerialize["createdBy"] = o.CreatedBy
@@ -443,38 +443,38 @@ func (o BaseItemAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableBaseItemAllOf struct {
-	value *BaseItemAllOf
+type NullableBaseItemInline struct {
+	value *BaseItemInline
 	isSet bool
 }
 
-func (v NullableBaseItemAllOf) Get() *BaseItemAllOf {
+func (v NullableBaseItemInline) Get() *BaseItemInline {
 	return v.value
 }
 
-func (v *NullableBaseItemAllOf) Set(val *BaseItemAllOf) {
+func (v *NullableBaseItemInline) Set(val *BaseItemInline) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableBaseItemAllOf) IsSet() bool {
+func (v NullableBaseItemInline) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableBaseItemAllOf) Unset() {
+func (v *NullableBaseItemInline) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableBaseItemAllOf(val *BaseItemAllOf) *NullableBaseItemAllOf {
-	return &NullableBaseItemAllOf{value: val, isSet: true}
+func NewNullableBaseItemInline(val *BaseItemInline) *NullableBaseItemInline {
+	return &NullableBaseItemInline{value: val, isSet: true}
 }
 
-func (v NullableBaseItemAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableBaseItemInline) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableBaseItemAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableBaseItemInline) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

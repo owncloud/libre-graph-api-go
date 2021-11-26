@@ -4,6 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **string** | Read-only. | [optional] [readonly] 
+**CreatedBy** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
+**CreatedDateTime** | Pointer to **time.Time** | Date and time of item creation. Read-only. | [optional] [readonly] 
+**Description** | Pointer to **string** | Provides a user-visible description of the item. Optional. | [optional] 
+**ETag** | Pointer to **string** | ETag for the item. Read-only. | [optional] [readonly] 
+**LastModifiedBy** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
+**LastModifiedDateTime** | Pointer to **time.Time** | Date and time the item was last modified. Read-only. | [optional] [readonly] 
+**Name** | Pointer to **string** | The name of the item. Read-write. | [optional] 
+**ParentReference** | Pointer to [**ItemReference**](ItemReference.md) |  | [optional] 
+**WebUrl** | Pointer to **string** | URL that displays the resource in the browser. Read-only. | [optional] [readonly] 
+**CreatedByUser** | Pointer to [**User**](User.md) |  | [optional] 
+**LastModifiedByUser** | Pointer to [**User**](User.md) |  | [optional] 
 **DriveType** | Pointer to **string** | Describes the type of drive represented by this resource. Values are \&quot;personal\&quot; for users home spaces, \&quot;project\&quot; or \&quot;share\&quot;. Read-only. | [optional] [readonly] 
 **Owner** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
 **Quota** | Pointer to [**Quota**](Quota.md) |  | [optional] 
@@ -28,6 +40,306 @@ will change when the set of required properties is changed
 NewDriveWithDefaults instantiates a new Drive object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *Drive) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *Drive) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *Drive) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *Drive) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetCreatedBy
+
+`func (o *Drive) GetCreatedBy() IdentitySet`
+
+GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
+
+### GetCreatedByOk
+
+`func (o *Drive) GetCreatedByOk() (*IdentitySet, bool)`
+
+GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedBy
+
+`func (o *Drive) SetCreatedBy(v IdentitySet)`
+
+SetCreatedBy sets CreatedBy field to given value.
+
+### HasCreatedBy
+
+`func (o *Drive) HasCreatedBy() bool`
+
+HasCreatedBy returns a boolean if a field has been set.
+
+### GetCreatedDateTime
+
+`func (o *Drive) GetCreatedDateTime() time.Time`
+
+GetCreatedDateTime returns the CreatedDateTime field if non-nil, zero value otherwise.
+
+### GetCreatedDateTimeOk
+
+`func (o *Drive) GetCreatedDateTimeOk() (*time.Time, bool)`
+
+GetCreatedDateTimeOk returns a tuple with the CreatedDateTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedDateTime
+
+`func (o *Drive) SetCreatedDateTime(v time.Time)`
+
+SetCreatedDateTime sets CreatedDateTime field to given value.
+
+### HasCreatedDateTime
+
+`func (o *Drive) HasCreatedDateTime() bool`
+
+HasCreatedDateTime returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *Drive) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *Drive) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *Drive) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *Drive) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetETag
+
+`func (o *Drive) GetETag() string`
+
+GetETag returns the ETag field if non-nil, zero value otherwise.
+
+### GetETagOk
+
+`func (o *Drive) GetETagOk() (*string, bool)`
+
+GetETagOk returns a tuple with the ETag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetETag
+
+`func (o *Drive) SetETag(v string)`
+
+SetETag sets ETag field to given value.
+
+### HasETag
+
+`func (o *Drive) HasETag() bool`
+
+HasETag returns a boolean if a field has been set.
+
+### GetLastModifiedBy
+
+`func (o *Drive) GetLastModifiedBy() IdentitySet`
+
+GetLastModifiedBy returns the LastModifiedBy field if non-nil, zero value otherwise.
+
+### GetLastModifiedByOk
+
+`func (o *Drive) GetLastModifiedByOk() (*IdentitySet, bool)`
+
+GetLastModifiedByOk returns a tuple with the LastModifiedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModifiedBy
+
+`func (o *Drive) SetLastModifiedBy(v IdentitySet)`
+
+SetLastModifiedBy sets LastModifiedBy field to given value.
+
+### HasLastModifiedBy
+
+`func (o *Drive) HasLastModifiedBy() bool`
+
+HasLastModifiedBy returns a boolean if a field has been set.
+
+### GetLastModifiedDateTime
+
+`func (o *Drive) GetLastModifiedDateTime() time.Time`
+
+GetLastModifiedDateTime returns the LastModifiedDateTime field if non-nil, zero value otherwise.
+
+### GetLastModifiedDateTimeOk
+
+`func (o *Drive) GetLastModifiedDateTimeOk() (*time.Time, bool)`
+
+GetLastModifiedDateTimeOk returns a tuple with the LastModifiedDateTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModifiedDateTime
+
+`func (o *Drive) SetLastModifiedDateTime(v time.Time)`
+
+SetLastModifiedDateTime sets LastModifiedDateTime field to given value.
+
+### HasLastModifiedDateTime
+
+`func (o *Drive) HasLastModifiedDateTime() bool`
+
+HasLastModifiedDateTime returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *Drive) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *Drive) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *Drive) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *Drive) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetParentReference
+
+`func (o *Drive) GetParentReference() ItemReference`
+
+GetParentReference returns the ParentReference field if non-nil, zero value otherwise.
+
+### GetParentReferenceOk
+
+`func (o *Drive) GetParentReferenceOk() (*ItemReference, bool)`
+
+GetParentReferenceOk returns a tuple with the ParentReference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentReference
+
+`func (o *Drive) SetParentReference(v ItemReference)`
+
+SetParentReference sets ParentReference field to given value.
+
+### HasParentReference
+
+`func (o *Drive) HasParentReference() bool`
+
+HasParentReference returns a boolean if a field has been set.
+
+### GetWebUrl
+
+`func (o *Drive) GetWebUrl() string`
+
+GetWebUrl returns the WebUrl field if non-nil, zero value otherwise.
+
+### GetWebUrlOk
+
+`func (o *Drive) GetWebUrlOk() (*string, bool)`
+
+GetWebUrlOk returns a tuple with the WebUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebUrl
+
+`func (o *Drive) SetWebUrl(v string)`
+
+SetWebUrl sets WebUrl field to given value.
+
+### HasWebUrl
+
+`func (o *Drive) HasWebUrl() bool`
+
+HasWebUrl returns a boolean if a field has been set.
+
+### GetCreatedByUser
+
+`func (o *Drive) GetCreatedByUser() User`
+
+GetCreatedByUser returns the CreatedByUser field if non-nil, zero value otherwise.
+
+### GetCreatedByUserOk
+
+`func (o *Drive) GetCreatedByUserOk() (*User, bool)`
+
+GetCreatedByUserOk returns a tuple with the CreatedByUser field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedByUser
+
+`func (o *Drive) SetCreatedByUser(v User)`
+
+SetCreatedByUser sets CreatedByUser field to given value.
+
+### HasCreatedByUser
+
+`func (o *Drive) HasCreatedByUser() bool`
+
+HasCreatedByUser returns a boolean if a field has been set.
+
+### GetLastModifiedByUser
+
+`func (o *Drive) GetLastModifiedByUser() User`
+
+GetLastModifiedByUser returns the LastModifiedByUser field if non-nil, zero value otherwise.
+
+### GetLastModifiedByUserOk
+
+`func (o *Drive) GetLastModifiedByUserOk() (*User, bool)`
+
+GetLastModifiedByUserOk returns a tuple with the LastModifiedByUser field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModifiedByUser
+
+`func (o *Drive) SetLastModifiedByUser(v User)`
+
+SetLastModifiedByUser sets LastModifiedByUser field to given value.
+
+### HasLastModifiedByUser
+
+`func (o *Drive) HasLastModifiedByUser() bool`
+
+HasLastModifiedByUser returns a boolean if a field has been set.
 
 ### GetDriveType
 

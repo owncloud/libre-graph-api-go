@@ -15,8 +15,8 @@ import (
 	"time"
 )
 
-// UserAllOf Represents an Active Directory user object.
-type UserAllOf struct {
+// UserInline struct for UserInline
+type UserInline struct {
 	// true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter.
 	AccountEnabled *bool `json:"accountEnabled,omitempty"`
 	// The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory.
@@ -74,25 +74,25 @@ type UserAllOf struct {
 	Drives *[]Drive `json:"drives,omitempty"`
 }
 
-// NewUserAllOf instantiates a new UserAllOf object
+// NewUserInline instantiates a new UserInline object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserAllOf() *UserAllOf {
-	this := UserAllOf{}
+func NewUserInline() *UserInline {
+	this := UserInline{}
 	return &this
 }
 
-// NewUserAllOfWithDefaults instantiates a new UserAllOf object
+// NewUserInlineWithDefaults instantiates a new UserInline object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUserAllOfWithDefaults() *UserAllOf {
-	this := UserAllOf{}
+func NewUserInlineWithDefaults() *UserInline {
+	this := UserInline{}
 	return &this
 }
 
 // GetAccountEnabled returns the AccountEnabled field value if set, zero value otherwise.
-func (o *UserAllOf) GetAccountEnabled() bool {
+func (o *UserInline) GetAccountEnabled() bool {
 	if o == nil || o.AccountEnabled == nil {
 		var ret bool
 		return ret
@@ -102,7 +102,7 @@ func (o *UserAllOf) GetAccountEnabled() bool {
 
 // GetAccountEnabledOk returns a tuple with the AccountEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetAccountEnabledOk() (*bool, bool) {
+func (o *UserInline) GetAccountEnabledOk() (*bool, bool) {
 	if o == nil || o.AccountEnabled == nil {
 		return nil, false
 	}
@@ -110,7 +110,7 @@ func (o *UserAllOf) GetAccountEnabledOk() (*bool, bool) {
 }
 
 // HasAccountEnabled returns a boolean if a field has been set.
-func (o *UserAllOf) HasAccountEnabled() bool {
+func (o *UserInline) HasAccountEnabled() bool {
 	if o != nil && o.AccountEnabled != nil {
 		return true
 	}
@@ -119,12 +119,12 @@ func (o *UserAllOf) HasAccountEnabled() bool {
 }
 
 // SetAccountEnabled gets a reference to the given bool and assigns it to the AccountEnabled field.
-func (o *UserAllOf) SetAccountEnabled(v bool) {
+func (o *UserInline) SetAccountEnabled(v bool) {
 	o.AccountEnabled = &v
 }
 
 // GetBusinessPhones returns the BusinessPhones field value if set, zero value otherwise.
-func (o *UserAllOf) GetBusinessPhones() []string {
+func (o *UserInline) GetBusinessPhones() []string {
 	if o == nil || o.BusinessPhones == nil {
 		var ret []string
 		return ret
@@ -134,7 +134,7 @@ func (o *UserAllOf) GetBusinessPhones() []string {
 
 // GetBusinessPhonesOk returns a tuple with the BusinessPhones field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetBusinessPhonesOk() (*[]string, bool) {
+func (o *UserInline) GetBusinessPhonesOk() (*[]string, bool) {
 	if o == nil || o.BusinessPhones == nil {
 		return nil, false
 	}
@@ -142,7 +142,7 @@ func (o *UserAllOf) GetBusinessPhonesOk() (*[]string, bool) {
 }
 
 // HasBusinessPhones returns a boolean if a field has been set.
-func (o *UserAllOf) HasBusinessPhones() bool {
+func (o *UserInline) HasBusinessPhones() bool {
 	if o != nil && o.BusinessPhones != nil {
 		return true
 	}
@@ -151,12 +151,12 @@ func (o *UserAllOf) HasBusinessPhones() bool {
 }
 
 // SetBusinessPhones gets a reference to the given []string and assigns it to the BusinessPhones field.
-func (o *UserAllOf) SetBusinessPhones(v []string) {
+func (o *UserInline) SetBusinessPhones(v []string) {
 	o.BusinessPhones = &v
 }
 
 // GetCity returns the City field value if set, zero value otherwise.
-func (o *UserAllOf) GetCity() string {
+func (o *UserInline) GetCity() string {
 	if o == nil || o.City == nil {
 		var ret string
 		return ret
@@ -166,7 +166,7 @@ func (o *UserAllOf) GetCity() string {
 
 // GetCityOk returns a tuple with the City field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetCityOk() (*string, bool) {
+func (o *UserInline) GetCityOk() (*string, bool) {
 	if o == nil || o.City == nil {
 		return nil, false
 	}
@@ -174,7 +174,7 @@ func (o *UserAllOf) GetCityOk() (*string, bool) {
 }
 
 // HasCity returns a boolean if a field has been set.
-func (o *UserAllOf) HasCity() bool {
+func (o *UserInline) HasCity() bool {
 	if o != nil && o.City != nil {
 		return true
 	}
@@ -183,12 +183,12 @@ func (o *UserAllOf) HasCity() bool {
 }
 
 // SetCity gets a reference to the given string and assigns it to the City field.
-func (o *UserAllOf) SetCity(v string) {
+func (o *UserInline) SetCity(v string) {
 	o.City = &v
 }
 
 // GetCompanyName returns the CompanyName field value if set, zero value otherwise.
-func (o *UserAllOf) GetCompanyName() string {
+func (o *UserInline) GetCompanyName() string {
 	if o == nil || o.CompanyName == nil {
 		var ret string
 		return ret
@@ -198,7 +198,7 @@ func (o *UserAllOf) GetCompanyName() string {
 
 // GetCompanyNameOk returns a tuple with the CompanyName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetCompanyNameOk() (*string, bool) {
+func (o *UserInline) GetCompanyNameOk() (*string, bool) {
 	if o == nil || o.CompanyName == nil {
 		return nil, false
 	}
@@ -206,7 +206,7 @@ func (o *UserAllOf) GetCompanyNameOk() (*string, bool) {
 }
 
 // HasCompanyName returns a boolean if a field has been set.
-func (o *UserAllOf) HasCompanyName() bool {
+func (o *UserInline) HasCompanyName() bool {
 	if o != nil && o.CompanyName != nil {
 		return true
 	}
@@ -215,12 +215,12 @@ func (o *UserAllOf) HasCompanyName() bool {
 }
 
 // SetCompanyName gets a reference to the given string and assigns it to the CompanyName field.
-func (o *UserAllOf) SetCompanyName(v string) {
+func (o *UserInline) SetCompanyName(v string) {
 	o.CompanyName = &v
 }
 
 // GetCountry returns the Country field value if set, zero value otherwise.
-func (o *UserAllOf) GetCountry() string {
+func (o *UserInline) GetCountry() string {
 	if o == nil || o.Country == nil {
 		var ret string
 		return ret
@@ -230,7 +230,7 @@ func (o *UserAllOf) GetCountry() string {
 
 // GetCountryOk returns a tuple with the Country field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetCountryOk() (*string, bool) {
+func (o *UserInline) GetCountryOk() (*string, bool) {
 	if o == nil || o.Country == nil {
 		return nil, false
 	}
@@ -238,7 +238,7 @@ func (o *UserAllOf) GetCountryOk() (*string, bool) {
 }
 
 // HasCountry returns a boolean if a field has been set.
-func (o *UserAllOf) HasCountry() bool {
+func (o *UserInline) HasCountry() bool {
 	if o != nil && o.Country != nil {
 		return true
 	}
@@ -247,12 +247,12 @@ func (o *UserAllOf) HasCountry() bool {
 }
 
 // SetCountry gets a reference to the given string and assigns it to the Country field.
-func (o *UserAllOf) SetCountry(v string) {
+func (o *UserInline) SetCountry(v string) {
 	o.Country = &v
 }
 
 // GetCreatedDateTime returns the CreatedDateTime field value if set, zero value otherwise.
-func (o *UserAllOf) GetCreatedDateTime() time.Time {
+func (o *UserInline) GetCreatedDateTime() time.Time {
 	if o == nil || o.CreatedDateTime == nil {
 		var ret time.Time
 		return ret
@@ -262,7 +262,7 @@ func (o *UserAllOf) GetCreatedDateTime() time.Time {
 
 // GetCreatedDateTimeOk returns a tuple with the CreatedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetCreatedDateTimeOk() (*time.Time, bool) {
+func (o *UserInline) GetCreatedDateTimeOk() (*time.Time, bool) {
 	if o == nil || o.CreatedDateTime == nil {
 		return nil, false
 	}
@@ -270,7 +270,7 @@ func (o *UserAllOf) GetCreatedDateTimeOk() (*time.Time, bool) {
 }
 
 // HasCreatedDateTime returns a boolean if a field has been set.
-func (o *UserAllOf) HasCreatedDateTime() bool {
+func (o *UserInline) HasCreatedDateTime() bool {
 	if o != nil && o.CreatedDateTime != nil {
 		return true
 	}
@@ -279,12 +279,12 @@ func (o *UserAllOf) HasCreatedDateTime() bool {
 }
 
 // SetCreatedDateTime gets a reference to the given time.Time and assigns it to the CreatedDateTime field.
-func (o *UserAllOf) SetCreatedDateTime(v time.Time) {
+func (o *UserInline) SetCreatedDateTime(v time.Time) {
 	o.CreatedDateTime = &v
 }
 
 // GetDepartment returns the Department field value if set, zero value otherwise.
-func (o *UserAllOf) GetDepartment() string {
+func (o *UserInline) GetDepartment() string {
 	if o == nil || o.Department == nil {
 		var ret string
 		return ret
@@ -294,7 +294,7 @@ func (o *UserAllOf) GetDepartment() string {
 
 // GetDepartmentOk returns a tuple with the Department field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetDepartmentOk() (*string, bool) {
+func (o *UserInline) GetDepartmentOk() (*string, bool) {
 	if o == nil || o.Department == nil {
 		return nil, false
 	}
@@ -302,7 +302,7 @@ func (o *UserAllOf) GetDepartmentOk() (*string, bool) {
 }
 
 // HasDepartment returns a boolean if a field has been set.
-func (o *UserAllOf) HasDepartment() bool {
+func (o *UserInline) HasDepartment() bool {
 	if o != nil && o.Department != nil {
 		return true
 	}
@@ -311,12 +311,12 @@ func (o *UserAllOf) HasDepartment() bool {
 }
 
 // SetDepartment gets a reference to the given string and assigns it to the Department field.
-func (o *UserAllOf) SetDepartment(v string) {
+func (o *UserInline) SetDepartment(v string) {
 	o.Department = &v
 }
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
-func (o *UserAllOf) GetDisplayName() string {
+func (o *UserInline) GetDisplayName() string {
 	if o == nil || o.DisplayName == nil {
 		var ret string
 		return ret
@@ -326,7 +326,7 @@ func (o *UserAllOf) GetDisplayName() string {
 
 // GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetDisplayNameOk() (*string, bool) {
+func (o *UserInline) GetDisplayNameOk() (*string, bool) {
 	if o == nil || o.DisplayName == nil {
 		return nil, false
 	}
@@ -334,7 +334,7 @@ func (o *UserAllOf) GetDisplayNameOk() (*string, bool) {
 }
 
 // HasDisplayName returns a boolean if a field has been set.
-func (o *UserAllOf) HasDisplayName() bool {
+func (o *UserInline) HasDisplayName() bool {
 	if o != nil && o.DisplayName != nil {
 		return true
 	}
@@ -343,12 +343,12 @@ func (o *UserAllOf) HasDisplayName() bool {
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
-func (o *UserAllOf) SetDisplayName(v string) {
+func (o *UserInline) SetDisplayName(v string) {
 	o.DisplayName = &v
 }
 
 // GetFaxNumber returns the FaxNumber field value if set, zero value otherwise.
-func (o *UserAllOf) GetFaxNumber() string {
+func (o *UserInline) GetFaxNumber() string {
 	if o == nil || o.FaxNumber == nil {
 		var ret string
 		return ret
@@ -358,7 +358,7 @@ func (o *UserAllOf) GetFaxNumber() string {
 
 // GetFaxNumberOk returns a tuple with the FaxNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetFaxNumberOk() (*string, bool) {
+func (o *UserInline) GetFaxNumberOk() (*string, bool) {
 	if o == nil || o.FaxNumber == nil {
 		return nil, false
 	}
@@ -366,7 +366,7 @@ func (o *UserAllOf) GetFaxNumberOk() (*string, bool) {
 }
 
 // HasFaxNumber returns a boolean if a field has been set.
-func (o *UserAllOf) HasFaxNumber() bool {
+func (o *UserInline) HasFaxNumber() bool {
 	if o != nil && o.FaxNumber != nil {
 		return true
 	}
@@ -375,12 +375,12 @@ func (o *UserAllOf) HasFaxNumber() bool {
 }
 
 // SetFaxNumber gets a reference to the given string and assigns it to the FaxNumber field.
-func (o *UserAllOf) SetFaxNumber(v string) {
+func (o *UserInline) SetFaxNumber(v string) {
 	o.FaxNumber = &v
 }
 
 // GetGivenName returns the GivenName field value if set, zero value otherwise.
-func (o *UserAllOf) GetGivenName() string {
+func (o *UserInline) GetGivenName() string {
 	if o == nil || o.GivenName == nil {
 		var ret string
 		return ret
@@ -390,7 +390,7 @@ func (o *UserAllOf) GetGivenName() string {
 
 // GetGivenNameOk returns a tuple with the GivenName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetGivenNameOk() (*string, bool) {
+func (o *UserInline) GetGivenNameOk() (*string, bool) {
 	if o == nil || o.GivenName == nil {
 		return nil, false
 	}
@@ -398,7 +398,7 @@ func (o *UserAllOf) GetGivenNameOk() (*string, bool) {
 }
 
 // HasGivenName returns a boolean if a field has been set.
-func (o *UserAllOf) HasGivenName() bool {
+func (o *UserInline) HasGivenName() bool {
 	if o != nil && o.GivenName != nil {
 		return true
 	}
@@ -407,12 +407,12 @@ func (o *UserAllOf) HasGivenName() bool {
 }
 
 // SetGivenName gets a reference to the given string and assigns it to the GivenName field.
-func (o *UserAllOf) SetGivenName(v string) {
+func (o *UserInline) SetGivenName(v string) {
 	o.GivenName = &v
 }
 
 // GetLastPasswordChangeDateTime returns the LastPasswordChangeDateTime field value if set, zero value otherwise.
-func (o *UserAllOf) GetLastPasswordChangeDateTime() time.Time {
+func (o *UserInline) GetLastPasswordChangeDateTime() time.Time {
 	if o == nil || o.LastPasswordChangeDateTime == nil {
 		var ret time.Time
 		return ret
@@ -422,7 +422,7 @@ func (o *UserAllOf) GetLastPasswordChangeDateTime() time.Time {
 
 // GetLastPasswordChangeDateTimeOk returns a tuple with the LastPasswordChangeDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetLastPasswordChangeDateTimeOk() (*time.Time, bool) {
+func (o *UserInline) GetLastPasswordChangeDateTimeOk() (*time.Time, bool) {
 	if o == nil || o.LastPasswordChangeDateTime == nil {
 		return nil, false
 	}
@@ -430,7 +430,7 @@ func (o *UserAllOf) GetLastPasswordChangeDateTimeOk() (*time.Time, bool) {
 }
 
 // HasLastPasswordChangeDateTime returns a boolean if a field has been set.
-func (o *UserAllOf) HasLastPasswordChangeDateTime() bool {
+func (o *UserInline) HasLastPasswordChangeDateTime() bool {
 	if o != nil && o.LastPasswordChangeDateTime != nil {
 		return true
 	}
@@ -439,12 +439,12 @@ func (o *UserAllOf) HasLastPasswordChangeDateTime() bool {
 }
 
 // SetLastPasswordChangeDateTime gets a reference to the given time.Time and assigns it to the LastPasswordChangeDateTime field.
-func (o *UserAllOf) SetLastPasswordChangeDateTime(v time.Time) {
+func (o *UserInline) SetLastPasswordChangeDateTime(v time.Time) {
 	o.LastPasswordChangeDateTime = &v
 }
 
 // GetLegalAgeGroupClassification returns the LegalAgeGroupClassification field value if set, zero value otherwise.
-func (o *UserAllOf) GetLegalAgeGroupClassification() string {
+func (o *UserInline) GetLegalAgeGroupClassification() string {
 	if o == nil || o.LegalAgeGroupClassification == nil {
 		var ret string
 		return ret
@@ -454,7 +454,7 @@ func (o *UserAllOf) GetLegalAgeGroupClassification() string {
 
 // GetLegalAgeGroupClassificationOk returns a tuple with the LegalAgeGroupClassification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetLegalAgeGroupClassificationOk() (*string, bool) {
+func (o *UserInline) GetLegalAgeGroupClassificationOk() (*string, bool) {
 	if o == nil || o.LegalAgeGroupClassification == nil {
 		return nil, false
 	}
@@ -462,7 +462,7 @@ func (o *UserAllOf) GetLegalAgeGroupClassificationOk() (*string, bool) {
 }
 
 // HasLegalAgeGroupClassification returns a boolean if a field has been set.
-func (o *UserAllOf) HasLegalAgeGroupClassification() bool {
+func (o *UserInline) HasLegalAgeGroupClassification() bool {
 	if o != nil && o.LegalAgeGroupClassification != nil {
 		return true
 	}
@@ -471,12 +471,12 @@ func (o *UserAllOf) HasLegalAgeGroupClassification() bool {
 }
 
 // SetLegalAgeGroupClassification gets a reference to the given string and assigns it to the LegalAgeGroupClassification field.
-func (o *UserAllOf) SetLegalAgeGroupClassification(v string) {
+func (o *UserInline) SetLegalAgeGroupClassification(v string) {
 	o.LegalAgeGroupClassification = &v
 }
 
 // GetMail returns the Mail field value if set, zero value otherwise.
-func (o *UserAllOf) GetMail() string {
+func (o *UserInline) GetMail() string {
 	if o == nil || o.Mail == nil {
 		var ret string
 		return ret
@@ -486,7 +486,7 @@ func (o *UserAllOf) GetMail() string {
 
 // GetMailOk returns a tuple with the Mail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetMailOk() (*string, bool) {
+func (o *UserInline) GetMailOk() (*string, bool) {
 	if o == nil || o.Mail == nil {
 		return nil, false
 	}
@@ -494,7 +494,7 @@ func (o *UserAllOf) GetMailOk() (*string, bool) {
 }
 
 // HasMail returns a boolean if a field has been set.
-func (o *UserAllOf) HasMail() bool {
+func (o *UserInline) HasMail() bool {
 	if o != nil && o.Mail != nil {
 		return true
 	}
@@ -503,12 +503,12 @@ func (o *UserAllOf) HasMail() bool {
 }
 
 // SetMail gets a reference to the given string and assigns it to the Mail field.
-func (o *UserAllOf) SetMail(v string) {
+func (o *UserInline) SetMail(v string) {
 	o.Mail = &v
 }
 
 // GetMailNickname returns the MailNickname field value if set, zero value otherwise.
-func (o *UserAllOf) GetMailNickname() string {
+func (o *UserInline) GetMailNickname() string {
 	if o == nil || o.MailNickname == nil {
 		var ret string
 		return ret
@@ -518,7 +518,7 @@ func (o *UserAllOf) GetMailNickname() string {
 
 // GetMailNicknameOk returns a tuple with the MailNickname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetMailNicknameOk() (*string, bool) {
+func (o *UserInline) GetMailNicknameOk() (*string, bool) {
 	if o == nil || o.MailNickname == nil {
 		return nil, false
 	}
@@ -526,7 +526,7 @@ func (o *UserAllOf) GetMailNicknameOk() (*string, bool) {
 }
 
 // HasMailNickname returns a boolean if a field has been set.
-func (o *UserAllOf) HasMailNickname() bool {
+func (o *UserInline) HasMailNickname() bool {
 	if o != nil && o.MailNickname != nil {
 		return true
 	}
@@ -535,12 +535,12 @@ func (o *UserAllOf) HasMailNickname() bool {
 }
 
 // SetMailNickname gets a reference to the given string and assigns it to the MailNickname field.
-func (o *UserAllOf) SetMailNickname(v string) {
+func (o *UserInline) SetMailNickname(v string) {
 	o.MailNickname = &v
 }
 
 // GetMobilePhone returns the MobilePhone field value if set, zero value otherwise.
-func (o *UserAllOf) GetMobilePhone() string {
+func (o *UserInline) GetMobilePhone() string {
 	if o == nil || o.MobilePhone == nil {
 		var ret string
 		return ret
@@ -550,7 +550,7 @@ func (o *UserAllOf) GetMobilePhone() string {
 
 // GetMobilePhoneOk returns a tuple with the MobilePhone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetMobilePhoneOk() (*string, bool) {
+func (o *UserInline) GetMobilePhoneOk() (*string, bool) {
 	if o == nil || o.MobilePhone == nil {
 		return nil, false
 	}
@@ -558,7 +558,7 @@ func (o *UserAllOf) GetMobilePhoneOk() (*string, bool) {
 }
 
 // HasMobilePhone returns a boolean if a field has been set.
-func (o *UserAllOf) HasMobilePhone() bool {
+func (o *UserInline) HasMobilePhone() bool {
 	if o != nil && o.MobilePhone != nil {
 		return true
 	}
@@ -567,12 +567,12 @@ func (o *UserAllOf) HasMobilePhone() bool {
 }
 
 // SetMobilePhone gets a reference to the given string and assigns it to the MobilePhone field.
-func (o *UserAllOf) SetMobilePhone(v string) {
+func (o *UserInline) SetMobilePhone(v string) {
 	o.MobilePhone = &v
 }
 
 // GetOfficeLocation returns the OfficeLocation field value if set, zero value otherwise.
-func (o *UserAllOf) GetOfficeLocation() string {
+func (o *UserInline) GetOfficeLocation() string {
 	if o == nil || o.OfficeLocation == nil {
 		var ret string
 		return ret
@@ -582,7 +582,7 @@ func (o *UserAllOf) GetOfficeLocation() string {
 
 // GetOfficeLocationOk returns a tuple with the OfficeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetOfficeLocationOk() (*string, bool) {
+func (o *UserInline) GetOfficeLocationOk() (*string, bool) {
 	if o == nil || o.OfficeLocation == nil {
 		return nil, false
 	}
@@ -590,7 +590,7 @@ func (o *UserAllOf) GetOfficeLocationOk() (*string, bool) {
 }
 
 // HasOfficeLocation returns a boolean if a field has been set.
-func (o *UserAllOf) HasOfficeLocation() bool {
+func (o *UserInline) HasOfficeLocation() bool {
 	if o != nil && o.OfficeLocation != nil {
 		return true
 	}
@@ -599,12 +599,12 @@ func (o *UserAllOf) HasOfficeLocation() bool {
 }
 
 // SetOfficeLocation gets a reference to the given string and assigns it to the OfficeLocation field.
-func (o *UserAllOf) SetOfficeLocation(v string) {
+func (o *UserInline) SetOfficeLocation(v string) {
 	o.OfficeLocation = &v
 }
 
 // GetPostalCode returns the PostalCode field value if set, zero value otherwise.
-func (o *UserAllOf) GetPostalCode() string {
+func (o *UserInline) GetPostalCode() string {
 	if o == nil || o.PostalCode == nil {
 		var ret string
 		return ret
@@ -614,7 +614,7 @@ func (o *UserAllOf) GetPostalCode() string {
 
 // GetPostalCodeOk returns a tuple with the PostalCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetPostalCodeOk() (*string, bool) {
+func (o *UserInline) GetPostalCodeOk() (*string, bool) {
 	if o == nil || o.PostalCode == nil {
 		return nil, false
 	}
@@ -622,7 +622,7 @@ func (o *UserAllOf) GetPostalCodeOk() (*string, bool) {
 }
 
 // HasPostalCode returns a boolean if a field has been set.
-func (o *UserAllOf) HasPostalCode() bool {
+func (o *UserInline) HasPostalCode() bool {
 	if o != nil && o.PostalCode != nil {
 		return true
 	}
@@ -631,12 +631,12 @@ func (o *UserAllOf) HasPostalCode() bool {
 }
 
 // SetPostalCode gets a reference to the given string and assigns it to the PostalCode field.
-func (o *UserAllOf) SetPostalCode(v string) {
+func (o *UserInline) SetPostalCode(v string) {
 	o.PostalCode = &v
 }
 
 // GetPreferredLanguage returns the PreferredLanguage field value if set, zero value otherwise.
-func (o *UserAllOf) GetPreferredLanguage() string {
+func (o *UserInline) GetPreferredLanguage() string {
 	if o == nil || o.PreferredLanguage == nil {
 		var ret string
 		return ret
@@ -646,7 +646,7 @@ func (o *UserAllOf) GetPreferredLanguage() string {
 
 // GetPreferredLanguageOk returns a tuple with the PreferredLanguage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetPreferredLanguageOk() (*string, bool) {
+func (o *UserInline) GetPreferredLanguageOk() (*string, bool) {
 	if o == nil || o.PreferredLanguage == nil {
 		return nil, false
 	}
@@ -654,7 +654,7 @@ func (o *UserAllOf) GetPreferredLanguageOk() (*string, bool) {
 }
 
 // HasPreferredLanguage returns a boolean if a field has been set.
-func (o *UserAllOf) HasPreferredLanguage() bool {
+func (o *UserInline) HasPreferredLanguage() bool {
 	if o != nil && o.PreferredLanguage != nil {
 		return true
 	}
@@ -663,12 +663,12 @@ func (o *UserAllOf) HasPreferredLanguage() bool {
 }
 
 // SetPreferredLanguage gets a reference to the given string and assigns it to the PreferredLanguage field.
-func (o *UserAllOf) SetPreferredLanguage(v string) {
+func (o *UserInline) SetPreferredLanguage(v string) {
 	o.PreferredLanguage = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *UserAllOf) GetState() string {
+func (o *UserInline) GetState() string {
 	if o == nil || o.State == nil {
 		var ret string
 		return ret
@@ -678,7 +678,7 @@ func (o *UserAllOf) GetState() string {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetStateOk() (*string, bool) {
+func (o *UserInline) GetStateOk() (*string, bool) {
 	if o == nil || o.State == nil {
 		return nil, false
 	}
@@ -686,7 +686,7 @@ func (o *UserAllOf) GetStateOk() (*string, bool) {
 }
 
 // HasState returns a boolean if a field has been set.
-func (o *UserAllOf) HasState() bool {
+func (o *UserInline) HasState() bool {
 	if o != nil && o.State != nil {
 		return true
 	}
@@ -695,12 +695,12 @@ func (o *UserAllOf) HasState() bool {
 }
 
 // SetState gets a reference to the given string and assigns it to the State field.
-func (o *UserAllOf) SetState(v string) {
+func (o *UserInline) SetState(v string) {
 	o.State = &v
 }
 
 // GetStreetAddress returns the StreetAddress field value if set, zero value otherwise.
-func (o *UserAllOf) GetStreetAddress() string {
+func (o *UserInline) GetStreetAddress() string {
 	if o == nil || o.StreetAddress == nil {
 		var ret string
 		return ret
@@ -710,7 +710,7 @@ func (o *UserAllOf) GetStreetAddress() string {
 
 // GetStreetAddressOk returns a tuple with the StreetAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetStreetAddressOk() (*string, bool) {
+func (o *UserInline) GetStreetAddressOk() (*string, bool) {
 	if o == nil || o.StreetAddress == nil {
 		return nil, false
 	}
@@ -718,7 +718,7 @@ func (o *UserAllOf) GetStreetAddressOk() (*string, bool) {
 }
 
 // HasStreetAddress returns a boolean if a field has been set.
-func (o *UserAllOf) HasStreetAddress() bool {
+func (o *UserInline) HasStreetAddress() bool {
 	if o != nil && o.StreetAddress != nil {
 		return true
 	}
@@ -727,12 +727,12 @@ func (o *UserAllOf) HasStreetAddress() bool {
 }
 
 // SetStreetAddress gets a reference to the given string and assigns it to the StreetAddress field.
-func (o *UserAllOf) SetStreetAddress(v string) {
+func (o *UserInline) SetStreetAddress(v string) {
 	o.StreetAddress = &v
 }
 
 // GetSurname returns the Surname field value if set, zero value otherwise.
-func (o *UserAllOf) GetSurname() string {
+func (o *UserInline) GetSurname() string {
 	if o == nil || o.Surname == nil {
 		var ret string
 		return ret
@@ -742,7 +742,7 @@ func (o *UserAllOf) GetSurname() string {
 
 // GetSurnameOk returns a tuple with the Surname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetSurnameOk() (*string, bool) {
+func (o *UserInline) GetSurnameOk() (*string, bool) {
 	if o == nil || o.Surname == nil {
 		return nil, false
 	}
@@ -750,7 +750,7 @@ func (o *UserAllOf) GetSurnameOk() (*string, bool) {
 }
 
 // HasSurname returns a boolean if a field has been set.
-func (o *UserAllOf) HasSurname() bool {
+func (o *UserInline) HasSurname() bool {
 	if o != nil && o.Surname != nil {
 		return true
 	}
@@ -759,12 +759,12 @@ func (o *UserAllOf) HasSurname() bool {
 }
 
 // SetSurname gets a reference to the given string and assigns it to the Surname field.
-func (o *UserAllOf) SetSurname(v string) {
+func (o *UserInline) SetSurname(v string) {
 	o.Surname = &v
 }
 
 // GetUsageLocation returns the UsageLocation field value if set, zero value otherwise.
-func (o *UserAllOf) GetUsageLocation() string {
+func (o *UserInline) GetUsageLocation() string {
 	if o == nil || o.UsageLocation == nil {
 		var ret string
 		return ret
@@ -774,7 +774,7 @@ func (o *UserAllOf) GetUsageLocation() string {
 
 // GetUsageLocationOk returns a tuple with the UsageLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetUsageLocationOk() (*string, bool) {
+func (o *UserInline) GetUsageLocationOk() (*string, bool) {
 	if o == nil || o.UsageLocation == nil {
 		return nil, false
 	}
@@ -782,7 +782,7 @@ func (o *UserAllOf) GetUsageLocationOk() (*string, bool) {
 }
 
 // HasUsageLocation returns a boolean if a field has been set.
-func (o *UserAllOf) HasUsageLocation() bool {
+func (o *UserInline) HasUsageLocation() bool {
 	if o != nil && o.UsageLocation != nil {
 		return true
 	}
@@ -791,12 +791,12 @@ func (o *UserAllOf) HasUsageLocation() bool {
 }
 
 // SetUsageLocation gets a reference to the given string and assigns it to the UsageLocation field.
-func (o *UserAllOf) SetUsageLocation(v string) {
+func (o *UserInline) SetUsageLocation(v string) {
 	o.UsageLocation = &v
 }
 
 // GetUserPrincipalName returns the UserPrincipalName field value if set, zero value otherwise.
-func (o *UserAllOf) GetUserPrincipalName() string {
+func (o *UserInline) GetUserPrincipalName() string {
 	if o == nil || o.UserPrincipalName == nil {
 		var ret string
 		return ret
@@ -806,7 +806,7 @@ func (o *UserAllOf) GetUserPrincipalName() string {
 
 // GetUserPrincipalNameOk returns a tuple with the UserPrincipalName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetUserPrincipalNameOk() (*string, bool) {
+func (o *UserInline) GetUserPrincipalNameOk() (*string, bool) {
 	if o == nil || o.UserPrincipalName == nil {
 		return nil, false
 	}
@@ -814,7 +814,7 @@ func (o *UserAllOf) GetUserPrincipalNameOk() (*string, bool) {
 }
 
 // HasUserPrincipalName returns a boolean if a field has been set.
-func (o *UserAllOf) HasUserPrincipalName() bool {
+func (o *UserInline) HasUserPrincipalName() bool {
 	if o != nil && o.UserPrincipalName != nil {
 		return true
 	}
@@ -823,12 +823,12 @@ func (o *UserAllOf) HasUserPrincipalName() bool {
 }
 
 // SetUserPrincipalName gets a reference to the given string and assigns it to the UserPrincipalName field.
-func (o *UserAllOf) SetUserPrincipalName(v string) {
+func (o *UserInline) SetUserPrincipalName(v string) {
 	o.UserPrincipalName = &v
 }
 
 // GetUserType returns the UserType field value if set, zero value otherwise.
-func (o *UserAllOf) GetUserType() string {
+func (o *UserInline) GetUserType() string {
 	if o == nil || o.UserType == nil {
 		var ret string
 		return ret
@@ -838,7 +838,7 @@ func (o *UserAllOf) GetUserType() string {
 
 // GetUserTypeOk returns a tuple with the UserType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetUserTypeOk() (*string, bool) {
+func (o *UserInline) GetUserTypeOk() (*string, bool) {
 	if o == nil || o.UserType == nil {
 		return nil, false
 	}
@@ -846,7 +846,7 @@ func (o *UserAllOf) GetUserTypeOk() (*string, bool) {
 }
 
 // HasUserType returns a boolean if a field has been set.
-func (o *UserAllOf) HasUserType() bool {
+func (o *UserInline) HasUserType() bool {
 	if o != nil && o.UserType != nil {
 		return true
 	}
@@ -855,12 +855,12 @@ func (o *UserAllOf) HasUserType() bool {
 }
 
 // SetUserType gets a reference to the given string and assigns it to the UserType field.
-func (o *UserAllOf) SetUserType(v string) {
+func (o *UserInline) SetUserType(v string) {
 	o.UserType = &v
 }
 
 // GetAboutMe returns the AboutMe field value if set, zero value otherwise.
-func (o *UserAllOf) GetAboutMe() string {
+func (o *UserInline) GetAboutMe() string {
 	if o == nil || o.AboutMe == nil {
 		var ret string
 		return ret
@@ -870,7 +870,7 @@ func (o *UserAllOf) GetAboutMe() string {
 
 // GetAboutMeOk returns a tuple with the AboutMe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetAboutMeOk() (*string, bool) {
+func (o *UserInline) GetAboutMeOk() (*string, bool) {
 	if o == nil || o.AboutMe == nil {
 		return nil, false
 	}
@@ -878,7 +878,7 @@ func (o *UserAllOf) GetAboutMeOk() (*string, bool) {
 }
 
 // HasAboutMe returns a boolean if a field has been set.
-func (o *UserAllOf) HasAboutMe() bool {
+func (o *UserInline) HasAboutMe() bool {
 	if o != nil && o.AboutMe != nil {
 		return true
 	}
@@ -887,12 +887,12 @@ func (o *UserAllOf) HasAboutMe() bool {
 }
 
 // SetAboutMe gets a reference to the given string and assigns it to the AboutMe field.
-func (o *UserAllOf) SetAboutMe(v string) {
+func (o *UserInline) SetAboutMe(v string) {
 	o.AboutMe = &v
 }
 
 // GetBirthday returns the Birthday field value if set, zero value otherwise.
-func (o *UserAllOf) GetBirthday() time.Time {
+func (o *UserInline) GetBirthday() time.Time {
 	if o == nil || o.Birthday == nil {
 		var ret time.Time
 		return ret
@@ -902,7 +902,7 @@ func (o *UserAllOf) GetBirthday() time.Time {
 
 // GetBirthdayOk returns a tuple with the Birthday field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetBirthdayOk() (*time.Time, bool) {
+func (o *UserInline) GetBirthdayOk() (*time.Time, bool) {
 	if o == nil || o.Birthday == nil {
 		return nil, false
 	}
@@ -910,7 +910,7 @@ func (o *UserAllOf) GetBirthdayOk() (*time.Time, bool) {
 }
 
 // HasBirthday returns a boolean if a field has been set.
-func (o *UserAllOf) HasBirthday() bool {
+func (o *UserInline) HasBirthday() bool {
 	if o != nil && o.Birthday != nil {
 		return true
 	}
@@ -919,12 +919,12 @@ func (o *UserAllOf) HasBirthday() bool {
 }
 
 // SetBirthday gets a reference to the given time.Time and assigns it to the Birthday field.
-func (o *UserAllOf) SetBirthday(v time.Time) {
+func (o *UserInline) SetBirthday(v time.Time) {
 	o.Birthday = &v
 }
 
 // GetDrive returns the Drive field value if set, zero value otherwise.
-func (o *UserAllOf) GetDrive() Drive {
+func (o *UserInline) GetDrive() Drive {
 	if o == nil || o.Drive == nil {
 		var ret Drive
 		return ret
@@ -934,7 +934,7 @@ func (o *UserAllOf) GetDrive() Drive {
 
 // GetDriveOk returns a tuple with the Drive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetDriveOk() (*Drive, bool) {
+func (o *UserInline) GetDriveOk() (*Drive, bool) {
 	if o == nil || o.Drive == nil {
 		return nil, false
 	}
@@ -942,7 +942,7 @@ func (o *UserAllOf) GetDriveOk() (*Drive, bool) {
 }
 
 // HasDrive returns a boolean if a field has been set.
-func (o *UserAllOf) HasDrive() bool {
+func (o *UserInline) HasDrive() bool {
 	if o != nil && o.Drive != nil {
 		return true
 	}
@@ -951,12 +951,12 @@ func (o *UserAllOf) HasDrive() bool {
 }
 
 // SetDrive gets a reference to the given Drive and assigns it to the Drive field.
-func (o *UserAllOf) SetDrive(v Drive) {
+func (o *UserInline) SetDrive(v Drive) {
 	o.Drive = &v
 }
 
 // GetDrives returns the Drives field value if set, zero value otherwise.
-func (o *UserAllOf) GetDrives() []Drive {
+func (o *UserInline) GetDrives() []Drive {
 	if o == nil || o.Drives == nil {
 		var ret []Drive
 		return ret
@@ -966,7 +966,7 @@ func (o *UserAllOf) GetDrives() []Drive {
 
 // GetDrivesOk returns a tuple with the Drives field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserAllOf) GetDrivesOk() (*[]Drive, bool) {
+func (o *UserInline) GetDrivesOk() (*[]Drive, bool) {
 	if o == nil || o.Drives == nil {
 		return nil, false
 	}
@@ -974,7 +974,7 @@ func (o *UserAllOf) GetDrivesOk() (*[]Drive, bool) {
 }
 
 // HasDrives returns a boolean if a field has been set.
-func (o *UserAllOf) HasDrives() bool {
+func (o *UserInline) HasDrives() bool {
 	if o != nil && o.Drives != nil {
 		return true
 	}
@@ -983,11 +983,11 @@ func (o *UserAllOf) HasDrives() bool {
 }
 
 // SetDrives gets a reference to the given []Drive and assigns it to the Drives field.
-func (o *UserAllOf) SetDrives(v []Drive) {
+func (o *UserInline) SetDrives(v []Drive) {
 	o.Drives = &v
 }
 
-func (o UserAllOf) MarshalJSON() ([]byte, error) {
+func (o UserInline) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AccountEnabled != nil {
 		toSerialize["accountEnabled"] = o.AccountEnabled
@@ -1076,38 +1076,38 @@ func (o UserAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableUserAllOf struct {
-	value *UserAllOf
+type NullableUserInline struct {
+	value *UserInline
 	isSet bool
 }
 
-func (v NullableUserAllOf) Get() *UserAllOf {
+func (v NullableUserInline) Get() *UserInline {
 	return v.value
 }
 
-func (v *NullableUserAllOf) Set(val *UserAllOf) {
+func (v *NullableUserInline) Set(val *UserInline) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableUserAllOf) IsSet() bool {
+func (v NullableUserInline) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableUserAllOf) Unset() {
+func (v *NullableUserInline) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableUserAllOf(val *UserAllOf) *NullableUserAllOf {
-	return &NullableUserAllOf{value: val, isSet: true}
+func NewNullableUserInline(val *UserInline) *NullableUserInline {
+	return &NullableUserInline{value: val, isSet: true}
 }
 
-func (v NullableUserAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableUserInline) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableUserAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableUserInline) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## MeListDrives
 
-> CollectionOfDrive MeListDrives(ctx).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
+> CollectionOfDrives MeListDrives(ctx).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
 
 Get drives from me
 
@@ -42,7 +42,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.MeListDrives``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MeListDrives`: CollectionOfDrive
+    // response from `MeListDrives`: CollectionOfDrives
     fmt.Fprintf(os.Stdout, "Response from `MeDrivesApi.MeListDrives`: %v\n", resp)
 }
 ```
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CollectionOfDrive**](CollectionOfDrive.md)
+[**CollectionOfDrives**](CollectionOfDrives.md)
 
 ### Authorization
 

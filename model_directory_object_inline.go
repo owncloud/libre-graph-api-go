@@ -15,30 +15,30 @@ import (
 	"time"
 )
 
-// DirectoryObjectAllOf Represents an Active Directory object. The directoryObject type is the base type for many other directory entity types.
-type DirectoryObjectAllOf struct {
+// DirectoryObjectInline struct for DirectoryObjectInline
+type DirectoryObjectInline struct {
 	DeletedDateTime *time.Time `json:"deletedDateTime,omitempty"`
 }
 
-// NewDirectoryObjectAllOf instantiates a new DirectoryObjectAllOf object
+// NewDirectoryObjectInline instantiates a new DirectoryObjectInline object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDirectoryObjectAllOf() *DirectoryObjectAllOf {
-	this := DirectoryObjectAllOf{}
+func NewDirectoryObjectInline() *DirectoryObjectInline {
+	this := DirectoryObjectInline{}
 	return &this
 }
 
-// NewDirectoryObjectAllOfWithDefaults instantiates a new DirectoryObjectAllOf object
+// NewDirectoryObjectInlineWithDefaults instantiates a new DirectoryObjectInline object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewDirectoryObjectAllOfWithDefaults() *DirectoryObjectAllOf {
-	this := DirectoryObjectAllOf{}
+func NewDirectoryObjectInlineWithDefaults() *DirectoryObjectInline {
+	this := DirectoryObjectInline{}
 	return &this
 }
 
 // GetDeletedDateTime returns the DeletedDateTime field value if set, zero value otherwise.
-func (o *DirectoryObjectAllOf) GetDeletedDateTime() time.Time {
+func (o *DirectoryObjectInline) GetDeletedDateTime() time.Time {
 	if o == nil || o.DeletedDateTime == nil {
 		var ret time.Time
 		return ret
@@ -48,7 +48,7 @@ func (o *DirectoryObjectAllOf) GetDeletedDateTime() time.Time {
 
 // GetDeletedDateTimeOk returns a tuple with the DeletedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DirectoryObjectAllOf) GetDeletedDateTimeOk() (*time.Time, bool) {
+func (o *DirectoryObjectInline) GetDeletedDateTimeOk() (*time.Time, bool) {
 	if o == nil || o.DeletedDateTime == nil {
 		return nil, false
 	}
@@ -56,7 +56,7 @@ func (o *DirectoryObjectAllOf) GetDeletedDateTimeOk() (*time.Time, bool) {
 }
 
 // HasDeletedDateTime returns a boolean if a field has been set.
-func (o *DirectoryObjectAllOf) HasDeletedDateTime() bool {
+func (o *DirectoryObjectInline) HasDeletedDateTime() bool {
 	if o != nil && o.DeletedDateTime != nil {
 		return true
 	}
@@ -65,11 +65,11 @@ func (o *DirectoryObjectAllOf) HasDeletedDateTime() bool {
 }
 
 // SetDeletedDateTime gets a reference to the given time.Time and assigns it to the DeletedDateTime field.
-func (o *DirectoryObjectAllOf) SetDeletedDateTime(v time.Time) {
+func (o *DirectoryObjectInline) SetDeletedDateTime(v time.Time) {
 	o.DeletedDateTime = &v
 }
 
-func (o DirectoryObjectAllOf) MarshalJSON() ([]byte, error) {
+func (o DirectoryObjectInline) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.DeletedDateTime != nil {
 		toSerialize["deletedDateTime"] = o.DeletedDateTime
@@ -77,38 +77,38 @@ func (o DirectoryObjectAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableDirectoryObjectAllOf struct {
-	value *DirectoryObjectAllOf
+type NullableDirectoryObjectInline struct {
+	value *DirectoryObjectInline
 	isSet bool
 }
 
-func (v NullableDirectoryObjectAllOf) Get() *DirectoryObjectAllOf {
+func (v NullableDirectoryObjectInline) Get() *DirectoryObjectInline {
 	return v.value
 }
 
-func (v *NullableDirectoryObjectAllOf) Set(val *DirectoryObjectAllOf) {
+func (v *NullableDirectoryObjectInline) Set(val *DirectoryObjectInline) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableDirectoryObjectAllOf) IsSet() bool {
+func (v NullableDirectoryObjectInline) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableDirectoryObjectAllOf) Unset() {
+func (v *NullableDirectoryObjectInline) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableDirectoryObjectAllOf(val *DirectoryObjectAllOf) *NullableDirectoryObjectAllOf {
-	return &NullableDirectoryObjectAllOf{value: val, isSet: true}
+func NewNullableDirectoryObjectInline(val *DirectoryObjectInline) *NullableDirectoryObjectInline {
+	return &NullableDirectoryObjectInline{value: val, isSet: true}
 }
 
-func (v NullableDirectoryObjectAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableDirectoryObjectInline) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableDirectoryObjectAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableDirectoryObjectInline) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -14,8 +14,8 @@ import (
 	"encoding/json"
 )
 
-// DriveAllOf struct for DriveAllOf
-type DriveAllOf struct {
+// DriveInline struct for DriveInline
+type DriveInline struct {
 	// Describes the type of drive represented by this resource. Values are \"personal\" for users home spaces, \"project\" or \"share\". Read-only.
 	DriveType *string `json:"driveType,omitempty"`
 	Owner *IdentitySet `json:"owner,omitempty"`
@@ -25,25 +25,25 @@ type DriveAllOf struct {
 	Root *DriveItem `json:"root,omitempty"`
 }
 
-// NewDriveAllOf instantiates a new DriveAllOf object
+// NewDriveInline instantiates a new DriveInline object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDriveAllOf() *DriveAllOf {
-	this := DriveAllOf{}
+func NewDriveInline() *DriveInline {
+	this := DriveInline{}
 	return &this
 }
 
-// NewDriveAllOfWithDefaults instantiates a new DriveAllOf object
+// NewDriveInlineWithDefaults instantiates a new DriveInline object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewDriveAllOfWithDefaults() *DriveAllOf {
-	this := DriveAllOf{}
+func NewDriveInlineWithDefaults() *DriveInline {
+	this := DriveInline{}
 	return &this
 }
 
 // GetDriveType returns the DriveType field value if set, zero value otherwise.
-func (o *DriveAllOf) GetDriveType() string {
+func (o *DriveInline) GetDriveType() string {
 	if o == nil || o.DriveType == nil {
 		var ret string
 		return ret
@@ -53,7 +53,7 @@ func (o *DriveAllOf) GetDriveType() string {
 
 // GetDriveTypeOk returns a tuple with the DriveType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveAllOf) GetDriveTypeOk() (*string, bool) {
+func (o *DriveInline) GetDriveTypeOk() (*string, bool) {
 	if o == nil || o.DriveType == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *DriveAllOf) GetDriveTypeOk() (*string, bool) {
 }
 
 // HasDriveType returns a boolean if a field has been set.
-func (o *DriveAllOf) HasDriveType() bool {
+func (o *DriveInline) HasDriveType() bool {
 	if o != nil && o.DriveType != nil {
 		return true
 	}
@@ -70,12 +70,12 @@ func (o *DriveAllOf) HasDriveType() bool {
 }
 
 // SetDriveType gets a reference to the given string and assigns it to the DriveType field.
-func (o *DriveAllOf) SetDriveType(v string) {
+func (o *DriveInline) SetDriveType(v string) {
 	o.DriveType = &v
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *DriveAllOf) GetOwner() IdentitySet {
+func (o *DriveInline) GetOwner() IdentitySet {
 	if o == nil || o.Owner == nil {
 		var ret IdentitySet
 		return ret
@@ -85,7 +85,7 @@ func (o *DriveAllOf) GetOwner() IdentitySet {
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveAllOf) GetOwnerOk() (*IdentitySet, bool) {
+func (o *DriveInline) GetOwnerOk() (*IdentitySet, bool) {
 	if o == nil || o.Owner == nil {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *DriveAllOf) GetOwnerOk() (*IdentitySet, bool) {
 }
 
 // HasOwner returns a boolean if a field has been set.
-func (o *DriveAllOf) HasOwner() bool {
+func (o *DriveInline) HasOwner() bool {
 	if o != nil && o.Owner != nil {
 		return true
 	}
@@ -102,12 +102,12 @@ func (o *DriveAllOf) HasOwner() bool {
 }
 
 // SetOwner gets a reference to the given IdentitySet and assigns it to the Owner field.
-func (o *DriveAllOf) SetOwner(v IdentitySet) {
+func (o *DriveInline) SetOwner(v IdentitySet) {
 	o.Owner = &v
 }
 
 // GetQuota returns the Quota field value if set, zero value otherwise.
-func (o *DriveAllOf) GetQuota() Quota {
+func (o *DriveInline) GetQuota() Quota {
 	if o == nil || o.Quota == nil {
 		var ret Quota
 		return ret
@@ -117,7 +117,7 @@ func (o *DriveAllOf) GetQuota() Quota {
 
 // GetQuotaOk returns a tuple with the Quota field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveAllOf) GetQuotaOk() (*Quota, bool) {
+func (o *DriveInline) GetQuotaOk() (*Quota, bool) {
 	if o == nil || o.Quota == nil {
 		return nil, false
 	}
@@ -125,7 +125,7 @@ func (o *DriveAllOf) GetQuotaOk() (*Quota, bool) {
 }
 
 // HasQuota returns a boolean if a field has been set.
-func (o *DriveAllOf) HasQuota() bool {
+func (o *DriveInline) HasQuota() bool {
 	if o != nil && o.Quota != nil {
 		return true
 	}
@@ -134,12 +134,12 @@ func (o *DriveAllOf) HasQuota() bool {
 }
 
 // SetQuota gets a reference to the given Quota and assigns it to the Quota field.
-func (o *DriveAllOf) SetQuota(v Quota) {
+func (o *DriveInline) SetQuota(v Quota) {
 	o.Quota = &v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *DriveAllOf) GetItems() []DriveItem {
+func (o *DriveInline) GetItems() []DriveItem {
 	if o == nil || o.Items == nil {
 		var ret []DriveItem
 		return ret
@@ -149,7 +149,7 @@ func (o *DriveAllOf) GetItems() []DriveItem {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveAllOf) GetItemsOk() (*[]DriveItem, bool) {
+func (o *DriveInline) GetItemsOk() (*[]DriveItem, bool) {
 	if o == nil || o.Items == nil {
 		return nil, false
 	}
@@ -157,7 +157,7 @@ func (o *DriveAllOf) GetItemsOk() (*[]DriveItem, bool) {
 }
 
 // HasItems returns a boolean if a field has been set.
-func (o *DriveAllOf) HasItems() bool {
+func (o *DriveInline) HasItems() bool {
 	if o != nil && o.Items != nil {
 		return true
 	}
@@ -166,12 +166,12 @@ func (o *DriveAllOf) HasItems() bool {
 }
 
 // SetItems gets a reference to the given []DriveItem and assigns it to the Items field.
-func (o *DriveAllOf) SetItems(v []DriveItem) {
+func (o *DriveInline) SetItems(v []DriveItem) {
 	o.Items = &v
 }
 
 // GetRoot returns the Root field value if set, zero value otherwise.
-func (o *DriveAllOf) GetRoot() DriveItem {
+func (o *DriveInline) GetRoot() DriveItem {
 	if o == nil || o.Root == nil {
 		var ret DriveItem
 		return ret
@@ -181,7 +181,7 @@ func (o *DriveAllOf) GetRoot() DriveItem {
 
 // GetRootOk returns a tuple with the Root field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveAllOf) GetRootOk() (*DriveItem, bool) {
+func (o *DriveInline) GetRootOk() (*DriveItem, bool) {
 	if o == nil || o.Root == nil {
 		return nil, false
 	}
@@ -189,7 +189,7 @@ func (o *DriveAllOf) GetRootOk() (*DriveItem, bool) {
 }
 
 // HasRoot returns a boolean if a field has been set.
-func (o *DriveAllOf) HasRoot() bool {
+func (o *DriveInline) HasRoot() bool {
 	if o != nil && o.Root != nil {
 		return true
 	}
@@ -198,11 +198,11 @@ func (o *DriveAllOf) HasRoot() bool {
 }
 
 // SetRoot gets a reference to the given DriveItem and assigns it to the Root field.
-func (o *DriveAllOf) SetRoot(v DriveItem) {
+func (o *DriveInline) SetRoot(v DriveItem) {
 	o.Root = &v
 }
 
-func (o DriveAllOf) MarshalJSON() ([]byte, error) {
+func (o DriveInline) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.DriveType != nil {
 		toSerialize["driveType"] = o.DriveType
@@ -222,38 +222,38 @@ func (o DriveAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableDriveAllOf struct {
-	value *DriveAllOf
+type NullableDriveInline struct {
+	value *DriveInline
 	isSet bool
 }
 
-func (v NullableDriveAllOf) Get() *DriveAllOf {
+func (v NullableDriveInline) Get() *DriveInline {
 	return v.value
 }
 
-func (v *NullableDriveAllOf) Set(val *DriveAllOf) {
+func (v *NullableDriveInline) Set(val *DriveInline) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableDriveAllOf) IsSet() bool {
+func (v NullableDriveInline) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableDriveAllOf) Unset() {
+func (v *NullableDriveInline) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableDriveAllOf(val *DriveAllOf) *NullableDriveAllOf {
-	return &NullableDriveAllOf{value: val, isSet: true}
+func NewNullableDriveInline(val *DriveInline) *NullableDriveInline {
+	return &NullableDriveInline{value: val, isSet: true}
 }
 
-func (v NullableDriveAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableDriveInline) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableDriveAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableDriveInline) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

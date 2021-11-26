@@ -14,31 +14,31 @@ import (
 	"encoding/json"
 )
 
-// CollectionOfDrive struct for CollectionOfDrive
-type CollectionOfDrive struct {
+// CollectionOfDrives struct for CollectionOfDrives
+type CollectionOfDrives struct {
 	Value *[]Drive `json:"value,omitempty"`
 	OdataNextLink *string `json:"@odata.nextLink,omitempty"`
 }
 
-// NewCollectionOfDrive instantiates a new CollectionOfDrive object
+// NewCollectionOfDrives instantiates a new CollectionOfDrives object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCollectionOfDrive() *CollectionOfDrive {
-	this := CollectionOfDrive{}
+func NewCollectionOfDrives() *CollectionOfDrives {
+	this := CollectionOfDrives{}
 	return &this
 }
 
-// NewCollectionOfDriveWithDefaults instantiates a new CollectionOfDrive object
+// NewCollectionOfDrivesWithDefaults instantiates a new CollectionOfDrives object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewCollectionOfDriveWithDefaults() *CollectionOfDrive {
-	this := CollectionOfDrive{}
+func NewCollectionOfDrivesWithDefaults() *CollectionOfDrives {
+	this := CollectionOfDrives{}
 	return &this
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *CollectionOfDrive) GetValue() []Drive {
+func (o *CollectionOfDrives) GetValue() []Drive {
 	if o == nil || o.Value == nil {
 		var ret []Drive
 		return ret
@@ -48,7 +48,7 @@ func (o *CollectionOfDrive) GetValue() []Drive {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CollectionOfDrive) GetValueOk() (*[]Drive, bool) {
+func (o *CollectionOfDrives) GetValueOk() (*[]Drive, bool) {
 	if o == nil || o.Value == nil {
 		return nil, false
 	}
@@ -56,7 +56,7 @@ func (o *CollectionOfDrive) GetValueOk() (*[]Drive, bool) {
 }
 
 // HasValue returns a boolean if a field has been set.
-func (o *CollectionOfDrive) HasValue() bool {
+func (o *CollectionOfDrives) HasValue() bool {
 	if o != nil && o.Value != nil {
 		return true
 	}
@@ -65,12 +65,12 @@ func (o *CollectionOfDrive) HasValue() bool {
 }
 
 // SetValue gets a reference to the given []Drive and assigns it to the Value field.
-func (o *CollectionOfDrive) SetValue(v []Drive) {
+func (o *CollectionOfDrives) SetValue(v []Drive) {
 	o.Value = &v
 }
 
 // GetOdataNextLink returns the OdataNextLink field value if set, zero value otherwise.
-func (o *CollectionOfDrive) GetOdataNextLink() string {
+func (o *CollectionOfDrives) GetOdataNextLink() string {
 	if o == nil || o.OdataNextLink == nil {
 		var ret string
 		return ret
@@ -80,7 +80,7 @@ func (o *CollectionOfDrive) GetOdataNextLink() string {
 
 // GetOdataNextLinkOk returns a tuple with the OdataNextLink field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CollectionOfDrive) GetOdataNextLinkOk() (*string, bool) {
+func (o *CollectionOfDrives) GetOdataNextLinkOk() (*string, bool) {
 	if o == nil || o.OdataNextLink == nil {
 		return nil, false
 	}
@@ -88,7 +88,7 @@ func (o *CollectionOfDrive) GetOdataNextLinkOk() (*string, bool) {
 }
 
 // HasOdataNextLink returns a boolean if a field has been set.
-func (o *CollectionOfDrive) HasOdataNextLink() bool {
+func (o *CollectionOfDrives) HasOdataNextLink() bool {
 	if o != nil && o.OdataNextLink != nil {
 		return true
 	}
@@ -97,11 +97,11 @@ func (o *CollectionOfDrive) HasOdataNextLink() bool {
 }
 
 // SetOdataNextLink gets a reference to the given string and assigns it to the OdataNextLink field.
-func (o *CollectionOfDrive) SetOdataNextLink(v string) {
+func (o *CollectionOfDrives) SetOdataNextLink(v string) {
 	o.OdataNextLink = &v
 }
 
-func (o CollectionOfDrive) MarshalJSON() ([]byte, error) {
+func (o CollectionOfDrives) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value
@@ -112,38 +112,38 @@ func (o CollectionOfDrive) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableCollectionOfDrive struct {
-	value *CollectionOfDrive
+type NullableCollectionOfDrives struct {
+	value *CollectionOfDrives
 	isSet bool
 }
 
-func (v NullableCollectionOfDrive) Get() *CollectionOfDrive {
+func (v NullableCollectionOfDrives) Get() *CollectionOfDrives {
 	return v.value
 }
 
-func (v *NullableCollectionOfDrive) Set(val *CollectionOfDrive) {
+func (v *NullableCollectionOfDrives) Set(val *CollectionOfDrives) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableCollectionOfDrive) IsSet() bool {
+func (v NullableCollectionOfDrives) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableCollectionOfDrive) Unset() {
+func (v *NullableCollectionOfDrives) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableCollectionOfDrive(val *CollectionOfDrive) *NullableCollectionOfDrive {
-	return &NullableCollectionOfDrive{value: val, isSet: true}
+func NewNullableCollectionOfDrives(val *CollectionOfDrives) *NullableCollectionOfDrives {
+	return &NullableCollectionOfDrives{value: val, isSet: true}
 }
 
-func (v NullableCollectionOfDrive) MarshalJSON() ([]byte, error) {
+func (v NullableCollectionOfDrives) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableCollectionOfDrive) UnmarshalJSON(src []byte) error {
+func (v *NullableCollectionOfDrives) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

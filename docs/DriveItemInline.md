@@ -1,4 +1,4 @@
-# DriveItemAllOf
+# DriveItemInline
 
 ## Properties
 
@@ -18,295 +18,295 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewDriveItemAllOf
+### NewDriveItemInline
 
-`func NewDriveItemAllOf() *DriveItemAllOf`
+`func NewDriveItemInline() *DriveItemInline`
 
-NewDriveItemAllOf instantiates a new DriveItemAllOf object
+NewDriveItemInline instantiates a new DriveItemInline object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewDriveItemAllOfWithDefaults
+### NewDriveItemInlineWithDefaults
 
-`func NewDriveItemAllOfWithDefaults() *DriveItemAllOf`
+`func NewDriveItemInlineWithDefaults() *DriveItemInline`
 
-NewDriveItemAllOfWithDefaults instantiates a new DriveItemAllOf object
+NewDriveItemInlineWithDefaults instantiates a new DriveItemInline object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetContent
 
-`func (o *DriveItemAllOf) GetContent() string`
+`func (o *DriveItemInline) GetContent() string`
 
 GetContent returns the Content field if non-nil, zero value otherwise.
 
 ### GetContentOk
 
-`func (o *DriveItemAllOf) GetContentOk() (*string, bool)`
+`func (o *DriveItemInline) GetContentOk() (*string, bool)`
 
 GetContentOk returns a tuple with the Content field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContent
 
-`func (o *DriveItemAllOf) SetContent(v string)`
+`func (o *DriveItemInline) SetContent(v string)`
 
 SetContent sets Content field to given value.
 
 ### HasContent
 
-`func (o *DriveItemAllOf) HasContent() bool`
+`func (o *DriveItemInline) HasContent() bool`
 
 HasContent returns a boolean if a field has been set.
 
 ### GetCTag
 
-`func (o *DriveItemAllOf) GetCTag() string`
+`func (o *DriveItemInline) GetCTag() string`
 
 GetCTag returns the CTag field if non-nil, zero value otherwise.
 
 ### GetCTagOk
 
-`func (o *DriveItemAllOf) GetCTagOk() (*string, bool)`
+`func (o *DriveItemInline) GetCTagOk() (*string, bool)`
 
 GetCTagOk returns a tuple with the CTag field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCTag
 
-`func (o *DriveItemAllOf) SetCTag(v string)`
+`func (o *DriveItemInline) SetCTag(v string)`
 
 SetCTag sets CTag field to given value.
 
 ### HasCTag
 
-`func (o *DriveItemAllOf) HasCTag() bool`
+`func (o *DriveItemInline) HasCTag() bool`
 
 HasCTag returns a boolean if a field has been set.
 
 ### GetDeleted
 
-`func (o *DriveItemAllOf) GetDeleted() Deleted`
+`func (o *DriveItemInline) GetDeleted() Deleted`
 
 GetDeleted returns the Deleted field if non-nil, zero value otherwise.
 
 ### GetDeletedOk
 
-`func (o *DriveItemAllOf) GetDeletedOk() (*Deleted, bool)`
+`func (o *DriveItemInline) GetDeletedOk() (*Deleted, bool)`
 
 GetDeletedOk returns a tuple with the Deleted field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeleted
 
-`func (o *DriveItemAllOf) SetDeleted(v Deleted)`
+`func (o *DriveItemInline) SetDeleted(v Deleted)`
 
 SetDeleted sets Deleted field to given value.
 
 ### HasDeleted
 
-`func (o *DriveItemAllOf) HasDeleted() bool`
+`func (o *DriveItemInline) HasDeleted() bool`
 
 HasDeleted returns a boolean if a field has been set.
 
 ### GetFile
 
-`func (o *DriveItemAllOf) GetFile() OpenGraphFile`
+`func (o *DriveItemInline) GetFile() OpenGraphFile`
 
 GetFile returns the File field if non-nil, zero value otherwise.
 
 ### GetFileOk
 
-`func (o *DriveItemAllOf) GetFileOk() (*OpenGraphFile, bool)`
+`func (o *DriveItemInline) GetFileOk() (*OpenGraphFile, bool)`
 
 GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFile
 
-`func (o *DriveItemAllOf) SetFile(v OpenGraphFile)`
+`func (o *DriveItemInline) SetFile(v OpenGraphFile)`
 
 SetFile sets File field to given value.
 
 ### HasFile
 
-`func (o *DriveItemAllOf) HasFile() bool`
+`func (o *DriveItemInline) HasFile() bool`
 
 HasFile returns a boolean if a field has been set.
 
 ### GetFileSystemInfo
 
-`func (o *DriveItemAllOf) GetFileSystemInfo() FileSystemInfo`
+`func (o *DriveItemInline) GetFileSystemInfo() FileSystemInfo`
 
 GetFileSystemInfo returns the FileSystemInfo field if non-nil, zero value otherwise.
 
 ### GetFileSystemInfoOk
 
-`func (o *DriveItemAllOf) GetFileSystemInfoOk() (*FileSystemInfo, bool)`
+`func (o *DriveItemInline) GetFileSystemInfoOk() (*FileSystemInfo, bool)`
 
 GetFileSystemInfoOk returns a tuple with the FileSystemInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFileSystemInfo
 
-`func (o *DriveItemAllOf) SetFileSystemInfo(v FileSystemInfo)`
+`func (o *DriveItemInline) SetFileSystemInfo(v FileSystemInfo)`
 
 SetFileSystemInfo sets FileSystemInfo field to given value.
 
 ### HasFileSystemInfo
 
-`func (o *DriveItemAllOf) HasFileSystemInfo() bool`
+`func (o *DriveItemInline) HasFileSystemInfo() bool`
 
 HasFileSystemInfo returns a boolean if a field has been set.
 
 ### GetFolder
 
-`func (o *DriveItemAllOf) GetFolder() Folder`
+`func (o *DriveItemInline) GetFolder() Folder`
 
 GetFolder returns the Folder field if non-nil, zero value otherwise.
 
 ### GetFolderOk
 
-`func (o *DriveItemAllOf) GetFolderOk() (*Folder, bool)`
+`func (o *DriveItemInline) GetFolderOk() (*Folder, bool)`
 
 GetFolderOk returns a tuple with the Folder field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFolder
 
-`func (o *DriveItemAllOf) SetFolder(v Folder)`
+`func (o *DriveItemInline) SetFolder(v Folder)`
 
 SetFolder sets Folder field to given value.
 
 ### HasFolder
 
-`func (o *DriveItemAllOf) HasFolder() bool`
+`func (o *DriveItemInline) HasFolder() bool`
 
 HasFolder returns a boolean if a field has been set.
 
 ### GetImage
 
-`func (o *DriveItemAllOf) GetImage() Image`
+`func (o *DriveItemInline) GetImage() Image`
 
 GetImage returns the Image field if non-nil, zero value otherwise.
 
 ### GetImageOk
 
-`func (o *DriveItemAllOf) GetImageOk() (*Image, bool)`
+`func (o *DriveItemInline) GetImageOk() (*Image, bool)`
 
 GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImage
 
-`func (o *DriveItemAllOf) SetImage(v Image)`
+`func (o *DriveItemInline) SetImage(v Image)`
 
 SetImage sets Image field to given value.
 
 ### HasImage
 
-`func (o *DriveItemAllOf) HasImage() bool`
+`func (o *DriveItemInline) HasImage() bool`
 
 HasImage returns a boolean if a field has been set.
 
 ### GetRoot
 
-`func (o *DriveItemAllOf) GetRoot() map[string]interface{}`
+`func (o *DriveItemInline) GetRoot() map[string]interface{}`
 
 GetRoot returns the Root field if non-nil, zero value otherwise.
 
 ### GetRootOk
 
-`func (o *DriveItemAllOf) GetRootOk() (*map[string]interface{}, bool)`
+`func (o *DriveItemInline) GetRootOk() (*map[string]interface{}, bool)`
 
 GetRootOk returns a tuple with the Root field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoot
 
-`func (o *DriveItemAllOf) SetRoot(v map[string]interface{})`
+`func (o *DriveItemInline) SetRoot(v map[string]interface{})`
 
 SetRoot sets Root field to given value.
 
 ### HasRoot
 
-`func (o *DriveItemAllOf) HasRoot() bool`
+`func (o *DriveItemInline) HasRoot() bool`
 
 HasRoot returns a boolean if a field has been set.
 
 ### GetSize
 
-`func (o *DriveItemAllOf) GetSize() int64`
+`func (o *DriveItemInline) GetSize() int64`
 
 GetSize returns the Size field if non-nil, zero value otherwise.
 
 ### GetSizeOk
 
-`func (o *DriveItemAllOf) GetSizeOk() (*int64, bool)`
+`func (o *DriveItemInline) GetSizeOk() (*int64, bool)`
 
 GetSizeOk returns a tuple with the Size field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSize
 
-`func (o *DriveItemAllOf) SetSize(v int64)`
+`func (o *DriveItemInline) SetSize(v int64)`
 
 SetSize sets Size field to given value.
 
 ### HasSize
 
-`func (o *DriveItemAllOf) HasSize() bool`
+`func (o *DriveItemInline) HasSize() bool`
 
 HasSize returns a boolean if a field has been set.
 
 ### GetWebDavUrl
 
-`func (o *DriveItemAllOf) GetWebDavUrl() string`
+`func (o *DriveItemInline) GetWebDavUrl() string`
 
 GetWebDavUrl returns the WebDavUrl field if non-nil, zero value otherwise.
 
 ### GetWebDavUrlOk
 
-`func (o *DriveItemAllOf) GetWebDavUrlOk() (*string, bool)`
+`func (o *DriveItemInline) GetWebDavUrlOk() (*string, bool)`
 
 GetWebDavUrlOk returns a tuple with the WebDavUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWebDavUrl
 
-`func (o *DriveItemAllOf) SetWebDavUrl(v string)`
+`func (o *DriveItemInline) SetWebDavUrl(v string)`
 
 SetWebDavUrl sets WebDavUrl field to given value.
 
 ### HasWebDavUrl
 
-`func (o *DriveItemAllOf) HasWebDavUrl() bool`
+`func (o *DriveItemInline) HasWebDavUrl() bool`
 
 HasWebDavUrl returns a boolean if a field has been set.
 
 ### GetChildren
 
-`func (o *DriveItemAllOf) GetChildren() []DriveItem`
+`func (o *DriveItemInline) GetChildren() []DriveItem`
 
 GetChildren returns the Children field if non-nil, zero value otherwise.
 
 ### GetChildrenOk
 
-`func (o *DriveItemAllOf) GetChildrenOk() (*[]DriveItem, bool)`
+`func (o *DriveItemInline) GetChildrenOk() (*[]DriveItem, bool)`
 
 GetChildrenOk returns a tuple with the Children field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChildren
 
-`func (o *DriveItemAllOf) SetChildren(v []DriveItem)`
+`func (o *DriveItemInline) SetChildren(v []DriveItem)`
 
 SetChildren sets Children field to given value.
 
 ### HasChildren
 
-`func (o *DriveItemAllOf) HasChildren() bool`
+`func (o *DriveItemInline) HasChildren() bool`
 
 HasChildren returns a boolean if a field has been set.
 

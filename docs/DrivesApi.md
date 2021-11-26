@@ -4,10 +4,10 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DrivesCreateDrive**](DrivesApi.md#DrivesCreateDrive) | **Post** /drives | Create a new navigation property of a specific drive
-[**DrivesDeleteDrive**](DrivesApi.md#DrivesDeleteDrive) | **Delete** /drives/{drive-id} | Delete a specific navigation property drive
+[**DrivesCreateDrive**](DrivesApi.md#DrivesCreateDrive) | **Post** /drives | Create a new space of a specific type
+[**DrivesDeleteDrive**](DrivesApi.md#DrivesDeleteDrive) | **Delete** /drives/{drive-id} | Delete a specific space
 [**DrivesGetDrive**](DrivesApi.md#DrivesGetDrive) | **Get** /drives/{drive-id} | Get drive by id
-[**DrivesUpdateDrive**](DrivesApi.md#DrivesUpdateDrive) | **Patch** /drives/{drive-id} | Update the navigation property of a specific drive
+[**DrivesUpdateDrive**](DrivesApi.md#DrivesUpdateDrive) | **Patch** /drives/{drive-id} | Update the space
 
 
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 > DrivesCreateDrive(ctx).Drive(drive).Execute()
 
-Create a new navigation property of a specific drive
+Create a new space of a specific type
 
 ### Example
 
@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    drive := *openapiclient.NewDrive() // Drive | New navigation property values
+    drive := *openapiclient.NewDrive() // Drive | New space property values
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -53,7 +53,7 @@ Other parameters are passed through a pointer to a apiDrivesCreateDriveRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **drive** | [**Drive**](Drive.md) | New navigation property values | 
+ **drive** | [**Drive**](Drive.md) | New space property values | 
 
 ### Return type
 
@@ -77,7 +77,7 @@ No authorization required
 
 > DrivesDeleteDrive(ctx, driveId).IfMatch(ifMatch).Execute()
 
-Delete a specific navigation property drive
+Delete a specific space
 
 ### Example
 
@@ -217,7 +217,7 @@ No authorization required
 
 > DrivesUpdateDrive(ctx, driveId).Drive(drive).Execute()
 
-Update the navigation property of a specific drive
+Update the space
 
 ### Example
 
@@ -233,7 +233,7 @@ import (
 
 func main() {
     driveId := "driveId_example" // string | key: id of drive
-    drive := *openapiclient.NewDrive() // Drive | New navigation property values
+    drive := *openapiclient.NewDrive() // Drive | New space values
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -261,7 +261,7 @@ Other parameters are passed through a pointer to a apiDrivesUpdateDriveRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **drive** | [**Drive**](Drive.md) | New navigation property values | 
+ **drive** | [**Drive**](Drive.md) | New space values | 
 
 ### Return type
 

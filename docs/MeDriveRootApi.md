@@ -4,7 +4,7 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MeDriveGetRoot**](MeDriveRootApi.md#MeDriveGetRoot) | **Get** /me/drive/root | Get root from home drive
+[**MeDriveGetRoot**](MeDriveRootApi.md#MeDriveGetRoot) | **Get** /me/drive/root | Get root from personal space
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > DriveItem MeDriveGetRoot(ctx).Execute()
 
-Get root from home drive
+Get root from personal space
 
 ### Example
 

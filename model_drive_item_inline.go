@@ -14,8 +14,8 @@ import (
 	"encoding/json"
 )
 
-// DriveItemAllOf struct for DriveItemAllOf
-type DriveItemAllOf struct {
+// DriveItemInline struct for DriveItemInline
+type DriveItemInline struct {
 	// The content stream, if the item represents a file.
 	Content *string `json:"content,omitempty"`
 	// An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
@@ -35,25 +35,25 @@ type DriveItemAllOf struct {
 	Children *[]DriveItem `json:"children,omitempty"`
 }
 
-// NewDriveItemAllOf instantiates a new DriveItemAllOf object
+// NewDriveItemInline instantiates a new DriveItemInline object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDriveItemAllOf() *DriveItemAllOf {
-	this := DriveItemAllOf{}
+func NewDriveItemInline() *DriveItemInline {
+	this := DriveItemInline{}
 	return &this
 }
 
-// NewDriveItemAllOfWithDefaults instantiates a new DriveItemAllOf object
+// NewDriveItemInlineWithDefaults instantiates a new DriveItemInline object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewDriveItemAllOfWithDefaults() *DriveItemAllOf {
-	this := DriveItemAllOf{}
+func NewDriveItemInlineWithDefaults() *DriveItemInline {
+	this := DriveItemInline{}
 	return &this
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
-func (o *DriveItemAllOf) GetContent() string {
+func (o *DriveItemInline) GetContent() string {
 	if o == nil || o.Content == nil {
 		var ret string
 		return ret
@@ -63,7 +63,7 @@ func (o *DriveItemAllOf) GetContent() string {
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveItemAllOf) GetContentOk() (*string, bool) {
+func (o *DriveItemInline) GetContentOk() (*string, bool) {
 	if o == nil || o.Content == nil {
 		return nil, false
 	}
@@ -71,7 +71,7 @@ func (o *DriveItemAllOf) GetContentOk() (*string, bool) {
 }
 
 // HasContent returns a boolean if a field has been set.
-func (o *DriveItemAllOf) HasContent() bool {
+func (o *DriveItemInline) HasContent() bool {
 	if o != nil && o.Content != nil {
 		return true
 	}
@@ -80,12 +80,12 @@ func (o *DriveItemAllOf) HasContent() bool {
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.
-func (o *DriveItemAllOf) SetContent(v string) {
+func (o *DriveItemInline) SetContent(v string) {
 	o.Content = &v
 }
 
 // GetCTag returns the CTag field value if set, zero value otherwise.
-func (o *DriveItemAllOf) GetCTag() string {
+func (o *DriveItemInline) GetCTag() string {
 	if o == nil || o.CTag == nil {
 		var ret string
 		return ret
@@ -95,7 +95,7 @@ func (o *DriveItemAllOf) GetCTag() string {
 
 // GetCTagOk returns a tuple with the CTag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveItemAllOf) GetCTagOk() (*string, bool) {
+func (o *DriveItemInline) GetCTagOk() (*string, bool) {
 	if o == nil || o.CTag == nil {
 		return nil, false
 	}
@@ -103,7 +103,7 @@ func (o *DriveItemAllOf) GetCTagOk() (*string, bool) {
 }
 
 // HasCTag returns a boolean if a field has been set.
-func (o *DriveItemAllOf) HasCTag() bool {
+func (o *DriveItemInline) HasCTag() bool {
 	if o != nil && o.CTag != nil {
 		return true
 	}
@@ -112,12 +112,12 @@ func (o *DriveItemAllOf) HasCTag() bool {
 }
 
 // SetCTag gets a reference to the given string and assigns it to the CTag field.
-func (o *DriveItemAllOf) SetCTag(v string) {
+func (o *DriveItemInline) SetCTag(v string) {
 	o.CTag = &v
 }
 
 // GetDeleted returns the Deleted field value if set, zero value otherwise.
-func (o *DriveItemAllOf) GetDeleted() Deleted {
+func (o *DriveItemInline) GetDeleted() Deleted {
 	if o == nil || o.Deleted == nil {
 		var ret Deleted
 		return ret
@@ -127,7 +127,7 @@ func (o *DriveItemAllOf) GetDeleted() Deleted {
 
 // GetDeletedOk returns a tuple with the Deleted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveItemAllOf) GetDeletedOk() (*Deleted, bool) {
+func (o *DriveItemInline) GetDeletedOk() (*Deleted, bool) {
 	if o == nil || o.Deleted == nil {
 		return nil, false
 	}
@@ -135,7 +135,7 @@ func (o *DriveItemAllOf) GetDeletedOk() (*Deleted, bool) {
 }
 
 // HasDeleted returns a boolean if a field has been set.
-func (o *DriveItemAllOf) HasDeleted() bool {
+func (o *DriveItemInline) HasDeleted() bool {
 	if o != nil && o.Deleted != nil {
 		return true
 	}
@@ -144,12 +144,12 @@ func (o *DriveItemAllOf) HasDeleted() bool {
 }
 
 // SetDeleted gets a reference to the given Deleted and assigns it to the Deleted field.
-func (o *DriveItemAllOf) SetDeleted(v Deleted) {
+func (o *DriveItemInline) SetDeleted(v Deleted) {
 	o.Deleted = &v
 }
 
 // GetFile returns the File field value if set, zero value otherwise.
-func (o *DriveItemAllOf) GetFile() OpenGraphFile {
+func (o *DriveItemInline) GetFile() OpenGraphFile {
 	if o == nil || o.File == nil {
 		var ret OpenGraphFile
 		return ret
@@ -159,7 +159,7 @@ func (o *DriveItemAllOf) GetFile() OpenGraphFile {
 
 // GetFileOk returns a tuple with the File field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveItemAllOf) GetFileOk() (*OpenGraphFile, bool) {
+func (o *DriveItemInline) GetFileOk() (*OpenGraphFile, bool) {
 	if o == nil || o.File == nil {
 		return nil, false
 	}
@@ -167,7 +167,7 @@ func (o *DriveItemAllOf) GetFileOk() (*OpenGraphFile, bool) {
 }
 
 // HasFile returns a boolean if a field has been set.
-func (o *DriveItemAllOf) HasFile() bool {
+func (o *DriveItemInline) HasFile() bool {
 	if o != nil && o.File != nil {
 		return true
 	}
@@ -176,12 +176,12 @@ func (o *DriveItemAllOf) HasFile() bool {
 }
 
 // SetFile gets a reference to the given OpenGraphFile and assigns it to the File field.
-func (o *DriveItemAllOf) SetFile(v OpenGraphFile) {
+func (o *DriveItemInline) SetFile(v OpenGraphFile) {
 	o.File = &v
 }
 
 // GetFileSystemInfo returns the FileSystemInfo field value if set, zero value otherwise.
-func (o *DriveItemAllOf) GetFileSystemInfo() FileSystemInfo {
+func (o *DriveItemInline) GetFileSystemInfo() FileSystemInfo {
 	if o == nil || o.FileSystemInfo == nil {
 		var ret FileSystemInfo
 		return ret
@@ -191,7 +191,7 @@ func (o *DriveItemAllOf) GetFileSystemInfo() FileSystemInfo {
 
 // GetFileSystemInfoOk returns a tuple with the FileSystemInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveItemAllOf) GetFileSystemInfoOk() (*FileSystemInfo, bool) {
+func (o *DriveItemInline) GetFileSystemInfoOk() (*FileSystemInfo, bool) {
 	if o == nil || o.FileSystemInfo == nil {
 		return nil, false
 	}
@@ -199,7 +199,7 @@ func (o *DriveItemAllOf) GetFileSystemInfoOk() (*FileSystemInfo, bool) {
 }
 
 // HasFileSystemInfo returns a boolean if a field has been set.
-func (o *DriveItemAllOf) HasFileSystemInfo() bool {
+func (o *DriveItemInline) HasFileSystemInfo() bool {
 	if o != nil && o.FileSystemInfo != nil {
 		return true
 	}
@@ -208,12 +208,12 @@ func (o *DriveItemAllOf) HasFileSystemInfo() bool {
 }
 
 // SetFileSystemInfo gets a reference to the given FileSystemInfo and assigns it to the FileSystemInfo field.
-func (o *DriveItemAllOf) SetFileSystemInfo(v FileSystemInfo) {
+func (o *DriveItemInline) SetFileSystemInfo(v FileSystemInfo) {
 	o.FileSystemInfo = &v
 }
 
 // GetFolder returns the Folder field value if set, zero value otherwise.
-func (o *DriveItemAllOf) GetFolder() Folder {
+func (o *DriveItemInline) GetFolder() Folder {
 	if o == nil || o.Folder == nil {
 		var ret Folder
 		return ret
@@ -223,7 +223,7 @@ func (o *DriveItemAllOf) GetFolder() Folder {
 
 // GetFolderOk returns a tuple with the Folder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveItemAllOf) GetFolderOk() (*Folder, bool) {
+func (o *DriveItemInline) GetFolderOk() (*Folder, bool) {
 	if o == nil || o.Folder == nil {
 		return nil, false
 	}
@@ -231,7 +231,7 @@ func (o *DriveItemAllOf) GetFolderOk() (*Folder, bool) {
 }
 
 // HasFolder returns a boolean if a field has been set.
-func (o *DriveItemAllOf) HasFolder() bool {
+func (o *DriveItemInline) HasFolder() bool {
 	if o != nil && o.Folder != nil {
 		return true
 	}
@@ -240,12 +240,12 @@ func (o *DriveItemAllOf) HasFolder() bool {
 }
 
 // SetFolder gets a reference to the given Folder and assigns it to the Folder field.
-func (o *DriveItemAllOf) SetFolder(v Folder) {
+func (o *DriveItemInline) SetFolder(v Folder) {
 	o.Folder = &v
 }
 
 // GetImage returns the Image field value if set, zero value otherwise.
-func (o *DriveItemAllOf) GetImage() Image {
+func (o *DriveItemInline) GetImage() Image {
 	if o == nil || o.Image == nil {
 		var ret Image
 		return ret
@@ -255,7 +255,7 @@ func (o *DriveItemAllOf) GetImage() Image {
 
 // GetImageOk returns a tuple with the Image field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveItemAllOf) GetImageOk() (*Image, bool) {
+func (o *DriveItemInline) GetImageOk() (*Image, bool) {
 	if o == nil || o.Image == nil {
 		return nil, false
 	}
@@ -263,7 +263,7 @@ func (o *DriveItemAllOf) GetImageOk() (*Image, bool) {
 }
 
 // HasImage returns a boolean if a field has been set.
-func (o *DriveItemAllOf) HasImage() bool {
+func (o *DriveItemInline) HasImage() bool {
 	if o != nil && o.Image != nil {
 		return true
 	}
@@ -272,12 +272,12 @@ func (o *DriveItemAllOf) HasImage() bool {
 }
 
 // SetImage gets a reference to the given Image and assigns it to the Image field.
-func (o *DriveItemAllOf) SetImage(v Image) {
+func (o *DriveItemInline) SetImage(v Image) {
 	o.Image = &v
 }
 
 // GetRoot returns the Root field value if set, zero value otherwise.
-func (o *DriveItemAllOf) GetRoot() map[string]interface{} {
+func (o *DriveItemInline) GetRoot() map[string]interface{} {
 	if o == nil || o.Root == nil {
 		var ret map[string]interface{}
 		return ret
@@ -287,7 +287,7 @@ func (o *DriveItemAllOf) GetRoot() map[string]interface{} {
 
 // GetRootOk returns a tuple with the Root field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveItemAllOf) GetRootOk() (*map[string]interface{}, bool) {
+func (o *DriveItemInline) GetRootOk() (*map[string]interface{}, bool) {
 	if o == nil || o.Root == nil {
 		return nil, false
 	}
@@ -295,7 +295,7 @@ func (o *DriveItemAllOf) GetRootOk() (*map[string]interface{}, bool) {
 }
 
 // HasRoot returns a boolean if a field has been set.
-func (o *DriveItemAllOf) HasRoot() bool {
+func (o *DriveItemInline) HasRoot() bool {
 	if o != nil && o.Root != nil {
 		return true
 	}
@@ -304,12 +304,12 @@ func (o *DriveItemAllOf) HasRoot() bool {
 }
 
 // SetRoot gets a reference to the given map[string]interface{} and assigns it to the Root field.
-func (o *DriveItemAllOf) SetRoot(v map[string]interface{}) {
+func (o *DriveItemInline) SetRoot(v map[string]interface{}) {
 	o.Root = &v
 }
 
 // GetSize returns the Size field value if set, zero value otherwise.
-func (o *DriveItemAllOf) GetSize() int64 {
+func (o *DriveItemInline) GetSize() int64 {
 	if o == nil || o.Size == nil {
 		var ret int64
 		return ret
@@ -319,7 +319,7 @@ func (o *DriveItemAllOf) GetSize() int64 {
 
 // GetSizeOk returns a tuple with the Size field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveItemAllOf) GetSizeOk() (*int64, bool) {
+func (o *DriveItemInline) GetSizeOk() (*int64, bool) {
 	if o == nil || o.Size == nil {
 		return nil, false
 	}
@@ -327,7 +327,7 @@ func (o *DriveItemAllOf) GetSizeOk() (*int64, bool) {
 }
 
 // HasSize returns a boolean if a field has been set.
-func (o *DriveItemAllOf) HasSize() bool {
+func (o *DriveItemInline) HasSize() bool {
 	if o != nil && o.Size != nil {
 		return true
 	}
@@ -336,12 +336,12 @@ func (o *DriveItemAllOf) HasSize() bool {
 }
 
 // SetSize gets a reference to the given int64 and assigns it to the Size field.
-func (o *DriveItemAllOf) SetSize(v int64) {
+func (o *DriveItemInline) SetSize(v int64) {
 	o.Size = &v
 }
 
 // GetWebDavUrl returns the WebDavUrl field value if set, zero value otherwise.
-func (o *DriveItemAllOf) GetWebDavUrl() string {
+func (o *DriveItemInline) GetWebDavUrl() string {
 	if o == nil || o.WebDavUrl == nil {
 		var ret string
 		return ret
@@ -351,7 +351,7 @@ func (o *DriveItemAllOf) GetWebDavUrl() string {
 
 // GetWebDavUrlOk returns a tuple with the WebDavUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveItemAllOf) GetWebDavUrlOk() (*string, bool) {
+func (o *DriveItemInline) GetWebDavUrlOk() (*string, bool) {
 	if o == nil || o.WebDavUrl == nil {
 		return nil, false
 	}
@@ -359,7 +359,7 @@ func (o *DriveItemAllOf) GetWebDavUrlOk() (*string, bool) {
 }
 
 // HasWebDavUrl returns a boolean if a field has been set.
-func (o *DriveItemAllOf) HasWebDavUrl() bool {
+func (o *DriveItemInline) HasWebDavUrl() bool {
 	if o != nil && o.WebDavUrl != nil {
 		return true
 	}
@@ -368,12 +368,12 @@ func (o *DriveItemAllOf) HasWebDavUrl() bool {
 }
 
 // SetWebDavUrl gets a reference to the given string and assigns it to the WebDavUrl field.
-func (o *DriveItemAllOf) SetWebDavUrl(v string) {
+func (o *DriveItemInline) SetWebDavUrl(v string) {
 	o.WebDavUrl = &v
 }
 
 // GetChildren returns the Children field value if set, zero value otherwise.
-func (o *DriveItemAllOf) GetChildren() []DriveItem {
+func (o *DriveItemInline) GetChildren() []DriveItem {
 	if o == nil || o.Children == nil {
 		var ret []DriveItem
 		return ret
@@ -383,7 +383,7 @@ func (o *DriveItemAllOf) GetChildren() []DriveItem {
 
 // GetChildrenOk returns a tuple with the Children field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveItemAllOf) GetChildrenOk() (*[]DriveItem, bool) {
+func (o *DriveItemInline) GetChildrenOk() (*[]DriveItem, bool) {
 	if o == nil || o.Children == nil {
 		return nil, false
 	}
@@ -391,7 +391,7 @@ func (o *DriveItemAllOf) GetChildrenOk() (*[]DriveItem, bool) {
 }
 
 // HasChildren returns a boolean if a field has been set.
-func (o *DriveItemAllOf) HasChildren() bool {
+func (o *DriveItemInline) HasChildren() bool {
 	if o != nil && o.Children != nil {
 		return true
 	}
@@ -400,11 +400,11 @@ func (o *DriveItemAllOf) HasChildren() bool {
 }
 
 // SetChildren gets a reference to the given []DriveItem and assigns it to the Children field.
-func (o *DriveItemAllOf) SetChildren(v []DriveItem) {
+func (o *DriveItemInline) SetChildren(v []DriveItem) {
 	o.Children = &v
 }
 
-func (o DriveItemAllOf) MarshalJSON() ([]byte, error) {
+func (o DriveItemInline) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Content != nil {
 		toSerialize["content"] = o.Content
@@ -442,38 +442,38 @@ func (o DriveItemAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableDriveItemAllOf struct {
-	value *DriveItemAllOf
+type NullableDriveItemInline struct {
+	value *DriveItemInline
 	isSet bool
 }
 
-func (v NullableDriveItemAllOf) Get() *DriveItemAllOf {
+func (v NullableDriveItemInline) Get() *DriveItemInline {
 	return v.value
 }
 
-func (v *NullableDriveItemAllOf) Set(val *DriveItemAllOf) {
+func (v *NullableDriveItemInline) Set(val *DriveItemInline) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableDriveItemAllOf) IsSet() bool {
+func (v NullableDriveItemInline) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableDriveItemAllOf) Unset() {
+func (v *NullableDriveItemInline) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableDriveItemAllOf(val *DriveItemAllOf) *NullableDriveItemAllOf {
-	return &NullableDriveItemAllOf{value: val, isSet: true}
+func NewNullableDriveItemInline(val *DriveItemInline) *NullableDriveItemInline {
+	return &NullableDriveItemInline{value: val, isSet: true}
 }
 
-func (v NullableDriveItemAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableDriveItemInline) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableDriveItemAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableDriveItemInline) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -37,7 +37,7 @@ func (r ApiMeDriveGetRootRequest) Execute() (DriveItem, *_nethttp.Response, erro
 }
 
 /*
-MeDriveGetRoot Get root from home drive
+MeDriveGetRoot Get root from personal space
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiMeDriveGetRootRequest

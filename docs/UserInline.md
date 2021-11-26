@@ -1,4 +1,4 @@
-# UserAllOf
+# UserInline
 
 ## Properties
 
@@ -35,720 +35,720 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewUserAllOf
+### NewUserInline
 
-`func NewUserAllOf() *UserAllOf`
+`func NewUserInline() *UserInline`
 
-NewUserAllOf instantiates a new UserAllOf object
+NewUserInline instantiates a new UserInline object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUserAllOfWithDefaults
+### NewUserInlineWithDefaults
 
-`func NewUserAllOfWithDefaults() *UserAllOf`
+`func NewUserInlineWithDefaults() *UserInline`
 
-NewUserAllOfWithDefaults instantiates a new UserAllOf object
+NewUserInlineWithDefaults instantiates a new UserInline object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAccountEnabled
 
-`func (o *UserAllOf) GetAccountEnabled() bool`
+`func (o *UserInline) GetAccountEnabled() bool`
 
 GetAccountEnabled returns the AccountEnabled field if non-nil, zero value otherwise.
 
 ### GetAccountEnabledOk
 
-`func (o *UserAllOf) GetAccountEnabledOk() (*bool, bool)`
+`func (o *UserInline) GetAccountEnabledOk() (*bool, bool)`
 
 GetAccountEnabledOk returns a tuple with the AccountEnabled field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccountEnabled
 
-`func (o *UserAllOf) SetAccountEnabled(v bool)`
+`func (o *UserInline) SetAccountEnabled(v bool)`
 
 SetAccountEnabled sets AccountEnabled field to given value.
 
 ### HasAccountEnabled
 
-`func (o *UserAllOf) HasAccountEnabled() bool`
+`func (o *UserInline) HasAccountEnabled() bool`
 
 HasAccountEnabled returns a boolean if a field has been set.
 
 ### GetBusinessPhones
 
-`func (o *UserAllOf) GetBusinessPhones() []string`
+`func (o *UserInline) GetBusinessPhones() []string`
 
 GetBusinessPhones returns the BusinessPhones field if non-nil, zero value otherwise.
 
 ### GetBusinessPhonesOk
 
-`func (o *UserAllOf) GetBusinessPhonesOk() (*[]string, bool)`
+`func (o *UserInline) GetBusinessPhonesOk() (*[]string, bool)`
 
 GetBusinessPhonesOk returns a tuple with the BusinessPhones field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBusinessPhones
 
-`func (o *UserAllOf) SetBusinessPhones(v []string)`
+`func (o *UserInline) SetBusinessPhones(v []string)`
 
 SetBusinessPhones sets BusinessPhones field to given value.
 
 ### HasBusinessPhones
 
-`func (o *UserAllOf) HasBusinessPhones() bool`
+`func (o *UserInline) HasBusinessPhones() bool`
 
 HasBusinessPhones returns a boolean if a field has been set.
 
 ### GetCity
 
-`func (o *UserAllOf) GetCity() string`
+`func (o *UserInline) GetCity() string`
 
 GetCity returns the City field if non-nil, zero value otherwise.
 
 ### GetCityOk
 
-`func (o *UserAllOf) GetCityOk() (*string, bool)`
+`func (o *UserInline) GetCityOk() (*string, bool)`
 
 GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCity
 
-`func (o *UserAllOf) SetCity(v string)`
+`func (o *UserInline) SetCity(v string)`
 
 SetCity sets City field to given value.
 
 ### HasCity
 
-`func (o *UserAllOf) HasCity() bool`
+`func (o *UserInline) HasCity() bool`
 
 HasCity returns a boolean if a field has been set.
 
 ### GetCompanyName
 
-`func (o *UserAllOf) GetCompanyName() string`
+`func (o *UserInline) GetCompanyName() string`
 
 GetCompanyName returns the CompanyName field if non-nil, zero value otherwise.
 
 ### GetCompanyNameOk
 
-`func (o *UserAllOf) GetCompanyNameOk() (*string, bool)`
+`func (o *UserInline) GetCompanyNameOk() (*string, bool)`
 
 GetCompanyNameOk returns a tuple with the CompanyName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCompanyName
 
-`func (o *UserAllOf) SetCompanyName(v string)`
+`func (o *UserInline) SetCompanyName(v string)`
 
 SetCompanyName sets CompanyName field to given value.
 
 ### HasCompanyName
 
-`func (o *UserAllOf) HasCompanyName() bool`
+`func (o *UserInline) HasCompanyName() bool`
 
 HasCompanyName returns a boolean if a field has been set.
 
 ### GetCountry
 
-`func (o *UserAllOf) GetCountry() string`
+`func (o *UserInline) GetCountry() string`
 
 GetCountry returns the Country field if non-nil, zero value otherwise.
 
 ### GetCountryOk
 
-`func (o *UserAllOf) GetCountryOk() (*string, bool)`
+`func (o *UserInline) GetCountryOk() (*string, bool)`
 
 GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCountry
 
-`func (o *UserAllOf) SetCountry(v string)`
+`func (o *UserInline) SetCountry(v string)`
 
 SetCountry sets Country field to given value.
 
 ### HasCountry
 
-`func (o *UserAllOf) HasCountry() bool`
+`func (o *UserInline) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
 
 ### GetCreatedDateTime
 
-`func (o *UserAllOf) GetCreatedDateTime() time.Time`
+`func (o *UserInline) GetCreatedDateTime() time.Time`
 
 GetCreatedDateTime returns the CreatedDateTime field if non-nil, zero value otherwise.
 
 ### GetCreatedDateTimeOk
 
-`func (o *UserAllOf) GetCreatedDateTimeOk() (*time.Time, bool)`
+`func (o *UserInline) GetCreatedDateTimeOk() (*time.Time, bool)`
 
 GetCreatedDateTimeOk returns a tuple with the CreatedDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedDateTime
 
-`func (o *UserAllOf) SetCreatedDateTime(v time.Time)`
+`func (o *UserInline) SetCreatedDateTime(v time.Time)`
 
 SetCreatedDateTime sets CreatedDateTime field to given value.
 
 ### HasCreatedDateTime
 
-`func (o *UserAllOf) HasCreatedDateTime() bool`
+`func (o *UserInline) HasCreatedDateTime() bool`
 
 HasCreatedDateTime returns a boolean if a field has been set.
 
 ### GetDepartment
 
-`func (o *UserAllOf) GetDepartment() string`
+`func (o *UserInline) GetDepartment() string`
 
 GetDepartment returns the Department field if non-nil, zero value otherwise.
 
 ### GetDepartmentOk
 
-`func (o *UserAllOf) GetDepartmentOk() (*string, bool)`
+`func (o *UserInline) GetDepartmentOk() (*string, bool)`
 
 GetDepartmentOk returns a tuple with the Department field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDepartment
 
-`func (o *UserAllOf) SetDepartment(v string)`
+`func (o *UserInline) SetDepartment(v string)`
 
 SetDepartment sets Department field to given value.
 
 ### HasDepartment
 
-`func (o *UserAllOf) HasDepartment() bool`
+`func (o *UserInline) HasDepartment() bool`
 
 HasDepartment returns a boolean if a field has been set.
 
 ### GetDisplayName
 
-`func (o *UserAllOf) GetDisplayName() string`
+`func (o *UserInline) GetDisplayName() string`
 
 GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
 
 ### GetDisplayNameOk
 
-`func (o *UserAllOf) GetDisplayNameOk() (*string, bool)`
+`func (o *UserInline) GetDisplayNameOk() (*string, bool)`
 
 GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDisplayName
 
-`func (o *UserAllOf) SetDisplayName(v string)`
+`func (o *UserInline) SetDisplayName(v string)`
 
 SetDisplayName sets DisplayName field to given value.
 
 ### HasDisplayName
 
-`func (o *UserAllOf) HasDisplayName() bool`
+`func (o *UserInline) HasDisplayName() bool`
 
 HasDisplayName returns a boolean if a field has been set.
 
 ### GetFaxNumber
 
-`func (o *UserAllOf) GetFaxNumber() string`
+`func (o *UserInline) GetFaxNumber() string`
 
 GetFaxNumber returns the FaxNumber field if non-nil, zero value otherwise.
 
 ### GetFaxNumberOk
 
-`func (o *UserAllOf) GetFaxNumberOk() (*string, bool)`
+`func (o *UserInline) GetFaxNumberOk() (*string, bool)`
 
 GetFaxNumberOk returns a tuple with the FaxNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFaxNumber
 
-`func (o *UserAllOf) SetFaxNumber(v string)`
+`func (o *UserInline) SetFaxNumber(v string)`
 
 SetFaxNumber sets FaxNumber field to given value.
 
 ### HasFaxNumber
 
-`func (o *UserAllOf) HasFaxNumber() bool`
+`func (o *UserInline) HasFaxNumber() bool`
 
 HasFaxNumber returns a boolean if a field has been set.
 
 ### GetGivenName
 
-`func (o *UserAllOf) GetGivenName() string`
+`func (o *UserInline) GetGivenName() string`
 
 GetGivenName returns the GivenName field if non-nil, zero value otherwise.
 
 ### GetGivenNameOk
 
-`func (o *UserAllOf) GetGivenNameOk() (*string, bool)`
+`func (o *UserInline) GetGivenNameOk() (*string, bool)`
 
 GetGivenNameOk returns a tuple with the GivenName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGivenName
 
-`func (o *UserAllOf) SetGivenName(v string)`
+`func (o *UserInline) SetGivenName(v string)`
 
 SetGivenName sets GivenName field to given value.
 
 ### HasGivenName
 
-`func (o *UserAllOf) HasGivenName() bool`
+`func (o *UserInline) HasGivenName() bool`
 
 HasGivenName returns a boolean if a field has been set.
 
 ### GetLastPasswordChangeDateTime
 
-`func (o *UserAllOf) GetLastPasswordChangeDateTime() time.Time`
+`func (o *UserInline) GetLastPasswordChangeDateTime() time.Time`
 
 GetLastPasswordChangeDateTime returns the LastPasswordChangeDateTime field if non-nil, zero value otherwise.
 
 ### GetLastPasswordChangeDateTimeOk
 
-`func (o *UserAllOf) GetLastPasswordChangeDateTimeOk() (*time.Time, bool)`
+`func (o *UserInline) GetLastPasswordChangeDateTimeOk() (*time.Time, bool)`
 
 GetLastPasswordChangeDateTimeOk returns a tuple with the LastPasswordChangeDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastPasswordChangeDateTime
 
-`func (o *UserAllOf) SetLastPasswordChangeDateTime(v time.Time)`
+`func (o *UserInline) SetLastPasswordChangeDateTime(v time.Time)`
 
 SetLastPasswordChangeDateTime sets LastPasswordChangeDateTime field to given value.
 
 ### HasLastPasswordChangeDateTime
 
-`func (o *UserAllOf) HasLastPasswordChangeDateTime() bool`
+`func (o *UserInline) HasLastPasswordChangeDateTime() bool`
 
 HasLastPasswordChangeDateTime returns a boolean if a field has been set.
 
 ### GetLegalAgeGroupClassification
 
-`func (o *UserAllOf) GetLegalAgeGroupClassification() string`
+`func (o *UserInline) GetLegalAgeGroupClassification() string`
 
 GetLegalAgeGroupClassification returns the LegalAgeGroupClassification field if non-nil, zero value otherwise.
 
 ### GetLegalAgeGroupClassificationOk
 
-`func (o *UserAllOf) GetLegalAgeGroupClassificationOk() (*string, bool)`
+`func (o *UserInline) GetLegalAgeGroupClassificationOk() (*string, bool)`
 
 GetLegalAgeGroupClassificationOk returns a tuple with the LegalAgeGroupClassification field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLegalAgeGroupClassification
 
-`func (o *UserAllOf) SetLegalAgeGroupClassification(v string)`
+`func (o *UserInline) SetLegalAgeGroupClassification(v string)`
 
 SetLegalAgeGroupClassification sets LegalAgeGroupClassification field to given value.
 
 ### HasLegalAgeGroupClassification
 
-`func (o *UserAllOf) HasLegalAgeGroupClassification() bool`
+`func (o *UserInline) HasLegalAgeGroupClassification() bool`
 
 HasLegalAgeGroupClassification returns a boolean if a field has been set.
 
 ### GetMail
 
-`func (o *UserAllOf) GetMail() string`
+`func (o *UserInline) GetMail() string`
 
 GetMail returns the Mail field if non-nil, zero value otherwise.
 
 ### GetMailOk
 
-`func (o *UserAllOf) GetMailOk() (*string, bool)`
+`func (o *UserInline) GetMailOk() (*string, bool)`
 
 GetMailOk returns a tuple with the Mail field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMail
 
-`func (o *UserAllOf) SetMail(v string)`
+`func (o *UserInline) SetMail(v string)`
 
 SetMail sets Mail field to given value.
 
 ### HasMail
 
-`func (o *UserAllOf) HasMail() bool`
+`func (o *UserInline) HasMail() bool`
 
 HasMail returns a boolean if a field has been set.
 
 ### GetMailNickname
 
-`func (o *UserAllOf) GetMailNickname() string`
+`func (o *UserInline) GetMailNickname() string`
 
 GetMailNickname returns the MailNickname field if non-nil, zero value otherwise.
 
 ### GetMailNicknameOk
 
-`func (o *UserAllOf) GetMailNicknameOk() (*string, bool)`
+`func (o *UserInline) GetMailNicknameOk() (*string, bool)`
 
 GetMailNicknameOk returns a tuple with the MailNickname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMailNickname
 
-`func (o *UserAllOf) SetMailNickname(v string)`
+`func (o *UserInline) SetMailNickname(v string)`
 
 SetMailNickname sets MailNickname field to given value.
 
 ### HasMailNickname
 
-`func (o *UserAllOf) HasMailNickname() bool`
+`func (o *UserInline) HasMailNickname() bool`
 
 HasMailNickname returns a boolean if a field has been set.
 
 ### GetMobilePhone
 
-`func (o *UserAllOf) GetMobilePhone() string`
+`func (o *UserInline) GetMobilePhone() string`
 
 GetMobilePhone returns the MobilePhone field if non-nil, zero value otherwise.
 
 ### GetMobilePhoneOk
 
-`func (o *UserAllOf) GetMobilePhoneOk() (*string, bool)`
+`func (o *UserInline) GetMobilePhoneOk() (*string, bool)`
 
 GetMobilePhoneOk returns a tuple with the MobilePhone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMobilePhone
 
-`func (o *UserAllOf) SetMobilePhone(v string)`
+`func (o *UserInline) SetMobilePhone(v string)`
 
 SetMobilePhone sets MobilePhone field to given value.
 
 ### HasMobilePhone
 
-`func (o *UserAllOf) HasMobilePhone() bool`
+`func (o *UserInline) HasMobilePhone() bool`
 
 HasMobilePhone returns a boolean if a field has been set.
 
 ### GetOfficeLocation
 
-`func (o *UserAllOf) GetOfficeLocation() string`
+`func (o *UserInline) GetOfficeLocation() string`
 
 GetOfficeLocation returns the OfficeLocation field if non-nil, zero value otherwise.
 
 ### GetOfficeLocationOk
 
-`func (o *UserAllOf) GetOfficeLocationOk() (*string, bool)`
+`func (o *UserInline) GetOfficeLocationOk() (*string, bool)`
 
 GetOfficeLocationOk returns a tuple with the OfficeLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOfficeLocation
 
-`func (o *UserAllOf) SetOfficeLocation(v string)`
+`func (o *UserInline) SetOfficeLocation(v string)`
 
 SetOfficeLocation sets OfficeLocation field to given value.
 
 ### HasOfficeLocation
 
-`func (o *UserAllOf) HasOfficeLocation() bool`
+`func (o *UserInline) HasOfficeLocation() bool`
 
 HasOfficeLocation returns a boolean if a field has been set.
 
 ### GetPostalCode
 
-`func (o *UserAllOf) GetPostalCode() string`
+`func (o *UserInline) GetPostalCode() string`
 
 GetPostalCode returns the PostalCode field if non-nil, zero value otherwise.
 
 ### GetPostalCodeOk
 
-`func (o *UserAllOf) GetPostalCodeOk() (*string, bool)`
+`func (o *UserInline) GetPostalCodeOk() (*string, bool)`
 
 GetPostalCodeOk returns a tuple with the PostalCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPostalCode
 
-`func (o *UserAllOf) SetPostalCode(v string)`
+`func (o *UserInline) SetPostalCode(v string)`
 
 SetPostalCode sets PostalCode field to given value.
 
 ### HasPostalCode
 
-`func (o *UserAllOf) HasPostalCode() bool`
+`func (o *UserInline) HasPostalCode() bool`
 
 HasPostalCode returns a boolean if a field has been set.
 
 ### GetPreferredLanguage
 
-`func (o *UserAllOf) GetPreferredLanguage() string`
+`func (o *UserInline) GetPreferredLanguage() string`
 
 GetPreferredLanguage returns the PreferredLanguage field if non-nil, zero value otherwise.
 
 ### GetPreferredLanguageOk
 
-`func (o *UserAllOf) GetPreferredLanguageOk() (*string, bool)`
+`func (o *UserInline) GetPreferredLanguageOk() (*string, bool)`
 
 GetPreferredLanguageOk returns a tuple with the PreferredLanguage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPreferredLanguage
 
-`func (o *UserAllOf) SetPreferredLanguage(v string)`
+`func (o *UserInline) SetPreferredLanguage(v string)`
 
 SetPreferredLanguage sets PreferredLanguage field to given value.
 
 ### HasPreferredLanguage
 
-`func (o *UserAllOf) HasPreferredLanguage() bool`
+`func (o *UserInline) HasPreferredLanguage() bool`
 
 HasPreferredLanguage returns a boolean if a field has been set.
 
 ### GetState
 
-`func (o *UserAllOf) GetState() string`
+`func (o *UserInline) GetState() string`
 
 GetState returns the State field if non-nil, zero value otherwise.
 
 ### GetStateOk
 
-`func (o *UserAllOf) GetStateOk() (*string, bool)`
+`func (o *UserInline) GetStateOk() (*string, bool)`
 
 GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetState
 
-`func (o *UserAllOf) SetState(v string)`
+`func (o *UserInline) SetState(v string)`
 
 SetState sets State field to given value.
 
 ### HasState
 
-`func (o *UserAllOf) HasState() bool`
+`func (o *UserInline) HasState() bool`
 
 HasState returns a boolean if a field has been set.
 
 ### GetStreetAddress
 
-`func (o *UserAllOf) GetStreetAddress() string`
+`func (o *UserInline) GetStreetAddress() string`
 
 GetStreetAddress returns the StreetAddress field if non-nil, zero value otherwise.
 
 ### GetStreetAddressOk
 
-`func (o *UserAllOf) GetStreetAddressOk() (*string, bool)`
+`func (o *UserInline) GetStreetAddressOk() (*string, bool)`
 
 GetStreetAddressOk returns a tuple with the StreetAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStreetAddress
 
-`func (o *UserAllOf) SetStreetAddress(v string)`
+`func (o *UserInline) SetStreetAddress(v string)`
 
 SetStreetAddress sets StreetAddress field to given value.
 
 ### HasStreetAddress
 
-`func (o *UserAllOf) HasStreetAddress() bool`
+`func (o *UserInline) HasStreetAddress() bool`
 
 HasStreetAddress returns a boolean if a field has been set.
 
 ### GetSurname
 
-`func (o *UserAllOf) GetSurname() string`
+`func (o *UserInline) GetSurname() string`
 
 GetSurname returns the Surname field if non-nil, zero value otherwise.
 
 ### GetSurnameOk
 
-`func (o *UserAllOf) GetSurnameOk() (*string, bool)`
+`func (o *UserInline) GetSurnameOk() (*string, bool)`
 
 GetSurnameOk returns a tuple with the Surname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSurname
 
-`func (o *UserAllOf) SetSurname(v string)`
+`func (o *UserInline) SetSurname(v string)`
 
 SetSurname sets Surname field to given value.
 
 ### HasSurname
 
-`func (o *UserAllOf) HasSurname() bool`
+`func (o *UserInline) HasSurname() bool`
 
 HasSurname returns a boolean if a field has been set.
 
 ### GetUsageLocation
 
-`func (o *UserAllOf) GetUsageLocation() string`
+`func (o *UserInline) GetUsageLocation() string`
 
 GetUsageLocation returns the UsageLocation field if non-nil, zero value otherwise.
 
 ### GetUsageLocationOk
 
-`func (o *UserAllOf) GetUsageLocationOk() (*string, bool)`
+`func (o *UserInline) GetUsageLocationOk() (*string, bool)`
 
 GetUsageLocationOk returns a tuple with the UsageLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsageLocation
 
-`func (o *UserAllOf) SetUsageLocation(v string)`
+`func (o *UserInline) SetUsageLocation(v string)`
 
 SetUsageLocation sets UsageLocation field to given value.
 
 ### HasUsageLocation
 
-`func (o *UserAllOf) HasUsageLocation() bool`
+`func (o *UserInline) HasUsageLocation() bool`
 
 HasUsageLocation returns a boolean if a field has been set.
 
 ### GetUserPrincipalName
 
-`func (o *UserAllOf) GetUserPrincipalName() string`
+`func (o *UserInline) GetUserPrincipalName() string`
 
 GetUserPrincipalName returns the UserPrincipalName field if non-nil, zero value otherwise.
 
 ### GetUserPrincipalNameOk
 
-`func (o *UserAllOf) GetUserPrincipalNameOk() (*string, bool)`
+`func (o *UserInline) GetUserPrincipalNameOk() (*string, bool)`
 
 GetUserPrincipalNameOk returns a tuple with the UserPrincipalName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserPrincipalName
 
-`func (o *UserAllOf) SetUserPrincipalName(v string)`
+`func (o *UserInline) SetUserPrincipalName(v string)`
 
 SetUserPrincipalName sets UserPrincipalName field to given value.
 
 ### HasUserPrincipalName
 
-`func (o *UserAllOf) HasUserPrincipalName() bool`
+`func (o *UserInline) HasUserPrincipalName() bool`
 
 HasUserPrincipalName returns a boolean if a field has been set.
 
 ### GetUserType
 
-`func (o *UserAllOf) GetUserType() string`
+`func (o *UserInline) GetUserType() string`
 
 GetUserType returns the UserType field if non-nil, zero value otherwise.
 
 ### GetUserTypeOk
 
-`func (o *UserAllOf) GetUserTypeOk() (*string, bool)`
+`func (o *UserInline) GetUserTypeOk() (*string, bool)`
 
 GetUserTypeOk returns a tuple with the UserType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserType
 
-`func (o *UserAllOf) SetUserType(v string)`
+`func (o *UserInline) SetUserType(v string)`
 
 SetUserType sets UserType field to given value.
 
 ### HasUserType
 
-`func (o *UserAllOf) HasUserType() bool`
+`func (o *UserInline) HasUserType() bool`
 
 HasUserType returns a boolean if a field has been set.
 
 ### GetAboutMe
 
-`func (o *UserAllOf) GetAboutMe() string`
+`func (o *UserInline) GetAboutMe() string`
 
 GetAboutMe returns the AboutMe field if non-nil, zero value otherwise.
 
 ### GetAboutMeOk
 
-`func (o *UserAllOf) GetAboutMeOk() (*string, bool)`
+`func (o *UserInline) GetAboutMeOk() (*string, bool)`
 
 GetAboutMeOk returns a tuple with the AboutMe field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAboutMe
 
-`func (o *UserAllOf) SetAboutMe(v string)`
+`func (o *UserInline) SetAboutMe(v string)`
 
 SetAboutMe sets AboutMe field to given value.
 
 ### HasAboutMe
 
-`func (o *UserAllOf) HasAboutMe() bool`
+`func (o *UserInline) HasAboutMe() bool`
 
 HasAboutMe returns a boolean if a field has been set.
 
 ### GetBirthday
 
-`func (o *UserAllOf) GetBirthday() time.Time`
+`func (o *UserInline) GetBirthday() time.Time`
 
 GetBirthday returns the Birthday field if non-nil, zero value otherwise.
 
 ### GetBirthdayOk
 
-`func (o *UserAllOf) GetBirthdayOk() (*time.Time, bool)`
+`func (o *UserInline) GetBirthdayOk() (*time.Time, bool)`
 
 GetBirthdayOk returns a tuple with the Birthday field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBirthday
 
-`func (o *UserAllOf) SetBirthday(v time.Time)`
+`func (o *UserInline) SetBirthday(v time.Time)`
 
 SetBirthday sets Birthday field to given value.
 
 ### HasBirthday
 
-`func (o *UserAllOf) HasBirthday() bool`
+`func (o *UserInline) HasBirthday() bool`
 
 HasBirthday returns a boolean if a field has been set.
 
 ### GetDrive
 
-`func (o *UserAllOf) GetDrive() Drive`
+`func (o *UserInline) GetDrive() Drive`
 
 GetDrive returns the Drive field if non-nil, zero value otherwise.
 
 ### GetDriveOk
 
-`func (o *UserAllOf) GetDriveOk() (*Drive, bool)`
+`func (o *UserInline) GetDriveOk() (*Drive, bool)`
 
 GetDriveOk returns a tuple with the Drive field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDrive
 
-`func (o *UserAllOf) SetDrive(v Drive)`
+`func (o *UserInline) SetDrive(v Drive)`
 
 SetDrive sets Drive field to given value.
 
 ### HasDrive
 
-`func (o *UserAllOf) HasDrive() bool`
+`func (o *UserInline) HasDrive() bool`
 
 HasDrive returns a boolean if a field has been set.
 
 ### GetDrives
 
-`func (o *UserAllOf) GetDrives() []Drive`
+`func (o *UserInline) GetDrives() []Drive`
 
 GetDrives returns the Drives field if non-nil, zero value otherwise.
 
 ### GetDrivesOk
 
-`func (o *UserAllOf) GetDrivesOk() (*[]Drive, bool)`
+`func (o *UserInline) GetDrivesOk() (*[]Drive, bool)`
 
 GetDrivesOk returns a tuple with the Drives field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDrives
 
-`func (o *UserAllOf) SetDrives(v []Drive)`
+`func (o *UserInline) SetDrives(v []Drive)`
 
 SetDrives sets Drives field to given value.
 
 ### HasDrives
 
-`func (o *UserAllOf) HasDrives() bool`
+`func (o *UserInline) HasDrives() bool`
 
 HasDrives returns a boolean if a field has been set.
 

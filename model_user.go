@@ -15,8 +15,11 @@ import (
 	"time"
 )
 
-// User struct for User
+// User Represents an Active Directory user object.
 type User struct {
+	// Read-only.
+	Id *string `json:"id,omitempty"`
+	DeletedDateTime *time.Time `json:"deletedDateTime,omitempty"`
 	// true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter.
 	AccountEnabled *bool `json:"accountEnabled,omitempty"`
 	// The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory.
@@ -89,6 +92,70 @@ func NewUser() *User {
 func NewUserWithDefaults() *User {
 	this := User{}
 	return &this
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *User) GetId() string {
+	if o == nil || o.Id == nil {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *User) HasId() bool {
+	if o != nil && o.Id != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *User) SetId(v string) {
+	o.Id = &v
+}
+
+// GetDeletedDateTime returns the DeletedDateTime field value if set, zero value otherwise.
+func (o *User) GetDeletedDateTime() time.Time {
+	if o == nil || o.DeletedDateTime == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.DeletedDateTime
+}
+
+// GetDeletedDateTimeOk returns a tuple with the DeletedDateTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetDeletedDateTimeOk() (*time.Time, bool) {
+	if o == nil || o.DeletedDateTime == nil {
+		return nil, false
+	}
+	return o.DeletedDateTime, true
+}
+
+// HasDeletedDateTime returns a boolean if a field has been set.
+func (o *User) HasDeletedDateTime() bool {
+	if o != nil && o.DeletedDateTime != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDeletedDateTime gets a reference to the given time.Time and assigns it to the DeletedDateTime field.
+func (o *User) SetDeletedDateTime(v time.Time) {
+	o.DeletedDateTime = &v
 }
 
 // GetAccountEnabled returns the AccountEnabled field value if set, zero value otherwise.
@@ -989,6 +1056,12 @@ func (o *User) SetDrives(v []Drive) {
 
 func (o User) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
+	}
+	if o.DeletedDateTime != nil {
+		toSerialize["deletedDateTime"] = o.DeletedDateTime
+	}
 	if o.AccountEnabled != nil {
 		toSerialize["accountEnabled"] = o.AccountEnabled
 	}

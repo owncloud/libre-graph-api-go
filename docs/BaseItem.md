@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **string** | Read-only. | [optional] [readonly] 
 **CreatedBy** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
 **CreatedDateTime** | Pointer to **time.Time** | Date and time of item creation. Read-only. | [optional] [readonly] 
 **Description** | Pointer to **string** | Provides a user-visible description of the item. Optional. | [optional] 
@@ -34,6 +35,31 @@ will change when the set of required properties is changed
 NewBaseItemWithDefaults instantiates a new BaseItem object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *BaseItem) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *BaseItem) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *BaseItem) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *BaseItem) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetCreatedBy
 

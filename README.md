@@ -78,12 +78,12 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DrivesApi* | [**DrivesCreateDrive**](docs/DrivesApi.md#drivescreatedrive) | **Post** /drives | Create a new navigation property of a specific drive
-*DrivesApi* | [**DrivesDeleteDrive**](docs/DrivesApi.md#drivesdeletedrive) | **Delete** /drives/{drive-id} | Delete a specific navigation property drive
+*DrivesApi* | [**DrivesCreateDrive**](docs/DrivesApi.md#drivescreatedrive) | **Post** /drives | Create a new space of a specific type
+*DrivesApi* | [**DrivesDeleteDrive**](docs/DrivesApi.md#drivesdeletedrive) | **Delete** /drives/{drive-id} | Delete a specific space
 *DrivesApi* | [**DrivesGetDrive**](docs/DrivesApi.md#drivesgetdrive) | **Get** /drives/{drive-id} | Get drive by id
-*DrivesApi* | [**DrivesUpdateDrive**](docs/DrivesApi.md#drivesupdatedrive) | **Patch** /drives/{drive-id} | Update the navigation property of a specific drive
-*MeDriveApi* | [**MeDriveGetHome**](docs/MeDriveApi.md#medrivegethome) | **Get** /me/drive | Get home drive for user
-*MeDriveRootApi* | [**MeDriveGetRoot**](docs/MeDriveRootApi.md#medrivegetroot) | **Get** /me/drive/root | Get root from home drive
+*DrivesApi* | [**DrivesUpdateDrive**](docs/DrivesApi.md#drivesupdatedrive) | **Patch** /drives/{drive-id} | Update the space
+*MeDriveApi* | [**MeDriveGetHome**](docs/MeDriveApi.md#medrivegethome) | **Get** /me/drive | Get personal space for user
+*MeDriveRootApi* | [**MeDriveGetRoot**](docs/MeDriveRootApi.md#medrivegetroot) | **Get** /me/drive/root | Get root from personal space
 *MeDriveRootChildrenApi* | [**MeDriveRootGetChildren**](docs/MeDriveRootChildrenApi.md#medriverootgetchildren) | **Get** /me/drive/root/children | Get children from drive
 *MeDrivesApi* | [**MeListDrives**](docs/MeDrivesApi.md#melistdrives) | **Get** /me/drives | Get drives from me
 
@@ -91,16 +91,16 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [BaseItem](docs/BaseItem.md)
- - [BaseItemAllOf](docs/BaseItemAllOf.md)
- - [CollectionOfDrive](docs/CollectionOfDrive.md)
+ - [BaseItemInline](docs/BaseItemInline.md)
  - [CollectionOfDriveItems](docs/CollectionOfDriveItems.md)
+ - [CollectionOfDrives](docs/CollectionOfDrives.md)
  - [Deleted](docs/Deleted.md)
  - [DirectoryObject](docs/DirectoryObject.md)
- - [DirectoryObjectAllOf](docs/DirectoryObjectAllOf.md)
+ - [DirectoryObjectInline](docs/DirectoryObjectInline.md)
  - [Drive](docs/Drive.md)
- - [DriveAllOf](docs/DriveAllOf.md)
+ - [DriveInline](docs/DriveInline.md)
  - [DriveItem](docs/DriveItem.md)
- - [DriveItemAllOf](docs/DriveItemAllOf.md)
+ - [DriveItemInline](docs/DriveItemInline.md)
  - [Entity](docs/Entity.md)
  - [FileSystemInfo](docs/FileSystemInfo.md)
  - [Folder](docs/Folder.md)
@@ -116,7 +116,7 @@ Class | Method | HTTP request | Description
  - [OpenGraphFile](docs/OpenGraphFile.md)
  - [Quota](docs/Quota.md)
  - [User](docs/User.md)
- - [UserAllOf](docs/UserAllOf.md)
+ - [UserInline](docs/UserInline.md)
 
 
 ## Documentation For Authorization

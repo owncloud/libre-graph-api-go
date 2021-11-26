@@ -15,8 +15,10 @@ import (
 	"time"
 )
 
-// DirectoryObject struct for DirectoryObject
+// DirectoryObject Represents an Active Directory object. The directoryObject type is the base type for many other directory entity types.
 type DirectoryObject struct {
+	// Read-only.
+	Id *string `json:"id,omitempty"`
 	DeletedDateTime *time.Time `json:"deletedDateTime,omitempty"`
 }
 
@@ -35,6 +37,38 @@ func NewDirectoryObject() *DirectoryObject {
 func NewDirectoryObjectWithDefaults() *DirectoryObject {
 	this := DirectoryObject{}
 	return &this
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *DirectoryObject) GetId() string {
+	if o == nil || o.Id == nil {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DirectoryObject) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *DirectoryObject) HasId() bool {
+	if o != nil && o.Id != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *DirectoryObject) SetId(v string) {
+	o.Id = &v
 }
 
 // GetDeletedDateTime returns the DeletedDateTime field value if set, zero value otherwise.
@@ -71,6 +105,9 @@ func (o *DirectoryObject) SetDeletedDateTime(v time.Time) {
 
 func (o DirectoryObject) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
+	}
 	if o.DeletedDateTime != nil {
 		toSerialize["deletedDateTime"] = o.DeletedDateTime
 	}
