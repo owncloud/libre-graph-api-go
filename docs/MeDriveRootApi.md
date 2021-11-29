@@ -4,13 +4,13 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MeDriveGetRoot**](MeDriveRootApi.md#MeDriveGetRoot) | **Get** /me/drive/root | Get root from personal space
+[**HomeGetRoot**](MeDriveRootApi.md#HomeGetRoot) | **Get** /me/drive/root | Get root from personal space
 
 
 
-## MeDriveGetRoot
+## HomeGetRoot
 
-> DriveItem MeDriveGetRoot(ctx).Execute()
+> DriveItem HomeGetRoot(ctx).Execute()
 
 Get root from personal space
 
@@ -30,13 +30,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MeDriveRootApi.MeDriveGetRoot(context.Background()).Execute()
+    resp, r, err := api_client.MeDriveRootApi.HomeGetRoot(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootApi.MeDriveGetRoot``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootApi.HomeGetRoot``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MeDriveGetRoot`: DriveItem
-    fmt.Fprintf(os.Stdout, "Response from `MeDriveRootApi.MeDriveGetRoot`: %v\n", resp)
+    // response from `HomeGetRoot`: DriveItem
+    fmt.Fprintf(os.Stdout, "Response from `MeDriveRootApi.HomeGetRoot`: %v\n", resp)
 }
 ```
 
@@ -46,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiMeDriveGetRootRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiHomeGetRootRequest struct via the builder pattern
 
 
 ### Return type

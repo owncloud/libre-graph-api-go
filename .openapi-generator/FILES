@@ -3,6 +3,7 @@
 README.md
 api/openapi.yaml
 api_drives.go
+api_drives_root.go
 api_me_drive.go
 api_me_drive_root.go
 api_me_drive_root_children.go
@@ -21,6 +22,7 @@ docs/DriveInline.md
 docs/DriveItem.md
 docs/DriveItemInline.md
 docs/DrivesApi.md
+docs/DrivesRootApi.md
 docs/Entity.md
 docs/FileSystemInfo.md
 docs/Folder.md

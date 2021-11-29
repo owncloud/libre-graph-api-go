@@ -26,24 +26,24 @@ var (
 // MeDriveApiService MeDriveApi service
 type MeDriveApiService service
 
-type ApiMeDriveGetHomeRequest struct {
+type ApiGetHomeRequest struct {
 	ctx _context.Context
 	ApiService *MeDriveApiService
 }
 
 
-func (r ApiMeDriveGetHomeRequest) Execute() (Drive, *_nethttp.Response, error) {
-	return r.ApiService.MeDriveGetHomeExecute(r)
+func (r ApiGetHomeRequest) Execute() (Drive, *_nethttp.Response, error) {
+	return r.ApiService.GetHomeExecute(r)
 }
 
 /*
-MeDriveGetHome Get personal space for user
+GetHome Get personal space for user
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMeDriveGetHomeRequest
+ @return ApiGetHomeRequest
 */
-func (a *MeDriveApiService) MeDriveGetHome(ctx _context.Context) ApiMeDriveGetHomeRequest {
-	return ApiMeDriveGetHomeRequest{
+func (a *MeDriveApiService) GetHome(ctx _context.Context) ApiGetHomeRequest {
+	return ApiGetHomeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -51,7 +51,7 @@ func (a *MeDriveApiService) MeDriveGetHome(ctx _context.Context) ApiMeDriveGetHo
 
 // Execute executes the request
 //  @return Drive
-func (a *MeDriveApiService) MeDriveGetHomeExecute(r ApiMeDriveGetHomeRequest) (Drive, *_nethttp.Response, error) {
+func (a *MeDriveApiService) GetHomeExecute(r ApiGetHomeRequest) (Drive, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -59,7 +59,7 @@ func (a *MeDriveApiService) MeDriveGetHomeExecute(r ApiMeDriveGetHomeRequest) (D
 		localVarReturnValue  Drive
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveApiService.MeDriveGetHome")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveApiService.GetHome")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}

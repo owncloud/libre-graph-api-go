@@ -27,44 +27,44 @@ var (
 // DrivesApiService DrivesApi service
 type DrivesApiService service
 
-type ApiDrivesCreateDriveRequest struct {
+type ApiCreateDriveRequest struct {
 	ctx _context.Context
 	ApiService *DrivesApiService
 	drive *Drive
 }
 
 // New space property values
-func (r ApiDrivesCreateDriveRequest) Drive(drive Drive) ApiDrivesCreateDriveRequest {
+func (r ApiCreateDriveRequest) Drive(drive Drive) ApiCreateDriveRequest {
 	r.drive = &drive
 	return r
 }
 
-func (r ApiDrivesCreateDriveRequest) Execute() (*_nethttp.Response, error) {
-	return r.ApiService.DrivesCreateDriveExecute(r)
+func (r ApiCreateDriveRequest) Execute() (*_nethttp.Response, error) {
+	return r.ApiService.CreateDriveExecute(r)
 }
 
 /*
-DrivesCreateDrive Create a new space of a specific type
+CreateDrive Create a new space of a specific type
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDrivesCreateDriveRequest
+ @return ApiCreateDriveRequest
 */
-func (a *DrivesApiService) DrivesCreateDrive(ctx _context.Context) ApiDrivesCreateDriveRequest {
-	return ApiDrivesCreateDriveRequest{
+func (a *DrivesApiService) CreateDrive(ctx _context.Context) ApiCreateDriveRequest {
+	return ApiCreateDriveRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *DrivesApiService) DrivesCreateDriveExecute(r ApiDrivesCreateDriveRequest) (*_nethttp.Response, error) {
+func (a *DrivesApiService) CreateDriveExecute(r ApiCreateDriveRequest) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.DrivesCreateDrive")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.CreateDrive")
 	if err != nil {
 		return nil, GenericOpenAPIError{error: err.Error()}
 	}
@@ -132,7 +132,7 @@ func (a *DrivesApiService) DrivesCreateDriveExecute(r ApiDrivesCreateDriveReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiDrivesDeleteDriveRequest struct {
+type ApiDeleteDriveRequest struct {
 	ctx _context.Context
 	ApiService *DrivesApiService
 	driveId string
@@ -140,24 +140,24 @@ type ApiDrivesDeleteDriveRequest struct {
 }
 
 // ETag
-func (r ApiDrivesDeleteDriveRequest) IfMatch(ifMatch string) ApiDrivesDeleteDriveRequest {
+func (r ApiDeleteDriveRequest) IfMatch(ifMatch string) ApiDeleteDriveRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
 
-func (r ApiDrivesDeleteDriveRequest) Execute() (*_nethttp.Response, error) {
-	return r.ApiService.DrivesDeleteDriveExecute(r)
+func (r ApiDeleteDriveRequest) Execute() (*_nethttp.Response, error) {
+	return r.ApiService.DeleteDriveExecute(r)
 }
 
 /*
-DrivesDeleteDrive Delete a specific space
+DeleteDrive Delete a specific space
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param driveId key: id of drive
- @return ApiDrivesDeleteDriveRequest
+ @return ApiDeleteDriveRequest
 */
-func (a *DrivesApiService) DrivesDeleteDrive(ctx _context.Context, driveId string) ApiDrivesDeleteDriveRequest {
-	return ApiDrivesDeleteDriveRequest{
+func (a *DrivesApiService) DeleteDrive(ctx _context.Context, driveId string) ApiDeleteDriveRequest {
+	return ApiDeleteDriveRequest{
 		ApiService: a,
 		ctx: ctx,
 		driveId: driveId,
@@ -165,14 +165,14 @@ func (a *DrivesApiService) DrivesDeleteDrive(ctx _context.Context, driveId strin
 }
 
 // Execute executes the request
-func (a *DrivesApiService) DrivesDeleteDriveExecute(r ApiDrivesDeleteDriveRequest) (*_nethttp.Response, error) {
+func (a *DrivesApiService) DeleteDriveExecute(r ApiDeleteDriveRequest) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.DrivesDeleteDrive")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.DeleteDrive")
 	if err != nil {
 		return nil, GenericOpenAPIError{error: err.Error()}
 	}
@@ -239,7 +239,7 @@ func (a *DrivesApiService) DrivesDeleteDriveExecute(r ApiDrivesDeleteDriveReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiDrivesGetDriveRequest struct {
+type ApiGetDriveRequest struct {
 	ctx _context.Context
 	ApiService *DrivesApiService
 	driveId string
@@ -248,29 +248,29 @@ type ApiDrivesGetDriveRequest struct {
 }
 
 // Select properties to be returned
-func (r ApiDrivesGetDriveRequest) Select_(select_ []string) ApiDrivesGetDriveRequest {
+func (r ApiGetDriveRequest) Select_(select_ []string) ApiGetDriveRequest {
 	r.select_ = &select_
 	return r
 }
 // Expand related entities
-func (r ApiDrivesGetDriveRequest) Expand(expand []string) ApiDrivesGetDriveRequest {
+func (r ApiGetDriveRequest) Expand(expand []string) ApiGetDriveRequest {
 	r.expand = &expand
 	return r
 }
 
-func (r ApiDrivesGetDriveRequest) Execute() (Drive, *_nethttp.Response, error) {
-	return r.ApiService.DrivesGetDriveExecute(r)
+func (r ApiGetDriveRequest) Execute() (Drive, *_nethttp.Response, error) {
+	return r.ApiService.GetDriveExecute(r)
 }
 
 /*
-DrivesGetDrive Get drive by id
+GetDrive Get drive by id
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param driveId key: id of drive
- @return ApiDrivesGetDriveRequest
+ @return ApiGetDriveRequest
 */
-func (a *DrivesApiService) DrivesGetDrive(ctx _context.Context, driveId string) ApiDrivesGetDriveRequest {
-	return ApiDrivesGetDriveRequest{
+func (a *DrivesApiService) GetDrive(ctx _context.Context, driveId string) ApiGetDriveRequest {
+	return ApiGetDriveRequest{
 		ApiService: a,
 		ctx: ctx,
 		driveId: driveId,
@@ -279,7 +279,7 @@ func (a *DrivesApiService) DrivesGetDrive(ctx _context.Context, driveId string) 
 
 // Execute executes the request
 //  @return Drive
-func (a *DrivesApiService) DrivesGetDriveExecute(r ApiDrivesGetDriveRequest) (Drive, *_nethttp.Response, error) {
+func (a *DrivesApiService) GetDriveExecute(r ApiGetDriveRequest) (Drive, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -287,7 +287,7 @@ func (a *DrivesApiService) DrivesGetDriveExecute(r ApiDrivesGetDriveRequest) (Dr
 		localVarReturnValue  Drive
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.DrivesGetDrive")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.GetDrive")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
@@ -366,7 +366,7 @@ func (a *DrivesApiService) DrivesGetDriveExecute(r ApiDrivesGetDriveRequest) (Dr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDrivesUpdateDriveRequest struct {
+type ApiUpdateDriveRequest struct {
 	ctx _context.Context
 	ApiService *DrivesApiService
 	driveId string
@@ -374,24 +374,24 @@ type ApiDrivesUpdateDriveRequest struct {
 }
 
 // New space values
-func (r ApiDrivesUpdateDriveRequest) Drive(drive Drive) ApiDrivesUpdateDriveRequest {
+func (r ApiUpdateDriveRequest) Drive(drive Drive) ApiUpdateDriveRequest {
 	r.drive = &drive
 	return r
 }
 
-func (r ApiDrivesUpdateDriveRequest) Execute() (*_nethttp.Response, error) {
-	return r.ApiService.DrivesUpdateDriveExecute(r)
+func (r ApiUpdateDriveRequest) Execute() (*_nethttp.Response, error) {
+	return r.ApiService.UpdateDriveExecute(r)
 }
 
 /*
-DrivesUpdateDrive Update the space
+UpdateDrive Update the space
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param driveId key: id of drive
- @return ApiDrivesUpdateDriveRequest
+ @return ApiUpdateDriveRequest
 */
-func (a *DrivesApiService) DrivesUpdateDrive(ctx _context.Context, driveId string) ApiDrivesUpdateDriveRequest {
-	return ApiDrivesUpdateDriveRequest{
+func (a *DrivesApiService) UpdateDrive(ctx _context.Context, driveId string) ApiUpdateDriveRequest {
+	return ApiUpdateDriveRequest{
 		ApiService: a,
 		ctx: ctx,
 		driveId: driveId,
@@ -399,14 +399,14 @@ func (a *DrivesApiService) DrivesUpdateDrive(ctx _context.Context, driveId strin
 }
 
 // Execute executes the request
-func (a *DrivesApiService) DrivesUpdateDriveExecute(r ApiDrivesUpdateDriveRequest) (*_nethttp.Response, error) {
+func (a *DrivesApiService) UpdateDriveExecute(r ApiUpdateDriveRequest) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.DrivesUpdateDrive")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.UpdateDrive")
 	if err != nil {
 		return nil, GenericOpenAPIError{error: err.Error()}
 	}

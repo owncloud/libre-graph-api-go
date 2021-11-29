@@ -26,24 +26,24 @@ var (
 // MeDriveRootApiService MeDriveRootApi service
 type MeDriveRootApiService service
 
-type ApiMeDriveGetRootRequest struct {
+type ApiHomeGetRootRequest struct {
 	ctx _context.Context
 	ApiService *MeDriveRootApiService
 }
 
 
-func (r ApiMeDriveGetRootRequest) Execute() (DriveItem, *_nethttp.Response, error) {
-	return r.ApiService.MeDriveGetRootExecute(r)
+func (r ApiHomeGetRootRequest) Execute() (DriveItem, *_nethttp.Response, error) {
+	return r.ApiService.HomeGetRootExecute(r)
 }
 
 /*
-MeDriveGetRoot Get root from personal space
+HomeGetRoot Get root from personal space
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMeDriveGetRootRequest
+ @return ApiHomeGetRootRequest
 */
-func (a *MeDriveRootApiService) MeDriveGetRoot(ctx _context.Context) ApiMeDriveGetRootRequest {
-	return ApiMeDriveGetRootRequest{
+func (a *MeDriveRootApiService) HomeGetRoot(ctx _context.Context) ApiHomeGetRootRequest {
+	return ApiHomeGetRootRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -51,7 +51,7 @@ func (a *MeDriveRootApiService) MeDriveGetRoot(ctx _context.Context) ApiMeDriveG
 
 // Execute executes the request
 //  @return DriveItem
-func (a *MeDriveRootApiService) MeDriveGetRootExecute(r ApiMeDriveGetRootRequest) (DriveItem, *_nethttp.Response, error) {
+func (a *MeDriveRootApiService) HomeGetRootExecute(r ApiHomeGetRootRequest) (DriveItem, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -59,7 +59,7 @@ func (a *MeDriveRootApiService) MeDriveGetRootExecute(r ApiMeDriveGetRootRequest
 		localVarReturnValue  DriveItem
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootApiService.MeDriveGetRoot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootApiService.HomeGetRoot")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}

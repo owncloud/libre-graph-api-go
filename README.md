@@ -78,14 +78,15 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DrivesApi* | [**DrivesCreateDrive**](docs/DrivesApi.md#drivescreatedrive) | **Post** /drives | Create a new space of a specific type
-*DrivesApi* | [**DrivesDeleteDrive**](docs/DrivesApi.md#drivesdeletedrive) | **Delete** /drives/{drive-id} | Delete a specific space
-*DrivesApi* | [**DrivesGetDrive**](docs/DrivesApi.md#drivesgetdrive) | **Get** /drives/{drive-id} | Get drive by id
-*DrivesApi* | [**DrivesUpdateDrive**](docs/DrivesApi.md#drivesupdatedrive) | **Patch** /drives/{drive-id} | Update the space
-*MeDriveApi* | [**MeDriveGetHome**](docs/MeDriveApi.md#medrivegethome) | **Get** /me/drive | Get personal space for user
-*MeDriveRootApi* | [**MeDriveGetRoot**](docs/MeDriveRootApi.md#medrivegetroot) | **Get** /me/drive/root | Get root from personal space
-*MeDriveRootChildrenApi* | [**MeDriveRootGetChildren**](docs/MeDriveRootChildrenApi.md#medriverootgetchildren) | **Get** /me/drive/root/children | Get children from drive
-*MeDrivesApi* | [**MeListDrives**](docs/MeDrivesApi.md#melistdrives) | **Get** /me/drives | Get drives from me
+*DrivesApi* | [**CreateDrive**](docs/DrivesApi.md#createdrive) | **Post** /drives | Create a new space of a specific type
+*DrivesApi* | [**DeleteDrive**](docs/DrivesApi.md#deletedrive) | **Delete** /drives/{drive-id} | Delete a specific space
+*DrivesApi* | [**GetDrive**](docs/DrivesApi.md#getdrive) | **Get** /drives/{drive-id} | Get drive by id
+*DrivesApi* | [**UpdateDrive**](docs/DrivesApi.md#updatedrive) | **Patch** /drives/{drive-id} | Update the space
+*DrivesRootApi* | [**GetRoot**](docs/DrivesRootApi.md#getroot) | **Get** /drives/{drive-id}/root | Get root from arbitrary space
+*MeDriveApi* | [**GetHome**](docs/MeDriveApi.md#gethome) | **Get** /me/drive | Get personal space for user
+*MeDriveRootApi* | [**HomeGetRoot**](docs/MeDriveRootApi.md#homegetroot) | **Get** /me/drive/root | Get root from personal space
+*MeDriveRootChildrenApi* | [**HomeGetChildren**](docs/MeDriveRootChildrenApi.md#homegetchildren) | **Get** /me/drive/root/children | Get children from drive
+*MeDrivesApi* | [**ListMyDrives**](docs/MeDrivesApi.md#listmydrives) | **Get** /me/drives | Get drives from me
 
 
 ## Documentation For Models

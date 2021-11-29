@@ -26,7 +26,7 @@ var (
 // MeDrivesApiService MeDrivesApi service
 type MeDrivesApiService service
 
-type ApiMeListDrivesRequest struct {
+type ApiListMyDrivesRequest struct {
 	ctx _context.Context
 	ApiService *MeDrivesApiService
 	top *int32
@@ -39,53 +39,53 @@ type ApiMeListDrivesRequest struct {
 }
 
 // Show only the first n items
-func (r ApiMeListDrivesRequest) Top(top int32) ApiMeListDrivesRequest {
+func (r ApiListMyDrivesRequest) Top(top int32) ApiListMyDrivesRequest {
 	r.top = &top
 	return r
 }
 // Skip the first n items
-func (r ApiMeListDrivesRequest) Skip(skip int32) ApiMeListDrivesRequest {
+func (r ApiListMyDrivesRequest) Skip(skip int32) ApiListMyDrivesRequest {
 	r.skip = &skip
 	return r
 }
 // Search items by search phrases
-func (r ApiMeListDrivesRequest) Search(search string) ApiMeListDrivesRequest {
+func (r ApiListMyDrivesRequest) Search(search string) ApiListMyDrivesRequest {
 	r.search = &search
 	return r
 }
 // Filter items by property values
-func (r ApiMeListDrivesRequest) Filter(filter string) ApiMeListDrivesRequest {
+func (r ApiListMyDrivesRequest) Filter(filter string) ApiListMyDrivesRequest {
 	r.filter = &filter
 	return r
 }
 // Include count of items
-func (r ApiMeListDrivesRequest) Count(count bool) ApiMeListDrivesRequest {
+func (r ApiListMyDrivesRequest) Count(count bool) ApiListMyDrivesRequest {
 	r.count = &count
 	return r
 }
 // Select properties to be returned
-func (r ApiMeListDrivesRequest) Select_(select_ []string) ApiMeListDrivesRequest {
+func (r ApiListMyDrivesRequest) Select_(select_ []string) ApiListMyDrivesRequest {
 	r.select_ = &select_
 	return r
 }
 // Expand related entities
-func (r ApiMeListDrivesRequest) Expand(expand []string) ApiMeListDrivesRequest {
+func (r ApiListMyDrivesRequest) Expand(expand []string) ApiListMyDrivesRequest {
 	r.expand = &expand
 	return r
 }
 
-func (r ApiMeListDrivesRequest) Execute() (CollectionOfDrives, *_nethttp.Response, error) {
-	return r.ApiService.MeListDrivesExecute(r)
+func (r ApiListMyDrivesRequest) Execute() (CollectionOfDrives, *_nethttp.Response, error) {
+	return r.ApiService.ListMyDrivesExecute(r)
 }
 
 /*
-MeListDrives Get drives from me
+ListMyDrives Get drives from me
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMeListDrivesRequest
+ @return ApiListMyDrivesRequest
 */
-func (a *MeDrivesApiService) MeListDrives(ctx _context.Context) ApiMeListDrivesRequest {
-	return ApiMeListDrivesRequest{
+func (a *MeDrivesApiService) ListMyDrives(ctx _context.Context) ApiListMyDrivesRequest {
+	return ApiListMyDrivesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -93,7 +93,7 @@ func (a *MeDrivesApiService) MeListDrives(ctx _context.Context) ApiMeListDrivesR
 
 // Execute executes the request
 //  @return CollectionOfDrives
-func (a *MeDrivesApiService) MeListDrivesExecute(r ApiMeListDrivesRequest) (CollectionOfDrives, *_nethttp.Response, error) {
+func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (CollectionOfDrives, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -101,7 +101,7 @@ func (a *MeDrivesApiService) MeListDrivesExecute(r ApiMeListDrivesRequest) (Coll
 		localVarReturnValue  CollectionOfDrives
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDrivesApiService.MeListDrives")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDrivesApiService.ListMyDrives")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}

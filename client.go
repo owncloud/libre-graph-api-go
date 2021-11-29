@@ -51,6 +51,8 @@ type APIClient struct {
 
 	DrivesApi *DrivesApiService
 
+	DrivesRootApi *DrivesRootApiService
+
 	MeDriveApi *MeDriveApiService
 
 	MeDriveRootApi *MeDriveRootApiService
@@ -77,6 +79,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 
 	// API Services
 	c.DrivesApi = (*DrivesApiService)(&c.common)
+	c.DrivesRootApi = (*DrivesRootApiService)(&c.common)
 	c.MeDriveApi = (*MeDriveApiService)(&c.common)
 	c.MeDriveRootApi = (*MeDriveRootApiService)(&c.common)
 	c.MeDriveRootChildrenApi = (*MeDriveRootChildrenApiService)(&c.common)

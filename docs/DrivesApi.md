@@ -4,16 +4,16 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DrivesCreateDrive**](DrivesApi.md#DrivesCreateDrive) | **Post** /drives | Create a new space of a specific type
-[**DrivesDeleteDrive**](DrivesApi.md#DrivesDeleteDrive) | **Delete** /drives/{drive-id} | Delete a specific space
-[**DrivesGetDrive**](DrivesApi.md#DrivesGetDrive) | **Get** /drives/{drive-id} | Get drive by id
-[**DrivesUpdateDrive**](DrivesApi.md#DrivesUpdateDrive) | **Patch** /drives/{drive-id} | Update the space
+[**CreateDrive**](DrivesApi.md#CreateDrive) | **Post** /drives | Create a new space of a specific type
+[**DeleteDrive**](DrivesApi.md#DeleteDrive) | **Delete** /drives/{drive-id} | Delete a specific space
+[**GetDrive**](DrivesApi.md#GetDrive) | **Get** /drives/{drive-id} | Get drive by id
+[**UpdateDrive**](DrivesApi.md#UpdateDrive) | **Patch** /drives/{drive-id} | Update the space
 
 
 
-## DrivesCreateDrive
+## CreateDrive
 
-> DrivesCreateDrive(ctx).Drive(drive).Execute()
+> CreateDrive(ctx).Drive(drive).Execute()
 
 Create a new space of a specific type
 
@@ -34,9 +34,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DrivesApi.DrivesCreateDrive(context.Background()).Drive(drive).Execute()
+    resp, r, err := api_client.DrivesApi.CreateDrive(context.Background()).Drive(drive).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.DrivesCreateDrive``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.CreateDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDrivesCreateDriveRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateDriveRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -73,9 +73,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DrivesDeleteDrive
+## DeleteDrive
 
-> DrivesDeleteDrive(ctx, driveId).IfMatch(ifMatch).Execute()
+> DeleteDrive(ctx, driveId).IfMatch(ifMatch).Execute()
 
 Delete a specific space
 
@@ -97,9 +97,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DrivesApi.DrivesDeleteDrive(context.Background(), driveId).IfMatch(ifMatch).Execute()
+    resp, r, err := api_client.DrivesApi.DeleteDrive(context.Background(), driveId).IfMatch(ifMatch).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.DrivesDeleteDrive``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.DeleteDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDrivesDeleteDriveRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteDriveRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -141,9 +141,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DrivesGetDrive
+## GetDrive
 
-> Drive DrivesGetDrive(ctx, driveId).Select_(select_).Expand(expand).Execute()
+> Drive GetDrive(ctx, driveId).Select_(select_).Expand(expand).Execute()
 
 Get drive by id
 
@@ -166,13 +166,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DrivesApi.DrivesGetDrive(context.Background(), driveId).Select_(select_).Expand(expand).Execute()
+    resp, r, err := api_client.DrivesApi.GetDrive(context.Background(), driveId).Select_(select_).Expand(expand).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.DrivesGetDrive``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.GetDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DrivesGetDrive`: Drive
-    fmt.Fprintf(os.Stdout, "Response from `DrivesApi.DrivesGetDrive`: %v\n", resp)
+    // response from `GetDrive`: Drive
+    fmt.Fprintf(os.Stdout, "Response from `DrivesApi.GetDrive`: %v\n", resp)
 }
 ```
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDrivesGetDriveRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetDriveRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -213,9 +213,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DrivesUpdateDrive
+## UpdateDrive
 
-> DrivesUpdateDrive(ctx, driveId).Drive(drive).Execute()
+> UpdateDrive(ctx, driveId).Drive(drive).Execute()
 
 Update the space
 
@@ -237,9 +237,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DrivesApi.DrivesUpdateDrive(context.Background(), driveId).Drive(drive).Execute()
+    resp, r, err := api_client.DrivesApi.UpdateDrive(context.Background(), driveId).Drive(drive).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.DrivesUpdateDrive``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.UpdateDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDrivesUpdateDriveRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateDriveRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

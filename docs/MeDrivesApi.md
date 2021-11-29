@@ -4,13 +4,13 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MeListDrives**](MeDrivesApi.md#MeListDrives) | **Get** /me/drives | Get drives from me
+[**ListMyDrives**](MeDrivesApi.md#ListMyDrives) | **Get** /me/drives | Get drives from me
 
 
 
-## MeListDrives
+## ListMyDrives
 
-> CollectionOfDrives MeListDrives(ctx).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
+> CollectionOfDrives ListMyDrives(ctx).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
 
 Get drives from me
 
@@ -37,13 +37,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MeDrivesApi.MeListDrives(context.Background()).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
+    resp, r, err := api_client.MeDrivesApi.ListMyDrives(context.Background()).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.MeListDrives``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.ListMyDrives``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MeListDrives`: CollectionOfDrives
-    fmt.Fprintf(os.Stdout, "Response from `MeDrivesApi.MeListDrives`: %v\n", resp)
+    // response from `ListMyDrives`: CollectionOfDrives
+    fmt.Fprintf(os.Stdout, "Response from `MeDrivesApi.ListMyDrives`: %v\n", resp)
 }
 ```
 
@@ -53,7 +53,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiMeListDrivesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListMyDrivesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -23,48 +23,48 @@ var (
 	_ _context.Context
 )
 
-// MeDriveRootChildrenApiService MeDriveRootChildrenApi service
-type MeDriveRootChildrenApiService service
+// DrivesRootApiService DrivesRootApi service
+type DrivesRootApiService service
 
-type ApiHomeGetChildrenRequest struct {
+type ApiGetRootRequest struct {
 	ctx _context.Context
-	ApiService *MeDriveRootChildrenApiService
+	ApiService *DrivesRootApiService
 }
 
 
-func (r ApiHomeGetChildrenRequest) Execute() (CollectionOfDriveItems, *_nethttp.Response, error) {
-	return r.ApiService.HomeGetChildrenExecute(r)
+func (r ApiGetRootRequest) Execute() (DriveItem, *_nethttp.Response, error) {
+	return r.ApiService.GetRootExecute(r)
 }
 
 /*
-HomeGetChildren Get children from drive
+GetRoot Get root from arbitrary space
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiHomeGetChildrenRequest
+ @return ApiGetRootRequest
 */
-func (a *MeDriveRootChildrenApiService) HomeGetChildren(ctx _context.Context) ApiHomeGetChildrenRequest {
-	return ApiHomeGetChildrenRequest{
+func (a *DrivesRootApiService) GetRoot(ctx _context.Context) ApiGetRootRequest {
+	return ApiGetRootRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CollectionOfDriveItems
-func (a *MeDriveRootChildrenApiService) HomeGetChildrenExecute(r ApiHomeGetChildrenRequest) (CollectionOfDriveItems, *_nethttp.Response, error) {
+//  @return DriveItem
+func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (DriveItem, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  CollectionOfDriveItems
+		localVarReturnValue  DriveItem
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootChildrenApiService.HomeGetChildren")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.GetRoot")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/me/drive/root/children"
+	localVarPath := localBasePath + "/drives/{drive-id}/root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
