@@ -3,8 +3,8 @@ info:
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-  title: Open Graph API
-  version: v0.1.0
+  title: Libre Graph API
+  version: v0.3.0
 servers:
 - description: ownCloud Infinite Scale Latest
   url: https://ocis.ocis-traefik.latest.owncloud.works/
