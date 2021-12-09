@@ -91,18 +91,11 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [BaseItem](docs/BaseItem.md)
- - [BaseItemInline](docs/BaseItemInline.md)
  - [CollectionOfDriveItems](docs/CollectionOfDriveItems.md)
  - [CollectionOfDrives](docs/CollectionOfDrives.md)
  - [Deleted](docs/Deleted.md)
- - [DirectoryObject](docs/DirectoryObject.md)
- - [DirectoryObjectInline](docs/DirectoryObjectInline.md)
  - [Drive](docs/Drive.md)
- - [DriveInline](docs/DriveInline.md)
  - [DriveItem](docs/DriveItem.md)
- - [DriveItemInline](docs/DriveItemInline.md)
- - [Entity](docs/Entity.md)
  - [FileSystemInfo](docs/FileSystemInfo.md)
  - [Folder](docs/Folder.md)
  - [FolderView](docs/FolderView.md)
@@ -117,7 +110,6 @@ Class | Method | HTTP request | Description
  - [OpenGraphFile](docs/OpenGraphFile.md)
  - [Quota](docs/Quota.md)
  - [User](docs/User.md)
- - [UserInline](docs/UserInline.md)
 
 
 ## Documentation For Authorization

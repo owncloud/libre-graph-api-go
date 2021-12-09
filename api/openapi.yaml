@@ -431,38 +431,557 @@ components:
       description: error
   schemas:
     drive:
-      allOf:
-      - $ref: '#/components/schemas/baseItem'
-      - $ref: '#/components/schemas/driveInline'
       description: Storage Space. Read-only.
-      readOnly: true
-    driveInline:
+      example:
+        owner:
+          application:
+            displayName: displayName
+            id: id
+          device:
+            displayName: displayName
+            id: id
+          user:
+            displayName: displayName
+            id: id
+        lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+        createdByUser:
+          birthday: 2000-01-23T04:56:07.000+00:00
+          country: country
+          preferredLanguage: preferredLanguage
+          mail: mail
+          city: city
+          displayName: displayName
+          companyName: companyName
+          postalCode: postalCode
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          deletedDateTime: 2000-01-23T04:56:07.000+00:00
+          legalAgeGroupClassification: legalAgeGroupClassification
+          accountEnabled: true
+          aboutMe: aboutMe
+          businessPhones:
+          - businessPhones
+          - businessPhones
+          officeLocation: officeLocation
+          surname: surname
+          id: id
+          state: state
+          department: department
+          userPrincipalName: userPrincipalName
+          mailNickname: mailNickname
+          givenName: givenName
+          mobilePhone: mobilePhone
+          streetAddress: streetAddress
+          drives:
+          - null
+          - null
+          - null
+          - null
+          - null
+          faxNumber: faxNumber
+          usageLocation: usageLocation
+          userType: userType
+          lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+        driveType: driveType
+        lastModifiedBy:
+          application:
+            displayName: displayName
+            id: id
+          device:
+            displayName: displayName
+            id: id
+          user:
+            displayName: displayName
+            id: id
+        createdDateTime: 2000-01-23T04:56:07.000+00:00
+        description: description
+        parentReference:
+          path: path
+          driveId: driveId
+          driveType: driveType
+          name: name
+          shareId: shareId
+          id: id
+        createdBy:
+          application:
+            displayName: displayName
+            id: id
+          device:
+            displayName: displayName
+            id: id
+          user:
+            displayName: displayName
+            id: id
+        webUrl: webUrl
+        quota:
+          total: 1
+          deleted: 0
+          state: state
+          used: 5
+          remaining: 6
+        root:
+          image:
+            width: 1516424369
+            height: 494379917
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          webDavUrl: webDavUrl
+          content: content
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          deleted:
+            state: state
+          file:
+            processingMetadata: true
+            hashes:
+              sha256Hash: sha256Hash
+              quickXorHash: quickXorHash
+              sha1Hash: sha1Hash
+              crc32Hash: crc32Hash
+            mimeType: mimeType
+          folder:
+            view:
+              sortOrder: sortOrder
+              viewType: viewType
+              sortBy: sortBy
+            childCount: 1210617418
+          size: 9
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          children:
+          - null
+          - null
+          webUrl: webUrl
+          root: '{}'
+          name: name
+          cTag: cTag
+          eTag: eTag
+          id: id
+          lastModifiedByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          fileSystemInfo:
+            lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+        name: name
+        eTag: eTag
+        id: id
+        items:
+        - image:
+            width: 1516424369
+            height: 494379917
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          webDavUrl: webDavUrl
+          content: content
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          deleted:
+            state: state
+          file:
+            processingMetadata: true
+            hashes:
+              sha256Hash: sha256Hash
+              quickXorHash: quickXorHash
+              sha1Hash: sha1Hash
+              crc32Hash: crc32Hash
+            mimeType: mimeType
+          folder:
+            view:
+              sortOrder: sortOrder
+              viewType: viewType
+              sortBy: sortBy
+            childCount: 1210617418
+          size: 9
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          children:
+          - null
+          - null
+          webUrl: webUrl
+          root: '{}'
+          name: name
+          cTag: cTag
+          eTag: eTag
+          id: id
+          lastModifiedByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          fileSystemInfo:
+            lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+        - image:
+            width: 1516424369
+            height: 494379917
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          webDavUrl: webDavUrl
+          content: content
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          deleted:
+            state: state
+          file:
+            processingMetadata: true
+            hashes:
+              sha256Hash: sha256Hash
+              quickXorHash: quickXorHash
+              sha1Hash: sha1Hash
+              crc32Hash: crc32Hash
+            mimeType: mimeType
+          folder:
+            view:
+              sortOrder: sortOrder
+              viewType: viewType
+              sortBy: sortBy
+            childCount: 1210617418
+          size: 9
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          children:
+          - null
+          - null
+          webUrl: webUrl
+          root: '{}'
+          name: name
+          cTag: cTag
+          eTag: eTag
+          id: id
+          lastModifiedByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          fileSystemInfo:
+            lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+        lastModifiedByUser:
+          birthday: 2000-01-23T04:56:07.000+00:00
+          country: country
+          preferredLanguage: preferredLanguage
+          mail: mail
+          city: city
+          displayName: displayName
+          companyName: companyName
+          postalCode: postalCode
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          deletedDateTime: 2000-01-23T04:56:07.000+00:00
+          legalAgeGroupClassification: legalAgeGroupClassification
+          accountEnabled: true
+          aboutMe: aboutMe
+          businessPhones:
+          - businessPhones
+          - businessPhones
+          officeLocation: officeLocation
+          surname: surname
+          id: id
+          state: state
+          department: department
+          userPrincipalName: userPrincipalName
+          mailNickname: mailNickname
+          givenName: givenName
+          mobilePhone: mobilePhone
+          streetAddress: streetAddress
+          drives:
+          - null
+          - null
+          - null
+          - null
+          - null
+          faxNumber: faxNumber
+          usageLocation: usageLocation
+          userType: userType
+          lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
       properties:
-        driveType:
-          description: Describes the type of drive represented by this resource. Values
-            are "personal" for users home spaces, "project" or "share". Read-only.
-          nullable: false
+        id:
+          description: Read-only.
           readOnly: true
           type: string
-        owner:
-          $ref: '#/components/schemas/identitySet'
-        quota:
-          $ref: '#/components/schemas/quota'
-        items:
-          description: All items contained in the drive. Read-only. Nullable.
-          items:
-            $ref: '#/components/schemas/driveItem'
-          readOnly: true
-          type: array
-        root:
-          $ref: '#/components/schemas/driveItem'
-      type: object
-    baseItem:
-      allOf:
-      - $ref: '#/components/schemas/entity'
-      - $ref: '#/components/schemas/baseItemInline'
-    baseItemInline:
-      properties:
         createdBy:
           $ref: '#/components/schemas/identitySet'
         createdDateTime:
@@ -503,16 +1022,38 @@ components:
           $ref: '#/components/schemas/user'
         lastModifiedByUser:
           $ref: '#/components/schemas/user'
-      type: object
-    entity:
-      properties:
-        id:
-          description: Read-only.
+        driveType:
+          description: Describes the type of drive represented by this resource. Values
+            are "personal" for users home spaces, "project" or "share". Read-only.
+          nullable: false
           readOnly: true
           type: string
+        owner:
+          $ref: '#/components/schemas/identitySet'
+        quota:
+          $ref: '#/components/schemas/quota'
+        items:
+          description: All items contained in the drive. Read-only. Nullable.
+          items:
+            $ref: '#/components/schemas/driveItem'
+          readOnly: true
+          type: array
+        root:
+          $ref: '#/components/schemas/driveItem'
+      readOnly: true
       type: object
     identitySet:
       description: Optional. User account.
+      example:
+        application:
+          displayName: displayName
+          id: id
+        device:
+          displayName: displayName
+          id: id
+        user:
+          displayName: displayName
+          id: id
       properties:
         application:
           $ref: '#/components/schemas/identity'
@@ -522,6 +1063,9 @@ components:
           $ref: '#/components/schemas/identity'
       type: object
     identity:
+      example:
+        displayName: displayName
+        id: id
       properties:
         displayName:
           description: The identity's display name. Note that this may not always
@@ -535,12 +1079,54 @@ components:
           type: string
       type: object
     user:
-      allOf:
-      - $ref: '#/components/schemas/directoryObject'
-      - $ref: '#/components/schemas/userInline'
       description: Represents an Active Directory user object.
-    userInline:
+      example:
+        birthday: 2000-01-23T04:56:07.000+00:00
+        country: country
+        preferredLanguage: preferredLanguage
+        mail: mail
+        city: city
+        displayName: displayName
+        companyName: companyName
+        postalCode: postalCode
+        createdDateTime: 2000-01-23T04:56:07.000+00:00
+        deletedDateTime: 2000-01-23T04:56:07.000+00:00
+        legalAgeGroupClassification: legalAgeGroupClassification
+        accountEnabled: true
+        aboutMe: aboutMe
+        businessPhones:
+        - businessPhones
+        - businessPhones
+        officeLocation: officeLocation
+        surname: surname
+        id: id
+        state: state
+        department: department
+        userPrincipalName: userPrincipalName
+        mailNickname: mailNickname
+        givenName: givenName
+        mobilePhone: mobilePhone
+        streetAddress: streetAddress
+        drives:
+        - null
+        - null
+        - null
+        - null
+        - null
+        faxNumber: faxNumber
+        usageLocation: usageLocation
+        userType: userType
+        lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
       properties:
+        id:
+          description: Read-only.
+          readOnly: true
+          type: string
+        deletedDateTime:
+          format: date-time
+          nullable: false
+          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          type: string
         accountEnabled:
           description: true if the account is enabled; otherwise, false. This property
             is required when a user is created. Returned only on $select. Supports
@@ -720,6 +1306,13 @@ components:
           type: array
       type: object
     itemReference:
+      example:
+        path: path
+        driveId: driveId
+        driveType: driveType
+        name: name
+        shareId: shareId
+        id: id
       properties:
         driveId:
           description: Unique identifier of the drive instance that contains the item.
@@ -755,13 +1348,192 @@ components:
           type: string
       type: object
     driveItem:
-      allOf:
-      - $ref: '#/components/schemas/baseItem'
-      - $ref: '#/components/schemas/driveItemInline'
       description: Reprensents a resource inside a drive. Read-only.
-      readOnly: true
-    driveItemInline:
+      example:
+        image:
+          width: 1516424369
+          height: 494379917
+        lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+        createdByUser:
+          birthday: 2000-01-23T04:56:07.000+00:00
+          country: country
+          preferredLanguage: preferredLanguage
+          mail: mail
+          city: city
+          displayName: displayName
+          companyName: companyName
+          postalCode: postalCode
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          deletedDateTime: 2000-01-23T04:56:07.000+00:00
+          legalAgeGroupClassification: legalAgeGroupClassification
+          accountEnabled: true
+          aboutMe: aboutMe
+          businessPhones:
+          - businessPhones
+          - businessPhones
+          officeLocation: officeLocation
+          surname: surname
+          id: id
+          state: state
+          department: department
+          userPrincipalName: userPrincipalName
+          mailNickname: mailNickname
+          givenName: givenName
+          mobilePhone: mobilePhone
+          streetAddress: streetAddress
+          drives:
+          - null
+          - null
+          - null
+          - null
+          - null
+          faxNumber: faxNumber
+          usageLocation: usageLocation
+          userType: userType
+          lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+        lastModifiedBy:
+          application:
+            displayName: displayName
+            id: id
+          device:
+            displayName: displayName
+            id: id
+          user:
+            displayName: displayName
+            id: id
+        createdDateTime: 2000-01-23T04:56:07.000+00:00
+        description: description
+        webDavUrl: webDavUrl
+        content: content
+        parentReference:
+          path: path
+          driveId: driveId
+          driveType: driveType
+          name: name
+          shareId: shareId
+          id: id
+        deleted:
+          state: state
+        file:
+          processingMetadata: true
+          hashes:
+            sha256Hash: sha256Hash
+            quickXorHash: quickXorHash
+            sha1Hash: sha1Hash
+            crc32Hash: crc32Hash
+          mimeType: mimeType
+        folder:
+          view:
+            sortOrder: sortOrder
+            viewType: viewType
+            sortBy: sortBy
+          childCount: 1210617418
+        size: 9
+        createdBy:
+          application:
+            displayName: displayName
+            id: id
+          device:
+            displayName: displayName
+            id: id
+          user:
+            displayName: displayName
+            id: id
+        children:
+        - null
+        - null
+        webUrl: webUrl
+        root: '{}'
+        name: name
+        cTag: cTag
+        eTag: eTag
+        id: id
+        lastModifiedByUser:
+          birthday: 2000-01-23T04:56:07.000+00:00
+          country: country
+          preferredLanguage: preferredLanguage
+          mail: mail
+          city: city
+          displayName: displayName
+          companyName: companyName
+          postalCode: postalCode
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          deletedDateTime: 2000-01-23T04:56:07.000+00:00
+          legalAgeGroupClassification: legalAgeGroupClassification
+          accountEnabled: true
+          aboutMe: aboutMe
+          businessPhones:
+          - businessPhones
+          - businessPhones
+          officeLocation: officeLocation
+          surname: surname
+          id: id
+          state: state
+          department: department
+          userPrincipalName: userPrincipalName
+          mailNickname: mailNickname
+          givenName: givenName
+          mobilePhone: mobilePhone
+          streetAddress: streetAddress
+          drives:
+          - null
+          - null
+          - null
+          - null
+          - null
+          faxNumber: faxNumber
+          usageLocation: usageLocation
+          userType: userType
+          lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+        fileSystemInfo:
+          lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
       properties:
+        id:
+          description: Read-only.
+          readOnly: true
+          type: string
+        createdBy:
+          $ref: '#/components/schemas/identitySet'
+        createdDateTime:
+          description: Date and time of item creation. Read-only.
+          format: date-time
+          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          readOnly: true
+          type: string
+        description:
+          description: Provides a user-visible description of the item. Optional.
+          nullable: false
+          type: string
+        eTag:
+          description: ETag for the item. Read-only.
+          nullable: false
+          readOnly: true
+          type: string
+        lastModifiedBy:
+          $ref: '#/components/schemas/identitySet'
+        lastModifiedDateTime:
+          description: Date and time the item was last modified. Read-only.
+          format: date-time
+          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          readOnly: true
+          type: string
+        name:
+          description: The name of the item. Read-write.
+          nullable: false
+          type: string
+        parentReference:
+          $ref: '#/components/schemas/itemReference'
+        webUrl:
+          description: URL that displays the resource in the browser. Read-only.
+          nullable: false
+          readOnly: true
+          type: string
+        createdByUser:
+          $ref: '#/components/schemas/user'
+        lastModifiedByUser:
+          $ref: '#/components/schemas/user'
         content:
           description: The content stream, if the item represents a file.
           format: base64url
@@ -806,9 +1578,12 @@ components:
             $ref: '#/components/schemas/driveItem'
           readOnly: true
           type: array
+      readOnly: true
       type: object
     deleted:
       description: Information about the deleted state of the item. Read-only.
+      example:
+        state: state
       properties:
         state:
           description: Represents the state of the deleted item.
@@ -818,6 +1593,14 @@ components:
       type: object
     openGraphFile:
       description: File metadata, if the item is a file. Read-only.
+      example:
+        processingMetadata: true
+        hashes:
+          sha256Hash: sha256Hash
+          quickXorHash: quickXorHash
+          sha1Hash: sha1Hash
+          crc32Hash: crc32Hash
+        mimeType: mimeType
       properties:
         hashes:
           $ref: '#/components/schemas/hashes'
@@ -835,6 +1618,10 @@ components:
       type: object
     fileSystemInfo:
       description: File system information on client. Read-write.
+      example:
+        lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+        lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+        createdDateTime: 2000-01-23T04:56:07.000+00:00
       properties:
         createdDateTime:
           description: The UTC date and time the file was created on a client.
@@ -858,6 +1645,12 @@ components:
       type: object
     folder:
       description: Folder metadata, if the item is a folder. Read-only.
+      example:
+        view:
+          sortOrder: sortOrder
+          viewType: viewType
+          sortBy: sortBy
+        childCount: 1210617418
       properties:
         childCount:
           description: Number of children contained immediately within this container.
@@ -871,6 +1664,9 @@ components:
       type: object
     image:
       description: Image metadata, if the item is an image. Read-only.
+      example:
+        width: 1516424369
+        height: 494379917
       properties:
         height:
           description: Optional. Height of the image, in pixels. Read-only.
@@ -892,22 +1688,14 @@ components:
       description: If this property is non-null, it indicates that the driveItem is
         the top-most driveItem in the drive.
       type: object
-    directoryObject:
-      allOf:
-      - $ref: '#/components/schemas/entity'
-      - $ref: '#/components/schemas/directoryObjectInline'
-      description: Represents an Active Directory object. The directoryObject type
-        is the base type for many other directory entity types.
-    directoryObjectInline:
-      properties:
-        deletedDateTime:
-          format: date-time
-          nullable: false
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
-          type: string
-      type: object
     quota:
       description: Optional. Information about the drive's storage space quota. Read-only.
+      example:
+        total: 1
+        deleted: 0
+        state: state
+        used: 5
+        remaining: 6
       properties:
         deleted:
           description: Total space consumed by files in the recycle bin, in bytes.
@@ -945,6 +1733,11 @@ components:
       type: object
     hashes:
       description: Hashes of the file's binary content, if available. Read-only.
+      example:
+        sha256Hash: sha256Hash
+        quickXorHash: quickXorHash
+        sha1Hash: sha1Hash
+        crc32Hash: crc32Hash
       properties:
         crc32Hash:
           description: The CRC32 value of the file (if available). Read-only.
@@ -971,6 +1764,10 @@ components:
     folderView:
       description: A collection of properties defining the recommended view for the
         folder.
+      example:
+        sortOrder: sortOrder
+        viewType: viewType
+        sortBy: sortBy
       properties:
         sortBy:
           description: The method by which the folder should be sorted.
@@ -1028,11 +1825,2726 @@ components:
       example:
         '@odata.nextLink': '@odata.nextLink'
         value:
-        - null
-        - null
-        - null
-        - null
-        - null
+        - owner:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          driveType: driveType
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          webUrl: webUrl
+          quota:
+            total: 1
+            deleted: 0
+            state: state
+            used: 5
+            remaining: 6
+          root:
+            image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          name: name
+          eTag: eTag
+          id: id
+          items:
+          - image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          - image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+        - owner:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          driveType: driveType
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          webUrl: webUrl
+          quota:
+            total: 1
+            deleted: 0
+            state: state
+            used: 5
+            remaining: 6
+          root:
+            image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          name: name
+          eTag: eTag
+          id: id
+          items:
+          - image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          - image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+        - owner:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          driveType: driveType
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          webUrl: webUrl
+          quota:
+            total: 1
+            deleted: 0
+            state: state
+            used: 5
+            remaining: 6
+          root:
+            image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          name: name
+          eTag: eTag
+          id: id
+          items:
+          - image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          - image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+        - owner:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          driveType: driveType
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          webUrl: webUrl
+          quota:
+            total: 1
+            deleted: 0
+            state: state
+            used: 5
+            remaining: 6
+          root:
+            image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          name: name
+          eTag: eTag
+          id: id
+          items:
+          - image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          - image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+        - owner:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          driveType: driveType
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          webUrl: webUrl
+          quota:
+            total: 1
+            deleted: 0
+            state: state
+            used: 5
+            remaining: 6
+          root:
+            image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          name: name
+          eTag: eTag
+          id: id
+          items:
+          - image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          - image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            webDavUrl: webDavUrl
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            deleted:
+              state: state
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 9
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            children:
+            - null
+            - null
+            webUrl: webUrl
+            root: '{}'
+            name: name
+            cTag: cTag
+            eTag: eTag
+            id: id
+            lastModifiedByUser:
+              birthday: 2000-01-23T04:56:07.000+00:00
+              country: country
+              preferredLanguage: preferredLanguage
+              mail: mail
+              city: city
+              displayName: displayName
+              companyName: companyName
+              postalCode: postalCode
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              legalAgeGroupClassification: legalAgeGroupClassification
+              accountEnabled: true
+              aboutMe: aboutMe
+              businessPhones:
+              - businessPhones
+              - businessPhones
+              officeLocation: officeLocation
+              surname: surname
+              id: id
+              state: state
+              department: department
+              userPrincipalName: userPrincipalName
+              mailNickname: mailNickname
+              givenName: givenName
+              mobilePhone: mobilePhone
+              streetAddress: streetAddress
+              drives:
+              - null
+              - null
+              - null
+              - null
+              - null
+              faxNumber: faxNumber
+              usageLocation: usageLocation
+              userType: userType
+              lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
       properties:
         value:
           items:
@@ -1047,11 +4559,701 @@ components:
       example:
         '@odata.nextLink': '@odata.nextLink'
         value:
-        - null
-        - null
-        - null
-        - null
-        - null
+        - image:
+            width: 1516424369
+            height: 494379917
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          webDavUrl: webDavUrl
+          content: content
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          deleted:
+            state: state
+          file:
+            processingMetadata: true
+            hashes:
+              sha256Hash: sha256Hash
+              quickXorHash: quickXorHash
+              sha1Hash: sha1Hash
+              crc32Hash: crc32Hash
+            mimeType: mimeType
+          folder:
+            view:
+              sortOrder: sortOrder
+              viewType: viewType
+              sortBy: sortBy
+            childCount: 1210617418
+          size: 9
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          children:
+          - null
+          - null
+          webUrl: webUrl
+          root: '{}'
+          name: name
+          cTag: cTag
+          eTag: eTag
+          id: id
+          lastModifiedByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          fileSystemInfo:
+            lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+        - image:
+            width: 1516424369
+            height: 494379917
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          webDavUrl: webDavUrl
+          content: content
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          deleted:
+            state: state
+          file:
+            processingMetadata: true
+            hashes:
+              sha256Hash: sha256Hash
+              quickXorHash: quickXorHash
+              sha1Hash: sha1Hash
+              crc32Hash: crc32Hash
+            mimeType: mimeType
+          folder:
+            view:
+              sortOrder: sortOrder
+              viewType: viewType
+              sortBy: sortBy
+            childCount: 1210617418
+          size: 9
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          children:
+          - null
+          - null
+          webUrl: webUrl
+          root: '{}'
+          name: name
+          cTag: cTag
+          eTag: eTag
+          id: id
+          lastModifiedByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          fileSystemInfo:
+            lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+        - image:
+            width: 1516424369
+            height: 494379917
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          webDavUrl: webDavUrl
+          content: content
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          deleted:
+            state: state
+          file:
+            processingMetadata: true
+            hashes:
+              sha256Hash: sha256Hash
+              quickXorHash: quickXorHash
+              sha1Hash: sha1Hash
+              crc32Hash: crc32Hash
+            mimeType: mimeType
+          folder:
+            view:
+              sortOrder: sortOrder
+              viewType: viewType
+              sortBy: sortBy
+            childCount: 1210617418
+          size: 9
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          children:
+          - null
+          - null
+          webUrl: webUrl
+          root: '{}'
+          name: name
+          cTag: cTag
+          eTag: eTag
+          id: id
+          lastModifiedByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          fileSystemInfo:
+            lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+        - image:
+            width: 1516424369
+            height: 494379917
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          webDavUrl: webDavUrl
+          content: content
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          deleted:
+            state: state
+          file:
+            processingMetadata: true
+            hashes:
+              sha256Hash: sha256Hash
+              quickXorHash: quickXorHash
+              sha1Hash: sha1Hash
+              crc32Hash: crc32Hash
+            mimeType: mimeType
+          folder:
+            view:
+              sortOrder: sortOrder
+              viewType: viewType
+              sortBy: sortBy
+            childCount: 1210617418
+          size: 9
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          children:
+          - null
+          - null
+          webUrl: webUrl
+          root: '{}'
+          name: name
+          cTag: cTag
+          eTag: eTag
+          id: id
+          lastModifiedByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          fileSystemInfo:
+            lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+        - image:
+            width: 1516424369
+            height: 494379917
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          webDavUrl: webDavUrl
+          content: content
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          deleted:
+            state: state
+          file:
+            processingMetadata: true
+            hashes:
+              sha256Hash: sha256Hash
+              quickXorHash: quickXorHash
+              sha1Hash: sha1Hash
+              crc32Hash: crc32Hash
+            mimeType: mimeType
+          folder:
+            view:
+              sortOrder: sortOrder
+              viewType: viewType
+              sortBy: sortBy
+            childCount: 1210617418
+          size: 9
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          children:
+          - null
+          - null
+          webUrl: webUrl
+          root: '{}'
+          name: name
+          cTag: cTag
+          eTag: eTag
+          id: id
+          lastModifiedByUser:
+            birthday: 2000-01-23T04:56:07.000+00:00
+            country: country
+            preferredLanguage: preferredLanguage
+            mail: mail
+            city: city
+            displayName: displayName
+            companyName: companyName
+            postalCode: postalCode
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            legalAgeGroupClassification: legalAgeGroupClassification
+            accountEnabled: true
+            aboutMe: aboutMe
+            businessPhones:
+            - businessPhones
+            - businessPhones
+            officeLocation: officeLocation
+            surname: surname
+            id: id
+            state: state
+            department: department
+            userPrincipalName: userPrincipalName
+            mailNickname: mailNickname
+            givenName: givenName
+            mobilePhone: mobilePhone
+            streetAddress: streetAddress
+            drives:
+            - null
+            - null
+            - null
+            - null
+            - null
+            faxNumber: faxNumber
+            usageLocation: usageLocation
+            userType: userType
+            lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          fileSystemInfo:
+            lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
       properties:
         value:
           items:
