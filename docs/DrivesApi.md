@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## CreateDrive
 
-> CreateDrive(ctx).Drive(drive).Execute()
+> Drive CreateDrive(ctx).Drive(drive).Execute()
 
 Create a new space of a specific type
 
@@ -39,6 +39,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.CreateDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `CreateDrive`: Drive
+    fmt.Fprintf(os.Stdout, "Response from `DrivesApi.CreateDrive`: %v\n", resp)
 }
 ```
 
@@ -57,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**Drive**](Drive.md)
 
 ### Authorization
 
@@ -215,7 +217,7 @@ No authorization required
 
 ## UpdateDrive
 
-> UpdateDrive(ctx, driveId).Drive(drive).Execute()
+> Drive UpdateDrive(ctx, driveId).Drive(drive).Execute()
 
 Update the space
 
@@ -242,6 +244,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.UpdateDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `UpdateDrive`: Drive
+    fmt.Fprintf(os.Stdout, "Response from `DrivesApi.UpdateDrive`: %v\n", resp)
 }
 ```
 
@@ -265,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**Drive**](Drive.md)
 
 ### Authorization
 

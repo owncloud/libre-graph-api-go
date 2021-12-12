@@ -137,6 +137,10 @@ paths:
         required: true
       responses:
         "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/drive'
           description: Created
         default:
           content:
@@ -280,7 +284,11 @@ paths:
         description: New space values
         required: true
       responses:
-        "204":
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/drive'
           description: Success
         default:
           content:

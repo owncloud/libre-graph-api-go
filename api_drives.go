@@ -39,7 +39,7 @@ func (r ApiCreateDriveRequest) Drive(drive Drive) ApiCreateDriveRequest {
 	return r
 }
 
-func (r ApiCreateDriveRequest) Execute() (*_nethttp.Response, error) {
+func (r ApiCreateDriveRequest) Execute() (Drive, *_nethttp.Response, error) {
 	return r.ApiService.CreateDriveExecute(r)
 }
 
@@ -57,16 +57,18 @@ func (a *DrivesApiService) CreateDrive(ctx _context.Context) ApiCreateDriveReque
 }
 
 // Execute executes the request
-func (a *DrivesApiService) CreateDriveExecute(r ApiCreateDriveRequest) (*_nethttp.Response, error) {
+//  @return Drive
+func (a *DrivesApiService) CreateDriveExecute(r ApiCreateDriveRequest) (Drive, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  Drive
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.CreateDrive")
 	if err != nil {
-		return nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/drives"
@@ -75,7 +77,7 @@ func (a *DrivesApiService) CreateDriveExecute(r ApiCreateDriveRequest) (*_nethtt
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
 	if r.drive == nil {
-		return nil, reportError("drive is required and must be specified")
+		return localVarReturnValue, nil, reportError("drive is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -99,19 +101,19 @@ func (a *DrivesApiService) CreateDriveExecute(r ApiCreateDriveRequest) (*_nethtt
 	localVarPostBody = r.drive
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -123,13 +125,22 @@ func (a *DrivesApiService) CreateDriveExecute(r ApiCreateDriveRequest) (*_nethtt
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
+				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiDeleteDriveRequest struct {
@@ -379,7 +390,7 @@ func (r ApiUpdateDriveRequest) Drive(drive Drive) ApiUpdateDriveRequest {
 	return r
 }
 
-func (r ApiUpdateDriveRequest) Execute() (*_nethttp.Response, error) {
+func (r ApiUpdateDriveRequest) Execute() (Drive, *_nethttp.Response, error) {
 	return r.ApiService.UpdateDriveExecute(r)
 }
 
@@ -399,16 +410,18 @@ func (a *DrivesApiService) UpdateDrive(ctx _context.Context, driveId string) Api
 }
 
 // Execute executes the request
-func (a *DrivesApiService) UpdateDriveExecute(r ApiUpdateDriveRequest) (*_nethttp.Response, error) {
+//  @return Drive
+func (a *DrivesApiService) UpdateDriveExecute(r ApiUpdateDriveRequest) (Drive, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  Drive
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.UpdateDrive")
 	if err != nil {
-		return nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/drives/{drive-id}"
@@ -418,7 +431,7 @@ func (a *DrivesApiService) UpdateDriveExecute(r ApiUpdateDriveRequest) (*_nethtt
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
 	if r.drive == nil {
-		return nil, reportError("drive is required and must be specified")
+		return localVarReturnValue, nil, reportError("drive is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -442,19 +455,19 @@ func (a *DrivesApiService) UpdateDriveExecute(r ApiUpdateDriveRequest) (*_nethtt
 	localVarPostBody = r.drive
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -466,11 +479,20 @@ func (a *DrivesApiService) UpdateDriveExecute(r ApiUpdateDriveRequest) (*_nethtt
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
+				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
