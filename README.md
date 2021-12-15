@@ -83,22 +83,36 @@ Class | Method | HTTP request | Description
 *DrivesApi* | [**GetDrive**](docs/DrivesApi.md#getdrive) | **Get** /drives/{drive-id} | Get drive by id
 *DrivesApi* | [**UpdateDrive**](docs/DrivesApi.md#updatedrive) | **Patch** /drives/{drive-id} | Update the space
 *DrivesRootApi* | [**GetRoot**](docs/DrivesRootApi.md#getroot) | **Get** /drives/{drive-id}/root | Get root from arbitrary space
+*GroupApi* | [**DeleteGroup**](docs/GroupApi.md#deletegroup) | **Delete** /groups/{group-id} | Delete entity from groups
+*GroupApi* | [**GetGroup**](docs/GroupApi.md#getgroup) | **Get** /groups/{group-id} | Get entity from groups by key
+*GroupApi* | [**UpdateGroup**](docs/GroupApi.md#updategroup) | **Patch** /groups/{group-id} | Update entity in groups
+*GroupsApi* | [**CreateGroup**](docs/GroupsApi.md#creategroup) | **Post** /groups | Add new entity to groups
+*GroupsApi* | [**ListGroups**](docs/GroupsApi.md#listgroups) | **Get** /groups | Get entities from groups
 *MeDriveApi* | [**GetHome**](docs/MeDriveApi.md#gethome) | **Get** /me/drive | Get personal space for user
 *MeDriveRootApi* | [**HomeGetRoot**](docs/MeDriveRootApi.md#homegetroot) | **Get** /me/drive/root | Get root from personal space
 *MeDriveRootChildrenApi* | [**HomeGetChildren**](docs/MeDriveRootChildrenApi.md#homegetchildren) | **Get** /me/drive/root/children | Get children from drive
 *MeDrivesApi* | [**ListMyDrives**](docs/MeDrivesApi.md#listmydrives) | **Get** /me/drives | Get drives from me
+*UserApi* | [**DeleteUser**](docs/UserApi.md#deleteuser) | **Delete** /users/{user-id} | Delete entity from users
+*UserApi* | [**GetUser**](docs/UserApi.md#getuser) | **Get** /users/{user-id} | Get entity from users by key
+*UserApi* | [**UpdateUser**](docs/UserApi.md#updateuser) | **Patch** /users/{user-id} | Update entity in users
+*UsersApi* | [**CreateUser**](docs/UsersApi.md#createuser) | **Post** /users | Add new entity to users
+*UsersApi* | [**ListUsers**](docs/UsersApi.md#listusers) | **Get** /users | Get entities from users
 
 
 ## Documentation For Models
 
  - [CollectionOfDriveItems](docs/CollectionOfDriveItems.md)
  - [CollectionOfDrives](docs/CollectionOfDrives.md)
+ - [CollectionOfGroup](docs/CollectionOfGroup.md)
+ - [CollectionOfUser](docs/CollectionOfUser.md)
  - [Deleted](docs/Deleted.md)
+ - [DirectoryObject](docs/DirectoryObject.md)
  - [Drive](docs/Drive.md)
  - [DriveItem](docs/DriveItem.md)
  - [FileSystemInfo](docs/FileSystemInfo.md)
  - [Folder](docs/Folder.md)
  - [FolderView](docs/FolderView.md)
+ - [Group](docs/Group.md)
  - [Hashes](docs/Hashes.md)
  - [Identity](docs/Identity.md)
  - [IdentitySet](docs/IdentitySet.md)
