@@ -21,13 +21,13 @@ Name | Type | Description | Notes
 **Mail** | Pointer to **string** | The SMTP address for the user, for example, &#39;jeff@contoso.onowncloud.com&#39;. Returned by default. Supports $filter and endsWith. | [optional] 
 **MailNickname** | Pointer to **string** | The mail alias for the user. This property must be specified when a user is created. Returned only on $select. Supports $filter. | [optional] 
 **MobilePhone** | Pointer to **string** | The primary cellular telephone number for the user. Returned by default. Read-only for users synced from on-premises directory. | [optional] 
-**OnPremisesDistinguishedName** | Pointer to **NullableString** | Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. | [optional] 
-**OnPremisesDomainName** | Pointer to **NullableString** | Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. | [optional] 
-**OnPremisesImmutableId** | Pointer to **NullableString** | This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user&#39;s userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).. | [optional] 
-**OnPremisesSyncEnabled** | Pointer to **NullableBool** | true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). | [optional] 
-**OnPremisesLastSyncDateTime** | Pointer to **NullableTime** | Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in). | [optional] 
-**OnPremisesSamAccountName** | Pointer to **NullableString** | Contains the on-premises SAM account name synchronized from the on-premises directory. Read-only. | [optional] 
-**OnPremisesUserPrincipalName** | Pointer to **NullableString** | Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith). | [optional] 
+**OnPremisesDistinguishedName** | Pointer to **string** | Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. | [optional] 
+**OnPremisesDomainName** | Pointer to **string** | Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. | [optional] 
+**OnPremisesImmutableId** | Pointer to **string** | This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user&#39;s userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).. | [optional] 
+**OnPremisesSyncEnabled** | Pointer to **bool** | true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). | [optional] 
+**OnPremisesLastSyncDateTime** | Pointer to **time.Time** | Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in). | [optional] 
+**OnPremisesSamAccountName** | Pointer to **string** | Contains the on-premises SAM account name synchronized from the on-premises directory. Read-only. | [optional] 
+**OnPremisesUserPrincipalName** | Pointer to **string** | Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith). | [optional] 
 **OfficeLocation** | Pointer to **string** | The office location in the user&#39;s place of business. Returned by default. | [optional] 
 **PostalCode** | Pointer to **string** | The postal code for the user&#39;s postal address. The postal code is specific to the user&#39;s country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select. | [optional] 
 **PreferredLanguage** | Pointer to **string** | The preferred language for the user. Should follow ISO 639-1 Code; for example &#39;en-US&#39;. Returned by default. | [optional] 
@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **UserType** | Pointer to **string** | A string value that can be used to classify user types in your directory, such as &#39;Member&#39; and &#39;Guest&#39;. Returned only on $select. Supports $filter. | [optional] 
 **AboutMe** | Pointer to **string** | A freeform text entry field for the user to describe themselves. Returned only on $select. | [optional] 
 **Birthday** | Pointer to **time.Time** | The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select. | [optional] 
-**PreferredName** | Pointer to **NullableString** | The preferred name for the user. Returned only on $select. | [optional] 
+**PreferredName** | Pointer to **string** | The preferred name for the user. Returned only on $select. | [optional] 
 **Drive** | Pointer to [**Drive**](Drive.md) |  | [optional] 
 **Drives** | Pointer to [**[]Drive**](Drive.md) | A collection of drives available for this user. Read-only. | [optional] [readonly] 
 
@@ -512,16 +512,6 @@ SetOnPremisesDistinguishedName sets OnPremisesDistinguishedName field to given v
 
 HasOnPremisesDistinguishedName returns a boolean if a field has been set.
 
-### SetOnPremisesDistinguishedNameNil
-
-`func (o *User) SetOnPremisesDistinguishedNameNil(b bool)`
-
- SetOnPremisesDistinguishedNameNil sets the value for OnPremisesDistinguishedName to be an explicit nil
-
-### UnsetOnPremisesDistinguishedName
-`func (o *User) UnsetOnPremisesDistinguishedName()`
-
-UnsetOnPremisesDistinguishedName ensures that no value is present for OnPremisesDistinguishedName, not even an explicit nil
 ### GetOnPremisesDomainName
 
 `func (o *User) GetOnPremisesDomainName() string`
@@ -547,16 +537,6 @@ SetOnPremisesDomainName sets OnPremisesDomainName field to given value.
 
 HasOnPremisesDomainName returns a boolean if a field has been set.
 
-### SetOnPremisesDomainNameNil
-
-`func (o *User) SetOnPremisesDomainNameNil(b bool)`
-
- SetOnPremisesDomainNameNil sets the value for OnPremisesDomainName to be an explicit nil
-
-### UnsetOnPremisesDomainName
-`func (o *User) UnsetOnPremisesDomainName()`
-
-UnsetOnPremisesDomainName ensures that no value is present for OnPremisesDomainName, not even an explicit nil
 ### GetOnPremisesImmutableId
 
 `func (o *User) GetOnPremisesImmutableId() string`
@@ -582,16 +562,6 @@ SetOnPremisesImmutableId sets OnPremisesImmutableId field to given value.
 
 HasOnPremisesImmutableId returns a boolean if a field has been set.
 
-### SetOnPremisesImmutableIdNil
-
-`func (o *User) SetOnPremisesImmutableIdNil(b bool)`
-
- SetOnPremisesImmutableIdNil sets the value for OnPremisesImmutableId to be an explicit nil
-
-### UnsetOnPremisesImmutableId
-`func (o *User) UnsetOnPremisesImmutableId()`
-
-UnsetOnPremisesImmutableId ensures that no value is present for OnPremisesImmutableId, not even an explicit nil
 ### GetOnPremisesSyncEnabled
 
 `func (o *User) GetOnPremisesSyncEnabled() bool`
@@ -617,16 +587,6 @@ SetOnPremisesSyncEnabled sets OnPremisesSyncEnabled field to given value.
 
 HasOnPremisesSyncEnabled returns a boolean if a field has been set.
 
-### SetOnPremisesSyncEnabledNil
-
-`func (o *User) SetOnPremisesSyncEnabledNil(b bool)`
-
- SetOnPremisesSyncEnabledNil sets the value for OnPremisesSyncEnabled to be an explicit nil
-
-### UnsetOnPremisesSyncEnabled
-`func (o *User) UnsetOnPremisesSyncEnabled()`
-
-UnsetOnPremisesSyncEnabled ensures that no value is present for OnPremisesSyncEnabled, not even an explicit nil
 ### GetOnPremisesLastSyncDateTime
 
 `func (o *User) GetOnPremisesLastSyncDateTime() time.Time`
@@ -652,16 +612,6 @@ SetOnPremisesLastSyncDateTime sets OnPremisesLastSyncDateTime field to given val
 
 HasOnPremisesLastSyncDateTime returns a boolean if a field has been set.
 
-### SetOnPremisesLastSyncDateTimeNil
-
-`func (o *User) SetOnPremisesLastSyncDateTimeNil(b bool)`
-
- SetOnPremisesLastSyncDateTimeNil sets the value for OnPremisesLastSyncDateTime to be an explicit nil
-
-### UnsetOnPremisesLastSyncDateTime
-`func (o *User) UnsetOnPremisesLastSyncDateTime()`
-
-UnsetOnPremisesLastSyncDateTime ensures that no value is present for OnPremisesLastSyncDateTime, not even an explicit nil
 ### GetOnPremisesSamAccountName
 
 `func (o *User) GetOnPremisesSamAccountName() string`
@@ -687,16 +637,6 @@ SetOnPremisesSamAccountName sets OnPremisesSamAccountName field to given value.
 
 HasOnPremisesSamAccountName returns a boolean if a field has been set.
 
-### SetOnPremisesSamAccountNameNil
-
-`func (o *User) SetOnPremisesSamAccountNameNil(b bool)`
-
- SetOnPremisesSamAccountNameNil sets the value for OnPremisesSamAccountName to be an explicit nil
-
-### UnsetOnPremisesSamAccountName
-`func (o *User) UnsetOnPremisesSamAccountName()`
-
-UnsetOnPremisesSamAccountName ensures that no value is present for OnPremisesSamAccountName, not even an explicit nil
 ### GetOnPremisesUserPrincipalName
 
 `func (o *User) GetOnPremisesUserPrincipalName() string`
@@ -722,16 +662,6 @@ SetOnPremisesUserPrincipalName sets OnPremisesUserPrincipalName field to given v
 
 HasOnPremisesUserPrincipalName returns a boolean if a field has been set.
 
-### SetOnPremisesUserPrincipalNameNil
-
-`func (o *User) SetOnPremisesUserPrincipalNameNil(b bool)`
-
- SetOnPremisesUserPrincipalNameNil sets the value for OnPremisesUserPrincipalName to be an explicit nil
-
-### UnsetOnPremisesUserPrincipalName
-`func (o *User) UnsetOnPremisesUserPrincipalName()`
-
-UnsetOnPremisesUserPrincipalName ensures that no value is present for OnPremisesUserPrincipalName, not even an explicit nil
 ### GetOfficeLocation
 
 `func (o *User) GetOfficeLocation() string`
@@ -1032,16 +962,6 @@ SetPreferredName sets PreferredName field to given value.
 
 HasPreferredName returns a boolean if a field has been set.
 
-### SetPreferredNameNil
-
-`func (o *User) SetPreferredNameNil(b bool)`
-
- SetPreferredNameNil sets the value for PreferredName to be an explicit nil
-
-### UnsetPreferredName
-`func (o *User) UnsetPreferredName()`
-
-UnsetPreferredName ensures that no value is present for PreferredName, not even an explicit nil
 ### GetDrive
 
 `func (o *User) GetDrive() Drive`

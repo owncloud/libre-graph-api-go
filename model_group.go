@@ -21,32 +21,32 @@ type Group struct {
 	Id *string `json:"id,omitempty"`
 	DeletedDateTime *time.Time `json:"deletedDateTime,omitempty"`
 	// Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
-	CreatedDateTime NullableTime `json:"createdDateTime,omitempty"`
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
-	Description NullableString `json:"description,omitempty"`
+	Description *string `json:"description,omitempty"`
 	// The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-	DisplayName NullableString `json:"displayName,omitempty"`
+	DisplayName *string `json:"displayName,omitempty"`
 	// Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
-	ExpirationDateTime NullableTime `json:"expirationDateTime,omitempty"`
+	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
 	// The SMTP address for the group, for example, 'serviceadmins@owncloud.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-	Mail NullableString `json:"mail,omitempty"`
+	Mail *string `json:"mail,omitempty"`
 	// Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory.
-	OnPremisesDomainName NullableString `json:"onPremisesDomainName,omitempty"`
+	OnPremisesDomainName *string `json:"onPremisesDomainName,omitempty"`
 	// Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
-	OnPremisesLastSyncDateTime NullableTime `json:"onPremisesLastSyncDateTime,omitempty"`
+	OnPremisesLastSyncDateTime *time.Time `json:"onPremisesLastSyncDateTime,omitempty"`
 	// Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
-	OnPremisesSamAccountName NullableString `json:"onPremisesSamAccountName,omitempty"`
+	OnPremisesSamAccountName *string `json:"onPremisesSamAccountName,omitempty"`
 	// true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-	OnPremisesSyncEnabled NullableBool `json:"onPremisesSyncEnabled,omitempty"`
+	OnPremisesSyncEnabled *bool `json:"onPremisesSyncEnabled,omitempty"`
 	// The preferred language for a group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-	PreferredLanguage NullableString `json:"preferredLanguage,omitempty"`
+	PreferredLanguage *string `json:"preferredLanguage,omitempty"`
 	// Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).
-	SecurityEnabled NullableBool `json:"securityEnabled,omitempty"`
+	SecurityEnabled *bool `json:"securityEnabled,omitempty"`
 	// Security identifier of the group, used in Windows scenarios. Returned by default.
-	SecurityIdentifier NullableString `json:"securityIdentifier,omitempty"`
+	SecurityIdentifier *string `json:"securityIdentifier,omitempty"`
 	// Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. It can't be updated later. Other values of visibility can be updated after group creation. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
-	Visibility NullableString `json:"visibility,omitempty"`
-	CreatedOnBehalfOf NullableDirectoryObject `json:"createdOnBehalfOf,omitempty"`
+	Visibility *string `json:"visibility,omitempty"`
+	CreatedOnBehalfOf *DirectoryObject `json:"createdOnBehalfOf,omitempty"`
 	// Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 	MemberOf *[]DirectoryObject `json:"memberOf,omitempty"`
 	// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), Nullable. Supports $expand.
@@ -56,7 +56,7 @@ type Group struct {
 	Drive *Drive `json:"drive,omitempty"`
 	// The group's drives. Read-only.
 	Drives *[]Drive `json:"drives,omitempty"`
-	IsArchived NullableBool `json:"isArchived,omitempty"`
+	IsArchived *bool `json:"isArchived,omitempty"`
 }
 
 // NewGroup instantiates a new Group object
@@ -140,592 +140,452 @@ func (o *Group) SetDeletedDateTime(v time.Time) {
 	o.DeletedDateTime = &v
 }
 
-// GetCreatedDateTime returns the CreatedDateTime field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetCreatedDateTime returns the CreatedDateTime field value if set, zero value otherwise.
 func (o *Group) GetCreatedDateTime() time.Time {
-	if o == nil || o.CreatedDateTime.Get() == nil {
+	if o == nil || o.CreatedDateTime == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.CreatedDateTime.Get()
+	return *o.CreatedDateTime
 }
 
 // GetCreatedDateTimeOk returns a tuple with the CreatedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetCreatedDateTimeOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil || o.CreatedDateTime == nil {
 		return nil, false
 	}
-	return o.CreatedDateTime.Get(), o.CreatedDateTime.IsSet()
+	return o.CreatedDateTime, true
 }
 
 // HasCreatedDateTime returns a boolean if a field has been set.
 func (o *Group) HasCreatedDateTime() bool {
-	if o != nil && o.CreatedDateTime.IsSet() {
+	if o != nil && o.CreatedDateTime != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedDateTime gets a reference to the given NullableTime and assigns it to the CreatedDateTime field.
+// SetCreatedDateTime gets a reference to the given time.Time and assigns it to the CreatedDateTime field.
 func (o *Group) SetCreatedDateTime(v time.Time) {
-	o.CreatedDateTime.Set(&v)
-}
-// SetCreatedDateTimeNil sets the value for CreatedDateTime to be an explicit nil
-func (o *Group) SetCreatedDateTimeNil() {
-	o.CreatedDateTime.Set(nil)
+	o.CreatedDateTime = &v
 }
 
-// UnsetCreatedDateTime ensures that no value is present for CreatedDateTime, not even an explicit nil
-func (o *Group) UnsetCreatedDateTime() {
-	o.CreatedDateTime.Unset()
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDescription returns the Description field value if set, zero value otherwise.
 func (o *Group) GetDescription() string {
-	if o == nil || o.Description.Get() == nil {
+	if o == nil || o.Description == nil {
 		var ret string
 		return ret
 	}
-	return *o.Description.Get()
+	return *o.Description
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetDescriptionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Description == nil {
 		return nil, false
 	}
-	return o.Description.Get(), o.Description.IsSet()
+	return o.Description, true
 }
 
 // HasDescription returns a boolean if a field has been set.
 func (o *Group) HasDescription() bool {
-	if o != nil && o.Description.IsSet() {
+	if o != nil && o.Description != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
+// SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *Group) SetDescription(v string) {
-	o.Description.Set(&v)
-}
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *Group) SetDescriptionNil() {
-	o.Description.Set(nil)
+	o.Description = &v
 }
 
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *Group) UnsetDescription() {
-	o.Description.Unset()
-}
-
-// GetDisplayName returns the DisplayName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
 func (o *Group) GetDisplayName() string {
-	if o == nil || o.DisplayName.Get() == nil {
+	if o == nil || o.DisplayName == nil {
 		var ret string
 		return ret
 	}
-	return *o.DisplayName.Get()
+	return *o.DisplayName
 }
 
 // GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetDisplayNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.DisplayName == nil {
 		return nil, false
 	}
-	return o.DisplayName.Get(), o.DisplayName.IsSet()
+	return o.DisplayName, true
 }
 
 // HasDisplayName returns a boolean if a field has been set.
 func (o *Group) HasDisplayName() bool {
-	if o != nil && o.DisplayName.IsSet() {
+	if o != nil && o.DisplayName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDisplayName gets a reference to the given NullableString and assigns it to the DisplayName field.
+// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *Group) SetDisplayName(v string) {
-	o.DisplayName.Set(&v)
-}
-// SetDisplayNameNil sets the value for DisplayName to be an explicit nil
-func (o *Group) SetDisplayNameNil() {
-	o.DisplayName.Set(nil)
+	o.DisplayName = &v
 }
 
-// UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
-func (o *Group) UnsetDisplayName() {
-	o.DisplayName.Unset()
-}
-
-// GetExpirationDateTime returns the ExpirationDateTime field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetExpirationDateTime returns the ExpirationDateTime field value if set, zero value otherwise.
 func (o *Group) GetExpirationDateTime() time.Time {
-	if o == nil || o.ExpirationDateTime.Get() == nil {
+	if o == nil || o.ExpirationDateTime == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.ExpirationDateTime.Get()
+	return *o.ExpirationDateTime
 }
 
 // GetExpirationDateTimeOk returns a tuple with the ExpirationDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetExpirationDateTimeOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil || o.ExpirationDateTime == nil {
 		return nil, false
 	}
-	return o.ExpirationDateTime.Get(), o.ExpirationDateTime.IsSet()
+	return o.ExpirationDateTime, true
 }
 
 // HasExpirationDateTime returns a boolean if a field has been set.
 func (o *Group) HasExpirationDateTime() bool {
-	if o != nil && o.ExpirationDateTime.IsSet() {
+	if o != nil && o.ExpirationDateTime != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetExpirationDateTime gets a reference to the given NullableTime and assigns it to the ExpirationDateTime field.
+// SetExpirationDateTime gets a reference to the given time.Time and assigns it to the ExpirationDateTime field.
 func (o *Group) SetExpirationDateTime(v time.Time) {
-	o.ExpirationDateTime.Set(&v)
-}
-// SetExpirationDateTimeNil sets the value for ExpirationDateTime to be an explicit nil
-func (o *Group) SetExpirationDateTimeNil() {
-	o.ExpirationDateTime.Set(nil)
+	o.ExpirationDateTime = &v
 }
 
-// UnsetExpirationDateTime ensures that no value is present for ExpirationDateTime, not even an explicit nil
-func (o *Group) UnsetExpirationDateTime() {
-	o.ExpirationDateTime.Unset()
-}
-
-// GetMail returns the Mail field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetMail returns the Mail field value if set, zero value otherwise.
 func (o *Group) GetMail() string {
-	if o == nil || o.Mail.Get() == nil {
+	if o == nil || o.Mail == nil {
 		var ret string
 		return ret
 	}
-	return *o.Mail.Get()
+	return *o.Mail
 }
 
 // GetMailOk returns a tuple with the Mail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetMailOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Mail == nil {
 		return nil, false
 	}
-	return o.Mail.Get(), o.Mail.IsSet()
+	return o.Mail, true
 }
 
 // HasMail returns a boolean if a field has been set.
 func (o *Group) HasMail() bool {
-	if o != nil && o.Mail.IsSet() {
+	if o != nil && o.Mail != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetMail gets a reference to the given NullableString and assigns it to the Mail field.
+// SetMail gets a reference to the given string and assigns it to the Mail field.
 func (o *Group) SetMail(v string) {
-	o.Mail.Set(&v)
-}
-// SetMailNil sets the value for Mail to be an explicit nil
-func (o *Group) SetMailNil() {
-	o.Mail.Set(nil)
+	o.Mail = &v
 }
 
-// UnsetMail ensures that no value is present for Mail, not even an explicit nil
-func (o *Group) UnsetMail() {
-	o.Mail.Unset()
-}
-
-// GetOnPremisesDomainName returns the OnPremisesDomainName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetOnPremisesDomainName returns the OnPremisesDomainName field value if set, zero value otherwise.
 func (o *Group) GetOnPremisesDomainName() string {
-	if o == nil || o.OnPremisesDomainName.Get() == nil {
+	if o == nil || o.OnPremisesDomainName == nil {
 		var ret string
 		return ret
 	}
-	return *o.OnPremisesDomainName.Get()
+	return *o.OnPremisesDomainName
 }
 
 // GetOnPremisesDomainNameOk returns a tuple with the OnPremisesDomainName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetOnPremisesDomainNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.OnPremisesDomainName == nil {
 		return nil, false
 	}
-	return o.OnPremisesDomainName.Get(), o.OnPremisesDomainName.IsSet()
+	return o.OnPremisesDomainName, true
 }
 
 // HasOnPremisesDomainName returns a boolean if a field has been set.
 func (o *Group) HasOnPremisesDomainName() bool {
-	if o != nil && o.OnPremisesDomainName.IsSet() {
+	if o != nil && o.OnPremisesDomainName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOnPremisesDomainName gets a reference to the given NullableString and assigns it to the OnPremisesDomainName field.
+// SetOnPremisesDomainName gets a reference to the given string and assigns it to the OnPremisesDomainName field.
 func (o *Group) SetOnPremisesDomainName(v string) {
-	o.OnPremisesDomainName.Set(&v)
-}
-// SetOnPremisesDomainNameNil sets the value for OnPremisesDomainName to be an explicit nil
-func (o *Group) SetOnPremisesDomainNameNil() {
-	o.OnPremisesDomainName.Set(nil)
+	o.OnPremisesDomainName = &v
 }
 
-// UnsetOnPremisesDomainName ensures that no value is present for OnPremisesDomainName, not even an explicit nil
-func (o *Group) UnsetOnPremisesDomainName() {
-	o.OnPremisesDomainName.Unset()
-}
-
-// GetOnPremisesLastSyncDateTime returns the OnPremisesLastSyncDateTime field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetOnPremisesLastSyncDateTime returns the OnPremisesLastSyncDateTime field value if set, zero value otherwise.
 func (o *Group) GetOnPremisesLastSyncDateTime() time.Time {
-	if o == nil || o.OnPremisesLastSyncDateTime.Get() == nil {
+	if o == nil || o.OnPremisesLastSyncDateTime == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.OnPremisesLastSyncDateTime.Get()
+	return *o.OnPremisesLastSyncDateTime
 }
 
 // GetOnPremisesLastSyncDateTimeOk returns a tuple with the OnPremisesLastSyncDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetOnPremisesLastSyncDateTimeOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil || o.OnPremisesLastSyncDateTime == nil {
 		return nil, false
 	}
-	return o.OnPremisesLastSyncDateTime.Get(), o.OnPremisesLastSyncDateTime.IsSet()
+	return o.OnPremisesLastSyncDateTime, true
 }
 
 // HasOnPremisesLastSyncDateTime returns a boolean if a field has been set.
 func (o *Group) HasOnPremisesLastSyncDateTime() bool {
-	if o != nil && o.OnPremisesLastSyncDateTime.IsSet() {
+	if o != nil && o.OnPremisesLastSyncDateTime != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOnPremisesLastSyncDateTime gets a reference to the given NullableTime and assigns it to the OnPremisesLastSyncDateTime field.
+// SetOnPremisesLastSyncDateTime gets a reference to the given time.Time and assigns it to the OnPremisesLastSyncDateTime field.
 func (o *Group) SetOnPremisesLastSyncDateTime(v time.Time) {
-	o.OnPremisesLastSyncDateTime.Set(&v)
-}
-// SetOnPremisesLastSyncDateTimeNil sets the value for OnPremisesLastSyncDateTime to be an explicit nil
-func (o *Group) SetOnPremisesLastSyncDateTimeNil() {
-	o.OnPremisesLastSyncDateTime.Set(nil)
+	o.OnPremisesLastSyncDateTime = &v
 }
 
-// UnsetOnPremisesLastSyncDateTime ensures that no value is present for OnPremisesLastSyncDateTime, not even an explicit nil
-func (o *Group) UnsetOnPremisesLastSyncDateTime() {
-	o.OnPremisesLastSyncDateTime.Unset()
-}
-
-// GetOnPremisesSamAccountName returns the OnPremisesSamAccountName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetOnPremisesSamAccountName returns the OnPremisesSamAccountName field value if set, zero value otherwise.
 func (o *Group) GetOnPremisesSamAccountName() string {
-	if o == nil || o.OnPremisesSamAccountName.Get() == nil {
+	if o == nil || o.OnPremisesSamAccountName == nil {
 		var ret string
 		return ret
 	}
-	return *o.OnPremisesSamAccountName.Get()
+	return *o.OnPremisesSamAccountName
 }
 
 // GetOnPremisesSamAccountNameOk returns a tuple with the OnPremisesSamAccountName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetOnPremisesSamAccountNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.OnPremisesSamAccountName == nil {
 		return nil, false
 	}
-	return o.OnPremisesSamAccountName.Get(), o.OnPremisesSamAccountName.IsSet()
+	return o.OnPremisesSamAccountName, true
 }
 
 // HasOnPremisesSamAccountName returns a boolean if a field has been set.
 func (o *Group) HasOnPremisesSamAccountName() bool {
-	if o != nil && o.OnPremisesSamAccountName.IsSet() {
+	if o != nil && o.OnPremisesSamAccountName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOnPremisesSamAccountName gets a reference to the given NullableString and assigns it to the OnPremisesSamAccountName field.
+// SetOnPremisesSamAccountName gets a reference to the given string and assigns it to the OnPremisesSamAccountName field.
 func (o *Group) SetOnPremisesSamAccountName(v string) {
-	o.OnPremisesSamAccountName.Set(&v)
-}
-// SetOnPremisesSamAccountNameNil sets the value for OnPremisesSamAccountName to be an explicit nil
-func (o *Group) SetOnPremisesSamAccountNameNil() {
-	o.OnPremisesSamAccountName.Set(nil)
+	o.OnPremisesSamAccountName = &v
 }
 
-// UnsetOnPremisesSamAccountName ensures that no value is present for OnPremisesSamAccountName, not even an explicit nil
-func (o *Group) UnsetOnPremisesSamAccountName() {
-	o.OnPremisesSamAccountName.Unset()
-}
-
-// GetOnPremisesSyncEnabled returns the OnPremisesSyncEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetOnPremisesSyncEnabled returns the OnPremisesSyncEnabled field value if set, zero value otherwise.
 func (o *Group) GetOnPremisesSyncEnabled() bool {
-	if o == nil || o.OnPremisesSyncEnabled.Get() == nil {
+	if o == nil || o.OnPremisesSyncEnabled == nil {
 		var ret bool
 		return ret
 	}
-	return *o.OnPremisesSyncEnabled.Get()
+	return *o.OnPremisesSyncEnabled
 }
 
 // GetOnPremisesSyncEnabledOk returns a tuple with the OnPremisesSyncEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetOnPremisesSyncEnabledOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil || o.OnPremisesSyncEnabled == nil {
 		return nil, false
 	}
-	return o.OnPremisesSyncEnabled.Get(), o.OnPremisesSyncEnabled.IsSet()
+	return o.OnPremisesSyncEnabled, true
 }
 
 // HasOnPremisesSyncEnabled returns a boolean if a field has been set.
 func (o *Group) HasOnPremisesSyncEnabled() bool {
-	if o != nil && o.OnPremisesSyncEnabled.IsSet() {
+	if o != nil && o.OnPremisesSyncEnabled != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOnPremisesSyncEnabled gets a reference to the given NullableBool and assigns it to the OnPremisesSyncEnabled field.
+// SetOnPremisesSyncEnabled gets a reference to the given bool and assigns it to the OnPremisesSyncEnabled field.
 func (o *Group) SetOnPremisesSyncEnabled(v bool) {
-	o.OnPremisesSyncEnabled.Set(&v)
-}
-// SetOnPremisesSyncEnabledNil sets the value for OnPremisesSyncEnabled to be an explicit nil
-func (o *Group) SetOnPremisesSyncEnabledNil() {
-	o.OnPremisesSyncEnabled.Set(nil)
+	o.OnPremisesSyncEnabled = &v
 }
 
-// UnsetOnPremisesSyncEnabled ensures that no value is present for OnPremisesSyncEnabled, not even an explicit nil
-func (o *Group) UnsetOnPremisesSyncEnabled() {
-	o.OnPremisesSyncEnabled.Unset()
-}
-
-// GetPreferredLanguage returns the PreferredLanguage field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetPreferredLanguage returns the PreferredLanguage field value if set, zero value otherwise.
 func (o *Group) GetPreferredLanguage() string {
-	if o == nil || o.PreferredLanguage.Get() == nil {
+	if o == nil || o.PreferredLanguage == nil {
 		var ret string
 		return ret
 	}
-	return *o.PreferredLanguage.Get()
+	return *o.PreferredLanguage
 }
 
 // GetPreferredLanguageOk returns a tuple with the PreferredLanguage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetPreferredLanguageOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.PreferredLanguage == nil {
 		return nil, false
 	}
-	return o.PreferredLanguage.Get(), o.PreferredLanguage.IsSet()
+	return o.PreferredLanguage, true
 }
 
 // HasPreferredLanguage returns a boolean if a field has been set.
 func (o *Group) HasPreferredLanguage() bool {
-	if o != nil && o.PreferredLanguage.IsSet() {
+	if o != nil && o.PreferredLanguage != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPreferredLanguage gets a reference to the given NullableString and assigns it to the PreferredLanguage field.
+// SetPreferredLanguage gets a reference to the given string and assigns it to the PreferredLanguage field.
 func (o *Group) SetPreferredLanguage(v string) {
-	o.PreferredLanguage.Set(&v)
-}
-// SetPreferredLanguageNil sets the value for PreferredLanguage to be an explicit nil
-func (o *Group) SetPreferredLanguageNil() {
-	o.PreferredLanguage.Set(nil)
+	o.PreferredLanguage = &v
 }
 
-// UnsetPreferredLanguage ensures that no value is present for PreferredLanguage, not even an explicit nil
-func (o *Group) UnsetPreferredLanguage() {
-	o.PreferredLanguage.Unset()
-}
-
-// GetSecurityEnabled returns the SecurityEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSecurityEnabled returns the SecurityEnabled field value if set, zero value otherwise.
 func (o *Group) GetSecurityEnabled() bool {
-	if o == nil || o.SecurityEnabled.Get() == nil {
+	if o == nil || o.SecurityEnabled == nil {
 		var ret bool
 		return ret
 	}
-	return *o.SecurityEnabled.Get()
+	return *o.SecurityEnabled
 }
 
 // GetSecurityEnabledOk returns a tuple with the SecurityEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetSecurityEnabledOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil || o.SecurityEnabled == nil {
 		return nil, false
 	}
-	return o.SecurityEnabled.Get(), o.SecurityEnabled.IsSet()
+	return o.SecurityEnabled, true
 }
 
 // HasSecurityEnabled returns a boolean if a field has been set.
 func (o *Group) HasSecurityEnabled() bool {
-	if o != nil && o.SecurityEnabled.IsSet() {
+	if o != nil && o.SecurityEnabled != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSecurityEnabled gets a reference to the given NullableBool and assigns it to the SecurityEnabled field.
+// SetSecurityEnabled gets a reference to the given bool and assigns it to the SecurityEnabled field.
 func (o *Group) SetSecurityEnabled(v bool) {
-	o.SecurityEnabled.Set(&v)
-}
-// SetSecurityEnabledNil sets the value for SecurityEnabled to be an explicit nil
-func (o *Group) SetSecurityEnabledNil() {
-	o.SecurityEnabled.Set(nil)
+	o.SecurityEnabled = &v
 }
 
-// UnsetSecurityEnabled ensures that no value is present for SecurityEnabled, not even an explicit nil
-func (o *Group) UnsetSecurityEnabled() {
-	o.SecurityEnabled.Unset()
-}
-
-// GetSecurityIdentifier returns the SecurityIdentifier field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSecurityIdentifier returns the SecurityIdentifier field value if set, zero value otherwise.
 func (o *Group) GetSecurityIdentifier() string {
-	if o == nil || o.SecurityIdentifier.Get() == nil {
+	if o == nil || o.SecurityIdentifier == nil {
 		var ret string
 		return ret
 	}
-	return *o.SecurityIdentifier.Get()
+	return *o.SecurityIdentifier
 }
 
 // GetSecurityIdentifierOk returns a tuple with the SecurityIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetSecurityIdentifierOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.SecurityIdentifier == nil {
 		return nil, false
 	}
-	return o.SecurityIdentifier.Get(), o.SecurityIdentifier.IsSet()
+	return o.SecurityIdentifier, true
 }
 
 // HasSecurityIdentifier returns a boolean if a field has been set.
 func (o *Group) HasSecurityIdentifier() bool {
-	if o != nil && o.SecurityIdentifier.IsSet() {
+	if o != nil && o.SecurityIdentifier != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSecurityIdentifier gets a reference to the given NullableString and assigns it to the SecurityIdentifier field.
+// SetSecurityIdentifier gets a reference to the given string and assigns it to the SecurityIdentifier field.
 func (o *Group) SetSecurityIdentifier(v string) {
-	o.SecurityIdentifier.Set(&v)
-}
-// SetSecurityIdentifierNil sets the value for SecurityIdentifier to be an explicit nil
-func (o *Group) SetSecurityIdentifierNil() {
-	o.SecurityIdentifier.Set(nil)
+	o.SecurityIdentifier = &v
 }
 
-// UnsetSecurityIdentifier ensures that no value is present for SecurityIdentifier, not even an explicit nil
-func (o *Group) UnsetSecurityIdentifier() {
-	o.SecurityIdentifier.Unset()
-}
-
-// GetVisibility returns the Visibility field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetVisibility returns the Visibility field value if set, zero value otherwise.
 func (o *Group) GetVisibility() string {
-	if o == nil || o.Visibility.Get() == nil {
+	if o == nil || o.Visibility == nil {
 		var ret string
 		return ret
 	}
-	return *o.Visibility.Get()
+	return *o.Visibility
 }
 
 // GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetVisibilityOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Visibility == nil {
 		return nil, false
 	}
-	return o.Visibility.Get(), o.Visibility.IsSet()
+	return o.Visibility, true
 }
 
 // HasVisibility returns a boolean if a field has been set.
 func (o *Group) HasVisibility() bool {
-	if o != nil && o.Visibility.IsSet() {
+	if o != nil && o.Visibility != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetVisibility gets a reference to the given NullableString and assigns it to the Visibility field.
+// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *Group) SetVisibility(v string) {
-	o.Visibility.Set(&v)
-}
-// SetVisibilityNil sets the value for Visibility to be an explicit nil
-func (o *Group) SetVisibilityNil() {
-	o.Visibility.Set(nil)
+	o.Visibility = &v
 }
 
-// UnsetVisibility ensures that no value is present for Visibility, not even an explicit nil
-func (o *Group) UnsetVisibility() {
-	o.Visibility.Unset()
-}
-
-// GetCreatedOnBehalfOf returns the CreatedOnBehalfOf field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetCreatedOnBehalfOf returns the CreatedOnBehalfOf field value if set, zero value otherwise.
 func (o *Group) GetCreatedOnBehalfOf() DirectoryObject {
-	if o == nil || o.CreatedOnBehalfOf.Get() == nil {
+	if o == nil || o.CreatedOnBehalfOf == nil {
 		var ret DirectoryObject
 		return ret
 	}
-	return *o.CreatedOnBehalfOf.Get()
+	return *o.CreatedOnBehalfOf
 }
 
 // GetCreatedOnBehalfOfOk returns a tuple with the CreatedOnBehalfOf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetCreatedOnBehalfOfOk() (*DirectoryObject, bool) {
-	if o == nil  {
+	if o == nil || o.CreatedOnBehalfOf == nil {
 		return nil, false
 	}
-	return o.CreatedOnBehalfOf.Get(), o.CreatedOnBehalfOf.IsSet()
+	return o.CreatedOnBehalfOf, true
 }
 
 // HasCreatedOnBehalfOf returns a boolean if a field has been set.
 func (o *Group) HasCreatedOnBehalfOf() bool {
-	if o != nil && o.CreatedOnBehalfOf.IsSet() {
+	if o != nil && o.CreatedOnBehalfOf != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedOnBehalfOf gets a reference to the given NullableDirectoryObject and assigns it to the CreatedOnBehalfOf field.
+// SetCreatedOnBehalfOf gets a reference to the given DirectoryObject and assigns it to the CreatedOnBehalfOf field.
 func (o *Group) SetCreatedOnBehalfOf(v DirectoryObject) {
-	o.CreatedOnBehalfOf.Set(&v)
-}
-// SetCreatedOnBehalfOfNil sets the value for CreatedOnBehalfOf to be an explicit nil
-func (o *Group) SetCreatedOnBehalfOfNil() {
-	o.CreatedOnBehalfOf.Set(nil)
-}
-
-// UnsetCreatedOnBehalfOf ensures that no value is present for CreatedOnBehalfOf, not even an explicit nil
-func (o *Group) UnsetCreatedOnBehalfOf() {
-	o.CreatedOnBehalfOf.Unset()
+	o.CreatedOnBehalfOf = &v
 }
 
 // GetMemberOf returns the MemberOf field value if set, zero value otherwise.
@@ -888,46 +748,36 @@ func (o *Group) SetDrives(v []Drive) {
 	o.Drives = &v
 }
 
-// GetIsArchived returns the IsArchived field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetIsArchived returns the IsArchived field value if set, zero value otherwise.
 func (o *Group) GetIsArchived() bool {
-	if o == nil || o.IsArchived.Get() == nil {
+	if o == nil || o.IsArchived == nil {
 		var ret bool
 		return ret
 	}
-	return *o.IsArchived.Get()
+	return *o.IsArchived
 }
 
 // GetIsArchivedOk returns a tuple with the IsArchived field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetIsArchivedOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil || o.IsArchived == nil {
 		return nil, false
 	}
-	return o.IsArchived.Get(), o.IsArchived.IsSet()
+	return o.IsArchived, true
 }
 
 // HasIsArchived returns a boolean if a field has been set.
 func (o *Group) HasIsArchived() bool {
-	if o != nil && o.IsArchived.IsSet() {
+	if o != nil && o.IsArchived != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetIsArchived gets a reference to the given NullableBool and assigns it to the IsArchived field.
+// SetIsArchived gets a reference to the given bool and assigns it to the IsArchived field.
 func (o *Group) SetIsArchived(v bool) {
-	o.IsArchived.Set(&v)
-}
-// SetIsArchivedNil sets the value for IsArchived to be an explicit nil
-func (o *Group) SetIsArchivedNil() {
-	o.IsArchived.Set(nil)
-}
-
-// UnsetIsArchived ensures that no value is present for IsArchived, not even an explicit nil
-func (o *Group) UnsetIsArchived() {
-	o.IsArchived.Unset()
+	o.IsArchived = &v
 }
 
 func (o Group) MarshalJSON() ([]byte, error) {
@@ -938,47 +788,47 @@ func (o Group) MarshalJSON() ([]byte, error) {
 	if o.DeletedDateTime != nil {
 		toSerialize["deletedDateTime"] = o.DeletedDateTime
 	}
-	if o.CreatedDateTime.IsSet() {
-		toSerialize["createdDateTime"] = o.CreatedDateTime.Get()
+	if o.CreatedDateTime != nil {
+		toSerialize["createdDateTime"] = o.CreatedDateTime
 	}
-	if o.Description.IsSet() {
-		toSerialize["description"] = o.Description.Get()
+	if o.Description != nil {
+		toSerialize["description"] = o.Description
 	}
-	if o.DisplayName.IsSet() {
-		toSerialize["displayName"] = o.DisplayName.Get()
+	if o.DisplayName != nil {
+		toSerialize["displayName"] = o.DisplayName
 	}
-	if o.ExpirationDateTime.IsSet() {
-		toSerialize["expirationDateTime"] = o.ExpirationDateTime.Get()
+	if o.ExpirationDateTime != nil {
+		toSerialize["expirationDateTime"] = o.ExpirationDateTime
 	}
-	if o.Mail.IsSet() {
-		toSerialize["mail"] = o.Mail.Get()
+	if o.Mail != nil {
+		toSerialize["mail"] = o.Mail
 	}
-	if o.OnPremisesDomainName.IsSet() {
-		toSerialize["onPremisesDomainName"] = o.OnPremisesDomainName.Get()
+	if o.OnPremisesDomainName != nil {
+		toSerialize["onPremisesDomainName"] = o.OnPremisesDomainName
 	}
-	if o.OnPremisesLastSyncDateTime.IsSet() {
-		toSerialize["onPremisesLastSyncDateTime"] = o.OnPremisesLastSyncDateTime.Get()
+	if o.OnPremisesLastSyncDateTime != nil {
+		toSerialize["onPremisesLastSyncDateTime"] = o.OnPremisesLastSyncDateTime
 	}
-	if o.OnPremisesSamAccountName.IsSet() {
-		toSerialize["onPremisesSamAccountName"] = o.OnPremisesSamAccountName.Get()
+	if o.OnPremisesSamAccountName != nil {
+		toSerialize["onPremisesSamAccountName"] = o.OnPremisesSamAccountName
 	}
-	if o.OnPremisesSyncEnabled.IsSet() {
-		toSerialize["onPremisesSyncEnabled"] = o.OnPremisesSyncEnabled.Get()
+	if o.OnPremisesSyncEnabled != nil {
+		toSerialize["onPremisesSyncEnabled"] = o.OnPremisesSyncEnabled
 	}
-	if o.PreferredLanguage.IsSet() {
-		toSerialize["preferredLanguage"] = o.PreferredLanguage.Get()
+	if o.PreferredLanguage != nil {
+		toSerialize["preferredLanguage"] = o.PreferredLanguage
 	}
-	if o.SecurityEnabled.IsSet() {
-		toSerialize["securityEnabled"] = o.SecurityEnabled.Get()
+	if o.SecurityEnabled != nil {
+		toSerialize["securityEnabled"] = o.SecurityEnabled
 	}
-	if o.SecurityIdentifier.IsSet() {
-		toSerialize["securityIdentifier"] = o.SecurityIdentifier.Get()
+	if o.SecurityIdentifier != nil {
+		toSerialize["securityIdentifier"] = o.SecurityIdentifier
 	}
-	if o.Visibility.IsSet() {
-		toSerialize["visibility"] = o.Visibility.Get()
+	if o.Visibility != nil {
+		toSerialize["visibility"] = o.Visibility
 	}
-	if o.CreatedOnBehalfOf.IsSet() {
-		toSerialize["createdOnBehalfOf"] = o.CreatedOnBehalfOf.Get()
+	if o.CreatedOnBehalfOf != nil {
+		toSerialize["createdOnBehalfOf"] = o.CreatedOnBehalfOf
 	}
 	if o.MemberOf != nil {
 		toSerialize["memberOf"] = o.MemberOf
@@ -995,8 +845,8 @@ func (o Group) MarshalJSON() ([]byte, error) {
 	if o.Drives != nil {
 		toSerialize["drives"] = o.Drives
 	}
-	if o.IsArchived.IsSet() {
-		toSerialize["isArchived"] = o.IsArchived.Get()
+	if o.IsArchived != nil {
+		toSerialize["isArchived"] = o.IsArchived
 	}
 	return json.Marshal(toSerialize)
 }

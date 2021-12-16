@@ -51,19 +51,19 @@ type User struct {
 	// The primary cellular telephone number for the user. Returned by default. Read-only for users synced from on-premises directory.
 	MobilePhone *string `json:"mobilePhone,omitempty"`
 	// Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
-	OnPremisesDistinguishedName NullableString `json:"onPremisesDistinguishedName,omitempty"`
+	OnPremisesDistinguishedName *string `json:"onPremisesDistinguishedName,omitempty"`
 	// Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
-	OnPremisesDomainName NullableString `json:"onPremisesDomainName,omitempty"`
+	OnPremisesDomainName *string `json:"onPremisesDomainName,omitempty"`
 	// This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..
-	OnPremisesImmutableId NullableString `json:"onPremisesImmutableId,omitempty"`
+	OnPremisesImmutableId *string `json:"onPremisesImmutableId,omitempty"`
 	// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
-	OnPremisesSyncEnabled NullableBool `json:"onPremisesSyncEnabled,omitempty"`
+	OnPremisesSyncEnabled *bool `json:"onPremisesSyncEnabled,omitempty"`
 	// Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).
-	OnPremisesLastSyncDateTime NullableTime `json:"onPremisesLastSyncDateTime,omitempty"`
+	OnPremisesLastSyncDateTime *time.Time `json:"onPremisesLastSyncDateTime,omitempty"`
 	// Contains the on-premises SAM account name synchronized from the on-premises directory. Read-only.
-	OnPremisesSamAccountName NullableString `json:"onPremisesSamAccountName,omitempty"`
+	OnPremisesSamAccountName *string `json:"onPremisesSamAccountName,omitempty"`
 	// Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-	OnPremisesUserPrincipalName NullableString `json:"onPremisesUserPrincipalName,omitempty"`
+	OnPremisesUserPrincipalName *string `json:"onPremisesUserPrincipalName,omitempty"`
 	// The office location in the user's place of business. Returned by default.
 	OfficeLocation *string `json:"officeLocation,omitempty"`
 	// The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select.
@@ -87,7 +87,7 @@ type User struct {
 	// The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
 	Birthday *time.Time `json:"birthday,omitempty"`
 	// The preferred name for the user. Returned only on $select.
-	PreferredName NullableString `json:"preferredName,omitempty"`
+	PreferredName *string `json:"preferredName,omitempty"`
 	Drive *Drive `json:"drive,omitempty"`
 	// A collection of drives available for this user. Read-only.
 	Drives *[]Drive `json:"drives,omitempty"`
@@ -654,298 +654,228 @@ func (o *User) SetMobilePhone(v string) {
 	o.MobilePhone = &v
 }
 
-// GetOnPremisesDistinguishedName returns the OnPremisesDistinguishedName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetOnPremisesDistinguishedName returns the OnPremisesDistinguishedName field value if set, zero value otherwise.
 func (o *User) GetOnPremisesDistinguishedName() string {
-	if o == nil || o.OnPremisesDistinguishedName.Get() == nil {
+	if o == nil || o.OnPremisesDistinguishedName == nil {
 		var ret string
 		return ret
 	}
-	return *o.OnPremisesDistinguishedName.Get()
+	return *o.OnPremisesDistinguishedName
 }
 
 // GetOnPremisesDistinguishedNameOk returns a tuple with the OnPremisesDistinguishedName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetOnPremisesDistinguishedNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.OnPremisesDistinguishedName == nil {
 		return nil, false
 	}
-	return o.OnPremisesDistinguishedName.Get(), o.OnPremisesDistinguishedName.IsSet()
+	return o.OnPremisesDistinguishedName, true
 }
 
 // HasOnPremisesDistinguishedName returns a boolean if a field has been set.
 func (o *User) HasOnPremisesDistinguishedName() bool {
-	if o != nil && o.OnPremisesDistinguishedName.IsSet() {
+	if o != nil && o.OnPremisesDistinguishedName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOnPremisesDistinguishedName gets a reference to the given NullableString and assigns it to the OnPremisesDistinguishedName field.
+// SetOnPremisesDistinguishedName gets a reference to the given string and assigns it to the OnPremisesDistinguishedName field.
 func (o *User) SetOnPremisesDistinguishedName(v string) {
-	o.OnPremisesDistinguishedName.Set(&v)
-}
-// SetOnPremisesDistinguishedNameNil sets the value for OnPremisesDistinguishedName to be an explicit nil
-func (o *User) SetOnPremisesDistinguishedNameNil() {
-	o.OnPremisesDistinguishedName.Set(nil)
+	o.OnPremisesDistinguishedName = &v
 }
 
-// UnsetOnPremisesDistinguishedName ensures that no value is present for OnPremisesDistinguishedName, not even an explicit nil
-func (o *User) UnsetOnPremisesDistinguishedName() {
-	o.OnPremisesDistinguishedName.Unset()
-}
-
-// GetOnPremisesDomainName returns the OnPremisesDomainName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetOnPremisesDomainName returns the OnPremisesDomainName field value if set, zero value otherwise.
 func (o *User) GetOnPremisesDomainName() string {
-	if o == nil || o.OnPremisesDomainName.Get() == nil {
+	if o == nil || o.OnPremisesDomainName == nil {
 		var ret string
 		return ret
 	}
-	return *o.OnPremisesDomainName.Get()
+	return *o.OnPremisesDomainName
 }
 
 // GetOnPremisesDomainNameOk returns a tuple with the OnPremisesDomainName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetOnPremisesDomainNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.OnPremisesDomainName == nil {
 		return nil, false
 	}
-	return o.OnPremisesDomainName.Get(), o.OnPremisesDomainName.IsSet()
+	return o.OnPremisesDomainName, true
 }
 
 // HasOnPremisesDomainName returns a boolean if a field has been set.
 func (o *User) HasOnPremisesDomainName() bool {
-	if o != nil && o.OnPremisesDomainName.IsSet() {
+	if o != nil && o.OnPremisesDomainName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOnPremisesDomainName gets a reference to the given NullableString and assigns it to the OnPremisesDomainName field.
+// SetOnPremisesDomainName gets a reference to the given string and assigns it to the OnPremisesDomainName field.
 func (o *User) SetOnPremisesDomainName(v string) {
-	o.OnPremisesDomainName.Set(&v)
-}
-// SetOnPremisesDomainNameNil sets the value for OnPremisesDomainName to be an explicit nil
-func (o *User) SetOnPremisesDomainNameNil() {
-	o.OnPremisesDomainName.Set(nil)
+	o.OnPremisesDomainName = &v
 }
 
-// UnsetOnPremisesDomainName ensures that no value is present for OnPremisesDomainName, not even an explicit nil
-func (o *User) UnsetOnPremisesDomainName() {
-	o.OnPremisesDomainName.Unset()
-}
-
-// GetOnPremisesImmutableId returns the OnPremisesImmutableId field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetOnPremisesImmutableId returns the OnPremisesImmutableId field value if set, zero value otherwise.
 func (o *User) GetOnPremisesImmutableId() string {
-	if o == nil || o.OnPremisesImmutableId.Get() == nil {
+	if o == nil || o.OnPremisesImmutableId == nil {
 		var ret string
 		return ret
 	}
-	return *o.OnPremisesImmutableId.Get()
+	return *o.OnPremisesImmutableId
 }
 
 // GetOnPremisesImmutableIdOk returns a tuple with the OnPremisesImmutableId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetOnPremisesImmutableIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.OnPremisesImmutableId == nil {
 		return nil, false
 	}
-	return o.OnPremisesImmutableId.Get(), o.OnPremisesImmutableId.IsSet()
+	return o.OnPremisesImmutableId, true
 }
 
 // HasOnPremisesImmutableId returns a boolean if a field has been set.
 func (o *User) HasOnPremisesImmutableId() bool {
-	if o != nil && o.OnPremisesImmutableId.IsSet() {
+	if o != nil && o.OnPremisesImmutableId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOnPremisesImmutableId gets a reference to the given NullableString and assigns it to the OnPremisesImmutableId field.
+// SetOnPremisesImmutableId gets a reference to the given string and assigns it to the OnPremisesImmutableId field.
 func (o *User) SetOnPremisesImmutableId(v string) {
-	o.OnPremisesImmutableId.Set(&v)
-}
-// SetOnPremisesImmutableIdNil sets the value for OnPremisesImmutableId to be an explicit nil
-func (o *User) SetOnPremisesImmutableIdNil() {
-	o.OnPremisesImmutableId.Set(nil)
+	o.OnPremisesImmutableId = &v
 }
 
-// UnsetOnPremisesImmutableId ensures that no value is present for OnPremisesImmutableId, not even an explicit nil
-func (o *User) UnsetOnPremisesImmutableId() {
-	o.OnPremisesImmutableId.Unset()
-}
-
-// GetOnPremisesSyncEnabled returns the OnPremisesSyncEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetOnPremisesSyncEnabled returns the OnPremisesSyncEnabled field value if set, zero value otherwise.
 func (o *User) GetOnPremisesSyncEnabled() bool {
-	if o == nil || o.OnPremisesSyncEnabled.Get() == nil {
+	if o == nil || o.OnPremisesSyncEnabled == nil {
 		var ret bool
 		return ret
 	}
-	return *o.OnPremisesSyncEnabled.Get()
+	return *o.OnPremisesSyncEnabled
 }
 
 // GetOnPremisesSyncEnabledOk returns a tuple with the OnPremisesSyncEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetOnPremisesSyncEnabledOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil || o.OnPremisesSyncEnabled == nil {
 		return nil, false
 	}
-	return o.OnPremisesSyncEnabled.Get(), o.OnPremisesSyncEnabled.IsSet()
+	return o.OnPremisesSyncEnabled, true
 }
 
 // HasOnPremisesSyncEnabled returns a boolean if a field has been set.
 func (o *User) HasOnPremisesSyncEnabled() bool {
-	if o != nil && o.OnPremisesSyncEnabled.IsSet() {
+	if o != nil && o.OnPremisesSyncEnabled != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOnPremisesSyncEnabled gets a reference to the given NullableBool and assigns it to the OnPremisesSyncEnabled field.
+// SetOnPremisesSyncEnabled gets a reference to the given bool and assigns it to the OnPremisesSyncEnabled field.
 func (o *User) SetOnPremisesSyncEnabled(v bool) {
-	o.OnPremisesSyncEnabled.Set(&v)
-}
-// SetOnPremisesSyncEnabledNil sets the value for OnPremisesSyncEnabled to be an explicit nil
-func (o *User) SetOnPremisesSyncEnabledNil() {
-	o.OnPremisesSyncEnabled.Set(nil)
+	o.OnPremisesSyncEnabled = &v
 }
 
-// UnsetOnPremisesSyncEnabled ensures that no value is present for OnPremisesSyncEnabled, not even an explicit nil
-func (o *User) UnsetOnPremisesSyncEnabled() {
-	o.OnPremisesSyncEnabled.Unset()
-}
-
-// GetOnPremisesLastSyncDateTime returns the OnPremisesLastSyncDateTime field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetOnPremisesLastSyncDateTime returns the OnPremisesLastSyncDateTime field value if set, zero value otherwise.
 func (o *User) GetOnPremisesLastSyncDateTime() time.Time {
-	if o == nil || o.OnPremisesLastSyncDateTime.Get() == nil {
+	if o == nil || o.OnPremisesLastSyncDateTime == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.OnPremisesLastSyncDateTime.Get()
+	return *o.OnPremisesLastSyncDateTime
 }
 
 // GetOnPremisesLastSyncDateTimeOk returns a tuple with the OnPremisesLastSyncDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetOnPremisesLastSyncDateTimeOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil || o.OnPremisesLastSyncDateTime == nil {
 		return nil, false
 	}
-	return o.OnPremisesLastSyncDateTime.Get(), o.OnPremisesLastSyncDateTime.IsSet()
+	return o.OnPremisesLastSyncDateTime, true
 }
 
 // HasOnPremisesLastSyncDateTime returns a boolean if a field has been set.
 func (o *User) HasOnPremisesLastSyncDateTime() bool {
-	if o != nil && o.OnPremisesLastSyncDateTime.IsSet() {
+	if o != nil && o.OnPremisesLastSyncDateTime != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOnPremisesLastSyncDateTime gets a reference to the given NullableTime and assigns it to the OnPremisesLastSyncDateTime field.
+// SetOnPremisesLastSyncDateTime gets a reference to the given time.Time and assigns it to the OnPremisesLastSyncDateTime field.
 func (o *User) SetOnPremisesLastSyncDateTime(v time.Time) {
-	o.OnPremisesLastSyncDateTime.Set(&v)
-}
-// SetOnPremisesLastSyncDateTimeNil sets the value for OnPremisesLastSyncDateTime to be an explicit nil
-func (o *User) SetOnPremisesLastSyncDateTimeNil() {
-	o.OnPremisesLastSyncDateTime.Set(nil)
+	o.OnPremisesLastSyncDateTime = &v
 }
 
-// UnsetOnPremisesLastSyncDateTime ensures that no value is present for OnPremisesLastSyncDateTime, not even an explicit nil
-func (o *User) UnsetOnPremisesLastSyncDateTime() {
-	o.OnPremisesLastSyncDateTime.Unset()
-}
-
-// GetOnPremisesSamAccountName returns the OnPremisesSamAccountName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetOnPremisesSamAccountName returns the OnPremisesSamAccountName field value if set, zero value otherwise.
 func (o *User) GetOnPremisesSamAccountName() string {
-	if o == nil || o.OnPremisesSamAccountName.Get() == nil {
+	if o == nil || o.OnPremisesSamAccountName == nil {
 		var ret string
 		return ret
 	}
-	return *o.OnPremisesSamAccountName.Get()
+	return *o.OnPremisesSamAccountName
 }
 
 // GetOnPremisesSamAccountNameOk returns a tuple with the OnPremisesSamAccountName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetOnPremisesSamAccountNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.OnPremisesSamAccountName == nil {
 		return nil, false
 	}
-	return o.OnPremisesSamAccountName.Get(), o.OnPremisesSamAccountName.IsSet()
+	return o.OnPremisesSamAccountName, true
 }
 
 // HasOnPremisesSamAccountName returns a boolean if a field has been set.
 func (o *User) HasOnPremisesSamAccountName() bool {
-	if o != nil && o.OnPremisesSamAccountName.IsSet() {
+	if o != nil && o.OnPremisesSamAccountName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOnPremisesSamAccountName gets a reference to the given NullableString and assigns it to the OnPremisesSamAccountName field.
+// SetOnPremisesSamAccountName gets a reference to the given string and assigns it to the OnPremisesSamAccountName field.
 func (o *User) SetOnPremisesSamAccountName(v string) {
-	o.OnPremisesSamAccountName.Set(&v)
-}
-// SetOnPremisesSamAccountNameNil sets the value for OnPremisesSamAccountName to be an explicit nil
-func (o *User) SetOnPremisesSamAccountNameNil() {
-	o.OnPremisesSamAccountName.Set(nil)
+	o.OnPremisesSamAccountName = &v
 }
 
-// UnsetOnPremisesSamAccountName ensures that no value is present for OnPremisesSamAccountName, not even an explicit nil
-func (o *User) UnsetOnPremisesSamAccountName() {
-	o.OnPremisesSamAccountName.Unset()
-}
-
-// GetOnPremisesUserPrincipalName returns the OnPremisesUserPrincipalName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetOnPremisesUserPrincipalName returns the OnPremisesUserPrincipalName field value if set, zero value otherwise.
 func (o *User) GetOnPremisesUserPrincipalName() string {
-	if o == nil || o.OnPremisesUserPrincipalName.Get() == nil {
+	if o == nil || o.OnPremisesUserPrincipalName == nil {
 		var ret string
 		return ret
 	}
-	return *o.OnPremisesUserPrincipalName.Get()
+	return *o.OnPremisesUserPrincipalName
 }
 
 // GetOnPremisesUserPrincipalNameOk returns a tuple with the OnPremisesUserPrincipalName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetOnPremisesUserPrincipalNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.OnPremisesUserPrincipalName == nil {
 		return nil, false
 	}
-	return o.OnPremisesUserPrincipalName.Get(), o.OnPremisesUserPrincipalName.IsSet()
+	return o.OnPremisesUserPrincipalName, true
 }
 
 // HasOnPremisesUserPrincipalName returns a boolean if a field has been set.
 func (o *User) HasOnPremisesUserPrincipalName() bool {
-	if o != nil && o.OnPremisesUserPrincipalName.IsSet() {
+	if o != nil && o.OnPremisesUserPrincipalName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOnPremisesUserPrincipalName gets a reference to the given NullableString and assigns it to the OnPremisesUserPrincipalName field.
+// SetOnPremisesUserPrincipalName gets a reference to the given string and assigns it to the OnPremisesUserPrincipalName field.
 func (o *User) SetOnPremisesUserPrincipalName(v string) {
-	o.OnPremisesUserPrincipalName.Set(&v)
-}
-// SetOnPremisesUserPrincipalNameNil sets the value for OnPremisesUserPrincipalName to be an explicit nil
-func (o *User) SetOnPremisesUserPrincipalNameNil() {
-	o.OnPremisesUserPrincipalName.Set(nil)
-}
-
-// UnsetOnPremisesUserPrincipalName ensures that no value is present for OnPremisesUserPrincipalName, not even an explicit nil
-func (o *User) UnsetOnPremisesUserPrincipalName() {
-	o.OnPremisesUserPrincipalName.Unset()
+	o.OnPremisesUserPrincipalName = &v
 }
 
 // GetOfficeLocation returns the OfficeLocation field value if set, zero value otherwise.
@@ -1300,46 +1230,36 @@ func (o *User) SetBirthday(v time.Time) {
 	o.Birthday = &v
 }
 
-// GetPreferredName returns the PreferredName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetPreferredName returns the PreferredName field value if set, zero value otherwise.
 func (o *User) GetPreferredName() string {
-	if o == nil || o.PreferredName.Get() == nil {
+	if o == nil || o.PreferredName == nil {
 		var ret string
 		return ret
 	}
-	return *o.PreferredName.Get()
+	return *o.PreferredName
 }
 
 // GetPreferredNameOk returns a tuple with the PreferredName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetPreferredNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.PreferredName == nil {
 		return nil, false
 	}
-	return o.PreferredName.Get(), o.PreferredName.IsSet()
+	return o.PreferredName, true
 }
 
 // HasPreferredName returns a boolean if a field has been set.
 func (o *User) HasPreferredName() bool {
-	if o != nil && o.PreferredName.IsSet() {
+	if o != nil && o.PreferredName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPreferredName gets a reference to the given NullableString and assigns it to the PreferredName field.
+// SetPreferredName gets a reference to the given string and assigns it to the PreferredName field.
 func (o *User) SetPreferredName(v string) {
-	o.PreferredName.Set(&v)
-}
-// SetPreferredNameNil sets the value for PreferredName to be an explicit nil
-func (o *User) SetPreferredNameNil() {
-	o.PreferredName.Set(nil)
-}
-
-// UnsetPreferredName ensures that no value is present for PreferredName, not even an explicit nil
-func (o *User) UnsetPreferredName() {
-	o.PreferredName.Unset()
+	o.PreferredName = &v
 }
 
 // GetDrive returns the Drive field value if set, zero value otherwise.
@@ -1459,26 +1379,26 @@ func (o User) MarshalJSON() ([]byte, error) {
 	if o.MobilePhone != nil {
 		toSerialize["mobilePhone"] = o.MobilePhone
 	}
-	if o.OnPremisesDistinguishedName.IsSet() {
-		toSerialize["onPremisesDistinguishedName"] = o.OnPremisesDistinguishedName.Get()
+	if o.OnPremisesDistinguishedName != nil {
+		toSerialize["onPremisesDistinguishedName"] = o.OnPremisesDistinguishedName
 	}
-	if o.OnPremisesDomainName.IsSet() {
-		toSerialize["onPremisesDomainName"] = o.OnPremisesDomainName.Get()
+	if o.OnPremisesDomainName != nil {
+		toSerialize["onPremisesDomainName"] = o.OnPremisesDomainName
 	}
-	if o.OnPremisesImmutableId.IsSet() {
-		toSerialize["onPremisesImmutableId"] = o.OnPremisesImmutableId.Get()
+	if o.OnPremisesImmutableId != nil {
+		toSerialize["onPremisesImmutableId"] = o.OnPremisesImmutableId
 	}
-	if o.OnPremisesSyncEnabled.IsSet() {
-		toSerialize["onPremisesSyncEnabled"] = o.OnPremisesSyncEnabled.Get()
+	if o.OnPremisesSyncEnabled != nil {
+		toSerialize["onPremisesSyncEnabled"] = o.OnPremisesSyncEnabled
 	}
-	if o.OnPremisesLastSyncDateTime.IsSet() {
-		toSerialize["onPremisesLastSyncDateTime"] = o.OnPremisesLastSyncDateTime.Get()
+	if o.OnPremisesLastSyncDateTime != nil {
+		toSerialize["onPremisesLastSyncDateTime"] = o.OnPremisesLastSyncDateTime
 	}
-	if o.OnPremisesSamAccountName.IsSet() {
-		toSerialize["onPremisesSamAccountName"] = o.OnPremisesSamAccountName.Get()
+	if o.OnPremisesSamAccountName != nil {
+		toSerialize["onPremisesSamAccountName"] = o.OnPremisesSamAccountName
 	}
-	if o.OnPremisesUserPrincipalName.IsSet() {
-		toSerialize["onPremisesUserPrincipalName"] = o.OnPremisesUserPrincipalName.Get()
+	if o.OnPremisesUserPrincipalName != nil {
+		toSerialize["onPremisesUserPrincipalName"] = o.OnPremisesUserPrincipalName
 	}
 	if o.OfficeLocation != nil {
 		toSerialize["officeLocation"] = o.OfficeLocation
@@ -1513,8 +1433,8 @@ func (o User) MarshalJSON() ([]byte, error) {
 	if o.Birthday != nil {
 		toSerialize["birthday"] = o.Birthday
 	}
-	if o.PreferredName.IsSet() {
-		toSerialize["preferredName"] = o.PreferredName.Get()
+	if o.PreferredName != nil {
+		toSerialize["preferredName"] = o.PreferredName
 	}
 	if o.Drive != nil {
 		toSerialize["drive"] = o.Drive

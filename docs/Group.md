@@ -6,26 +6,26 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | Read-only. | [optional] [readonly] 
 **DeletedDateTime** | Pointer to **time.Time** |  | [optional] 
-**CreatedDateTime** | Pointer to **NullableTime** | Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only. | [optional] 
-**Description** | Pointer to **NullableString** | An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search. | [optional] 
-**DisplayName** | Pointer to **NullableString** | The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy. | [optional] 
-**ExpirationDateTime** | Pointer to **NullableTime** | Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only. | [optional] 
-**Mail** | Pointer to **NullableString** | The SMTP address for the group, for example, &#39;serviceadmins@owncloud.com&#39;. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values). | [optional] 
-**OnPremisesDomainName** | Pointer to **NullableString** | Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. | [optional] 
-**OnPremisesLastSyncDateTime** | Pointer to **NullableTime** | Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in). | [optional] 
-**OnPremisesSamAccountName** | Pointer to **NullableString** | Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only. | [optional] 
-**OnPremisesSyncEnabled** | Pointer to **NullableBool** | true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values). | [optional] 
-**PreferredLanguage** | Pointer to **NullableString** | The preferred language for a group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values). | [optional] 
-**SecurityEnabled** | Pointer to **NullableBool** | Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in). | [optional] 
-**SecurityIdentifier** | Pointer to **NullableString** | Security identifier of the group, used in Windows scenarios. Returned by default. | [optional] 
-**Visibility** | Pointer to **NullableString** | Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. It can&#39;t be updated later. Other values of visibility can be updated after group creation. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable. | [optional] 
-**CreatedOnBehalfOf** | Pointer to [**NullableDirectoryObject**](DirectoryObject.md) |  | [optional] 
+**CreatedDateTime** | Pointer to **time.Time** | Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only. | [optional] 
+**Description** | Pointer to **string** | An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search. | [optional] 
+**DisplayName** | Pointer to **string** | The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy. | [optional] 
+**ExpirationDateTime** | Pointer to **time.Time** | Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only. | [optional] 
+**Mail** | Pointer to **string** | The SMTP address for the group, for example, &#39;serviceadmins@owncloud.com&#39;. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values). | [optional] 
+**OnPremisesDomainName** | Pointer to **string** | Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. | [optional] 
+**OnPremisesLastSyncDateTime** | Pointer to **time.Time** | Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in). | [optional] 
+**OnPremisesSamAccountName** | Pointer to **string** | Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only. | [optional] 
+**OnPremisesSyncEnabled** | Pointer to **bool** | true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values). | [optional] 
+**PreferredLanguage** | Pointer to **string** | The preferred language for a group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values). | [optional] 
+**SecurityEnabled** | Pointer to **bool** | Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in). | [optional] 
+**SecurityIdentifier** | Pointer to **string** | Security identifier of the group, used in Windows scenarios. Returned by default. | [optional] 
+**Visibility** | Pointer to **string** | Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. It can&#39;t be updated later. Other values of visibility can be updated after group creation. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable. | [optional] 
+**CreatedOnBehalfOf** | Pointer to [**DirectoryObject**](DirectoryObject.md) |  | [optional] 
 **MemberOf** | Pointer to [**[]DirectoryObject**](DirectoryObject.md) | Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand. | [optional] 
 **Members** | Pointer to [**[]DirectoryObject**](DirectoryObject.md) | Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), Nullable. Supports $expand. | [optional] 
 **Owners** | Pointer to [**[]DirectoryObject**](DirectoryObject.md) | The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. Nullable. Supports $expand. | [optional] 
 **Drive** | Pointer to [**Drive**](Drive.md) |  | [optional] 
 **Drives** | Pointer to [**[]Drive**](Drive.md) | The group&#39;s drives. Read-only. | [optional] 
-**IsArchived** | Pointer to **NullableBool** |  | [optional] 
+**IsArchived** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -121,16 +121,6 @@ SetCreatedDateTime sets CreatedDateTime field to given value.
 
 HasCreatedDateTime returns a boolean if a field has been set.
 
-### SetCreatedDateTimeNil
-
-`func (o *Group) SetCreatedDateTimeNil(b bool)`
-
- SetCreatedDateTimeNil sets the value for CreatedDateTime to be an explicit nil
-
-### UnsetCreatedDateTime
-`func (o *Group) UnsetCreatedDateTime()`
-
-UnsetCreatedDateTime ensures that no value is present for CreatedDateTime, not even an explicit nil
 ### GetDescription
 
 `func (o *Group) GetDescription() string`
@@ -156,16 +146,6 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
-### SetDescriptionNil
-
-`func (o *Group) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *Group) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetDisplayName
 
 `func (o *Group) GetDisplayName() string`
@@ -191,16 +171,6 @@ SetDisplayName sets DisplayName field to given value.
 
 HasDisplayName returns a boolean if a field has been set.
 
-### SetDisplayNameNil
-
-`func (o *Group) SetDisplayNameNil(b bool)`
-
- SetDisplayNameNil sets the value for DisplayName to be an explicit nil
-
-### UnsetDisplayName
-`func (o *Group) UnsetDisplayName()`
-
-UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
 ### GetExpirationDateTime
 
 `func (o *Group) GetExpirationDateTime() time.Time`
@@ -226,16 +196,6 @@ SetExpirationDateTime sets ExpirationDateTime field to given value.
 
 HasExpirationDateTime returns a boolean if a field has been set.
 
-### SetExpirationDateTimeNil
-
-`func (o *Group) SetExpirationDateTimeNil(b bool)`
-
- SetExpirationDateTimeNil sets the value for ExpirationDateTime to be an explicit nil
-
-### UnsetExpirationDateTime
-`func (o *Group) UnsetExpirationDateTime()`
-
-UnsetExpirationDateTime ensures that no value is present for ExpirationDateTime, not even an explicit nil
 ### GetMail
 
 `func (o *Group) GetMail() string`
@@ -261,16 +221,6 @@ SetMail sets Mail field to given value.
 
 HasMail returns a boolean if a field has been set.
 
-### SetMailNil
-
-`func (o *Group) SetMailNil(b bool)`
-
- SetMailNil sets the value for Mail to be an explicit nil
-
-### UnsetMail
-`func (o *Group) UnsetMail()`
-
-UnsetMail ensures that no value is present for Mail, not even an explicit nil
 ### GetOnPremisesDomainName
 
 `func (o *Group) GetOnPremisesDomainName() string`
@@ -296,16 +246,6 @@ SetOnPremisesDomainName sets OnPremisesDomainName field to given value.
 
 HasOnPremisesDomainName returns a boolean if a field has been set.
 
-### SetOnPremisesDomainNameNil
-
-`func (o *Group) SetOnPremisesDomainNameNil(b bool)`
-
- SetOnPremisesDomainNameNil sets the value for OnPremisesDomainName to be an explicit nil
-
-### UnsetOnPremisesDomainName
-`func (o *Group) UnsetOnPremisesDomainName()`
-
-UnsetOnPremisesDomainName ensures that no value is present for OnPremisesDomainName, not even an explicit nil
 ### GetOnPremisesLastSyncDateTime
 
 `func (o *Group) GetOnPremisesLastSyncDateTime() time.Time`
@@ -331,16 +271,6 @@ SetOnPremisesLastSyncDateTime sets OnPremisesLastSyncDateTime field to given val
 
 HasOnPremisesLastSyncDateTime returns a boolean if a field has been set.
 
-### SetOnPremisesLastSyncDateTimeNil
-
-`func (o *Group) SetOnPremisesLastSyncDateTimeNil(b bool)`
-
- SetOnPremisesLastSyncDateTimeNil sets the value for OnPremisesLastSyncDateTime to be an explicit nil
-
-### UnsetOnPremisesLastSyncDateTime
-`func (o *Group) UnsetOnPremisesLastSyncDateTime()`
-
-UnsetOnPremisesLastSyncDateTime ensures that no value is present for OnPremisesLastSyncDateTime, not even an explicit nil
 ### GetOnPremisesSamAccountName
 
 `func (o *Group) GetOnPremisesSamAccountName() string`
@@ -366,16 +296,6 @@ SetOnPremisesSamAccountName sets OnPremisesSamAccountName field to given value.
 
 HasOnPremisesSamAccountName returns a boolean if a field has been set.
 
-### SetOnPremisesSamAccountNameNil
-
-`func (o *Group) SetOnPremisesSamAccountNameNil(b bool)`
-
- SetOnPremisesSamAccountNameNil sets the value for OnPremisesSamAccountName to be an explicit nil
-
-### UnsetOnPremisesSamAccountName
-`func (o *Group) UnsetOnPremisesSamAccountName()`
-
-UnsetOnPremisesSamAccountName ensures that no value is present for OnPremisesSamAccountName, not even an explicit nil
 ### GetOnPremisesSyncEnabled
 
 `func (o *Group) GetOnPremisesSyncEnabled() bool`
@@ -401,16 +321,6 @@ SetOnPremisesSyncEnabled sets OnPremisesSyncEnabled field to given value.
 
 HasOnPremisesSyncEnabled returns a boolean if a field has been set.
 
-### SetOnPremisesSyncEnabledNil
-
-`func (o *Group) SetOnPremisesSyncEnabledNil(b bool)`
-
- SetOnPremisesSyncEnabledNil sets the value for OnPremisesSyncEnabled to be an explicit nil
-
-### UnsetOnPremisesSyncEnabled
-`func (o *Group) UnsetOnPremisesSyncEnabled()`
-
-UnsetOnPremisesSyncEnabled ensures that no value is present for OnPremisesSyncEnabled, not even an explicit nil
 ### GetPreferredLanguage
 
 `func (o *Group) GetPreferredLanguage() string`
@@ -436,16 +346,6 @@ SetPreferredLanguage sets PreferredLanguage field to given value.
 
 HasPreferredLanguage returns a boolean if a field has been set.
 
-### SetPreferredLanguageNil
-
-`func (o *Group) SetPreferredLanguageNil(b bool)`
-
- SetPreferredLanguageNil sets the value for PreferredLanguage to be an explicit nil
-
-### UnsetPreferredLanguage
-`func (o *Group) UnsetPreferredLanguage()`
-
-UnsetPreferredLanguage ensures that no value is present for PreferredLanguage, not even an explicit nil
 ### GetSecurityEnabled
 
 `func (o *Group) GetSecurityEnabled() bool`
@@ -471,16 +371,6 @@ SetSecurityEnabled sets SecurityEnabled field to given value.
 
 HasSecurityEnabled returns a boolean if a field has been set.
 
-### SetSecurityEnabledNil
-
-`func (o *Group) SetSecurityEnabledNil(b bool)`
-
- SetSecurityEnabledNil sets the value for SecurityEnabled to be an explicit nil
-
-### UnsetSecurityEnabled
-`func (o *Group) UnsetSecurityEnabled()`
-
-UnsetSecurityEnabled ensures that no value is present for SecurityEnabled, not even an explicit nil
 ### GetSecurityIdentifier
 
 `func (o *Group) GetSecurityIdentifier() string`
@@ -506,16 +396,6 @@ SetSecurityIdentifier sets SecurityIdentifier field to given value.
 
 HasSecurityIdentifier returns a boolean if a field has been set.
 
-### SetSecurityIdentifierNil
-
-`func (o *Group) SetSecurityIdentifierNil(b bool)`
-
- SetSecurityIdentifierNil sets the value for SecurityIdentifier to be an explicit nil
-
-### UnsetSecurityIdentifier
-`func (o *Group) UnsetSecurityIdentifier()`
-
-UnsetSecurityIdentifier ensures that no value is present for SecurityIdentifier, not even an explicit nil
 ### GetVisibility
 
 `func (o *Group) GetVisibility() string`
@@ -541,16 +421,6 @@ SetVisibility sets Visibility field to given value.
 
 HasVisibility returns a boolean if a field has been set.
 
-### SetVisibilityNil
-
-`func (o *Group) SetVisibilityNil(b bool)`
-
- SetVisibilityNil sets the value for Visibility to be an explicit nil
-
-### UnsetVisibility
-`func (o *Group) UnsetVisibility()`
-
-UnsetVisibility ensures that no value is present for Visibility, not even an explicit nil
 ### GetCreatedOnBehalfOf
 
 `func (o *Group) GetCreatedOnBehalfOf() DirectoryObject`
@@ -576,16 +446,6 @@ SetCreatedOnBehalfOf sets CreatedOnBehalfOf field to given value.
 
 HasCreatedOnBehalfOf returns a boolean if a field has been set.
 
-### SetCreatedOnBehalfOfNil
-
-`func (o *Group) SetCreatedOnBehalfOfNil(b bool)`
-
- SetCreatedOnBehalfOfNil sets the value for CreatedOnBehalfOf to be an explicit nil
-
-### UnsetCreatedOnBehalfOf
-`func (o *Group) UnsetCreatedOnBehalfOf()`
-
-UnsetCreatedOnBehalfOf ensures that no value is present for CreatedOnBehalfOf, not even an explicit nil
 ### GetMemberOf
 
 `func (o *Group) GetMemberOf() []DirectoryObject`
@@ -736,16 +596,6 @@ SetIsArchived sets IsArchived field to given value.
 
 HasIsArchived returns a boolean if a field has been set.
 
-### SetIsArchivedNil
-
-`func (o *Group) SetIsArchivedNil(b bool)`
-
- SetIsArchivedNil sets the value for IsArchived to be an explicit nil
-
-### UnsetIsArchived
-`func (o *Group) UnsetIsArchived()`
-
-UnsetIsArchived ensures that no value is present for IsArchived, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
