@@ -43,6 +43,7 @@ docs/OdataError.md
 docs/OdataErrorDetail.md
 docs/OdataErrorMain.md
 docs/OpenGraphFile.md
+docs/PasswordProfile.md
 docs/Quota.md
 docs/User.md
 docs/UserApi.md
@@ -71,6 +72,7 @@ model_odata_error.go
 model_odata_error_detail.go
 model_odata_error_main.go
 model_open_graph_file.go
+model_password_profile.go
 model_quota.go
 model_user.go
 response.go

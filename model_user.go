@@ -66,6 +66,7 @@ type User struct {
 	OnPremisesUserPrincipalName *string `json:"onPremisesUserPrincipalName,omitempty"`
 	// The office location in the user's place of business. Returned by default.
 	OfficeLocation *string `json:"officeLocation,omitempty"`
+	PasswordProfile *PasswordProfile `json:"passwordProfile,omitempty"`
 	// The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select.
 	PostalCode *string `json:"postalCode,omitempty"`
 	// The preferred language for the user. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
@@ -910,6 +911,38 @@ func (o *User) SetOfficeLocation(v string) {
 	o.OfficeLocation = &v
 }
 
+// GetPasswordProfile returns the PasswordProfile field value if set, zero value otherwise.
+func (o *User) GetPasswordProfile() PasswordProfile {
+	if o == nil || o.PasswordProfile == nil {
+		var ret PasswordProfile
+		return ret
+	}
+	return *o.PasswordProfile
+}
+
+// GetPasswordProfileOk returns a tuple with the PasswordProfile field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetPasswordProfileOk() (*PasswordProfile, bool) {
+	if o == nil || o.PasswordProfile == nil {
+		return nil, false
+	}
+	return o.PasswordProfile, true
+}
+
+// HasPasswordProfile returns a boolean if a field has been set.
+func (o *User) HasPasswordProfile() bool {
+	if o != nil && o.PasswordProfile != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPasswordProfile gets a reference to the given PasswordProfile and assigns it to the PasswordProfile field.
+func (o *User) SetPasswordProfile(v PasswordProfile) {
+	o.PasswordProfile = &v
+}
+
 // GetPostalCode returns the PostalCode field value if set, zero value otherwise.
 func (o *User) GetPostalCode() string {
 	if o == nil || o.PostalCode == nil {
@@ -1402,6 +1435,9 @@ func (o User) MarshalJSON() ([]byte, error) {
 	}
 	if o.OfficeLocation != nil {
 		toSerialize["officeLocation"] = o.OfficeLocation
+	}
+	if o.PasswordProfile != nil {
+		toSerialize["passwordProfile"] = o.PasswordProfile
 	}
 	if o.PostalCode != nil {
 		toSerialize["postalCode"] = o.PostalCode

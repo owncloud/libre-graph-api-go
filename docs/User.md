@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **OnPremisesSamAccountName** | Pointer to **string** | Contains the on-premises SAM account name synchronized from the on-premises directory. Read-only. | [optional] 
 **OnPremisesUserPrincipalName** | Pointer to **string** | Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith). | [optional] 
 **OfficeLocation** | Pointer to **string** | The office location in the user&#39;s place of business. Returned by default. | [optional] 
+**PasswordProfile** | Pointer to [**PasswordProfile**](PasswordProfile.md) |  | [optional] 
 **PostalCode** | Pointer to **string** | The postal code for the user&#39;s postal address. The postal code is specific to the user&#39;s country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select. | [optional] 
 **PreferredLanguage** | Pointer to **string** | The preferred language for the user. Should follow ISO 639-1 Code; for example &#39;en-US&#39;. Returned by default. | [optional] 
 **State** | Pointer to **string** | The state or province in the user&#39;s address. Returned only on $select. Supports $filter. | [optional] 
@@ -686,6 +687,31 @@ SetOfficeLocation sets OfficeLocation field to given value.
 `func (o *User) HasOfficeLocation() bool`
 
 HasOfficeLocation returns a boolean if a field has been set.
+
+### GetPasswordProfile
+
+`func (o *User) GetPasswordProfile() PasswordProfile`
+
+GetPasswordProfile returns the PasswordProfile field if non-nil, zero value otherwise.
+
+### GetPasswordProfileOk
+
+`func (o *User) GetPasswordProfileOk() (*PasswordProfile, bool)`
+
+GetPasswordProfileOk returns a tuple with the PasswordProfile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPasswordProfile
+
+`func (o *User) SetPasswordProfile(v PasswordProfile)`
+
+SetPasswordProfile sets PasswordProfile field to given value.
+
+### HasPasswordProfile
+
+`func (o *User) HasPasswordProfile() bool`
+
+HasPasswordProfile returns a boolean if a field has been set.
 
 ### GetPostalCode
 

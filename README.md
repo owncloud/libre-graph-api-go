@@ -122,6 +122,7 @@ Class | Method | HTTP request | Description
  - [OdataErrorDetail](docs/OdataErrorDetail.md)
  - [OdataErrorMain](docs/OdataErrorMain.md)
  - [OpenGraphFile](docs/OpenGraphFile.md)
+ - [PasswordProfile](docs/PasswordProfile.md)
  - [Quota](docs/Quota.md)
  - [User](docs/User.md)
 
