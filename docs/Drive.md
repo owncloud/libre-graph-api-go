@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **Quota** | Pointer to [**Quota**](Quota.md) |  | [optional] 
 **Items** | Pointer to [**[]DriveItem**](DriveItem.md) | All items contained in the drive. Read-only. Nullable. | [optional] [readonly] 
 **Root** | Pointer to [**DriveItem**](DriveItem.md) |  | [optional] 
+**Special** | Pointer to [**[]DriveItem**](DriveItem.md) | A collection of special drive resources. | [optional] 
 
 ## Methods
 
@@ -465,6 +466,31 @@ SetRoot sets Root field to given value.
 `func (o *Drive) HasRoot() bool`
 
 HasRoot returns a boolean if a field has been set.
+
+### GetSpecial
+
+`func (o *Drive) GetSpecial() []DriveItem`
+
+GetSpecial returns the Special field if non-nil, zero value otherwise.
+
+### GetSpecialOk
+
+`func (o *Drive) GetSpecialOk() (*[]DriveItem, bool)`
+
+GetSpecialOk returns a tuple with the Special field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpecial
+
+`func (o *Drive) SetSpecial(v []DriveItem)`
+
+SetSpecial sets Special field to given value.
+
+### HasSpecial
+
+`func (o *Drive) HasSpecial() bool`
+
+HasSpecial returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

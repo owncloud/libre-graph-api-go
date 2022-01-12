@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **Folder** | Pointer to [**Folder**](Folder.md) |  | [optional] 
 **Image** | Pointer to [**Image**](Image.md) |  | [optional] 
 **Root** | Pointer to **map[string]interface{}** | If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive. | [optional] 
+**Trash** | Pointer to [**Trash**](Trash.md) |  | [optional] 
 **Size** | Pointer to **int64** | Size of the item in bytes. Read-only. | [optional] [readonly] 
 **WebDavUrl** | Pointer to **string** | WebDAV compatible URL for the item. Read-only. | [optional] [readonly] 
 **Children** | Pointer to [**[]DriveItem**](DriveItem.md) | Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable. | [optional] [readonly] 
@@ -546,6 +547,31 @@ SetRoot sets Root field to given value.
 `func (o *DriveItem) HasRoot() bool`
 
 HasRoot returns a boolean if a field has been set.
+
+### GetTrash
+
+`func (o *DriveItem) GetTrash() Trash`
+
+GetTrash returns the Trash field if non-nil, zero value otherwise.
+
+### GetTrashOk
+
+`func (o *DriveItem) GetTrashOk() (*Trash, bool)`
+
+GetTrashOk returns a tuple with the Trash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrash
+
+`func (o *DriveItem) SetTrash(v Trash)`
+
+SetTrash sets Trash field to given value.
+
+### HasTrash
+
+`func (o *DriveItem) HasTrash() bool`
+
+HasTrash returns a boolean if a field has been set.
 
 ### GetSize
 
