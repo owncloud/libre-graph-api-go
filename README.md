@@ -124,6 +124,7 @@ Class | Method | HTTP request | Description
  - [OpenGraphFile](docs/OpenGraphFile.md)
  - [PasswordProfile](docs/PasswordProfile.md)
  - [Quota](docs/Quota.md)
+ - [SpecialFolder](docs/SpecialFolder.md)
  - [Trash](docs/Trash.md)
  - [User](docs/User.md)
 

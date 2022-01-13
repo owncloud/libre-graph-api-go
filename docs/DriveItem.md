@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **Image** | Pointer to [**Image**](Image.md) |  | [optional] 
 **Root** | Pointer to **map[string]interface{}** | If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive. | [optional] 
 **Trash** | Pointer to [**Trash**](Trash.md) |  | [optional] 
+**SpecialFolder** | Pointer to [**SpecialFolder**](SpecialFolder.md) |  | [optional] 
 **Size** | Pointer to **int64** | Size of the item in bytes. Read-only. | [optional] [readonly] 
 **WebDavUrl** | Pointer to **string** | WebDAV compatible URL for the item. Read-only. | [optional] [readonly] 
 **Children** | Pointer to [**[]DriveItem**](DriveItem.md) | Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable. | [optional] [readonly] 
@@ -572,6 +573,31 @@ SetTrash sets Trash field to given value.
 `func (o *DriveItem) HasTrash() bool`
 
 HasTrash returns a boolean if a field has been set.
+
+### GetSpecialFolder
+
+`func (o *DriveItem) GetSpecialFolder() SpecialFolder`
+
+GetSpecialFolder returns the SpecialFolder field if non-nil, zero value otherwise.
+
+### GetSpecialFolderOk
+
+`func (o *DriveItem) GetSpecialFolderOk() (*SpecialFolder, bool)`
+
+GetSpecialFolderOk returns a tuple with the SpecialFolder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpecialFolder
+
+`func (o *DriveItem) SetSpecialFolder(v SpecialFolder)`
+
+SetSpecialFolder sets SpecialFolder field to given value.
+
+### HasSpecialFolder
+
+`func (o *DriveItem) HasSpecialFolder() bool`
+
+HasSpecialFolder returns a boolean if a field has been set.
 
 ### GetSize
 

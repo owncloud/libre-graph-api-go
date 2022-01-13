@@ -48,6 +48,7 @@ type DriveItem struct {
 	// If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
 	Root *map[string]interface{} `json:"root,omitempty"`
 	Trash *Trash `json:"trash,omitempty"`
+	SpecialFolder *SpecialFolder `json:"specialFolder,omitempty"`
 	// Size of the item in bytes. Read-only.
 	Size *int64 `json:"size,omitempty"`
 	// WebDAV compatible URL for the item. Read-only.
@@ -745,6 +746,38 @@ func (o *DriveItem) SetTrash(v Trash) {
 	o.Trash = &v
 }
 
+// GetSpecialFolder returns the SpecialFolder field value if set, zero value otherwise.
+func (o *DriveItem) GetSpecialFolder() SpecialFolder {
+	if o == nil || o.SpecialFolder == nil {
+		var ret SpecialFolder
+		return ret
+	}
+	return *o.SpecialFolder
+}
+
+// GetSpecialFolderOk returns a tuple with the SpecialFolder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DriveItem) GetSpecialFolderOk() (*SpecialFolder, bool) {
+	if o == nil || o.SpecialFolder == nil {
+		return nil, false
+	}
+	return o.SpecialFolder, true
+}
+
+// HasSpecialFolder returns a boolean if a field has been set.
+func (o *DriveItem) HasSpecialFolder() bool {
+	if o != nil && o.SpecialFolder != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSpecialFolder gets a reference to the given SpecialFolder and assigns it to the SpecialFolder field.
+func (o *DriveItem) SetSpecialFolder(v SpecialFolder) {
+	o.SpecialFolder = &v
+}
+
 // GetSize returns the Size field value if set, zero value otherwise.
 func (o *DriveItem) GetSize() int64 {
 	if o == nil || o.Size == nil {
@@ -905,6 +938,9 @@ func (o DriveItem) MarshalJSON() ([]byte, error) {
 	}
 	if o.Trash != nil {
 		toSerialize["trash"] = o.Trash
+	}
+	if o.SpecialFolder != nil {
+		toSerialize["specialFolder"] = o.SpecialFolder
 	}
 	if o.Size != nil {
 		toSerialize["size"] = o.Size
