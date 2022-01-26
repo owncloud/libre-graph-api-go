@@ -16,7 +16,7 @@ import (
 
 // CollectionOfDriveItems struct for CollectionOfDriveItems
 type CollectionOfDriveItems struct {
-	Value *[]DriveItem `json:"value,omitempty"`
+	Value []DriveItem `json:"value,omitempty"`
 	OdataNextLink *string `json:"@odata.nextLink,omitempty"`
 }
 
@@ -43,12 +43,12 @@ func (o *CollectionOfDriveItems) GetValue() []DriveItem {
 		var ret []DriveItem
 		return ret
 	}
-	return *o.Value
+	return o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CollectionOfDriveItems) GetValueOk() (*[]DriveItem, bool) {
+func (o *CollectionOfDriveItems) GetValueOk() ([]DriveItem, bool) {
 	if o == nil || o.Value == nil {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *CollectionOfDriveItems) HasValue() bool {
 
 // SetValue gets a reference to the given []DriveItem and assigns it to the Value field.
 func (o *CollectionOfDriveItems) SetValue(v []DriveItem) {
-	o.Value = &v
+	o.Value = v
 }
 
 // GetOdataNextLink returns the OdataNextLink field value if set, zero value otherwise.

@@ -33,8 +33,8 @@ func main() {
     ifMatch := "ifMatch_example" // string | ETag (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UserApi.DeleteUser(context.Background(), userId).IfMatch(ifMatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UserApi.DeleteUser(context.Background(), userId).IfMatch(ifMatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserApi.DeleteUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -102,8 +102,8 @@ func main() {
     expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UserApi.GetUser(context.Background(), userId).Select_(select_).Expand(expand).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UserApi.GetUser(context.Background(), userId).Select_(select_).Expand(expand).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserApi.GetUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -173,8 +173,8 @@ func main() {
     user := *openapiclient.NewUser() // User | New property values
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UserApi.UpdateUser(context.Background(), userId).User(user).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UserApi.UpdateUser(context.Background(), userId).User(user).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserApi.UpdateUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

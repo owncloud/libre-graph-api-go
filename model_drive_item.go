@@ -46,7 +46,7 @@ type DriveItem struct {
 	Folder *Folder `json:"folder,omitempty"`
 	Image *Image `json:"image,omitempty"`
 	// If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
-	Root *map[string]interface{} `json:"root,omitempty"`
+	Root map[string]interface{} `json:"root,omitempty"`
 	Trash *Trash `json:"trash,omitempty"`
 	SpecialFolder *SpecialFolder `json:"specialFolder,omitempty"`
 	// Size of the item in bytes. Read-only.
@@ -54,7 +54,7 @@ type DriveItem struct {
 	// WebDAV compatible URL for the item. Read-only.
 	WebDavUrl *string `json:"webDavUrl,omitempty"`
 	// Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
-	Children *[]DriveItem `json:"children,omitempty"`
+	Children []DriveItem `json:"children,omitempty"`
 }
 
 // NewDriveItem instantiates a new DriveItem object
@@ -688,12 +688,12 @@ func (o *DriveItem) GetRoot() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Root
+	return o.Root
 }
 
 // GetRootOk returns a tuple with the Root field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveItem) GetRootOk() (*map[string]interface{}, bool) {
+func (o *DriveItem) GetRootOk() (map[string]interface{}, bool) {
 	if o == nil || o.Root == nil {
 		return nil, false
 	}
@@ -711,7 +711,7 @@ func (o *DriveItem) HasRoot() bool {
 
 // SetRoot gets a reference to the given map[string]interface{} and assigns it to the Root field.
 func (o *DriveItem) SetRoot(v map[string]interface{}) {
-	o.Root = &v
+	o.Root = v
 }
 
 // GetTrash returns the Trash field value if set, zero value otherwise.
@@ -848,12 +848,12 @@ func (o *DriveItem) GetChildren() []DriveItem {
 		var ret []DriveItem
 		return ret
 	}
-	return *o.Children
+	return o.Children
 }
 
 // GetChildrenOk returns a tuple with the Children field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveItem) GetChildrenOk() (*[]DriveItem, bool) {
+func (o *DriveItem) GetChildrenOk() ([]DriveItem, bool) {
 	if o == nil || o.Children == nil {
 		return nil, false
 	}
@@ -871,7 +871,7 @@ func (o *DriveItem) HasChildren() bool {
 
 // SetChildren gets a reference to the given []DriveItem and assigns it to the Children field.
 func (o *DriveItem) SetChildren(v []DriveItem) {
-	o.Children = &v
+	o.Children = v
 }
 
 func (o DriveItem) MarshalJSON() ([]byte, error) {

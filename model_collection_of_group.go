@@ -16,7 +16,7 @@ import (
 
 // CollectionOfGroup struct for CollectionOfGroup
 type CollectionOfGroup struct {
-	Value *[]Group `json:"value,omitempty"`
+	Value []Group `json:"value,omitempty"`
 	OdataNextLink *string `json:"@odata.nextLink,omitempty"`
 }
 
@@ -43,12 +43,12 @@ func (o *CollectionOfGroup) GetValue() []Group {
 		var ret []Group
 		return ret
 	}
-	return *o.Value
+	return o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CollectionOfGroup) GetValueOk() (*[]Group, bool) {
+func (o *CollectionOfGroup) GetValueOk() ([]Group, bool) {
 	if o == nil || o.Value == nil {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *CollectionOfGroup) HasValue() bool {
 
 // SetValue gets a reference to the given []Group and assigns it to the Value field.
 func (o *CollectionOfGroup) SetValue(v []Group) {
-	o.Value = &v
+	o.Value = v
 }
 
 // GetOdataNextLink returns the OdataNextLink field value if set, zero value otherwise.

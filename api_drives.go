@@ -12,23 +12,23 @@ package libregraph
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 	"strings"
 )
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // DrivesApiService DrivesApi service
 type DrivesApiService service
 
 type ApiCreateDriveRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *DrivesApiService
 	drive *Drive
 }
@@ -39,17 +39,17 @@ func (r ApiCreateDriveRequest) Drive(drive Drive) ApiCreateDriveRequest {
 	return r
 }
 
-func (r ApiCreateDriveRequest) Execute() (Drive, *_nethttp.Response, error) {
+func (r ApiCreateDriveRequest) Execute() (*Drive, *http.Response, error) {
 	return r.ApiService.CreateDriveExecute(r)
 }
 
 /*
 CreateDrive Create a new space of a specific type
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateDriveRequest
 */
-func (a *DrivesApiService) CreateDrive(ctx _context.Context) ApiCreateDriveRequest {
+func (a *DrivesApiService) CreateDrive(ctx context.Context) ApiCreateDriveRequest {
 	return ApiCreateDriveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -58,24 +58,24 @@ func (a *DrivesApiService) CreateDrive(ctx _context.Context) ApiCreateDriveReque
 
 // Execute executes the request
 //  @return Drive
-func (a *DrivesApiService) CreateDriveExecute(r ApiCreateDriveRequest) (Drive, *_nethttp.Response, error) {
+func (a *DrivesApiService) CreateDriveExecute(r ApiCreateDriveRequest) (*Drive, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  Drive
+		localVarReturnValue  *Drive
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.CreateDrive")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/drives"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.drive == nil {
 		return localVarReturnValue, nil, reportError("drive is required and must be specified")
 	}
@@ -109,15 +109,15 @@ func (a *DrivesApiService) CreateDriveExecute(r ApiCreateDriveRequest) (Drive, *
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -133,7 +133,7 @@ func (a *DrivesApiService) CreateDriveExecute(r ApiCreateDriveRequest) (Drive, *
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -144,7 +144,7 @@ func (a *DrivesApiService) CreateDriveExecute(r ApiCreateDriveRequest) (Drive, *
 }
 
 type ApiDeleteDriveRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *DrivesApiService
 	driveId string
 	ifMatch *string
@@ -156,18 +156,18 @@ func (r ApiDeleteDriveRequest) IfMatch(ifMatch string) ApiDeleteDriveRequest {
 	return r
 }
 
-func (r ApiDeleteDriveRequest) Execute() (*_nethttp.Response, error) {
+func (r ApiDeleteDriveRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteDriveExecute(r)
 }
 
 /*
 DeleteDrive Delete a specific space
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param driveId key: id of drive
  @return ApiDeleteDriveRequest
 */
-func (a *DrivesApiService) DeleteDrive(ctx _context.Context, driveId string) ApiDeleteDriveRequest {
+func (a *DrivesApiService) DeleteDrive(ctx context.Context, driveId string) ApiDeleteDriveRequest {
 	return ApiDeleteDriveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -176,24 +176,24 @@ func (a *DrivesApiService) DeleteDrive(ctx _context.Context, driveId string) Api
 }
 
 // Execute executes the request
-func (a *DrivesApiService) DeleteDriveExecute(r ApiDeleteDriveRequest) (*_nethttp.Response, error) {
+func (a *DrivesApiService) DeleteDriveExecute(r ApiDeleteDriveRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodDelete
+		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.DeleteDrive")
 	if err != nil {
-		return nil, GenericOpenAPIError{error: err.Error()}
+		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/drives/{drive-id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"drive-id"+"}", _neturl.PathEscape(parameterToString(r.driveId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"drive-id"+"}", url.PathEscape(parameterToString(r.driveId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -225,15 +225,15 @@ func (a *DrivesApiService) DeleteDriveExecute(r ApiDeleteDriveRequest) (*_nethtt
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -251,7 +251,7 @@ func (a *DrivesApiService) DeleteDriveExecute(r ApiDeleteDriveRequest) (*_nethtt
 }
 
 type ApiGetDriveRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *DrivesApiService
 	driveId string
 	select_ *[]string
@@ -269,18 +269,18 @@ func (r ApiGetDriveRequest) Expand(expand []string) ApiGetDriveRequest {
 	return r
 }
 
-func (r ApiGetDriveRequest) Execute() (Drive, *_nethttp.Response, error) {
+func (r ApiGetDriveRequest) Execute() (*Drive, *http.Response, error) {
 	return r.ApiService.GetDriveExecute(r)
 }
 
 /*
 GetDrive Get drive by id
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param driveId key: id of drive
  @return ApiGetDriveRequest
 */
-func (a *DrivesApiService) GetDrive(ctx _context.Context, driveId string) ApiGetDriveRequest {
+func (a *DrivesApiService) GetDrive(ctx context.Context, driveId string) ApiGetDriveRequest {
 	return ApiGetDriveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -290,25 +290,25 @@ func (a *DrivesApiService) GetDrive(ctx _context.Context, driveId string) ApiGet
 
 // Execute executes the request
 //  @return Drive
-func (a *DrivesApiService) GetDriveExecute(r ApiGetDriveRequest) (Drive, *_nethttp.Response, error) {
+func (a *DrivesApiService) GetDriveExecute(r ApiGetDriveRequest) (*Drive, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  Drive
+		localVarReturnValue  *Drive
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.GetDrive")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/drives/{drive-id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"drive-id"+"}", _neturl.PathEscape(parameterToString(r.driveId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"drive-id"+"}", url.PathEscape(parameterToString(r.driveId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	if r.select_ != nil {
 		localVarQueryParams.Add("$select", parameterToString(*r.select_, "csv"))
@@ -343,15 +343,15 @@ func (a *DrivesApiService) GetDriveExecute(r ApiGetDriveRequest) (Drive, *_netht
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -367,7 +367,7 @@ func (a *DrivesApiService) GetDriveExecute(r ApiGetDriveRequest) (Drive, *_netht
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -378,7 +378,7 @@ func (a *DrivesApiService) GetDriveExecute(r ApiGetDriveRequest) (Drive, *_netht
 }
 
 type ApiUpdateDriveRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *DrivesApiService
 	driveId string
 	drive *Drive
@@ -390,18 +390,18 @@ func (r ApiUpdateDriveRequest) Drive(drive Drive) ApiUpdateDriveRequest {
 	return r
 }
 
-func (r ApiUpdateDriveRequest) Execute() (Drive, *_nethttp.Response, error) {
+func (r ApiUpdateDriveRequest) Execute() (*Drive, *http.Response, error) {
 	return r.ApiService.UpdateDriveExecute(r)
 }
 
 /*
 UpdateDrive Update the space
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param driveId key: id of drive
  @return ApiUpdateDriveRequest
 */
-func (a *DrivesApiService) UpdateDrive(ctx _context.Context, driveId string) ApiUpdateDriveRequest {
+func (a *DrivesApiService) UpdateDrive(ctx context.Context, driveId string) ApiUpdateDriveRequest {
 	return ApiUpdateDriveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -411,25 +411,25 @@ func (a *DrivesApiService) UpdateDrive(ctx _context.Context, driveId string) Api
 
 // Execute executes the request
 //  @return Drive
-func (a *DrivesApiService) UpdateDriveExecute(r ApiUpdateDriveRequest) (Drive, *_nethttp.Response, error) {
+func (a *DrivesApiService) UpdateDriveExecute(r ApiUpdateDriveRequest) (*Drive, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodPatch
+		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  Drive
+		localVarReturnValue  *Drive
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesApiService.UpdateDrive")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/drives/{drive-id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"drive-id"+"}", _neturl.PathEscape(parameterToString(r.driveId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"drive-id"+"}", url.PathEscape(parameterToString(r.driveId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.drive == nil {
 		return localVarReturnValue, nil, reportError("drive is required and must be specified")
 	}
@@ -463,15 +463,15 @@ func (a *DrivesApiService) UpdateDriveExecute(r ApiUpdateDriveRequest) (Drive, *
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -487,7 +487,7 @@ func (a *DrivesApiService) UpdateDriveExecute(r ApiUpdateDriveRequest) (Drive, *
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}

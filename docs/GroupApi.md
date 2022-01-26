@@ -33,8 +33,8 @@ func main() {
     ifMatch := "ifMatch_example" // string | ETag (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GroupApi.DeleteGroup(context.Background(), groupId).IfMatch(ifMatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupApi.DeleteGroup(context.Background(), groupId).IfMatch(ifMatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.DeleteGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -101,8 +101,8 @@ func main() {
     select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GroupApi.GetGroup(context.Background(), groupId).Select_(select_).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupApi.GetGroup(context.Background(), groupId).Select_(select_).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.GetGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -171,8 +171,8 @@ func main() {
     group := *openapiclient.NewGroup() // Group | New property values
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GroupApi.UpdateGroup(context.Background(), groupId).Group(group).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupApi.UpdateGroup(context.Background(), groupId).Group(group).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.UpdateGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -29,8 +29,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MeDriveRootChildrenApi.HomeGetChildren(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MeDriveRootChildrenApi.HomeGetChildren(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootChildrenApi.HomeGetChildren``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

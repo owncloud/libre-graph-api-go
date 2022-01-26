@@ -12,23 +12,23 @@ package libregraph
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 	"strings"
 )
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // GroupApiService GroupApi service
 type GroupApiService service
 
 type ApiDeleteGroupRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *GroupApiService
 	groupId string
 	ifMatch *string
@@ -40,18 +40,18 @@ func (r ApiDeleteGroupRequest) IfMatch(ifMatch string) ApiDeleteGroupRequest {
 	return r
 }
 
-func (r ApiDeleteGroupRequest) Execute() (*_nethttp.Response, error) {
+func (r ApiDeleteGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteGroupExecute(r)
 }
 
 /*
 DeleteGroup Delete entity from groups
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param groupId key: id of group
  @return ApiDeleteGroupRequest
 */
-func (a *GroupApiService) DeleteGroup(ctx _context.Context, groupId string) ApiDeleteGroupRequest {
+func (a *GroupApiService) DeleteGroup(ctx context.Context, groupId string) ApiDeleteGroupRequest {
 	return ApiDeleteGroupRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -60,24 +60,24 @@ func (a *GroupApiService) DeleteGroup(ctx _context.Context, groupId string) ApiD
 }
 
 // Execute executes the request
-func (a *GroupApiService) DeleteGroupExecute(r ApiDeleteGroupRequest) (*_nethttp.Response, error) {
+func (a *GroupApiService) DeleteGroupExecute(r ApiDeleteGroupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodDelete
+		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupApiService.DeleteGroup")
 	if err != nil {
-		return nil, GenericOpenAPIError{error: err.Error()}
+		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/groups/{group-id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"group-id"+"}", _neturl.PathEscape(parameterToString(r.groupId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"group-id"+"}", url.PathEscape(parameterToString(r.groupId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -109,15 +109,15 @@ func (a *GroupApiService) DeleteGroupExecute(r ApiDeleteGroupRequest) (*_nethttp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -135,7 +135,7 @@ func (a *GroupApiService) DeleteGroupExecute(r ApiDeleteGroupRequest) (*_nethttp
 }
 
 type ApiGetGroupRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *GroupApiService
 	groupId string
 	select_ *[]string
@@ -147,18 +147,18 @@ func (r ApiGetGroupRequest) Select_(select_ []string) ApiGetGroupRequest {
 	return r
 }
 
-func (r ApiGetGroupRequest) Execute() (Group, *_nethttp.Response, error) {
+func (r ApiGetGroupRequest) Execute() (*Group, *http.Response, error) {
 	return r.ApiService.GetGroupExecute(r)
 }
 
 /*
 GetGroup Get entity from groups by key
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param groupId key: id of group
  @return ApiGetGroupRequest
 */
-func (a *GroupApiService) GetGroup(ctx _context.Context, groupId string) ApiGetGroupRequest {
+func (a *GroupApiService) GetGroup(ctx context.Context, groupId string) ApiGetGroupRequest {
 	return ApiGetGroupRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -168,25 +168,25 @@ func (a *GroupApiService) GetGroup(ctx _context.Context, groupId string) ApiGetG
 
 // Execute executes the request
 //  @return Group
-func (a *GroupApiService) GetGroupExecute(r ApiGetGroupRequest) (Group, *_nethttp.Response, error) {
+func (a *GroupApiService) GetGroupExecute(r ApiGetGroupRequest) (*Group, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  Group
+		localVarReturnValue  *Group
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupApiService.GetGroup")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/groups/{group-id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"group-id"+"}", _neturl.PathEscape(parameterToString(r.groupId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"group-id"+"}", url.PathEscape(parameterToString(r.groupId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	if r.select_ != nil {
 		localVarQueryParams.Add("$select", parameterToString(*r.select_, "csv"))
@@ -218,15 +218,15 @@ func (a *GroupApiService) GetGroupExecute(r ApiGetGroupRequest) (Group, *_nethtt
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -242,7 +242,7 @@ func (a *GroupApiService) GetGroupExecute(r ApiGetGroupRequest) (Group, *_nethtt
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -253,7 +253,7 @@ func (a *GroupApiService) GetGroupExecute(r ApiGetGroupRequest) (Group, *_nethtt
 }
 
 type ApiUpdateGroupRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *GroupApiService
 	groupId string
 	group *Group
@@ -265,18 +265,18 @@ func (r ApiUpdateGroupRequest) Group(group Group) ApiUpdateGroupRequest {
 	return r
 }
 
-func (r ApiUpdateGroupRequest) Execute() (*_nethttp.Response, error) {
+func (r ApiUpdateGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateGroupExecute(r)
 }
 
 /*
 UpdateGroup Update entity in groups
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param groupId key: id of group
  @return ApiUpdateGroupRequest
 */
-func (a *GroupApiService) UpdateGroup(ctx _context.Context, groupId string) ApiUpdateGroupRequest {
+func (a *GroupApiService) UpdateGroup(ctx context.Context, groupId string) ApiUpdateGroupRequest {
 	return ApiUpdateGroupRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -285,24 +285,24 @@ func (a *GroupApiService) UpdateGroup(ctx _context.Context, groupId string) ApiU
 }
 
 // Execute executes the request
-func (a *GroupApiService) UpdateGroupExecute(r ApiUpdateGroupRequest) (*_nethttp.Response, error) {
+func (a *GroupApiService) UpdateGroupExecute(r ApiUpdateGroupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodPatch
+		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupApiService.UpdateGroup")
 	if err != nil {
-		return nil, GenericOpenAPIError{error: err.Error()}
+		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/groups/{group-id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"group-id"+"}", _neturl.PathEscape(parameterToString(r.groupId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"group-id"+"}", url.PathEscape(parameterToString(r.groupId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.group == nil {
 		return nil, reportError("group is required and must be specified")
 	}
@@ -336,15 +336,15 @@ func (a *GroupApiService) UpdateGroupExecute(r ApiUpdateGroupRequest) (*_nethttp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}

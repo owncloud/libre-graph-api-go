@@ -12,22 +12,22 @@ package libregraph
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 )
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // MeDrivesApiService MeDrivesApi service
 type MeDrivesApiService service
 
 type ApiListMyDrivesRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *MeDrivesApiService
 	top *int32
 	skip *int32
@@ -74,17 +74,17 @@ func (r ApiListMyDrivesRequest) Expand(expand []string) ApiListMyDrivesRequest {
 	return r
 }
 
-func (r ApiListMyDrivesRequest) Execute() (CollectionOfDrives, *_nethttp.Response, error) {
+func (r ApiListMyDrivesRequest) Execute() (*CollectionOfDrives, *http.Response, error) {
 	return r.ApiService.ListMyDrivesExecute(r)
 }
 
 /*
 ListMyDrives Get drives from me
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListMyDrivesRequest
 */
-func (a *MeDrivesApiService) ListMyDrives(ctx _context.Context) ApiListMyDrivesRequest {
+func (a *MeDrivesApiService) ListMyDrives(ctx context.Context) ApiListMyDrivesRequest {
 	return ApiListMyDrivesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -93,24 +93,24 @@ func (a *MeDrivesApiService) ListMyDrives(ctx _context.Context) ApiListMyDrivesR
 
 // Execute executes the request
 //  @return CollectionOfDrives
-func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (CollectionOfDrives, *_nethttp.Response, error) {
+func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (*CollectionOfDrives, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  CollectionOfDrives
+		localVarReturnValue  *CollectionOfDrives
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDrivesApiService.ListMyDrives")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/me/drives"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	if r.top != nil {
 		localVarQueryParams.Add("$top", parameterToString(*r.top, ""))
@@ -160,15 +160,15 @@ func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (Coll
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -184,7 +184,7 @@ func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (Coll
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}

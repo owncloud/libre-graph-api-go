@@ -41,10 +41,10 @@ type Drive struct {
 	Owner *IdentitySet `json:"owner,omitempty"`
 	Quota *Quota `json:"quota,omitempty"`
 	// All items contained in the drive. Read-only. Nullable.
-	Items *[]DriveItem `json:"items,omitempty"`
+	Items []DriveItem `json:"items,omitempty"`
 	Root *DriveItem `json:"root,omitempty"`
 	// A collection of special drive resources.
-	Special *[]DriveItem `json:"special,omitempty"`
+	Special []DriveItem `json:"special,omitempty"`
 }
 
 // NewDrive instantiates a new Drive object
@@ -550,12 +550,12 @@ func (o *Drive) GetItems() []DriveItem {
 		var ret []DriveItem
 		return ret
 	}
-	return *o.Items
+	return o.Items
 }
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Drive) GetItemsOk() (*[]DriveItem, bool) {
+func (o *Drive) GetItemsOk() ([]DriveItem, bool) {
 	if o == nil || o.Items == nil {
 		return nil, false
 	}
@@ -573,7 +573,7 @@ func (o *Drive) HasItems() bool {
 
 // SetItems gets a reference to the given []DriveItem and assigns it to the Items field.
 func (o *Drive) SetItems(v []DriveItem) {
-	o.Items = &v
+	o.Items = v
 }
 
 // GetRoot returns the Root field value if set, zero value otherwise.
@@ -614,12 +614,12 @@ func (o *Drive) GetSpecial() []DriveItem {
 		var ret []DriveItem
 		return ret
 	}
-	return *o.Special
+	return o.Special
 }
 
 // GetSpecialOk returns a tuple with the Special field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Drive) GetSpecialOk() (*[]DriveItem, bool) {
+func (o *Drive) GetSpecialOk() ([]DriveItem, bool) {
 	if o == nil || o.Special == nil {
 		return nil, false
 	}
@@ -637,7 +637,7 @@ func (o *Drive) HasSpecial() bool {
 
 // SetSpecial gets a reference to the given []DriveItem and assigns it to the Special field.
 func (o *Drive) SetSpecial(v []DriveItem) {
-	o.Special = &v
+	o.Special = v
 }
 
 func (o Drive) MarshalJSON() ([]byte, error) {

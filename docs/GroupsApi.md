@@ -31,8 +31,8 @@ func main() {
     group := *openapiclient.NewGroup() // Group | New entity
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GroupsApi.CreateGroup(context.Background()).Group(group).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupsApi.CreateGroup(context.Background()).Group(group).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupsApi.CreateGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -101,8 +101,8 @@ func main() {
     select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GroupsApi.ListGroups(context.Background()).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Orderby(orderby).Select_(select_).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupsApi.ListGroups(context.Background()).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Orderby(orderby).Select_(select_).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupsApi.ListGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

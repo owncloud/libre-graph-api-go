@@ -12,22 +12,22 @@ package libregraph
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 )
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // GroupsApiService GroupsApi service
 type GroupsApiService service
 
 type ApiCreateGroupRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *GroupsApiService
 	group *Group
 }
@@ -38,17 +38,17 @@ func (r ApiCreateGroupRequest) Group(group Group) ApiCreateGroupRequest {
 	return r
 }
 
-func (r ApiCreateGroupRequest) Execute() (Group, *_nethttp.Response, error) {
+func (r ApiCreateGroupRequest) Execute() (*Group, *http.Response, error) {
 	return r.ApiService.CreateGroupExecute(r)
 }
 
 /*
 CreateGroup Add new entity to groups
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateGroupRequest
 */
-func (a *GroupsApiService) CreateGroup(ctx _context.Context) ApiCreateGroupRequest {
+func (a *GroupsApiService) CreateGroup(ctx context.Context) ApiCreateGroupRequest {
 	return ApiCreateGroupRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -57,24 +57,24 @@ func (a *GroupsApiService) CreateGroup(ctx _context.Context) ApiCreateGroupReque
 
 // Execute executes the request
 //  @return Group
-func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (Group, *_nethttp.Response, error) {
+func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  Group
+		localVarReturnValue  *Group
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.CreateGroup")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/groups"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.group == nil {
 		return localVarReturnValue, nil, reportError("group is required and must be specified")
 	}
@@ -108,15 +108,15 @@ func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (Group, *
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -132,7 +132,7 @@ func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (Group, *
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -143,7 +143,7 @@ func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (Group, *
 }
 
 type ApiListGroupsRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *GroupsApiService
 	top *int32
 	skip *int32
@@ -190,17 +190,17 @@ func (r ApiListGroupsRequest) Select_(select_ []string) ApiListGroupsRequest {
 	return r
 }
 
-func (r ApiListGroupsRequest) Execute() (CollectionOfGroup, *_nethttp.Response, error) {
+func (r ApiListGroupsRequest) Execute() (*CollectionOfGroup, *http.Response, error) {
 	return r.ApiService.ListGroupsExecute(r)
 }
 
 /*
 ListGroups Get entities from groups
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListGroupsRequest
 */
-func (a *GroupsApiService) ListGroups(ctx _context.Context) ApiListGroupsRequest {
+func (a *GroupsApiService) ListGroups(ctx context.Context) ApiListGroupsRequest {
 	return ApiListGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -209,24 +209,24 @@ func (a *GroupsApiService) ListGroups(ctx _context.Context) ApiListGroupsRequest
 
 // Execute executes the request
 //  @return CollectionOfGroup
-func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (CollectionOfGroup, *_nethttp.Response, error) {
+func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (*CollectionOfGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  CollectionOfGroup
+		localVarReturnValue  *CollectionOfGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.ListGroups")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/groups"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	if r.top != nil {
 		localVarQueryParams.Add("$top", parameterToString(*r.top, ""))
@@ -276,15 +276,15 @@ func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (Collection
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -300,7 +300,7 @@ func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (Collection
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}

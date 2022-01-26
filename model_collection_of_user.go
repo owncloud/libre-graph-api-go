@@ -16,7 +16,7 @@ import (
 
 // CollectionOfUser struct for CollectionOfUser
 type CollectionOfUser struct {
-	Value *[]User `json:"value,omitempty"`
+	Value []User `json:"value,omitempty"`
 	OdataNextLink *string `json:"@odata.nextLink,omitempty"`
 }
 
@@ -43,12 +43,12 @@ func (o *CollectionOfUser) GetValue() []User {
 		var ret []User
 		return ret
 	}
-	return *o.Value
+	return o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CollectionOfUser) GetValueOk() (*[]User, bool) {
+func (o *CollectionOfUser) GetValueOk() ([]User, bool) {
 	if o == nil || o.Value == nil {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *CollectionOfUser) HasValue() bool {
 
 // SetValue gets a reference to the given []User and assigns it to the Value field.
 func (o *CollectionOfUser) SetValue(v []User) {
-	o.Value = &v
+	o.Value = v
 }
 
 // GetOdataNextLink returns the OdataNextLink field value if set, zero value otherwise.

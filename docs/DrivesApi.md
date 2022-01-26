@@ -33,8 +33,8 @@ func main() {
     drive := *openapiclient.NewDrive() // Drive | New space property values
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DrivesApi.CreateDrive(context.Background()).Drive(drive).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DrivesApi.CreateDrive(context.Background()).Drive(drive).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.CreateDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,8 +98,8 @@ func main() {
     ifMatch := "ifMatch_example" // string | ETag (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DrivesApi.DeleteDrive(context.Background(), driveId).IfMatch(ifMatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DrivesApi.DeleteDrive(context.Background(), driveId).IfMatch(ifMatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.DeleteDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -167,8 +167,8 @@ func main() {
     expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DrivesApi.GetDrive(context.Background(), driveId).Select_(select_).Expand(expand).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DrivesApi.GetDrive(context.Background(), driveId).Select_(select_).Expand(expand).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.GetDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -238,8 +238,8 @@ func main() {
     drive := *openapiclient.NewDrive() // Drive | New space values
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DrivesApi.UpdateDrive(context.Background(), driveId).Drive(drive).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DrivesApi.UpdateDrive(context.Background(), driveId).Drive(drive).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.UpdateDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

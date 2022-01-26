@@ -48,14 +48,14 @@ type Group struct {
 	Visibility *string `json:"visibility,omitempty"`
 	CreatedOnBehalfOf *DirectoryObject `json:"createdOnBehalfOf,omitempty"`
 	// Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
-	MemberOf *[]DirectoryObject `json:"memberOf,omitempty"`
+	MemberOf []DirectoryObject `json:"memberOf,omitempty"`
 	// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), Nullable. Supports $expand.
-	Members *[]DirectoryObject `json:"members,omitempty"`
+	Members []DirectoryObject `json:"members,omitempty"`
 	// The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. Nullable. Supports $expand.
-	Owners *[]DirectoryObject `json:"owners,omitempty"`
+	Owners []DirectoryObject `json:"owners,omitempty"`
 	Drive *Drive `json:"drive,omitempty"`
 	// The group's drives. Read-only.
-	Drives *[]Drive `json:"drives,omitempty"`
+	Drives []Drive `json:"drives,omitempty"`
 	IsArchived *bool `json:"isArchived,omitempty"`
 }
 
@@ -594,12 +594,12 @@ func (o *Group) GetMemberOf() []DirectoryObject {
 		var ret []DirectoryObject
 		return ret
 	}
-	return *o.MemberOf
+	return o.MemberOf
 }
 
 // GetMemberOfOk returns a tuple with the MemberOf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Group) GetMemberOfOk() (*[]DirectoryObject, bool) {
+func (o *Group) GetMemberOfOk() ([]DirectoryObject, bool) {
 	if o == nil || o.MemberOf == nil {
 		return nil, false
 	}
@@ -617,7 +617,7 @@ func (o *Group) HasMemberOf() bool {
 
 // SetMemberOf gets a reference to the given []DirectoryObject and assigns it to the MemberOf field.
 func (o *Group) SetMemberOf(v []DirectoryObject) {
-	o.MemberOf = &v
+	o.MemberOf = v
 }
 
 // GetMembers returns the Members field value if set, zero value otherwise.
@@ -626,12 +626,12 @@ func (o *Group) GetMembers() []DirectoryObject {
 		var ret []DirectoryObject
 		return ret
 	}
-	return *o.Members
+	return o.Members
 }
 
 // GetMembersOk returns a tuple with the Members field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Group) GetMembersOk() (*[]DirectoryObject, bool) {
+func (o *Group) GetMembersOk() ([]DirectoryObject, bool) {
 	if o == nil || o.Members == nil {
 		return nil, false
 	}
@@ -649,7 +649,7 @@ func (o *Group) HasMembers() bool {
 
 // SetMembers gets a reference to the given []DirectoryObject and assigns it to the Members field.
 func (o *Group) SetMembers(v []DirectoryObject) {
-	o.Members = &v
+	o.Members = v
 }
 
 // GetOwners returns the Owners field value if set, zero value otherwise.
@@ -658,12 +658,12 @@ func (o *Group) GetOwners() []DirectoryObject {
 		var ret []DirectoryObject
 		return ret
 	}
-	return *o.Owners
+	return o.Owners
 }
 
 // GetOwnersOk returns a tuple with the Owners field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Group) GetOwnersOk() (*[]DirectoryObject, bool) {
+func (o *Group) GetOwnersOk() ([]DirectoryObject, bool) {
 	if o == nil || o.Owners == nil {
 		return nil, false
 	}
@@ -681,7 +681,7 @@ func (o *Group) HasOwners() bool {
 
 // SetOwners gets a reference to the given []DirectoryObject and assigns it to the Owners field.
 func (o *Group) SetOwners(v []DirectoryObject) {
-	o.Owners = &v
+	o.Owners = v
 }
 
 // GetDrive returns the Drive field value if set, zero value otherwise.
@@ -722,12 +722,12 @@ func (o *Group) GetDrives() []Drive {
 		var ret []Drive
 		return ret
 	}
-	return *o.Drives
+	return o.Drives
 }
 
 // GetDrivesOk returns a tuple with the Drives field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Group) GetDrivesOk() (*[]Drive, bool) {
+func (o *Group) GetDrivesOk() ([]Drive, bool) {
 	if o == nil || o.Drives == nil {
 		return nil, false
 	}
@@ -745,7 +745,7 @@ func (o *Group) HasDrives() bool {
 
 // SetDrives gets a reference to the given []Drive and assigns it to the Drives field.
 func (o *Group) SetDrives(v []Drive) {
-	o.Drives = &v
+	o.Drives = v
 }
 
 // GetIsArchived returns the IsArchived field value if set, zero value otherwise.

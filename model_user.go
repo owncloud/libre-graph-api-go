@@ -23,7 +23,7 @@ type User struct {
 	// true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter.
 	AccountEnabled *bool `json:"accountEnabled,omitempty"`
 	// The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory.
-	BusinessPhones *[]string `json:"businessPhones,omitempty"`
+	BusinessPhones []string `json:"businessPhones,omitempty"`
 	// The city in which the user is located. Returned only on $select. Supports $filter.
 	City *string `json:"city,omitempty"`
 	// The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select.
@@ -91,7 +91,7 @@ type User struct {
 	PreferredName *string `json:"preferredName,omitempty"`
 	Drive *Drive `json:"drive,omitempty"`
 	// A collection of drives available for this user. Read-only.
-	Drives *[]Drive `json:"drives,omitempty"`
+	Drives []Drive `json:"drives,omitempty"`
 }
 
 // NewUser instantiates a new User object
@@ -213,12 +213,12 @@ func (o *User) GetBusinessPhones() []string {
 		var ret []string
 		return ret
 	}
-	return *o.BusinessPhones
+	return o.BusinessPhones
 }
 
 // GetBusinessPhonesOk returns a tuple with the BusinessPhones field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetBusinessPhonesOk() (*[]string, bool) {
+func (o *User) GetBusinessPhonesOk() ([]string, bool) {
 	if o == nil || o.BusinessPhones == nil {
 		return nil, false
 	}
@@ -236,7 +236,7 @@ func (o *User) HasBusinessPhones() bool {
 
 // SetBusinessPhones gets a reference to the given []string and assigns it to the BusinessPhones field.
 func (o *User) SetBusinessPhones(v []string) {
-	o.BusinessPhones = &v
+	o.BusinessPhones = v
 }
 
 // GetCity returns the City field value if set, zero value otherwise.
@@ -1333,12 +1333,12 @@ func (o *User) GetDrives() []Drive {
 		var ret []Drive
 		return ret
 	}
-	return *o.Drives
+	return o.Drives
 }
 
 // GetDrivesOk returns a tuple with the Drives field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetDrivesOk() (*[]Drive, bool) {
+func (o *User) GetDrivesOk() ([]Drive, bool) {
 	if o == nil || o.Drives == nil {
 		return nil, false
 	}
@@ -1356,7 +1356,7 @@ func (o *User) HasDrives() bool {
 
 // SetDrives gets a reference to the given []Drive and assigns it to the Drives field.
 func (o *User) SetDrives(v []Drive) {
-	o.Drives = &v
+	o.Drives = v
 }
 
 func (o User) MarshalJSON() ([]byte, error) {

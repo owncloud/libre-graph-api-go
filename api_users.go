@@ -12,22 +12,22 @@ package libregraph
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 )
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // UsersApiService UsersApi service
 type UsersApiService service
 
 type ApiCreateUserRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *UsersApiService
 	user *User
 }
@@ -38,17 +38,17 @@ func (r ApiCreateUserRequest) User(user User) ApiCreateUserRequest {
 	return r
 }
 
-func (r ApiCreateUserRequest) Execute() (User, *_nethttp.Response, error) {
+func (r ApiCreateUserRequest) Execute() (*User, *http.Response, error) {
 	return r.ApiService.CreateUserExecute(r)
 }
 
 /*
 CreateUser Add new entity to users
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateUserRequest
 */
-func (a *UsersApiService) CreateUser(ctx _context.Context) ApiCreateUserRequest {
+func (a *UsersApiService) CreateUser(ctx context.Context) ApiCreateUserRequest {
 	return ApiCreateUserRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -57,24 +57,24 @@ func (a *UsersApiService) CreateUser(ctx _context.Context) ApiCreateUserRequest 
 
 // Execute executes the request
 //  @return User
-func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (User, *_nethttp.Response, error) {
+func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (*User, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  User
+		localVarReturnValue  *User
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.CreateUser")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/users"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.user == nil {
 		return localVarReturnValue, nil, reportError("user is required and must be specified")
 	}
@@ -108,15 +108,15 @@ func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (User, *_net
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -132,7 +132,7 @@ func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (User, *_net
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -143,7 +143,7 @@ func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (User, *_net
 }
 
 type ApiListUsersRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *UsersApiService
 	top *int32
 	skip *int32
@@ -196,17 +196,17 @@ func (r ApiListUsersRequest) Expand(expand []string) ApiListUsersRequest {
 	return r
 }
 
-func (r ApiListUsersRequest) Execute() (CollectionOfUser, *_nethttp.Response, error) {
+func (r ApiListUsersRequest) Execute() (*CollectionOfUser, *http.Response, error) {
 	return r.ApiService.ListUsersExecute(r)
 }
 
 /*
 ListUsers Get entities from users
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListUsersRequest
 */
-func (a *UsersApiService) ListUsers(ctx _context.Context) ApiListUsersRequest {
+func (a *UsersApiService) ListUsers(ctx context.Context) ApiListUsersRequest {
 	return ApiListUsersRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -215,24 +215,24 @@ func (a *UsersApiService) ListUsers(ctx _context.Context) ApiListUsersRequest {
 
 // Execute executes the request
 //  @return CollectionOfUser
-func (a *UsersApiService) ListUsersExecute(r ApiListUsersRequest) (CollectionOfUser, *_nethttp.Response, error) {
+func (a *UsersApiService) ListUsersExecute(r ApiListUsersRequest) (*CollectionOfUser, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  CollectionOfUser
+		localVarReturnValue  *CollectionOfUser
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.ListUsers")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/users"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	if r.top != nil {
 		localVarQueryParams.Add("$top", parameterToString(*r.top, ""))
@@ -285,15 +285,15 @@ func (a *UsersApiService) ListUsersExecute(r ApiListUsersRequest) (CollectionOfU
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -309,7 +309,7 @@ func (a *UsersApiService) ListUsersExecute(r ApiListUsersRequest) (CollectionOfU
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}

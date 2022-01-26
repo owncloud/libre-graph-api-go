@@ -12,37 +12,37 @@ package libregraph
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 )
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // MeDriveApiService MeDriveApi service
 type MeDriveApiService service
 
 type ApiGetHomeRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *MeDriveApiService
 }
 
 
-func (r ApiGetHomeRequest) Execute() (Drive, *_nethttp.Response, error) {
+func (r ApiGetHomeRequest) Execute() (*Drive, *http.Response, error) {
 	return r.ApiService.GetHomeExecute(r)
 }
 
 /*
 GetHome Get personal space for user
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetHomeRequest
 */
-func (a *MeDriveApiService) GetHome(ctx _context.Context) ApiGetHomeRequest {
+func (a *MeDriveApiService) GetHome(ctx context.Context) ApiGetHomeRequest {
 	return ApiGetHomeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -51,24 +51,24 @@ func (a *MeDriveApiService) GetHome(ctx _context.Context) ApiGetHomeRequest {
 
 // Execute executes the request
 //  @return Drive
-func (a *MeDriveApiService) GetHomeExecute(r ApiGetHomeRequest) (Drive, *_nethttp.Response, error) {
+func (a *MeDriveApiService) GetHomeExecute(r ApiGetHomeRequest) (*Drive, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  Drive
+		localVarReturnValue  *Drive
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveApiService.GetHome")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/me/drive"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -97,15 +97,15 @@ func (a *MeDriveApiService) GetHomeExecute(r ApiGetHomeRequest) (Drive, *_nethtt
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -121,7 +121,7 @@ func (a *MeDriveApiService) GetHomeExecute(r ApiGetHomeRequest) (Drive, *_nethtt
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}

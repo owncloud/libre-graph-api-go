@@ -36,8 +36,8 @@ func main() {
     expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MeDrivesApi.ListMyDrives(context.Background()).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MeDrivesApi.ListMyDrives(context.Background()).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.ListMyDrives``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

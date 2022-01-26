@@ -19,9 +19,9 @@ type OdataErrorMain struct {
 	Code string `json:"code"`
 	Message string `json:"message"`
 	Target *string `json:"target,omitempty"`
-	Details *[]OdataErrorDetail `json:"details,omitempty"`
+	Details []OdataErrorDetail `json:"details,omitempty"`
 	// The structure of this object is service-specific
-	Innererror *map[string]interface{} `json:"innererror,omitempty"`
+	Innererror map[string]interface{} `json:"innererror,omitempty"`
 }
 
 // NewOdataErrorMain instantiates a new OdataErrorMain object
@@ -129,12 +129,12 @@ func (o *OdataErrorMain) GetDetails() []OdataErrorDetail {
 		var ret []OdataErrorDetail
 		return ret
 	}
-	return *o.Details
+	return o.Details
 }
 
 // GetDetailsOk returns a tuple with the Details field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OdataErrorMain) GetDetailsOk() (*[]OdataErrorDetail, bool) {
+func (o *OdataErrorMain) GetDetailsOk() ([]OdataErrorDetail, bool) {
 	if o == nil || o.Details == nil {
 		return nil, false
 	}
@@ -152,7 +152,7 @@ func (o *OdataErrorMain) HasDetails() bool {
 
 // SetDetails gets a reference to the given []OdataErrorDetail and assigns it to the Details field.
 func (o *OdataErrorMain) SetDetails(v []OdataErrorDetail) {
-	o.Details = &v
+	o.Details = v
 }
 
 // GetInnererror returns the Innererror field value if set, zero value otherwise.
@@ -161,12 +161,12 @@ func (o *OdataErrorMain) GetInnererror() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Innererror
+	return o.Innererror
 }
 
 // GetInnererrorOk returns a tuple with the Innererror field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OdataErrorMain) GetInnererrorOk() (*map[string]interface{}, bool) {
+func (o *OdataErrorMain) GetInnererrorOk() (map[string]interface{}, bool) {
 	if o == nil || o.Innererror == nil {
 		return nil, false
 	}
@@ -184,7 +184,7 @@ func (o *OdataErrorMain) HasInnererror() bool {
 
 // SetInnererror gets a reference to the given map[string]interface{} and assigns it to the Innererror field.
 func (o *OdataErrorMain) SetInnererror(v map[string]interface{}) {
-	o.Innererror = &v
+	o.Innererror = v
 }
 
 func (o OdataErrorMain) MarshalJSON() ([]byte, error) {
