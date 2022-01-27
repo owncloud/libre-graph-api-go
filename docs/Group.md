@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **Drive** | Pointer to [**Drive**](Drive.md) |  | [optional] 
 **Drives** | Pointer to [**[]Drive**](Drive.md) | The group&#39;s drives. Read-only. | [optional] 
 **IsArchived** | Pointer to **bool** |  | [optional] 
+**MembersodataBind** | Pointer to **[]string** | A list of member references to the members to be added. Up to 20 members can be added with a single request | [optional] 
 
 ## Methods
 
@@ -595,6 +596,31 @@ SetIsArchived sets IsArchived field to given value.
 `func (o *Group) HasIsArchived() bool`
 
 HasIsArchived returns a boolean if a field has been set.
+
+### GetMembersodataBind
+
+`func (o *Group) GetMembersodataBind() []string`
+
+GetMembersodataBind returns the MembersodataBind field if non-nil, zero value otherwise.
+
+### GetMembersodataBindOk
+
+`func (o *Group) GetMembersodataBindOk() (*[]string, bool)`
+
+GetMembersodataBindOk returns a tuple with the MembersodataBind field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMembersodataBind
+
+`func (o *Group) SetMembersodataBind(v []string)`
+
+SetMembersodataBind sets MembersodataBind field to given value.
+
+### HasMembersodataBind
+
+`func (o *Group) HasMembersodataBind() bool`
+
+HasMembersodataBind returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

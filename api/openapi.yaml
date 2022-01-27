@@ -628,6 +628,86 @@ paths:
       tags:
       - group
       x-ms-docs-operation-type: operation
+  /groups/{group-id}/members/$ref:
+    post:
+      operationId: AddMember
+      parameters:
+      - description: 'key: id of group'
+        explode: false
+        in: path
+        name: group-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: group
+      requestBody:
+        $ref: '#/components/requestBodies/Member_Reference'
+        content:
+          application/json:
+            schema:
+              properties:
+                '@odata.id':
+                  type: string
+              title: Member Reference
+              type: object
+        description: Object to be added as member
+        required: true
+      responses:
+        "204":
+          description: Success
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Add a member to a group
+      tags:
+      - group
+      x-ms-docs-operation-type: operation
+  /groups/{group-id}/members/{directory-object-id}/$ref:
+    delete:
+      operationId: DeleteMember
+      parameters:
+      - description: 'key: id of group'
+        explode: false
+        in: path
+        name: group-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: group
+      - description: 'key: id of group member to remove'
+        explode: false
+        in: path
+        name: directory-object-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ETag
+        explode: false
+        in: header
+        name: If-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: Success
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Delete member from a group
+      tags:
+      - group
+      x-ms-docs-operation-type: operation
   /me/drive:
     get:
       operationId: GetHome
@@ -1147,6 +1227,13 @@ components:
       schema:
         type: boolean
       style: form
+  requestBodies:
+    Member_Reference:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Member_Reference'
+      required: true
   responses:
     error:
       content:
@@ -6196,6 +6283,12 @@ components:
             usageLocation: usageLocation
             userType: userType
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+        members@odata.bind:
+        - members@odata.bind
+        - members@odata.bind
+        - members@odata.bind
+        - members@odata.bind
+        - members@odata.bind
       properties:
         id:
           description: Read-only.
@@ -6317,6 +6410,15 @@ components:
           type: array
         isArchived:
           type: boolean
+        members@odata.bind:
+          description: A list of member references to the members to be added. Up
+            to 20 members can be added with a single request
+          items:
+            type: string
+          maxItems: 20
+          minItems: 1
+          type: array
+          uniqueItems: true
       title: group
       type: object
     directoryObject:
@@ -14629,6 +14731,12 @@ components:
               usageLocation: usageLocation
               userType: userType
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          members@odata.bind:
+          - members@odata.bind
+          - members@odata.bind
+          - members@odata.bind
+          - members@odata.bind
+          - members@odata.bind
         - expirationDateTime: 2000-01-23T04:56:07.000+00:00
           preferredLanguage: preferredLanguage
           mail: mail
@@ -17740,6 +17848,12 @@ components:
               usageLocation: usageLocation
               userType: userType
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
+          members@odata.bind:
+          - members@odata.bind
+          - members@odata.bind
+          - members@odata.bind
+          - members@odata.bind
+          - members@odata.bind
       properties:
         value:
           items:
@@ -17748,6 +17862,12 @@ components:
         '@odata.nextLink':
           type: string
       title: Collection of group
+      type: object
+    Member_Reference:
+      properties:
+        '@odata.id':
+          type: string
+      title: Member Reference
       type: object
     Collection_of_driveItems:
       example:

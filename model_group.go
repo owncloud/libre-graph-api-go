@@ -57,6 +57,8 @@ type Group struct {
 	// The group's drives. Read-only.
 	Drives []Drive `json:"drives,omitempty"`
 	IsArchived *bool `json:"isArchived,omitempty"`
+	// A list of member references to the members to be added. Up to 20 members can be added with a single request
+	MembersodataBind []string `json:"members@odata.bind,omitempty"`
 }
 
 // NewGroup instantiates a new Group object
@@ -780,6 +782,38 @@ func (o *Group) SetIsArchived(v bool) {
 	o.IsArchived = &v
 }
 
+// GetMembersodataBind returns the MembersodataBind field value if set, zero value otherwise.
+func (o *Group) GetMembersodataBind() []string {
+	if o == nil || o.MembersodataBind == nil {
+		var ret []string
+		return ret
+	}
+	return o.MembersodataBind
+}
+
+// GetMembersodataBindOk returns a tuple with the MembersodataBind field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Group) GetMembersodataBindOk() ([]string, bool) {
+	if o == nil || o.MembersodataBind == nil {
+		return nil, false
+	}
+	return o.MembersodataBind, true
+}
+
+// HasMembersodataBind returns a boolean if a field has been set.
+func (o *Group) HasMembersodataBind() bool {
+	if o != nil && o.MembersodataBind != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMembersodataBind gets a reference to the given []string and assigns it to the MembersodataBind field.
+func (o *Group) SetMembersodataBind(v []string) {
+	o.MembersodataBind = v
+}
+
 func (o Group) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
@@ -847,6 +881,9 @@ func (o Group) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsArchived != nil {
 		toSerialize["isArchived"] = o.IsArchived
+	}
+	if o.MembersodataBind != nil {
+		toSerialize["members@odata.bind"] = o.MembersodataBind
 	}
 	return json.Marshal(toSerialize)
 }

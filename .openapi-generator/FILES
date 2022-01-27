@@ -39,6 +39,7 @@ docs/MeDriveApi.md
 docs/MeDriveRootApi.md
 docs/MeDriveRootChildrenApi.md
 docs/MeDrivesApi.md
+docs/MemberReference.md
 docs/OdataError.md
 docs/OdataErrorDetail.md
 docs/OdataErrorMain.md
@@ -70,6 +71,7 @@ model_identity.go
 model_identity_set.go
 model_image.go
 model_item_reference.go
+model_member_reference.go
 model_odata_error.go
 model_odata_error_detail.go
 model_odata_error_main.go
