@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **Size** | Pointer to **int64** | Size of the item in bytes. Read-only. | [optional] [readonly] 
 **WebDavUrl** | Pointer to **string** | WebDAV compatible URL for the item. Read-only. | [optional] [readonly] 
 **Children** | Pointer to [**[]DriveItem**](DriveItem.md) | Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable. | [optional] [readonly] 
+**Permissions** | Pointer to [**[]Permission**](Permission.md) | The set of permissions for the item. Read-only. Nullable. | [optional] [readonly] 
 
 ## Methods
 
@@ -673,6 +674,31 @@ SetChildren sets Children field to given value.
 `func (o *DriveItem) HasChildren() bool`
 
 HasChildren returns a boolean if a field has been set.
+
+### GetPermissions
+
+`func (o *DriveItem) GetPermissions() []Permission`
+
+GetPermissions returns the Permissions field if non-nil, zero value otherwise.
+
+### GetPermissionsOk
+
+`func (o *DriveItem) GetPermissionsOk() (*[]Permission, bool)`
+
+GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPermissions
+
+`func (o *DriveItem) SetPermissions(v []Permission)`
+
+SetPermissions sets Permissions field to given value.
+
+### HasPermissions
+
+`func (o *DriveItem) HasPermissions() bool`
+
+HasPermissions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

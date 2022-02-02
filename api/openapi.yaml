@@ -1388,6 +1388,51 @@ components:
           children:
           - null
           - null
+          permissions:
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
           root: '{}'
           cTag: cTag
           eTag: eTag
@@ -1563,6 +1608,51 @@ components:
           children:
           - null
           - null
+          permissions:
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
           root: '{}'
           cTag: cTag
           eTag: eTag
@@ -1763,6 +1853,51 @@ components:
           children:
           - null
           - null
+          permissions:
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
           root: '{}'
           cTag: cTag
           eTag: eTag
@@ -1942,6 +2077,51 @@ components:
           children:
           - null
           - null
+          permissions:
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
           root: '{}'
           cTag: cTag
           eTag: eTag
@@ -2117,6 +2297,51 @@ components:
           children:
           - null
           - null
+          permissions:
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
           root: '{}'
           cTag: cTag
           eTag: eTag
@@ -2761,6 +2986,51 @@ components:
         children:
         - null
         - null
+        permissions:
+        - grantedTo:
+          - application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          - application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          roles:
+          - roles
+          - roles
+        - grantedTo:
+          - application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          - application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          roles:
+          - roles
+          - roles
         root: '{}'
         cTag: cTag
         eTag: eTag
@@ -2949,6 +3219,12 @@ components:
             of Item. Only items representing folders have children. Read-only. Nullable.
           items:
             $ref: '#/components/schemas/driveItem'
+          readOnly: true
+          type: array
+        permissions:
+          description: The set of permissions for the item. Read-only. Nullable.
+          items:
+            $ref: '#/components/schemas/permission'
           readOnly: true
           type: array
       readOnly: true
@@ -3334,6 +3610,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -3509,6 +3830,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -3709,6 +4075,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -3888,6 +4299,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -4063,6 +4519,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -4359,6 +4860,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -4534,6 +5080,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -4734,6 +5325,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -4913,6 +5549,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -5088,6 +5769,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -5401,6 +6127,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -5576,6 +6347,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -5776,6 +6592,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -5955,6 +6816,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -6130,6 +7036,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -6439,6 +7390,43 @@ components:
           pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
           type: string
       type: object
+    permission:
+      description: The Permission resource provides information about a sharing permission
+        granted for a DriveItem resource.
+      example:
+        grantedTo:
+        - application:
+            displayName: displayName
+            id: id
+          device:
+            displayName: displayName
+            id: id
+          user:
+            displayName: displayName
+            id: id
+        - application:
+            displayName: displayName
+            id: id
+          device:
+            displayName: displayName
+            id: id
+          user:
+            displayName: displayName
+            id: id
+        roles:
+        - roles
+        - roles
+      properties:
+        grantedTo:
+          items:
+            $ref: '#/components/schemas/identitySet'
+          type: array
+        roles:
+          items:
+            type: string
+          type: array
+      readOnly: true
+      type: object
     odata.error:
       properties:
         error:
@@ -6624,6 +7612,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -6799,6 +7832,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -6999,6 +8077,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -7178,6 +8301,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -7353,6 +8521,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -7649,6 +8862,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -7824,6 +9082,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -8024,6 +9327,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -8203,6 +9551,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -8378,6 +9771,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -8674,6 +10112,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -8849,6 +10332,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -9049,6 +10577,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -9228,6 +10801,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -9403,6 +11021,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -9699,6 +11362,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -9874,6 +11582,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -10074,6 +11827,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -10253,6 +12051,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -10428,6 +12271,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -10724,6 +12612,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -10899,6 +12832,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -11099,6 +13077,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -11278,6 +13301,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -11453,6 +13521,51 @@ components:
             children:
             - null
             - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
             root: '{}'
             cTag: cTag
             eTag: eTag
@@ -11782,6 +13895,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -11957,6 +14115,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -12157,6 +14360,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -12336,6 +14584,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -12511,6 +14804,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -12807,6 +15145,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -12982,6 +15365,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -13182,6 +15610,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -13361,6 +15834,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -13536,6 +16054,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -13849,6 +16412,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -14024,6 +16632,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -14224,6 +16877,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -14403,6 +17101,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -14578,6 +17321,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -14899,6 +17687,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -15074,6 +17907,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -15274,6 +18152,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -15453,6 +18376,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -15628,6 +18596,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -15924,6 +18937,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -16099,6 +19157,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -16299,6 +19402,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -16478,6 +19626,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -16653,6 +19846,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -16966,6 +20204,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -17141,6 +20424,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -17341,6 +20669,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -17520,6 +20893,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -17695,6 +21113,51 @@ components:
               children:
               - null
               - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
               root: '{}'
               cTag: cTag
               eTag: eTag
@@ -17943,6 +21406,51 @@ components:
           children:
           - null
           - null
+          permissions:
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
           root: '{}'
           cTag: cTag
           eTag: eTag
@@ -18118,6 +21626,51 @@ components:
           children:
           - null
           - null
+          permissions:
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
           root: '{}'
           cTag: cTag
           eTag: eTag
@@ -18293,6 +21846,51 @@ components:
           children:
           - null
           - null
+          permissions:
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
           root: '{}'
           cTag: cTag
           eTag: eTag
@@ -18468,6 +22066,51 @@ components:
           children:
           - null
           - null
+          permissions:
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
           root: '{}'
           cTag: cTag
           eTag: eTag
@@ -18643,6 +22286,51 @@ components:
           children:
           - null
           - null
+          permissions:
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
+          - grantedTo:
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            - application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            roles:
+            - roles
+            - roles
           root: '{}'
           cTag: cTag
           eTag: eTag

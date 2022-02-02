@@ -45,6 +45,7 @@ docs/OdataErrorDetail.md
 docs/OdataErrorMain.md
 docs/OpenGraphFile.md
 docs/PasswordProfile.md
+docs/Permission.md
 docs/Quota.md
 docs/SpecialFolder.md
 docs/Trash.md
@@ -77,6 +78,7 @@ model_odata_error_detail.go
 model_odata_error_main.go
 model_open_graph_file.go
 model_password_profile.go
+model_permission.go
 model_quota.go
 model_special_folder.go
 model_trash.go

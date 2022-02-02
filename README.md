@@ -126,6 +126,7 @@ Class | Method | HTTP request | Description
  - [OdataErrorMain](docs/OdataErrorMain.md)
  - [OpenGraphFile](docs/OpenGraphFile.md)
  - [PasswordProfile](docs/PasswordProfile.md)
+ - [Permission](docs/Permission.md)
  - [Quota](docs/Quota.md)
  - [SpecialFolder](docs/SpecialFolder.md)
  - [Trash](docs/Trash.md)
