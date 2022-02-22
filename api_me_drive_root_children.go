@@ -18,10 +18,6 @@ import (
 	"net/url"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // MeDriveRootChildrenApiService MeDriveRootChildrenApi service
 type MeDriveRootChildrenApiService service
@@ -30,7 +26,6 @@ type ApiHomeGetChildrenRequest struct {
 	ctx context.Context
 	ApiService *MeDriveRootChildrenApiService
 }
-
 
 func (r ApiHomeGetChildrenRequest) Execute() (*CollectionOfDriveItems, *http.Response, error) {
 	return r.ApiService.HomeGetChildrenExecute(r)

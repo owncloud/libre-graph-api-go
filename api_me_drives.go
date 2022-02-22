@@ -18,10 +18,6 @@ import (
 	"net/url"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // MeDrivesApiService MeDrivesApi service
 type MeDrivesApiService service
@@ -31,7 +27,7 @@ type ApiListMyDrivesRequest struct {
 	ApiService *MeDrivesApiService
 	top *int32
 	skip *int32
-	search *string
+	orderby *string
 	filter *string
 	count *bool
 	select_ *[]string
@@ -43,31 +39,37 @@ func (r ApiListMyDrivesRequest) Top(top int32) ApiListMyDrivesRequest {
 	r.top = &top
 	return r
 }
+
 // Skip the first n items
 func (r ApiListMyDrivesRequest) Skip(skip int32) ApiListMyDrivesRequest {
 	r.skip = &skip
 	return r
 }
-// Search items by search phrases
-func (r ApiListMyDrivesRequest) Search(search string) ApiListMyDrivesRequest {
-	r.search = &search
+
+// The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc.
+func (r ApiListMyDrivesRequest) Orderby(orderby string) ApiListMyDrivesRequest {
+	r.orderby = &orderby
 	return r
 }
+
 // Filter items by property values
 func (r ApiListMyDrivesRequest) Filter(filter string) ApiListMyDrivesRequest {
 	r.filter = &filter
 	return r
 }
+
 // Include count of items
 func (r ApiListMyDrivesRequest) Count(count bool) ApiListMyDrivesRequest {
 	r.count = &count
 	return r
 }
+
 // Select properties to be returned
 func (r ApiListMyDrivesRequest) Select_(select_ []string) ApiListMyDrivesRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Expand related entities
 func (r ApiListMyDrivesRequest) Expand(expand []string) ApiListMyDrivesRequest {
 	r.expand = &expand
@@ -118,8 +120,8 @@ func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (*Col
 	if r.skip != nil {
 		localVarQueryParams.Add("$skip", parameterToString(*r.skip, ""))
 	}
-	if r.search != nil {
-		localVarQueryParams.Add("$search", parameterToString(*r.search, ""))
+	if r.orderby != nil {
+		localVarQueryParams.Add("$orderby", parameterToString(*r.orderby, ""))
 	}
 	if r.filter != nil {
 		localVarQueryParams.Add("$filter", parameterToString(*r.filter, ""))

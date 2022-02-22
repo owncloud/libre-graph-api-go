@@ -18,10 +18,6 @@ import (
 	"net/url"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // GroupsApiService GroupsApi service
 type GroupsApiService service
@@ -159,31 +155,37 @@ func (r ApiListGroupsRequest) Top(top int32) ApiListGroupsRequest {
 	r.top = &top
 	return r
 }
+
 // Skip the first n items
 func (r ApiListGroupsRequest) Skip(skip int32) ApiListGroupsRequest {
 	r.skip = &skip
 	return r
 }
+
 // Search items by search phrases
 func (r ApiListGroupsRequest) Search(search string) ApiListGroupsRequest {
 	r.search = &search
 	return r
 }
+
 // Filter items by property values
 func (r ApiListGroupsRequest) Filter(filter string) ApiListGroupsRequest {
 	r.filter = &filter
 	return r
 }
+
 // Include count of items
 func (r ApiListGroupsRequest) Count(count bool) ApiListGroupsRequest {
 	r.count = &count
 	return r
 }
+
 // Order items by property values
 func (r ApiListGroupsRequest) Orderby(orderby []string) ApiListGroupsRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Select properties to be returned
 func (r ApiListGroupsRequest) Select_(select_ []string) ApiListGroupsRequest {
 	r.select_ = &select_

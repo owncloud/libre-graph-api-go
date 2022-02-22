@@ -19,10 +19,6 @@ import (
 	"strings"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // DrivesApiService DrivesApi service
 type DrivesApiService service
@@ -263,6 +259,7 @@ func (r ApiGetDriveRequest) Select_(select_ []string) ApiGetDriveRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Expand related entities
 func (r ApiGetDriveRequest) Expand(expand []string) ApiGetDriveRequest {
 	r.expand = &expand

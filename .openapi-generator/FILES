@@ -3,6 +3,7 @@
 README.md
 api/openapi.yaml
 api_drives.go
+api_drives_get_drives.go
 api_drives_root.go
 api_group.go
 api_groups.go
@@ -23,6 +24,7 @@ docs/DirectoryObject.md
 docs/Drive.md
 docs/DriveItem.md
 docs/DrivesApi.md
+docs/DrivesGetDrivesApi.md
 docs/DrivesRootApi.md
 docs/FileSystemInfo.md
 docs/Folder.md

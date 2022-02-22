@@ -34,10 +34,11 @@ paths:
           minimum: 0
           type: integer
         style: form
-      - description: Search items by search phrases
+      - description: The $orderby system query option allows clients to request resources
+          in either ascending order using asc or descending order using desc.
         explode: true
         in: query
-        name: $search
+        name: $orderby
         required: false
         schema:
           type: string
@@ -98,6 +99,7 @@ paths:
             enum:
             - '*'
             - root
+            - root/permissions/grantedTo/user
             - special
             type: string
           maxItems: 2
@@ -128,6 +130,123 @@ paths:
         operationName: listMore
       x-ms-docs-operation-type: operation
   /drives:
+    get:
+      operationId: ListAllDrives
+      parameters:
+      - description: Show only the first n items
+        example: 50
+        explode: true
+        in: query
+        name: $top
+        required: false
+        schema:
+          minimum: 0
+          type: integer
+        style: form
+      - description: Skip the first n items
+        explode: true
+        in: query
+        name: $skip
+        required: false
+        schema:
+          minimum: 0
+          type: integer
+        style: form
+      - description: The $orderby system query option allows clients to request resources
+          in either ascending order using asc or descending order using desc.
+        explode: true
+        in: query
+        name: $orderby
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter items by property values
+        explode: true
+        in: query
+        name: $filter
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Include count of items
+        explode: true
+        in: query
+        name: $count
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: Select properties to be returned
+        explode: false
+        in: query
+        name: $select
+        required: false
+        schema:
+          items:
+            enum:
+            - id
+            - createdBy
+            - createdDateTime
+            - description
+            - eTag
+            - lastModifiedBy
+            - lastModifiedDateTime
+            - name
+            - parentReference
+            - webUrl
+            - driveType
+            - owner
+            - quota
+            - createdByUser
+            - lastModifiedByUser
+            - root
+            - special
+            type: string
+          maxItems: 19
+          type: array
+          uniqueItems: true
+        style: form
+      - description: Expand related entities
+        explode: false
+        in: query
+        name: $expand
+        required: false
+        schema:
+          items:
+            enum:
+            - '*'
+            - root
+            - root/permissions/grantedTo/user
+            - special
+            type: string
+          maxItems: 2
+          type: array
+          uniqueItems: true
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection_of_drives'
+          description: Retrieved spaces
+          links:
+            root:
+              operationId: GetRoot
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Get All drives
+      tags:
+      - drives.GetDrives
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       operationId: CreateDrive
       requestBody:
@@ -158,7 +277,7 @@ paths:
     delete:
       operationId: DeleteDrive
       parameters:
-      - description: 'key: id of drive'
+      - description: "key: id of drive"
         explode: false
         in: path
         name: drive-id
@@ -191,7 +310,7 @@ paths:
     get:
       operationId: GetDrive
       parameters:
-      - description: 'key: id of drive'
+      - description: "key: id of drive"
         explode: false
         in: path
         name: drive-id
@@ -271,7 +390,7 @@ paths:
     patch:
       operationId: UpdateDrive
       parameters:
-      - description: 'key: id of drive'
+      - description: "key: id of drive"
         explode: false
         in: path
         name: drive-id
@@ -500,7 +619,7 @@ paths:
     delete:
       operationId: DeleteGroup
       parameters:
-      - description: 'key: id of group'
+      - description: "key: id of group"
         explode: false
         in: path
         name: group-id
@@ -533,7 +652,7 @@ paths:
     get:
       operationId: GetGroup
       parameters:
-      - description: 'key: id of group'
+      - description: "key: id of group"
         explode: false
         in: path
         name: group-id
@@ -599,7 +718,7 @@ paths:
     patch:
       operationId: UpdateGroup
       parameters:
-      - description: 'key: id of group'
+      - description: "key: id of group"
         explode: false
         in: path
         name: group-id
@@ -632,7 +751,7 @@ paths:
     post:
       operationId: AddMember
       parameters:
-      - description: 'key: id of group'
+      - description: "key: id of group"
         explode: false
         in: path
         name: group-id
@@ -670,7 +789,7 @@ paths:
     delete:
       operationId: DeleteMember
       parameters:
-      - description: 'key: id of group'
+      - description: "key: id of group"
         explode: false
         in: path
         name: group-id
@@ -679,7 +798,7 @@ paths:
           type: string
         style: simple
         x-ms-docs-key-type: group
-      - description: 'key: id of group member to remove'
+      - description: "key: id of group member to remove"
         explode: false
         in: path
         name: directory-object-id
@@ -1016,7 +1135,7 @@ paths:
     delete:
       operationId: DeleteUser
       parameters:
-      - description: 'key: id of user'
+      - description: "key: id of user"
         explode: false
         in: path
         name: user-id
@@ -1049,7 +1168,7 @@ paths:
     get:
       operationId: GetUser
       parameters:
-      - description: 'key: id of user'
+      - description: "key: id of user"
         explode: false
         in: path
         name: user-id
@@ -1144,7 +1263,7 @@ paths:
     patch:
       operationId: UpdateUser
       parameters:
-      - description: 'key: id of user'
+      - description: "key: id of user"
         explode: false
         in: path
         name: user-id
@@ -1227,6 +1346,16 @@ components:
       schema:
         type: boolean
       style: form
+    orderby:
+      description: The $orderby system query option allows clients to request resources
+        in either ascending order using asc or descending order using desc.
+      explode: true
+      in: query
+      name: $orderby
+      required: false
+      schema:
+        type: string
+      style: form
   requestBodies:
     Member_Reference:
       content:
@@ -1303,6 +1432,7 @@ components:
           onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
           usageLocation: usageLocation
           userType: userType
+          drive: null
           lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
         driveType: driveType
         lastModifiedBy:
@@ -1366,6 +1496,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -1433,7 +1564,7 @@ components:
             roles:
             - roles
             - roles
-          root: '{}'
+          root: "{}"
           cTag: cTag
           eTag: eTag
           id: id
@@ -1533,6 +1664,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           fileSystemInfo:
             lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -1586,6 +1718,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -1653,7 +1786,7 @@ components:
             roles:
             - roles
             - roles
-          root: '{}'
+          root: "{}"
           cTag: cTag
           eTag: eTag
           id: id
@@ -1753,6 +1886,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           fileSystemInfo:
             lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -1831,6 +1965,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -1898,7 +2033,7 @@ components:
             roles:
             - roles
             - roles
-          root: '{}'
+          root: "{}"
           cTag: cTag
           eTag: eTag
           id: id
@@ -1998,6 +2133,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           fileSystemInfo:
             lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -2055,6 +2191,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -2122,7 +2259,7 @@ components:
             roles:
             - roles
             - roles
-          root: '{}'
+          root: "{}"
           cTag: cTag
           eTag: eTag
           id: id
@@ -2222,6 +2359,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           fileSystemInfo:
             lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -2275,6 +2413,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -2342,7 +2481,7 @@ components:
             roles:
             - roles
             - roles
-          root: '{}'
+          root: "{}"
           cTag: cTag
           eTag: eTag
           id: id
@@ -2442,6 +2581,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           fileSystemInfo:
             lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -2494,6 +2634,7 @@ components:
           onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
           usageLocation: usageLocation
           userType: userType
+          drive: null
           lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
@@ -2505,7 +2646,7 @@ components:
         createdDateTime:
           description: Date and time of item creation. Read-only.
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           readOnly: true
           type: string
         description:
@@ -2520,7 +2661,7 @@ components:
         lastModifiedDateTime:
           description: Date and time the item was last modified. Read-only.
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           readOnly: true
           type: string
         name:
@@ -2537,8 +2678,9 @@ components:
         lastModifiedByUser:
           $ref: '#/components/schemas/user'
         driveType:
-          description: Describes the type of drive represented by this resource. Values
-            are "personal" for users home spaces, "project" or "share". Read-only.
+          description: "Describes the type of drive represented by this resource.\
+            \ Values are \"personal\" for users home spaces, \"project\" or \"share\"\
+            . Read-only."
           readOnly: true
           type: string
         owner:
@@ -2586,10 +2728,11 @@ components:
         id: id
       properties:
         displayName:
-          description: The identity's display name. Note that this may not always
-            be available or up to date. For example, if a user changes their display
-            name, the API may show the new value in a future response, but the items
-            associated with the user won't show up as having changed when using delta.
+          description: "The identity's display name. Note that this may not always\
+            \ be available or up to date. For example, if a user changes their display\
+            \ name, the API may show the new value in a future response, but the items\
+            \ associated with the user won't show up as having changed when using\
+            \ delta."
           type: string
         id:
           description: Unique identifier for the identity.
@@ -2660,6 +2803,7 @@ components:
         onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
         usageLocation: usageLocation
         userType: userType
+        drive: null
         lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
@@ -2668,12 +2812,12 @@ components:
           type: string
         deletedDateTime:
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
         accountEnabled:
-          description: true if the account is enabled; otherwise, false. This property
-            is required when a user is created. Returned only on $select. Supports
-            $filter.
+          description: "true if the account is enabled; otherwise, false. This property\
+            \ is required when a user is created. Returned only on $select. Supports\
+            \ $filter."
           type: boolean
         businessPhones:
           description: The telephone numbers for the user. Only one number can be
@@ -2693,8 +2837,8 @@ components:
             on $select.
           type: string
         country:
-          description: The country/region in which the user is located; for example,
-            'US' or 'UK'. Returned only on $select. Supports $filter.
+          description: "The country/region in which the user is located; for example,\
+            \ 'US' or 'UK'. Returned only on $select. Supports $filter."
           maxLength: 3
           type: string
         createdDateTime:
@@ -2705,7 +2849,7 @@ components:
             that an accurate creation time couldn't be determined for the user. Returned
             only on $select. Read-only. Supports $filter.
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           readOnly: true
           type: string
         department:
@@ -2713,10 +2857,11 @@ components:
             only on $select. Supports $filter.
           type: string
         displayName:
-          description: The name displayed in the address book for the user. This value
-            is usually the combination of the user's first name, middle initial, and
-            last name. This property is required when a user is created and it cannot
-            be cleared during updates. Returned by default. Supports $filter and $orderby.
+          description: "The name displayed in the address book for the user. This\
+            \ value is usually the combination of the user's first name, middle initial,\
+            \ and last name. This property is required when a user is created and\
+            \ it cannot be cleared during updates. Returned by default. Supports $filter\
+            \ and $orderby."
           type: string
         faxNumber:
           description: The fax number of the user. Returned only on $select.
@@ -2726,25 +2871,25 @@ components:
             Supports $filter.
           type: string
         lastPasswordChangeDateTime:
-          description: The time when this user last changed their password. The Timestamp
-            type represents date and time information using ISO 8601 format and is
-            always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            Returned only on $select. Read-only.
+          description: "The time when this user last changed their password. The Timestamp\
+            \ type represents date and time information using ISO 8601 format and\
+            \ is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z\
+            \ Returned only on $select. Read-only."
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           readOnly: true
           type: string
         legalAgeGroupClassification:
-          description: 'Used by enterprise applications to determine the legal age
-            group of the user. This property is read-only and calculated based on
-            ageGroup and consentProvidedForMinor properties. Allowed values: null,
-            minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired,
-            notAdult and adult. Refer to the legal age group property definitions
-            for further information. Returned only on $select.'
+          description: "Used by enterprise applications to determine the legal age\
+            \ group of the user. This property is read-only and calculated based on\
+            \ ageGroup and consentProvidedForMinor properties. Allowed values: null,\
+            \ minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired,\
+            \ notAdult and adult. Refer to the legal age group property definitions\
+            \ for further information. Returned only on $select."
           type: string
         mail:
-          description: The SMTP address for the user, for example, 'jeff@contoso.onowncloud.com'.
-            Returned by default. Supports $filter and endsWith.
+          description: "The SMTP address for the user, for example, 'jeff@contoso.onowncloud.com'.\
+            \ Returned by default. Supports $filter and endsWith."
           type: string
         mailNickname:
           description: The mail alias for the user. This property must be specified
@@ -2761,46 +2906,46 @@ components:
             Read-only. Returned only on $select.
           type: string
         onPremisesDomainName:
-          description: Contains the on-premises domainFQDN, also called dnsDomainName
-            synchronized from the on-premises directory. The property is only populated
-            for customers who are synchronizing their on-premises directory to Azure
-            Active Directory via Azure AD Connect. Read-only. Returned only on $select.
+          description: "Contains the on-premises domainFQDN, also called dnsDomainName\
+            \ synchronized from the on-premises directory. The property is only populated\
+            \ for customers who are synchronizing their on-premises directory to Azure\
+            \ Active Directory via Azure AD Connect. Read-only. Returned only on $select."
           type: string
         onPremisesImmutableId:
-          description: 'This property is used to associate an on-premises Active Directory
-            user account to their Azure AD user object. This property must be specified
-            when creating a new user account in the Graph if you are using a federated
-            domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and
-            _ characters cannot be used when specifying this property. Returned only
-            on $select. Supports $filter (eq, ne, not, ge, le, in)..'
+          description: "This property is used to associate an on-premises Active Directory\
+            \ user account to their Azure AD user object. This property must be specified\
+            \ when creating a new user account in the Graph if you are using a federated\
+            \ domain for the user's userPrincipalName (UPN) property. NOTE: The $\
+            \ and _ characters cannot be used when specifying this property. Returned\
+            \ only on $select. Supports $filter (eq, ne, not, ge, le, in).."
           type: string
         onPremisesSyncEnabled:
-          description: true if this object is synced from an on-premises directory;
-            false if this object was originally synced from an on-premises directory
-            but is no longer synced; null if this object has never been synced from
-            an on-premises directory (default). Read-only. Returned only on $select.
-            Supports $filter (eq, ne, not, in, and eq on null values).
+          description: "true if this object is synced from an on-premises directory;\
+            \ false if this object was originally synced from an on-premises directory\
+            \ but is no longer synced; null if this object has never been synced from\
+            \ an on-premises directory (default). Read-only. Returned only on $select.\
+            \ Supports $filter (eq, ne, not, in, and eq on null values)."
           type: boolean
         onPremisesLastSyncDateTime:
-          description: 'Indicates the last time at which the object was synced with
-            the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp
-            type represents date and time information using ISO 8601 format and is
-            always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge,
-            le, in).'
+          description: "Indicates the last time at which the object was synced with\
+            \ the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp\
+            \ type represents date and time information using ISO 8601 format and\
+            \ is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.\
+            \ Read-only. Returned only on $select. Supports $filter (eq, ne, not,\
+            \ ge, le, in)."
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
         onPremisesSamAccountName:
           description: Contains the on-premises SAM account name synchronized from
             the on-premises directory. Read-only.
           type: string
         onPremisesUserPrincipalName:
-          description: Contains the on-premises userPrincipalName synchronized from
-            the on-premises directory. The property is only populated for customers
-            who are synchronizing their on-premises directory to Azure Active Directory
-            via Azure AD Connect. Read-only. Returned only on $select. Supports $filter
-            (eq, ne, not, ge, le, in, startsWith).
+          description: "Contains the on-premises userPrincipalName synchronized from\
+            \ the on-premises directory. The property is only populated for customers\
+            \ who are synchronizing their on-premises directory to Azure Active Directory\
+            \ via Azure AD Connect. Read-only. Returned only on $select. Supports\
+            \ $filter (eq, ne, not, ge, le, in, startsWith)."
           type: string
         officeLocation:
           description: The office location in the user's place of business. Returned
@@ -2809,15 +2954,15 @@ components:
         passwordProfile:
           $ref: '#/components/schemas/passwordProfile'
         postalCode:
-          description: The postal code for the user's postal address. The postal code
-            is specific to the user's country/region. In the United States of America,
-            this attribute contains the ZIP code. Returned only on $select.
+          description: "The postal code for the user's postal address. The postal\
+            \ code is specific to the user's country/region. In the United States\
+            \ of America, this attribute contains the ZIP code. Returned only on $select."
           type: string
         preferredLanguage:
           description: The preferred language for the user. Should follow ISO 639-1
             Code; for example 'en-US'. Returned by default.
           maxLength: 7
-          pattern: ^[a-z]{2}(-[A-Z]{2})?$
+          pattern: "^[a-z]{2}(-[A-Z]{2})?$"
           type: string
         state:
           description: The state or province in the user's address. Returned only
@@ -2832,37 +2977,38 @@ components:
             default. Supports $filter.
           type: string
         usageLocation:
-          description: 'A two letter country code (ISO standard 3166). Required for
-            users that will be assigned licenses due to legal requirement to check
-            for availability of services in countries.  Examples include: ''US'',
-            ''JP'', and ''GB''. Not nullable. Returned only on $select. Supports $filter.'
+          description: "A two letter country code (ISO standard 3166). Required for\
+            \ users that will be assigned licenses due to legal requirement to check\
+            \ for availability of services in countries.  Examples include: 'US',\
+            \ 'JP', and 'GB'. Not nullable. Returned only on $select. Supports $filter."
           maxLength: 3
           type: string
         userPrincipalName:
-          description: The user principal name (UPN) of the user. The UPN is an Internet-style
-            login name for the user based on the Internet standard RFC 822. By convention,
-            this should map to the user's email name. The general format is alias@domain,
-            where domain must be present in the tenant's collection of verified domains.
-            This property is required when a user is created. The verified domains
-            for the tenant can be accessed from the verifiedDomains property of organization.
-            Returned by default. Supports $filter, $orderby, and endsWith.
+          description: "The user principal name (UPN) of the user. The UPN is an Internet-style\
+            \ login name for the user based on the Internet standard RFC 822. By convention,\
+            \ this should map to the user's email name. The general format is alias@domain,\
+            \ where domain must be present in the tenant's collection of verified\
+            \ domains. This property is required when a user is created. The verified\
+            \ domains for the tenant can be accessed from the verifiedDomains property\
+            \ of organization. Returned by default. Supports $filter, $orderby, and\
+            \ endsWith."
           type: string
         userType:
-          description: A string value that can be used to classify user types in your
-            directory, such as 'Member' and 'Guest'. Returned only on $select. Supports
-            $filter.
+          description: "A string value that can be used to classify user types in\
+            \ your directory, such as 'Member' and 'Guest'. Returned only on $select.\
+            \ Supports $filter."
           type: string
         aboutMe:
           description: A freeform text entry field for the user to describe themselves.
             Returned only on $select.
           type: string
         birthday:
-          description: The birthday of the user. The Timestamp type represents date
-            and time information using ISO 8601 format and is always in UTC time.
-            For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned
-            only on $select.
+          description: "The birthday of the user. The Timestamp type represents date\
+            \ and time information using ISO 8601 format and is always in UTC time.\
+            \ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned\
+            \ only on $select."
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
         preferredName:
           description: The preferred name for the user. Returned only on $select.
@@ -2892,8 +3038,8 @@ components:
           readOnly: true
           type: string
         driveType:
-          description: Identifies the type of drive. See [drive][] resource for values.
-            Read-only.
+          description: "Identifies the type of drive. See [drive][] resource for values.\
+            \ Read-only."
           readOnly: true
           type: string
         id:
@@ -2909,8 +3055,8 @@ components:
           readOnly: true
           type: string
         shareId:
-          description: A unique identifier for a shared resource that can be accessed
-            via the [Shares][] API.
+          description: "A unique identifier for a shared resource that can be accessed\
+            \ via the [Shares][] API."
           type: string
       type: object
     driveItem:
@@ -2964,6 +3110,7 @@ components:
           onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
           usageLocation: usageLocation
           userType: userType
+          drive: null
           lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
         createdDateTime: 2000-01-23T04:56:07.000+00:00
         description: description
@@ -3031,7 +3178,7 @@ components:
           roles:
           - roles
           - roles
-        root: '{}'
+        root: "{}"
         cTag: cTag
         eTag: eTag
         id: id
@@ -3131,6 +3278,7 @@ components:
           onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
           usageLocation: usageLocation
           userType: userType
+          drive: null
           lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
         fileSystemInfo:
           lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -3146,7 +3294,7 @@ components:
         createdDateTime:
           description: Date and time of item creation. Read-only.
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           readOnly: true
           type: string
         description:
@@ -3161,7 +3309,7 @@ components:
         lastModifiedDateTime:
           description: Date and time the item was last modified. Read-only.
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           readOnly: true
           type: string
         name:
@@ -3178,7 +3326,7 @@ components:
         lastModifiedByUser:
           $ref: '#/components/schemas/user'
         content:
-          description: The content stream, if the item represents a file.
+          description: "The content stream, if the item represents a file."
           format: base64url
           type: string
         cTag:
@@ -3198,8 +3346,8 @@ components:
         image:
           $ref: '#/components/schemas/image'
         root:
-          description: If this property is non-null, it indicates that the driveItem
-            is the top-most driveItem in the drive.
+          description: "If this property is non-null, it indicates that the driveItem\
+            \ is the top-most driveItem in the drive."
           type: object
         trash:
           $ref: '#/components/schemas/trash'
@@ -3240,7 +3388,7 @@ components:
       readOnly: true
       type: object
     openGraphFile:
-      description: File metadata, if the item is a file. Read-only.
+      description: "File metadata, if the item is a file. Read-only."
       example:
         processingMetadata: true
         hashes:
@@ -3272,22 +3420,22 @@ components:
         createdDateTime:
           description: The UTC date and time the file was created on a client.
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
         lastAccessedDateTime:
           description: The UTC date and time the file was last accessed. Available
             for the recent file list only.
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
         lastModifiedDateTime:
           description: The UTC date and time the file was last modified on a client.
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
       type: object
     folder:
-      description: Folder metadata, if the item is a folder. Read-only.
+      description: "Folder metadata, if the item is a folder. Read-only."
       example:
         view:
           sortOrder: sortOrder
@@ -3305,19 +3453,19 @@ components:
       readOnly: true
       type: object
     image:
-      description: Image metadata, if the item is an image. Read-only.
+      description: "Image metadata, if the item is an image. Read-only."
       example:
         width: 1516424369
         height: 494379917
       properties:
         height:
-          description: Optional. Height of the image, in pixels. Read-only.
+          description: "Optional. Height of the image, in pixels. Read-only."
           format: int32
           maximum: 2147483647
           readOnly: true
           type: integer
         width:
-          description: Optional. Width of the image, in pixels. Read-only.
+          description: "Optional. Width of the image, in pixels. Read-only."
           format: int32
           maximum: 2147483647
           readOnly: true
@@ -3325,8 +3473,8 @@ components:
       readOnly: true
       type: object
     root:
-      description: If this property is non-null, it indicates that the driveItem is
-        the top-most driveItem in the drive.
+      description: "If this property is non-null, it indicates that the driveItem\
+        \ is the top-most driveItem in the drive."
       type: object
     trash:
       description: Metadata for trashed drive Items
@@ -3348,13 +3496,13 @@ components:
         trashedDateTime:
           description: The UTC date and time the folder was marked as trashed.
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
       readOnly: true
       type: object
     specialFolder:
-      description: If the current item is also available as a special folder, this
-        facet is returned. Read-only
+      description: "If the current item is also available as a special folder, this\
+        \ facet is returned. Read-only"
       example:
         name: name
       properties:
@@ -3373,14 +3521,14 @@ components:
         remaining: 6
       properties:
         deleted:
-          description: Total space consumed by files in the recycle bin, in bytes.
-            Read-only.
+          description: "Total space consumed by files in the recycle bin, in bytes.\
+            \ Read-only."
           format: int64
           readOnly: true
           type: integer
         remaining:
-          description: Total space remaining before reaching the quota limit, in bytes.
-            Read-only.
+          description: "Total space remaining before reaching the quota limit, in\
+            \ bytes. Read-only."
           format: int64
           readOnly: true
           type: integer
@@ -3390,19 +3538,19 @@ components:
           readOnly: true
           type: string
         total:
-          description: Total allowed storage space, in bytes. Read-only.
+          description: "Total allowed storage space, in bytes. Read-only."
           format: int64
           readOnly: true
           type: integer
         used:
-          description: Total space used, in bytes. Read-only.
+          description: "Total space used, in bytes. Read-only."
           format: int64
           readOnly: true
           type: integer
       readOnly: true
       type: object
     hashes:
-      description: Hashes of the file's binary content, if available. Read-only.
+      description: "Hashes of the file's binary content, if available. Read-only."
       example:
         sha256Hash: sha256Hash
         quickXorHash: quickXorHash
@@ -3439,8 +3587,8 @@ components:
           description: The method by which the folder should be sorted.
           type: string
         sortOrder:
-          description: If true, indicates that items should be sorted in descending
-            order. Otherwise, items should be sorted ascending.
+          description: "If true, indicates that items should be sorted in descending\
+            \ order. Otherwise, items should be sorted ascending."
           type: string
         viewType:
           description: The type of view that should be used to represent the folder.
@@ -3525,6 +3673,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           driveType: driveType
           lastModifiedBy:
@@ -3588,6 +3737,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -3655,7 +3805,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -3755,6 +3905,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -3808,6 +3959,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -3875,7 +4027,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -3975,6 +4127,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -4053,6 +4206,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -4120,7 +4274,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -4220,6 +4374,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -4277,6 +4432,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -4344,7 +4500,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -4444,6 +4600,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -4497,6 +4654,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -4564,7 +4722,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -4664,6 +4822,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -4716,6 +4875,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
         - owner:
             application:
@@ -4775,6 +4935,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           driveType: driveType
           lastModifiedBy:
@@ -4838,6 +4999,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -4905,7 +5067,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -5005,6 +5167,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -5058,6 +5221,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -5125,7 +5289,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -5225,6 +5389,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -5303,6 +5468,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -5370,7 +5536,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -5470,6 +5636,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -5527,6 +5694,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -5594,7 +5762,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -5694,6 +5862,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -5747,6 +5916,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -5814,7 +5984,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -5914,6 +6084,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -5966,6 +6137,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
         onPremisesDomainName: onPremisesDomainName
         members:
@@ -6042,6 +6214,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           driveType: driveType
           lastModifiedBy:
@@ -6105,6 +6278,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -6172,7 +6346,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -6272,6 +6446,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -6325,6 +6500,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -6392,7 +6568,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -6492,6 +6668,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -6570,6 +6747,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -6637,7 +6815,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -6737,6 +6915,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -6794,6 +6973,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -6861,7 +7041,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -6961,6 +7141,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -7014,6 +7195,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -7081,7 +7263,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -7181,6 +7363,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -7233,6 +7416,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
         members@odata.bind:
         - members@odata.bind
@@ -7247,101 +7431,101 @@ components:
           type: string
         deletedDateTime:
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
         createdDateTime:
-          description: Timestamp of when the group was created. The value cannot be
-            modified and is automatically populated when the group is created. The
-            Timestamp type represents date and time information using ISO 8601 format
-            and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is
-            2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not,
-            ge, le, in). Read-only.
+          description: "Timestamp of when the group was created. The value cannot\
+            \ be modified and is automatically populated when the group is created.\
+            \ The Timestamp type represents date and time information using ISO 8601\
+            \ format and is always in UTC time. For example, midnight UTC on Jan 1,\
+            \ 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter\
+            \ (eq, ne, not, ge, le, in). Read-only."
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
         description:
-          description: An optional description for the group. Returned by default.
-            Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+          description: "An optional description for the group. Returned by default.\
+            \ Supports $filter (eq, ne, not, ge, le, startsWith) and $search."
           type: string
         displayName:
-          description: The display name for the group. This property is required when
-            a group is created and cannot be cleared during updates. Returned by default.
-            Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null
-            values), $search, and $orderBy.
+          description: "The display name for the group. This property is required\
+            \ when a group is created and cannot be cleared during updates. Returned\
+            \ by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and\
+            \ eq on null values), $search, and $orderBy."
           type: string
         expirationDateTime:
-          description: Timestamp of when the group is set to expire. The value cannot
-            be modified and is automatically populated when the group is created.
-            The Timestamp type represents date and time information using ISO 8601
-            format and is always in UTC time. For example, midnight UTC on Jan 1,
-            2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq,
-            ne, not, ge, le, in). Read-only.
+          description: "Timestamp of when the group is set to expire. The value cannot\
+            \ be modified and is automatically populated when the group is created.\
+            \ The Timestamp type represents date and time information using ISO 8601\
+            \ format and is always in UTC time. For example, midnight UTC on Jan 1,\
+            \ 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter\
+            \ (eq, ne, not, ge, le, in). Read-only."
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
         mail:
-          description: The SMTP address for the group, for example, 'serviceadmins@owncloud.com'.
-            Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le,
-            in, startsWith, and eq on null values).
+          description: "The SMTP address for the group, for example, 'serviceadmins@owncloud.com'.\
+            \ Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le,\
+            \ in, startsWith, and eq on null values)."
           type: string
         onPremisesDomainName:
-          description: Contains the on-premises domain FQDN, also called dnsDomainName
-            synchronized from the on-premises directory.
+          description: "Contains the on-premises domain FQDN, also called dnsDomainName\
+            \ synchronized from the on-premises directory."
           type: string
         onPremisesLastSyncDateTime:
-          description: Indicates the last time at which the group was synced with
-            the on-premises directory.The Timestamp type represents date and time
-            information using ISO 8601 format and is always in UTC time. For example,
-            midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
-            Read-only. Supports $filter (eq, ne, not, ge, le, in).
+          description: "Indicates the last time at which the group was synced with\
+            \ the on-premises directory.The Timestamp type represents date and time\
+            \ information using ISO 8601 format and is always in UTC time. For example,\
+            \ midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.\
+            \ Read-only. Supports $filter (eq, ne, not, ge, le, in)."
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
         onPremisesSamAccountName:
-          description: Contains the on-premises SAM account name synchronized from
-            the on-premises directory. The property is only populated for customers
-            who are synchronizing their on-premises directory to Azure Active Directory
-            via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not,
-            ge, le, in, startsWith). Read-only.
+          description: "Contains the on-premises SAM account name synchronized from\
+            \ the on-premises directory. The property is only populated for customers\
+            \ who are synchronizing their on-premises directory to Azure Active Directory\
+            \ via Azure AD Connect.Returned by default. Supports $filter (eq, ne,\
+            \ not, ge, le, in, startsWith). Read-only."
           type: string
         onPremisesSyncEnabled:
-          description: true if this group is synced from an on-premises directory;
-            false if this group was originally synced from an on-premises directory
-            but is no longer synced; null if this object has never been synced from
-            an on-premises directory (default). Returned by default. Read-only. Supports
-            $filter (eq, ne, not, in, and eq on null values).
+          description: "true if this group is synced from an on-premises directory;\
+            \ false if this group was originally synced from an on-premises directory\
+            \ but is no longer synced; null if this object has never been synced from\
+            \ an on-premises directory (default). Returned by default. Read-only.\
+            \ Supports $filter (eq, ne, not, in, and eq on null values)."
           type: boolean
         preferredLanguage:
-          description: The preferred language for a group. Should follow ISO 639-1
-            Code; for example en-US. Returned by default. Supports $filter (eq, ne,
-            not, ge, le, in, startsWith, and eq on null values).
+          description: "The preferred language for a group. Should follow ISO 639-1\
+            \ Code; for example en-US. Returned by default. Supports $filter (eq,\
+            \ ne, not, ge, le, in, startsWith, and eq on null values)."
           type: string
         securityEnabled:
-          description: Specifies whether the group is a security group. Required.
-            Returned by default. Supports $filter (eq, ne, not, in).
+          description: "Specifies whether the group is a security group. Required.\
+            \ Returned by default. Supports $filter (eq, ne, not, in)."
           type: boolean
         securityIdentifier:
-          description: Security identifier of the group, used in Windows scenarios.
-            Returned by default.
+          description: "Security identifier of the group, used in Windows scenarios.\
+            \ Returned by default."
           type: string
         visibility:
-          description: 'Specifies the group join policy and group content visibility
-            for groups. Possible values are: Private, Public, or Hiddenmembership.
-            It can''t be updated later. Other values of visibility can be updated
-            after group creation. Groups assignable to roles are always Private. See
-            group visibility options to learn more. Returned by default. Nullable.'
+          description: "Specifies the group join policy and group content visibility\
+            \ for groups. Possible values are: Private, Public, or Hiddenmembership.\
+            \ It can't be updated later. Other values of visibility can be updated\
+            \ after group creation. Groups assignable to roles are always Private.\
+            \ See group visibility options to learn more. Returned by default. Nullable."
           type: string
         createdOnBehalfOf:
           $ref: '#/components/schemas/directoryObject'
         memberOf:
-          description: 'Groups that this group is a member of. HTTP Methods: GET (supported
-            for all groups). Read-only. Nullable. Supports $expand.'
+          description: "Groups that this group is a member of. HTTP Methods: GET (supported\
+            \ for all groups). Read-only. Nullable. Supports $expand."
           items:
             $ref: '#/components/schemas/directoryObject'
           type: array
         members:
-          description: 'Users and groups that are members of this group. HTTP Methods:
-            GET (supported for all groups), Nullable. Supports $expand.'
+          description: "Users and groups that are members of this group. HTTP Methods:\
+            \ GET (supported for all groups), Nullable. Supports $expand."
           items:
             $ref: '#/components/schemas/directoryObject'
           type: array
@@ -7379,15 +7563,15 @@ components:
         id: id
       properties:
         id:
-          description: The unique identifier for the object. 12345678-9abc-def0-1234-56789abcde.
-            The value of the ID property is often, but not exclusively, in the form
-            of a GUID. The value should be treated as an opaque identifier and not
-            based in being a GUID. Null values are not allowed. Read-only.
+          description: "The unique identifier for the object. 12345678-9abc-def0-1234-56789abcde.\
+            \ The value of the ID property is often, but not exclusively, in the form\
+            \ of a GUID. The value should be treated as an opaque identifier and not\
+            \ based in being a GUID. Null values are not allowed. Read-only."
           readOnly: true
           type: string
         deletedDateTime:
           format: date-time
-          pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$
+          pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
       type: object
     permission:
@@ -7527,6 +7711,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           driveType: driveType
           lastModifiedBy:
@@ -7590,6 +7775,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -7657,7 +7843,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -7757,6 +7943,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -7810,6 +7997,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -7877,7 +8065,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -7977,6 +8165,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -8055,6 +8244,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -8122,7 +8312,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -8222,6 +8412,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -8279,6 +8470,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -8346,7 +8538,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -8446,6 +8638,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -8499,6 +8692,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -8566,7 +8760,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -8666,6 +8860,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -8718,6 +8913,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
         - owner:
             application:
@@ -8777,6 +8973,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           driveType: driveType
           lastModifiedBy:
@@ -8840,6 +9037,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -8907,7 +9105,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -9007,6 +9205,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -9060,6 +9259,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -9127,7 +9327,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -9227,6 +9427,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -9305,6 +9506,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -9372,7 +9574,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -9472,6 +9674,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -9529,6 +9732,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -9596,7 +9800,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -9696,6 +9900,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -9749,6 +9954,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -9816,7 +10022,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -9916,6 +10122,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -9968,6 +10175,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
         - owner:
             application:
@@ -10027,6 +10235,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           driveType: driveType
           lastModifiedBy:
@@ -10090,6 +10299,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -10157,7 +10367,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -10257,6 +10467,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -10310,6 +10521,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -10377,7 +10589,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -10477,6 +10689,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -10555,6 +10768,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -10622,7 +10836,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -10722,6 +10936,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -10779,6 +10994,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -10846,7 +11062,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -10946,6 +11162,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -10999,6 +11216,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -11066,7 +11284,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -11166,6 +11384,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -11218,6 +11437,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
         - owner:
             application:
@@ -11277,6 +11497,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           driveType: driveType
           lastModifiedBy:
@@ -11340,6 +11561,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -11407,7 +11629,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -11507,6 +11729,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -11560,6 +11783,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -11627,7 +11851,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -11727,6 +11951,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -11805,6 +12030,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -11872,7 +12098,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -11972,6 +12198,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -12029,6 +12256,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -12096,7 +12324,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -12196,6 +12424,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -12249,6 +12478,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -12316,7 +12546,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -12416,6 +12646,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -12468,6 +12699,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
         - owner:
             application:
@@ -12527,6 +12759,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           driveType: driveType
           lastModifiedBy:
@@ -12590,6 +12823,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -12657,7 +12891,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -12757,6 +12991,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -12810,6 +13045,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -12877,7 +13113,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -12977,6 +13213,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -13055,6 +13292,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -13122,7 +13360,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -13222,6 +13460,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -13279,6 +13518,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -13346,7 +13586,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -13446,6 +13686,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -13499,6 +13740,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
@@ -13566,7 +13808,7 @@ components:
               roles:
               - roles
               - roles
-            root: '{}'
+            root: "{}"
             cTag: cTag
             eTag: eTag
             id: id
@@ -13666,6 +13908,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             fileSystemInfo:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -13718,6 +13961,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
       properties:
         value:
@@ -13810,6 +14054,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             driveType: driveType
             lastModifiedBy:
@@ -13873,6 +14118,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -13940,7 +14186,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -14040,6 +14286,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -14093,6 +14340,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -14160,7 +14408,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -14260,6 +14508,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -14338,6 +14587,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -14405,7 +14655,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -14505,6 +14755,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -14562,6 +14813,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -14629,7 +14881,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -14729,6 +14981,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -14782,6 +15035,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -14849,7 +15103,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -14949,6 +15203,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -15001,6 +15256,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           - owner:
               application:
@@ -15060,6 +15316,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             driveType: driveType
             lastModifiedBy:
@@ -15123,6 +15380,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -15190,7 +15448,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -15290,6 +15548,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -15343,6 +15602,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -15410,7 +15670,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -15510,6 +15770,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -15588,6 +15849,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -15655,7 +15917,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -15755,6 +16017,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -15812,6 +16075,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -15879,7 +16143,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -15979,6 +16243,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -16032,6 +16297,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -16099,7 +16365,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -16199,6 +16465,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -16251,6 +16518,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           onPremisesDomainName: onPremisesDomainName
           members:
@@ -16327,6 +16595,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             driveType: driveType
             lastModifiedBy:
@@ -16390,6 +16659,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -16457,7 +16727,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -16557,6 +16827,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -16610,6 +16881,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -16677,7 +16949,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -16777,6 +17049,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -16855,6 +17128,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -16922,7 +17196,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -17022,6 +17296,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -17079,6 +17354,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -17146,7 +17422,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -17246,6 +17522,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -17299,6 +17576,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -17366,7 +17644,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -17466,6 +17744,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -17518,6 +17797,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           members@odata.bind:
           - members@odata.bind
@@ -17602,6 +17882,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             driveType: driveType
             lastModifiedBy:
@@ -17665,6 +17946,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -17732,7 +18014,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -17832,6 +18114,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -17885,6 +18168,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -17952,7 +18236,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -18052,6 +18336,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -18130,6 +18415,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -18197,7 +18483,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -18297,6 +18583,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -18354,6 +18641,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -18421,7 +18709,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -18521,6 +18809,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -18574,6 +18863,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -18641,7 +18931,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -18741,6 +19031,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -18793,6 +19084,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           - owner:
               application:
@@ -18852,6 +19144,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             driveType: driveType
             lastModifiedBy:
@@ -18915,6 +19208,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -18982,7 +19276,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -19082,6 +19376,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -19135,6 +19430,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -19202,7 +19498,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -19302,6 +19598,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -19380,6 +19677,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -19447,7 +19745,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -19547,6 +19845,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -19604,6 +19903,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -19671,7 +19971,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -19771,6 +20071,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -19824,6 +20125,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -19891,7 +20193,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -19991,6 +20293,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -20043,6 +20346,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           onPremisesDomainName: onPremisesDomainName
           members:
@@ -20119,6 +20423,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
             driveType: driveType
             lastModifiedBy:
@@ -20182,6 +20487,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -20249,7 +20555,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -20349,6 +20655,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -20402,6 +20709,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -20469,7 +20777,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -20569,6 +20877,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -20647,6 +20956,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -20714,7 +21024,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -20814,6 +21124,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -20871,6 +21182,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -20938,7 +21250,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -21038,6 +21350,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -21091,6 +21404,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
@@ -21158,7 +21472,7 @@ components:
                 roles:
                 - roles
                 - roles
-              root: '{}'
+              root: "{}"
               cTag: cTag
               eTag: eTag
               id: id
@@ -21258,6 +21572,7 @@ components:
                 onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
                 usageLocation: usageLocation
                 userType: userType
+                drive: null
                 lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
               fileSystemInfo:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -21310,6 +21625,7 @@ components:
               onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
               usageLocation: usageLocation
               userType: userType
+              drive: null
               lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           members@odata.bind:
           - members@odata.bind
@@ -21384,6 +21700,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -21451,7 +21768,7 @@ components:
             roles:
             - roles
             - roles
-          root: '{}'
+          root: "{}"
           cTag: cTag
           eTag: eTag
           id: id
@@ -21551,6 +21868,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           fileSystemInfo:
             lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -21604,6 +21922,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -21671,7 +21990,7 @@ components:
             roles:
             - roles
             - roles
-          root: '{}'
+          root: "{}"
           cTag: cTag
           eTag: eTag
           id: id
@@ -21771,6 +22090,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           fileSystemInfo:
             lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -21824,6 +22144,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -21891,7 +22212,7 @@ components:
             roles:
             - roles
             - roles
-          root: '{}'
+          root: "{}"
           cTag: cTag
           eTag: eTag
           id: id
@@ -21991,6 +22312,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           fileSystemInfo:
             lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -22044,6 +22366,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -22111,7 +22434,7 @@ components:
             roles:
             - roles
             - roles
-          root: '{}'
+          root: "{}"
           cTag: cTag
           eTag: eTag
           id: id
@@ -22211,6 +22534,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           fileSystemInfo:
             lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -22264,6 +22588,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -22331,7 +22656,7 @@ components:
             roles:
             - roles
             - roles
-          root: '{}'
+          root: "{}"
           cTag: cTag
           eTag: eTag
           id: id
@@ -22431,6 +22756,7 @@ components:
             onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
             usageLocation: usageLocation
             userType: userType
+            drive: null
             lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
           fileSystemInfo:
             lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
@@ -22496,6 +22822,7 @@ components:
           onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
           usageLocation: usageLocation
           userType: userType
+          drive: null
           lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
         - passwordProfile:
             password: password
@@ -22543,6 +22870,7 @@ components:
           onPremisesLastSyncDateTime: 2000-01-23T04:56:07.000+00:00
           usageLocation: usageLocation
           userType: userType
+          drive: null
           lastPasswordChangeDateTime: 2000-01-23T04:56:07.000+00:00
       properties:
         value:

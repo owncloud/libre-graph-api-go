@@ -19,10 +19,6 @@ import (
 	"strings"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // UserApiService UserApi service
 type UserApiService service
@@ -147,6 +143,7 @@ func (r ApiGetUserRequest) Select_(select_ []string) ApiGetUserRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Expand related entities
 func (r ApiGetUserRequest) Expand(expand []string) ApiGetUserRequest {
 	r.expand = &expand

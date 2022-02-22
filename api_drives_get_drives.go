@@ -19,52 +19,122 @@ import (
 )
 
 
-// MeDriveRootApiService MeDriveRootApi service
-type MeDriveRootApiService service
+// DrivesGetDrivesApiService DrivesGetDrivesApi service
+type DrivesGetDrivesApiService service
 
-type ApiHomeGetRootRequest struct {
+type ApiListAllDrivesRequest struct {
 	ctx context.Context
-	ApiService *MeDriveRootApiService
+	ApiService *DrivesGetDrivesApiService
+	top *int32
+	skip *int32
+	orderby *string
+	filter *string
+	count *bool
+	select_ *[]string
+	expand *[]string
 }
 
-func (r ApiHomeGetRootRequest) Execute() (*DriveItem, *http.Response, error) {
-	return r.ApiService.HomeGetRootExecute(r)
+// Show only the first n items
+func (r ApiListAllDrivesRequest) Top(top int32) ApiListAllDrivesRequest {
+	r.top = &top
+	return r
+}
+
+// Skip the first n items
+func (r ApiListAllDrivesRequest) Skip(skip int32) ApiListAllDrivesRequest {
+	r.skip = &skip
+	return r
+}
+
+// The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc.
+func (r ApiListAllDrivesRequest) Orderby(orderby string) ApiListAllDrivesRequest {
+	r.orderby = &orderby
+	return r
+}
+
+// Filter items by property values
+func (r ApiListAllDrivesRequest) Filter(filter string) ApiListAllDrivesRequest {
+	r.filter = &filter
+	return r
+}
+
+// Include count of items
+func (r ApiListAllDrivesRequest) Count(count bool) ApiListAllDrivesRequest {
+	r.count = &count
+	return r
+}
+
+// Select properties to be returned
+func (r ApiListAllDrivesRequest) Select_(select_ []string) ApiListAllDrivesRequest {
+	r.select_ = &select_
+	return r
+}
+
+// Expand related entities
+func (r ApiListAllDrivesRequest) Expand(expand []string) ApiListAllDrivesRequest {
+	r.expand = &expand
+	return r
+}
+
+func (r ApiListAllDrivesRequest) Execute() (*CollectionOfDrives, *http.Response, error) {
+	return r.ApiService.ListAllDrivesExecute(r)
 }
 
 /*
-HomeGetRoot Get root from personal space
+ListAllDrives Get All drives
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiHomeGetRootRequest
+ @return ApiListAllDrivesRequest
 */
-func (a *MeDriveRootApiService) HomeGetRoot(ctx context.Context) ApiHomeGetRootRequest {
-	return ApiHomeGetRootRequest{
+func (a *DrivesGetDrivesApiService) ListAllDrives(ctx context.Context) ApiListAllDrivesRequest {
+	return ApiListAllDrivesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DriveItem
-func (a *MeDriveRootApiService) HomeGetRootExecute(r ApiHomeGetRootRequest) (*DriveItem, *http.Response, error) {
+//  @return CollectionOfDrives
+func (a *DrivesGetDrivesApiService) ListAllDrivesExecute(r ApiListAllDrivesRequest) (*CollectionOfDrives, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *DriveItem
+		localVarReturnValue  *CollectionOfDrives
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootApiService.HomeGetRoot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesGetDrivesApiService.ListAllDrives")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/me/drive/root"
+	localVarPath := localBasePath + "/drives"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.top != nil {
+		localVarQueryParams.Add("$top", parameterToString(*r.top, ""))
+	}
+	if r.skip != nil {
+		localVarQueryParams.Add("$skip", parameterToString(*r.skip, ""))
+	}
+	if r.orderby != nil {
+		localVarQueryParams.Add("$orderby", parameterToString(*r.orderby, ""))
+	}
+	if r.filter != nil {
+		localVarQueryParams.Add("$filter", parameterToString(*r.filter, ""))
+	}
+	if r.count != nil {
+		localVarQueryParams.Add("$count", parameterToString(*r.count, ""))
+	}
+	if r.select_ != nil {
+		localVarQueryParams.Add("$select", parameterToString(*r.select_, "csv"))
+	}
+	if r.expand != nil {
+		localVarQueryParams.Add("$expand", parameterToString(*r.expand, "csv"))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

@@ -18,10 +18,6 @@ import (
 	"net/url"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // UsersApiService UsersApi service
 type UsersApiService service
@@ -160,36 +156,43 @@ func (r ApiListUsersRequest) Top(top int32) ApiListUsersRequest {
 	r.top = &top
 	return r
 }
+
 // Skip the first n items
 func (r ApiListUsersRequest) Skip(skip int32) ApiListUsersRequest {
 	r.skip = &skip
 	return r
 }
+
 // Search items by search phrases
 func (r ApiListUsersRequest) Search(search string) ApiListUsersRequest {
 	r.search = &search
 	return r
 }
+
 // Filter items by property values
 func (r ApiListUsersRequest) Filter(filter string) ApiListUsersRequest {
 	r.filter = &filter
 	return r
 }
+
 // Include count of items
 func (r ApiListUsersRequest) Count(count bool) ApiListUsersRequest {
 	r.count = &count
 	return r
 }
+
 // Order items by property values
 func (r ApiListUsersRequest) Orderby(orderby []string) ApiListUsersRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Select properties to be returned
 func (r ApiListUsersRequest) Select_(select_ []string) ApiListUsersRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Expand related entities
 func (r ApiListUsersRequest) Expand(expand []string) ApiListUsersRequest {
 	r.expand = &expand

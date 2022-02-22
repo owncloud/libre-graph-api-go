@@ -18,10 +18,6 @@ import (
 	"net/url"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // DrivesRootApiService DrivesRootApi service
 type DrivesRootApiService service
@@ -30,7 +26,6 @@ type ApiGetRootRequest struct {
 	ctx context.Context
 	ApiService *DrivesRootApiService
 }
-
 
 func (r ApiGetRootRequest) Execute() (*DriveItem, *http.Response, error) {
 	return r.ApiService.GetRootExecute(r)

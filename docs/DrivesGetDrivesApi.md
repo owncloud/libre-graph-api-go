@@ -1,18 +1,18 @@
-# \MeDrivesApi
+# \DrivesGetDrivesApi
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListMyDrives**](MeDrivesApi.md#ListMyDrives) | **Get** /me/drives | Get drives from me
+[**ListAllDrives**](DrivesGetDrivesApi.md#ListAllDrives) | **Get** /drives | Get All drives
 
 
 
-## ListMyDrives
+## ListAllDrives
 
-> CollectionOfDrives ListMyDrives(ctx).Top(top).Skip(skip).Orderby(orderby).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
+> CollectionOfDrives ListAllDrives(ctx).Top(top).Skip(skip).Orderby(orderby).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
 
-Get drives from me
+Get All drives
 
 ### Example
 
@@ -37,13 +37,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeDrivesApi.ListMyDrives(context.Background()).Top(top).Skip(skip).Orderby(orderby).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
+    resp, r, err := apiClient.DrivesGetDrivesApi.ListAllDrives(context.Background()).Top(top).Skip(skip).Orderby(orderby).Filter(filter).Count(count).Select_(select_).Expand(expand).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.ListMyDrives``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesGetDrivesApi.ListAllDrives``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListMyDrives`: CollectionOfDrives
-    fmt.Fprintf(os.Stdout, "Response from `MeDrivesApi.ListMyDrives`: %v\n", resp)
+    // response from `ListAllDrives`: CollectionOfDrives
+    fmt.Fprintf(os.Stdout, "Response from `DrivesGetDrivesApi.ListAllDrives`: %v\n", resp)
 }
 ```
 
@@ -53,7 +53,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListMyDrivesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListAllDrivesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

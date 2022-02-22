@@ -18,10 +18,6 @@ import (
 	"net/url"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // MeDriveApiService MeDriveApi service
 type MeDriveApiService service
@@ -30,7 +26,6 @@ type ApiGetHomeRequest struct {
 	ctx context.Context
 	ApiService *MeDriveApiService
 }
-
 
 func (r ApiGetHomeRequest) Execute() (*Drive, *http.Response, error) {
 	return r.ApiService.GetHomeExecute(r)
