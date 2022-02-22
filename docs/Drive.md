@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **WebUrl** | Pointer to **string** | URL that displays the resource in the browser. Read-only. | [optional] [readonly] 
 **CreatedByUser** | Pointer to [**User**](User.md) |  | [optional] 
 **LastModifiedByUser** | Pointer to [**User**](User.md) |  | [optional] 
-**DriveType** | Pointer to **string** | Describes the type of drive represented by this resource. Values are \&quot;personal\&quot; for users home spaces, \&quot;project\&quot; or \&quot;share\&quot;. Read-only. | [optional] [readonly] 
+**DriveType** | Pointer to **string** | Describes the type of drive represented by this resource. Values are \&quot;personal\&quot; for users home spaces, \&quot;project\&quot;, \&quot;virtual\&quot; or \&quot;share\&quot;. Read-only. | [optional] [readonly] 
 **Owner** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
 **Quota** | Pointer to [**Quota**](Quota.md) |  | [optional] 
 **Items** | Pointer to [**[]DriveItem**](DriveItem.md) | All items contained in the drive. Read-only. Nullable. | [optional] [readonly] 

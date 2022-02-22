@@ -36,7 +36,7 @@ type Drive struct {
 	WebUrl *string `json:"webUrl,omitempty"`
 	CreatedByUser *User `json:"createdByUser,omitempty"`
 	LastModifiedByUser *User `json:"lastModifiedByUser,omitempty"`
-	// Describes the type of drive represented by this resource. Values are \"personal\" for users home spaces, \"project\" or \"share\". Read-only.
+	// Describes the type of drive represented by this resource. Values are \"personal\" for users home spaces, \"project\", \"virtual\" or \"share\". Read-only.
 	DriveType *string `json:"driveType,omitempty"`
 	Owner *IdentitySet `json:"owner,omitempty"`
 	Quota *Quota `json:"quota,omitempty"`

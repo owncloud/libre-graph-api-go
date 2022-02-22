@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Deleted** | Pointer to **int64** | Total space consumed by files in the recycle bin, in bytes. Read-only. | [optional] [readonly] 
 **Remaining** | Pointer to **int64** | Total space remaining before reaching the quota limit, in bytes. Read-only. | [optional] [readonly] 
-**State** | Pointer to **string** | Enumeration value that indicates the state of the storage space. Read-only. | [optional] [readonly] 
+**State** | Pointer to **string** | Enumeration value that indicates the state of the storage space. Either \&quot;normal\&quot;, \&quot;nearing\&quot;, \&quot;critical\&quot; or \&quot;exceeded\&quot;. Read-only. | [optional] [readonly] 
 **Total** | Pointer to **int64** | Total allowed storage space, in bytes. Read-only. | [optional] [readonly] 
 **Used** | Pointer to **int64** | Total space used, in bytes. Read-only. | [optional] [readonly] 
 

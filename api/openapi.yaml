@@ -2679,8 +2679,8 @@ components:
           $ref: '#/components/schemas/user'
         driveType:
           description: "Describes the type of drive represented by this resource.\
-            \ Values are \"personal\" for users home spaces, \"project\" or \"share\"\
-            . Read-only."
+            \ Values are \"personal\" for users home spaces, \"project\", \"virtual\"\
+            \ or \"share\". Read-only."
           readOnly: true
           type: string
         owner:
@@ -3533,8 +3533,9 @@ components:
           readOnly: true
           type: integer
         state:
-          description: Enumeration value that indicates the state of the storage space.
-            Read-only.
+          description: "Enumeration value that indicates the state of the storage\
+            \ space. Either \"normal\", \"nearing\", \"critical\" or \"exceeded\"\
+            . Read-only."
           readOnly: true
           type: string
         total:

@@ -20,7 +20,7 @@ type Quota struct {
 	Deleted *int64 `json:"deleted,omitempty"`
 	// Total space remaining before reaching the quota limit, in bytes. Read-only.
 	Remaining *int64 `json:"remaining,omitempty"`
-	// Enumeration value that indicates the state of the storage space. Read-only.
+	// Enumeration value that indicates the state of the storage space. Either \"normal\", \"nearing\", \"critical\" or \"exceeded\". Read-only.
 	State *string `json:"state,omitempty"`
 	// Total allowed storage space, in bytes. Read-only.
 	Total *int64 `json:"total,omitempty"`
