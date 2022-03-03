@@ -11,6 +11,7 @@ api_me_drive.go
 api_me_drive_root.go
 api_me_drive_root_children.go
 api_me_drives.go
+api_me_user.go
 api_user.go
 api_users.go
 client.go
@@ -41,6 +42,7 @@ docs/MeDriveApi.md
 docs/MeDriveRootApi.md
 docs/MeDriveRootChildrenApi.md
 docs/MeDrivesApi.md
+docs/MeUserApi.md
 docs/MemberReference.md
 docs/OdataError.md
 docs/OdataErrorDetail.md
