@@ -1402,6 +1402,7 @@ components:
           user:
             displayName: displayName
             id: id
+        driveAlias: driveAlias
         lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
         createdByUser: null
         driveType: driveType
@@ -2125,6 +2126,11 @@ components:
             \ or \"share\". Read-only."
           readOnly: true
           type: string
+        driveAlias:
+          description: "The drive alias can be used in clients to make the urls user\
+            \ friendly. Example: 'personal/einstein'. This will be used to resolve\
+            \ to the correct driveID."
+          type: string
         owner:
           $ref: '#/components/schemas/identitySet'
         quota:
@@ -2244,6 +2250,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -2930,6 +2937,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -3616,6 +3624,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -4302,6 +4311,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -4988,6 +4998,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -5681,6 +5692,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -7083,6 +7095,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -7769,6 +7782,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -8472,6 +8486,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -9393,6 +9408,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -10079,6 +10095,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -10765,6 +10782,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -11451,6 +11469,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -12137,6 +12156,7 @@ components:
             user:
               displayName: displayName
               id: id
+          driveAlias: driveAlias
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdByUser: null
           driveType: driveType
@@ -12856,6 +12876,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -13542,6 +13563,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -14245,6 +14267,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -14956,6 +14979,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -15642,6 +15666,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -16345,6 +16370,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -17735,6 +17761,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -18421,6 +18448,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -19107,6 +19135,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -19793,6 +19822,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -20479,6 +20509,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -21172,6 +21203,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -21894,6 +21926,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -22580,6 +22613,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -23266,6 +23300,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -23952,6 +23987,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -24638,6 +24674,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType
@@ -25331,6 +25368,7 @@ components:
               user:
                 displayName: displayName
                 id: id
+            driveAlias: driveAlias
             lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdByUser: null
             driveType: driveType

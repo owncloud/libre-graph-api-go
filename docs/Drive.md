@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **CreatedByUser** | Pointer to [**User**](User.md) |  | [optional] 
 **LastModifiedByUser** | Pointer to [**User**](User.md) |  | [optional] 
 **DriveType** | Pointer to **string** | Describes the type of drive represented by this resource. Values are \&quot;personal\&quot; for users home spaces, \&quot;project\&quot;, \&quot;virtual\&quot; or \&quot;share\&quot;. Read-only. | [optional] [readonly] 
+**DriveAlias** | Pointer to **string** | The drive alias can be used in clients to make the urls user friendly. Example: &#39;personal/einstein&#39;. This will be used to resolve to the correct driveID. | [optional] 
 **Owner** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
 **Quota** | Pointer to [**Quota**](Quota.md) |  | [optional] 
 **Items** | Pointer to [**[]DriveItem**](DriveItem.md) | All items contained in the drive. Read-only. Nullable. | [optional] [readonly] 
@@ -366,6 +367,31 @@ SetDriveType sets DriveType field to given value.
 `func (o *Drive) HasDriveType() bool`
 
 HasDriveType returns a boolean if a field has been set.
+
+### GetDriveAlias
+
+`func (o *Drive) GetDriveAlias() string`
+
+GetDriveAlias returns the DriveAlias field if non-nil, zero value otherwise.
+
+### GetDriveAliasOk
+
+`func (o *Drive) GetDriveAliasOk() (*string, bool)`
+
+GetDriveAliasOk returns a tuple with the DriveAlias field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDriveAlias
+
+`func (o *Drive) SetDriveAlias(v string)`
+
+SetDriveAlias sets DriveAlias field to given value.
+
+### HasDriveAlias
+
+`func (o *Drive) HasDriveAlias() bool`
+
+HasDriveAlias returns a boolean if a field has been set.
 
 ### GetOwner
 

@@ -38,6 +38,8 @@ type Drive struct {
 	LastModifiedByUser *User `json:"lastModifiedByUser,omitempty"`
 	// Describes the type of drive represented by this resource. Values are \"personal\" for users home spaces, \"project\", \"virtual\" or \"share\". Read-only.
 	DriveType *string `json:"driveType,omitempty"`
+	// The drive alias can be used in clients to make the urls user friendly. Example: 'personal/einstein'. This will be used to resolve to the correct driveID.
+	DriveAlias *string `json:"driveAlias,omitempty"`
 	Owner *IdentitySet `json:"owner,omitempty"`
 	Quota *Quota `json:"quota,omitempty"`
 	// All items contained in the drive. Read-only. Nullable.
@@ -480,6 +482,38 @@ func (o *Drive) SetDriveType(v string) {
 	o.DriveType = &v
 }
 
+// GetDriveAlias returns the DriveAlias field value if set, zero value otherwise.
+func (o *Drive) GetDriveAlias() string {
+	if o == nil || o.DriveAlias == nil {
+		var ret string
+		return ret
+	}
+	return *o.DriveAlias
+}
+
+// GetDriveAliasOk returns a tuple with the DriveAlias field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Drive) GetDriveAliasOk() (*string, bool) {
+	if o == nil || o.DriveAlias == nil {
+		return nil, false
+	}
+	return o.DriveAlias, true
+}
+
+// HasDriveAlias returns a boolean if a field has been set.
+func (o *Drive) HasDriveAlias() bool {
+	if o != nil && o.DriveAlias != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDriveAlias gets a reference to the given string and assigns it to the DriveAlias field.
+func (o *Drive) SetDriveAlias(v string) {
+	o.DriveAlias = &v
+}
+
 // GetOwner returns the Owner field value if set, zero value otherwise.
 func (o *Drive) GetOwner() IdentitySet {
 	if o == nil || o.Owner == nil {
@@ -680,6 +714,9 @@ func (o Drive) MarshalJSON() ([]byte, error) {
 	}
 	if o.DriveType != nil {
 		toSerialize["driveType"] = o.DriveType
+	}
+	if o.DriveAlias != nil {
+		toSerialize["driveAlias"] = o.DriveAlias
 	}
 	if o.Owner != nil {
 		toSerialize["owner"] = o.Owner
