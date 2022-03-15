@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **Root** | Pointer to **map[string]interface{}** | If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive. | [optional] 
 **Trash** | Pointer to [**Trash**](Trash.md) |  | [optional] 
 **SpecialFolder** | Pointer to [**SpecialFolder**](SpecialFolder.md) |  | [optional] 
+**RemoteItem** | Pointer to [**NullableRemoteItem**](RemoteItem.md) |  | [optional] 
 **Size** | Pointer to **int64** | Size of the item in bytes. Read-only. | [optional] [readonly] 
 **WebDavUrl** | Pointer to **string** | WebDAV compatible URL for the item. Read-only. | [optional] [readonly] 
 **Children** | Pointer to [**[]DriveItem**](DriveItem.md) | Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable. | [optional] [readonly] 
@@ -600,6 +601,41 @@ SetSpecialFolder sets SpecialFolder field to given value.
 
 HasSpecialFolder returns a boolean if a field has been set.
 
+### GetRemoteItem
+
+`func (o *DriveItem) GetRemoteItem() RemoteItem`
+
+GetRemoteItem returns the RemoteItem field if non-nil, zero value otherwise.
+
+### GetRemoteItemOk
+
+`func (o *DriveItem) GetRemoteItemOk() (*RemoteItem, bool)`
+
+GetRemoteItemOk returns a tuple with the RemoteItem field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemoteItem
+
+`func (o *DriveItem) SetRemoteItem(v RemoteItem)`
+
+SetRemoteItem sets RemoteItem field to given value.
+
+### HasRemoteItem
+
+`func (o *DriveItem) HasRemoteItem() bool`
+
+HasRemoteItem returns a boolean if a field has been set.
+
+### SetRemoteItemNil
+
+`func (o *DriveItem) SetRemoteItemNil(b bool)`
+
+ SetRemoteItemNil sets the value for RemoteItem to be an explicit nil
+
+### UnsetRemoteItem
+`func (o *DriveItem) UnsetRemoteItem()`
+
+UnsetRemoteItem ensures that no value is present for RemoteItem, not even an explicit nil
 ### GetSize
 
 `func (o *DriveItem) GetSize() int64`

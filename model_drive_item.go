@@ -49,6 +49,7 @@ type DriveItem struct {
 	Root map[string]interface{} `json:"root,omitempty"`
 	Trash *Trash `json:"trash,omitempty"`
 	SpecialFolder *SpecialFolder `json:"specialFolder,omitempty"`
+	RemoteItem NullableRemoteItem `json:"remoteItem,omitempty"`
 	// Size of the item in bytes. Read-only.
 	Size *int64 `json:"size,omitempty"`
 	// WebDAV compatible URL for the item. Read-only.
@@ -780,6 +781,48 @@ func (o *DriveItem) SetSpecialFolder(v SpecialFolder) {
 	o.SpecialFolder = &v
 }
 
+// GetRemoteItem returns the RemoteItem field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *DriveItem) GetRemoteItem() RemoteItem {
+	if o == nil || o.RemoteItem.Get() == nil {
+		var ret RemoteItem
+		return ret
+	}
+	return *o.RemoteItem.Get()
+}
+
+// GetRemoteItemOk returns a tuple with the RemoteItem field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *DriveItem) GetRemoteItemOk() (*RemoteItem, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.RemoteItem.Get(), o.RemoteItem.IsSet()
+}
+
+// HasRemoteItem returns a boolean if a field has been set.
+func (o *DriveItem) HasRemoteItem() bool {
+	if o != nil && o.RemoteItem.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetRemoteItem gets a reference to the given NullableRemoteItem and assigns it to the RemoteItem field.
+func (o *DriveItem) SetRemoteItem(v RemoteItem) {
+	o.RemoteItem.Set(&v)
+}
+// SetRemoteItemNil sets the value for RemoteItem to be an explicit nil
+func (o *DriveItem) SetRemoteItemNil() {
+	o.RemoteItem.Set(nil)
+}
+
+// UnsetRemoteItem ensures that no value is present for RemoteItem, not even an explicit nil
+func (o *DriveItem) UnsetRemoteItem() {
+	o.RemoteItem.Unset()
+}
+
 // GetSize returns the Size field value if set, zero value otherwise.
 func (o *DriveItem) GetSize() int64 {
 	if o == nil || o.Size == nil {
@@ -975,6 +1018,9 @@ func (o DriveItem) MarshalJSON() ([]byte, error) {
 	}
 	if o.SpecialFolder != nil {
 		toSerialize["specialFolder"] = o.SpecialFolder
+	}
+	if o.RemoteItem.IsSet() {
+		toSerialize["remoteItem"] = o.RemoteItem.Get()
 	}
 	if o.Size != nil {
 		toSerialize["size"] = o.Size

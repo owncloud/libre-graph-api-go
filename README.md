@@ -130,6 +130,8 @@ Class | Method | HTTP request | Description
  - [PasswordProfile](docs/PasswordProfile.md)
  - [Permission](docs/Permission.md)
  - [Quota](docs/Quota.md)
+ - [RemoteItem](docs/RemoteItem.md)
+ - [Shared](docs/Shared.md)
  - [SpecialFolder](docs/SpecialFolder.md)
  - [Trash](docs/Trash.md)
  - [User](docs/User.md)

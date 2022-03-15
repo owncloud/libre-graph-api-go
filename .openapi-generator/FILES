@@ -51,6 +51,8 @@ docs/OpenGraphFile.md
 docs/PasswordProfile.md
 docs/Permission.md
 docs/Quota.md
+docs/RemoteItem.md
+docs/Shared.md
 docs/SpecialFolder.md
 docs/Trash.md
 docs/User.md
@@ -84,6 +86,8 @@ model_open_graph_file.go
 model_password_profile.go
 model_permission.go
 model_quota.go
+model_remote_item.go
+model_shared.go
 model_special_folder.go
 model_trash.go
 model_user.go
