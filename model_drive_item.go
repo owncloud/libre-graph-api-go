@@ -49,7 +49,7 @@ type DriveItem struct {
 	Root map[string]interface{} `json:"root,omitempty"`
 	Trash *Trash `json:"trash,omitempty"`
 	SpecialFolder *SpecialFolder `json:"specialFolder,omitempty"`
-	RemoteItem NullableRemoteItem `json:"remoteItem,omitempty"`
+	RemoteItem *RemoteItem `json:"remoteItem,omitempty"`
 	// Size of the item in bytes. Read-only.
 	Size *int64 `json:"size,omitempty"`
 	// WebDAV compatible URL for the item. Read-only.
@@ -781,46 +781,36 @@ func (o *DriveItem) SetSpecialFolder(v SpecialFolder) {
 	o.SpecialFolder = &v
 }
 
-// GetRemoteItem returns the RemoteItem field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetRemoteItem returns the RemoteItem field value if set, zero value otherwise.
 func (o *DriveItem) GetRemoteItem() RemoteItem {
-	if o == nil || o.RemoteItem.Get() == nil {
+	if o == nil || o.RemoteItem == nil {
 		var ret RemoteItem
 		return ret
 	}
-	return *o.RemoteItem.Get()
+	return *o.RemoteItem
 }
 
 // GetRemoteItemOk returns a tuple with the RemoteItem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DriveItem) GetRemoteItemOk() (*RemoteItem, bool) {
-	if o == nil {
+	if o == nil || o.RemoteItem == nil {
 		return nil, false
 	}
-	return o.RemoteItem.Get(), o.RemoteItem.IsSet()
+	return o.RemoteItem, true
 }
 
 // HasRemoteItem returns a boolean if a field has been set.
 func (o *DriveItem) HasRemoteItem() bool {
-	if o != nil && o.RemoteItem.IsSet() {
+	if o != nil && o.RemoteItem != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRemoteItem gets a reference to the given NullableRemoteItem and assigns it to the RemoteItem field.
+// SetRemoteItem gets a reference to the given RemoteItem and assigns it to the RemoteItem field.
 func (o *DriveItem) SetRemoteItem(v RemoteItem) {
-	o.RemoteItem.Set(&v)
-}
-// SetRemoteItemNil sets the value for RemoteItem to be an explicit nil
-func (o *DriveItem) SetRemoteItemNil() {
-	o.RemoteItem.Set(nil)
-}
-
-// UnsetRemoteItem ensures that no value is present for RemoteItem, not even an explicit nil
-func (o *DriveItem) UnsetRemoteItem() {
-	o.RemoteItem.Unset()
+	o.RemoteItem = &v
 }
 
 // GetSize returns the Size field value if set, zero value otherwise.
@@ -1019,8 +1009,8 @@ func (o DriveItem) MarshalJSON() ([]byte, error) {
 	if o.SpecialFolder != nil {
 		toSerialize["specialFolder"] = o.SpecialFolder
 	}
-	if o.RemoteItem.IsSet() {
-		toSerialize["remoteItem"] = o.RemoteItem.Get()
+	if o.RemoteItem != nil {
+		toSerialize["remoteItem"] = o.RemoteItem
 	}
 	if o.Size != nil {
 		toSerialize["size"] = o.Size

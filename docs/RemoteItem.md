@@ -5,21 +5,21 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedBy** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
-**CreatedDateTime** | Pointer to **NullableTime** | Date and time of item creation. Read-only. | [optional] 
+**CreatedDateTime** | Pointer to **time.Time** | Date and time of item creation. Read-only. | [optional] 
 **File** | Pointer to [**OpenGraphFile**](OpenGraphFile.md) |  | [optional] 
 **FileSystemInfo** | Pointer to [**FileSystemInfo**](FileSystemInfo.md) |  | [optional] 
 **Folder** | Pointer to [**Folder**](Folder.md) |  | [optional] 
-**Id** | Pointer to **NullableString** | Unique identifier for the remote item in its drive. Read-only. | [optional] 
+**Id** | Pointer to **string** | Unique identifier for the remote item in its drive. Read-only. | [optional] 
 **Image** | Pointer to [**Image**](Image.md) |  | [optional] 
 **LastModifiedBy** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
-**LastModifiedDateTime** | Pointer to **NullableTime** | Date and time the item was last modified. Read-only. | [optional] 
-**Name** | Pointer to **NullableString** | Optional. Filename of the remote item. Read-only. | [optional] 
+**LastModifiedDateTime** | Pointer to **time.Time** | Date and time the item was last modified. Read-only. | [optional] 
+**Name** | Pointer to **string** | Optional. Filename of the remote item. Read-only. | [optional] 
 **ParentReference** | Pointer to [**ItemReference**](ItemReference.md) |  | [optional] 
 **Shared** | Pointer to [**Shared**](Shared.md) |  | [optional] 
-**Size** | Pointer to **NullableInt64** | Size of the remote item. Read-only. | [optional] 
+**Size** | Pointer to **int64** | Size of the remote item. Read-only. | [optional] 
 **SpecialFolder** | Pointer to [**SpecialFolder**](SpecialFolder.md) |  | [optional] 
-**WebDavUrl** | Pointer to **NullableString** | DAV compatible URL for the item. | [optional] 
-**WebUrl** | Pointer to **NullableString** | URL that displays the resource in the browser. Read-only. | [optional] 
+**WebDavUrl** | Pointer to **string** | DAV compatible URL for the item. | [optional] 
+**WebUrl** | Pointer to **string** | URL that displays the resource in the browser. Read-only. | [optional] 
 
 ## Methods
 
@@ -90,16 +90,6 @@ SetCreatedDateTime sets CreatedDateTime field to given value.
 
 HasCreatedDateTime returns a boolean if a field has been set.
 
-### SetCreatedDateTimeNil
-
-`func (o *RemoteItem) SetCreatedDateTimeNil(b bool)`
-
- SetCreatedDateTimeNil sets the value for CreatedDateTime to be an explicit nil
-
-### UnsetCreatedDateTime
-`func (o *RemoteItem) UnsetCreatedDateTime()`
-
-UnsetCreatedDateTime ensures that no value is present for CreatedDateTime, not even an explicit nil
 ### GetFile
 
 `func (o *RemoteItem) GetFile() OpenGraphFile`
@@ -200,16 +190,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### SetIdNil
-
-`func (o *RemoteItem) SetIdNil(b bool)`
-
- SetIdNil sets the value for Id to be an explicit nil
-
-### UnsetId
-`func (o *RemoteItem) UnsetId()`
-
-UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetImage
 
 `func (o *RemoteItem) GetImage() Image`
@@ -285,16 +265,6 @@ SetLastModifiedDateTime sets LastModifiedDateTime field to given value.
 
 HasLastModifiedDateTime returns a boolean if a field has been set.
 
-### SetLastModifiedDateTimeNil
-
-`func (o *RemoteItem) SetLastModifiedDateTimeNil(b bool)`
-
- SetLastModifiedDateTimeNil sets the value for LastModifiedDateTime to be an explicit nil
-
-### UnsetLastModifiedDateTime
-`func (o *RemoteItem) UnsetLastModifiedDateTime()`
-
-UnsetLastModifiedDateTime ensures that no value is present for LastModifiedDateTime, not even an explicit nil
 ### GetName
 
 `func (o *RemoteItem) GetName() string`
@@ -320,16 +290,6 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### SetNameNil
-
-`func (o *RemoteItem) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *RemoteItem) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetParentReference
 
 `func (o *RemoteItem) GetParentReference() ItemReference`
@@ -405,16 +365,6 @@ SetSize sets Size field to given value.
 
 HasSize returns a boolean if a field has been set.
 
-### SetSizeNil
-
-`func (o *RemoteItem) SetSizeNil(b bool)`
-
- SetSizeNil sets the value for Size to be an explicit nil
-
-### UnsetSize
-`func (o *RemoteItem) UnsetSize()`
-
-UnsetSize ensures that no value is present for Size, not even an explicit nil
 ### GetSpecialFolder
 
 `func (o *RemoteItem) GetSpecialFolder() SpecialFolder`
@@ -465,16 +415,6 @@ SetWebDavUrl sets WebDavUrl field to given value.
 
 HasWebDavUrl returns a boolean if a field has been set.
 
-### SetWebDavUrlNil
-
-`func (o *RemoteItem) SetWebDavUrlNil(b bool)`
-
- SetWebDavUrlNil sets the value for WebDavUrl to be an explicit nil
-
-### UnsetWebDavUrl
-`func (o *RemoteItem) UnsetWebDavUrl()`
-
-UnsetWebDavUrl ensures that no value is present for WebDavUrl, not even an explicit nil
 ### GetWebUrl
 
 `func (o *RemoteItem) GetWebUrl() string`
@@ -500,16 +440,6 @@ SetWebUrl sets WebUrl field to given value.
 
 HasWebUrl returns a boolean if a field has been set.
 
-### SetWebUrlNil
-
-`func (o *RemoteItem) SetWebUrlNil(b bool)`
-
- SetWebUrlNil sets the value for WebUrl to be an explicit nil
-
-### UnsetWebUrl
-`func (o *RemoteItem) UnsetWebUrl()`
-
-UnsetWebUrl ensures that no value is present for WebUrl, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

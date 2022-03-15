@@ -19,27 +19,27 @@ import (
 type RemoteItem struct {
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// Date and time of item creation. Read-only.
-	CreatedDateTime NullableTime `json:"createdDateTime,omitempty"`
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	File *OpenGraphFile `json:"file,omitempty"`
 	FileSystemInfo *FileSystemInfo `json:"fileSystemInfo,omitempty"`
 	Folder *Folder `json:"folder,omitempty"`
 	// Unique identifier for the remote item in its drive. Read-only.
-	Id NullableString `json:"id,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Image *Image `json:"image,omitempty"`
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// Date and time the item was last modified. Read-only.
-	LastModifiedDateTime NullableTime `json:"lastModifiedDateTime,omitempty"`
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 	// Optional. Filename of the remote item. Read-only.
-	Name NullableString `json:"name,omitempty"`
+	Name *string `json:"name,omitempty"`
 	ParentReference *ItemReference `json:"parentReference,omitempty"`
 	Shared *Shared `json:"shared,omitempty"`
 	// Size of the remote item. Read-only.
-	Size NullableInt64 `json:"size,omitempty"`
+	Size *int64 `json:"size,omitempty"`
 	SpecialFolder *SpecialFolder `json:"specialFolder,omitempty"`
 	// DAV compatible URL for the item.
-	WebDavUrl NullableString `json:"webDavUrl,omitempty"`
+	WebDavUrl *string `json:"webDavUrl,omitempty"`
 	// URL that displays the resource in the browser. Read-only.
-	WebUrl NullableString `json:"webUrl,omitempty"`
+	WebUrl *string `json:"webUrl,omitempty"`
 }
 
 // NewRemoteItem instantiates a new RemoteItem object
@@ -91,46 +91,36 @@ func (o *RemoteItem) SetCreatedBy(v IdentitySet) {
 	o.CreatedBy = &v
 }
 
-// GetCreatedDateTime returns the CreatedDateTime field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetCreatedDateTime returns the CreatedDateTime field value if set, zero value otherwise.
 func (o *RemoteItem) GetCreatedDateTime() time.Time {
-	if o == nil || o.CreatedDateTime.Get() == nil {
+	if o == nil || o.CreatedDateTime == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.CreatedDateTime.Get()
+	return *o.CreatedDateTime
 }
 
 // GetCreatedDateTimeOk returns a tuple with the CreatedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RemoteItem) GetCreatedDateTimeOk() (*time.Time, bool) {
-	if o == nil {
+	if o == nil || o.CreatedDateTime == nil {
 		return nil, false
 	}
-	return o.CreatedDateTime.Get(), o.CreatedDateTime.IsSet()
+	return o.CreatedDateTime, true
 }
 
 // HasCreatedDateTime returns a boolean if a field has been set.
 func (o *RemoteItem) HasCreatedDateTime() bool {
-	if o != nil && o.CreatedDateTime.IsSet() {
+	if o != nil && o.CreatedDateTime != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedDateTime gets a reference to the given NullableTime and assigns it to the CreatedDateTime field.
+// SetCreatedDateTime gets a reference to the given time.Time and assigns it to the CreatedDateTime field.
 func (o *RemoteItem) SetCreatedDateTime(v time.Time) {
-	o.CreatedDateTime.Set(&v)
-}
-// SetCreatedDateTimeNil sets the value for CreatedDateTime to be an explicit nil
-func (o *RemoteItem) SetCreatedDateTimeNil() {
-	o.CreatedDateTime.Set(nil)
-}
-
-// UnsetCreatedDateTime ensures that no value is present for CreatedDateTime, not even an explicit nil
-func (o *RemoteItem) UnsetCreatedDateTime() {
-	o.CreatedDateTime.Unset()
+	o.CreatedDateTime = &v
 }
 
 // GetFile returns the File field value if set, zero value otherwise.
@@ -229,46 +219,36 @@ func (o *RemoteItem) SetFolder(v Folder) {
 	o.Folder = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetId returns the Id field value if set, zero value otherwise.
 func (o *RemoteItem) GetId() string {
-	if o == nil || o.Id.Get() == nil {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id.Get()
+	return *o.Id
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RemoteItem) GetIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.Id.Get(), o.Id.IsSet()
+	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *RemoteItem) HasId() bool {
-	if o != nil && o.Id.IsSet() {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given NullableString and assigns it to the Id field.
+// SetId gets a reference to the given string and assigns it to the Id field.
 func (o *RemoteItem) SetId(v string) {
-	o.Id.Set(&v)
-}
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *RemoteItem) SetIdNil() {
-	o.Id.Set(nil)
-}
-
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *RemoteItem) UnsetId() {
-	o.Id.Unset()
+	o.Id = &v
 }
 
 // GetImage returns the Image field value if set, zero value otherwise.
@@ -335,88 +315,68 @@ func (o *RemoteItem) SetLastModifiedBy(v IdentitySet) {
 	o.LastModifiedBy = &v
 }
 
-// GetLastModifiedDateTime returns the LastModifiedDateTime field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetLastModifiedDateTime returns the LastModifiedDateTime field value if set, zero value otherwise.
 func (o *RemoteItem) GetLastModifiedDateTime() time.Time {
-	if o == nil || o.LastModifiedDateTime.Get() == nil {
+	if o == nil || o.LastModifiedDateTime == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastModifiedDateTime.Get()
+	return *o.LastModifiedDateTime
 }
 
 // GetLastModifiedDateTimeOk returns a tuple with the LastModifiedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RemoteItem) GetLastModifiedDateTimeOk() (*time.Time, bool) {
-	if o == nil {
+	if o == nil || o.LastModifiedDateTime == nil {
 		return nil, false
 	}
-	return o.LastModifiedDateTime.Get(), o.LastModifiedDateTime.IsSet()
+	return o.LastModifiedDateTime, true
 }
 
 // HasLastModifiedDateTime returns a boolean if a field has been set.
 func (o *RemoteItem) HasLastModifiedDateTime() bool {
-	if o != nil && o.LastModifiedDateTime.IsSet() {
+	if o != nil && o.LastModifiedDateTime != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetLastModifiedDateTime gets a reference to the given NullableTime and assigns it to the LastModifiedDateTime field.
+// SetLastModifiedDateTime gets a reference to the given time.Time and assigns it to the LastModifiedDateTime field.
 func (o *RemoteItem) SetLastModifiedDateTime(v time.Time) {
-	o.LastModifiedDateTime.Set(&v)
-}
-// SetLastModifiedDateTimeNil sets the value for LastModifiedDateTime to be an explicit nil
-func (o *RemoteItem) SetLastModifiedDateTimeNil() {
-	o.LastModifiedDateTime.Set(nil)
+	o.LastModifiedDateTime = &v
 }
 
-// UnsetLastModifiedDateTime ensures that no value is present for LastModifiedDateTime, not even an explicit nil
-func (o *RemoteItem) UnsetLastModifiedDateTime() {
-	o.LastModifiedDateTime.Unset()
-}
-
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *RemoteItem) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+	if o == nil || o.Name == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name.Get()
+	return *o.Name
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RemoteItem) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.Name == nil {
 		return nil, false
 	}
-	return o.Name.Get(), o.Name.IsSet()
+	return o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *RemoteItem) HasName() bool {
-	if o != nil && o.Name.IsSet() {
+	if o != nil && o.Name != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *RemoteItem) SetName(v string) {
-	o.Name.Set(&v)
-}
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *RemoteItem) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *RemoteItem) UnsetName() {
-	o.Name.Unset()
+	o.Name = &v
 }
 
 // GetParentReference returns the ParentReference field value if set, zero value otherwise.
@@ -483,46 +443,36 @@ func (o *RemoteItem) SetShared(v Shared) {
 	o.Shared = &v
 }
 
-// GetSize returns the Size field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSize returns the Size field value if set, zero value otherwise.
 func (o *RemoteItem) GetSize() int64 {
-	if o == nil || o.Size.Get() == nil {
+	if o == nil || o.Size == nil {
 		var ret int64
 		return ret
 	}
-	return *o.Size.Get()
+	return *o.Size
 }
 
 // GetSizeOk returns a tuple with the Size field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RemoteItem) GetSizeOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || o.Size == nil {
 		return nil, false
 	}
-	return o.Size.Get(), o.Size.IsSet()
+	return o.Size, true
 }
 
 // HasSize returns a boolean if a field has been set.
 func (o *RemoteItem) HasSize() bool {
-	if o != nil && o.Size.IsSet() {
+	if o != nil && o.Size != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSize gets a reference to the given NullableInt64 and assigns it to the Size field.
+// SetSize gets a reference to the given int64 and assigns it to the Size field.
 func (o *RemoteItem) SetSize(v int64) {
-	o.Size.Set(&v)
-}
-// SetSizeNil sets the value for Size to be an explicit nil
-func (o *RemoteItem) SetSizeNil() {
-	o.Size.Set(nil)
-}
-
-// UnsetSize ensures that no value is present for Size, not even an explicit nil
-func (o *RemoteItem) UnsetSize() {
-	o.Size.Unset()
+	o.Size = &v
 }
 
 // GetSpecialFolder returns the SpecialFolder field value if set, zero value otherwise.
@@ -557,88 +507,68 @@ func (o *RemoteItem) SetSpecialFolder(v SpecialFolder) {
 	o.SpecialFolder = &v
 }
 
-// GetWebDavUrl returns the WebDavUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetWebDavUrl returns the WebDavUrl field value if set, zero value otherwise.
 func (o *RemoteItem) GetWebDavUrl() string {
-	if o == nil || o.WebDavUrl.Get() == nil {
+	if o == nil || o.WebDavUrl == nil {
 		var ret string
 		return ret
 	}
-	return *o.WebDavUrl.Get()
+	return *o.WebDavUrl
 }
 
 // GetWebDavUrlOk returns a tuple with the WebDavUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RemoteItem) GetWebDavUrlOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.WebDavUrl == nil {
 		return nil, false
 	}
-	return o.WebDavUrl.Get(), o.WebDavUrl.IsSet()
+	return o.WebDavUrl, true
 }
 
 // HasWebDavUrl returns a boolean if a field has been set.
 func (o *RemoteItem) HasWebDavUrl() bool {
-	if o != nil && o.WebDavUrl.IsSet() {
+	if o != nil && o.WebDavUrl != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetWebDavUrl gets a reference to the given NullableString and assigns it to the WebDavUrl field.
+// SetWebDavUrl gets a reference to the given string and assigns it to the WebDavUrl field.
 func (o *RemoteItem) SetWebDavUrl(v string) {
-	o.WebDavUrl.Set(&v)
-}
-// SetWebDavUrlNil sets the value for WebDavUrl to be an explicit nil
-func (o *RemoteItem) SetWebDavUrlNil() {
-	o.WebDavUrl.Set(nil)
+	o.WebDavUrl = &v
 }
 
-// UnsetWebDavUrl ensures that no value is present for WebDavUrl, not even an explicit nil
-func (o *RemoteItem) UnsetWebDavUrl() {
-	o.WebDavUrl.Unset()
-}
-
-// GetWebUrl returns the WebUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetWebUrl returns the WebUrl field value if set, zero value otherwise.
 func (o *RemoteItem) GetWebUrl() string {
-	if o == nil || o.WebUrl.Get() == nil {
+	if o == nil || o.WebUrl == nil {
 		var ret string
 		return ret
 	}
-	return *o.WebUrl.Get()
+	return *o.WebUrl
 }
 
 // GetWebUrlOk returns a tuple with the WebUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RemoteItem) GetWebUrlOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.WebUrl == nil {
 		return nil, false
 	}
-	return o.WebUrl.Get(), o.WebUrl.IsSet()
+	return o.WebUrl, true
 }
 
 // HasWebUrl returns a boolean if a field has been set.
 func (o *RemoteItem) HasWebUrl() bool {
-	if o != nil && o.WebUrl.IsSet() {
+	if o != nil && o.WebUrl != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetWebUrl gets a reference to the given NullableString and assigns it to the WebUrl field.
+// SetWebUrl gets a reference to the given string and assigns it to the WebUrl field.
 func (o *RemoteItem) SetWebUrl(v string) {
-	o.WebUrl.Set(&v)
-}
-// SetWebUrlNil sets the value for WebUrl to be an explicit nil
-func (o *RemoteItem) SetWebUrlNil() {
-	o.WebUrl.Set(nil)
-}
-
-// UnsetWebUrl ensures that no value is present for WebUrl, not even an explicit nil
-func (o *RemoteItem) UnsetWebUrl() {
-	o.WebUrl.Unset()
+	o.WebUrl = &v
 }
 
 func (o RemoteItem) MarshalJSON() ([]byte, error) {
@@ -646,8 +576,8 @@ func (o RemoteItem) MarshalJSON() ([]byte, error) {
 	if o.CreatedBy != nil {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
-	if o.CreatedDateTime.IsSet() {
-		toSerialize["createdDateTime"] = o.CreatedDateTime.Get()
+	if o.CreatedDateTime != nil {
+		toSerialize["createdDateTime"] = o.CreatedDateTime
 	}
 	if o.File != nil {
 		toSerialize["file"] = o.File
@@ -658,8 +588,8 @@ func (o RemoteItem) MarshalJSON() ([]byte, error) {
 	if o.Folder != nil {
 		toSerialize["folder"] = o.Folder
 	}
-	if o.Id.IsSet() {
-		toSerialize["id"] = o.Id.Get()
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 	if o.Image != nil {
 		toSerialize["image"] = o.Image
@@ -667,11 +597,11 @@ func (o RemoteItem) MarshalJSON() ([]byte, error) {
 	if o.LastModifiedBy != nil {
 		toSerialize["lastModifiedBy"] = o.LastModifiedBy
 	}
-	if o.LastModifiedDateTime.IsSet() {
-		toSerialize["lastModifiedDateTime"] = o.LastModifiedDateTime.Get()
+	if o.LastModifiedDateTime != nil {
+		toSerialize["lastModifiedDateTime"] = o.LastModifiedDateTime
 	}
-	if o.Name.IsSet() {
-		toSerialize["name"] = o.Name.Get()
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
 	if o.ParentReference != nil {
 		toSerialize["parentReference"] = o.ParentReference
@@ -679,17 +609,17 @@ func (o RemoteItem) MarshalJSON() ([]byte, error) {
 	if o.Shared != nil {
 		toSerialize["shared"] = o.Shared
 	}
-	if o.Size.IsSet() {
-		toSerialize["size"] = o.Size.Get()
+	if o.Size != nil {
+		toSerialize["size"] = o.Size
 	}
 	if o.SpecialFolder != nil {
 		toSerialize["specialFolder"] = o.SpecialFolder
 	}
-	if o.WebDavUrl.IsSet() {
-		toSerialize["webDavUrl"] = o.WebDavUrl.Get()
+	if o.WebDavUrl != nil {
+		toSerialize["webDavUrl"] = o.WebDavUrl
 	}
-	if o.WebUrl.IsSet() {
-		toSerialize["webUrl"] = o.WebUrl.Get()
+	if o.WebUrl != nil {
+		toSerialize["webUrl"] = o.WebUrl
 	}
 	return json.Marshal(toSerialize)
 }

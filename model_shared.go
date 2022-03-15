@@ -19,10 +19,10 @@ import (
 type Shared struct {
 	Owner *IdentitySet `json:"owner,omitempty"`
 	// Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
-	Scope NullableString `json:"scope,omitempty"`
+	Scope *string `json:"scope,omitempty"`
 	SharedBy *IdentitySet `json:"sharedBy,omitempty"`
 	// The UTC date and time when the item was shared. Read-only.
-	SharedDateTime NullableTime `json:"sharedDateTime,omitempty"`
+	SharedDateTime *time.Time `json:"sharedDateTime,omitempty"`
 }
 
 // NewShared instantiates a new Shared object
@@ -74,46 +74,36 @@ func (o *Shared) SetOwner(v IdentitySet) {
 	o.Owner = &v
 }
 
-// GetScope returns the Scope field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetScope returns the Scope field value if set, zero value otherwise.
 func (o *Shared) GetScope() string {
-	if o == nil || o.Scope.Get() == nil {
+	if o == nil || o.Scope == nil {
 		var ret string
 		return ret
 	}
-	return *o.Scope.Get()
+	return *o.Scope
 }
 
 // GetScopeOk returns a tuple with the Scope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Shared) GetScopeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.Scope == nil {
 		return nil, false
 	}
-	return o.Scope.Get(), o.Scope.IsSet()
+	return o.Scope, true
 }
 
 // HasScope returns a boolean if a field has been set.
 func (o *Shared) HasScope() bool {
-	if o != nil && o.Scope.IsSet() {
+	if o != nil && o.Scope != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetScope gets a reference to the given NullableString and assigns it to the Scope field.
+// SetScope gets a reference to the given string and assigns it to the Scope field.
 func (o *Shared) SetScope(v string) {
-	o.Scope.Set(&v)
-}
-// SetScopeNil sets the value for Scope to be an explicit nil
-func (o *Shared) SetScopeNil() {
-	o.Scope.Set(nil)
-}
-
-// UnsetScope ensures that no value is present for Scope, not even an explicit nil
-func (o *Shared) UnsetScope() {
-	o.Scope.Unset()
+	o.Scope = &v
 }
 
 // GetSharedBy returns the SharedBy field value if set, zero value otherwise.
@@ -148,46 +138,36 @@ func (o *Shared) SetSharedBy(v IdentitySet) {
 	o.SharedBy = &v
 }
 
-// GetSharedDateTime returns the SharedDateTime field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSharedDateTime returns the SharedDateTime field value if set, zero value otherwise.
 func (o *Shared) GetSharedDateTime() time.Time {
-	if o == nil || o.SharedDateTime.Get() == nil {
+	if o == nil || o.SharedDateTime == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.SharedDateTime.Get()
+	return *o.SharedDateTime
 }
 
 // GetSharedDateTimeOk returns a tuple with the SharedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Shared) GetSharedDateTimeOk() (*time.Time, bool) {
-	if o == nil {
+	if o == nil || o.SharedDateTime == nil {
 		return nil, false
 	}
-	return o.SharedDateTime.Get(), o.SharedDateTime.IsSet()
+	return o.SharedDateTime, true
 }
 
 // HasSharedDateTime returns a boolean if a field has been set.
 func (o *Shared) HasSharedDateTime() bool {
-	if o != nil && o.SharedDateTime.IsSet() {
+	if o != nil && o.SharedDateTime != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSharedDateTime gets a reference to the given NullableTime and assigns it to the SharedDateTime field.
+// SetSharedDateTime gets a reference to the given time.Time and assigns it to the SharedDateTime field.
 func (o *Shared) SetSharedDateTime(v time.Time) {
-	o.SharedDateTime.Set(&v)
-}
-// SetSharedDateTimeNil sets the value for SharedDateTime to be an explicit nil
-func (o *Shared) SetSharedDateTimeNil() {
-	o.SharedDateTime.Set(nil)
-}
-
-// UnsetSharedDateTime ensures that no value is present for SharedDateTime, not even an explicit nil
-func (o *Shared) UnsetSharedDateTime() {
-	o.SharedDateTime.Unset()
+	o.SharedDateTime = &v
 }
 
 func (o Shared) MarshalJSON() ([]byte, error) {
@@ -195,14 +175,14 @@ func (o Shared) MarshalJSON() ([]byte, error) {
 	if o.Owner != nil {
 		toSerialize["owner"] = o.Owner
 	}
-	if o.Scope.IsSet() {
-		toSerialize["scope"] = o.Scope.Get()
+	if o.Scope != nil {
+		toSerialize["scope"] = o.Scope
 	}
 	if o.SharedBy != nil {
 		toSerialize["sharedBy"] = o.SharedBy
 	}
-	if o.SharedDateTime.IsSet() {
-		toSerialize["sharedDateTime"] = o.SharedDateTime.Get()
+	if o.SharedDateTime != nil {
+		toSerialize["sharedDateTime"] = o.SharedDateTime
 	}
 	return json.Marshal(toSerialize)
 }

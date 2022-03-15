@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Owner** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
-**Scope** | Pointer to **NullableString** | Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only. | [optional] 
+**Scope** | Pointer to **string** | Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only. | [optional] 
 **SharedBy** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
-**SharedDateTime** | Pointer to **NullableTime** | The UTC date and time when the item was shared. Read-only. | [optional] 
+**SharedDateTime** | Pointer to **time.Time** | The UTC date and time when the item was shared. Read-only. | [optional] 
 
 ## Methods
 
@@ -78,16 +78,6 @@ SetScope sets Scope field to given value.
 
 HasScope returns a boolean if a field has been set.
 
-### SetScopeNil
-
-`func (o *Shared) SetScopeNil(b bool)`
-
- SetScopeNil sets the value for Scope to be an explicit nil
-
-### UnsetScope
-`func (o *Shared) UnsetScope()`
-
-UnsetScope ensures that no value is present for Scope, not even an explicit nil
 ### GetSharedBy
 
 `func (o *Shared) GetSharedBy() IdentitySet`
@@ -138,16 +128,6 @@ SetSharedDateTime sets SharedDateTime field to given value.
 
 HasSharedDateTime returns a boolean if a field has been set.
 
-### SetSharedDateTimeNil
-
-`func (o *Shared) SetSharedDateTimeNil(b bool)`
-
- SetSharedDateTimeNil sets the value for SharedDateTime to be an explicit nil
-
-### UnsetSharedDateTime
-`func (o *Shared) UnsetSharedDateTime()`
-
-UnsetSharedDateTime ensures that no value is present for SharedDateTime, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

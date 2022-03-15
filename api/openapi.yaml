@@ -9982,14 +9982,12 @@ components:
           lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
           lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdDateTime: 2000-01-23T04:56:07.000+00:00
-      nullable: true
       properties:
         createdBy:
           $ref: '#/components/schemas/identitySet'
         createdDateTime:
           description: Date and time of item creation. Read-only.
           format: date-time
-          nullable: true
           pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
         file:
@@ -10000,7 +9998,6 @@ components:
           $ref: '#/components/schemas/folder'
         id:
           description: Unique identifier for the remote item in its drive. Read-only.
-          nullable: true
           type: string
         image:
           $ref: '#/components/schemas/image'
@@ -10009,12 +10006,10 @@ components:
         lastModifiedDateTime:
           description: Date and time the item was last modified. Read-only.
           format: date-time
-          nullable: true
           pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
         name:
           description: Optional. Filename of the remote item. Read-only.
-          nullable: true
           type: string
         parentReference:
           $ref: '#/components/schemas/itemReference'
@@ -10023,17 +10018,14 @@ components:
         size:
           description: Size of the remote item. Read-only.
           format: int64
-          nullable: true
           type: integer
         specialFolder:
           $ref: '#/components/schemas/specialFolder'
         webDavUrl:
           description: DAV compatible URL for the item.
-          nullable: true
           type: string
         webUrl:
           description: URL that displays the resource in the browser. Read-only.
-          nullable: true
           title: shared
           type: string
       title: remoteItem
@@ -10068,14 +10060,12 @@ components:
         scope:
           description: "Indicates the scope of how the item is shared: anonymous,\
             \ organization, or users. Read-only."
-          nullable: true
           type: string
         sharedBy:
           $ref: '#/components/schemas/identitySet'
         sharedDateTime:
           description: The UTC date and time when the item was shared. Read-only.
           format: date-time
-          nullable: true
           pattern: "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$"
           type: string
       type: object
