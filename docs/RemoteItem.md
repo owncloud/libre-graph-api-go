@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **LastModifiedBy** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
 **LastModifiedDateTime** | Pointer to **time.Time** | Date and time the item was last modified. Read-only. | [optional] 
 **Name** | Pointer to **string** | Optional. Filename of the remote item. Read-only. | [optional] 
+**ETag** | Pointer to **string** | ETag for the item. Read-only. | [optional] [readonly] 
+**CTag** | Pointer to **string** | An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only. | [optional] [readonly] 
 **ParentReference** | Pointer to [**ItemReference**](ItemReference.md) |  | [optional] 
 **Shared** | Pointer to [**Shared**](Shared.md) |  | [optional] 
 **Size** | Pointer to **int64** | Size of the remote item. Read-only. | [optional] 
@@ -289,6 +291,56 @@ SetName sets Name field to given value.
 `func (o *RemoteItem) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetETag
+
+`func (o *RemoteItem) GetETag() string`
+
+GetETag returns the ETag field if non-nil, zero value otherwise.
+
+### GetETagOk
+
+`func (o *RemoteItem) GetETagOk() (*string, bool)`
+
+GetETagOk returns a tuple with the ETag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetETag
+
+`func (o *RemoteItem) SetETag(v string)`
+
+SetETag sets ETag field to given value.
+
+### HasETag
+
+`func (o *RemoteItem) HasETag() bool`
+
+HasETag returns a boolean if a field has been set.
+
+### GetCTag
+
+`func (o *RemoteItem) GetCTag() string`
+
+GetCTag returns the CTag field if non-nil, zero value otherwise.
+
+### GetCTagOk
+
+`func (o *RemoteItem) GetCTagOk() (*string, bool)`
+
+GetCTagOk returns a tuple with the CTag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCTag
+
+`func (o *RemoteItem) SetCTag(v string)`
+
+SetCTag sets CTag field to given value.
+
+### HasCTag
+
+`func (o *RemoteItem) HasCTag() bool`
+
+HasCTag returns a boolean if a field has been set.
 
 ### GetParentReference
 

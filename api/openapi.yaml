@@ -4,7 +4,7 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: Libre Graph API
-  version: v0.13.0
+  version: v0.13.2
 servers:
 - description: ownCloud Infinite Scale Latest
   url: https://ocis.ocis-traefik.latest.owncloud.works/
@@ -1610,6 +1610,8 @@ components:
                 id: id
             webUrl: webUrl
             name: name
+            cTag: cTag
+            eTag: eTag
             id: id
             specialFolder:
               name: name
@@ -1817,6 +1819,8 @@ components:
                 id: id
             webUrl: webUrl
             name: name
+            cTag: cTag
+            eTag: eTag
             id: id
             specialFolder:
               name: name
@@ -2049,6 +2053,8 @@ components:
                 id: id
             webUrl: webUrl
             name: name
+            cTag: cTag
+            eTag: eTag
             id: id
             specialFolder:
               name: name
@@ -2260,6 +2266,8 @@ components:
                 id: id
             webUrl: webUrl
             name: name
+            cTag: cTag
+            eTag: eTag
             id: id
             specialFolder:
               name: name
@@ -2467,6 +2475,8 @@ components:
                 id: id
             webUrl: webUrl
             name: name
+            cTag: cTag
+            eTag: eTag
             id: id
             specialFolder:
               name: name
@@ -2863,6 +2873,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -3070,6 +3082,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -3302,6 +3316,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -3513,6 +3529,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -3720,6 +3738,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -3955,6 +3975,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -4162,6 +4184,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -4394,6 +4418,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -4605,6 +4631,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -4812,6 +4840,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -5047,6 +5077,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -5254,6 +5286,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -5486,6 +5520,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -5697,6 +5733,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -5904,6 +5942,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -6139,6 +6179,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -6346,6 +6388,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -6578,6 +6622,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -6789,6 +6835,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -6996,6 +7044,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -7231,6 +7281,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -7438,6 +7490,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -7670,6 +7724,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -7881,6 +7937,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -8088,6 +8146,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -8330,6 +8390,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -8537,6 +8599,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -8769,6 +8833,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -8980,6 +9046,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -9187,6 +9255,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -9653,6 +9723,8 @@ components:
               id: id
           webUrl: webUrl
           name: name
+          cTag: cTag
+          eTag: eTag
           id: id
           specialFolder:
             name: name
@@ -9975,6 +10047,8 @@ components:
             id: id
         webUrl: webUrl
         name: name
+        cTag: cTag
+        eTag: eTag
         id: id
         specialFolder:
           name: name
@@ -10010,6 +10084,16 @@ components:
           type: string
         name:
           description: Optional. Filename of the remote item. Read-only.
+          type: string
+        eTag:
+          description: ETag for the item. Read-only.
+          readOnly: true
+          type: string
+        cTag:
+          description: An eTag for the content of the item. This eTag is not changed
+            if only the metadata is changed. Note This property is not returned if
+            the item is a folder. Read-only.
+          readOnly: true
           type: string
         parentReference:
           $ref: '#/components/schemas/itemReference'
@@ -10392,6 +10476,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -10599,6 +10685,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -10831,6 +10919,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -11042,6 +11132,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -11249,6 +11341,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -11484,6 +11578,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -11691,6 +11787,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -11923,6 +12021,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -12134,6 +12234,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -12341,6 +12443,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -12593,6 +12697,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -12800,6 +12906,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -13032,6 +13140,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -13243,6 +13353,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -13450,6 +13562,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -13920,6 +14034,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -14127,6 +14243,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -14359,6 +14477,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -14570,6 +14690,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -14777,6 +14899,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -15012,6 +15136,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -15219,6 +15345,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -15451,6 +15579,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -15662,6 +15792,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -15869,6 +16001,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -16104,6 +16238,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -16311,6 +16447,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -16543,6 +16681,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -16754,6 +16894,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -16961,6 +17103,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -17196,6 +17340,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -17403,6 +17549,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -17635,6 +17783,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -17846,6 +17996,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -18053,6 +18205,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -18288,6 +18442,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -18495,6 +18651,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -18727,6 +18885,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -18938,6 +19098,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -19145,6 +19307,8 @@ components:
                   id: id
               webUrl: webUrl
               name: name
+              cTag: cTag
+              eTag: eTag
               id: id
               specialFolder:
                 name: name
@@ -19413,6 +19577,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -19620,6 +19786,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -19852,6 +20020,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -20063,6 +20233,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -20270,6 +20442,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -20505,6 +20679,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -20712,6 +20888,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -20944,6 +21122,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -21155,6 +21335,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -21362,6 +21544,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -21614,6 +21798,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -21821,6 +22007,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -22053,6 +22241,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -22264,6 +22454,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -22471,6 +22663,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -22731,6 +22925,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -22938,6 +23134,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -23170,6 +23368,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -23381,6 +23581,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -23588,6 +23790,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -23823,6 +24027,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -24030,6 +24236,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -24262,6 +24470,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -24473,6 +24683,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -24680,6 +24892,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -24932,6 +25146,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -25139,6 +25355,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -25371,6 +25589,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -25582,6 +25802,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -25789,6 +26011,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -26022,6 +26246,8 @@ components:
                 id: id
             webUrl: webUrl
             name: name
+            cTag: cTag
+            eTag: eTag
             id: id
             specialFolder:
               name: name
@@ -26229,6 +26455,8 @@ components:
                 id: id
             webUrl: webUrl
             name: name
+            cTag: cTag
+            eTag: eTag
             id: id
             specialFolder:
               name: name
@@ -26436,6 +26664,8 @@ components:
                 id: id
             webUrl: webUrl
             name: name
+            cTag: cTag
+            eTag: eTag
             id: id
             specialFolder:
               name: name
@@ -26643,6 +26873,8 @@ components:
                 id: id
             webUrl: webUrl
             name: name
+            cTag: cTag
+            eTag: eTag
             id: id
             specialFolder:
               name: name
@@ -26850,6 +27082,8 @@ components:
                 id: id
             webUrl: webUrl
             name: name
+            cTag: cTag
+            eTag: eTag
             id: id
             specialFolder:
               name: name
@@ -27133,6 +27367,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -27340,6 +27576,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -27572,6 +27810,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -27783,6 +28023,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -27990,6 +28232,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -28225,6 +28469,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -28432,6 +28678,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -28664,6 +28912,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -28875,6 +29125,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -29082,6 +29334,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -29317,6 +29571,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -29524,6 +29780,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -29756,6 +30014,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -29967,6 +30227,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -30174,6 +30436,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -30409,6 +30673,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -30616,6 +30882,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -30848,6 +31116,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -31059,6 +31329,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -31266,6 +31538,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -31501,6 +31775,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -31708,6 +31984,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -31940,6 +32218,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -32151,6 +32431,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -32358,6 +32640,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -32600,6 +32884,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -32807,6 +33093,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -33039,6 +33327,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -33250,6 +33540,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -33457,6 +33749,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -33728,6 +34022,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -33935,6 +34231,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -34167,6 +34465,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -34378,6 +34678,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -34585,6 +34887,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -34820,6 +35124,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -35027,6 +35333,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -35259,6 +35567,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -35470,6 +35780,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -35677,6 +35989,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -35912,6 +36226,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -36119,6 +36435,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -36351,6 +36669,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -36562,6 +36882,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -36769,6 +37091,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -37004,6 +37328,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -37211,6 +37537,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -37443,6 +37771,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -37654,6 +37984,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -37861,6 +38193,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -38096,6 +38430,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -38303,6 +38639,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -38535,6 +38873,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -38746,6 +39086,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -38953,6 +39295,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -39195,6 +39539,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -39402,6 +39748,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -39634,6 +39982,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -39845,6 +40195,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
@@ -40052,6 +40404,8 @@ components:
                     id: id
                 webUrl: webUrl
                 name: name
+                cTag: cTag
+                eTag: eTag
                 id: id
                 specialFolder:
                   name: name
