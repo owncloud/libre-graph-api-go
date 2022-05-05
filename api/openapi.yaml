@@ -4,7 +4,7 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: Libre Graph API
-  version: v0.13.0
+  version: v0.13.2
 servers:
 - description: ownCloud Infinite Scale Latest
   url: https://ocis.ocis-traefik.latest.owncloud.works/
@@ -28,6 +28,36 @@ paths:
           description: error
       tags:
       - me.user
+      x-ms-docs-operation-type: operation
+  /me/changePassword:
+    post:
+      operationId: ChangeOwnPassword
+      requestBody:
+        $ref: '#/components/requestBodies/Password_change'
+        content:
+          application/json:
+            schema:
+              properties:
+                currentPassword:
+                  type: string
+                newPassword:
+                  type: string
+              title: Password change
+              type: object
+        description: Password change request
+        required: true
+      responses:
+        "204":
+          description: Success
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Chanage your own password
+      tags:
+      - me.changepassword
       x-ms-docs-operation-type: operation
   /me/drives:
     get:
@@ -1380,6 +1410,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Member_Reference'
+      required: true
+    Password_change:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Password_change'
       required: true
   responses:
     error:
@@ -13811,6 +13847,14 @@ components:
       required:
       - code
       - message
+      type: object
+    Password_change:
+      properties:
+        currentPassword:
+          type: string
+        newPassword:
+          type: string
+      title: Password change
       type: object
     Collection_of_drives:
       example:

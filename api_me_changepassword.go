@@ -19,54 +19,61 @@ import (
 )
 
 
-// DrivesRootApiService DrivesRootApi service
-type DrivesRootApiService service
+// MeChangepasswordApiService MeChangepasswordApi service
+type MeChangepasswordApiService service
 
-type ApiGetRootRequest struct {
+type ApiChangeOwnPasswordRequest struct {
 	ctx context.Context
-	ApiService *DrivesRootApiService
+	ApiService *MeChangepasswordApiService
+	passwordChange *PasswordChange
 }
 
-func (r ApiGetRootRequest) Execute() (*DriveItem, *http.Response, error) {
-	return r.ApiService.GetRootExecute(r)
+func (r ApiChangeOwnPasswordRequest) PasswordChange(passwordChange PasswordChange) ApiChangeOwnPasswordRequest {
+	r.passwordChange = &passwordChange
+	return r
+}
+
+func (r ApiChangeOwnPasswordRequest) Execute() (*http.Response, error) {
+	return r.ApiService.ChangeOwnPasswordExecute(r)
 }
 
 /*
-GetRoot Get root from arbitrary space
+ChangeOwnPassword Chanage your own password
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRootRequest
+ @return ApiChangeOwnPasswordRequest
 */
-func (a *DrivesRootApiService) GetRoot(ctx context.Context) ApiGetRootRequest {
-	return ApiGetRootRequest{
+func (a *MeChangepasswordApiService) ChangeOwnPassword(ctx context.Context) ApiChangeOwnPasswordRequest {
+	return ApiChangeOwnPasswordRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DriveItem
-func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, *http.Response, error) {
+func (a *MeChangepasswordApiService) ChangeOwnPasswordExecute(r ApiChangeOwnPasswordRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
+		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *DriveItem
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.GetRoot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeChangepasswordApiService.ChangeOwnPassword")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/drives/{drive-id}/root"
+	localVarPath := localBasePath + "/me/changePassword"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.passwordChange == nil {
+		return nil, reportError("passwordChange is required and must be specified")
+	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -82,21 +89,23 @@ func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.passwordChange
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return localVarReturnValue, nil, err
+		return nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
+		return localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
+		return localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -108,20 +117,11 @@ func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, 
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
+				return localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-		return localVarReturnValue, localVarHTTPResponse, newErr
+		return localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
+	return localVarHTTPResponse, nil
 }

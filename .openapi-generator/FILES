@@ -7,6 +7,7 @@ api_drives_get_drives.go
 api_drives_root.go
 api_group.go
 api_groups.go
+api_me_changepassword.go
 api_me_drive.go
 api_me_drive_root.go
 api_me_drive_root_children.go
@@ -38,6 +39,7 @@ docs/Identity.md
 docs/IdentitySet.md
 docs/Image.md
 docs/ItemReference.md
+docs/MeChangepasswordApi.md
 docs/MeDriveApi.md
 docs/MeDriveRootApi.md
 docs/MeDriveRootChildrenApi.md
@@ -48,6 +50,7 @@ docs/OdataError.md
 docs/OdataErrorDetail.md
 docs/OdataErrorMain.md
 docs/OpenGraphFile.md
+docs/PasswordChange.md
 docs/PasswordProfile.md
 docs/Permission.md
 docs/Quota.md
@@ -83,6 +86,7 @@ model_odata_error.go
 model_odata_error_detail.go
 model_odata_error_main.go
 model_open_graph_file.go
+model_password_change.go
 model_password_profile.go
 model_permission.go
 model_quota.go
