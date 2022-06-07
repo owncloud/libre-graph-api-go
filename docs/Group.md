@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **SecurityIdentifier** | Pointer to **string** | Security identifier of the group, used in Windows scenarios. Returned by default. | [optional] 
 **Visibility** | Pointer to **string** | Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. It can&#39;t be updated later. Other values of visibility can be updated after group creation. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable. | [optional] 
 **CreatedOnBehalfOf** | Pointer to [**DirectoryObject**](DirectoryObject.md) |  | [optional] 
-**MemberOf** | Pointer to [**[]DirectoryObject**](DirectoryObject.md) | Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand. | [optional] 
-**Members** | Pointer to [**[]DirectoryObject**](DirectoryObject.md) | Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), Nullable. Supports $expand. | [optional] 
+**MemberOf** | Pointer to [**[]Group**](Group.md) | Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand. | [optional] 
+**Members** | Pointer to [**[]User**](User.md) | Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), Nullable. Supports $expand. | [optional] 
 **Owners** | Pointer to [**[]DirectoryObject**](DirectoryObject.md) | The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. Nullable. Supports $expand. | [optional] 
 **Drive** | Pointer to [**Drive**](Drive.md) |  | [optional] 
 **Drives** | Pointer to [**[]Drive**](Drive.md) | The group&#39;s drives. Read-only. | [optional] 
@@ -449,20 +449,20 @@ HasCreatedOnBehalfOf returns a boolean if a field has been set.
 
 ### GetMemberOf
 
-`func (o *Group) GetMemberOf() []DirectoryObject`
+`func (o *Group) GetMemberOf() []Group`
 
 GetMemberOf returns the MemberOf field if non-nil, zero value otherwise.
 
 ### GetMemberOfOk
 
-`func (o *Group) GetMemberOfOk() (*[]DirectoryObject, bool)`
+`func (o *Group) GetMemberOfOk() (*[]Group, bool)`
 
 GetMemberOfOk returns a tuple with the MemberOf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMemberOf
 
-`func (o *Group) SetMemberOf(v []DirectoryObject)`
+`func (o *Group) SetMemberOf(v []Group)`
 
 SetMemberOf sets MemberOf field to given value.
 
@@ -474,20 +474,20 @@ HasMemberOf returns a boolean if a field has been set.
 
 ### GetMembers
 
-`func (o *Group) GetMembers() []DirectoryObject`
+`func (o *Group) GetMembers() []User`
 
 GetMembers returns the Members field if non-nil, zero value otherwise.
 
 ### GetMembersOk
 
-`func (o *Group) GetMembersOk() (*[]DirectoryObject, bool)`
+`func (o *Group) GetMembersOk() (*[]User, bool)`
 
 GetMembersOk returns a tuple with the Members field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMembers
 
-`func (o *Group) SetMembers(v []DirectoryObject)`
+`func (o *Group) SetMembers(v []User)`
 
 SetMembers sets Members field to given value.
 

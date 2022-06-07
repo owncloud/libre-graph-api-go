@@ -50,6 +50,8 @@ type User struct {
 	MailNickname *string `json:"mailNickname,omitempty"`
 	// The primary cellular telephone number for the user. Returned by default. Read-only for users synced from on-premises directory.
 	MobilePhone *string `json:"mobilePhone,omitempty"`
+	// Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
+	MemberOf []Group `json:"memberOf,omitempty"`
 	// Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
 	OnPremisesDistinguishedName *string `json:"onPremisesDistinguishedName,omitempty"`
 	// Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -653,6 +655,38 @@ func (o *User) HasMobilePhone() bool {
 // SetMobilePhone gets a reference to the given string and assigns it to the MobilePhone field.
 func (o *User) SetMobilePhone(v string) {
 	o.MobilePhone = &v
+}
+
+// GetMemberOf returns the MemberOf field value if set, zero value otherwise.
+func (o *User) GetMemberOf() []Group {
+	if o == nil || o.MemberOf == nil {
+		var ret []Group
+		return ret
+	}
+	return o.MemberOf
+}
+
+// GetMemberOfOk returns a tuple with the MemberOf field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetMemberOfOk() ([]Group, bool) {
+	if o == nil || o.MemberOf == nil {
+		return nil, false
+	}
+	return o.MemberOf, true
+}
+
+// HasMemberOf returns a boolean if a field has been set.
+func (o *User) HasMemberOf() bool {
+	if o != nil && o.MemberOf != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMemberOf gets a reference to the given []Group and assigns it to the MemberOf field.
+func (o *User) SetMemberOf(v []Group) {
+	o.MemberOf = v
 }
 
 // GetOnPremisesDistinguishedName returns the OnPremisesDistinguishedName field value if set, zero value otherwise.
@@ -1411,6 +1445,9 @@ func (o User) MarshalJSON() ([]byte, error) {
 	}
 	if o.MobilePhone != nil {
 		toSerialize["mobilePhone"] = o.MobilePhone
+	}
+	if o.MemberOf != nil {
+		toSerialize["memberOf"] = o.MemberOf
 	}
 	if o.OnPremisesDistinguishedName != nil {
 		toSerialize["onPremisesDistinguishedName"] = o.OnPremisesDistinguishedName

@@ -48,9 +48,9 @@ type Group struct {
 	Visibility *string `json:"visibility,omitempty"`
 	CreatedOnBehalfOf *DirectoryObject `json:"createdOnBehalfOf,omitempty"`
 	// Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
-	MemberOf []DirectoryObject `json:"memberOf,omitempty"`
+	MemberOf []Group `json:"memberOf,omitempty"`
 	// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), Nullable. Supports $expand.
-	Members []DirectoryObject `json:"members,omitempty"`
+	Members []User `json:"members,omitempty"`
 	// The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. Nullable. Supports $expand.
 	Owners []DirectoryObject `json:"owners,omitempty"`
 	Drive *Drive `json:"drive,omitempty"`
@@ -591,9 +591,9 @@ func (o *Group) SetCreatedOnBehalfOf(v DirectoryObject) {
 }
 
 // GetMemberOf returns the MemberOf field value if set, zero value otherwise.
-func (o *Group) GetMemberOf() []DirectoryObject {
+func (o *Group) GetMemberOf() []Group {
 	if o == nil || o.MemberOf == nil {
-		var ret []DirectoryObject
+		var ret []Group
 		return ret
 	}
 	return o.MemberOf
@@ -601,7 +601,7 @@ func (o *Group) GetMemberOf() []DirectoryObject {
 
 // GetMemberOfOk returns a tuple with the MemberOf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Group) GetMemberOfOk() ([]DirectoryObject, bool) {
+func (o *Group) GetMemberOfOk() ([]Group, bool) {
 	if o == nil || o.MemberOf == nil {
 		return nil, false
 	}
@@ -617,15 +617,15 @@ func (o *Group) HasMemberOf() bool {
 	return false
 }
 
-// SetMemberOf gets a reference to the given []DirectoryObject and assigns it to the MemberOf field.
-func (o *Group) SetMemberOf(v []DirectoryObject) {
+// SetMemberOf gets a reference to the given []Group and assigns it to the MemberOf field.
+func (o *Group) SetMemberOf(v []Group) {
 	o.MemberOf = v
 }
 
 // GetMembers returns the Members field value if set, zero value otherwise.
-func (o *Group) GetMembers() []DirectoryObject {
+func (o *Group) GetMembers() []User {
 	if o == nil || o.Members == nil {
-		var ret []DirectoryObject
+		var ret []User
 		return ret
 	}
 	return o.Members
@@ -633,7 +633,7 @@ func (o *Group) GetMembers() []DirectoryObject {
 
 // GetMembersOk returns a tuple with the Members field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Group) GetMembersOk() ([]DirectoryObject, bool) {
+func (o *Group) GetMembersOk() ([]User, bool) {
 	if o == nil || o.Members == nil {
 		return nil, false
 	}
@@ -649,8 +649,8 @@ func (o *Group) HasMembers() bool {
 	return false
 }
 
-// SetMembers gets a reference to the given []DirectoryObject and assigns it to the Members field.
-func (o *Group) SetMembers(v []DirectoryObject) {
+// SetMembers gets a reference to the given []User and assigns it to the Members field.
+func (o *Group) SetMembers(v []User) {
 	o.Members = v
 }
 

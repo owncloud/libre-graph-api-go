@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **Mail** | Pointer to **string** | The SMTP address for the user, for example, &#39;jeff@contoso.onowncloud.com&#39;. Returned by default. Supports $filter and endsWith. | [optional] 
 **MailNickname** | Pointer to **string** | The mail alias for the user. This property must be specified when a user is created. Returned only on $select. Supports $filter. | [optional] 
 **MobilePhone** | Pointer to **string** | The primary cellular telephone number for the user. Returned by default. Read-only for users synced from on-premises directory. | [optional] 
+**MemberOf** | Pointer to [**[]Group**](Group.md) | Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand. | [optional] 
 **OnPremisesDistinguishedName** | Pointer to **string** | Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. | [optional] 
 **OnPremisesDomainName** | Pointer to **string** | Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. | [optional] 
 **OnPremisesImmutableId** | Pointer to **string** | This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user&#39;s userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).. | [optional] 
@@ -487,6 +488,31 @@ SetMobilePhone sets MobilePhone field to given value.
 `func (o *User) HasMobilePhone() bool`
 
 HasMobilePhone returns a boolean if a field has been set.
+
+### GetMemberOf
+
+`func (o *User) GetMemberOf() []Group`
+
+GetMemberOf returns the MemberOf field if non-nil, zero value otherwise.
+
+### GetMemberOfOk
+
+`func (o *User) GetMemberOfOk() (*[]Group, bool)`
+
+GetMemberOfOk returns a tuple with the MemberOf field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemberOf
+
+`func (o *User) SetMemberOf(v []Group)`
+
+SetMemberOf sets MemberOf field to given value.
+
+### HasMemberOf
+
+`func (o *User) HasMemberOf() bool`
+
+HasMemberOf returns a boolean if a field has been set.
 
 ### GetOnPremisesDistinguishedName
 
