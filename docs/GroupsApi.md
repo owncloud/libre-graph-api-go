@@ -75,7 +75,7 @@ No authorization required
 
 ## ListGroups
 
-> CollectionOfGroup ListGroups(ctx).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Orderby(orderby).Select_(select_).Execute()
+> CollectionOfGroup ListGroups(ctx).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Orderby(orderby).Select_(select_).Expand(expand).Execute()
 
 Get entities from groups
 
@@ -99,10 +99,11 @@ func main() {
     count := true // bool | Include count of items (optional)
     orderby := []string{"Orderby_example"} // []string | Order items by property values (optional)
     select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
+    expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GroupsApi.ListGroups(context.Background()).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Orderby(orderby).Select_(select_).Execute()
+    resp, r, err := apiClient.GroupsApi.ListGroups(context.Background()).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Orderby(orderby).Select_(select_).Expand(expand).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupsApi.ListGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -130,6 +131,7 @@ Name | Type | Description  | Notes
  **count** | **bool** | Include count of items | 
  **orderby** | **[]string** | Order items by property values | 
  **select_** | **[]string** | Select properties to be returned | 
+ **expand** | **[]string** | Expand related entities | 
 
 ### Return type
 

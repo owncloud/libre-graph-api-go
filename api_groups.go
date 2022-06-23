@@ -148,6 +148,7 @@ type ApiListGroupsRequest struct {
 	count *bool
 	orderby *[]string
 	select_ *[]string
+	expand *[]string
 }
 
 // Show only the first n items
@@ -189,6 +190,12 @@ func (r ApiListGroupsRequest) Orderby(orderby []string) ApiListGroupsRequest {
 // Select properties to be returned
 func (r ApiListGroupsRequest) Select_(select_ []string) ApiListGroupsRequest {
 	r.select_ = &select_
+	return r
+}
+
+// Expand related entities
+func (r ApiListGroupsRequest) Expand(expand []string) ApiListGroupsRequest {
+	r.expand = &expand
 	return r
 }
 
@@ -250,6 +257,9 @@ func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (*Collectio
 	}
 	if r.select_ != nil {
 		localVarQueryParams.Add("$select", parameterToString(*r.select_, "csv"))
+	}
+	if r.expand != nil {
+		localVarQueryParams.Add("$expand", parameterToString(*r.expand, "csv"))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -221,7 +221,7 @@ No authorization required
 
 ## GetGroup
 
-> Group GetGroup(ctx, groupId).Select_(select_).Execute()
+> Group GetGroup(ctx, groupId).Select_(select_).Expand(expand).Execute()
 
 Get entity from groups by key
 
@@ -240,10 +240,11 @@ import (
 func main() {
     groupId := "groupId_example" // string | key: id of group
     select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
+    expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GroupApi.GetGroup(context.Background(), groupId).Select_(select_).Execute()
+    resp, r, err := apiClient.GroupApi.GetGroup(context.Background(), groupId).Select_(select_).Expand(expand).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.GetGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -270,6 +271,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **select_** | **[]string** | Select properties to be returned | 
+ **expand** | **[]string** | Expand related entities | 
 
 ### Return type
 

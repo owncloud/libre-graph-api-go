@@ -354,11 +354,18 @@ type ApiGetGroupRequest struct {
 	ApiService *GroupApiService
 	groupId string
 	select_ *[]string
+	expand *[]string
 }
 
 // Select properties to be returned
 func (r ApiGetGroupRequest) Select_(select_ []string) ApiGetGroupRequest {
 	r.select_ = &select_
+	return r
+}
+
+// Expand related entities
+func (r ApiGetGroupRequest) Expand(expand []string) ApiGetGroupRequest {
+	r.expand = &expand
 	return r
 }
 
@@ -405,6 +412,9 @@ func (a *GroupApiService) GetGroupExecute(r ApiGetGroupRequest) (*Group, *http.R
 
 	if r.select_ != nil {
 		localVarQueryParams.Add("$select", parameterToString(*r.select_, "csv"))
+	}
+	if r.expand != nil {
+		localVarQueryParams.Add("$expand", parameterToString(*r.expand, "csv"))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
