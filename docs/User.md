@@ -6,10 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | Read-only. | [optional] [readonly] 
 **DisplayName** | Pointer to **string** | The name displayed in the address book for the user. This value is usually the combination of the user&#39;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby. | [optional] 
+**Drives** | Pointer to [**[]Drive**](Drive.md) | A collection of drives available for this user. Read-only. | [optional] [readonly] 
 **Mail** | Pointer to **string** | The SMTP address for the user, for example, &#39;jeff@contoso.onowncloud.com&#39;. Returned by default. Supports $filter and endsWith. | [optional] 
 **MemberOf** | Pointer to [**[]Group**](Group.md) | Groups that this user is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand. | [optional] 
 **OnPremisesSamAccountName** | Pointer to **string** | Contains the on-premises SAM account name synchronized from the on-premises directory. Read-only. | [optional] 
 **PasswordProfile** | Pointer to [**PasswordProfile**](PasswordProfile.md) |  | [optional] 
+**Surname** | Pointer to **string** | The user&#39;s surname (family name or last name). Returned by default. Supports $filter. | [optional] 
 
 ## Methods
 
@@ -79,6 +81,31 @@ SetDisplayName sets DisplayName field to given value.
 `func (o *User) HasDisplayName() bool`
 
 HasDisplayName returns a boolean if a field has been set.
+
+### GetDrives
+
+`func (o *User) GetDrives() []Drive`
+
+GetDrives returns the Drives field if non-nil, zero value otherwise.
+
+### GetDrivesOk
+
+`func (o *User) GetDrivesOk() (*[]Drive, bool)`
+
+GetDrivesOk returns a tuple with the Drives field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDrives
+
+`func (o *User) SetDrives(v []Drive)`
+
+SetDrives sets Drives field to given value.
+
+### HasDrives
+
+`func (o *User) HasDrives() bool`
+
+HasDrives returns a boolean if a field has been set.
 
 ### GetMail
 
@@ -179,6 +206,31 @@ SetPasswordProfile sets PasswordProfile field to given value.
 `func (o *User) HasPasswordProfile() bool`
 
 HasPasswordProfile returns a boolean if a field has been set.
+
+### GetSurname
+
+`func (o *User) GetSurname() string`
+
+GetSurname returns the Surname field if non-nil, zero value otherwise.
+
+### GetSurnameOk
+
+`func (o *User) GetSurnameOk() (*string, bool)`
+
+GetSurnameOk returns a tuple with the Surname field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSurname
+
+`func (o *User) SetSurname(v string)`
+
+SetSurname sets Surname field to given value.
+
+### HasSurname
+
+`func (o *User) HasSurname() bool`
+
+HasSurname returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

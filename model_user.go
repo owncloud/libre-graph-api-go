@@ -20,6 +20,8 @@ type User struct {
 	Id *string `json:"id,omitempty"`
 	// The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.
 	DisplayName *string `json:"displayName,omitempty"`
+	// A collection of drives available for this user. Read-only.
+	Drives []Drive `json:"drives,omitempty"`
 	// The SMTP address for the user, for example, 'jeff@contoso.onowncloud.com'. Returned by default. Supports $filter and endsWith.
 	Mail *string `json:"mail,omitempty"`
 	// Groups that this user is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
@@ -27,6 +29,8 @@ type User struct {
 	// Contains the on-premises SAM account name synchronized from the on-premises directory. Read-only.
 	OnPremisesSamAccountName *string `json:"onPremisesSamAccountName,omitempty"`
 	PasswordProfile *PasswordProfile `json:"passwordProfile,omitempty"`
+	// The user's surname (family name or last name). Returned by default. Supports $filter.
+	Surname *string `json:"surname,omitempty"`
 }
 
 // NewUser instantiates a new User object
@@ -108,6 +112,38 @@ func (o *User) HasDisplayName() bool {
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *User) SetDisplayName(v string) {
 	o.DisplayName = &v
+}
+
+// GetDrives returns the Drives field value if set, zero value otherwise.
+func (o *User) GetDrives() []Drive {
+	if o == nil || o.Drives == nil {
+		var ret []Drive
+		return ret
+	}
+	return o.Drives
+}
+
+// GetDrivesOk returns a tuple with the Drives field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetDrivesOk() ([]Drive, bool) {
+	if o == nil || o.Drives == nil {
+		return nil, false
+	}
+	return o.Drives, true
+}
+
+// HasDrives returns a boolean if a field has been set.
+func (o *User) HasDrives() bool {
+	if o != nil && o.Drives != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDrives gets a reference to the given []Drive and assigns it to the Drives field.
+func (o *User) SetDrives(v []Drive) {
+	o.Drives = v
 }
 
 // GetMail returns the Mail field value if set, zero value otherwise.
@@ -238,6 +274,38 @@ func (o *User) SetPasswordProfile(v PasswordProfile) {
 	o.PasswordProfile = &v
 }
 
+// GetSurname returns the Surname field value if set, zero value otherwise.
+func (o *User) GetSurname() string {
+	if o == nil || o.Surname == nil {
+		var ret string
+		return ret
+	}
+	return *o.Surname
+}
+
+// GetSurnameOk returns a tuple with the Surname field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetSurnameOk() (*string, bool) {
+	if o == nil || o.Surname == nil {
+		return nil, false
+	}
+	return o.Surname, true
+}
+
+// HasSurname returns a boolean if a field has been set.
+func (o *User) HasSurname() bool {
+	if o != nil && o.Surname != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSurname gets a reference to the given string and assigns it to the Surname field.
+func (o *User) SetSurname(v string) {
+	o.Surname = &v
+}
+
 func (o User) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
@@ -245,6 +313,9 @@ func (o User) MarshalJSON() ([]byte, error) {
 	}
 	if o.DisplayName != nil {
 		toSerialize["displayName"] = o.DisplayName
+	}
+	if o.Drives != nil {
+		toSerialize["drives"] = o.Drives
 	}
 	if o.Mail != nil {
 		toSerialize["mail"] = o.Mail
@@ -257,6 +328,9 @@ func (o User) MarshalJSON() ([]byte, error) {
 	}
 	if o.PasswordProfile != nil {
 		toSerialize["passwordProfile"] = o.PasswordProfile
+	}
+	if o.Surname != nil {
+		toSerialize["surname"] = o.Surname
 	}
 	return json.Marshal(toSerialize)
 }
