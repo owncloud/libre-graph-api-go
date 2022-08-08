@@ -8034,6 +8034,1109 @@ components:
           - members@odata.bind
           - members@odata.bind
           - members@odata.bind
+        drive:
+          owner:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          driveAlias: driveAlias
+          lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+          createdByUser: null
+          driveType: driveType
+          lastModifiedBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          description: description
+          special:
+          - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser: null
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            children:
+            - null
+            - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            root: "{}"
+            cTag: cTag
+            eTag: eTag
+            id: id
+            image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            webDavUrl: webDavUrl
+            trash:
+              trashedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              trashedDateTime: 2000-01-23T04:56:07.000+00:00
+            deleted:
+              state: state
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 3
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            remoteItem:
+              image:
+                width: 1516424369
+                height: 494379917
+              shared:
+                owner:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                scope: scope
+                sharedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                sharedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webDavUrl: webDavUrl
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 9
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webUrl: webUrl
+              name: name
+              cTag: cTag
+              eTag: eTag
+              id: id
+              specialFolder:
+                name: name
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            webUrl: webUrl
+            name: name
+            specialFolder:
+              name: name
+            lastModifiedByUser: null
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser: null
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            children:
+            - null
+            - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            root: "{}"
+            cTag: cTag
+            eTag: eTag
+            id: id
+            image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            webDavUrl: webDavUrl
+            trash:
+              trashedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              trashedDateTime: 2000-01-23T04:56:07.000+00:00
+            deleted:
+              state: state
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 3
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            remoteItem:
+              image:
+                width: 1516424369
+                height: 494379917
+              shared:
+                owner:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                scope: scope
+                sharedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                sharedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webDavUrl: webDavUrl
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 9
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webUrl: webUrl
+              name: name
+              cTag: cTag
+              eTag: eTag
+              id: id
+              specialFolder:
+                name: name
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            webUrl: webUrl
+            name: name
+            specialFolder:
+              name: name
+            lastModifiedByUser: null
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          parentReference:
+            path: path
+            driveId: driveId
+            driveType: driveType
+            name: name
+            shareId: shareId
+            id: id
+          createdBy:
+            application:
+              displayName: displayName
+              id: id
+            device:
+              displayName: displayName
+              id: id
+            user:
+              displayName: displayName
+              id: id
+          webUrl: webUrl
+          quota:
+            total: 1
+            deleted: 0
+            state: state
+            used: 5
+            remaining: 6
+          root:
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser: null
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            children:
+            - null
+            - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            root: "{}"
+            cTag: cTag
+            eTag: eTag
+            id: id
+            image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            webDavUrl: webDavUrl
+            trash:
+              trashedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              trashedDateTime: 2000-01-23T04:56:07.000+00:00
+            deleted:
+              state: state
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 3
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            remoteItem:
+              image:
+                width: 1516424369
+                height: 494379917
+              shared:
+                owner:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                scope: scope
+                sharedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                sharedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webDavUrl: webDavUrl
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 9
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webUrl: webUrl
+              name: name
+              cTag: cTag
+              eTag: eTag
+              id: id
+              specialFolder:
+                name: name
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            webUrl: webUrl
+            name: name
+            specialFolder:
+              name: name
+            lastModifiedByUser: null
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          name: name
+          eTag: eTag
+          id: id
+          items:
+          - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser: null
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            children:
+            - null
+            - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            root: "{}"
+            cTag: cTag
+            eTag: eTag
+            id: id
+            image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            webDavUrl: webDavUrl
+            trash:
+              trashedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              trashedDateTime: 2000-01-23T04:56:07.000+00:00
+            deleted:
+              state: state
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 3
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            remoteItem:
+              image:
+                width: 1516424369
+                height: 494379917
+              shared:
+                owner:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                scope: scope
+                sharedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                sharedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webDavUrl: webDavUrl
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 9
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webUrl: webUrl
+              name: name
+              cTag: cTag
+              eTag: eTag
+              id: id
+              specialFolder:
+                name: name
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            webUrl: webUrl
+            name: name
+            specialFolder:
+              name: name
+            lastModifiedByUser: null
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser: null
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            content: content
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            file:
+              processingMetadata: true
+              hashes:
+                sha256Hash: sha256Hash
+                quickXorHash: quickXorHash
+                sha1Hash: sha1Hash
+                crc32Hash: crc32Hash
+              mimeType: mimeType
+            children:
+            - null
+            - null
+            permissions:
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            - grantedTo:
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              - application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              roles:
+              - roles
+              - roles
+            root: "{}"
+            cTag: cTag
+            eTag: eTag
+            id: id
+            image:
+              width: 1516424369
+              height: 494379917
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            webDavUrl: webDavUrl
+            trash:
+              trashedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              trashedDateTime: 2000-01-23T04:56:07.000+00:00
+            deleted:
+              state: state
+            folder:
+              view:
+                sortOrder: sortOrder
+                viewType: viewType
+                sortBy: sortBy
+              childCount: 1210617418
+            size: 3
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            remoteItem:
+              image:
+                width: 1516424369
+                height: 494379917
+              shared:
+                owner:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                scope: scope
+                sharedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                sharedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webDavUrl: webDavUrl
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 9
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webUrl: webUrl
+              name: name
+              cTag: cTag
+              eTag: eTag
+              id: id
+              specialFolder:
+                name: name
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            webUrl: webUrl
+            name: name
+            specialFolder:
+              name: name
+            lastModifiedByUser: null
+            fileSystemInfo:
+              lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+          lastModifiedByUser: null
       properties:
         id:
           description: Read-only.
@@ -8053,6 +9156,8 @@ components:
           maxItems: 100
           readOnly: true
           type: array
+        drive:
+          $ref: '#/components/schemas/drive'
         mail:
           description: "The SMTP address for the user, for example, 'jeff@contoso.onowncloud.com'.\
             \ Returned by default. Supports $filter and endsWith."
@@ -21156,6 +22261,1109 @@ components:
             - members@odata.bind
             - members@odata.bind
             - members@odata.bind
+          drive:
+            owner:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            driveAlias: driveAlias
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser: null
+            driveType: driveType
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            special:
+            - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdByUser: null
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              description: description
+              content: content
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              children:
+              - null
+              - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              root: "{}"
+              cTag: cTag
+              eTag: eTag
+              id: id
+              image:
+                width: 1516424369
+                height: 494379917
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webDavUrl: webDavUrl
+              trash:
+                trashedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                trashedDateTime: 2000-01-23T04:56:07.000+00:00
+              deleted:
+                state: state
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 3
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              remoteItem:
+                image:
+                  width: 1516424369
+                  height: 494379917
+                shared:
+                  owner:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  scope: scope
+                  sharedBy:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  sharedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+                webDavUrl: webDavUrl
+                parentReference:
+                  path: path
+                  driveId: driveId
+                  driveType: driveType
+                  name: name
+                  shareId: shareId
+                  id: id
+                file:
+                  processingMetadata: true
+                  hashes:
+                    sha256Hash: sha256Hash
+                    quickXorHash: quickXorHash
+                    sha1Hash: sha1Hash
+                    crc32Hash: crc32Hash
+                  mimeType: mimeType
+                folder:
+                  view:
+                    sortOrder: sortOrder
+                    viewType: viewType
+                    sortBy: sortBy
+                  childCount: 1210617418
+                size: 9
+                createdBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                webUrl: webUrl
+                name: name
+                cTag: cTag
+                eTag: eTag
+                id: id
+                specialFolder:
+                  name: name
+                fileSystemInfo:
+                  lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                  lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                  createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webUrl: webUrl
+              name: name
+              specialFolder:
+                name: name
+              lastModifiedByUser: null
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdByUser: null
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              description: description
+              content: content
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              children:
+              - null
+              - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              root: "{}"
+              cTag: cTag
+              eTag: eTag
+              id: id
+              image:
+                width: 1516424369
+                height: 494379917
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webDavUrl: webDavUrl
+              trash:
+                trashedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                trashedDateTime: 2000-01-23T04:56:07.000+00:00
+              deleted:
+                state: state
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 3
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              remoteItem:
+                image:
+                  width: 1516424369
+                  height: 494379917
+                shared:
+                  owner:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  scope: scope
+                  sharedBy:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  sharedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+                webDavUrl: webDavUrl
+                parentReference:
+                  path: path
+                  driveId: driveId
+                  driveType: driveType
+                  name: name
+                  shareId: shareId
+                  id: id
+                file:
+                  processingMetadata: true
+                  hashes:
+                    sha256Hash: sha256Hash
+                    quickXorHash: quickXorHash
+                    sha1Hash: sha1Hash
+                    crc32Hash: crc32Hash
+                  mimeType: mimeType
+                folder:
+                  view:
+                    sortOrder: sortOrder
+                    viewType: viewType
+                    sortBy: sortBy
+                  childCount: 1210617418
+                size: 9
+                createdBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                webUrl: webUrl
+                name: name
+                cTag: cTag
+                eTag: eTag
+                id: id
+                specialFolder:
+                  name: name
+                fileSystemInfo:
+                  lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                  lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                  createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webUrl: webUrl
+              name: name
+              specialFolder:
+                name: name
+              lastModifiedByUser: null
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            webUrl: webUrl
+            quota:
+              total: 1
+              deleted: 0
+              state: state
+              used: 5
+              remaining: 6
+            root:
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdByUser: null
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              description: description
+              content: content
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              children:
+              - null
+              - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              root: "{}"
+              cTag: cTag
+              eTag: eTag
+              id: id
+              image:
+                width: 1516424369
+                height: 494379917
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webDavUrl: webDavUrl
+              trash:
+                trashedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                trashedDateTime: 2000-01-23T04:56:07.000+00:00
+              deleted:
+                state: state
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 3
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              remoteItem:
+                image:
+                  width: 1516424369
+                  height: 494379917
+                shared:
+                  owner:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  scope: scope
+                  sharedBy:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  sharedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+                webDavUrl: webDavUrl
+                parentReference:
+                  path: path
+                  driveId: driveId
+                  driveType: driveType
+                  name: name
+                  shareId: shareId
+                  id: id
+                file:
+                  processingMetadata: true
+                  hashes:
+                    sha256Hash: sha256Hash
+                    quickXorHash: quickXorHash
+                    sha1Hash: sha1Hash
+                    crc32Hash: crc32Hash
+                  mimeType: mimeType
+                folder:
+                  view:
+                    sortOrder: sortOrder
+                    viewType: viewType
+                    sortBy: sortBy
+                  childCount: 1210617418
+                size: 9
+                createdBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                webUrl: webUrl
+                name: name
+                cTag: cTag
+                eTag: eTag
+                id: id
+                specialFolder:
+                  name: name
+                fileSystemInfo:
+                  lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                  lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                  createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webUrl: webUrl
+              name: name
+              specialFolder:
+                name: name
+              lastModifiedByUser: null
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            name: name
+            eTag: eTag
+            id: id
+            items:
+            - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdByUser: null
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              description: description
+              content: content
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              children:
+              - null
+              - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              root: "{}"
+              cTag: cTag
+              eTag: eTag
+              id: id
+              image:
+                width: 1516424369
+                height: 494379917
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webDavUrl: webDavUrl
+              trash:
+                trashedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                trashedDateTime: 2000-01-23T04:56:07.000+00:00
+              deleted:
+                state: state
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 3
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              remoteItem:
+                image:
+                  width: 1516424369
+                  height: 494379917
+                shared:
+                  owner:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  scope: scope
+                  sharedBy:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  sharedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+                webDavUrl: webDavUrl
+                parentReference:
+                  path: path
+                  driveId: driveId
+                  driveType: driveType
+                  name: name
+                  shareId: shareId
+                  id: id
+                file:
+                  processingMetadata: true
+                  hashes:
+                    sha256Hash: sha256Hash
+                    quickXorHash: quickXorHash
+                    sha1Hash: sha1Hash
+                    crc32Hash: crc32Hash
+                  mimeType: mimeType
+                folder:
+                  view:
+                    sortOrder: sortOrder
+                    viewType: viewType
+                    sortBy: sortBy
+                  childCount: 1210617418
+                size: 9
+                createdBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                webUrl: webUrl
+                name: name
+                cTag: cTag
+                eTag: eTag
+                id: id
+                specialFolder:
+                  name: name
+                fileSystemInfo:
+                  lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                  lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                  createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webUrl: webUrl
+              name: name
+              specialFolder:
+                name: name
+              lastModifiedByUser: null
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdByUser: null
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              description: description
+              content: content
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              children:
+              - null
+              - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              root: "{}"
+              cTag: cTag
+              eTag: eTag
+              id: id
+              image:
+                width: 1516424369
+                height: 494379917
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webDavUrl: webDavUrl
+              trash:
+                trashedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                trashedDateTime: 2000-01-23T04:56:07.000+00:00
+              deleted:
+                state: state
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 3
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              remoteItem:
+                image:
+                  width: 1516424369
+                  height: 494379917
+                shared:
+                  owner:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  scope: scope
+                  sharedBy:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  sharedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+                webDavUrl: webDavUrl
+                parentReference:
+                  path: path
+                  driveId: driveId
+                  driveType: driveType
+                  name: name
+                  shareId: shareId
+                  id: id
+                file:
+                  processingMetadata: true
+                  hashes:
+                    sha256Hash: sha256Hash
+                    quickXorHash: quickXorHash
+                    sha1Hash: sha1Hash
+                    crc32Hash: crc32Hash
+                  mimeType: mimeType
+                folder:
+                  view:
+                    sortOrder: sortOrder
+                    viewType: viewType
+                    sortBy: sortBy
+                  childCount: 1210617418
+                size: 9
+                createdBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                webUrl: webUrl
+                name: name
+                cTag: cTag
+                eTag: eTag
+                id: id
+                specialFolder:
+                  name: name
+                fileSystemInfo:
+                  lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                  lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                  createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webUrl: webUrl
+              name: name
+              specialFolder:
+                name: name
+              lastModifiedByUser: null
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedByUser: null
         - passwordProfile:
             password: password
             forceChangePasswordNextSignIn: false
@@ -26704,6 +28912,1109 @@ components:
             - members@odata.bind
             - members@odata.bind
             - members@odata.bind
+          drive:
+            owner:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            driveAlias: driveAlias
+            lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+            createdByUser: null
+            driveType: driveType
+            lastModifiedBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            description: description
+            special:
+            - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdByUser: null
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              description: description
+              content: content
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              children:
+              - null
+              - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              root: "{}"
+              cTag: cTag
+              eTag: eTag
+              id: id
+              image:
+                width: 1516424369
+                height: 494379917
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webDavUrl: webDavUrl
+              trash:
+                trashedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                trashedDateTime: 2000-01-23T04:56:07.000+00:00
+              deleted:
+                state: state
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 3
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              remoteItem:
+                image:
+                  width: 1516424369
+                  height: 494379917
+                shared:
+                  owner:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  scope: scope
+                  sharedBy:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  sharedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+                webDavUrl: webDavUrl
+                parentReference:
+                  path: path
+                  driveId: driveId
+                  driveType: driveType
+                  name: name
+                  shareId: shareId
+                  id: id
+                file:
+                  processingMetadata: true
+                  hashes:
+                    sha256Hash: sha256Hash
+                    quickXorHash: quickXorHash
+                    sha1Hash: sha1Hash
+                    crc32Hash: crc32Hash
+                  mimeType: mimeType
+                folder:
+                  view:
+                    sortOrder: sortOrder
+                    viewType: viewType
+                    sortBy: sortBy
+                  childCount: 1210617418
+                size: 9
+                createdBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                webUrl: webUrl
+                name: name
+                cTag: cTag
+                eTag: eTag
+                id: id
+                specialFolder:
+                  name: name
+                fileSystemInfo:
+                  lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                  lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                  createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webUrl: webUrl
+              name: name
+              specialFolder:
+                name: name
+              lastModifiedByUser: null
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdByUser: null
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              description: description
+              content: content
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              children:
+              - null
+              - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              root: "{}"
+              cTag: cTag
+              eTag: eTag
+              id: id
+              image:
+                width: 1516424369
+                height: 494379917
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webDavUrl: webDavUrl
+              trash:
+                trashedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                trashedDateTime: 2000-01-23T04:56:07.000+00:00
+              deleted:
+                state: state
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 3
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              remoteItem:
+                image:
+                  width: 1516424369
+                  height: 494379917
+                shared:
+                  owner:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  scope: scope
+                  sharedBy:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  sharedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+                webDavUrl: webDavUrl
+                parentReference:
+                  path: path
+                  driveId: driveId
+                  driveType: driveType
+                  name: name
+                  shareId: shareId
+                  id: id
+                file:
+                  processingMetadata: true
+                  hashes:
+                    sha256Hash: sha256Hash
+                    quickXorHash: quickXorHash
+                    sha1Hash: sha1Hash
+                    crc32Hash: crc32Hash
+                  mimeType: mimeType
+                folder:
+                  view:
+                    sortOrder: sortOrder
+                    viewType: viewType
+                    sortBy: sortBy
+                  childCount: 1210617418
+                size: 9
+                createdBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                webUrl: webUrl
+                name: name
+                cTag: cTag
+                eTag: eTag
+                id: id
+                specialFolder:
+                  name: name
+                fileSystemInfo:
+                  lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                  lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                  createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webUrl: webUrl
+              name: name
+              specialFolder:
+                name: name
+              lastModifiedByUser: null
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            parentReference:
+              path: path
+              driveId: driveId
+              driveType: driveType
+              name: name
+              shareId: shareId
+              id: id
+            createdBy:
+              application:
+                displayName: displayName
+                id: id
+              device:
+                displayName: displayName
+                id: id
+              user:
+                displayName: displayName
+                id: id
+            webUrl: webUrl
+            quota:
+              total: 1
+              deleted: 0
+              state: state
+              used: 5
+              remaining: 6
+            root:
+              lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdByUser: null
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              description: description
+              content: content
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              children:
+              - null
+              - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              root: "{}"
+              cTag: cTag
+              eTag: eTag
+              id: id
+              image:
+                width: 1516424369
+                height: 494379917
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webDavUrl: webDavUrl
+              trash:
+                trashedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                trashedDateTime: 2000-01-23T04:56:07.000+00:00
+              deleted:
+                state: state
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 3
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              remoteItem:
+                image:
+                  width: 1516424369
+                  height: 494379917
+                shared:
+                  owner:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  scope: scope
+                  sharedBy:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  sharedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+                webDavUrl: webDavUrl
+                parentReference:
+                  path: path
+                  driveId: driveId
+                  driveType: driveType
+                  name: name
+                  shareId: shareId
+                  id: id
+                file:
+                  processingMetadata: true
+                  hashes:
+                    sha256Hash: sha256Hash
+                    quickXorHash: quickXorHash
+                    sha1Hash: sha1Hash
+                    crc32Hash: crc32Hash
+                  mimeType: mimeType
+                folder:
+                  view:
+                    sortOrder: sortOrder
+                    viewType: viewType
+                    sortBy: sortBy
+                  childCount: 1210617418
+                size: 9
+                createdBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                webUrl: webUrl
+                name: name
+                cTag: cTag
+                eTag: eTag
+                id: id
+                specialFolder:
+                  name: name
+                fileSystemInfo:
+                  lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                  lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                  createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webUrl: webUrl
+              name: name
+              specialFolder:
+                name: name
+              lastModifiedByUser: null
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            name: name
+            eTag: eTag
+            id: id
+            items:
+            - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdByUser: null
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              description: description
+              content: content
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              children:
+              - null
+              - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              root: "{}"
+              cTag: cTag
+              eTag: eTag
+              id: id
+              image:
+                width: 1516424369
+                height: 494379917
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webDavUrl: webDavUrl
+              trash:
+                trashedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                trashedDateTime: 2000-01-23T04:56:07.000+00:00
+              deleted:
+                state: state
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 3
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              remoteItem:
+                image:
+                  width: 1516424369
+                  height: 494379917
+                shared:
+                  owner:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  scope: scope
+                  sharedBy:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  sharedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+                webDavUrl: webDavUrl
+                parentReference:
+                  path: path
+                  driveId: driveId
+                  driveType: driveType
+                  name: name
+                  shareId: shareId
+                  id: id
+                file:
+                  processingMetadata: true
+                  hashes:
+                    sha256Hash: sha256Hash
+                    quickXorHash: quickXorHash
+                    sha1Hash: sha1Hash
+                    crc32Hash: crc32Hash
+                  mimeType: mimeType
+                folder:
+                  view:
+                    sortOrder: sortOrder
+                    viewType: viewType
+                    sortBy: sortBy
+                  childCount: 1210617418
+                size: 9
+                createdBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                webUrl: webUrl
+                name: name
+                cTag: cTag
+                eTag: eTag
+                id: id
+                specialFolder:
+                  name: name
+                fileSystemInfo:
+                  lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                  lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                  createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webUrl: webUrl
+              name: name
+              specialFolder:
+                name: name
+              lastModifiedByUser: null
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+              createdByUser: null
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              description: description
+              content: content
+              parentReference:
+                path: path
+                driveId: driveId
+                driveType: driveType
+                name: name
+                shareId: shareId
+                id: id
+              file:
+                processingMetadata: true
+                hashes:
+                  sha256Hash: sha256Hash
+                  quickXorHash: quickXorHash
+                  sha1Hash: sha1Hash
+                  crc32Hash: crc32Hash
+                mimeType: mimeType
+              children:
+              - null
+              - null
+              permissions:
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              - grantedTo:
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                - application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                roles:
+                - roles
+                - roles
+              root: "{}"
+              cTag: cTag
+              eTag: eTag
+              id: id
+              image:
+                width: 1516424369
+                height: 494379917
+              lastModifiedBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              webDavUrl: webDavUrl
+              trash:
+                trashedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                trashedDateTime: 2000-01-23T04:56:07.000+00:00
+              deleted:
+                state: state
+              folder:
+                view:
+                  sortOrder: sortOrder
+                  viewType: viewType
+                  sortBy: sortBy
+                childCount: 1210617418
+              size: 3
+              createdBy:
+                application:
+                  displayName: displayName
+                  id: id
+                device:
+                  displayName: displayName
+                  id: id
+                user:
+                  displayName: displayName
+                  id: id
+              remoteItem:
+                image:
+                  width: 1516424369
+                  height: 494379917
+                shared:
+                  owner:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  scope: scope
+                  sharedBy:
+                    application:
+                      displayName: displayName
+                      id: id
+                    device:
+                      displayName: displayName
+                      id: id
+                    user:
+                      displayName: displayName
+                      id: id
+                  sharedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+                webDavUrl: webDavUrl
+                parentReference:
+                  path: path
+                  driveId: driveId
+                  driveType: driveType
+                  name: name
+                  shareId: shareId
+                  id: id
+                file:
+                  processingMetadata: true
+                  hashes:
+                    sha256Hash: sha256Hash
+                    quickXorHash: quickXorHash
+                    sha1Hash: sha1Hash
+                    crc32Hash: crc32Hash
+                  mimeType: mimeType
+                folder:
+                  view:
+                    sortOrder: sortOrder
+                    viewType: viewType
+                    sortBy: sortBy
+                  childCount: 1210617418
+                size: 9
+                createdBy:
+                  application:
+                    displayName: displayName
+                    id: id
+                  device:
+                    displayName: displayName
+                    id: id
+                  user:
+                    displayName: displayName
+                    id: id
+                webUrl: webUrl
+                name: name
+                cTag: cTag
+                eTag: eTag
+                id: id
+                specialFolder:
+                  name: name
+                fileSystemInfo:
+                  lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                  lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                  createdDateTime: 2000-01-23T04:56:07.000+00:00
+              webUrl: webUrl
+              name: name
+              specialFolder:
+                name: name
+              lastModifiedByUser: null
+              fileSystemInfo:
+                lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
+                lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
+                createdDateTime: 2000-01-23T04:56:07.000+00:00
+            lastModifiedByUser: null
       properties:
         value:
           items:

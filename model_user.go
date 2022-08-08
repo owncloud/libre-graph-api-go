@@ -22,6 +22,7 @@ type User struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// A collection of drives available for this user. Read-only.
 	Drives []Drive `json:"drives,omitempty"`
+	Drive *Drive `json:"drive,omitempty"`
 	// The SMTP address for the user, for example, 'jeff@contoso.onowncloud.com'. Returned by default. Supports $filter and endsWith.
 	Mail *string `json:"mail,omitempty"`
 	// Groups that this user is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
@@ -144,6 +145,38 @@ func (o *User) HasDrives() bool {
 // SetDrives gets a reference to the given []Drive and assigns it to the Drives field.
 func (o *User) SetDrives(v []Drive) {
 	o.Drives = v
+}
+
+// GetDrive returns the Drive field value if set, zero value otherwise.
+func (o *User) GetDrive() Drive {
+	if o == nil || o.Drive == nil {
+		var ret Drive
+		return ret
+	}
+	return *o.Drive
+}
+
+// GetDriveOk returns a tuple with the Drive field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetDriveOk() (*Drive, bool) {
+	if o == nil || o.Drive == nil {
+		return nil, false
+	}
+	return o.Drive, true
+}
+
+// HasDrive returns a boolean if a field has been set.
+func (o *User) HasDrive() bool {
+	if o != nil && o.Drive != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDrive gets a reference to the given Drive and assigns it to the Drive field.
+func (o *User) SetDrive(v Drive) {
+	o.Drive = &v
 }
 
 // GetMail returns the Mail field value if set, zero value otherwise.
@@ -316,6 +349,9 @@ func (o User) MarshalJSON() ([]byte, error) {
 	}
 	if o.Drives != nil {
 		toSerialize["drives"] = o.Drives
+	}
+	if o.Drive != nil {
+		toSerialize["drive"] = o.Drive
 	}
 	if o.Mail != nil {
 		toSerialize["mail"] = o.Mail

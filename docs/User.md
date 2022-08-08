@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | Read-only. | [optional] [readonly] 
 **DisplayName** | Pointer to **string** | The name displayed in the address book for the user. This value is usually the combination of the user&#39;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby. | [optional] 
 **Drives** | Pointer to [**[]Drive**](Drive.md) | A collection of drives available for this user. Read-only. | [optional] [readonly] 
+**Drive** | Pointer to [**Drive**](Drive.md) |  | [optional] 
 **Mail** | Pointer to **string** | The SMTP address for the user, for example, &#39;jeff@contoso.onowncloud.com&#39;. Returned by default. Supports $filter and endsWith. | [optional] 
 **MemberOf** | Pointer to [**[]Group**](Group.md) | Groups that this user is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand. | [optional] 
 **OnPremisesSamAccountName** | Pointer to **string** | Contains the on-premises SAM account name synchronized from the on-premises directory. Read-only. | [optional] 
@@ -106,6 +107,31 @@ SetDrives sets Drives field to given value.
 `func (o *User) HasDrives() bool`
 
 HasDrives returns a boolean if a field has been set.
+
+### GetDrive
+
+`func (o *User) GetDrive() Drive`
+
+GetDrive returns the Drive field if non-nil, zero value otherwise.
+
+### GetDriveOk
+
+`func (o *User) GetDriveOk() (*Drive, bool)`
+
+GetDriveOk returns a tuple with the Drive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDrive
+
+`func (o *User) SetDrive(v Drive)`
+
+SetDrive sets Drive field to given value.
+
+### HasDrive
+
+`func (o *User) HasDrive() bool`
+
+HasDrive returns a boolean if a field has been set.
 
 ### GetMail
 
