@@ -13,6 +13,21 @@ security:
 paths:
   /me:
     get:
+      operationId: GetOwnUser
+      parameters:
+      - description: Expand related entities
+        explode: false
+        in: query
+        name: $expand
+        required: false
+        schema:
+          items:
+            enum:
+            - memberOf
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -26,6 +41,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      summary: Get current user
       tags:
       - me.user
       x-ms-docs-operation-type: operation

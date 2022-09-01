@@ -22,23 +22,30 @@ import (
 // MeUserApiService MeUserApi service
 type MeUserApiService service
 
-type ApiMeGetRequest struct {
+type ApiGetOwnUserRequest struct {
 	ctx context.Context
 	ApiService *MeUserApiService
+	expand *[]string
 }
 
-func (r ApiMeGetRequest) Execute() (*User, *http.Response, error) {
-	return r.ApiService.MeGetExecute(r)
+// Expand related entities
+func (r ApiGetOwnUserRequest) Expand(expand []string) ApiGetOwnUserRequest {
+	r.expand = &expand
+	return r
+}
+
+func (r ApiGetOwnUserRequest) Execute() (*User, *http.Response, error) {
+	return r.ApiService.GetOwnUserExecute(r)
 }
 
 /*
-MeGet Method for MeGet
+GetOwnUser Get current user
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMeGetRequest
+ @return ApiGetOwnUserRequest
 */
-func (a *MeUserApiService) MeGet(ctx context.Context) ApiMeGetRequest {
-	return ApiMeGetRequest{
+func (a *MeUserApiService) GetOwnUser(ctx context.Context) ApiGetOwnUserRequest {
+	return ApiGetOwnUserRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +53,7 @@ func (a *MeUserApiService) MeGet(ctx context.Context) ApiMeGetRequest {
 
 // Execute executes the request
 //  @return User
-func (a *MeUserApiService) MeGetExecute(r ApiMeGetRequest) (*User, *http.Response, error) {
+func (a *MeUserApiService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +61,7 @@ func (a *MeUserApiService) MeGetExecute(r ApiMeGetRequest) (*User, *http.Respons
 		localVarReturnValue  *User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeUserApiService.MeGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeUserApiService.GetOwnUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -65,6 +72,9 @@ func (a *MeUserApiService) MeGetExecute(r ApiMeGetRequest) (*User, *http.Respons
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.expand != nil {
+		localVarQueryParams.Add("$expand", parameterToString(*r.expand, "csv"))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

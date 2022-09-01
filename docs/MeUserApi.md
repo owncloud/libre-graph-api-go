@@ -4,15 +4,15 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MeGet**](MeUserApi.md#MeGet) | **Get** /me | 
+[**GetOwnUser**](MeUserApi.md#GetOwnUser) | **Get** /me | Get current user
 
 
 
-## MeGet
+## GetOwnUser
 
-> User MeGet(ctx).Execute()
+> User GetOwnUser(ctx).Expand(expand).Execute()
 
-
+Get current user
 
 ### Example
 
@@ -27,27 +27,32 @@ import (
 )
 
 func main() {
+    expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeUserApi.MeGet(context.Background()).Execute()
+    resp, r, err := apiClient.MeUserApi.GetOwnUser(context.Background()).Expand(expand).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeUserApi.MeGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MeUserApi.GetOwnUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MeGet`: User
-    fmt.Fprintf(os.Stdout, "Response from `MeUserApi.MeGet`: %v\n", resp)
+    // response from `GetOwnUser`: User
+    fmt.Fprintf(os.Stdout, "Response from `MeUserApi.GetOwnUser`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiMeGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetOwnUserRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **expand** | **[]string** | Expand related entities | 
 
 ### Return type
 

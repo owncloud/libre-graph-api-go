@@ -96,7 +96,7 @@ Class | Method | HTTP request | Description
 *MeDriveRootApi* | [**HomeGetRoot**](docs/MeDriveRootApi.md#homegetroot) | **Get** /me/drive/root | Get root from personal space
 *MeDriveRootChildrenApi* | [**HomeGetChildren**](docs/MeDriveRootChildrenApi.md#homegetchildren) | **Get** /me/drive/root/children | Get children from drive
 *MeDrivesApi* | [**ListMyDrives**](docs/MeDrivesApi.md#listmydrives) | **Get** /me/drives | Get drives from me
-*MeUserApi* | [**MeGet**](docs/MeUserApi.md#meget) | **Get** /me | 
+*MeUserApi* | [**GetOwnUser**](docs/MeUserApi.md#getownuser) | **Get** /me | Get current user
 *UserApi* | [**DeleteUser**](docs/UserApi.md#deleteuser) | **Delete** /users/{user-id} | Delete entity from users
 *UserApi* | [**GetUser**](docs/UserApi.md#getuser) | **Get** /users/{user-id} | Get entity from users by key
 *UserApi* | [**UpdateUser**](docs/UserApi.md#updateuser) | **Patch** /users/{user-id} | Update entity in users
