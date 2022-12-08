@@ -1,4 +1,4 @@
-# User
+# EducationUser
 
 ## Properties
 
@@ -16,325 +16,351 @@ Name | Type | Description | Notes
 **PasswordProfile** | Pointer to [**PasswordProfile**](PasswordProfile.md) |  | [optional] 
 **Surname** | Pointer to **string** | The user&#39;s surname (family name or last name). Returned by default. Supports $filter. | [optional] 
 **GivenName** | Pointer to **string** | The user&#39;s givenName. Returned by default. Supports $filter. | [optional] 
+**PrimaryRole** | Pointer to **string** | The user&#x60;s default role. Such as \&quot;student\&quot; or \&quot;teacher\&quot; | [optional] 
 
 ## Methods
 
-### NewUser
+### NewEducationUser
 
-`func NewUser() *User`
+`func NewEducationUser() *EducationUser`
 
-NewUser instantiates a new User object
+NewEducationUser instantiates a new EducationUser object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUserWithDefaults
+### NewEducationUserWithDefaults
 
-`func NewUserWithDefaults() *User`
+`func NewEducationUserWithDefaults() *EducationUser`
 
-NewUserWithDefaults instantiates a new User object
+NewEducationUserWithDefaults instantiates a new EducationUser object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *User) GetId() string`
+`func (o *EducationUser) GetId() string`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *User) GetIdOk() (*string, bool)`
+`func (o *EducationUser) GetIdOk() (*string, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *User) SetId(v string)`
+`func (o *EducationUser) SetId(v string)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *User) HasId() bool`
+`func (o *EducationUser) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 
 ### GetAccountEnabled
 
-`func (o *User) GetAccountEnabled() bool`
+`func (o *EducationUser) GetAccountEnabled() bool`
 
 GetAccountEnabled returns the AccountEnabled field if non-nil, zero value otherwise.
 
 ### GetAccountEnabledOk
 
-`func (o *User) GetAccountEnabledOk() (*bool, bool)`
+`func (o *EducationUser) GetAccountEnabledOk() (*bool, bool)`
 
 GetAccountEnabledOk returns a tuple with the AccountEnabled field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccountEnabled
 
-`func (o *User) SetAccountEnabled(v bool)`
+`func (o *EducationUser) SetAccountEnabled(v bool)`
 
 SetAccountEnabled sets AccountEnabled field to given value.
 
 ### HasAccountEnabled
 
-`func (o *User) HasAccountEnabled() bool`
+`func (o *EducationUser) HasAccountEnabled() bool`
 
 HasAccountEnabled returns a boolean if a field has been set.
 
 ### GetDisplayName
 
-`func (o *User) GetDisplayName() string`
+`func (o *EducationUser) GetDisplayName() string`
 
 GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
 
 ### GetDisplayNameOk
 
-`func (o *User) GetDisplayNameOk() (*string, bool)`
+`func (o *EducationUser) GetDisplayNameOk() (*string, bool)`
 
 GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDisplayName
 
-`func (o *User) SetDisplayName(v string)`
+`func (o *EducationUser) SetDisplayName(v string)`
 
 SetDisplayName sets DisplayName field to given value.
 
 ### HasDisplayName
 
-`func (o *User) HasDisplayName() bool`
+`func (o *EducationUser) HasDisplayName() bool`
 
 HasDisplayName returns a boolean if a field has been set.
 
 ### GetDrives
 
-`func (o *User) GetDrives() []Drive`
+`func (o *EducationUser) GetDrives() []Drive`
 
 GetDrives returns the Drives field if non-nil, zero value otherwise.
 
 ### GetDrivesOk
 
-`func (o *User) GetDrivesOk() (*[]Drive, bool)`
+`func (o *EducationUser) GetDrivesOk() (*[]Drive, bool)`
 
 GetDrivesOk returns a tuple with the Drives field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDrives
 
-`func (o *User) SetDrives(v []Drive)`
+`func (o *EducationUser) SetDrives(v []Drive)`
 
 SetDrives sets Drives field to given value.
 
 ### HasDrives
 
-`func (o *User) HasDrives() bool`
+`func (o *EducationUser) HasDrives() bool`
 
 HasDrives returns a boolean if a field has been set.
 
 ### GetDrive
 
-`func (o *User) GetDrive() Drive`
+`func (o *EducationUser) GetDrive() Drive`
 
 GetDrive returns the Drive field if non-nil, zero value otherwise.
 
 ### GetDriveOk
 
-`func (o *User) GetDriveOk() (*Drive, bool)`
+`func (o *EducationUser) GetDriveOk() (*Drive, bool)`
 
 GetDriveOk returns a tuple with the Drive field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDrive
 
-`func (o *User) SetDrive(v Drive)`
+`func (o *EducationUser) SetDrive(v Drive)`
 
 SetDrive sets Drive field to given value.
 
 ### HasDrive
 
-`func (o *User) HasDrive() bool`
+`func (o *EducationUser) HasDrive() bool`
 
 HasDrive returns a boolean if a field has been set.
 
 ### GetIdentities
 
-`func (o *User) GetIdentities() []ObjectIdentity`
+`func (o *EducationUser) GetIdentities() []ObjectIdentity`
 
 GetIdentities returns the Identities field if non-nil, zero value otherwise.
 
 ### GetIdentitiesOk
 
-`func (o *User) GetIdentitiesOk() (*[]ObjectIdentity, bool)`
+`func (o *EducationUser) GetIdentitiesOk() (*[]ObjectIdentity, bool)`
 
 GetIdentitiesOk returns a tuple with the Identities field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIdentities
 
-`func (o *User) SetIdentities(v []ObjectIdentity)`
+`func (o *EducationUser) SetIdentities(v []ObjectIdentity)`
 
 SetIdentities sets Identities field to given value.
 
 ### HasIdentities
 
-`func (o *User) HasIdentities() bool`
+`func (o *EducationUser) HasIdentities() bool`
 
 HasIdentities returns a boolean if a field has been set.
 
 ### GetMail
 
-`func (o *User) GetMail() string`
+`func (o *EducationUser) GetMail() string`
 
 GetMail returns the Mail field if non-nil, zero value otherwise.
 
 ### GetMailOk
 
-`func (o *User) GetMailOk() (*string, bool)`
+`func (o *EducationUser) GetMailOk() (*string, bool)`
 
 GetMailOk returns a tuple with the Mail field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMail
 
-`func (o *User) SetMail(v string)`
+`func (o *EducationUser) SetMail(v string)`
 
 SetMail sets Mail field to given value.
 
 ### HasMail
 
-`func (o *User) HasMail() bool`
+`func (o *EducationUser) HasMail() bool`
 
 HasMail returns a boolean if a field has been set.
 
 ### GetMemberOf
 
-`func (o *User) GetMemberOf() []Group`
+`func (o *EducationUser) GetMemberOf() []Group`
 
 GetMemberOf returns the MemberOf field if non-nil, zero value otherwise.
 
 ### GetMemberOfOk
 
-`func (o *User) GetMemberOfOk() (*[]Group, bool)`
+`func (o *EducationUser) GetMemberOfOk() (*[]Group, bool)`
 
 GetMemberOfOk returns a tuple with the MemberOf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMemberOf
 
-`func (o *User) SetMemberOf(v []Group)`
+`func (o *EducationUser) SetMemberOf(v []Group)`
 
 SetMemberOf sets MemberOf field to given value.
 
 ### HasMemberOf
 
-`func (o *User) HasMemberOf() bool`
+`func (o *EducationUser) HasMemberOf() bool`
 
 HasMemberOf returns a boolean if a field has been set.
 
 ### GetOnPremisesSamAccountName
 
-`func (o *User) GetOnPremisesSamAccountName() string`
+`func (o *EducationUser) GetOnPremisesSamAccountName() string`
 
 GetOnPremisesSamAccountName returns the OnPremisesSamAccountName field if non-nil, zero value otherwise.
 
 ### GetOnPremisesSamAccountNameOk
 
-`func (o *User) GetOnPremisesSamAccountNameOk() (*string, bool)`
+`func (o *EducationUser) GetOnPremisesSamAccountNameOk() (*string, bool)`
 
 GetOnPremisesSamAccountNameOk returns a tuple with the OnPremisesSamAccountName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOnPremisesSamAccountName
 
-`func (o *User) SetOnPremisesSamAccountName(v string)`
+`func (o *EducationUser) SetOnPremisesSamAccountName(v string)`
 
 SetOnPremisesSamAccountName sets OnPremisesSamAccountName field to given value.
 
 ### HasOnPremisesSamAccountName
 
-`func (o *User) HasOnPremisesSamAccountName() bool`
+`func (o *EducationUser) HasOnPremisesSamAccountName() bool`
 
 HasOnPremisesSamAccountName returns a boolean if a field has been set.
 
 ### GetPasswordProfile
 
-`func (o *User) GetPasswordProfile() PasswordProfile`
+`func (o *EducationUser) GetPasswordProfile() PasswordProfile`
 
 GetPasswordProfile returns the PasswordProfile field if non-nil, zero value otherwise.
 
 ### GetPasswordProfileOk
 
-`func (o *User) GetPasswordProfileOk() (*PasswordProfile, bool)`
+`func (o *EducationUser) GetPasswordProfileOk() (*PasswordProfile, bool)`
 
 GetPasswordProfileOk returns a tuple with the PasswordProfile field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPasswordProfile
 
-`func (o *User) SetPasswordProfile(v PasswordProfile)`
+`func (o *EducationUser) SetPasswordProfile(v PasswordProfile)`
 
 SetPasswordProfile sets PasswordProfile field to given value.
 
 ### HasPasswordProfile
 
-`func (o *User) HasPasswordProfile() bool`
+`func (o *EducationUser) HasPasswordProfile() bool`
 
 HasPasswordProfile returns a boolean if a field has been set.
 
 ### GetSurname
 
-`func (o *User) GetSurname() string`
+`func (o *EducationUser) GetSurname() string`
 
 GetSurname returns the Surname field if non-nil, zero value otherwise.
 
 ### GetSurnameOk
 
-`func (o *User) GetSurnameOk() (*string, bool)`
+`func (o *EducationUser) GetSurnameOk() (*string, bool)`
 
 GetSurnameOk returns a tuple with the Surname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSurname
 
-`func (o *User) SetSurname(v string)`
+`func (o *EducationUser) SetSurname(v string)`
 
 SetSurname sets Surname field to given value.
 
 ### HasSurname
 
-`func (o *User) HasSurname() bool`
+`func (o *EducationUser) HasSurname() bool`
 
 HasSurname returns a boolean if a field has been set.
 
 ### GetGivenName
 
-`func (o *User) GetGivenName() string`
+`func (o *EducationUser) GetGivenName() string`
 
 GetGivenName returns the GivenName field if non-nil, zero value otherwise.
 
 ### GetGivenNameOk
 
-`func (o *User) GetGivenNameOk() (*string, bool)`
+`func (o *EducationUser) GetGivenNameOk() (*string, bool)`
 
 GetGivenNameOk returns a tuple with the GivenName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGivenName
 
-`func (o *User) SetGivenName(v string)`
+`func (o *EducationUser) SetGivenName(v string)`
 
 SetGivenName sets GivenName field to given value.
 
 ### HasGivenName
 
-`func (o *User) HasGivenName() bool`
+`func (o *EducationUser) HasGivenName() bool`
 
 HasGivenName returns a boolean if a field has been set.
+
+### GetPrimaryRole
+
+`func (o *EducationUser) GetPrimaryRole() string`
+
+GetPrimaryRole returns the PrimaryRole field if non-nil, zero value otherwise.
+
+### GetPrimaryRoleOk
+
+`func (o *EducationUser) GetPrimaryRoleOk() (*string, bool)`
+
+GetPrimaryRoleOk returns a tuple with the PrimaryRole field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrimaryRole
+
+`func (o *EducationUser) SetPrimaryRole(v string)`
+
+SetPrimaryRole sets PrimaryRole field to given value.
+
+### HasPrimaryRole
+
+`func (o *EducationUser) HasPrimaryRole() bool`
+
+HasPrimaryRole returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -14,8 +14,8 @@ import (
 	"encoding/json"
 )
 
-// User Represents an Active Directory user object.
-type User struct {
+// EducationUser And extension of user with education specific attributes
+type EducationUser struct {
 	// Read-only.
 	Id *string `json:"id,omitempty"`
 	// Set to \"true\" when the account is enabled.
@@ -38,27 +38,29 @@ type User struct {
 	Surname *string `json:"surname,omitempty"`
 	// The user's givenName. Returned by default. Supports $filter.
 	GivenName *string `json:"givenName,omitempty"`
+	// The user`s default role. Such as \"student\" or \"teacher\"
+	PrimaryRole *string `json:"primaryRole,omitempty"`
 }
 
-// NewUser instantiates a new User object
+// NewEducationUser instantiates a new EducationUser object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUser() *User {
-	this := User{}
+func NewEducationUser() *EducationUser {
+	this := EducationUser{}
 	return &this
 }
 
-// NewUserWithDefaults instantiates a new User object
+// NewEducationUserWithDefaults instantiates a new EducationUser object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUserWithDefaults() *User {
-	this := User{}
+func NewEducationUserWithDefaults() *EducationUser {
+	this := EducationUser{}
 	return &this
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *User) GetId() string {
+func (o *EducationUser) GetId() string {
 	if o == nil || o.Id == nil {
 		var ret string
 		return ret
@@ -68,7 +70,7 @@ func (o *User) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetIdOk() (*string, bool) {
+func (o *EducationUser) GetIdOk() (*string, bool) {
 	if o == nil || o.Id == nil {
 		return nil, false
 	}
@@ -76,7 +78,7 @@ func (o *User) GetIdOk() (*string, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *User) HasId() bool {
+func (o *EducationUser) HasId() bool {
 	if o != nil && o.Id != nil {
 		return true
 	}
@@ -85,12 +87,12 @@ func (o *User) HasId() bool {
 }
 
 // SetId gets a reference to the given string and assigns it to the Id field.
-func (o *User) SetId(v string) {
+func (o *EducationUser) SetId(v string) {
 	o.Id = &v
 }
 
 // GetAccountEnabled returns the AccountEnabled field value if set, zero value otherwise.
-func (o *User) GetAccountEnabled() bool {
+func (o *EducationUser) GetAccountEnabled() bool {
 	if o == nil || o.AccountEnabled == nil {
 		var ret bool
 		return ret
@@ -100,7 +102,7 @@ func (o *User) GetAccountEnabled() bool {
 
 // GetAccountEnabledOk returns a tuple with the AccountEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetAccountEnabledOk() (*bool, bool) {
+func (o *EducationUser) GetAccountEnabledOk() (*bool, bool) {
 	if o == nil || o.AccountEnabled == nil {
 		return nil, false
 	}
@@ -108,7 +110,7 @@ func (o *User) GetAccountEnabledOk() (*bool, bool) {
 }
 
 // HasAccountEnabled returns a boolean if a field has been set.
-func (o *User) HasAccountEnabled() bool {
+func (o *EducationUser) HasAccountEnabled() bool {
 	if o != nil && o.AccountEnabled != nil {
 		return true
 	}
@@ -117,12 +119,12 @@ func (o *User) HasAccountEnabled() bool {
 }
 
 // SetAccountEnabled gets a reference to the given bool and assigns it to the AccountEnabled field.
-func (o *User) SetAccountEnabled(v bool) {
+func (o *EducationUser) SetAccountEnabled(v bool) {
 	o.AccountEnabled = &v
 }
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
-func (o *User) GetDisplayName() string {
+func (o *EducationUser) GetDisplayName() string {
 	if o == nil || o.DisplayName == nil {
 		var ret string
 		return ret
@@ -132,7 +134,7 @@ func (o *User) GetDisplayName() string {
 
 // GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetDisplayNameOk() (*string, bool) {
+func (o *EducationUser) GetDisplayNameOk() (*string, bool) {
 	if o == nil || o.DisplayName == nil {
 		return nil, false
 	}
@@ -140,7 +142,7 @@ func (o *User) GetDisplayNameOk() (*string, bool) {
 }
 
 // HasDisplayName returns a boolean if a field has been set.
-func (o *User) HasDisplayName() bool {
+func (o *EducationUser) HasDisplayName() bool {
 	if o != nil && o.DisplayName != nil {
 		return true
 	}
@@ -149,12 +151,12 @@ func (o *User) HasDisplayName() bool {
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
-func (o *User) SetDisplayName(v string) {
+func (o *EducationUser) SetDisplayName(v string) {
 	o.DisplayName = &v
 }
 
 // GetDrives returns the Drives field value if set, zero value otherwise.
-func (o *User) GetDrives() []Drive {
+func (o *EducationUser) GetDrives() []Drive {
 	if o == nil || o.Drives == nil {
 		var ret []Drive
 		return ret
@@ -164,7 +166,7 @@ func (o *User) GetDrives() []Drive {
 
 // GetDrivesOk returns a tuple with the Drives field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetDrivesOk() ([]Drive, bool) {
+func (o *EducationUser) GetDrivesOk() ([]Drive, bool) {
 	if o == nil || o.Drives == nil {
 		return nil, false
 	}
@@ -172,7 +174,7 @@ func (o *User) GetDrivesOk() ([]Drive, bool) {
 }
 
 // HasDrives returns a boolean if a field has been set.
-func (o *User) HasDrives() bool {
+func (o *EducationUser) HasDrives() bool {
 	if o != nil && o.Drives != nil {
 		return true
 	}
@@ -181,12 +183,12 @@ func (o *User) HasDrives() bool {
 }
 
 // SetDrives gets a reference to the given []Drive and assigns it to the Drives field.
-func (o *User) SetDrives(v []Drive) {
+func (o *EducationUser) SetDrives(v []Drive) {
 	o.Drives = v
 }
 
 // GetDrive returns the Drive field value if set, zero value otherwise.
-func (o *User) GetDrive() Drive {
+func (o *EducationUser) GetDrive() Drive {
 	if o == nil || o.Drive == nil {
 		var ret Drive
 		return ret
@@ -196,7 +198,7 @@ func (o *User) GetDrive() Drive {
 
 // GetDriveOk returns a tuple with the Drive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetDriveOk() (*Drive, bool) {
+func (o *EducationUser) GetDriveOk() (*Drive, bool) {
 	if o == nil || o.Drive == nil {
 		return nil, false
 	}
@@ -204,7 +206,7 @@ func (o *User) GetDriveOk() (*Drive, bool) {
 }
 
 // HasDrive returns a boolean if a field has been set.
-func (o *User) HasDrive() bool {
+func (o *EducationUser) HasDrive() bool {
 	if o != nil && o.Drive != nil {
 		return true
 	}
@@ -213,12 +215,12 @@ func (o *User) HasDrive() bool {
 }
 
 // SetDrive gets a reference to the given Drive and assigns it to the Drive field.
-func (o *User) SetDrive(v Drive) {
+func (o *EducationUser) SetDrive(v Drive) {
 	o.Drive = &v
 }
 
 // GetIdentities returns the Identities field value if set, zero value otherwise.
-func (o *User) GetIdentities() []ObjectIdentity {
+func (o *EducationUser) GetIdentities() []ObjectIdentity {
 	if o == nil || o.Identities == nil {
 		var ret []ObjectIdentity
 		return ret
@@ -228,7 +230,7 @@ func (o *User) GetIdentities() []ObjectIdentity {
 
 // GetIdentitiesOk returns a tuple with the Identities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetIdentitiesOk() ([]ObjectIdentity, bool) {
+func (o *EducationUser) GetIdentitiesOk() ([]ObjectIdentity, bool) {
 	if o == nil || o.Identities == nil {
 		return nil, false
 	}
@@ -236,7 +238,7 @@ func (o *User) GetIdentitiesOk() ([]ObjectIdentity, bool) {
 }
 
 // HasIdentities returns a boolean if a field has been set.
-func (o *User) HasIdentities() bool {
+func (o *EducationUser) HasIdentities() bool {
 	if o != nil && o.Identities != nil {
 		return true
 	}
@@ -245,12 +247,12 @@ func (o *User) HasIdentities() bool {
 }
 
 // SetIdentities gets a reference to the given []ObjectIdentity and assigns it to the Identities field.
-func (o *User) SetIdentities(v []ObjectIdentity) {
+func (o *EducationUser) SetIdentities(v []ObjectIdentity) {
 	o.Identities = v
 }
 
 // GetMail returns the Mail field value if set, zero value otherwise.
-func (o *User) GetMail() string {
+func (o *EducationUser) GetMail() string {
 	if o == nil || o.Mail == nil {
 		var ret string
 		return ret
@@ -260,7 +262,7 @@ func (o *User) GetMail() string {
 
 // GetMailOk returns a tuple with the Mail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetMailOk() (*string, bool) {
+func (o *EducationUser) GetMailOk() (*string, bool) {
 	if o == nil || o.Mail == nil {
 		return nil, false
 	}
@@ -268,7 +270,7 @@ func (o *User) GetMailOk() (*string, bool) {
 }
 
 // HasMail returns a boolean if a field has been set.
-func (o *User) HasMail() bool {
+func (o *EducationUser) HasMail() bool {
 	if o != nil && o.Mail != nil {
 		return true
 	}
@@ -277,12 +279,12 @@ func (o *User) HasMail() bool {
 }
 
 // SetMail gets a reference to the given string and assigns it to the Mail field.
-func (o *User) SetMail(v string) {
+func (o *EducationUser) SetMail(v string) {
 	o.Mail = &v
 }
 
 // GetMemberOf returns the MemberOf field value if set, zero value otherwise.
-func (o *User) GetMemberOf() []Group {
+func (o *EducationUser) GetMemberOf() []Group {
 	if o == nil || o.MemberOf == nil {
 		var ret []Group
 		return ret
@@ -292,7 +294,7 @@ func (o *User) GetMemberOf() []Group {
 
 // GetMemberOfOk returns a tuple with the MemberOf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetMemberOfOk() ([]Group, bool) {
+func (o *EducationUser) GetMemberOfOk() ([]Group, bool) {
 	if o == nil || o.MemberOf == nil {
 		return nil, false
 	}
@@ -300,7 +302,7 @@ func (o *User) GetMemberOfOk() ([]Group, bool) {
 }
 
 // HasMemberOf returns a boolean if a field has been set.
-func (o *User) HasMemberOf() bool {
+func (o *EducationUser) HasMemberOf() bool {
 	if o != nil && o.MemberOf != nil {
 		return true
 	}
@@ -309,12 +311,12 @@ func (o *User) HasMemberOf() bool {
 }
 
 // SetMemberOf gets a reference to the given []Group and assigns it to the MemberOf field.
-func (o *User) SetMemberOf(v []Group) {
+func (o *EducationUser) SetMemberOf(v []Group) {
 	o.MemberOf = v
 }
 
 // GetOnPremisesSamAccountName returns the OnPremisesSamAccountName field value if set, zero value otherwise.
-func (o *User) GetOnPremisesSamAccountName() string {
+func (o *EducationUser) GetOnPremisesSamAccountName() string {
 	if o == nil || o.OnPremisesSamAccountName == nil {
 		var ret string
 		return ret
@@ -324,7 +326,7 @@ func (o *User) GetOnPremisesSamAccountName() string {
 
 // GetOnPremisesSamAccountNameOk returns a tuple with the OnPremisesSamAccountName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetOnPremisesSamAccountNameOk() (*string, bool) {
+func (o *EducationUser) GetOnPremisesSamAccountNameOk() (*string, bool) {
 	if o == nil || o.OnPremisesSamAccountName == nil {
 		return nil, false
 	}
@@ -332,7 +334,7 @@ func (o *User) GetOnPremisesSamAccountNameOk() (*string, bool) {
 }
 
 // HasOnPremisesSamAccountName returns a boolean if a field has been set.
-func (o *User) HasOnPremisesSamAccountName() bool {
+func (o *EducationUser) HasOnPremisesSamAccountName() bool {
 	if o != nil && o.OnPremisesSamAccountName != nil {
 		return true
 	}
@@ -341,12 +343,12 @@ func (o *User) HasOnPremisesSamAccountName() bool {
 }
 
 // SetOnPremisesSamAccountName gets a reference to the given string and assigns it to the OnPremisesSamAccountName field.
-func (o *User) SetOnPremisesSamAccountName(v string) {
+func (o *EducationUser) SetOnPremisesSamAccountName(v string) {
 	o.OnPremisesSamAccountName = &v
 }
 
 // GetPasswordProfile returns the PasswordProfile field value if set, zero value otherwise.
-func (o *User) GetPasswordProfile() PasswordProfile {
+func (o *EducationUser) GetPasswordProfile() PasswordProfile {
 	if o == nil || o.PasswordProfile == nil {
 		var ret PasswordProfile
 		return ret
@@ -356,7 +358,7 @@ func (o *User) GetPasswordProfile() PasswordProfile {
 
 // GetPasswordProfileOk returns a tuple with the PasswordProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetPasswordProfileOk() (*PasswordProfile, bool) {
+func (o *EducationUser) GetPasswordProfileOk() (*PasswordProfile, bool) {
 	if o == nil || o.PasswordProfile == nil {
 		return nil, false
 	}
@@ -364,7 +366,7 @@ func (o *User) GetPasswordProfileOk() (*PasswordProfile, bool) {
 }
 
 // HasPasswordProfile returns a boolean if a field has been set.
-func (o *User) HasPasswordProfile() bool {
+func (o *EducationUser) HasPasswordProfile() bool {
 	if o != nil && o.PasswordProfile != nil {
 		return true
 	}
@@ -373,12 +375,12 @@ func (o *User) HasPasswordProfile() bool {
 }
 
 // SetPasswordProfile gets a reference to the given PasswordProfile and assigns it to the PasswordProfile field.
-func (o *User) SetPasswordProfile(v PasswordProfile) {
+func (o *EducationUser) SetPasswordProfile(v PasswordProfile) {
 	o.PasswordProfile = &v
 }
 
 // GetSurname returns the Surname field value if set, zero value otherwise.
-func (o *User) GetSurname() string {
+func (o *EducationUser) GetSurname() string {
 	if o == nil || o.Surname == nil {
 		var ret string
 		return ret
@@ -388,7 +390,7 @@ func (o *User) GetSurname() string {
 
 // GetSurnameOk returns a tuple with the Surname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetSurnameOk() (*string, bool) {
+func (o *EducationUser) GetSurnameOk() (*string, bool) {
 	if o == nil || o.Surname == nil {
 		return nil, false
 	}
@@ -396,7 +398,7 @@ func (o *User) GetSurnameOk() (*string, bool) {
 }
 
 // HasSurname returns a boolean if a field has been set.
-func (o *User) HasSurname() bool {
+func (o *EducationUser) HasSurname() bool {
 	if o != nil && o.Surname != nil {
 		return true
 	}
@@ -405,12 +407,12 @@ func (o *User) HasSurname() bool {
 }
 
 // SetSurname gets a reference to the given string and assigns it to the Surname field.
-func (o *User) SetSurname(v string) {
+func (o *EducationUser) SetSurname(v string) {
 	o.Surname = &v
 }
 
 // GetGivenName returns the GivenName field value if set, zero value otherwise.
-func (o *User) GetGivenName() string {
+func (o *EducationUser) GetGivenName() string {
 	if o == nil || o.GivenName == nil {
 		var ret string
 		return ret
@@ -420,7 +422,7 @@ func (o *User) GetGivenName() string {
 
 // GetGivenNameOk returns a tuple with the GivenName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetGivenNameOk() (*string, bool) {
+func (o *EducationUser) GetGivenNameOk() (*string, bool) {
 	if o == nil || o.GivenName == nil {
 		return nil, false
 	}
@@ -428,7 +430,7 @@ func (o *User) GetGivenNameOk() (*string, bool) {
 }
 
 // HasGivenName returns a boolean if a field has been set.
-func (o *User) HasGivenName() bool {
+func (o *EducationUser) HasGivenName() bool {
 	if o != nil && o.GivenName != nil {
 		return true
 	}
@@ -437,11 +439,43 @@ func (o *User) HasGivenName() bool {
 }
 
 // SetGivenName gets a reference to the given string and assigns it to the GivenName field.
-func (o *User) SetGivenName(v string) {
+func (o *EducationUser) SetGivenName(v string) {
 	o.GivenName = &v
 }
 
-func (o User) MarshalJSON() ([]byte, error) {
+// GetPrimaryRole returns the PrimaryRole field value if set, zero value otherwise.
+func (o *EducationUser) GetPrimaryRole() string {
+	if o == nil || o.PrimaryRole == nil {
+		var ret string
+		return ret
+	}
+	return *o.PrimaryRole
+}
+
+// GetPrimaryRoleOk returns a tuple with the PrimaryRole field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EducationUser) GetPrimaryRoleOk() (*string, bool) {
+	if o == nil || o.PrimaryRole == nil {
+		return nil, false
+	}
+	return o.PrimaryRole, true
+}
+
+// HasPrimaryRole returns a boolean if a field has been set.
+func (o *EducationUser) HasPrimaryRole() bool {
+	if o != nil && o.PrimaryRole != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPrimaryRole gets a reference to the given string and assigns it to the PrimaryRole field.
+func (o *EducationUser) SetPrimaryRole(v string) {
+	o.PrimaryRole = &v
+}
+
+func (o EducationUser) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -479,41 +513,44 @@ func (o User) MarshalJSON() ([]byte, error) {
 	if o.GivenName != nil {
 		toSerialize["givenName"] = o.GivenName
 	}
+	if o.PrimaryRole != nil {
+		toSerialize["primaryRole"] = o.PrimaryRole
+	}
 	return json.Marshal(toSerialize)
 }
 
-type NullableUser struct {
-	value *User
+type NullableEducationUser struct {
+	value *EducationUser
 	isSet bool
 }
 
-func (v NullableUser) Get() *User {
+func (v NullableEducationUser) Get() *EducationUser {
 	return v.value
 }
 
-func (v *NullableUser) Set(val *User) {
+func (v *NullableEducationUser) Set(val *EducationUser) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableUser) IsSet() bool {
+func (v NullableEducationUser) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableUser) Unset() {
+func (v *NullableEducationUser) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableUser(val *User) *NullableUser {
-	return &NullableUser{value: val, isSet: true}
+func NewNullableEducationUser(val *EducationUser) *NullableEducationUser {
+	return &NullableEducationUser{value: val, isSet: true}
 }
 
-func (v NullableUser) MarshalJSON() ([]byte, error) {
+func (v NullableEducationUser) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableUser) UnmarshalJSON(src []byte) error {
+func (v *NullableEducationUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
