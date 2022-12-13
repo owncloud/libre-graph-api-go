@@ -1,6 +1,6 @@
 # \EducationClassApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -101,7 +101,7 @@ import (
 )
 
 func main() {
-    educationClass := *openapiclient.NewEducationClass() // EducationClass | New entity
+    educationClass := *openapiclient.NewEducationClass("DisplayName_example", "Classification_example") // EducationClass | New entity
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -428,7 +428,7 @@ import (
 
 func main() {
     classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id of class
-    educationClass := *openapiclient.NewEducationClass() // EducationClass | New property values
+    educationClass := *openapiclient.NewEducationClass("DisplayName_example", "Classification_example") // EducationClass | New property values
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

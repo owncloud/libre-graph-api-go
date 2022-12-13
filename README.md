@@ -74,7 +74,7 @@ ctx = context.WithValue(context.Background(), libregraph.ContextOperationServerV
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

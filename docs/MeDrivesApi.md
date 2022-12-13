@@ -1,6 +1,6 @@
 # \MeDrivesApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

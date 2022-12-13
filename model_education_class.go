@@ -21,7 +21,7 @@ type EducationClass struct {
 	// An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 	Description *string `json:"description,omitempty"`
 	// The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-	DisplayName *string `json:"displayName,omitempty"`
+	DisplayName string `json:"displayName"`
 	// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), Nullable. Supports $expand.
 	Members []User `json:"members,omitempty"`
 	// Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -31,7 +31,7 @@ type EducationClass struct {
 	// A list of member references to the members to be added. Up to 20 members can be added with a single request
 	MembersodataBind []string `json:"members@odata.bind,omitempty"`
 	// Classification of the group, i.e. \"class\" or \"course\"
-	Classification *string `json:"classification,omitempty"`
+	Classification string `json:"classification"`
 	// An external unique ID for the class
 	ExternalId *string `json:"externalId,omitempty"`
 }
@@ -40,8 +40,10 @@ type EducationClass struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEducationClass() *EducationClass {
+func NewEducationClass(displayName string, classification string) *EducationClass {
 	this := EducationClass{}
+	this.DisplayName = displayName
+	this.Classification = classification
 	return &this
 }
 
@@ -117,36 +119,28 @@ func (o *EducationClass) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
+// GetDisplayName returns the DisplayName field value
 func (o *EducationClass) GetDisplayName() string {
-	if o == nil || o.DisplayName == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.DisplayName
+
+	return o.DisplayName
 }
 
-// GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
+// GetDisplayNameOk returns a tuple with the DisplayName field value
 // and a boolean to check if the value has been set.
 func (o *EducationClass) GetDisplayNameOk() (*string, bool) {
-	if o == nil || o.DisplayName == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.DisplayName, true
+	return &o.DisplayName, true
 }
 
-// HasDisplayName returns a boolean if a field has been set.
-func (o *EducationClass) HasDisplayName() bool {
-	if o != nil && o.DisplayName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
+// SetDisplayName sets field value
 func (o *EducationClass) SetDisplayName(v string) {
-	o.DisplayName = &v
+	o.DisplayName = v
 }
 
 // GetMembers returns the Members field value if set, zero value otherwise.
@@ -277,36 +271,28 @@ func (o *EducationClass) SetMembersodataBind(v []string) {
 	o.MembersodataBind = v
 }
 
-// GetClassification returns the Classification field value if set, zero value otherwise.
+// GetClassification returns the Classification field value
 func (o *EducationClass) GetClassification() string {
-	if o == nil || o.Classification == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Classification
+
+	return o.Classification
 }
 
-// GetClassificationOk returns a tuple with the Classification field value if set, nil otherwise
+// GetClassificationOk returns a tuple with the Classification field value
 // and a boolean to check if the value has been set.
 func (o *EducationClass) GetClassificationOk() (*string, bool) {
-	if o == nil || o.Classification == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Classification, true
+	return &o.Classification, true
 }
 
-// HasClassification returns a boolean if a field has been set.
-func (o *EducationClass) HasClassification() bool {
-	if o != nil && o.Classification != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetClassification gets a reference to the given string and assigns it to the Classification field.
+// SetClassification sets field value
 func (o *EducationClass) SetClassification(v string) {
-	o.Classification = &v
+	o.Classification = v
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -349,7 +335,7 @@ func (o EducationClass) MarshalJSON() ([]byte, error) {
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}
-	if o.DisplayName != nil {
+	if true {
 		toSerialize["displayName"] = o.DisplayName
 	}
 	if o.Members != nil {
@@ -364,7 +350,7 @@ func (o EducationClass) MarshalJSON() ([]byte, error) {
 	if o.MembersodataBind != nil {
 		toSerialize["members@odata.bind"] = o.MembersodataBind
 	}
-	if o.Classification != nil {
+	if true {
 		toSerialize["classification"] = o.Classification
 	}
 	if o.ExternalId != nil {

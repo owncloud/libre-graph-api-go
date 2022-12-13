@@ -7,7 +7,9 @@ info:
   version: v1.0.0
 servers:
 - description: ownCloud Infinite Scale Latest
-  url: https://ocis.ocis-traefik.latest.owncloud.works/
+  url: https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0
+- description: ownCloud Infinite Scale Development Setup
+  url: https://localhost:9200/graph/v1.0
 security:
 - openId: []
 paths:
@@ -15496,6 +15498,9 @@ components:
         externalId:
           description: An external unique ID for the class
           type: string
+      required:
+      - classification
+      - displayName
       type: object
     educationUser:
       description: And extension of user with education specific attributes
