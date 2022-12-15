@@ -16,6 +16,7 @@ api_me_drive_root.go
 api_me_drive_root_children.go
 api_me_drives.go
 api_me_user.go
+api_tags.go
 api_user.go
 api_users.go
 client.go
@@ -28,6 +29,7 @@ docs/CollectionOfDrives.md
 docs/CollectionOfEducationUser.md
 docs/CollectionOfGroup.md
 docs/CollectionOfSchools.md
+docs/CollectionOfTags.md
 docs/CollectionOfUser.md
 docs/Deleted.md
 docs/DirectoryObject.md
@@ -75,6 +77,9 @@ docs/Quota.md
 docs/RemoteItem.md
 docs/Shared.md
 docs/SpecialFolder.md
+docs/TagAssignment.md
+docs/TagUnassignment.md
+docs/TagsApi.md
 docs/Trash.md
 docs/User.md
 docs/UserApi.md
@@ -90,6 +95,7 @@ model_collection_of_drives.go
 model_collection_of_education_user.go
 model_collection_of_group.go
 model_collection_of_schools.go
+model_collection_of_tags.go
 model_collection_of_user.go
 model_deleted.go
 model_directory_object.go
@@ -123,6 +129,8 @@ model_quota.go
 model_remote_item.go
 model_shared.go
 model_special_folder.go
+model_tag_assignment.go
+model_tag_unassignment.go
 model_trash.go
 model_user.go
 response.go

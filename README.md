@@ -118,6 +118,9 @@ Class | Method | HTTP request | Description
 *MeDriveRootChildrenApi* | [**HomeGetChildren**](docs/MeDriveRootChildrenApi.md#homegetchildren) | **Get** /me/drive/root/children | Get children from drive
 *MeDrivesApi* | [**ListMyDrives**](docs/MeDrivesApi.md#listmydrives) | **Get** /me/drives | Get drives from me
 *MeUserApi* | [**GetOwnUser**](docs/MeUserApi.md#getownuser) | **Get** /me | Get current user
+*TagsApi* | [**AssignTags**](docs/TagsApi.md#assigntags) | **Put** /extensions/org.libregraph/tags | Assign tags to a resource
+*TagsApi* | [**GetTags**](docs/TagsApi.md#gettags) | **Get** /extensions/org.libregraph/tags | Get all known tags
+*TagsApi* | [**UnassignTags**](docs/TagsApi.md#unassigntags) | **Delete** /extensions/org.libregraph/tags | Unassign tags from a resource
 *UserApi* | [**DeleteUser**](docs/UserApi.md#deleteuser) | **Delete** /users/{user-id} | Delete entity from users
 *UserApi* | [**GetUser**](docs/UserApi.md#getuser) | **Get** /users/{user-id} | Get entity from users by key
 *UserApi* | [**UpdateUser**](docs/UserApi.md#updateuser) | **Patch** /users/{user-id} | Update entity in users
@@ -135,6 +138,7 @@ Class | Method | HTTP request | Description
  - [CollectionOfEducationUser](docs/CollectionOfEducationUser.md)
  - [CollectionOfGroup](docs/CollectionOfGroup.md)
  - [CollectionOfSchools](docs/CollectionOfSchools.md)
+ - [CollectionOfTags](docs/CollectionOfTags.md)
  - [CollectionOfUser](docs/CollectionOfUser.md)
  - [Deleted](docs/Deleted.md)
  - [DirectoryObject](docs/DirectoryObject.md)
@@ -168,6 +172,8 @@ Class | Method | HTTP request | Description
  - [RemoteItem](docs/RemoteItem.md)
  - [Shared](docs/Shared.md)
  - [SpecialFolder](docs/SpecialFolder.md)
+ - [TagAssignment](docs/TagAssignment.md)
+ - [TagUnassignment](docs/TagUnassignment.md)
  - [Trash](docs/Trash.md)
  - [User](docs/User.md)
 

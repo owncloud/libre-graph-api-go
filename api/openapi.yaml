@@ -1936,8 +1936,77 @@ paths:
       summary: Unassign user from a class
       tags:
       - educationClass
+  /extensions/org.libregraph/tags:
+    delete:
+      operationId: UnassignTags
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tagUnassignment'
+      responses:
+        "200":
+          description: No content
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Unassign tags from a resource
+      tags:
+      - tags
+    get:
+      operationId: GetTags
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection_of_tags'
+          description: Retrieved tags
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Get all known tags
+      tags:
+      - tags
+    put:
+      operationId: AssignTags
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tagAssignment'
+      responses:
+        "200":
+          description: No content
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Assign tags to a resource
+      tags:
+      - tags
 components:
   examples:
+    tags_put:
+      value:
+        resourceId: 7f92b0a9-06ad-49dc-890f-0e0a6eb4dea6$e9f01ca3-577f-4d1d-acd4-1cc44149ac25!5fb9f87c-a317-467b-9882-eb9f171564ac
+        tags:
+        - tag_to_assign_1
+        - tag_to_assign_2
+    tags_delete:
+      value:
+        resourceId: 7f92b0a9-06ad-49dc-890f-0e0a6eb4dea6$e9f01ca3-577f-4d1d-acd4-1cc44149ac25!5fb9f87c-a317-467b-9882-eb9f171564ac
+        tags:
+        - tag_to_unassign_1
+        - tag_to_unassign_2
     educationUser:
       value:
         id: 90eedea1-dea1-90ee-a1de-ee90a1deee90
@@ -2087,6 +2156,30 @@ components:
           readOnly: true
           type: string
       readOnly: true
+      type: object
+    tagAssignment:
+      properties:
+        resourceId:
+          type: string
+        tags:
+          items:
+            type: string
+          type: array
+      required:
+      - resourceId
+      - tags
+      type: object
+    tagUnassignment:
+      properties:
+        resourceId:
+          type: string
+        tags:
+          items:
+            type: string
+          type: array
+      required:
+      - resourceId
+      - tags
       type: object
     educationOrganization:
       description: Abstract. Represents an organization in educational context
@@ -91068,6 +91161,18 @@ components:
           example: https://<hostname>/graph/v1.0/education/users/90eedea1-dea1-90ee-a1de-ee90a1deee90
           type: string
       title: Class Member Reference
+      type: object
+    Collection_of_tags:
+      example:
+        value:
+        - value
+        - value
+      properties:
+        value:
+          items:
+            type: string
+          type: array
+      title: Collection of tags
       type: object
   securitySchemes:
     openId:
