@@ -1942,6 +1942,9 @@ paths:
       requestBody:
         content:
           application/json:
+            examples:
+              unassign:
+                $ref: '#/components/examples/tags_delete'
             schema:
               $ref: '#/components/schemas/tagUnassignment'
       responses:
@@ -1979,6 +1982,9 @@ paths:
       requestBody:
         content:
           application/json:
+            examples:
+              assign:
+                $ref: '#/components/examples/tags_put'
             schema:
               $ref: '#/components/schemas/tagAssignment'
       responses:
