@@ -359,7 +359,7 @@ type ApiDeleteClassFromSchoolRequest struct {
 	ctx context.Context
 	ApiService *EducationSchoolApiService
 	schoolId string
-	userId string
+	classId string
 }
 
 func (r ApiDeleteClassFromSchoolRequest) Execute() (*http.Response, error) {
@@ -371,15 +371,15 @@ DeleteClassFromSchool Unassign class from a school
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param schoolId key: id of school
- @param userId key: id of the class to unassign from school
+ @param classId key: id of the class to unassign from school
  @return ApiDeleteClassFromSchoolRequest
 */
-func (a *EducationSchoolApiService) DeleteClassFromSchool(ctx context.Context, schoolId string, userId string) ApiDeleteClassFromSchoolRequest {
+func (a *EducationSchoolApiService) DeleteClassFromSchool(ctx context.Context, schoolId string, classId string) ApiDeleteClassFromSchoolRequest {
 	return ApiDeleteClassFromSchoolRequest{
 		ApiService: a,
 		ctx: ctx,
 		schoolId: schoolId,
-		userId: userId,
+		classId: classId,
 	}
 }
 
@@ -398,7 +398,7 @@ func (a *EducationSchoolApiService) DeleteClassFromSchoolExecute(r ApiDeleteClas
 
 	localVarPath := localBasePath + "/education/schools/{school-id}/classes/{class-id}/$ref"
 	localVarPath = strings.Replace(localVarPath, "{"+"school-id"+"}", url.PathEscape(parameterToString(r.schoolId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterToString(r.userId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"class-id"+"}", url.PathEscape(parameterToString(r.classId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -492,6 +492,16 @@ paths:
   /drives/{drive-id}/root:
     get:
       operationId: GetRoot
+      parameters:
+      - description: "key: id of drive"
+        explode: false
+        in: path
+        name: drive-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: drive
       responses:
         "200":
           content:
@@ -1687,7 +1697,7 @@ paths:
       - description: "key: id of the class to unassign from school"
         explode: false
         in: path
-        name: user-id
+        name: class-id
         required: true
         schema:
           example: 7e84a069-f374-479b-817d-71590117d443

@@ -16,6 +16,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"strings"
 )
 
 
@@ -25,6 +26,7 @@ type DrivesRootApiService service
 type ApiGetRootRequest struct {
 	ctx context.Context
 	ApiService *DrivesRootApiService
+	driveId string
 }
 
 func (r ApiGetRootRequest) Execute() (*DriveItem, *http.Response, error) {
@@ -35,12 +37,14 @@ func (r ApiGetRootRequest) Execute() (*DriveItem, *http.Response, error) {
 GetRoot Get root from arbitrary space
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
  @return ApiGetRootRequest
 */
-func (a *DrivesRootApiService) GetRoot(ctx context.Context) ApiGetRootRequest {
+func (a *DrivesRootApiService) GetRoot(ctx context.Context, driveId string) ApiGetRootRequest {
 	return ApiGetRootRequest{
 		ApiService: a,
 		ctx: ctx,
+		driveId: driveId,
 	}
 }
 
@@ -60,6 +64,7 @@ func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, 
 	}
 
 	localVarPath := localBasePath + "/drives/{drive-id}/root"
+	localVarPath = strings.Replace(localVarPath, "{"+"drive-id"+"}", url.PathEscape(parameterToString(r.driveId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

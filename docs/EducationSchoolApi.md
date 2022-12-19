@@ -218,7 +218,7 @@ No authorization required
 
 ## DeleteClassFromSchool
 
-> DeleteClassFromSchool(ctx, schoolId, userId).Execute()
+> DeleteClassFromSchool(ctx, schoolId, classId).Execute()
 
 Unassign class from a school
 
@@ -236,11 +236,11 @@ import (
 
 func main() {
     schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
-    userId := "7e84a069-f374-479b-817d-71590117d443" // string | key: id of the class to unassign from school
+    classId := "7e84a069-f374-479b-817d-71590117d443" // string | key: id of the class to unassign from school
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationSchoolApi.DeleteClassFromSchool(context.Background(), schoolId, userId).Execute()
+    resp, r, err := apiClient.EducationSchoolApi.DeleteClassFromSchool(context.Background(), schoolId, classId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.DeleteClassFromSchool``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **schoolId** | **string** | key: id of school | 
-**userId** | **string** | key: id of the class to unassign from school | 
+**classId** | **string** | key: id of the class to unassign from school | 
 
 ### Other Parameters
 
