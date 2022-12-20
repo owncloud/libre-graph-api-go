@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Read-only. | [optional] [readonly] 
+**Id** | Pointer to **string** | The unique idenfier for this drive. | [optional] [readonly] 
 **CreatedBy** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
 **CreatedDateTime** | Pointer to **time.Time** | Date and time of item creation. Read-only. | [optional] [readonly] 
 **Description** | Pointer to **string** | Provides a user-visible description of the item. Optional. | [optional] 
 **ETag** | Pointer to **string** | ETag for the item. Read-only. | [optional] [readonly] 
 **LastModifiedBy** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
 **LastModifiedDateTime** | Pointer to **time.Time** | Date and time the item was last modified. Read-only. | [optional] [readonly] 
-**Name** | Pointer to **string** | The name of the item. Read-write. | [optional] 
+**Name** | **string** | The name of the item. Read-write. | 
 **ParentReference** | Pointer to [**ItemReference**](ItemReference.md) |  | [optional] 
 **WebUrl** | Pointer to **string** | URL that displays the resource in the browser. Read-only. | [optional] [readonly] 
 **CreatedByUser** | Pointer to [**User**](User.md) |  | [optional] 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewDrive
 
-`func NewDrive() *Drive`
+`func NewDrive(name string, ) *Drive`
 
 NewDrive instantiates a new Drive object
 This constructor will assign default values to properties that have it defined,
@@ -237,11 +237,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *Drive) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetParentReference
 

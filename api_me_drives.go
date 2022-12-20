@@ -25,25 +25,8 @@ type MeDrivesApiService service
 type ApiListMyDrivesRequest struct {
 	ctx context.Context
 	ApiService *MeDrivesApiService
-	top *int32
-	skip *int32
 	orderby *string
 	filter *string
-	count *bool
-	select_ *[]string
-	expand *[]string
-}
-
-// Show only the first n items
-func (r ApiListMyDrivesRequest) Top(top int32) ApiListMyDrivesRequest {
-	r.top = &top
-	return r
-}
-
-// Skip the first n items
-func (r ApiListMyDrivesRequest) Skip(skip int32) ApiListMyDrivesRequest {
-	r.skip = &skip
-	return r
 }
 
 // The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc.
@@ -58,30 +41,12 @@ func (r ApiListMyDrivesRequest) Filter(filter string) ApiListMyDrivesRequest {
 	return r
 }
 
-// Include count of items
-func (r ApiListMyDrivesRequest) Count(count bool) ApiListMyDrivesRequest {
-	r.count = &count
-	return r
-}
-
-// Select properties to be returned
-func (r ApiListMyDrivesRequest) Select_(select_ []string) ApiListMyDrivesRequest {
-	r.select_ = &select_
-	return r
-}
-
-// Expand related entities
-func (r ApiListMyDrivesRequest) Expand(expand []string) ApiListMyDrivesRequest {
-	r.expand = &expand
-	return r
-}
-
 func (r ApiListMyDrivesRequest) Execute() (*CollectionOfDrives, *http.Response, error) {
 	return r.ApiService.ListMyDrivesExecute(r)
 }
 
 /*
-ListMyDrives Get drives from me
+ListMyDrives Get all drives where the current user is a regular member of
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListMyDrivesRequest
@@ -114,26 +79,11 @@ func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (*Col
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.top != nil {
-		localVarQueryParams.Add("$top", parameterToString(*r.top, ""))
-	}
-	if r.skip != nil {
-		localVarQueryParams.Add("$skip", parameterToString(*r.skip, ""))
-	}
 	if r.orderby != nil {
 		localVarQueryParams.Add("$orderby", parameterToString(*r.orderby, ""))
 	}
 	if r.filter != nil {
 		localVarQueryParams.Add("$filter", parameterToString(*r.filter, ""))
-	}
-	if r.count != nil {
-		localVarQueryParams.Add("$count", parameterToString(*r.count, ""))
-	}
-	if r.select_ != nil {
-		localVarQueryParams.Add("$select", parameterToString(*r.select_, "csv"))
-	}
-	if r.expand != nil {
-		localVarQueryParams.Add("$expand", parameterToString(*r.expand, "csv"))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

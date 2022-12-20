@@ -40,7 +40,7 @@ func (r ApiCreateDriveRequest) Execute() (*Drive, *http.Response, error) {
 }
 
 /*
-CreateDrive Create a new space of a specific type
+CreateDrive Create a new drive of a specific type
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateDriveRequest
@@ -250,20 +250,6 @@ type ApiGetDriveRequest struct {
 	ctx context.Context
 	ApiService *DrivesApiService
 	driveId string
-	select_ *[]string
-	expand *[]string
-}
-
-// Select properties to be returned
-func (r ApiGetDriveRequest) Select_(select_ []string) ApiGetDriveRequest {
-	r.select_ = &select_
-	return r
-}
-
-// Expand related entities
-func (r ApiGetDriveRequest) Expand(expand []string) ApiGetDriveRequest {
-	r.expand = &expand
-	return r
 }
 
 func (r ApiGetDriveRequest) Execute() (*Drive, *http.Response, error) {
@@ -307,12 +293,6 @@ func (a *DrivesApiService) GetDriveExecute(r ApiGetDriveRequest) (*Drive, *http.
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.select_ != nil {
-		localVarQueryParams.Add("$select", parameterToString(*r.select_, "csv"))
-	}
-	if r.expand != nil {
-		localVarQueryParams.Add("$expand", parameterToString(*r.expand, "csv"))
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -392,7 +372,7 @@ func (r ApiUpdateDriveRequest) Execute() (*Drive, *http.Response, error) {
 }
 
 /*
-UpdateDrive Update the space
+UpdateDrive Update the drive
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param driveId key: id of drive

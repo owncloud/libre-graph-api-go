@@ -16,16 +16,18 @@ import (
 
 // PasswordChange struct for PasswordChange
 type PasswordChange struct {
-	CurrentPassword *string `json:"currentPassword,omitempty"`
-	NewPassword *string `json:"newPassword,omitempty"`
+	CurrentPassword string `json:"currentPassword"`
+	NewPassword string `json:"newPassword"`
 }
 
 // NewPasswordChange instantiates a new PasswordChange object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPasswordChange() *PasswordChange {
+func NewPasswordChange(currentPassword string, newPassword string) *PasswordChange {
 	this := PasswordChange{}
+	this.CurrentPassword = currentPassword
+	this.NewPassword = newPassword
 	return &this
 }
 
@@ -37,76 +39,60 @@ func NewPasswordChangeWithDefaults() *PasswordChange {
 	return &this
 }
 
-// GetCurrentPassword returns the CurrentPassword field value if set, zero value otherwise.
+// GetCurrentPassword returns the CurrentPassword field value
 func (o *PasswordChange) GetCurrentPassword() string {
-	if o == nil || o.CurrentPassword == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.CurrentPassword
+
+	return o.CurrentPassword
 }
 
-// GetCurrentPasswordOk returns a tuple with the CurrentPassword field value if set, nil otherwise
+// GetCurrentPasswordOk returns a tuple with the CurrentPassword field value
 // and a boolean to check if the value has been set.
 func (o *PasswordChange) GetCurrentPasswordOk() (*string, bool) {
-	if o == nil || o.CurrentPassword == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.CurrentPassword, true
+	return &o.CurrentPassword, true
 }
 
-// HasCurrentPassword returns a boolean if a field has been set.
-func (o *PasswordChange) HasCurrentPassword() bool {
-	if o != nil && o.CurrentPassword != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCurrentPassword gets a reference to the given string and assigns it to the CurrentPassword field.
+// SetCurrentPassword sets field value
 func (o *PasswordChange) SetCurrentPassword(v string) {
-	o.CurrentPassword = &v
+	o.CurrentPassword = v
 }
 
-// GetNewPassword returns the NewPassword field value if set, zero value otherwise.
+// GetNewPassword returns the NewPassword field value
 func (o *PasswordChange) GetNewPassword() string {
-	if o == nil || o.NewPassword == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.NewPassword
+
+	return o.NewPassword
 }
 
-// GetNewPasswordOk returns a tuple with the NewPassword field value if set, nil otherwise
+// GetNewPasswordOk returns a tuple with the NewPassword field value
 // and a boolean to check if the value has been set.
 func (o *PasswordChange) GetNewPasswordOk() (*string, bool) {
-	if o == nil || o.NewPassword == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.NewPassword, true
+	return &o.NewPassword, true
 }
 
-// HasNewPassword returns a boolean if a field has been set.
-func (o *PasswordChange) HasNewPassword() bool {
-	if o != nil && o.NewPassword != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNewPassword gets a reference to the given string and assigns it to the NewPassword field.
+// SetNewPassword sets field value
 func (o *PasswordChange) SetNewPassword(v string) {
-	o.NewPassword = &v
+	o.NewPassword = v
 }
 
 func (o PasswordChange) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CurrentPassword != nil {
+	if true {
 		toSerialize["currentPassword"] = o.CurrentPassword
 	}
-	if o.NewPassword != nil {
+	if true {
 		toSerialize["newPassword"] = o.NewPassword
 	}
 	return json.Marshal(toSerialize)

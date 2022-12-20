@@ -27,7 +27,7 @@ import (
 )
 
 func main() {
-    passwordChange := *openapiclient.NewPasswordChange() // PasswordChange | 
+    passwordChange := *openapiclient.NewPasswordChange("CurrentPassword_example", "NewPassword_example") // PasswordChange | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

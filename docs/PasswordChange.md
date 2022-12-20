@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CurrentPassword** | Pointer to **string** |  | [optional] 
-**NewPassword** | Pointer to **string** |  | [optional] 
+**CurrentPassword** | **string** |  | 
+**NewPassword** | **string** |  | 
 
 ## Methods
 
 ### NewPasswordChange
 
-`func NewPasswordChange() *PasswordChange`
+`func NewPasswordChange(currentPassword string, newPassword string, ) *PasswordChange`
 
 NewPasswordChange instantiates a new PasswordChange object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetCurrentPassword sets CurrentPassword field to given value.
 
-### HasCurrentPassword
-
-`func (o *PasswordChange) HasCurrentPassword() bool`
-
-HasCurrentPassword returns a boolean if a field has been set.
 
 ### GetNewPassword
 
@@ -70,11 +65,6 @@ and a boolean to check if the value has been set.
 
 SetNewPassword sets NewPassword field to given value.
 
-### HasNewPassword
-
-`func (o *PasswordChange) HasNewPassword() bool`
-
-HasNewPassword returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

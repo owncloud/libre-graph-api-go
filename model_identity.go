@@ -17,7 +17,7 @@ import (
 // Identity struct for Identity
 type Identity struct {
 	// The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-	DisplayName *string `json:"displayName,omitempty"`
+	DisplayName string `json:"displayName"`
 	// Unique identifier for the identity.
 	Id *string `json:"id,omitempty"`
 }
@@ -26,8 +26,9 @@ type Identity struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIdentity() *Identity {
+func NewIdentity(displayName string) *Identity {
 	this := Identity{}
+	this.DisplayName = displayName
 	return &this
 }
 
@@ -39,36 +40,28 @@ func NewIdentityWithDefaults() *Identity {
 	return &this
 }
 
-// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
+// GetDisplayName returns the DisplayName field value
 func (o *Identity) GetDisplayName() string {
-	if o == nil || o.DisplayName == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.DisplayName
+
+	return o.DisplayName
 }
 
-// GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
+// GetDisplayNameOk returns a tuple with the DisplayName field value
 // and a boolean to check if the value has been set.
 func (o *Identity) GetDisplayNameOk() (*string, bool) {
-	if o == nil || o.DisplayName == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.DisplayName, true
+	return &o.DisplayName, true
 }
 
-// HasDisplayName returns a boolean if a field has been set.
-func (o *Identity) HasDisplayName() bool {
-	if o != nil && o.DisplayName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
+// SetDisplayName sets field value
 func (o *Identity) SetDisplayName(v string) {
-	o.DisplayName = &v
+	o.DisplayName = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -105,7 +98,7 @@ func (o *Identity) SetId(v string) {
 
 func (o Identity) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DisplayName != nil {
+	if true {
 		toSerialize["displayName"] = o.DisplayName
 	}
 	if o.Id != nil {

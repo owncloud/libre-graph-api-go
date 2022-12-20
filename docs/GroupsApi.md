@@ -95,7 +95,7 @@ func main() {
     top := int32(50) // int32 | Show only the first n items (optional)
     skip := int32(56) // int32 | Skip the first n items (optional)
     search := "search_example" // string | Search items by search phrases (optional)
-    filter := "filter_example" // string | Filter items by property values (optional)
+    filter := "driveType eq 'project'" // string | Filter items by property values (optional)
     count := true // bool | Include count of items (optional)
     orderby := []string{"Orderby_example"} // []string | Order items by property values (optional)
     select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)

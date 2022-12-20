@@ -4,10 +4,10 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateDrive**](DrivesApi.md#CreateDrive) | **Post** /drives | Create a new space of a specific type
+[**CreateDrive**](DrivesApi.md#CreateDrive) | **Post** /drives | Create a new drive of a specific type
 [**DeleteDrive**](DrivesApi.md#DeleteDrive) | **Delete** /drives/{drive-id} | Delete a specific space
 [**GetDrive**](DrivesApi.md#GetDrive) | **Get** /drives/{drive-id} | Get drive by id
-[**UpdateDrive**](DrivesApi.md#UpdateDrive) | **Patch** /drives/{drive-id} | Update the space
+[**UpdateDrive**](DrivesApi.md#UpdateDrive) | **Patch** /drives/{drive-id} | Update the drive
 
 
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 > Drive CreateDrive(ctx).Drive(drive).Execute()
 
-Create a new space of a specific type
+Create a new drive of a specific type
 
 ### Example
 
@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    drive := *openapiclient.NewDrive() // Drive | New space property values
+    drive := *openapiclient.NewDrive("Name_example") // Drive | New space property values
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -145,7 +145,7 @@ No authorization required
 
 ## GetDrive
 
-> Drive GetDrive(ctx, driveId).Select_(select_).Expand(expand).Execute()
+> Drive GetDrive(ctx, driveId).Execute()
 
 Get drive by id
 
@@ -163,12 +163,10 @@ import (
 
 func main() {
     driveId := "driveId_example" // string | key: id of drive
-    select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
-    expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesApi.GetDrive(context.Background(), driveId).Select_(select_).Expand(expand).Execute()
+    resp, r, err := apiClient.DrivesApi.GetDrive(context.Background(), driveId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.GetDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -194,8 +192,6 @@ Other parameters are passed through a pointer to a apiGetDriveRequest struct via
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **select_** | **[]string** | Select properties to be returned | 
- **expand** | **[]string** | Expand related entities | 
 
 ### Return type
 
@@ -219,7 +215,7 @@ No authorization required
 
 > Drive UpdateDrive(ctx, driveId).Drive(drive).Execute()
 
-Update the space
+Update the drive
 
 ### Example
 
@@ -235,7 +231,7 @@ import (
 
 func main() {
     driveId := "driveId_example" // string | key: id of drive
-    drive := *openapiclient.NewDrive() // Drive | New space values
+    drive := *openapiclient.NewDrive("Name_example") // Drive | New space values
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

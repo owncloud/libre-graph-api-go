@@ -15,9 +15,9 @@ import (
 	"time"
 )
 
-// Drive Storage Space. Read-only.
+// Drive The drive represents a space on the storage.
 type Drive struct {
-	// Read-only.
+	// The unique idenfier for this drive.
 	Id *string `json:"id,omitempty"`
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// Date and time of item creation. Read-only.
@@ -30,7 +30,7 @@ type Drive struct {
 	// Date and time the item was last modified. Read-only.
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 	// The name of the item. Read-write.
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	ParentReference *ItemReference `json:"parentReference,omitempty"`
 	// URL that displays the resource in the browser. Read-only.
 	WebUrl *string `json:"webUrl,omitempty"`
@@ -53,8 +53,9 @@ type Drive struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDrive() *Drive {
+func NewDrive(name string) *Drive {
 	this := Drive{}
+	this.Name = name
 	return &this
 }
 
@@ -290,36 +291,28 @@ func (o *Drive) SetLastModifiedDateTime(v time.Time) {
 	o.LastModifiedDateTime = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *Drive) GetName() string {
-	if o == nil || o.Name == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *Drive) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *Drive) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *Drive) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
 // GetParentReference returns the ParentReference field value if set, zero value otherwise.
@@ -697,7 +690,7 @@ func (o Drive) MarshalJSON() ([]byte, error) {
 	if o.LastModifiedDateTime != nil {
 		toSerialize["lastModifiedDateTime"] = o.LastModifiedDateTime
 	}
-	if o.Name != nil {
+	if true {
 		toSerialize["name"] = o.Name
 	}
 	if o.ParentReference != nil {
