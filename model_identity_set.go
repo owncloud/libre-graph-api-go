@@ -19,6 +19,7 @@ type IdentitySet struct {
 	Application *Identity `json:"application,omitempty"`
 	Device *Identity `json:"device,omitempty"`
 	User *Identity `json:"user,omitempty"`
+	Group *Identity `json:"group,omitempty"`
 }
 
 // NewIdentitySet instantiates a new IdentitySet object
@@ -134,6 +135,38 @@ func (o *IdentitySet) SetUser(v Identity) {
 	o.User = &v
 }
 
+// GetGroup returns the Group field value if set, zero value otherwise.
+func (o *IdentitySet) GetGroup() Identity {
+	if o == nil || o.Group == nil {
+		var ret Identity
+		return ret
+	}
+	return *o.Group
+}
+
+// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IdentitySet) GetGroupOk() (*Identity, bool) {
+	if o == nil || o.Group == nil {
+		return nil, false
+	}
+	return o.Group, true
+}
+
+// HasGroup returns a boolean if a field has been set.
+func (o *IdentitySet) HasGroup() bool {
+	if o != nil && o.Group != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGroup gets a reference to the given Identity and assigns it to the Group field.
+func (o *IdentitySet) SetGroup(v Identity) {
+	o.Group = &v
+}
+
 func (o IdentitySet) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Application != nil {
@@ -144,6 +177,9 @@ func (o IdentitySet) MarshalJSON() ([]byte, error) {
 	}
 	if o.User != nil {
 		toSerialize["user"] = o.User
+	}
+	if o.Group != nil {
+		toSerialize["group"] = o.Group
 	}
 	return json.Marshal(toSerialize)
 }
