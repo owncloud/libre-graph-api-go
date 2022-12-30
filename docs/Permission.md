@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GrantedTo** | Pointer to [**[]IdentitySet**](IdentitySet.md) |  | [optional] 
+**GrantedToIdentities** | Pointer to [**[]IdentitySet**](IdentitySet.md) |  | [optional] 
 **Roles** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -26,30 +26,30 @@ NewPermissionWithDefaults instantiates a new Permission object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetGrantedTo
+### GetGrantedToIdentities
 
-`func (o *Permission) GetGrantedTo() []IdentitySet`
+`func (o *Permission) GetGrantedToIdentities() []IdentitySet`
 
-GetGrantedTo returns the GrantedTo field if non-nil, zero value otherwise.
+GetGrantedToIdentities returns the GrantedToIdentities field if non-nil, zero value otherwise.
 
-### GetGrantedToOk
+### GetGrantedToIdentitiesOk
 
-`func (o *Permission) GetGrantedToOk() (*[]IdentitySet, bool)`
+`func (o *Permission) GetGrantedToIdentitiesOk() (*[]IdentitySet, bool)`
 
-GetGrantedToOk returns a tuple with the GrantedTo field if it's non-nil, zero value otherwise
+GetGrantedToIdentitiesOk returns a tuple with the GrantedToIdentities field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGrantedTo
+### SetGrantedToIdentities
 
-`func (o *Permission) SetGrantedTo(v []IdentitySet)`
+`func (o *Permission) SetGrantedToIdentities(v []IdentitySet)`
 
-SetGrantedTo sets GrantedTo field to given value.
+SetGrantedToIdentities sets GrantedToIdentities field to given value.
 
-### HasGrantedTo
+### HasGrantedToIdentities
 
-`func (o *Permission) HasGrantedTo() bool`
+`func (o *Permission) HasGrantedToIdentities() bool`
 
-HasGrantedTo returns a boolean if a field has been set.
+HasGrantedToIdentities returns a boolean if a field has been set.
 
 ### GetRoles
 

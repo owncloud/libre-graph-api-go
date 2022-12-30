@@ -16,7 +16,7 @@ import (
 
 // Permission The Permission resource provides information about a sharing permission granted for a DriveItem resource.
 type Permission struct {
-	GrantedTo []IdentitySet `json:"grantedTo,omitempty"`
+	GrantedToIdentities []IdentitySet `json:"grantedToIdentities,omitempty"`
 	Roles []string `json:"roles,omitempty"`
 }
 
@@ -37,36 +37,36 @@ func NewPermissionWithDefaults() *Permission {
 	return &this
 }
 
-// GetGrantedTo returns the GrantedTo field value if set, zero value otherwise.
-func (o *Permission) GetGrantedTo() []IdentitySet {
-	if o == nil || o.GrantedTo == nil {
+// GetGrantedToIdentities returns the GrantedToIdentities field value if set, zero value otherwise.
+func (o *Permission) GetGrantedToIdentities() []IdentitySet {
+	if o == nil || o.GrantedToIdentities == nil {
 		var ret []IdentitySet
 		return ret
 	}
-	return o.GrantedTo
+	return o.GrantedToIdentities
 }
 
-// GetGrantedToOk returns a tuple with the GrantedTo field value if set, nil otherwise
+// GetGrantedToIdentitiesOk returns a tuple with the GrantedToIdentities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Permission) GetGrantedToOk() ([]IdentitySet, bool) {
-	if o == nil || o.GrantedTo == nil {
+func (o *Permission) GetGrantedToIdentitiesOk() ([]IdentitySet, bool) {
+	if o == nil || o.GrantedToIdentities == nil {
 		return nil, false
 	}
-	return o.GrantedTo, true
+	return o.GrantedToIdentities, true
 }
 
-// HasGrantedTo returns a boolean if a field has been set.
-func (o *Permission) HasGrantedTo() bool {
-	if o != nil && o.GrantedTo != nil {
+// HasGrantedToIdentities returns a boolean if a field has been set.
+func (o *Permission) HasGrantedToIdentities() bool {
+	if o != nil && o.GrantedToIdentities != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetGrantedTo gets a reference to the given []IdentitySet and assigns it to the GrantedTo field.
-func (o *Permission) SetGrantedTo(v []IdentitySet) {
-	o.GrantedTo = v
+// SetGrantedToIdentities gets a reference to the given []IdentitySet and assigns it to the GrantedToIdentities field.
+func (o *Permission) SetGrantedToIdentities(v []IdentitySet) {
+	o.GrantedToIdentities = v
 }
 
 // GetRoles returns the Roles field value if set, zero value otherwise.
@@ -103,8 +103,8 @@ func (o *Permission) SetRoles(v []string) {
 
 func (o Permission) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.GrantedTo != nil {
-		toSerialize["grantedTo"] = o.GrantedTo
+	if o.GrantedToIdentities != nil {
+		toSerialize["grantedToIdentities"] = o.GrantedToIdentities
 	}
 	if o.Roles != nil {
 		toSerialize["roles"] = o.Roles
