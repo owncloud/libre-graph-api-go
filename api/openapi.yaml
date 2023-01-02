@@ -1138,6 +1138,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Get entities from education users
       tags:
       - educationUser
@@ -1169,6 +1171,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Add new education user
       tags:
       - educationUser
@@ -1194,6 +1198,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Delete educationUser
       tags:
       - educationUser
@@ -1242,6 +1248,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Get properties of educationUser
       tags:
       - educationUser
@@ -1292,6 +1300,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Update properties of educationUser
       tags:
       - educationUser
@@ -1318,6 +1328,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Get a list of schools and their properties
       tags:
       - educationSchool
@@ -1349,6 +1361,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Add new school
       tags:
       - educationSchool
@@ -1374,6 +1388,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Delete school
       tags:
       - educationSchool
@@ -1405,6 +1421,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Get the properties of a specific school
       tags:
       - educationSchool
@@ -1445,6 +1463,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Update properties of a school
       tags:
       - educationSchool
@@ -1483,6 +1503,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Assign a user to a school
       tags:
       - educationSchool
@@ -1517,6 +1539,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Unassign user from a school
       tags:
       - educationSchool
@@ -1555,6 +1579,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Assign a class to a school
       tags:
       - educationSchool
@@ -1589,6 +1615,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Unassign class from a school
       tags:
       - educationSchool
@@ -1617,6 +1645,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: list education classes
       tags:
       - educationClass
@@ -1648,6 +1678,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Add new education class
       tags:
       - educationClass
@@ -1673,6 +1705,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Delete education class
       tags:
       - educationClass
@@ -1704,6 +1738,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Get class by key
       tags:
       - educationClass
@@ -1749,6 +1785,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Update properties of a education class
       tags:
       - educationClass
@@ -1787,6 +1825,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Assign a user to a class
       tags:
       - educationClass
@@ -1820,6 +1860,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/odata.error'
           description: error
+      security:
+      - bearerAuth: []
       summary: Unassign user from a class
       tags:
       - educationClass
@@ -107455,3 +107497,7 @@ components:
     openId:
       openIdConnectUrl: https://ocis.ocis-traefik.latest.owncloud.works/.well-known/openid-configuration
       type: openIdConnect
+    bearerAuth:
+      bearerFormat: plain
+      scheme: bearer
+      type: http
