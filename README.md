@@ -78,6 +78,7 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DefaultApi* | [**ApplicationApplicationIdGet**](docs/DefaultApi.md#applicationapplicationidget) | **Get** /application/{application-id} | 
 *DrivesApi* | [**CreateDrive**](docs/DrivesApi.md#createdrive) | **Post** /drives | Create a new drive of a specific type
 *DrivesApi* | [**DeleteDrive**](docs/DrivesApi.md#deletedrive) | **Delete** /drives/{drive-id} | Delete a specific space
 *DrivesApi* | [**GetDrive**](docs/DrivesApi.md#getdrive) | **Get** /drives/{drive-id} | Get drive by id
@@ -124,14 +125,21 @@ Class | Method | HTTP request | Description
 *UserApi* | [**DeleteUser**](docs/UserApi.md#deleteuser) | **Delete** /users/{user-id} | Delete entity from users
 *UserApi* | [**GetUser**](docs/UserApi.md#getuser) | **Get** /users/{user-id} | Get entity from users by key
 *UserApi* | [**UpdateUser**](docs/UserApi.md#updateuser) | **Patch** /users/{user-id} | Update entity in users
+*UserAppRoleAssignmentApi* | [**UserCreateAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#usercreateapproleassignments) | **Post** /users/{user-id}/appRoleAssignments | Grant an appRoleAssignment to a user
+*UserAppRoleAssignmentApi* | [**UserDeleteAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#userdeleteapproleassignments) | **Delete** /users/{user-id}/appRoleAssignments/{appRoleAssignment-id} | Delete the appRoleAssignment from a user
+*UserAppRoleAssignmentApi* | [**UserListAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#userlistapproleassignments) | **Get** /users/{user-id}/appRoleAssignments | Get appRoleAssignments from a user
 *UsersApi* | [**CreateUser**](docs/UsersApi.md#createuser) | **Post** /users | Add new entity to users
 *UsersApi* | [**ListUsers**](docs/UsersApi.md#listusers) | **Get** /users | Get entities from users
 
 
 ## Documentation For Models
 
+ - [AppRole](docs/AppRole.md)
+ - [AppRoleAssignment](docs/AppRoleAssignment.md)
+ - [Application](docs/Application.md)
  - [ClassMemberReference](docs/ClassMemberReference.md)
  - [ClassReference](docs/ClassReference.md)
+ - [CollectionOfAppRoleAssignments](docs/CollectionOfAppRoleAssignments.md)
  - [CollectionOfClass](docs/CollectionOfClass.md)
  - [CollectionOfDriveItems](docs/CollectionOfDriveItems.md)
  - [CollectionOfDrives](docs/CollectionOfDrives.md)
