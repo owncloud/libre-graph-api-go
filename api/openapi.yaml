@@ -2042,7 +2042,7 @@ paths:
       summary: Assign tags to a resource
       tags:
       - tags
-  /application/{application-id}:
+  /applications/{application-id}:
     get:
       description: Get properties of an application by id
       parameters:

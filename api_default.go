@@ -23,27 +23,27 @@ import (
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
-type ApiApplicationApplicationIdGetRequest struct {
+type ApiApplicationsApplicationIdGetRequest struct {
 	ctx context.Context
 	ApiService *DefaultApiService
 	applicationId string
 }
 
-func (r ApiApplicationApplicationIdGetRequest) Execute() (*Application, *http.Response, error) {
-	return r.ApiService.ApplicationApplicationIdGetExecute(r)
+func (r ApiApplicationsApplicationIdGetRequest) Execute() (*Application, *http.Response, error) {
+	return r.ApiService.ApplicationsApplicationIdGetExecute(r)
 }
 
 /*
-ApplicationApplicationIdGet Method for ApplicationApplicationIdGet
+ApplicationsApplicationIdGet Method for ApplicationsApplicationIdGet
 
 Get properties of an application by id
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param applicationId key: id of application
- @return ApiApplicationApplicationIdGetRequest
+ @return ApiApplicationsApplicationIdGetRequest
 */
-func (a *DefaultApiService) ApplicationApplicationIdGet(ctx context.Context, applicationId string) ApiApplicationApplicationIdGetRequest {
-	return ApiApplicationApplicationIdGetRequest{
+func (a *DefaultApiService) ApplicationsApplicationIdGet(ctx context.Context, applicationId string) ApiApplicationsApplicationIdGetRequest {
+	return ApiApplicationsApplicationIdGetRequest{
 		ApiService: a,
 		ctx: ctx,
 		applicationId: applicationId,
@@ -52,7 +52,7 @@ func (a *DefaultApiService) ApplicationApplicationIdGet(ctx context.Context, app
 
 // Execute executes the request
 //  @return Application
-func (a *DefaultApiService) ApplicationApplicationIdGetExecute(r ApiApplicationApplicationIdGetRequest) (*Application, *http.Response, error) {
+func (a *DefaultApiService) ApplicationsApplicationIdGetExecute(r ApiApplicationsApplicationIdGetRequest) (*Application, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,12 +60,12 @@ func (a *DefaultApiService) ApplicationApplicationIdGetExecute(r ApiApplicationA
 		localVarReturnValue  *Application
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ApplicationApplicationIdGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ApplicationsApplicationIdGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/application/{application-id}"
+	localVarPath := localBasePath + "/applications/{application-id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"application-id"+"}", url.PathEscape(parameterToString(r.applicationId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)

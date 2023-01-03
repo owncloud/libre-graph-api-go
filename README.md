@@ -78,7 +78,7 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**ApplicationApplicationIdGet**](docs/DefaultApi.md#applicationapplicationidget) | **Get** /application/{application-id} | 
+*DefaultApi* | [**ApplicationsApplicationIdGet**](docs/DefaultApi.md#applicationsapplicationidget) | **Get** /applications/{application-id} | 
 *DrivesApi* | [**CreateDrive**](docs/DrivesApi.md#createdrive) | **Post** /drives | Create a new drive of a specific type
 *DrivesApi* | [**DeleteDrive**](docs/DrivesApi.md#deletedrive) | **Delete** /drives/{drive-id} | Delete a specific space
 *DrivesApi* | [**GetDrive**](docs/DrivesApi.md#getdrive) | **Get** /drives/{drive-id} | Get drive by id

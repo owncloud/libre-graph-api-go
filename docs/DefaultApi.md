@@ -4,13 +4,13 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApplicationApplicationIdGet**](DefaultApi.md#ApplicationApplicationIdGet) | **Get** /application/{application-id} | 
+[**ApplicationsApplicationIdGet**](DefaultApi.md#ApplicationsApplicationIdGet) | **Get** /applications/{application-id} | 
 
 
 
-## ApplicationApplicationIdGet
+## ApplicationsApplicationIdGet
 
-> Application ApplicationApplicationIdGet(ctx, applicationId).Execute()
+> Application ApplicationsApplicationIdGet(ctx, applicationId).Execute()
 
 
 
@@ -33,13 +33,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.ApplicationApplicationIdGet(context.Background(), applicationId).Execute()
+    resp, r, err := apiClient.DefaultApi.ApplicationsApplicationIdGet(context.Background(), applicationId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.ApplicationApplicationIdGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.ApplicationsApplicationIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApplicationApplicationIdGet`: Application
-    fmt.Fprintf(os.Stdout, "Response from `DefaultApi.ApplicationApplicationIdGet`: %v\n", resp)
+    // response from `ApplicationsApplicationIdGet`: Application
+    fmt.Fprintf(os.Stdout, "Response from `DefaultApi.ApplicationsApplicationIdGet`: %v\n", resp)
 }
 ```
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApplicationApplicationIdGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApplicationsApplicationIdGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
