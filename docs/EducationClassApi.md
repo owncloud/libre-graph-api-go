@@ -34,7 +34,7 @@ import (
 
 func main() {
     classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id of class
-    classMemberReference := *openapiclient.NewClassMemberReference() // ClassMemberReference | 
+    classMemberReference := *openapiclient.NewClassMemberReference() // ClassMemberReference | educationUser to be added as member
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -62,7 +62,7 @@ Other parameters are passed through a pointer to a apiAddUserToClassRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **classMemberReference** | [**ClassMemberReference**](ClassMemberReference.md) |  | 
+ **classMemberReference** | [**ClassMemberReference**](ClassMemberReference.md) | educationUser to be added as member | 
 
 ### Return type
 

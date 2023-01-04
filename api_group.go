@@ -30,6 +30,7 @@ type ApiAddMemberRequest struct {
 	memberReference *MemberReference
 }
 
+// Object to be added as member
 func (r ApiAddMemberRequest) MemberReference(memberReference MemberReference) ApiAddMemberRequest {
 	r.memberReference = &memberReference
 	return r

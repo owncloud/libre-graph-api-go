@@ -28,6 +28,7 @@ type ApiChangeOwnPasswordRequest struct {
 	passwordChange *PasswordChange
 }
 
+// Password change request
 func (r ApiChangeOwnPasswordRequest) PasswordChange(passwordChange PasswordChange) ApiChangeOwnPasswordRequest {
 	r.passwordChange = &passwordChange
 	return r

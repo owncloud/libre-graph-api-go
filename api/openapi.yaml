@@ -51,20 +51,10 @@ paths:
     post:
       operationId: ChangeOwnPassword
       requestBody:
-        $ref: '#/components/requestBodies/Password_change'
         content:
           application/json:
             schema:
-              properties:
-                currentPassword:
-                  type: string
-                newPassword:
-                  type: string
-              required:
-              - currentPassword
-              - newPassword
-              title: Password change
-              type: object
+              $ref: '#/components/schemas/Password_change'
         description: Password change request
         required: true
       responses:
@@ -670,15 +660,10 @@ paths:
         style: simple
         x-ms-docs-key-type: group
       requestBody:
-        $ref: '#/components/requestBodies/Member_Reference'
         content:
           application/json:
             schema:
-              properties:
-                '@odata.id':
-                  type: string
-              title: Member Reference
-              type: object
+              $ref: '#/components/schemas/Member_Reference'
         description: Object to be added as member
         required: true
       responses:
@@ -1112,12 +1097,11 @@ paths:
       tags:
       - user.appRoleAssignment
     post:
-      description: "Use this API to assign a global role to a user. To grant an app\
-        \ role assignment to a user, you need three identifiers:\n* `principalId`:\
-        \ The `id` of the user to whom you are assigning the app role.\n* `resourceId`:\
-        \ The `id` of the resource `servicePrincipal` or `application` that has defined\
-        \ the app role.\n* `appRoleId`: The `id` of the `appRole` (defined on the\
-        \ resource service principal or application) to assign to the user.\n"
+      description: |
+        Use this API to assign a global role to a user. To grant an app role assignment to a user, you need three identifiers:
+        * `principalId`: The `id` of the user to whom you are assigning the app role.
+        * `resourceId`: The `id` of the resource `servicePrincipal` or `application` that has defined the app role.
+        * `appRoleId`: The `id` of the `appRole` (defined on the resource service principal or application) to assign to the user.
       operationId: user.CreateAppRoleAssignments
       parameters:
       - description: "key: id of user"
@@ -1596,16 +1580,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/EducationUser_Reference'
         content:
           application/json:
             schema:
-              properties:
-                '@odata.id':
-                  example: https://<hostname>/graph/v1.0/education/users/90eedea1-dea1-90ee-a1de-ee90a1deee90
-                  type: string
-              title: EducationUser Reference
-              type: object
+              $ref: '#/components/schemas/EducationUser_Reference'
         description: educationUser to be added as member
         required: true
       responses:
@@ -1672,16 +1650,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/Class_Reference'
         content:
           application/json:
             schema:
-              properties:
-                '@odata.id':
-                  example: https://<hostname>/graph/v1.0/education/classes/7e84a069-f374-479b-817d-71590117d443
-                  type: string
-              title: Class Reference
-              type: object
+              $ref: '#/components/schemas/Class_Reference'
         description: educationClass to be added as member
         required: true
       responses:
@@ -1918,16 +1890,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/Class_Member_Reference'
         content:
           application/json:
             schema:
-              properties:
-                '@odata.id':
-                  example: https://<hostname>/graph/v1.0/education/users/90eedea1-dea1-90ee-a1de-ee90a1deee90
-                  type: string
-              title: Class Member Reference
-              type: object
+              $ref: '#/components/schemas/Class_Member_Reference'
         description: educationUser to be added as member
         required: true
       responses:
@@ -2197,37 +2163,6 @@ components:
       schema:
         type: string
       style: form
-  requestBodies:
-    Member_Reference:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Member_Reference'
-      required: true
-    Password_change:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Password_change'
-      required: true
-    Class_Member_Reference:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Class_Member_Reference'
-      required: true
-    EducationUser_Reference:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/EducationUser_Reference'
-      required: true
-    Class_Reference:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Class_Reference'
-      required: true
   responses:
     error:
       content:

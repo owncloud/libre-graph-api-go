@@ -30,6 +30,7 @@ type ApiAddClassToSchoolRequest struct {
 	classReference *ClassReference
 }
 
+// educationClass to be added as member
 func (r ApiAddClassToSchoolRequest) ClassReference(classReference ClassReference) ApiAddClassToSchoolRequest {
 	r.classReference = &classReference
 	return r
@@ -138,6 +139,7 @@ type ApiAddUserToSchoolRequest struct {
 	educationUserReference *EducationUserReference
 }
 
+// educationUser to be added as member
 func (r ApiAddUserToSchoolRequest) EducationUserReference(educationUserReference EducationUserReference) ApiAddUserToSchoolRequest {
 	r.educationUserReference = &educationUserReference
 	return r

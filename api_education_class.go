@@ -30,6 +30,7 @@ type ApiAddUserToClassRequest struct {
 	classMemberReference *ClassMemberReference
 }
 
+// educationUser to be added as member
 func (r ApiAddUserToClassRequest) ClassMemberReference(classMemberReference ClassMemberReference) ApiAddUserToClassRequest {
 	r.classMemberReference = &classMemberReference
 	return r

@@ -27,7 +27,7 @@ import (
 )
 
 func main() {
-    passwordChange := *openapiclient.NewPasswordChange("CurrentPassword_example", "NewPassword_example") // PasswordChange | 
+    passwordChange := *openapiclient.NewPasswordChange("CurrentPassword_example", "NewPassword_example") // PasswordChange | Password change request
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -50,7 +50,7 @@ Other parameters are passed through a pointer to a apiChangeOwnPasswordRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **passwordChange** | [**PasswordChange**](PasswordChange.md) |  | 
+ **passwordChange** | [**PasswordChange**](PasswordChange.md) | Password change request | 
 
 ### Return type
 

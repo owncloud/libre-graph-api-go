@@ -36,7 +36,7 @@ import (
 
 func main() {
     schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
-    classReference := *openapiclient.NewClassReference() // ClassReference | 
+    classReference := *openapiclient.NewClassReference() // ClassReference | educationClass to be added as member
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -64,7 +64,7 @@ Other parameters are passed through a pointer to a apiAddClassToSchoolRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **classReference** | [**ClassReference**](ClassReference.md) |  | 
+ **classReference** | [**ClassReference**](ClassReference.md) | educationClass to be added as member | 
 
 ### Return type
 
@@ -104,7 +104,7 @@ import (
 
 func main() {
     schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
-    educationUserReference := *openapiclient.NewEducationUserReference() // EducationUserReference | 
+    educationUserReference := *openapiclient.NewEducationUserReference() // EducationUserReference | educationUser to be added as member
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -132,7 +132,7 @@ Other parameters are passed through a pointer to a apiAddUserToSchoolRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **educationUserReference** | [**EducationUserReference**](EducationUserReference.md) |  | 
+ **educationUserReference** | [**EducationUserReference**](EducationUserReference.md) | educationUser to be added as member | 
 
 ### Return type
 

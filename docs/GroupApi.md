@@ -32,7 +32,7 @@ import (
 
 func main() {
     groupId := "groupId_example" // string | key: id of group
-    memberReference := *openapiclient.NewMemberReference() // MemberReference | 
+    memberReference := *openapiclient.NewMemberReference() // MemberReference | Object to be added as member
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -60,7 +60,7 @@ Other parameters are passed through a pointer to a apiAddMemberRequest struct vi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **memberReference** | [**MemberReference**](MemberReference.md) |  | 
+ **memberReference** | [**MemberReference**](MemberReference.md) | Object to be added as member | 
 
 ### Return type
 
