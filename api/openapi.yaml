@@ -2240,12 +2240,34 @@ components:
         - passwordProfile:
             password: password
             forceChangePasswordNextSignIn: false
+          mail: mail
+          displayName: displayName
+          givenName: givenName
+          appRoleAssignments:
+          - resourceDisplayName: resourceDisplayName
+            resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            principalDisplayName: principalDisplayName
+            appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            id: id
+            principalType: principalType
+          - resourceDisplayName: resourceDisplayName
+            resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            principalDisplayName: principalDisplayName
+            appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            id: id
+            principalType: principalType
+          accountEnabled: true
           identities:
           - issuerAssignedId: issuerAssignedId
             issuer: issuer
           - issuerAssignedId: issuerAssignedId
             issuer: issuer
-          mail: mail
           drives:
           - owner:
               application:
@@ -8567,9 +8589,7 @@ components:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                 lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
-          displayName: displayName
           surname: surname
-          givenName: givenName
           onPremisesSamAccountName: onPremisesSamAccountName
           id: id
           memberOf:
@@ -9866,16 +9886,37 @@ components:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                 lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
-          accountEnabled: true
         - passwordProfile:
             password: password
             forceChangePasswordNextSignIn: false
+          mail: mail
+          displayName: displayName
+          givenName: givenName
+          appRoleAssignments:
+          - resourceDisplayName: resourceDisplayName
+            resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            principalDisplayName: principalDisplayName
+            appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            id: id
+            principalType: principalType
+          - resourceDisplayName: resourceDisplayName
+            resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            principalDisplayName: principalDisplayName
+            appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            id: id
+            principalType: principalType
+          accountEnabled: true
           identities:
           - issuerAssignedId: issuerAssignedId
             issuer: issuer
           - issuerAssignedId: issuerAssignedId
             issuer: issuer
-          mail: mail
           drives:
           - owner:
               application:
@@ -16197,9 +16238,7 @@ components:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                 lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
-          displayName: displayName
           surname: surname
-          givenName: givenName
           onPremisesSamAccountName: onPremisesSamAccountName
           id: id
           memberOf:
@@ -17496,7 +17535,6 @@ components:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                 lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
-          accountEnabled: true
         onPremisesDomainName: onPremisesDomainName
         description: description
         onPremisesSamAccountName: onPremisesSamAccountName
@@ -26665,12 +26703,34 @@ components:
         passwordProfile:
           password: password
           forceChangePasswordNextSignIn: false
+        mail: mail
+        displayName: displayName
+        givenName: givenName
+        appRoleAssignments:
+        - resourceDisplayName: resourceDisplayName
+          resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          principalDisplayName: principalDisplayName
+          appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          deletedDateTime: 2000-01-23T04:56:07.000+00:00
+          principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          id: id
+          principalType: principalType
+        - resourceDisplayName: resourceDisplayName
+          resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          principalDisplayName: principalDisplayName
+          appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          deletedDateTime: 2000-01-23T04:56:07.000+00:00
+          principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          id: id
+          principalType: principalType
+        accountEnabled: true
         identities:
         - issuerAssignedId: issuerAssignedId
           issuer: issuer
         - issuerAssignedId: issuerAssignedId
           issuer: issuer
-        mail: mail
         drives:
         - owner:
             application:
@@ -32992,9 +33052,7 @@ components:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
               lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
-        displayName: displayName
         surname: surname
-        givenName: givenName
         onPremisesSamAccountName: onPremisesSamAccountName
         id: id
         memberOf:
@@ -34291,7 +34349,6 @@ components:
               lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
               lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
-        accountEnabled: true
       properties:
         id:
           description: Read-only.
@@ -34300,6 +34357,12 @@ components:
         accountEnabled:
           description: Set to "true" when the account is enabled.
           type: boolean
+        appRoleAssignments:
+          description: The apps and app roles which this user has been assigned.
+          items:
+            $ref: '#/components/schemas/appRoleAssignment'
+          readOnly: true
+          type: array
         displayName:
           description: "The name displayed in the address book for the user. This\
             \ value is usually the combination of the user's first name, middle initial,\
@@ -45595,12 +45658,34 @@ components:
         - passwordProfile:
             password: password
             forceChangePasswordNextSignIn: false
+          mail: mail
+          displayName: displayName
+          givenName: givenName
+          appRoleAssignments:
+          - resourceDisplayName: resourceDisplayName
+            resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            principalDisplayName: principalDisplayName
+            appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            id: id
+            principalType: principalType
+          - resourceDisplayName: resourceDisplayName
+            resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            principalDisplayName: principalDisplayName
+            appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            id: id
+            principalType: principalType
+          accountEnabled: true
           identities:
           - issuerAssignedId: issuerAssignedId
             issuer: issuer
           - issuerAssignedId: issuerAssignedId
             issuer: issuer
-          mail: mail
           drives:
           - owner:
               application:
@@ -51922,9 +52007,7 @@ components:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                 lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
-          displayName: displayName
           surname: surname
-          givenName: givenName
           onPremisesSamAccountName: onPremisesSamAccountName
           id: id
           memberOf:
@@ -53221,16 +53304,37 @@ components:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                 lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
-          accountEnabled: true
         - passwordProfile:
             password: password
             forceChangePasswordNextSignIn: false
+          mail: mail
+          displayName: displayName
+          givenName: givenName
+          appRoleAssignments:
+          - resourceDisplayName: resourceDisplayName
+            resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            principalDisplayName: principalDisplayName
+            appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            id: id
+            principalType: principalType
+          - resourceDisplayName: resourceDisplayName
+            resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            principalDisplayName: principalDisplayName
+            appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            deletedDateTime: 2000-01-23T04:56:07.000+00:00
+            principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            id: id
+            principalType: principalType
+          accountEnabled: true
           identities:
           - issuerAssignedId: issuerAssignedId
             issuer: issuer
           - issuerAssignedId: issuerAssignedId
             issuer: issuer
-          mail: mail
           drives:
           - owner:
               application:
@@ -59552,9 +59656,7 @@ components:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                 lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
-          displayName: displayName
           surname: surname
-          givenName: givenName
           onPremisesSamAccountName: onPremisesSamAccountName
           id: id
           memberOf:
@@ -60851,7 +60953,6 @@ components:
                 lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                 lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
-          accountEnabled: true
       properties:
         value:
           items:
@@ -76230,12 +76331,34 @@ components:
           - passwordProfile:
               password: password
               forceChangePasswordNextSignIn: false
+            mail: mail
+            displayName: displayName
+            givenName: givenName
+            appRoleAssignments:
+            - resourceDisplayName: resourceDisplayName
+              resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              principalDisplayName: principalDisplayName
+              appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              id: id
+              principalType: principalType
+            - resourceDisplayName: resourceDisplayName
+              resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              principalDisplayName: principalDisplayName
+              appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              id: id
+              principalType: principalType
+            accountEnabled: true
             identities:
             - issuerAssignedId: issuerAssignedId
               issuer: issuer
             - issuerAssignedId: issuerAssignedId
               issuer: issuer
-            mail: mail
             drives:
             - owner:
                 application:
@@ -82557,9 +82680,7 @@ components:
                   lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                   lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                   createdDateTime: 2000-01-23T04:56:07.000+00:00
-            displayName: displayName
             surname: surname
-            givenName: givenName
             onPremisesSamAccountName: onPremisesSamAccountName
             id: id
             memberOf:
@@ -83856,16 +83977,37 @@ components:
                   lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                   lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                   createdDateTime: 2000-01-23T04:56:07.000+00:00
-            accountEnabled: true
           - passwordProfile:
               password: password
               forceChangePasswordNextSignIn: false
+            mail: mail
+            displayName: displayName
+            givenName: givenName
+            appRoleAssignments:
+            - resourceDisplayName: resourceDisplayName
+              resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              principalDisplayName: principalDisplayName
+              appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              id: id
+              principalType: principalType
+            - resourceDisplayName: resourceDisplayName
+              resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              principalDisplayName: principalDisplayName
+              appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              id: id
+              principalType: principalType
+            accountEnabled: true
             identities:
             - issuerAssignedId: issuerAssignedId
               issuer: issuer
             - issuerAssignedId: issuerAssignedId
               issuer: issuer
-            mail: mail
             drives:
             - owner:
                 application:
@@ -90187,9 +90329,7 @@ components:
                   lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                   lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                   createdDateTime: 2000-01-23T04:56:07.000+00:00
-            displayName: displayName
             surname: surname
-            givenName: givenName
             onPremisesSamAccountName: onPremisesSamAccountName
             id: id
             memberOf:
@@ -91486,7 +91626,6 @@ components:
                   lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                   lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                   createdDateTime: 2000-01-23T04:56:07.000+00:00
-            accountEnabled: true
           onPremisesDomainName: onPremisesDomainName
           description: description
           onPremisesSamAccountName: onPremisesSamAccountName
@@ -91504,12 +91643,34 @@ components:
           - passwordProfile:
               password: password
               forceChangePasswordNextSignIn: false
+            mail: mail
+            displayName: displayName
+            givenName: givenName
+            appRoleAssignments:
+            - resourceDisplayName: resourceDisplayName
+              resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              principalDisplayName: principalDisplayName
+              appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              id: id
+              principalType: principalType
+            - resourceDisplayName: resourceDisplayName
+              resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              principalDisplayName: principalDisplayName
+              appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              id: id
+              principalType: principalType
+            accountEnabled: true
             identities:
             - issuerAssignedId: issuerAssignedId
               issuer: issuer
             - issuerAssignedId: issuerAssignedId
               issuer: issuer
-            mail: mail
             drives:
             - owner:
                 application:
@@ -97831,9 +97992,7 @@ components:
                   lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                   lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                   createdDateTime: 2000-01-23T04:56:07.000+00:00
-            displayName: displayName
             surname: surname
-            givenName: givenName
             onPremisesSamAccountName: onPremisesSamAccountName
             id: id
             memberOf:
@@ -99130,16 +99289,37 @@ components:
                   lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                   lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                   createdDateTime: 2000-01-23T04:56:07.000+00:00
-            accountEnabled: true
           - passwordProfile:
               password: password
               forceChangePasswordNextSignIn: false
+            mail: mail
+            displayName: displayName
+            givenName: givenName
+            appRoleAssignments:
+            - resourceDisplayName: resourceDisplayName
+              resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              principalDisplayName: principalDisplayName
+              appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              id: id
+              principalType: principalType
+            - resourceDisplayName: resourceDisplayName
+              resourceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              principalDisplayName: principalDisplayName
+              appRoleId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              deletedDateTime: 2000-01-23T04:56:07.000+00:00
+              principalId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+              id: id
+              principalType: principalType
+            accountEnabled: true
             identities:
             - issuerAssignedId: issuerAssignedId
               issuer: issuer
             - issuerAssignedId: issuerAssignedId
               issuer: issuer
-            mail: mail
             drives:
             - owner:
                 application:
@@ -105461,9 +105641,7 @@ components:
                   lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                   lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                   createdDateTime: 2000-01-23T04:56:07.000+00:00
-            displayName: displayName
             surname: surname
-            givenName: givenName
             onPremisesSamAccountName: onPremisesSamAccountName
             id: id
             memberOf:
@@ -106760,7 +106938,6 @@ components:
                   lastAccessedDateTime: 2000-01-23T04:56:07.000+00:00
                   lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                   createdDateTime: 2000-01-23T04:56:07.000+00:00
-            accountEnabled: true
           onPremisesDomainName: onPremisesDomainName
           description: description
           onPremisesSamAccountName: onPremisesSamAccountName

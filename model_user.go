@@ -20,6 +20,8 @@ type User struct {
 	Id *string `json:"id,omitempty"`
 	// Set to \"true\" when the account is enabled.
 	AccountEnabled *bool `json:"accountEnabled,omitempty"`
+	// The apps and app roles which this user has been assigned.
+	AppRoleAssignments []AppRoleAssignment `json:"appRoleAssignments,omitempty"`
 	// The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.
 	DisplayName *string `json:"displayName,omitempty"`
 	// A collection of drives available for this user. Read-only.
@@ -119,6 +121,38 @@ func (o *User) HasAccountEnabled() bool {
 // SetAccountEnabled gets a reference to the given bool and assigns it to the AccountEnabled field.
 func (o *User) SetAccountEnabled(v bool) {
 	o.AccountEnabled = &v
+}
+
+// GetAppRoleAssignments returns the AppRoleAssignments field value if set, zero value otherwise.
+func (o *User) GetAppRoleAssignments() []AppRoleAssignment {
+	if o == nil || o.AppRoleAssignments == nil {
+		var ret []AppRoleAssignment
+		return ret
+	}
+	return o.AppRoleAssignments
+}
+
+// GetAppRoleAssignmentsOk returns a tuple with the AppRoleAssignments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetAppRoleAssignmentsOk() ([]AppRoleAssignment, bool) {
+	if o == nil || o.AppRoleAssignments == nil {
+		return nil, false
+	}
+	return o.AppRoleAssignments, true
+}
+
+// HasAppRoleAssignments returns a boolean if a field has been set.
+func (o *User) HasAppRoleAssignments() bool {
+	if o != nil && o.AppRoleAssignments != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAppRoleAssignments gets a reference to the given []AppRoleAssignment and assigns it to the AppRoleAssignments field.
+func (o *User) SetAppRoleAssignments(v []AppRoleAssignment) {
+	o.AppRoleAssignments = v
 }
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
@@ -448,6 +482,9 @@ func (o User) MarshalJSON() ([]byte, error) {
 	}
 	if o.AccountEnabled != nil {
 		toSerialize["accountEnabled"] = o.AccountEnabled
+	}
+	if o.AppRoleAssignments != nil {
+		toSerialize["appRoleAssignments"] = o.AppRoleAssignments
 	}
 	if o.DisplayName != nil {
 		toSerialize["displayName"] = o.DisplayName

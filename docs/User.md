@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | Read-only. | [optional] [readonly] 
 **AccountEnabled** | Pointer to **bool** | Set to \&quot;true\&quot; when the account is enabled. | [optional] 
+**AppRoleAssignments** | Pointer to [**[]AppRoleAssignment**](AppRoleAssignment.md) | The apps and app roles which this user has been assigned. | [optional] [readonly] 
 **DisplayName** | Pointer to **string** | The name displayed in the address book for the user. This value is usually the combination of the user&#39;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby. | [optional] 
 **Drives** | Pointer to [**[]Drive**](Drive.md) | A collection of drives available for this user. Read-only. | [optional] [readonly] 
 **Drive** | Pointer to [**Drive**](Drive.md) |  | [optional] 
@@ -85,6 +86,31 @@ SetAccountEnabled sets AccountEnabled field to given value.
 `func (o *User) HasAccountEnabled() bool`
 
 HasAccountEnabled returns a boolean if a field has been set.
+
+### GetAppRoleAssignments
+
+`func (o *User) GetAppRoleAssignments() []AppRoleAssignment`
+
+GetAppRoleAssignments returns the AppRoleAssignments field if non-nil, zero value otherwise.
+
+### GetAppRoleAssignmentsOk
+
+`func (o *User) GetAppRoleAssignmentsOk() (*[]AppRoleAssignment, bool)`
+
+GetAppRoleAssignmentsOk returns a tuple with the AppRoleAssignments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAppRoleAssignments
+
+`func (o *User) SetAppRoleAssignments(v []AppRoleAssignment)`
+
+SetAppRoleAssignments sets AppRoleAssignments field to given value.
+
+### HasAppRoleAssignments
+
+`func (o *User) HasAppRoleAssignments() bool`
+
+HasAppRoleAssignments returns a boolean if a field has been set.
 
 ### GetDisplayName
 
