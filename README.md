@@ -90,6 +90,7 @@ Class | Method | HTTP request | Description
 *EducationClassApi* | [**DeleteClass**](docs/EducationClassApi.md#deleteclass) | **Delete** /education/classes/{class-id} | Delete education class
 *EducationClassApi* | [**DeleteUserFromClass**](docs/EducationClassApi.md#deleteuserfromclass) | **Delete** /education/classes/{class-id}/members/{user-id}/$ref | Unassign user from a class
 *EducationClassApi* | [**GetClass**](docs/EducationClassApi.md#getclass) | **Get** /education/classes/{class-id} | Get class by key
+*EducationClassApi* | [**ListClassMembers**](docs/EducationClassApi.md#listclassmembers) | **Get** /education/classes/{class-id}/members | Get the educationClass resources owned by an educationSchool
 *EducationClassApi* | [**ListClasses**](docs/EducationClassApi.md#listclasses) | **Get** /education/classes | list education classes
 *EducationClassApi* | [**UpdateClass**](docs/EducationClassApi.md#updateclass) | **Patch** /education/classes/{class-id} | Update properties of a education class
 *EducationSchoolApi* | [**AddClassToSchool**](docs/EducationSchoolApi.md#addclasstoschool) | **Post** /education/schools/{school-id}/classes/$ref | Assign a class to a school
@@ -99,6 +100,8 @@ Class | Method | HTTP request | Description
 *EducationSchoolApi* | [**DeleteSchool**](docs/EducationSchoolApi.md#deleteschool) | **Delete** /education/schools/{school-id} | Delete school
 *EducationSchoolApi* | [**DeleteUserFromSchool**](docs/EducationSchoolApi.md#deleteuserfromschool) | **Delete** /education/schools/{school-id}/users/{user-id}/$ref | Unassign user from a school
 *EducationSchoolApi* | [**GetSchool**](docs/EducationSchoolApi.md#getschool) | **Get** /education/schools/{school-id} | Get the properties of a specific school
+*EducationSchoolApi* | [**ListSchoolClasses**](docs/EducationSchoolApi.md#listschoolclasses) | **Get** /education/schools/{school-id}/classes | Get the educationClass resources owned by an educationSchool
+*EducationSchoolApi* | [**ListSchoolUsers**](docs/EducationSchoolApi.md#listschoolusers) | **Get** /education/schools/{school-id}/users | Get the educationUser resources associated with an educationSchool
 *EducationSchoolApi* | [**ListSchools**](docs/EducationSchoolApi.md#listschools) | **Get** /education/schools | Get a list of schools and their properties
 *EducationSchoolApi* | [**UpdateSchool**](docs/EducationSchoolApi.md#updateschool) | **Patch** /education/schools/{school-id} | Update properties of a school
 *EducationUserApi* | [**CreateEducationUser**](docs/EducationUserApi.md#createeducationuser) | **Post** /education/users | Add new education user
@@ -110,6 +113,7 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**DeleteGroup**](docs/GroupApi.md#deletegroup) | **Delete** /groups/{group-id} | Delete entity from groups
 *GroupApi* | [**DeleteMember**](docs/GroupApi.md#deletemember) | **Delete** /groups/{group-id}/members/{directory-object-id}/$ref | Delete member from a group
 *GroupApi* | [**GetGroup**](docs/GroupApi.md#getgroup) | **Get** /groups/{group-id} | Get entity from groups by key
+*GroupApi* | [**ListMembers**](docs/GroupApi.md#listmembers) | **Get** /groups/{group-id}/members | Get a list of the group&#39;s direct members
 *GroupApi* | [**UpdateGroup**](docs/GroupApi.md#updategroup) | **Patch** /groups/{group-id} | Update entity in groups
 *GroupsApi* | [**CreateGroup**](docs/GroupsApi.md#creategroup) | **Post** /groups | Add new entity to groups
 *GroupsApi* | [**ListGroups**](docs/GroupsApi.md#listgroups) | **Get** /groups | Get entities from groups
@@ -144,11 +148,14 @@ Class | Method | HTTP request | Description
  - [CollectionOfDriveItems](docs/CollectionOfDriveItems.md)
  - [CollectionOfDrives](docs/CollectionOfDrives.md)
  - [CollectionOfDrives1](docs/CollectionOfDrives1.md)
+ - [CollectionOfEducationClass](docs/CollectionOfEducationClass.md)
  - [CollectionOfEducationUser](docs/CollectionOfEducationUser.md)
+ - [CollectionOfEducationUser1](docs/CollectionOfEducationUser1.md)
  - [CollectionOfGroup](docs/CollectionOfGroup.md)
  - [CollectionOfSchools](docs/CollectionOfSchools.md)
  - [CollectionOfTags](docs/CollectionOfTags.md)
  - [CollectionOfUser](docs/CollectionOfUser.md)
+ - [CollectionOfUsers](docs/CollectionOfUsers.md)
  - [Deleted](docs/Deleted.md)
  - [DirectoryObject](docs/DirectoryObject.md)
  - [Drive](docs/Drive.md)

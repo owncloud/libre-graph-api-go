@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DeleteGroup**](GroupApi.md#DeleteGroup) | **Delete** /groups/{group-id} | Delete entity from groups
 [**DeleteMember**](GroupApi.md#DeleteMember) | **Delete** /groups/{group-id}/members/{directory-object-id}/$ref | Delete member from a group
 [**GetGroup**](GroupApi.md#GetGroup) | **Get** /groups/{group-id} | Get entity from groups by key
+[**ListMembers**](GroupApi.md#ListMembers) | **Get** /groups/{group-id}/members | Get a list of the group&#39;s direct members
 [**UpdateGroup**](GroupApi.md#UpdateGroup) | **Patch** /groups/{group-id} | Update entity in groups
 
 
@@ -276,6 +277,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Group**](Group.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListMembers
+
+> CollectionOfUsers ListMembers(ctx, groupId).Execute()
+
+Get a list of the group's direct members
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    groupId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id of group
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupApi.ListMembers(context.Background(), groupId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.ListMembers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListMembers`: CollectionOfUsers
+    fmt.Fprintf(os.Stdout, "Response from `GroupApi.ListMembers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**groupId** | **string** | key: id of group | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListMembersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**CollectionOfUsers**](CollectionOfUsers.md)
 
 ### Authorization
 

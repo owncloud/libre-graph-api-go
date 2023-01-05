@@ -11,6 +11,8 @@ Method | HTTP request | Description
 [**DeleteSchool**](EducationSchoolApi.md#DeleteSchool) | **Delete** /education/schools/{school-id} | Delete school
 [**DeleteUserFromSchool**](EducationSchoolApi.md#DeleteUserFromSchool) | **Delete** /education/schools/{school-id}/users/{user-id}/$ref | Unassign user from a school
 [**GetSchool**](EducationSchoolApi.md#GetSchool) | **Get** /education/schools/{school-id} | Get the properties of a specific school
+[**ListSchoolClasses**](EducationSchoolApi.md#ListSchoolClasses) | **Get** /education/schools/{school-id}/classes | Get the educationClass resources owned by an educationSchool
+[**ListSchoolUsers**](EducationSchoolApi.md#ListSchoolUsers) | **Get** /education/schools/{school-id}/users | Get the educationUser resources associated with an educationSchool
 [**ListSchools**](EducationSchoolApi.md#ListSchools) | **Get** /education/schools | Get a list of schools and their properties
 [**UpdateSchool**](EducationSchoolApi.md#UpdateSchool) | **Patch** /education/schools/{school-id} | Update properties of a school
 
@@ -473,6 +475,142 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EducationSchool**](EducationSchool.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListSchoolClasses
+
+> CollectionOfEducationClass ListSchoolClasses(ctx, schoolId).Execute()
+
+Get the educationClass resources owned by an educationSchool
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EducationSchoolApi.ListSchoolClasses(context.Background(), schoolId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.ListSchoolClasses``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListSchoolClasses`: CollectionOfEducationClass
+    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolApi.ListSchoolClasses`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**schoolId** | **string** | key: id of school | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSchoolClassesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**CollectionOfEducationClass**](CollectionOfEducationClass.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListSchoolUsers
+
+> CollectionOfEducationUser1 ListSchoolUsers(ctx, schoolId).Execute()
+
+Get the educationUser resources associated with an educationSchool
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EducationSchoolApi.ListSchoolUsers(context.Background(), schoolId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.ListSchoolUsers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListSchoolUsers`: CollectionOfEducationUser1
+    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolApi.ListSchoolUsers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**schoolId** | **string** | key: id of school | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSchoolUsersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**CollectionOfEducationUser1**](CollectionOfEducationUser1.md)
 
 ### Authorization
 

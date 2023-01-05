@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**DeleteClass**](EducationClassApi.md#DeleteClass) | **Delete** /education/classes/{class-id} | Delete education class
 [**DeleteUserFromClass**](EducationClassApi.md#DeleteUserFromClass) | **Delete** /education/classes/{class-id}/members/{user-id}/$ref | Unassign user from a class
 [**GetClass**](EducationClassApi.md#GetClass) | **Get** /education/classes/{class-id} | Get class by key
+[**ListClassMembers**](EducationClassApi.md#ListClassMembers) | **Get** /education/classes/{class-id}/members | Get the educationClass resources owned by an educationSchool
 [**ListClasses**](EducationClassApi.md#ListClasses) | **Get** /education/classes | list education classes
 [**UpdateClass**](EducationClassApi.md#UpdateClass) | **Patch** /education/classes/{class-id} | Update properties of a education class
 
@@ -334,6 +335,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EducationClass**](EducationClass.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListClassMembers
+
+> CollectionOfEducationUser ListClassMembers(ctx, classId).Execute()
+
+Get the educationClass resources owned by an educationSchool
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id of class
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EducationClassApi.ListClassMembers(context.Background(), classId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassApi.ListClassMembers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListClassMembers`: CollectionOfEducationUser
+    fmt.Fprintf(os.Stdout, "Response from `EducationClassApi.ListClassMembers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**classId** | **string** | key: id of class | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListClassMembersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**CollectionOfEducationUser**](CollectionOfEducationUser.md)
 
 ### Authorization
 
