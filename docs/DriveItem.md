@@ -14,8 +14,6 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | The name of the item. Read-write. | [optional] 
 **ParentReference** | Pointer to [**ItemReference**](ItemReference.md) |  | [optional] 
 **WebUrl** | Pointer to **string** | URL that displays the resource in the browser. Read-only. | [optional] [readonly] 
-**CreatedByUser** | Pointer to [**User**](User.md) |  | [optional] 
-**LastModifiedByUser** | Pointer to [**User**](User.md) |  | [optional] 
 **Content** | Pointer to **string** | The content stream, if the item represents a file. | [optional] 
 **CTag** | Pointer to **string** | An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only. | [optional] [readonly] 
 **Deleted** | Pointer to [**Deleted**](Deleted.md) |  | [optional] 
@@ -300,56 +298,6 @@ SetWebUrl sets WebUrl field to given value.
 `func (o *DriveItem) HasWebUrl() bool`
 
 HasWebUrl returns a boolean if a field has been set.
-
-### GetCreatedByUser
-
-`func (o *DriveItem) GetCreatedByUser() User`
-
-GetCreatedByUser returns the CreatedByUser field if non-nil, zero value otherwise.
-
-### GetCreatedByUserOk
-
-`func (o *DriveItem) GetCreatedByUserOk() (*User, bool)`
-
-GetCreatedByUserOk returns a tuple with the CreatedByUser field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedByUser
-
-`func (o *DriveItem) SetCreatedByUser(v User)`
-
-SetCreatedByUser sets CreatedByUser field to given value.
-
-### HasCreatedByUser
-
-`func (o *DriveItem) HasCreatedByUser() bool`
-
-HasCreatedByUser returns a boolean if a field has been set.
-
-### GetLastModifiedByUser
-
-`func (o *DriveItem) GetLastModifiedByUser() User`
-
-GetLastModifiedByUser returns the LastModifiedByUser field if non-nil, zero value otherwise.
-
-### GetLastModifiedByUserOk
-
-`func (o *DriveItem) GetLastModifiedByUserOk() (*User, bool)`
-
-GetLastModifiedByUserOk returns a tuple with the LastModifiedByUser field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastModifiedByUser
-
-`func (o *DriveItem) SetLastModifiedByUser(v User)`
-
-SetLastModifiedByUser sets LastModifiedByUser field to given value.
-
-### HasLastModifiedByUser
-
-`func (o *DriveItem) HasLastModifiedByUser() bool`
-
-HasLastModifiedByUser returns a boolean if a field has been set.
 
 ### GetContent
 

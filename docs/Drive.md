@@ -14,8 +14,6 @@ Name | Type | Description | Notes
 **Name** | **string** | The name of the item. Read-write. | 
 **ParentReference** | Pointer to [**ItemReference**](ItemReference.md) |  | [optional] 
 **WebUrl** | Pointer to **string** | URL that displays the resource in the browser. Read-only. | [optional] [readonly] 
-**CreatedByUser** | Pointer to [**User**](User.md) |  | [optional] 
-**LastModifiedByUser** | Pointer to [**User**](User.md) |  | [optional] 
 **DriveType** | Pointer to **string** | Describes the type of drive represented by this resource. Values are \&quot;personal\&quot; for users home spaces, \&quot;project\&quot;, \&quot;virtual\&quot; or \&quot;share\&quot;. Read-only. | [optional] [readonly] 
 **DriveAlias** | Pointer to **string** | The drive alias can be used in clients to make the urls user friendly. Example: &#39;personal/einstein&#39;. This will be used to resolve to the correct driveID. | [optional] 
 **Owner** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
@@ -287,56 +285,6 @@ SetWebUrl sets WebUrl field to given value.
 `func (o *Drive) HasWebUrl() bool`
 
 HasWebUrl returns a boolean if a field has been set.
-
-### GetCreatedByUser
-
-`func (o *Drive) GetCreatedByUser() User`
-
-GetCreatedByUser returns the CreatedByUser field if non-nil, zero value otherwise.
-
-### GetCreatedByUserOk
-
-`func (o *Drive) GetCreatedByUserOk() (*User, bool)`
-
-GetCreatedByUserOk returns a tuple with the CreatedByUser field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedByUser
-
-`func (o *Drive) SetCreatedByUser(v User)`
-
-SetCreatedByUser sets CreatedByUser field to given value.
-
-### HasCreatedByUser
-
-`func (o *Drive) HasCreatedByUser() bool`
-
-HasCreatedByUser returns a boolean if a field has been set.
-
-### GetLastModifiedByUser
-
-`func (o *Drive) GetLastModifiedByUser() User`
-
-GetLastModifiedByUser returns the LastModifiedByUser field if non-nil, zero value otherwise.
-
-### GetLastModifiedByUserOk
-
-`func (o *Drive) GetLastModifiedByUserOk() (*User, bool)`
-
-GetLastModifiedByUserOk returns a tuple with the LastModifiedByUser field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastModifiedByUser
-
-`func (o *Drive) SetLastModifiedByUser(v User)`
-
-SetLastModifiedByUser sets LastModifiedByUser field to given value.
-
-### HasLastModifiedByUser
-
-`func (o *Drive) HasLastModifiedByUser() bool`
-
-HasLastModifiedByUser returns a boolean if a field has been set.
 
 ### GetDriveType
 

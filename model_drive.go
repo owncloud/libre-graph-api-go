@@ -34,8 +34,6 @@ type Drive struct {
 	ParentReference *ItemReference `json:"parentReference,omitempty"`
 	// URL that displays the resource in the browser. Read-only.
 	WebUrl *string `json:"webUrl,omitempty"`
-	CreatedByUser *User `json:"createdByUser,omitempty"`
-	LastModifiedByUser *User `json:"lastModifiedByUser,omitempty"`
 	// Describes the type of drive represented by this resource. Values are \"personal\" for users home spaces, \"project\", \"virtual\" or \"share\". Read-only.
 	DriveType *string `json:"driveType,omitempty"`
 	// The drive alias can be used in clients to make the urls user friendly. Example: 'personal/einstein'. This will be used to resolve to the correct driveID.
@@ -379,70 +377,6 @@ func (o *Drive) SetWebUrl(v string) {
 	o.WebUrl = &v
 }
 
-// GetCreatedByUser returns the CreatedByUser field value if set, zero value otherwise.
-func (o *Drive) GetCreatedByUser() User {
-	if o == nil || o.CreatedByUser == nil {
-		var ret User
-		return ret
-	}
-	return *o.CreatedByUser
-}
-
-// GetCreatedByUserOk returns a tuple with the CreatedByUser field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Drive) GetCreatedByUserOk() (*User, bool) {
-	if o == nil || o.CreatedByUser == nil {
-		return nil, false
-	}
-	return o.CreatedByUser, true
-}
-
-// HasCreatedByUser returns a boolean if a field has been set.
-func (o *Drive) HasCreatedByUser() bool {
-	if o != nil && o.CreatedByUser != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedByUser gets a reference to the given User and assigns it to the CreatedByUser field.
-func (o *Drive) SetCreatedByUser(v User) {
-	o.CreatedByUser = &v
-}
-
-// GetLastModifiedByUser returns the LastModifiedByUser field value if set, zero value otherwise.
-func (o *Drive) GetLastModifiedByUser() User {
-	if o == nil || o.LastModifiedByUser == nil {
-		var ret User
-		return ret
-	}
-	return *o.LastModifiedByUser
-}
-
-// GetLastModifiedByUserOk returns a tuple with the LastModifiedByUser field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Drive) GetLastModifiedByUserOk() (*User, bool) {
-	if o == nil || o.LastModifiedByUser == nil {
-		return nil, false
-	}
-	return o.LastModifiedByUser, true
-}
-
-// HasLastModifiedByUser returns a boolean if a field has been set.
-func (o *Drive) HasLastModifiedByUser() bool {
-	if o != nil && o.LastModifiedByUser != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetLastModifiedByUser gets a reference to the given User and assigns it to the LastModifiedByUser field.
-func (o *Drive) SetLastModifiedByUser(v User) {
-	o.LastModifiedByUser = &v
-}
-
 // GetDriveType returns the DriveType field value if set, zero value otherwise.
 func (o *Drive) GetDriveType() string {
 	if o == nil || o.DriveType == nil {
@@ -698,12 +632,6 @@ func (o Drive) MarshalJSON() ([]byte, error) {
 	}
 	if o.WebUrl != nil {
 		toSerialize["webUrl"] = o.WebUrl
-	}
-	if o.CreatedByUser != nil {
-		toSerialize["createdByUser"] = o.CreatedByUser
-	}
-	if o.LastModifiedByUser != nil {
-		toSerialize["lastModifiedByUser"] = o.LastModifiedByUser
 	}
 	if o.DriveType != nil {
 		toSerialize["driveType"] = o.DriveType
