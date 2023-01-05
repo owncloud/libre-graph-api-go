@@ -16,9 +16,9 @@ import (
 
 // OdataErrorDetail struct for OdataErrorDetail
 type OdataErrorDetail struct {
-	Code string `json:"code"`
-	Message string `json:"message"`
-	Target *string `json:"target,omitempty"`
+	Code    string  `json:"code"`
+	Message string  `json:"message"`
+	Target  *string `json:"target,omitempty"`
 }
 
 // NewOdataErrorDetail instantiates a new OdataErrorDetail object
@@ -169,5 +169,3 @@ func (v *NullableOdataErrorDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

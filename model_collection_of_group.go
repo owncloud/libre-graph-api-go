@@ -16,7 +16,7 @@ import (
 
 // CollectionOfGroup struct for CollectionOfGroup
 type CollectionOfGroup struct {
-	Value []Group `json:"value,omitempty"`
+	Value         []Group `json:"value,omitempty"`
 	OdataNextLink *string `json:"@odata.nextLink,omitempty"`
 }
 
@@ -147,5 +147,3 @@ func (v *NullableCollectionOfGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,14 +19,13 @@ import (
 	"strings"
 )
 
-
 // DrivesRootApiService DrivesRootApi service
 type DrivesRootApiService service
 
 type ApiGetRootRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DrivesRootApiService
-	driveId string
+	driveId    string
 }
 
 func (r ApiGetRootRequest) Execute() (*DriveItem, *http.Response, error) {
@@ -43,8 +42,8 @@ GetRoot Get root from arbitrary space
 func (a *DrivesRootApiService) GetRoot(ctx context.Context, driveId string) ApiGetRootRequest {
 	return ApiGetRootRequest{
 		ApiService: a,
-		ctx: ctx,
-		driveId: driveId,
+		ctx:        ctx,
+		driveId:    driveId,
 	}
 }
 
@@ -52,10 +51,10 @@ func (a *DrivesRootApiService) GetRoot(ctx context.Context, driveId string) ApiG
 //  @return DriveItem
 func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DriveItem
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DriveItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.GetRoot")
@@ -109,13 +108,13 @@ func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

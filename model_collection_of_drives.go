@@ -16,7 +16,7 @@ import (
 
 // CollectionOfDrives struct for CollectionOfDrives
 type CollectionOfDrives struct {
-	Value []Drive `json:"value,omitempty"`
+	Value         []Drive `json:"value,omitempty"`
 	OdataNextLink *string `json:"@odata.nextLink,omitempty"`
 }
 
@@ -147,5 +147,3 @@ func (v *NullableCollectionOfDrives) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,31 +18,31 @@ import (
 // Drive The drive represents a space on the storage.
 type Drive struct {
 	// The unique idenfier for this drive.
-	Id *string `json:"id,omitempty"`
+	Id        *string      `json:"id,omitempty"`
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// Date and time of item creation. Read-only.
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Provides a user-visible description of the item. Optional.
 	Description *string `json:"description,omitempty"`
 	// ETag for the item. Read-only.
-	ETag *string `json:"eTag,omitempty"`
+	ETag           *string      `json:"eTag,omitempty"`
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// Date and time the item was last modified. Read-only.
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 	// The name of the item. Read-write.
-	Name string `json:"name"`
+	Name            string         `json:"name"`
 	ParentReference *ItemReference `json:"parentReference,omitempty"`
 	// URL that displays the resource in the browser. Read-only.
 	WebUrl *string `json:"webUrl,omitempty"`
 	// Describes the type of drive represented by this resource. Values are \"personal\" for users home spaces, \"project\", \"virtual\" or \"share\". Read-only.
 	DriveType *string `json:"driveType,omitempty"`
 	// The drive alias can be used in clients to make the urls user friendly. Example: 'personal/einstein'. This will be used to resolve to the correct driveID.
-	DriveAlias *string `json:"driveAlias,omitempty"`
-	Owner *IdentitySet `json:"owner,omitempty"`
-	Quota *Quota `json:"quota,omitempty"`
+	DriveAlias *string      `json:"driveAlias,omitempty"`
+	Owner      *IdentitySet `json:"owner,omitempty"`
+	Quota      *Quota       `json:"quota,omitempty"`
 	// All items contained in the drive. Read-only. Nullable.
 	Items []DriveItem `json:"items,omitempty"`
-	Root *DriveItem `json:"root,omitempty"`
+	Root  *DriveItem  `json:"root,omitempty"`
 	// A collection of special drive resources.
 	Special []DriveItem `json:"special,omitempty"`
 }
@@ -692,5 +692,3 @@ func (v *NullableDrive) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

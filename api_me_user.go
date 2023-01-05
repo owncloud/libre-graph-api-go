@@ -18,14 +18,13 @@ import (
 	"net/url"
 )
 
-
 // MeUserApiService MeUserApi service
 type MeUserApiService service
 
 type ApiGetOwnUserRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *MeUserApiService
-	expand *[]string
+	expand     *[]string
 }
 
 // Expand related entities
@@ -47,7 +46,7 @@ GetOwnUser Get current user
 func (a *MeUserApiService) GetOwnUser(ctx context.Context) ApiGetOwnUserRequest {
 	return ApiGetOwnUserRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -55,10 +54,10 @@ func (a *MeUserApiService) GetOwnUser(ctx context.Context) ApiGetOwnUserRequest 
 //  @return User
 func (a *MeUserApiService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *User
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *User
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeUserApiService.GetOwnUser")
@@ -114,13 +113,13 @@ func (a *MeUserApiService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *ht
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

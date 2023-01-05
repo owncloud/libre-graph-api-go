@@ -24,7 +24,7 @@ type User struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// A collection of drives available for this user. Read-only.
 	Drives []Drive `json:"drives,omitempty"`
-	Drive *Drive `json:"drive,omitempty"`
+	Drive  *Drive  `json:"drive,omitempty"`
 	// Identities associated with this account.
 	Identities []ObjectIdentity `json:"identities,omitempty"`
 	// The SMTP address for the user, for example, 'jeff@contoso.onowncloud.com'. Returned by default. Supports $filter and endsWith.
@@ -32,8 +32,8 @@ type User struct {
 	// Groups that this user is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 	MemberOf []Group `json:"memberOf,omitempty"`
 	// Contains the on-premises SAM account name synchronized from the on-premises directory. Read-only.
-	OnPremisesSamAccountName *string `json:"onPremisesSamAccountName,omitempty"`
-	PasswordProfile *PasswordProfile `json:"passwordProfile,omitempty"`
+	OnPremisesSamAccountName *string          `json:"onPremisesSamAccountName,omitempty"`
+	PasswordProfile          *PasswordProfile `json:"passwordProfile,omitempty"`
 	// The user's surname (family name or last name). Returned by default. Supports $filter.
 	Surname *string `json:"surname,omitempty"`
 	// The user's givenName. Returned by default. Supports $filter.
@@ -517,5 +517,3 @@ func (v *NullableUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

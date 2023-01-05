@@ -108,6 +108,7 @@ func (o *AppRole) HasDescription() bool {
 func (o *AppRole) SetDescription(v string) {
 	o.Description.Set(&v)
 }
+
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *AppRole) SetDescriptionNil() {
 	o.Description.Set(nil)
@@ -150,6 +151,7 @@ func (o *AppRole) HasDisplayName() bool {
 func (o *AppRole) SetDisplayName(v string) {
 	o.DisplayName.Set(&v)
 }
+
 // SetDisplayNameNil sets the value for DisplayName to be an explicit nil
 func (o *AppRole) SetDisplayNameNil() {
 	o.DisplayName.Set(nil)
@@ -236,5 +238,3 @@ func (v *NullableAppRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,7 +18,7 @@ import (
 // AppRoleAssignment struct for AppRoleAssignment
 type AppRoleAssignment struct {
 	// The unique identifier for the object. 12345678-9abc-def0-1234-56789abcde. The value of the ID property is often, but not exclusively, in the form of a GUID. The value should be treated as an opaque identifier and not based in being a GUID. Null values are not allowed. Read-only.
-	Id *string `json:"id,omitempty"`
+	Id              *string    `json:"id,omitempty"`
 	DeletedDateTime *time.Time `json:"deletedDateTime,omitempty"`
 	// The identifier (id) for the app role which is assigned to the user. Required on create.
 	AppRoleId string `json:"appRoleId"`
@@ -176,6 +176,7 @@ func (o *AppRoleAssignment) HasCreatedDateTime() bool {
 func (o *AppRoleAssignment) SetCreatedDateTime(v time.Time) {
 	o.CreatedDateTime.Set(&v)
 }
+
 // SetCreatedDateTimeNil sets the value for CreatedDateTime to be an explicit nil
 func (o *AppRoleAssignment) SetCreatedDateTimeNil() {
 	o.CreatedDateTime.Set(nil)
@@ -218,6 +219,7 @@ func (o *AppRoleAssignment) HasPrincipalDisplayName() bool {
 func (o *AppRoleAssignment) SetPrincipalDisplayName(v string) {
 	o.PrincipalDisplayName.Set(&v)
 }
+
 // SetPrincipalDisplayNameNil sets the value for PrincipalDisplayName to be an explicit nil
 func (o *AppRoleAssignment) SetPrincipalDisplayNameNil() {
 	o.PrincipalDisplayName.Set(nil)
@@ -286,6 +288,7 @@ func (o *AppRoleAssignment) HasPrincipalType() bool {
 func (o *AppRoleAssignment) SetPrincipalType(v string) {
 	o.PrincipalType.Set(&v)
 }
+
 // SetPrincipalTypeNil sets the value for PrincipalType to be an explicit nil
 func (o *AppRoleAssignment) SetPrincipalTypeNil() {
 	o.PrincipalType.Set(nil)
@@ -328,6 +331,7 @@ func (o *AppRoleAssignment) HasResourceDisplayName() bool {
 func (o *AppRoleAssignment) SetResourceDisplayName(v string) {
 	o.ResourceDisplayName.Set(&v)
 }
+
 // SetResourceDisplayNameNil sets the value for ResourceDisplayName to be an explicit nil
 func (o *AppRoleAssignment) SetResourceDisplayNameNil() {
 	o.ResourceDisplayName.Set(nil)
@@ -431,5 +435,3 @@ func (v *NullableAppRoleAssignment) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

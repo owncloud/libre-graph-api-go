@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiApplicationsApplicationIdGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx           context.Context
+	ApiService    *DefaultApiService
 	applicationId string
 }
 
@@ -44,8 +43,8 @@ Get properties of an application by id
 */
 func (a *DefaultApiService) ApplicationsApplicationIdGet(ctx context.Context, applicationId string) ApiApplicationsApplicationIdGetRequest {
 	return ApiApplicationsApplicationIdGetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		applicationId: applicationId,
 	}
 }
@@ -54,10 +53,10 @@ func (a *DefaultApiService) ApplicationsApplicationIdGet(ctx context.Context, ap
 //  @return Application
 func (a *DefaultApiService) ApplicationsApplicationIdGetExecute(r ApiApplicationsApplicationIdGetRequest) (*Application, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Application
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Application
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ApplicationsApplicationIdGet")
@@ -111,13 +110,13 @@ func (a *DefaultApiService) ApplicationsApplicationIdGetExecute(r ApiApplication
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

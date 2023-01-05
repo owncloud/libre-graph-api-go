@@ -18,14 +18,13 @@ import (
 	"net/url"
 )
 
-
 // GroupsApiService GroupsApi service
 type GroupsApiService service
 
 type ApiCreateGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *GroupsApiService
-	group *Group
+	group      *Group
 }
 
 // New entity
@@ -47,7 +46,7 @@ CreateGroup Add new entity to groups
 func (a *GroupsApiService) CreateGroup(ctx context.Context) ApiCreateGroupRequest {
 	return ApiCreateGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -55,10 +54,10 @@ func (a *GroupsApiService) CreateGroup(ctx context.Context) ApiCreateGroupReques
 //  @return Group
 func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Group
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Group
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.CreateGroup")
@@ -116,13 +115,13 @@ func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -139,16 +138,16 @@ func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, 
 }
 
 type ApiListGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *GroupsApiService
-	top *int32
-	skip *int32
-	search *string
-	filter *string
-	count *bool
-	orderby *[]string
-	select_ *[]string
-	expand *[]string
+	top        *int32
+	skip       *int32
+	search     *string
+	filter     *string
+	count      *bool
+	orderby    *[]string
+	select_    *[]string
+	expand     *[]string
 }
 
 // Show only the first n items
@@ -212,7 +211,7 @@ ListGroups Get entities from groups
 func (a *GroupsApiService) ListGroups(ctx context.Context) ApiListGroupsRequest {
 	return ApiListGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -220,10 +219,10 @@ func (a *GroupsApiService) ListGroups(ctx context.Context) ApiListGroupsRequest 
 //  @return CollectionOfGroup
 func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (*CollectionOfGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CollectionOfGroup
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CollectionOfGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.ListGroups")
@@ -300,13 +299,13 @@ func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (*Collectio
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

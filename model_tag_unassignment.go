@@ -16,8 +16,8 @@ import (
 
 // TagUnassignment struct for TagUnassignment
 type TagUnassignment struct {
-	ResourceId string `json:"resourceId"`
-	Tags []string `json:"tags"`
+	ResourceId string   `json:"resourceId"`
+	Tags       []string `json:"tags"`
 }
 
 // NewTagUnassignment instantiates a new TagUnassignment object
@@ -133,5 +133,3 @@ func (v *NullableTagUnassignment) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

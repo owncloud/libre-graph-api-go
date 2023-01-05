@@ -17,7 +17,7 @@ import (
 // PasswordChange struct for PasswordChange
 type PasswordChange struct {
 	CurrentPassword string `json:"currentPassword"`
-	NewPassword string `json:"newPassword"`
+	NewPassword     string `json:"newPassword"`
 }
 
 // NewPasswordChange instantiates a new PasswordChange object
@@ -133,5 +133,3 @@ func (v *NullablePasswordChange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

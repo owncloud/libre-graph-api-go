@@ -19,7 +19,7 @@ import (
 type Shared struct {
 	Owner *IdentitySet `json:"owner,omitempty"`
 	// Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
-	Scope *string `json:"scope,omitempty"`
+	Scope    *string      `json:"scope,omitempty"`
 	SharedBy *IdentitySet `json:"sharedBy,omitempty"`
 	// The UTC date and time when the item was shared. Read-only.
 	SharedDateTime *time.Time `json:"sharedDateTime,omitempty"`
@@ -222,5 +222,3 @@ func (v *NullableShared) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

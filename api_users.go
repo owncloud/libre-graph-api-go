@@ -18,14 +18,13 @@ import (
 	"net/url"
 )
 
-
 // UsersApiService UsersApi service
 type UsersApiService service
 
 type ApiCreateUserRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *UsersApiService
-	user *User
+	user       *User
 }
 
 // New entity
@@ -47,7 +46,7 @@ CreateUser Add new entity to users
 func (a *UsersApiService) CreateUser(ctx context.Context) ApiCreateUserRequest {
 	return ApiCreateUserRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -55,10 +54,10 @@ func (a *UsersApiService) CreateUser(ctx context.Context) ApiCreateUserRequest {
 //  @return User
 func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (*User, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *User
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *User
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.CreateUser")
@@ -116,13 +115,13 @@ func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (*User, *htt
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -139,16 +138,16 @@ func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (*User, *htt
 }
 
 type ApiListUsersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *UsersApiService
-	top *int32
-	skip *int32
-	search *string
-	filter *string
-	count *bool
-	orderby *[]string
-	select_ *[]string
-	expand *[]string
+	top        *int32
+	skip       *int32
+	search     *string
+	filter     *string
+	count      *bool
+	orderby    *[]string
+	select_    *[]string
+	expand     *[]string
 }
 
 // Show only the first n items
@@ -212,7 +211,7 @@ ListUsers Get entities from users
 func (a *UsersApiService) ListUsers(ctx context.Context) ApiListUsersRequest {
 	return ApiListUsersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -220,10 +219,10 @@ func (a *UsersApiService) ListUsers(ctx context.Context) ApiListUsersRequest {
 //  @return CollectionOfUser
 func (a *UsersApiService) ListUsersExecute(r ApiListUsersRequest) (*CollectionOfUser, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CollectionOfUser
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CollectionOfUser
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.ListUsers")
@@ -300,13 +299,13 @@ func (a *UsersApiService) ListUsersExecute(r ApiListUsersRequest) (*CollectionOf
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

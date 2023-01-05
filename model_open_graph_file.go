@@ -18,8 +18,8 @@ import (
 type OpenGraphFile struct {
 	Hashes *Hashes `json:"hashes,omitempty"`
 	// The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.
-	MimeType *string `json:"mimeType,omitempty"`
-	ProcessingMetadata *bool `json:"processingMetadata,omitempty"`
+	MimeType           *string `json:"mimeType,omitempty"`
+	ProcessingMetadata *bool   `json:"processingMetadata,omitempty"`
 }
 
 // NewOpenGraphFile instantiates a new OpenGraphFile object
@@ -184,5 +184,3 @@ func (v *NullableOpenGraphFile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

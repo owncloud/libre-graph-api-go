@@ -17,9 +17,9 @@ import (
 // IdentitySet Optional. User account.
 type IdentitySet struct {
 	Application *Identity `json:"application,omitempty"`
-	Device *Identity `json:"device,omitempty"`
-	User *Identity `json:"user,omitempty"`
-	Group *Identity `json:"group,omitempty"`
+	Device      *Identity `json:"device,omitempty"`
+	User        *Identity `json:"user,omitempty"`
+	Group       *Identity `json:"group,omitempty"`
 }
 
 // NewIdentitySet instantiates a new IdentitySet object
@@ -219,5 +219,3 @@ func (v *NullableIdentitySet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

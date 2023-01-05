@@ -17,7 +17,7 @@ import (
 // Permission The Permission resource provides information about a sharing permission granted for a DriveItem resource.
 type Permission struct {
 	GrantedToIdentities []IdentitySet `json:"grantedToIdentities,omitempty"`
-	Roles []string `json:"roles,omitempty"`
+	Roles               []string      `json:"roles,omitempty"`
 }
 
 // NewPermission instantiates a new Permission object
@@ -147,5 +147,3 @@ func (v *NullablePermission) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

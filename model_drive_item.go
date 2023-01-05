@@ -18,36 +18,36 @@ import (
 // DriveItem Reprensents a resource inside a drive. Read-only.
 type DriveItem struct {
 	// Read-only.
-	Id *string `json:"id,omitempty"`
+	Id        *string      `json:"id,omitempty"`
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// Date and time of item creation. Read-only.
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Provides a user-visible description of the item. Optional.
 	Description *string `json:"description,omitempty"`
 	// ETag for the item. Read-only.
-	ETag *string `json:"eTag,omitempty"`
+	ETag           *string      `json:"eTag,omitempty"`
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// Date and time the item was last modified. Read-only.
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 	// The name of the item. Read-write.
-	Name *string `json:"name,omitempty"`
+	Name            *string        `json:"name,omitempty"`
 	ParentReference *ItemReference `json:"parentReference,omitempty"`
 	// URL that displays the resource in the browser. Read-only.
 	WebUrl *string `json:"webUrl,omitempty"`
 	// The content stream, if the item represents a file.
 	Content *string `json:"content,omitempty"`
 	// An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
-	CTag *string `json:"cTag,omitempty"`
-	Deleted *Deleted `json:"deleted,omitempty"`
-	File *OpenGraphFile `json:"file,omitempty"`
+	CTag           *string         `json:"cTag,omitempty"`
+	Deleted        *Deleted        `json:"deleted,omitempty"`
+	File           *OpenGraphFile  `json:"file,omitempty"`
 	FileSystemInfo *FileSystemInfo `json:"fileSystemInfo,omitempty"`
-	Folder *Folder `json:"folder,omitempty"`
-	Image *Image `json:"image,omitempty"`
+	Folder         *Folder         `json:"folder,omitempty"`
+	Image          *Image          `json:"image,omitempty"`
 	// If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
-	Root map[string]interface{} `json:"root,omitempty"`
-	Trash *Trash `json:"trash,omitempty"`
-	SpecialFolder *SpecialFolder `json:"specialFolder,omitempty"`
-	RemoteItem *RemoteItem `json:"remoteItem,omitempty"`
+	Root          map[string]interface{} `json:"root,omitempty"`
+	Trash         *Trash                 `json:"trash,omitempty"`
+	SpecialFolder *SpecialFolder         `json:"specialFolder,omitempty"`
+	RemoteItem    *RemoteItem            `json:"remoteItem,omitempty"`
 	// Size of the item in bytes. Read-only.
 	Size *int64 `json:"size,omitempty"`
 	// WebDAV compatible URL for the item. Read-only.
@@ -990,5 +990,3 @@ func (v *NullableDriveItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

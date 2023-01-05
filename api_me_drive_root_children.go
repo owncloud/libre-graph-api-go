@@ -18,12 +18,11 @@ import (
 	"net/url"
 )
 
-
 // MeDriveRootChildrenApiService MeDriveRootChildrenApi service
 type MeDriveRootChildrenApiService service
 
 type ApiHomeGetChildrenRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *MeDriveRootChildrenApiService
 }
 
@@ -40,7 +39,7 @@ HomeGetChildren Get children from drive
 func (a *MeDriveRootChildrenApiService) HomeGetChildren(ctx context.Context) ApiHomeGetChildrenRequest {
 	return ApiHomeGetChildrenRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -48,10 +47,10 @@ func (a *MeDriveRootChildrenApiService) HomeGetChildren(ctx context.Context) Api
 //  @return CollectionOfDriveItems
 func (a *MeDriveRootChildrenApiService) HomeGetChildrenExecute(r ApiHomeGetChildrenRequest) (*CollectionOfDriveItems, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CollectionOfDriveItems
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CollectionOfDriveItems
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootChildrenApiService.HomeGetChildren")
@@ -104,13 +103,13 @@ func (a *MeDriveRootChildrenApiService) HomeGetChildrenExecute(r ApiHomeGetChild
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

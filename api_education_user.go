@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // EducationUserApiService EducationUserApi service
 type EducationUserApiService service
 
 type ApiCreateEducationUserRequest struct {
-	ctx context.Context
-	ApiService *EducationUserApiService
+	ctx           context.Context
+	ApiService    *EducationUserApiService
 	educationUser *EducationUser
 }
 
@@ -48,7 +47,7 @@ CreateEducationUser Add new education user
 func (a *EducationUserApiService) CreateEducationUser(ctx context.Context) ApiCreateEducationUserRequest {
 	return ApiCreateEducationUserRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -56,10 +55,10 @@ func (a *EducationUserApiService) CreateEducationUser(ctx context.Context) ApiCr
 //  @return EducationUser
 func (a *EducationUserApiService) CreateEducationUserExecute(r ApiCreateEducationUserRequest) (*EducationUser, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EducationUser
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EducationUser
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserApiService.CreateEducationUser")
@@ -117,13 +116,13 @@ func (a *EducationUserApiService) CreateEducationUserExecute(r ApiCreateEducatio
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -140,9 +139,9 @@ func (a *EducationUserApiService) CreateEducationUserExecute(r ApiCreateEducatio
 }
 
 type ApiDeleteEducationUserRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EducationUserApiService
-	userId string
+	userId     string
 }
 
 func (r ApiDeleteEducationUserRequest) Execute() (*http.Response, error) {
@@ -159,17 +158,17 @@ DeleteEducationUser Delete educationUser
 func (a *EducationUserApiService) DeleteEducationUser(ctx context.Context, userId string) ApiDeleteEducationUserRequest {
 	return ApiDeleteEducationUserRequest{
 		ApiService: a,
-		ctx: ctx,
-		userId: userId,
+		ctx:        ctx,
+		userId:     userId,
 	}
 }
 
 // Execute executes the request
 func (a *EducationUserApiService) DeleteEducationUserExecute(r ApiDeleteEducationUserRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserApiService.DeleteEducationUser")
@@ -223,13 +222,13 @@ func (a *EducationUserApiService) DeleteEducationUserExecute(r ApiDeleteEducatio
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -237,10 +236,10 @@ func (a *EducationUserApiService) DeleteEducationUserExecute(r ApiDeleteEducatio
 }
 
 type ApiGetEducationUserRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EducationUserApiService
-	userId string
-	expand *[]string
+	userId     string
+	expand     *[]string
 }
 
 // Expand related entities
@@ -263,8 +262,8 @@ GetEducationUser Get properties of educationUser
 func (a *EducationUserApiService) GetEducationUser(ctx context.Context, userId string) ApiGetEducationUserRequest {
 	return ApiGetEducationUserRequest{
 		ApiService: a,
-		ctx: ctx,
-		userId: userId,
+		ctx:        ctx,
+		userId:     userId,
 	}
 }
 
@@ -272,10 +271,10 @@ func (a *EducationUserApiService) GetEducationUser(ctx context.Context, userId s
 //  @return EducationUser
 func (a *EducationUserApiService) GetEducationUserExecute(r ApiGetEducationUserRequest) (*EducationUser, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EducationUser
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EducationUser
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserApiService.GetEducationUser")
@@ -332,13 +331,13 @@ func (a *EducationUserApiService) GetEducationUserExecute(r ApiGetEducationUserR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -355,10 +354,10 @@ func (a *EducationUserApiService) GetEducationUserExecute(r ApiGetEducationUserR
 }
 
 type ApiListEducationUsersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EducationUserApiService
-	orderby *[]string
-	expand *[]string
+	orderby    *[]string
+	expand     *[]string
 }
 
 // Order items by property values
@@ -386,7 +385,7 @@ ListEducationUsers Get entities from education users
 func (a *EducationUserApiService) ListEducationUsers(ctx context.Context) ApiListEducationUsersRequest {
 	return ApiListEducationUsersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -394,10 +393,10 @@ func (a *EducationUserApiService) ListEducationUsers(ctx context.Context) ApiLis
 //  @return CollectionOfEducationUser
 func (a *EducationUserApiService) ListEducationUsersExecute(r ApiListEducationUsersRequest) (*CollectionOfEducationUser, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CollectionOfEducationUser
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CollectionOfEducationUser
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserApiService.ListEducationUsers")
@@ -456,13 +455,13 @@ func (a *EducationUserApiService) ListEducationUsersExecute(r ApiListEducationUs
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -479,9 +478,9 @@ func (a *EducationUserApiService) ListEducationUsersExecute(r ApiListEducationUs
 }
 
 type ApiUpdateEducationUserRequest struct {
-	ctx context.Context
-	ApiService *EducationUserApiService
-	userId string
+	ctx           context.Context
+	ApiService    *EducationUserApiService
+	userId        string
 	educationUser *EducationUser
 }
 
@@ -505,8 +504,8 @@ UpdateEducationUser Update properties of educationUser
 func (a *EducationUserApiService) UpdateEducationUser(ctx context.Context, userId string) ApiUpdateEducationUserRequest {
 	return ApiUpdateEducationUserRequest{
 		ApiService: a,
-		ctx: ctx,
-		userId: userId,
+		ctx:        ctx,
+		userId:     userId,
 	}
 }
 
@@ -514,10 +513,10 @@ func (a *EducationUserApiService) UpdateEducationUser(ctx context.Context, userI
 //  @return EducationUser
 func (a *EducationUserApiService) UpdateEducationUserExecute(r ApiUpdateEducationUserRequest) (*EducationUser, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EducationUser
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EducationUser
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserApiService.UpdateEducationUser")
@@ -576,13 +575,13 @@ func (a *EducationUserApiService) UpdateEducationUserExecute(r ApiUpdateEducatio
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

@@ -16,9 +16,9 @@ import (
 
 // OdataErrorMain struct for OdataErrorMain
 type OdataErrorMain struct {
-	Code string `json:"code"`
-	Message string `json:"message"`
-	Target *string `json:"target,omitempty"`
+	Code    string             `json:"code"`
+	Message string             `json:"message"`
+	Target  *string            `json:"target,omitempty"`
 	Details []OdataErrorDetail `json:"details,omitempty"`
 	// The structure of this object is service-specific
 	Innererror map[string]interface{} `json:"innererror,omitempty"`
@@ -242,5 +242,3 @@ func (v *NullableOdataErrorMain) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,15 +18,14 @@ import (
 	"net/url"
 )
 
-
 // MeDrivesApiService MeDrivesApi service
 type MeDrivesApiService service
 
 type ApiListMyDrivesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *MeDrivesApiService
-	orderby *string
-	filter *string
+	orderby    *string
+	filter     *string
 }
 
 // The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc.
@@ -54,7 +53,7 @@ ListMyDrives Get all drives where the current user is a regular member of
 func (a *MeDrivesApiService) ListMyDrives(ctx context.Context) ApiListMyDrivesRequest {
 	return ApiListMyDrivesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -62,10 +61,10 @@ func (a *MeDrivesApiService) ListMyDrives(ctx context.Context) ApiListMyDrivesRe
 //  @return CollectionOfDrives
 func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (*CollectionOfDrives, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CollectionOfDrives
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CollectionOfDrives
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDrivesApiService.ListMyDrives")
@@ -124,13 +123,13 @@ func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (*Col
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v OdataError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

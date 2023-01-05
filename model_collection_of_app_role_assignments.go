@@ -16,8 +16,8 @@ import (
 
 // CollectionOfAppRoleAssignments struct for CollectionOfAppRoleAssignments
 type CollectionOfAppRoleAssignments struct {
-	Value []AppRoleAssignment `json:"value,omitempty"`
-	OdataNextLink *string `json:"@odata.nextLink,omitempty"`
+	Value         []AppRoleAssignment `json:"value,omitempty"`
+	OdataNextLink *string             `json:"@odata.nextLink,omitempty"`
 }
 
 // NewCollectionOfAppRoleAssignments instantiates a new CollectionOfAppRoleAssignments object
@@ -147,5 +147,3 @@ func (v *NullableCollectionOfAppRoleAssignments) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
