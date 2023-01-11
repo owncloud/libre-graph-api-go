@@ -24,10 +24,6 @@ type EducationClass struct {
 	DisplayName string `json:"displayName"`
 	// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), Nullable. Supports $expand.
 	Members []User `json:"members,omitempty"`
-	// Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
-	OnPremisesDomainName *string `json:"onPremisesDomainName,omitempty"`
-	// Contains the on-premises SAM account name synchronized from the on-premises directory. Read-only.
-	OnPremisesSamAccountName *string `json:"onPremisesSamAccountName,omitempty"`
 	// A list of member references to the members to be added. Up to 20 members can be added with a single request
 	MembersodataBind []string `json:"members@odata.bind,omitempty"`
 	// Classification of the group, i.e. \"class\" or \"course\"
@@ -175,70 +171,6 @@ func (o *EducationClass) SetMembers(v []User) {
 	o.Members = v
 }
 
-// GetOnPremisesDomainName returns the OnPremisesDomainName field value if set, zero value otherwise.
-func (o *EducationClass) GetOnPremisesDomainName() string {
-	if o == nil || o.OnPremisesDomainName == nil {
-		var ret string
-		return ret
-	}
-	return *o.OnPremisesDomainName
-}
-
-// GetOnPremisesDomainNameOk returns a tuple with the OnPremisesDomainName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EducationClass) GetOnPremisesDomainNameOk() (*string, bool) {
-	if o == nil || o.OnPremisesDomainName == nil {
-		return nil, false
-	}
-	return o.OnPremisesDomainName, true
-}
-
-// HasOnPremisesDomainName returns a boolean if a field has been set.
-func (o *EducationClass) HasOnPremisesDomainName() bool {
-	if o != nil && o.OnPremisesDomainName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOnPremisesDomainName gets a reference to the given string and assigns it to the OnPremisesDomainName field.
-func (o *EducationClass) SetOnPremisesDomainName(v string) {
-	o.OnPremisesDomainName = &v
-}
-
-// GetOnPremisesSamAccountName returns the OnPremisesSamAccountName field value if set, zero value otherwise.
-func (o *EducationClass) GetOnPremisesSamAccountName() string {
-	if o == nil || o.OnPremisesSamAccountName == nil {
-		var ret string
-		return ret
-	}
-	return *o.OnPremisesSamAccountName
-}
-
-// GetOnPremisesSamAccountNameOk returns a tuple with the OnPremisesSamAccountName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EducationClass) GetOnPremisesSamAccountNameOk() (*string, bool) {
-	if o == nil || o.OnPremisesSamAccountName == nil {
-		return nil, false
-	}
-	return o.OnPremisesSamAccountName, true
-}
-
-// HasOnPremisesSamAccountName returns a boolean if a field has been set.
-func (o *EducationClass) HasOnPremisesSamAccountName() bool {
-	if o != nil && o.OnPremisesSamAccountName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOnPremisesSamAccountName gets a reference to the given string and assigns it to the OnPremisesSamAccountName field.
-func (o *EducationClass) SetOnPremisesSamAccountName(v string) {
-	o.OnPremisesSamAccountName = &v
-}
-
 // GetMembersodataBind returns the MembersodataBind field value if set, zero value otherwise.
 func (o *EducationClass) GetMembersodataBind() []string {
 	if o == nil || o.MembersodataBind == nil {
@@ -340,12 +272,6 @@ func (o EducationClass) MarshalJSON() ([]byte, error) {
 	}
 	if o.Members != nil {
 		toSerialize["members"] = o.Members
-	}
-	if o.OnPremisesDomainName != nil {
-		toSerialize["onPremisesDomainName"] = o.OnPremisesDomainName
-	}
-	if o.OnPremisesSamAccountName != nil {
-		toSerialize["onPremisesSamAccountName"] = o.OnPremisesSamAccountName
 	}
 	if o.MembersodataBind != nil {
 		toSerialize["members@odata.bind"] = o.MembersodataBind

@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search. | [optional] 
 **DisplayName** | **string** | The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy. | 
 **Members** | Pointer to [**[]User**](User.md) | Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), Nullable. Supports $expand. | [optional] 
-**OnPremisesDomainName** | Pointer to **string** | Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. | [optional] 
-**OnPremisesSamAccountName** | Pointer to **string** | Contains the on-premises SAM account name synchronized from the on-premises directory. Read-only. | [optional] 
 **MembersodataBind** | Pointer to **[]string** | A list of member references to the members to be added. Up to 20 members can be added with a single request | [optional] 
 **Classification** | **string** | Classification of the group, i.e. \&quot;class\&quot; or \&quot;course\&quot; | 
 **ExternalId** | Pointer to **string** | An external unique ID for the class | [optional] 
@@ -127,56 +125,6 @@ SetMembers sets Members field to given value.
 `func (o *EducationClass) HasMembers() bool`
 
 HasMembers returns a boolean if a field has been set.
-
-### GetOnPremisesDomainName
-
-`func (o *EducationClass) GetOnPremisesDomainName() string`
-
-GetOnPremisesDomainName returns the OnPremisesDomainName field if non-nil, zero value otherwise.
-
-### GetOnPremisesDomainNameOk
-
-`func (o *EducationClass) GetOnPremisesDomainNameOk() (*string, bool)`
-
-GetOnPremisesDomainNameOk returns a tuple with the OnPremisesDomainName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOnPremisesDomainName
-
-`func (o *EducationClass) SetOnPremisesDomainName(v string)`
-
-SetOnPremisesDomainName sets OnPremisesDomainName field to given value.
-
-### HasOnPremisesDomainName
-
-`func (o *EducationClass) HasOnPremisesDomainName() bool`
-
-HasOnPremisesDomainName returns a boolean if a field has been set.
-
-### GetOnPremisesSamAccountName
-
-`func (o *EducationClass) GetOnPremisesSamAccountName() string`
-
-GetOnPremisesSamAccountName returns the OnPremisesSamAccountName field if non-nil, zero value otherwise.
-
-### GetOnPremisesSamAccountNameOk
-
-`func (o *EducationClass) GetOnPremisesSamAccountNameOk() (*string, bool)`
-
-GetOnPremisesSamAccountNameOk returns a tuple with the OnPremisesSamAccountName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOnPremisesSamAccountName
-
-`func (o *EducationClass) SetOnPremisesSamAccountName(v string)`
-
-SetOnPremisesSamAccountName sets OnPremisesSamAccountName field to given value.
-
-### HasOnPremisesSamAccountName
-
-`func (o *EducationClass) HasOnPremisesSamAccountName() bool`
-
-HasOnPremisesSamAccountName returns a boolean if a field has been set.
 
 ### GetMembersodataBind
 
