@@ -78,7 +78,8 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**ApplicationsApplicationIdGet**](docs/DefaultApi.md#applicationsapplicationidget) | **Get** /applications/{application-id} | 
+*ApplicationsApi* | [**GetApplication**](docs/ApplicationsApi.md#getapplication) | **Get** /applications/{application-id} | Get application by id
+*ApplicationsApi* | [**ListApplications**](docs/ApplicationsApi.md#listapplications) | **Get** /applications | Get all applications
 *DrivesApi* | [**CreateDrive**](docs/DrivesApi.md#createdrive) | **Post** /drives | Create a new drive of a specific type
 *DrivesApi* | [**DeleteDrive**](docs/DrivesApi.md#deletedrive) | **Delete** /drives/{drive-id} | Delete a specific space
 *DrivesApi* | [**GetDrive**](docs/DrivesApi.md#getdrive) | **Get** /drives/{drive-id} | Get drive by id
@@ -144,6 +145,7 @@ Class | Method | HTTP request | Description
  - [ClassMemberReference](docs/ClassMemberReference.md)
  - [ClassReference](docs/ClassReference.md)
  - [CollectionOfAppRoleAssignments](docs/CollectionOfAppRoleAssignments.md)
+ - [CollectionOfApplications](docs/CollectionOfApplications.md)
  - [CollectionOfClass](docs/CollectionOfClass.md)
  - [CollectionOfDriveItems](docs/CollectionOfDriveItems.md)
  - [CollectionOfDrives](docs/CollectionOfDrives.md)

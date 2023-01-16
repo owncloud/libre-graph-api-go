@@ -2,7 +2,7 @@
 .travis.yml
 README.md
 api/openapi.yaml
-api_default.go
+api_applications.go
 api_drives.go
 api_drives_get_drives.go
 api_drives_root.go
@@ -26,9 +26,11 @@ configuration.go
 docs/AppRole.md
 docs/AppRoleAssignment.md
 docs/Application.md
+docs/ApplicationsApi.md
 docs/ClassMemberReference.md
 docs/ClassReference.md
 docs/CollectionOfAppRoleAssignments.md
+docs/CollectionOfApplications.md
 docs/CollectionOfClass.md
 docs/CollectionOfDriveItems.md
 docs/CollectionOfDrives.md
@@ -41,7 +43,6 @@ docs/CollectionOfSchools.md
 docs/CollectionOfTags.md
 docs/CollectionOfUser.md
 docs/CollectionOfUsers.md
-docs/DefaultApi.md
 docs/Deleted.md
 docs/DirectoryObject.md
 docs/Drive.md
@@ -105,6 +106,7 @@ model_application.go
 model_class_member_reference.go
 model_class_reference.go
 model_collection_of_app_role_assignments.go
+model_collection_of_applications.go
 model_collection_of_class.go
 model_collection_of_drive_items.go
 model_collection_of_drives.go
