@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ExpirationDateTime** | Pointer to **time.Time** | An optional expiration date which limits the permission in time. | [optional] 
 **GrantedToIdentities** | Pointer to [**[]IdentitySet**](IdentitySet.md) |  | [optional] 
 **Roles** | Pointer to **[]string** |  | [optional] 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewPermissionWithDefaults instantiates a new Permission object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetExpirationDateTime
+
+`func (o *Permission) GetExpirationDateTime() time.Time`
+
+GetExpirationDateTime returns the ExpirationDateTime field if non-nil, zero value otherwise.
+
+### GetExpirationDateTimeOk
+
+`func (o *Permission) GetExpirationDateTimeOk() (*time.Time, bool)`
+
+GetExpirationDateTimeOk returns a tuple with the ExpirationDateTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpirationDateTime
+
+`func (o *Permission) SetExpirationDateTime(v time.Time)`
+
+SetExpirationDateTime sets ExpirationDateTime field to given value.
+
+### HasExpirationDateTime
+
+`func (o *Permission) HasExpirationDateTime() bool`
+
+HasExpirationDateTime returns a boolean if a field has been set.
 
 ### GetGrantedToIdentities
 

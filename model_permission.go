@@ -12,10 +12,13 @@ package libregraph
 
 import (
 	"encoding/json"
+	"time"
 )
 
 // Permission The Permission resource provides information about a sharing permission granted for a DriveItem resource.
 type Permission struct {
+	// An optional expiration date which limits the permission in time.
+	ExpirationDateTime  *time.Time    `json:"expirationDateTime,omitempty"`
 	GrantedToIdentities []IdentitySet `json:"grantedToIdentities,omitempty"`
 	Roles               []string      `json:"roles,omitempty"`
 }
@@ -35,6 +38,38 @@ func NewPermission() *Permission {
 func NewPermissionWithDefaults() *Permission {
 	this := Permission{}
 	return &this
+}
+
+// GetExpirationDateTime returns the ExpirationDateTime field value if set, zero value otherwise.
+func (o *Permission) GetExpirationDateTime() time.Time {
+	if o == nil || o.ExpirationDateTime == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.ExpirationDateTime
+}
+
+// GetExpirationDateTimeOk returns a tuple with the ExpirationDateTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Permission) GetExpirationDateTimeOk() (*time.Time, bool) {
+	if o == nil || o.ExpirationDateTime == nil {
+		return nil, false
+	}
+	return o.ExpirationDateTime, true
+}
+
+// HasExpirationDateTime returns a boolean if a field has been set.
+func (o *Permission) HasExpirationDateTime() bool {
+	if o != nil && o.ExpirationDateTime != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExpirationDateTime gets a reference to the given time.Time and assigns it to the ExpirationDateTime field.
+func (o *Permission) SetExpirationDateTime(v time.Time) {
+	o.ExpirationDateTime = &v
 }
 
 // GetGrantedToIdentities returns the GrantedToIdentities field value if set, zero value otherwise.
@@ -103,6 +138,9 @@ func (o *Permission) SetRoles(v []string) {
 
 func (o Permission) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.ExpirationDateTime != nil {
+		toSerialize["expirationDateTime"] = o.ExpirationDateTime
+	}
 	if o.GrantedToIdentities != nil {
 		toSerialize["grantedToIdentities"] = o.GrantedToIdentities
 	}
