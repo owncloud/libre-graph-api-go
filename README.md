@@ -94,6 +94,9 @@ Class | Method | HTTP request | Description
 *EducationClassApi* | [**ListClassMembers**](docs/EducationClassApi.md#listclassmembers) | **Get** /education/classes/{class-id}/members | Get the educationClass resources owned by an educationSchool
 *EducationClassApi* | [**ListClasses**](docs/EducationClassApi.md#listclasses) | **Get** /education/classes | list education classes
 *EducationClassApi* | [**UpdateClass**](docs/EducationClassApi.md#updateclass) | **Patch** /education/classes/{class-id} | Update properties of a education class
+*EducationClassTeachersApi* | [**AddTeacherToClass**](docs/EducationClassTeachersApi.md#addteachertoclass) | **Post** /education/classes/{class-id}/teachers/$ref | Assign a teacher to a class
+*EducationClassTeachersApi* | [**DeleteTeacherFromClass**](docs/EducationClassTeachersApi.md#deleteteacherfromclass) | **Delete** /education/classes/{class-id}/teachers/{user-id}/$ref | Unassign user as teacher of a class
+*EducationClassTeachersApi* | [**GetTeachers**](docs/EducationClassTeachersApi.md#getteachers) | **Get** /education/classes/{class-id}/teachers | Get the teachers for a class
 *EducationSchoolApi* | [**AddClassToSchool**](docs/EducationSchoolApi.md#addclasstoschool) | **Post** /education/schools/{school-id}/classes/$ref | Assign a class to a school
 *EducationSchoolApi* | [**AddUserToSchool**](docs/EducationSchoolApi.md#addusertoschool) | **Post** /education/schools/{school-id}/users/$ref | Assign a user to a school
 *EducationSchoolApi* | [**CreateSchool**](docs/EducationSchoolApi.md#createschool) | **Post** /education/schools | Add new school
@@ -144,6 +147,7 @@ Class | Method | HTTP request | Description
  - [Application](docs/Application.md)
  - [ClassMemberReference](docs/ClassMemberReference.md)
  - [ClassReference](docs/ClassReference.md)
+ - [ClassTeacherReference](docs/ClassTeacherReference.md)
  - [CollectionOfAppRoleAssignments](docs/CollectionOfAppRoleAssignments.md)
  - [CollectionOfApplications](docs/CollectionOfApplications.md)
  - [CollectionOfClass](docs/CollectionOfClass.md)

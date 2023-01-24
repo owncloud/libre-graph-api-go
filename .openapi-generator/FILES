@@ -7,6 +7,7 @@ api_drives.go
 api_drives_get_drives.go
 api_drives_root.go
 api_education_class.go
+api_education_class_teachers.go
 api_education_school.go
 api_education_user.go
 api_group.go
@@ -29,6 +30,7 @@ docs/Application.md
 docs/ApplicationsApi.md
 docs/ClassMemberReference.md
 docs/ClassReference.md
+docs/ClassTeacherReference.md
 docs/CollectionOfAppRoleAssignments.md
 docs/CollectionOfApplications.md
 docs/CollectionOfClass.md
@@ -52,6 +54,7 @@ docs/DrivesGetDrivesApi.md
 docs/DrivesRootApi.md
 docs/EducationClass.md
 docs/EducationClassApi.md
+docs/EducationClassTeachersApi.md
 docs/EducationOrganization.md
 docs/EducationSchool.md
 docs/EducationSchoolApi.md
@@ -105,6 +108,7 @@ model_app_role_assignment.go
 model_application.go
 model_class_member_reference.go
 model_class_reference.go
+model_class_teacher_reference.go
 model_collection_of_app_role_assignments.go
 model_collection_of_applications.go
 model_collection_of_class.go

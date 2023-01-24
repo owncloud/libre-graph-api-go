@@ -59,6 +59,8 @@ type APIClient struct {
 
 	EducationClassApi *EducationClassApiService
 
+	EducationClassTeachersApi *EducationClassTeachersApiService
+
 	EducationSchoolApi *EducationSchoolApiService
 
 	EducationUserApi *EducationUserApiService
@@ -109,6 +111,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.DrivesGetDrivesApi = (*DrivesGetDrivesApiService)(&c.common)
 	c.DrivesRootApi = (*DrivesRootApiService)(&c.common)
 	c.EducationClassApi = (*EducationClassApiService)(&c.common)
+	c.EducationClassTeachersApi = (*EducationClassTeachersApiService)(&c.common)
 	c.EducationSchoolApi = (*EducationSchoolApiService)(&c.common)
 	c.EducationUserApi = (*EducationUserApiService)(&c.common)
 	c.GroupApi = (*GroupApiService)(&c.common)
