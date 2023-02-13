@@ -43,7 +43,7 @@ func (r ApiAddClassToSchoolRequest) Execute() (*http.Response, error) {
 AddClassToSchool Assign a class to a school
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param schoolId key: id of school
+ @param schoolId key: id or schoolNumber of school
  @return ApiAddClassToSchoolRequest
 */
 func (a *EducationSchoolApiService) AddClassToSchool(ctx context.Context, schoolId string) ApiAddClassToSchoolRequest {
@@ -152,7 +152,7 @@ func (r ApiAddUserToSchoolRequest) Execute() (*http.Response, error) {
 AddUserToSchool Assign a user to a school
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param schoolId key: id of school
+ @param schoolId key: id or schoolNumber of school
  @return ApiAddUserToSchoolRequest
 */
 func (a *EducationSchoolApiService) AddUserToSchool(ctx context.Context, schoolId string) ApiAddUserToSchoolRequest {
@@ -371,8 +371,8 @@ func (r ApiDeleteClassFromSchoolRequest) Execute() (*http.Response, error) {
 DeleteClassFromSchool Unassign class from a school
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param schoolId key: id of school
- @param classId key: id of the class to unassign from school
+ @param schoolId key: id or schoolNumber of school
+ @param classId key: id or externalId of the class to unassign from school
  @return ApiDeleteClassFromSchoolRequest
 */
 func (a *EducationSchoolApiService) DeleteClassFromSchool(ctx context.Context, schoolId string, classId string) ApiDeleteClassFromSchoolRequest {
@@ -471,7 +471,7 @@ func (r ApiDeleteSchoolRequest) Execute() (*http.Response, error) {
 DeleteSchool Delete school
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param schoolId key: id of school
+ @param schoolId key: id or schoolNumber of school
  @return ApiDeleteSchoolRequest
 */
 func (a *EducationSchoolApiService) DeleteSchool(ctx context.Context, schoolId string) ApiDeleteSchoolRequest {
@@ -569,7 +569,7 @@ func (r ApiDeleteUserFromSchoolRequest) Execute() (*http.Response, error) {
 DeleteUserFromSchool Unassign user from a school
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param schoolId key: id of school
+ @param schoolId key: id or schoolNumber of school
  @param userId key: id of the user to unassign from school
  @return ApiDeleteUserFromSchoolRequest
 */
@@ -669,7 +669,7 @@ func (r ApiGetSchoolRequest) Execute() (*EducationSchool, *http.Response, error)
 GetSchool Get the properties of a specific school
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param schoolId key: id of school
+ @param schoolId key: id or schoolNumber of school
  @return ApiGetSchoolRequest
 */
 func (a *EducationSchoolApiService) GetSchool(ctx context.Context, schoolId string) ApiGetSchoolRequest {
@@ -777,7 +777,7 @@ func (r ApiListSchoolClassesRequest) Execute() (*CollectionOfEducationClass, *ht
 ListSchoolClasses Get the educationClass resources owned by an educationSchool
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param schoolId key: id of school
+ @param schoolId key: id or schoolNumber of school
  @return ApiListSchoolClassesRequest
 */
 func (a *EducationSchoolApiService) ListSchoolClasses(ctx context.Context, schoolId string) ApiListSchoolClassesRequest {
@@ -885,7 +885,7 @@ func (r ApiListSchoolUsersRequest) Execute() (*CollectionOfEducationUser1, *http
 ListSchoolUsers Get the educationUser resources associated with an educationSchool
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param schoolId key: id of school
+ @param schoolId key: id or schoolNumber of school
  @return ApiListSchoolUsersRequest
 */
 func (a *EducationSchoolApiService) ListSchoolUsers(ctx context.Context, schoolId string) ApiListSchoolUsersRequest {
@@ -1104,7 +1104,7 @@ func (r ApiUpdateSchoolRequest) Execute() (*EducationSchool, *http.Response, err
 UpdateSchool Update properties of a school
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param schoolId key: id of school
+ @param schoolId key: id or schoolNumber of school
  @return ApiUpdateSchoolRequest
 */
 func (a *EducationSchoolApiService) UpdateSchool(ctx context.Context, schoolId string) ApiUpdateSchoolRequest {

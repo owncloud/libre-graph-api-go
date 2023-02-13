@@ -37,7 +37,7 @@ import (
 )
 
 func main() {
-    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
+    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id or schoolNumber of school
     classReference := *openapiclient.NewClassReference() // ClassReference | educationClass to be added as member
 
     configuration := openapiclient.NewConfiguration()
@@ -56,7 +56,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**schoolId** | **string** | key: id of school | 
+**schoolId** | **string** | key: id or schoolNumber of school | 
 
 ### Other Parameters
 
@@ -105,7 +105,7 @@ import (
 )
 
 func main() {
-    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
+    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id or schoolNumber of school
     educationUserReference := *openapiclient.NewEducationUserReference() // EducationUserReference | educationUser to be added as member
 
     configuration := openapiclient.NewConfiguration()
@@ -124,7 +124,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**schoolId** | **string** | key: id of school | 
+**schoolId** | **string** | key: id or schoolNumber of school | 
 
 ### Other Parameters
 
@@ -237,8 +237,8 @@ import (
 )
 
 func main() {
-    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
-    classId := "7e84a069-f374-479b-817d-71590117d443" // string | key: id of the class to unassign from school
+    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id or schoolNumber of school
+    classId := "7e84a069-f374-479b-817d-71590117d443" // string | key: id or externalId of the class to unassign from school
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -256,8 +256,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**schoolId** | **string** | key: id of school | 
-**classId** | **string** | key: id of the class to unassign from school | 
+**schoolId** | **string** | key: id or schoolNumber of school | 
+**classId** | **string** | key: id or externalId of the class to unassign from school | 
 
 ### Other Parameters
 
@@ -306,7 +306,7 @@ import (
 )
 
 func main() {
-    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
+    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id or schoolNumber of school
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -324,7 +324,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**schoolId** | **string** | key: id of school | 
+**schoolId** | **string** | key: id or schoolNumber of school | 
 
 ### Other Parameters
 
@@ -372,7 +372,7 @@ import (
 )
 
 func main() {
-    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
+    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id or schoolNumber of school
     userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: id of the user to unassign from school
 
     configuration := openapiclient.NewConfiguration()
@@ -391,7 +391,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**schoolId** | **string** | key: id of school | 
+**schoolId** | **string** | key: id or schoolNumber of school | 
 **userId** | **string** | key: id of the user to unassign from school | 
 
 ### Other Parameters
@@ -441,7 +441,7 @@ import (
 )
 
 func main() {
-    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
+    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id or schoolNumber of school
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -461,7 +461,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**schoolId** | **string** | key: id of school | 
+**schoolId** | **string** | key: id or schoolNumber of school | 
 
 ### Other Parameters
 
@@ -509,7 +509,7 @@ import (
 )
 
 func main() {
-    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
+    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id or schoolNumber of school
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -529,7 +529,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**schoolId** | **string** | key: id of school | 
+**schoolId** | **string** | key: id or schoolNumber of school | 
 
 ### Other Parameters
 
@@ -577,7 +577,7 @@ import (
 )
 
 func main() {
-    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
+    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id or schoolNumber of school
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -597,7 +597,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**schoolId** | **string** | key: id of school | 
+**schoolId** | **string** | key: id or schoolNumber of school | 
 
 ### Other Parameters
 
@@ -704,7 +704,7 @@ import (
 )
 
 func main() {
-    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id of school
+    schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id or schoolNumber of school
     educationSchool := *openapiclient.NewEducationSchool() // EducationSchool | New property values
 
     configuration := openapiclient.NewConfiguration()
@@ -725,7 +725,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**schoolId** | **string** | key: id of school | 
+**schoolId** | **string** | key: id or schoolNumber of school | 
 
 ### Other Parameters
 

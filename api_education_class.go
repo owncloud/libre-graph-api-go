@@ -43,7 +43,7 @@ func (r ApiAddUserToClassRequest) Execute() (*http.Response, error) {
 AddUserToClass Assign a user to a class
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param classId key: id of class
+ @param classId key: id or externalId of class
  @return ApiAddUserToClassRequest
 */
 func (a *EducationClassApiService) AddUserToClass(ctx context.Context, classId string) ApiAddUserToClassRequest {
@@ -261,7 +261,7 @@ func (r ApiDeleteClassRequest) Execute() (*http.Response, error) {
 DeleteClass Delete education class
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param classId key: id of class
+ @param classId key: id or externalId of class
  @return ApiDeleteClassRequest
 */
 func (a *EducationClassApiService) DeleteClass(ctx context.Context, classId string) ApiDeleteClassRequest {
@@ -359,7 +359,7 @@ func (r ApiDeleteUserFromClassRequest) Execute() (*http.Response, error) {
 DeleteUserFromClass Unassign user from a class
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param classId key: id of class
+ @param classId key: id or externalId of class
  @param userId key: id of the user to unassign from class
  @return ApiDeleteUserFromClassRequest
 */
@@ -459,7 +459,7 @@ func (r ApiGetClassRequest) Execute() (*EducationClass, *http.Response, error) {
 GetClass Get class by key
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param classId key: id of class
+ @param classId key: id or externalId of class
  @return ApiGetClassRequest
 */
 func (a *EducationClassApiService) GetClass(ctx context.Context, classId string) ApiGetClassRequest {
@@ -567,7 +567,7 @@ func (r ApiListClassMembersRequest) Execute() (*CollectionOfEducationUser, *http
 ListClassMembers Get the educationClass resources owned by an educationSchool
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param classId key: id of class
+ @param classId key: id or externalId of class
  @return ApiListClassMembersRequest
 */
 func (a *EducationClassApiService) ListClassMembers(ctx context.Context, classId string) ApiListClassMembersRequest {
@@ -786,7 +786,7 @@ func (r ApiUpdateClassRequest) Execute() (*EducationClass, *http.Response, error
 UpdateClass Update properties of a education class
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param classId key: id of class
+ @param classId key: id or externalId of class
  @return ApiUpdateClassRequest
 */
 func (a *EducationClassApiService) UpdateClass(ctx context.Context, classId string) ApiUpdateClassRequest {

@@ -34,7 +34,7 @@ import (
 )
 
 func main() {
-    classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id of class
+    classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id or externalId of class
     classMemberReference := *openapiclient.NewClassMemberReference() // ClassMemberReference | educationUser to be added as member
 
     configuration := openapiclient.NewConfiguration()
@@ -53,7 +53,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**classId** | **string** | key: id of class | 
+**classId** | **string** | key: id or externalId of class | 
 
 ### Other Parameters
 
@@ -166,7 +166,7 @@ import (
 )
 
 func main() {
-    classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id of class
+    classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id or externalId of class
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -184,7 +184,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**classId** | **string** | key: id of class | 
+**classId** | **string** | key: id or externalId of class | 
 
 ### Other Parameters
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    classId := "classId_example" // string | key: id of class
+    classId := "classId_example" // string | key: id or externalId of class
     userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: id of the user to unassign from class
 
     configuration := openapiclient.NewConfiguration()
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**classId** | **string** | key: id of class | 
+**classId** | **string** | key: id or externalId of class | 
 **userId** | **string** | key: id of the user to unassign from class | 
 
 ### Other Parameters
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id of class
+    classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id or externalId of class
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -321,7 +321,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**classId** | **string** | key: id of class | 
+**classId** | **string** | key: id or externalId of class | 
 
 ### Other Parameters
 
@@ -369,7 +369,7 @@ import (
 )
 
 func main() {
-    classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id of class
+    classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id or externalId of class
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -389,7 +389,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**classId** | **string** | key: id of class | 
+**classId** | **string** | key: id or externalId of class | 
 
 ### Other Parameters
 
@@ -496,7 +496,7 @@ import (
 )
 
 func main() {
-    classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id of class
+    classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id or externalId of class
     educationClass := *openapiclient.NewEducationClass("DisplayName_example", "Classification_example") // EducationClass | New property values
 
     configuration := openapiclient.NewConfiguration()
@@ -517,7 +517,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**classId** | **string** | key: id of class | 
+**classId** | **string** | key: id or externalId of class | 
 
 ### Other Parameters
 
