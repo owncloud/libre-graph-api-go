@@ -377,7 +377,7 @@ func (r ApiGetGroupRequest) Execute() (*Group, *http.Response, error) {
 GetGroup Get entity from groups by key
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupId key: id of group
+ @param groupId key: id or name of group
  @return ApiGetGroupRequest
 */
 func (a *GroupApiService) GetGroup(ctx context.Context, groupId string) ApiGetGroupRequest {
@@ -491,7 +491,7 @@ func (r ApiListMembersRequest) Execute() (*CollectionOfUsers, *http.Response, er
 ListMembers Get a list of the group's direct members
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupId key: id of group
+ @param groupId key: id or name of group
  @return ApiListMembersRequest
 */
 func (a *GroupApiService) ListMembers(ctx context.Context, groupId string) ApiListMembersRequest {

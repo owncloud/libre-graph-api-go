@@ -140,26 +140,11 @@ func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (*User, *htt
 type ApiListUsersRequest struct {
 	ctx        context.Context
 	ApiService *UsersApiService
-	top        *int32
-	skip       *int32
 	search     *string
 	filter     *string
-	count      *bool
 	orderby    *[]string
 	select_    *[]string
 	expand     *[]string
-}
-
-// Show only the first n items
-func (r ApiListUsersRequest) Top(top int32) ApiListUsersRequest {
-	r.top = &top
-	return r
-}
-
-// Skip the first n items
-func (r ApiListUsersRequest) Skip(skip int32) ApiListUsersRequest {
-	r.skip = &skip
-	return r
 }
 
 // Search items by search phrases
@@ -168,15 +153,9 @@ func (r ApiListUsersRequest) Search(search string) ApiListUsersRequest {
 	return r
 }
 
-// Filter items by property values
+// Filter users by property values and relationship attributes
 func (r ApiListUsersRequest) Filter(filter string) ApiListUsersRequest {
 	r.filter = &filter
-	return r
-}
-
-// Include count of items
-func (r ApiListUsersRequest) Count(count bool) ApiListUsersRequest {
-	r.count = &count
 	return r
 }
 
@@ -236,20 +215,11 @@ func (a *UsersApiService) ListUsersExecute(r ApiListUsersRequest) (*CollectionOf
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.top != nil {
-		localVarQueryParams.Add("$top", parameterToString(*r.top, ""))
-	}
-	if r.skip != nil {
-		localVarQueryParams.Add("$skip", parameterToString(*r.skip, ""))
-	}
 	if r.search != nil {
 		localVarQueryParams.Add("$search", parameterToString(*r.search, ""))
 	}
 	if r.filter != nil {
 		localVarQueryParams.Add("$filter", parameterToString(*r.filter, ""))
-	}
-	if r.count != nil {
-		localVarQueryParams.Add("$count", parameterToString(*r.count, ""))
 	}
 	if r.orderby != nil {
 		localVarQueryParams.Add("$orderby", parameterToString(*r.orderby, "csv"))

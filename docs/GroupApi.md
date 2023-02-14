@@ -239,7 +239,7 @@ import (
 )
 
 func main() {
-    groupId := "groupId_example" // string | key: id of group
+    groupId := "groupId_example" // string | key: id or name of group
     select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
     expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
@@ -261,7 +261,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**groupId** | **string** | key: id of group | 
+**groupId** | **string** | key: id or name of group | 
 
 ### Other Parameters
 
@@ -311,7 +311,7 @@ import (
 )
 
 func main() {
-    groupId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id of group
+    groupId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id or name of group
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -331,7 +331,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**groupId** | **string** | key: id of group | 
+**groupId** | **string** | key: id or name of group | 
 
 ### Other Parameters
 

@@ -18,9 +18,9 @@ import (
 type EducationClass struct {
 	// Read-only.
 	Id *string `json:"id,omitempty"`
-	// An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+	// An optional description for the group. Returned by default.
 	Description *string `json:"description,omitempty"`
-	// The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+	// The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $search and $orderBy.
 	DisplayName string `json:"displayName"`
 	// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), Nullable. Supports $expand.
 	Members []User `json:"members,omitempty"`

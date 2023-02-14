@@ -140,43 +140,15 @@ func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, 
 type ApiListGroupsRequest struct {
 	ctx        context.Context
 	ApiService *GroupsApiService
-	top        *int32
-	skip       *int32
 	search     *string
-	filter     *string
-	count      *bool
 	orderby    *[]string
 	select_    *[]string
 	expand     *[]string
 }
 
-// Show only the first n items
-func (r ApiListGroupsRequest) Top(top int32) ApiListGroupsRequest {
-	r.top = &top
-	return r
-}
-
-// Skip the first n items
-func (r ApiListGroupsRequest) Skip(skip int32) ApiListGroupsRequest {
-	r.skip = &skip
-	return r
-}
-
 // Search items by search phrases
 func (r ApiListGroupsRequest) Search(search string) ApiListGroupsRequest {
 	r.search = &search
-	return r
-}
-
-// Filter items by property values
-func (r ApiListGroupsRequest) Filter(filter string) ApiListGroupsRequest {
-	r.filter = &filter
-	return r
-}
-
-// Include count of items
-func (r ApiListGroupsRequest) Count(count bool) ApiListGroupsRequest {
-	r.count = &count
 	return r
 }
 
@@ -236,20 +208,8 @@ func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (*Collectio
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.top != nil {
-		localVarQueryParams.Add("$top", parameterToString(*r.top, ""))
-	}
-	if r.skip != nil {
-		localVarQueryParams.Add("$skip", parameterToString(*r.skip, ""))
-	}
 	if r.search != nil {
 		localVarQueryParams.Add("$search", parameterToString(*r.search, ""))
-	}
-	if r.filter != nil {
-		localVarQueryParams.Add("$filter", parameterToString(*r.filter, ""))
-	}
-	if r.count != nil {
-		localVarQueryParams.Add("$count", parameterToString(*r.count, ""))
 	}
 	if r.orderby != nil {
 		localVarQueryParams.Add("$orderby", parameterToString(*r.orderby, "csv"))

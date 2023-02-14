@@ -43,7 +43,7 @@ func (r ApiDeleteUserRequest) Execute() (*http.Response, error) {
 DeleteUser Delete entity from users
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userId key: id of user
+ @param userId key: id or name of user
  @return ApiDeleteUserRequest
 */
 func (a *UserApiService) DeleteUser(ctx context.Context, userId string) ApiDeleteUserRequest {
@@ -157,7 +157,7 @@ func (r ApiGetUserRequest) Execute() (*User, *http.Response, error) {
 GetUser Get entity from users by key
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userId key: id of user
+ @param userId key: id or name of user
  @return ApiGetUserRequest
 */
 func (a *UserApiService) GetUser(ctx context.Context, userId string) ApiGetUserRequest {

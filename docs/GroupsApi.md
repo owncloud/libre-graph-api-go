@@ -75,7 +75,7 @@ No authorization required
 
 ## ListGroups
 
-> CollectionOfGroup ListGroups(ctx).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Orderby(orderby).Select_(select_).Expand(expand).Execute()
+> CollectionOfGroup ListGroups(ctx).Search(search).Orderby(orderby).Select_(select_).Expand(expand).Execute()
 
 Get entities from groups
 
@@ -92,18 +92,14 @@ import (
 )
 
 func main() {
-    top := int32(50) // int32 | Show only the first n items (optional)
-    skip := int32(56) // int32 | Skip the first n items (optional)
     search := "search_example" // string | Search items by search phrases (optional)
-    filter := "driveType eq 'project'" // string | Filter items by property values (optional)
-    count := true // bool | Include count of items (optional)
     orderby := []string{"Orderby_example"} // []string | Order items by property values (optional)
     select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
     expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GroupsApi.ListGroups(context.Background()).Top(top).Skip(skip).Search(search).Filter(filter).Count(count).Orderby(orderby).Select_(select_).Expand(expand).Execute()
+    resp, r, err := apiClient.GroupsApi.ListGroups(context.Background()).Search(search).Orderby(orderby).Select_(select_).Expand(expand).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupsApi.ListGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -124,11 +120,7 @@ Other parameters are passed through a pointer to a apiListGroupsRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **top** | **int32** | Show only the first n items | 
- **skip** | **int32** | Skip the first n items | 
  **search** | **string** | Search items by search phrases | 
- **filter** | **string** | Filter items by property values | 
- **count** | **bool** | Include count of items | 
  **orderby** | **[]string** | Order items by property values | 
  **select_** | **[]string** | Select properties to be returned | 
  **expand** | **[]string** | Expand related entities | 

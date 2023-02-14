@@ -29,7 +29,7 @@ import (
 )
 
 func main() {
-    userId := "userId_example" // string | key: id of user
+    userId := "userId_example" // string | key: id or name of user
     ifMatch := "ifMatch_example" // string | ETag (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -48,7 +48,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | key: id of user | 
+**userId** | **string** | key: id or name of user | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
 )
 
 func main() {
-    userId := "userId_example" // string | key: id of user
+    userId := "userId_example" // string | key: id or name of user
     select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
     expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
@@ -119,7 +119,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | key: id of user | 
+**userId** | **string** | key: id or name of user | 
 
 ### Other Parameters
 
