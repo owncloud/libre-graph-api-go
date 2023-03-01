@@ -373,7 +373,7 @@ import (
 
 func main() {
     schoolId := "43b879c4-14c6-4e0a-9b3f-b1b33c5a4bd4" // string | key: id or schoolNumber of school
-    userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: id of the user to unassign from school
+    userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: id or username of the user to unassign from school
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **schoolId** | **string** | key: id or schoolNumber of school | 
-**userId** | **string** | key: id of the user to unassign from school | 
+**userId** | **string** | key: id or username of the user to unassign from school | 
 
 ### Other Parameters
 

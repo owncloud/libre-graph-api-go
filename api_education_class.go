@@ -360,7 +360,7 @@ DeleteUserFromClass Unassign user from a class
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param classId key: id or externalId of class
- @param userId key: id of the user to unassign from class
+ @param userId key: id or username of the user to unassign from class
  @return ApiDeleteUserFromClassRequest
 */
 func (a *EducationClassApiService) DeleteUserFromClass(ctx context.Context, classId string, userId string) ApiDeleteUserFromClassRequest {

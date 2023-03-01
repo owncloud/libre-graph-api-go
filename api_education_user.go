@@ -152,7 +152,7 @@ func (r ApiDeleteEducationUserRequest) Execute() (*http.Response, error) {
 DeleteEducationUser Delete educationUser
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userId key: id of user
+ @param userId key: id or username of user
  @return ApiDeleteEducationUserRequest
 */
 func (a *EducationUserApiService) DeleteEducationUser(ctx context.Context, userId string) ApiDeleteEducationUserRequest {
@@ -498,7 +498,7 @@ func (r ApiUpdateEducationUserRequest) Execute() (*EducationUser, *http.Response
 UpdateEducationUser Update properties of educationUser
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userId key: id of user
+ @param userId key: id or username of user
  @return ApiUpdateEducationUserRequest
 */
 func (a *EducationUserApiService) UpdateEducationUser(ctx context.Context, userId string) ApiUpdateEducationUserRequest {

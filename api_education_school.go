@@ -570,7 +570,7 @@ DeleteUserFromSchool Unassign user from a school
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param schoolId key: id or schoolNumber of school
- @param userId key: id of the user to unassign from school
+ @param userId key: id or username of the user to unassign from school
  @return ApiDeleteUserFromSchoolRequest
 */
 func (a *EducationSchoolApiService) DeleteUserFromSchool(ctx context.Context, schoolId string, userId string) ApiDeleteUserFromSchoolRequest {

@@ -95,7 +95,7 @@ import (
 )
 
 func main() {
-    userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: id of user
+    userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: id or username of user
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -113,7 +113,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | key: id of user | 
+**userId** | **string** | key: id or username of user | 
 
 ### Other Parameters
 
@@ -297,7 +297,7 @@ import (
 )
 
 func main() {
-    userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: id of user
+    userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: id or username of user
     educationUser := *openapiclient.NewEducationUser() // EducationUser | New property values
 
     configuration := openapiclient.NewConfiguration()
@@ -318,7 +318,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | key: id of user | 
+**userId** | **string** | key: id or username of user | 
 
 ### Other Parameters
 

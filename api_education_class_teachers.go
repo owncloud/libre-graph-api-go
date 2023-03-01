@@ -147,7 +147,7 @@ DeleteTeacherFromClass Unassign user as teacher of a class
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param classId key: id or externalId of class
- @param userId key: id of the user to unassign as teacher
+ @param userId key: id or username of the user to unassign as teacher
  @return ApiDeleteTeacherFromClassRequest
 */
 func (a *EducationClassTeachersApiService) DeleteTeacherFromClass(ctx context.Context, classId string, userId string) ApiDeleteTeacherFromClassRequest {
