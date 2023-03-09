@@ -40,6 +40,8 @@ type EducationUser struct {
 	GivenName *string `json:"givenName,omitempty"`
 	// The user`s default role. Such as \"student\" or \"teacher\"
 	PrimaryRole *string `json:"primaryRole,omitempty"`
+	// The user`s type. This can be either \"Member\" for regular user, or \"Guest\" for guest users.
+	UserType *string `json:"userType,omitempty"`
 }
 
 // NewEducationUser instantiates a new EducationUser object
@@ -475,6 +477,38 @@ func (o *EducationUser) SetPrimaryRole(v string) {
 	o.PrimaryRole = &v
 }
 
+// GetUserType returns the UserType field value if set, zero value otherwise.
+func (o *EducationUser) GetUserType() string {
+	if o == nil || o.UserType == nil {
+		var ret string
+		return ret
+	}
+	return *o.UserType
+}
+
+// GetUserTypeOk returns a tuple with the UserType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EducationUser) GetUserTypeOk() (*string, bool) {
+	if o == nil || o.UserType == nil {
+		return nil, false
+	}
+	return o.UserType, true
+}
+
+// HasUserType returns a boolean if a field has been set.
+func (o *EducationUser) HasUserType() bool {
+	if o != nil && o.UserType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUserType gets a reference to the given string and assigns it to the UserType field.
+func (o *EducationUser) SetUserType(v string) {
+	o.UserType = &v
+}
+
 func (o EducationUser) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
@@ -515,6 +549,9 @@ func (o EducationUser) MarshalJSON() ([]byte, error) {
 	}
 	if o.PrimaryRole != nil {
 		toSerialize["primaryRole"] = o.PrimaryRole
+	}
+	if o.UserType != nil {
+		toSerialize["userType"] = o.UserType
 	}
 	return json.Marshal(toSerialize)
 }
