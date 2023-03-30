@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | Read-only. | [optional] [readonly] 
 **Description** | Pointer to **string** | An optional description for the group. Returned by default. | [optional] 
 **DisplayName** | Pointer to **string** | The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $search and $orderBy. | [optional] 
+**GroupTypes** | Pointer to **[]string** | Specifies the group types. In MS Graph a group can have multiple types, so this is an array. In libreGraph the possible group types deviate from the MS Graph. The only group type that we currently support is \&quot;ReadOnly\&quot;, which is set for groups that cannot be modified on the current instance. | [optional] 
 **Members** | Pointer to [**[]User**](User.md) | Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), Nullable. Supports $expand. | [optional] 
 **MembersodataBind** | Pointer to **[]string** | A list of member references to the members to be added. Up to 20 members can be added with a single request | [optional] 
 
@@ -103,6 +104,31 @@ SetDisplayName sets DisplayName field to given value.
 `func (o *Group) HasDisplayName() bool`
 
 HasDisplayName returns a boolean if a field has been set.
+
+### GetGroupTypes
+
+`func (o *Group) GetGroupTypes() []string`
+
+GetGroupTypes returns the GroupTypes field if non-nil, zero value otherwise.
+
+### GetGroupTypesOk
+
+`func (o *Group) GetGroupTypesOk() (*[]string, bool)`
+
+GetGroupTypesOk returns a tuple with the GroupTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGroupTypes
+
+`func (o *Group) SetGroupTypes(v []string)`
+
+SetGroupTypes sets GroupTypes field to given value.
+
+### HasGroupTypes
+
+`func (o *Group) HasGroupTypes() bool`
+
+HasGroupTypes returns a boolean if a field has been set.
 
 ### GetMembers
 

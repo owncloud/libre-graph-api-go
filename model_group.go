@@ -22,6 +22,8 @@ type Group struct {
 	Description *string `json:"description,omitempty"`
 	// The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $search and $orderBy.
 	DisplayName *string `json:"displayName,omitempty"`
+	// Specifies the group types. In MS Graph a group can have multiple types, so this is an array. In libreGraph the possible group types deviate from the MS Graph. The only group type that we currently support is \"ReadOnly\", which is set for groups that cannot be modified on the current instance.
+	GroupTypes []string `json:"groupTypes,omitempty"`
 	// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), Nullable. Supports $expand.
 	Members []User `json:"members,omitempty"`
 	// A list of member references to the members to be added. Up to 20 members can be added with a single request
@@ -141,6 +143,38 @@ func (o *Group) SetDisplayName(v string) {
 	o.DisplayName = &v
 }
 
+// GetGroupTypes returns the GroupTypes field value if set, zero value otherwise.
+func (o *Group) GetGroupTypes() []string {
+	if o == nil || o.GroupTypes == nil {
+		var ret []string
+		return ret
+	}
+	return o.GroupTypes
+}
+
+// GetGroupTypesOk returns a tuple with the GroupTypes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Group) GetGroupTypesOk() ([]string, bool) {
+	if o == nil || o.GroupTypes == nil {
+		return nil, false
+	}
+	return o.GroupTypes, true
+}
+
+// HasGroupTypes returns a boolean if a field has been set.
+func (o *Group) HasGroupTypes() bool {
+	if o != nil && o.GroupTypes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGroupTypes gets a reference to the given []string and assigns it to the GroupTypes field.
+func (o *Group) SetGroupTypes(v []string) {
+	o.GroupTypes = v
+}
+
 // GetMembers returns the Members field value if set, zero value otherwise.
 func (o *Group) GetMembers() []User {
 	if o == nil || o.Members == nil {
@@ -215,6 +249,9 @@ func (o Group) MarshalJSON() ([]byte, error) {
 	}
 	if o.DisplayName != nil {
 		toSerialize["displayName"] = o.DisplayName
+	}
+	if o.GroupTypes != nil {
+		toSerialize["groupTypes"] = o.GroupTypes
 	}
 	if o.Members != nil {
 		toSerialize["members"] = o.Members
