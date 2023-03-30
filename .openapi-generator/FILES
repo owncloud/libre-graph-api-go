@@ -62,6 +62,7 @@ docs/EducationUser.md
 docs/EducationUserApi.md
 docs/EducationUserReference.md
 docs/Entity.md
+docs/ExportPersonalDataRequest.md
 docs/FileSystemInfo.md
 docs/Folder.md
 docs/FolderView.md
@@ -133,6 +134,7 @@ model_education_school.go
 model_education_user.go
 model_education_user_reference.go
 model_entity.go
+model_export_personal_data_request.go
 model_file_system_info.go
 model_folder.go
 model_folder_view.go

@@ -5,6 +5,7 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteUser**](UserApi.md#DeleteUser) | **Delete** /users/{user-id} | Delete entity from users
+[**ExportPersonalData**](UserApi.md#ExportPersonalData) | **Post** /users/{user-id}/exportPersonalData | export personal data of a user
 [**GetUser**](UserApi.md#GetUser) | **Get** /users/{user-id} | Get entity from users by key
 [**UpdateUser**](UserApi.md#UpdateUser) | **Patch** /users/{user-id} | Update entity in users
 
@@ -71,6 +72,74 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ExportPersonalData
+
+> ExportPersonalData(ctx, userId).ExportPersonalDataRequest(exportPersonalDataRequest).Execute()
+
+export personal data of a user
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    userId := "userId_example" // string | key: id or name of user
+    exportPersonalDataRequest := *openapiclient.NewExportPersonalDataRequest() // ExportPersonalDataRequest | destination the file should be created at (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UserApi.ExportPersonalData(context.Background(), userId).ExportPersonalDataRequest(exportPersonalDataRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.ExportPersonalData``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** | key: id or name of user | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiExportPersonalDataRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **exportPersonalDataRequest** | [**ExportPersonalDataRequest**](ExportPersonalDataRequest.md) | destination the file should be created at | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

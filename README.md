@@ -131,6 +131,7 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**GetTags**](docs/TagsApi.md#gettags) | **Get** /extensions/org.libregraph/tags | Get all known tags
 *TagsApi* | [**UnassignTags**](docs/TagsApi.md#unassigntags) | **Delete** /extensions/org.libregraph/tags | Unassign tags from a resource
 *UserApi* | [**DeleteUser**](docs/UserApi.md#deleteuser) | **Delete** /users/{user-id} | Delete entity from users
+*UserApi* | [**ExportPersonalData**](docs/UserApi.md#exportpersonaldata) | **Post** /users/{user-id}/exportPersonalData | export personal data of a user
 *UserApi* | [**GetUser**](docs/UserApi.md#getuser) | **Get** /users/{user-id} | Get entity from users by key
 *UserApi* | [**UpdateUser**](docs/UserApi.md#updateuser) | **Patch** /users/{user-id} | Update entity in users
 *UserAppRoleAssignmentApi* | [**UserCreateAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#usercreateapproleassignments) | **Post** /users/{user-id}/appRoleAssignments | Grant an appRoleAssignment to a user
@@ -172,6 +173,7 @@ Class | Method | HTTP request | Description
  - [EducationUser](docs/EducationUser.md)
  - [EducationUserReference](docs/EducationUserReference.md)
  - [Entity](docs/Entity.md)
+ - [ExportPersonalDataRequest](docs/ExportPersonalDataRequest.md)
  - [FileSystemInfo](docs/FileSystemInfo.md)
  - [Folder](docs/Folder.md)
  - [FolderView](docs/FolderView.md)
