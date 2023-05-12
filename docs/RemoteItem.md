@@ -9,6 +9,9 @@ Name | Type | Description | Notes
 **File** | Pointer to [**OpenGraphFile**](OpenGraphFile.md) |  | [optional] 
 **FileSystemInfo** | Pointer to [**FileSystemInfo**](FileSystemInfo.md) |  | [optional] 
 **Folder** | Pointer to [**Folder**](Folder.md) |  | [optional] 
+**DriveAlias** | Pointer to **string** | The drive alias can be used in clients to make the urls user friendly. Example: &#39;personal/einstein&#39;. This will be used to resolve to the correct driveID. | [optional] 
+**Path** | Pointer to **string** | The relative path of the item in relation to its drive root. | [optional] 
+**RootId** | Pointer to **string** | Unique identifier for the drive root of this item. Read-only. | [optional] 
 **Id** | Pointer to **string** | Unique identifier for the remote item in its drive. Read-only. | [optional] 
 **Image** | Pointer to [**Image**](Image.md) |  | [optional] 
 **LastModifiedBy** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
@@ -166,6 +169,81 @@ SetFolder sets Folder field to given value.
 `func (o *RemoteItem) HasFolder() bool`
 
 HasFolder returns a boolean if a field has been set.
+
+### GetDriveAlias
+
+`func (o *RemoteItem) GetDriveAlias() string`
+
+GetDriveAlias returns the DriveAlias field if non-nil, zero value otherwise.
+
+### GetDriveAliasOk
+
+`func (o *RemoteItem) GetDriveAliasOk() (*string, bool)`
+
+GetDriveAliasOk returns a tuple with the DriveAlias field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDriveAlias
+
+`func (o *RemoteItem) SetDriveAlias(v string)`
+
+SetDriveAlias sets DriveAlias field to given value.
+
+### HasDriveAlias
+
+`func (o *RemoteItem) HasDriveAlias() bool`
+
+HasDriveAlias returns a boolean if a field has been set.
+
+### GetPath
+
+`func (o *RemoteItem) GetPath() string`
+
+GetPath returns the Path field if non-nil, zero value otherwise.
+
+### GetPathOk
+
+`func (o *RemoteItem) GetPathOk() (*string, bool)`
+
+GetPathOk returns a tuple with the Path field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPath
+
+`func (o *RemoteItem) SetPath(v string)`
+
+SetPath sets Path field to given value.
+
+### HasPath
+
+`func (o *RemoteItem) HasPath() bool`
+
+HasPath returns a boolean if a field has been set.
+
+### GetRootId
+
+`func (o *RemoteItem) GetRootId() string`
+
+GetRootId returns the RootId field if non-nil, zero value otherwise.
+
+### GetRootIdOk
+
+`func (o *RemoteItem) GetRootIdOk() (*string, bool)`
+
+GetRootIdOk returns a tuple with the RootId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRootId
+
+`func (o *RemoteItem) SetRootId(v string)`
+
+SetRootId sets RootId field to given value.
+
+### HasRootId
+
+`func (o *RemoteItem) HasRootId() bool`
+
+HasRootId returns a boolean if a field has been set.
 
 ### GetId
 
