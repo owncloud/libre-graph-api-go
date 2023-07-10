@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | The unique idenfier for an entity. Read-only. | [optional] [readonly] 
 **DisplayName** | Pointer to **string** | The organization name | [optional] 
 **SchoolNumber** | Pointer to **string** | School number | [optional] 
+**TerminationDate** | Pointer to **NullableTime** | Date and time at which the service for this organization is scheduled to be terminated | [optional] 
 
 ## Methods
 
@@ -102,6 +103,41 @@ SetSchoolNumber sets SchoolNumber field to given value.
 
 HasSchoolNumber returns a boolean if a field has been set.
 
+### GetTerminationDate
+
+`func (o *EducationSchool) GetTerminationDate() time.Time`
+
+GetTerminationDate returns the TerminationDate field if non-nil, zero value otherwise.
+
+### GetTerminationDateOk
+
+`func (o *EducationSchool) GetTerminationDateOk() (*time.Time, bool)`
+
+GetTerminationDateOk returns a tuple with the TerminationDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTerminationDate
+
+`func (o *EducationSchool) SetTerminationDate(v time.Time)`
+
+SetTerminationDate sets TerminationDate field to given value.
+
+### HasTerminationDate
+
+`func (o *EducationSchool) HasTerminationDate() bool`
+
+HasTerminationDate returns a boolean if a field has been set.
+
+### SetTerminationDateNil
+
+`func (o *EducationSchool) SetTerminationDateNil(b bool)`
+
+ SetTerminationDateNil sets the value for TerminationDate to be an explicit nil
+
+### UnsetTerminationDate
+`func (o *EducationSchool) UnsetTerminationDate()`
+
+UnsetTerminationDate ensures that no value is present for TerminationDate, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

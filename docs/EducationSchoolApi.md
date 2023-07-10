@@ -293,6 +293,8 @@ Name | Type | Description  | Notes
 
 Delete school
 
+
+
 ### Example
 
 ```go
