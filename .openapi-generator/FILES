@@ -18,6 +18,7 @@ api_me_drive_root.go
 api_me_drive_root_children.go
 api_me_drives.go
 api_me_user.go
+api_role_management.go
 api_tags.go
 api_user.go
 api_user_app_role_assignment.go
@@ -91,12 +92,15 @@ docs/PasswordProfile.md
 docs/Permission.md
 docs/Quota.md
 docs/RemoteItem.md
+docs/RoleManagementApi.md
 docs/Shared.md
 docs/SpecialFolder.md
 docs/TagAssignment.md
 docs/TagUnassignment.md
 docs/TagsApi.md
 docs/Trash.md
+docs/UnifiedRoleDefinition.md
+docs/UnifiedRolePermission.md
 docs/User.md
 docs/UserApi.md
 docs/UserAppRoleAssignmentApi.md
@@ -160,6 +164,8 @@ model_special_folder.go
 model_tag_assignment.go
 model_tag_unassignment.go
 model_trash.go
+model_unified_role_definition.go
+model_unified_role_permission.go
 model_user.go
 response.go
 utils.go
