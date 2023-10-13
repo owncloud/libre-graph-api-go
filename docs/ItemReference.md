@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | Unique identifier of the item in the drive. Read-only. | [optional] [readonly] 
 **Name** | Pointer to **string** | The name of the item being referenced. Read-only. | [optional] [readonly] 
 **Path** | Pointer to **string** | Path that can be used to navigate to the item. Read-only. | [optional] [readonly] 
-**ShareId** | Pointer to **string** | A unique identifier for a shared resource that can be accessed via the [Shares][] API. | [optional] 
 
 ## Methods
 
@@ -154,31 +153,6 @@ SetPath sets Path field to given value.
 `func (o *ItemReference) HasPath() bool`
 
 HasPath returns a boolean if a field has been set.
-
-### GetShareId
-
-`func (o *ItemReference) GetShareId() string`
-
-GetShareId returns the ShareId field if non-nil, zero value otherwise.
-
-### GetShareIdOk
-
-`func (o *ItemReference) GetShareIdOk() (*string, bool)`
-
-GetShareIdOk returns a tuple with the ShareId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetShareId
-
-`func (o *ItemReference) SetShareId(v string)`
-
-SetShareId sets ShareId field to given value.
-
-### HasShareId
-
-`func (o *ItemReference) HasShareId() bool`
-
-HasShareId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

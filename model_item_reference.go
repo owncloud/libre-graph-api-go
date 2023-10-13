@@ -26,8 +26,6 @@ type ItemReference struct {
 	Name *string `json:"name,omitempty"`
 	// Path that can be used to navigate to the item. Read-only.
 	Path *string `json:"path,omitempty"`
-	// A unique identifier for a shared resource that can be accessed via the [Shares][] API.
-	ShareId *string `json:"shareId,omitempty"`
 }
 
 // NewItemReference instantiates a new ItemReference object
@@ -207,38 +205,6 @@ func (o *ItemReference) SetPath(v string) {
 	o.Path = &v
 }
 
-// GetShareId returns the ShareId field value if set, zero value otherwise.
-func (o *ItemReference) GetShareId() string {
-	if o == nil || o.ShareId == nil {
-		var ret string
-		return ret
-	}
-	return *o.ShareId
-}
-
-// GetShareIdOk returns a tuple with the ShareId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ItemReference) GetShareIdOk() (*string, bool) {
-	if o == nil || o.ShareId == nil {
-		return nil, false
-	}
-	return o.ShareId, true
-}
-
-// HasShareId returns a boolean if a field has been set.
-func (o *ItemReference) HasShareId() bool {
-	if o != nil && o.ShareId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetShareId gets a reference to the given string and assigns it to the ShareId field.
-func (o *ItemReference) SetShareId(v string) {
-	o.ShareId = &v
-}
-
 func (o ItemReference) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.DriveId != nil {
@@ -255,9 +221,6 @@ func (o ItemReference) MarshalJSON() ([]byte, error) {
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path
-	}
-	if o.ShareId != nil {
-		toSerialize["shareId"] = o.ShareId
 	}
 	return json.Marshal(toSerialize)
 }

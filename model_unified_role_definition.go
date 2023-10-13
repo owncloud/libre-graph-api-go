@@ -25,7 +25,7 @@ type UnifiedRoleDefinition struct {
 	// List of permissions included in the role.
 	RolePermissions []UnifiedRolePermission `json:"rolePermissions,omitempty"`
 	// When presenting a list of roles the weight can be used to order them in a meaningful way. Lower weight gets higher precedence. So content with lower weight will come first. If set, weights should be non-zero, as 0 is interpreted as an unset weight.
-	Weight *int32 `json:"weight,omitempty"`
+	LibreGraphWeight *int32 `json:"@libre.graph.weight,omitempty"`
 }
 
 // NewUnifiedRoleDefinition instantiates a new UnifiedRoleDefinition object
@@ -173,36 +173,36 @@ func (o *UnifiedRoleDefinition) SetRolePermissions(v []UnifiedRolePermission) {
 	o.RolePermissions = v
 }
 
-// GetWeight returns the Weight field value if set, zero value otherwise.
-func (o *UnifiedRoleDefinition) GetWeight() int32 {
-	if o == nil || o.Weight == nil {
+// GetLibreGraphWeight returns the LibreGraphWeight field value if set, zero value otherwise.
+func (o *UnifiedRoleDefinition) GetLibreGraphWeight() int32 {
+	if o == nil || o.LibreGraphWeight == nil {
 		var ret int32
 		return ret
 	}
-	return *o.Weight
+	return *o.LibreGraphWeight
 }
 
-// GetWeightOk returns a tuple with the Weight field value if set, nil otherwise
+// GetLibreGraphWeightOk returns a tuple with the LibreGraphWeight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnifiedRoleDefinition) GetWeightOk() (*int32, bool) {
-	if o == nil || o.Weight == nil {
+func (o *UnifiedRoleDefinition) GetLibreGraphWeightOk() (*int32, bool) {
+	if o == nil || o.LibreGraphWeight == nil {
 		return nil, false
 	}
-	return o.Weight, true
+	return o.LibreGraphWeight, true
 }
 
-// HasWeight returns a boolean if a field has been set.
-func (o *UnifiedRoleDefinition) HasWeight() bool {
-	if o != nil && o.Weight != nil {
+// HasLibreGraphWeight returns a boolean if a field has been set.
+func (o *UnifiedRoleDefinition) HasLibreGraphWeight() bool {
+	if o != nil && o.LibreGraphWeight != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetWeight gets a reference to the given int32 and assigns it to the Weight field.
-func (o *UnifiedRoleDefinition) SetWeight(v int32) {
-	o.Weight = &v
+// SetLibreGraphWeight gets a reference to the given int32 and assigns it to the LibreGraphWeight field.
+func (o *UnifiedRoleDefinition) SetLibreGraphWeight(v int32) {
+	o.LibreGraphWeight = &v
 }
 
 func (o UnifiedRoleDefinition) MarshalJSON() ([]byte, error) {
@@ -219,8 +219,8 @@ func (o UnifiedRoleDefinition) MarshalJSON() ([]byte, error) {
 	if o.RolePermissions != nil {
 		toSerialize["rolePermissions"] = o.RolePermissions
 	}
-	if o.Weight != nil {
-		toSerialize["weight"] = o.Weight
+	if o.LibreGraphWeight != nil {
+		toSerialize["@libre.graph.weight"] = o.LibreGraphWeight
 	}
 	return json.Marshal(toSerialize)
 }

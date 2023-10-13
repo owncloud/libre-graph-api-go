@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **DisplayName** | Pointer to **string** | The display name for the unifiedRoleDefinition. Required. Supports $filter (&#x60;eq&#x60;, &#x60;in&#x60;). | [optional] 
 **Id** | Pointer to **string** | The unique identifier for the role definition. Key, not nullable, Read-only. Inherited from entity. Supports $filter (&#x60;eq&#x60;, &#x60;in&#x60;). | [optional] 
 **RolePermissions** | Pointer to [**[]UnifiedRolePermission**](UnifiedRolePermission.md) | List of permissions included in the role. | [optional] 
-**Weight** | Pointer to **int32** | When presenting a list of roles the weight can be used to order them in a meaningful way. Lower weight gets higher precedence. So content with lower weight will come first. If set, weights should be non-zero, as 0 is interpreted as an unset weight.  | [optional] 
+**LibreGraphWeight** | Pointer to **int32** | When presenting a list of roles the weight can be used to order them in a meaningful way. Lower weight gets higher precedence. So content with lower weight will come first. If set, weights should be non-zero, as 0 is interpreted as an unset weight.  | [optional] 
 
 ## Methods
 
@@ -129,30 +129,30 @@ SetRolePermissions sets RolePermissions field to given value.
 
 HasRolePermissions returns a boolean if a field has been set.
 
-### GetWeight
+### GetLibreGraphWeight
 
-`func (o *UnifiedRoleDefinition) GetWeight() int32`
+`func (o *UnifiedRoleDefinition) GetLibreGraphWeight() int32`
 
-GetWeight returns the Weight field if non-nil, zero value otherwise.
+GetLibreGraphWeight returns the LibreGraphWeight field if non-nil, zero value otherwise.
 
-### GetWeightOk
+### GetLibreGraphWeightOk
 
-`func (o *UnifiedRoleDefinition) GetWeightOk() (*int32, bool)`
+`func (o *UnifiedRoleDefinition) GetLibreGraphWeightOk() (*int32, bool)`
 
-GetWeightOk returns a tuple with the Weight field if it's non-nil, zero value otherwise
+GetLibreGraphWeightOk returns a tuple with the LibreGraphWeight field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWeight
+### SetLibreGraphWeight
 
-`func (o *UnifiedRoleDefinition) SetWeight(v int32)`
+`func (o *UnifiedRoleDefinition) SetLibreGraphWeight(v int32)`
 
-SetWeight sets Weight field to given value.
+SetLibreGraphWeight sets LibreGraphWeight field to given value.
 
-### HasWeight
+### HasLibreGraphWeight
 
-`func (o *UnifiedRoleDefinition) HasWeight() bool`
+`func (o *UnifiedRoleDefinition) HasLibreGraphWeight() bool`
 
-HasWeight returns a boolean if a field has been set.
+HasLibreGraphWeight returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
