@@ -207,6 +207,7 @@ Class | Method | HTTP request | Description
  - [PasswordChange](docs/PasswordChange.md)
  - [PasswordProfile](docs/PasswordProfile.md)
  - [Permission](docs/Permission.md)
+ - [Photo](docs/Photo.md)
  - [Quota](docs/Quota.md)
  - [RemoteItem](docs/RemoteItem.md)
  - [SharePointIdentitySet](docs/SharePointIdentitySet.md)

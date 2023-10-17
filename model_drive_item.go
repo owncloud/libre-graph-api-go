@@ -43,6 +43,7 @@ type DriveItem struct {
 	FileSystemInfo *FileSystemInfo `json:"fileSystemInfo,omitempty"`
 	Folder         *Folder         `json:"folder,omitempty"`
 	Image          *Image          `json:"image,omitempty"`
+	Photo          *Photo          `json:"photo,omitempty"`
 	// If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
 	Root          map[string]interface{} `json:"root,omitempty"`
 	Trash         *Trash                 `json:"trash,omitempty"`
@@ -619,6 +620,38 @@ func (o *DriveItem) SetImage(v Image) {
 	o.Image = &v
 }
 
+// GetPhoto returns the Photo field value if set, zero value otherwise.
+func (o *DriveItem) GetPhoto() Photo {
+	if o == nil || o.Photo == nil {
+		var ret Photo
+		return ret
+	}
+	return *o.Photo
+}
+
+// GetPhotoOk returns a tuple with the Photo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DriveItem) GetPhotoOk() (*Photo, bool) {
+	if o == nil || o.Photo == nil {
+		return nil, false
+	}
+	return o.Photo, true
+}
+
+// HasPhoto returns a boolean if a field has been set.
+func (o *DriveItem) HasPhoto() bool {
+	if o != nil && o.Photo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPhoto gets a reference to the given Photo and assigns it to the Photo field.
+func (o *DriveItem) SetPhoto(v Photo) {
+	o.Photo = &v
+}
+
 // GetRoot returns the Root field value if set, zero value otherwise.
 func (o *DriveItem) GetRoot() map[string]interface{} {
 	if o == nil || o.Root == nil {
@@ -927,6 +960,9 @@ func (o DriveItem) MarshalJSON() ([]byte, error) {
 	}
 	if o.Image != nil {
 		toSerialize["image"] = o.Image
+	}
+	if o.Photo != nil {
+		toSerialize["photo"] = o.Photo
 	}
 	if o.Root != nil {
 		toSerialize["root"] = o.Root

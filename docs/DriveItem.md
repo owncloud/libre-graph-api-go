@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **FileSystemInfo** | Pointer to [**FileSystemInfo**](FileSystemInfo.md) |  | [optional] 
 **Folder** | Pointer to [**Folder**](Folder.md) |  | [optional] 
 **Image** | Pointer to [**Image**](Image.md) |  | [optional] 
+**Photo** | Pointer to [**Photo**](Photo.md) |  | [optional] 
 **Root** | Pointer to **map[string]interface{}** | If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive. | [optional] 
 **Trash** | Pointer to [**Trash**](Trash.md) |  | [optional] 
 **SpecialFolder** | Pointer to [**SpecialFolder**](SpecialFolder.md) |  | [optional] 
@@ -473,6 +474,31 @@ SetImage sets Image field to given value.
 `func (o *DriveItem) HasImage() bool`
 
 HasImage returns a boolean if a field has been set.
+
+### GetPhoto
+
+`func (o *DriveItem) GetPhoto() Photo`
+
+GetPhoto returns the Photo field if non-nil, zero value otherwise.
+
+### GetPhotoOk
+
+`func (o *DriveItem) GetPhotoOk() (*Photo, bool)`
+
+GetPhotoOk returns a tuple with the Photo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPhoto
+
+`func (o *DriveItem) SetPhoto(v Photo)`
+
+SetPhoto sets Photo field to given value.
+
+### HasPhoto
+
+`func (o *DriveItem) HasPhoto() bool`
+
+HasPhoto returns a boolean if a field has been set.
 
 ### GetRoot
 
