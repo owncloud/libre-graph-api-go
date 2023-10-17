@@ -74,6 +74,7 @@ docs/ExportPersonalDataRequest.md
 docs/FileSystemInfo.md
 docs/Folder.md
 docs/FolderView.md
+docs/GeoCoordinates.md
 docs/Group.md
 docs/GroupApi.md
 docs/GroupsApi.md
@@ -158,6 +159,7 @@ model_export_personal_data_request.go
 model_file_system_info.go
 model_folder.go
 model_folder_view.go
+model_geo_coordinates.go
 model_group.go
 model_hashes.go
 model_identity.go

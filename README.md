@@ -192,6 +192,7 @@ Class | Method | HTTP request | Description
  - [FileSystemInfo](docs/FileSystemInfo.md)
  - [Folder](docs/Folder.md)
  - [FolderView](docs/FolderView.md)
+ - [GeoCoordinates](docs/GeoCoordinates.md)
  - [Group](docs/Group.md)
  - [Hashes](docs/Hashes.md)
  - [Identity](docs/Identity.md)

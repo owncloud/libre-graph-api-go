@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **Folder** | Pointer to [**Folder**](Folder.md) |  | [optional] 
 **Image** | Pointer to [**Image**](Image.md) |  | [optional] 
 **Photo** | Pointer to [**Photo**](Photo.md) |  | [optional] 
+**Location** | Pointer to [**GeoCoordinates**](GeoCoordinates.md) |  | [optional] 
 **Root** | Pointer to **map[string]interface{}** | If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive. | [optional] 
 **Trash** | Pointer to [**Trash**](Trash.md) |  | [optional] 
 **SpecialFolder** | Pointer to [**SpecialFolder**](SpecialFolder.md) |  | [optional] 
@@ -499,6 +500,31 @@ SetPhoto sets Photo field to given value.
 `func (o *DriveItem) HasPhoto() bool`
 
 HasPhoto returns a boolean if a field has been set.
+
+### GetLocation
+
+`func (o *DriveItem) GetLocation() GeoCoordinates`
+
+GetLocation returns the Location field if non-nil, zero value otherwise.
+
+### GetLocationOk
+
+`func (o *DriveItem) GetLocationOk() (*GeoCoordinates, bool)`
+
+GetLocationOk returns a tuple with the Location field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocation
+
+`func (o *DriveItem) SetLocation(v GeoCoordinates)`
+
+SetLocation sets Location field to given value.
+
+### HasLocation
+
+`func (o *DriveItem) HasLocation() bool`
+
+HasLocation returns a boolean if a field has been set.
 
 ### GetRoot
 

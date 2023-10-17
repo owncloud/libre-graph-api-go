@@ -44,6 +44,7 @@ type DriveItem struct {
 	Folder         *Folder         `json:"folder,omitempty"`
 	Image          *Image          `json:"image,omitempty"`
 	Photo          *Photo          `json:"photo,omitempty"`
+	Location       *GeoCoordinates `json:"location,omitempty"`
 	// If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
 	Root          map[string]interface{} `json:"root,omitempty"`
 	Trash         *Trash                 `json:"trash,omitempty"`
@@ -652,6 +653,38 @@ func (o *DriveItem) SetPhoto(v Photo) {
 	o.Photo = &v
 }
 
+// GetLocation returns the Location field value if set, zero value otherwise.
+func (o *DriveItem) GetLocation() GeoCoordinates {
+	if o == nil || o.Location == nil {
+		var ret GeoCoordinates
+		return ret
+	}
+	return *o.Location
+}
+
+// GetLocationOk returns a tuple with the Location field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DriveItem) GetLocationOk() (*GeoCoordinates, bool) {
+	if o == nil || o.Location == nil {
+		return nil, false
+	}
+	return o.Location, true
+}
+
+// HasLocation returns a boolean if a field has been set.
+func (o *DriveItem) HasLocation() bool {
+	if o != nil && o.Location != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLocation gets a reference to the given GeoCoordinates and assigns it to the Location field.
+func (o *DriveItem) SetLocation(v GeoCoordinates) {
+	o.Location = &v
+}
+
 // GetRoot returns the Root field value if set, zero value otherwise.
 func (o *DriveItem) GetRoot() map[string]interface{} {
 	if o == nil || o.Root == nil {
@@ -963,6 +996,9 @@ func (o DriveItem) MarshalJSON() ([]byte, error) {
 	}
 	if o.Photo != nil {
 		toSerialize["photo"] = o.Photo
+	}
+	if o.Location != nil {
+		toSerialize["location"] = o.Location
 	}
 	if o.Root != nil {
 		toSerialize["root"] = o.Root
