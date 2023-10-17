@@ -30,6 +30,7 @@ docs/AppRole.md
 docs/AppRoleAssignment.md
 docs/Application.md
 docs/ApplicationsApi.md
+docs/Audio.md
 docs/ClassMemberReference.md
 docs/ClassReference.md
 docs/ClassTeacherReference.md
@@ -123,6 +124,7 @@ go.sum
 model_app_role.go
 model_app_role_assignment.go
 model_application.go
+model_audio.go
 model_class_member_reference.go
 model_class_reference.go
 model_class_teacher_reference.go

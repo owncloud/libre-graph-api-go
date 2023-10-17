@@ -15,7 +15,7 @@ import (
 	"time"
 )
 
-// DriveItem Reprensents a resource inside a drive. Read-only.
+// DriveItem Represents a resource inside a drive. Read-only.
 type DriveItem struct {
 	// Read-only.
 	Id        *string      `json:"id,omitempty"`
@@ -58,6 +58,7 @@ type DriveItem struct {
 	Children []DriveItem `json:"children,omitempty"`
 	// The set of permissions for the item. Read-only. Nullable.
 	Permissions []Permission `json:"permissions,omitempty"`
+	Audio       *Audio       `json:"audio,omitempty"`
 }
 
 // NewDriveItem instantiates a new DriveItem object
@@ -941,6 +942,38 @@ func (o *DriveItem) SetPermissions(v []Permission) {
 	o.Permissions = v
 }
 
+// GetAudio returns the Audio field value if set, zero value otherwise.
+func (o *DriveItem) GetAudio() Audio {
+	if o == nil || o.Audio == nil {
+		var ret Audio
+		return ret
+	}
+	return *o.Audio
+}
+
+// GetAudioOk returns a tuple with the Audio field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DriveItem) GetAudioOk() (*Audio, bool) {
+	if o == nil || o.Audio == nil {
+		return nil, false
+	}
+	return o.Audio, true
+}
+
+// HasAudio returns a boolean if a field has been set.
+func (o *DriveItem) HasAudio() bool {
+	if o != nil && o.Audio != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAudio gets a reference to the given Audio and assigns it to the Audio field.
+func (o *DriveItem) SetAudio(v Audio) {
+	o.Audio = &v
+}
+
 func (o DriveItem) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
@@ -1023,6 +1056,9 @@ func (o DriveItem) MarshalJSON() ([]byte, error) {
 	}
 	if o.Permissions != nil {
 		toSerialize["permissions"] = o.Permissions
+	}
+	if o.Audio != nil {
+		toSerialize["audio"] = o.Audio
 	}
 	return json.Marshal(toSerialize)
 }

@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **WebDavUrl** | Pointer to **string** | WebDAV compatible URL for the item. Read-only. | [optional] [readonly] 
 **Children** | Pointer to [**[]DriveItem**](DriveItem.md) | Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable. | [optional] [readonly] 
 **Permissions** | Pointer to [**[]Permission**](Permission.md) | The set of permissions for the item. Read-only. Nullable. | [optional] [readonly] 
+**Audio** | Pointer to [**Audio**](Audio.md) |  | [optional] 
 
 ## Methods
 
@@ -725,6 +726,31 @@ SetPermissions sets Permissions field to given value.
 `func (o *DriveItem) HasPermissions() bool`
 
 HasPermissions returns a boolean if a field has been set.
+
+### GetAudio
+
+`func (o *DriveItem) GetAudio() Audio`
+
+GetAudio returns the Audio field if non-nil, zero value otherwise.
+
+### GetAudioOk
+
+`func (o *DriveItem) GetAudioOk() (*Audio, bool)`
+
+GetAudioOk returns a tuple with the Audio field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAudio
+
+`func (o *DriveItem) SetAudio(v Audio)`
+
+SetAudio sets Audio field to given value.
+
+### HasAudio
+
+`func (o *DriveItem) HasAudio() bool`
+
+HasAudio returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

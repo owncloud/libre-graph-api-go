@@ -156,6 +156,7 @@ Class | Method | HTTP request | Description
  - [AppRole](docs/AppRole.md)
  - [AppRoleAssignment](docs/AppRoleAssignment.md)
  - [Application](docs/Application.md)
+ - [Audio](docs/Audio.md)
  - [ClassMemberReference](docs/ClassMemberReference.md)
  - [ClassReference](docs/ClassReference.md)
  - [ClassTeacherReference](docs/ClassTeacherReference.md)
