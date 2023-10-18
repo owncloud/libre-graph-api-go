@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GeoCoordinates type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GeoCoordinates{}
+
 // GeoCoordinates The GeoCoordinates resource provides geographic coordinates and elevation of a location based on metadata contained within the file. If a DriveItem has a non-null location facet, the item represents a file with a known location assocaited with it.
 type GeoCoordinates struct {
 	// The altitude (height), in feet, above sea level for the item. Read-only.
@@ -43,7 +46,7 @@ func NewGeoCoordinatesWithDefaults() *GeoCoordinates {
 
 // GetAltitude returns the Altitude field value if set, zero value otherwise.
 func (o *GeoCoordinates) GetAltitude() float64 {
-	if o == nil || o.Altitude == nil {
+	if o == nil || IsNil(o.Altitude) {
 		var ret float64
 		return ret
 	}
@@ -53,7 +56,7 @@ func (o *GeoCoordinates) GetAltitude() float64 {
 // GetAltitudeOk returns a tuple with the Altitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeoCoordinates) GetAltitudeOk() (*float64, bool) {
-	if o == nil || o.Altitude == nil {
+	if o == nil || IsNil(o.Altitude) {
 		return nil, false
 	}
 	return o.Altitude, true
@@ -61,7 +64,7 @@ func (o *GeoCoordinates) GetAltitudeOk() (*float64, bool) {
 
 // HasAltitude returns a boolean if a field has been set.
 func (o *GeoCoordinates) HasAltitude() bool {
-	if o != nil && o.Altitude != nil {
+	if o != nil && !IsNil(o.Altitude) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *GeoCoordinates) SetAltitude(v float64) {
 
 // GetLatitude returns the Latitude field value if set, zero value otherwise.
 func (o *GeoCoordinates) GetLatitude() float64 {
-	if o == nil || o.Latitude == nil {
+	if o == nil || IsNil(o.Latitude) {
 		var ret float64
 		return ret
 	}
@@ -85,7 +88,7 @@ func (o *GeoCoordinates) GetLatitude() float64 {
 // GetLatitudeOk returns a tuple with the Latitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeoCoordinates) GetLatitudeOk() (*float64, bool) {
-	if o == nil || o.Latitude == nil {
+	if o == nil || IsNil(o.Latitude) {
 		return nil, false
 	}
 	return o.Latitude, true
@@ -93,7 +96,7 @@ func (o *GeoCoordinates) GetLatitudeOk() (*float64, bool) {
 
 // HasLatitude returns a boolean if a field has been set.
 func (o *GeoCoordinates) HasLatitude() bool {
-	if o != nil && o.Latitude != nil {
+	if o != nil && !IsNil(o.Latitude) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *GeoCoordinates) SetLatitude(v float64) {
 
 // GetLongitude returns the Longitude field value if set, zero value otherwise.
 func (o *GeoCoordinates) GetLongitude() float64 {
-	if o == nil || o.Longitude == nil {
+	if o == nil || IsNil(o.Longitude) {
 		var ret float64
 		return ret
 	}
@@ -117,7 +120,7 @@ func (o *GeoCoordinates) GetLongitude() float64 {
 // GetLongitudeOk returns a tuple with the Longitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeoCoordinates) GetLongitudeOk() (*float64, bool) {
-	if o == nil || o.Longitude == nil {
+	if o == nil || IsNil(o.Longitude) {
 		return nil, false
 	}
 	return o.Longitude, true
@@ -125,7 +128,7 @@ func (o *GeoCoordinates) GetLongitudeOk() (*float64, bool) {
 
 // HasLongitude returns a boolean if a field has been set.
 func (o *GeoCoordinates) HasLongitude() bool {
-	if o != nil && o.Longitude != nil {
+	if o != nil && !IsNil(o.Longitude) {
 		return true
 	}
 
@@ -138,17 +141,25 @@ func (o *GeoCoordinates) SetLongitude(v float64) {
 }
 
 func (o GeoCoordinates) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Altitude != nil {
-		toSerialize["altitude"] = o.Altitude
-	}
-	if o.Latitude != nil {
-		toSerialize["latitude"] = o.Latitude
-	}
-	if o.Longitude != nil {
-		toSerialize["longitude"] = o.Longitude
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GeoCoordinates) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Altitude) {
+		toSerialize["altitude"] = o.Altitude
+	}
+	if !IsNil(o.Latitude) {
+		toSerialize["latitude"] = o.Latitude
+	}
+	if !IsNil(o.Longitude) {
+		toSerialize["longitude"] = o.Longitude
+	}
+	return toSerialize, nil
 }
 
 type NullableGeoCoordinates struct {

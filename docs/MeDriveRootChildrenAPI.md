@@ -1,10 +1,10 @@
-# \MeDriveRootChildrenApi
+# \MeDriveRootChildrenAPI
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**HomeGetChildren**](MeDriveRootChildrenApi.md#HomeGetChildren) | **Get** /me/drive/root/children | Get children from drive
+[**HomeGetChildren**](MeDriveRootChildrenAPI.md#HomeGetChildren) | **Get** /me/drive/root/children | Get children from drive
 
 
 
@@ -23,20 +23,20 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeDriveRootChildrenApi.HomeGetChildren(context.Background()).Execute()
+    resp, r, err := apiClient.MeDriveRootChildrenAPI.HomeGetChildren(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootChildrenApi.HomeGetChildren``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootChildrenAPI.HomeGetChildren``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `HomeGetChildren`: CollectionOfDriveItems
-    fmt.Fprintf(os.Stdout, "Response from `MeDriveRootChildrenApi.HomeGetChildren`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MeDriveRootChildrenAPI.HomeGetChildren`: %v\n", resp)
 }
 ```
 
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiHomeGetChildrenRequest str
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 

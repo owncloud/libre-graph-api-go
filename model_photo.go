@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the Photo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Photo{}
+
 // Photo The photo resource provides photo and camera properties, for example, EXIF metadata, on a driveItem.
 type Photo struct {
 	// Camera manufacturer. Read-only.
@@ -56,7 +59,7 @@ func NewPhotoWithDefaults() *Photo {
 
 // GetCameraMake returns the CameraMake field value if set, zero value otherwise.
 func (o *Photo) GetCameraMake() string {
-	if o == nil || o.CameraMake == nil {
+	if o == nil || IsNil(o.CameraMake) {
 		var ret string
 		return ret
 	}
@@ -66,7 +69,7 @@ func (o *Photo) GetCameraMake() string {
 // GetCameraMakeOk returns a tuple with the CameraMake field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Photo) GetCameraMakeOk() (*string, bool) {
-	if o == nil || o.CameraMake == nil {
+	if o == nil || IsNil(o.CameraMake) {
 		return nil, false
 	}
 	return o.CameraMake, true
@@ -74,7 +77,7 @@ func (o *Photo) GetCameraMakeOk() (*string, bool) {
 
 // HasCameraMake returns a boolean if a field has been set.
 func (o *Photo) HasCameraMake() bool {
-	if o != nil && o.CameraMake != nil {
+	if o != nil && !IsNil(o.CameraMake) {
 		return true
 	}
 
@@ -88,7 +91,7 @@ func (o *Photo) SetCameraMake(v string) {
 
 // GetCameraModel returns the CameraModel field value if set, zero value otherwise.
 func (o *Photo) GetCameraModel() string {
-	if o == nil || o.CameraModel == nil {
+	if o == nil || IsNil(o.CameraModel) {
 		var ret string
 		return ret
 	}
@@ -98,7 +101,7 @@ func (o *Photo) GetCameraModel() string {
 // GetCameraModelOk returns a tuple with the CameraModel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Photo) GetCameraModelOk() (*string, bool) {
-	if o == nil || o.CameraModel == nil {
+	if o == nil || IsNil(o.CameraModel) {
 		return nil, false
 	}
 	return o.CameraModel, true
@@ -106,7 +109,7 @@ func (o *Photo) GetCameraModelOk() (*string, bool) {
 
 // HasCameraModel returns a boolean if a field has been set.
 func (o *Photo) HasCameraModel() bool {
-	if o != nil && o.CameraModel != nil {
+	if o != nil && !IsNil(o.CameraModel) {
 		return true
 	}
 
@@ -120,7 +123,7 @@ func (o *Photo) SetCameraModel(v string) {
 
 // GetExposureDenominator returns the ExposureDenominator field value if set, zero value otherwise.
 func (o *Photo) GetExposureDenominator() float64 {
-	if o == nil || o.ExposureDenominator == nil {
+	if o == nil || IsNil(o.ExposureDenominator) {
 		var ret float64
 		return ret
 	}
@@ -130,7 +133,7 @@ func (o *Photo) GetExposureDenominator() float64 {
 // GetExposureDenominatorOk returns a tuple with the ExposureDenominator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Photo) GetExposureDenominatorOk() (*float64, bool) {
-	if o == nil || o.ExposureDenominator == nil {
+	if o == nil || IsNil(o.ExposureDenominator) {
 		return nil, false
 	}
 	return o.ExposureDenominator, true
@@ -138,7 +141,7 @@ func (o *Photo) GetExposureDenominatorOk() (*float64, bool) {
 
 // HasExposureDenominator returns a boolean if a field has been set.
 func (o *Photo) HasExposureDenominator() bool {
-	if o != nil && o.ExposureDenominator != nil {
+	if o != nil && !IsNil(o.ExposureDenominator) {
 		return true
 	}
 
@@ -152,7 +155,7 @@ func (o *Photo) SetExposureDenominator(v float64) {
 
 // GetExposureNumerator returns the ExposureNumerator field value if set, zero value otherwise.
 func (o *Photo) GetExposureNumerator() float64 {
-	if o == nil || o.ExposureNumerator == nil {
+	if o == nil || IsNil(o.ExposureNumerator) {
 		var ret float64
 		return ret
 	}
@@ -162,7 +165,7 @@ func (o *Photo) GetExposureNumerator() float64 {
 // GetExposureNumeratorOk returns a tuple with the ExposureNumerator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Photo) GetExposureNumeratorOk() (*float64, bool) {
-	if o == nil || o.ExposureNumerator == nil {
+	if o == nil || IsNil(o.ExposureNumerator) {
 		return nil, false
 	}
 	return o.ExposureNumerator, true
@@ -170,7 +173,7 @@ func (o *Photo) GetExposureNumeratorOk() (*float64, bool) {
 
 // HasExposureNumerator returns a boolean if a field has been set.
 func (o *Photo) HasExposureNumerator() bool {
-	if o != nil && o.ExposureNumerator != nil {
+	if o != nil && !IsNil(o.ExposureNumerator) {
 		return true
 	}
 
@@ -184,7 +187,7 @@ func (o *Photo) SetExposureNumerator(v float64) {
 
 // GetFNumber returns the FNumber field value if set, zero value otherwise.
 func (o *Photo) GetFNumber() float64 {
-	if o == nil || o.FNumber == nil {
+	if o == nil || IsNil(o.FNumber) {
 		var ret float64
 		return ret
 	}
@@ -194,7 +197,7 @@ func (o *Photo) GetFNumber() float64 {
 // GetFNumberOk returns a tuple with the FNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Photo) GetFNumberOk() (*float64, bool) {
-	if o == nil || o.FNumber == nil {
+	if o == nil || IsNil(o.FNumber) {
 		return nil, false
 	}
 	return o.FNumber, true
@@ -202,7 +205,7 @@ func (o *Photo) GetFNumberOk() (*float64, bool) {
 
 // HasFNumber returns a boolean if a field has been set.
 func (o *Photo) HasFNumber() bool {
-	if o != nil && o.FNumber != nil {
+	if o != nil && !IsNil(o.FNumber) {
 		return true
 	}
 
@@ -216,7 +219,7 @@ func (o *Photo) SetFNumber(v float64) {
 
 // GetFocalLength returns the FocalLength field value if set, zero value otherwise.
 func (o *Photo) GetFocalLength() float64 {
-	if o == nil || o.FocalLength == nil {
+	if o == nil || IsNil(o.FocalLength) {
 		var ret float64
 		return ret
 	}
@@ -226,7 +229,7 @@ func (o *Photo) GetFocalLength() float64 {
 // GetFocalLengthOk returns a tuple with the FocalLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Photo) GetFocalLengthOk() (*float64, bool) {
-	if o == nil || o.FocalLength == nil {
+	if o == nil || IsNil(o.FocalLength) {
 		return nil, false
 	}
 	return o.FocalLength, true
@@ -234,7 +237,7 @@ func (o *Photo) GetFocalLengthOk() (*float64, bool) {
 
 // HasFocalLength returns a boolean if a field has been set.
 func (o *Photo) HasFocalLength() bool {
-	if o != nil && o.FocalLength != nil {
+	if o != nil && !IsNil(o.FocalLength) {
 		return true
 	}
 
@@ -248,7 +251,7 @@ func (o *Photo) SetFocalLength(v float64) {
 
 // GetIso returns the Iso field value if set, zero value otherwise.
 func (o *Photo) GetIso() int32 {
-	if o == nil || o.Iso == nil {
+	if o == nil || IsNil(o.Iso) {
 		var ret int32
 		return ret
 	}
@@ -258,7 +261,7 @@ func (o *Photo) GetIso() int32 {
 // GetIsoOk returns a tuple with the Iso field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Photo) GetIsoOk() (*int32, bool) {
-	if o == nil || o.Iso == nil {
+	if o == nil || IsNil(o.Iso) {
 		return nil, false
 	}
 	return o.Iso, true
@@ -266,7 +269,7 @@ func (o *Photo) GetIsoOk() (*int32, bool) {
 
 // HasIso returns a boolean if a field has been set.
 func (o *Photo) HasIso() bool {
-	if o != nil && o.Iso != nil {
+	if o != nil && !IsNil(o.Iso) {
 		return true
 	}
 
@@ -280,7 +283,7 @@ func (o *Photo) SetIso(v int32) {
 
 // GetOrientation returns the Orientation field value if set, zero value otherwise.
 func (o *Photo) GetOrientation() int32 {
-	if o == nil || o.Orientation == nil {
+	if o == nil || IsNil(o.Orientation) {
 		var ret int32
 		return ret
 	}
@@ -290,7 +293,7 @@ func (o *Photo) GetOrientation() int32 {
 // GetOrientationOk returns a tuple with the Orientation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Photo) GetOrientationOk() (*int32, bool) {
-	if o == nil || o.Orientation == nil {
+	if o == nil || IsNil(o.Orientation) {
 		return nil, false
 	}
 	return o.Orientation, true
@@ -298,7 +301,7 @@ func (o *Photo) GetOrientationOk() (*int32, bool) {
 
 // HasOrientation returns a boolean if a field has been set.
 func (o *Photo) HasOrientation() bool {
-	if o != nil && o.Orientation != nil {
+	if o != nil && !IsNil(o.Orientation) {
 		return true
 	}
 
@@ -312,7 +315,7 @@ func (o *Photo) SetOrientation(v int32) {
 
 // GetTakenDateTime returns the TakenDateTime field value if set, zero value otherwise.
 func (o *Photo) GetTakenDateTime() time.Time {
-	if o == nil || o.TakenDateTime == nil {
+	if o == nil || IsNil(o.TakenDateTime) {
 		var ret time.Time
 		return ret
 	}
@@ -322,7 +325,7 @@ func (o *Photo) GetTakenDateTime() time.Time {
 // GetTakenDateTimeOk returns a tuple with the TakenDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Photo) GetTakenDateTimeOk() (*time.Time, bool) {
-	if o == nil || o.TakenDateTime == nil {
+	if o == nil || IsNil(o.TakenDateTime) {
 		return nil, false
 	}
 	return o.TakenDateTime, true
@@ -330,7 +333,7 @@ func (o *Photo) GetTakenDateTimeOk() (*time.Time, bool) {
 
 // HasTakenDateTime returns a boolean if a field has been set.
 func (o *Photo) HasTakenDateTime() bool {
-	if o != nil && o.TakenDateTime != nil {
+	if o != nil && !IsNil(o.TakenDateTime) {
 		return true
 	}
 
@@ -343,35 +346,43 @@ func (o *Photo) SetTakenDateTime(v time.Time) {
 }
 
 func (o Photo) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.CameraMake != nil {
-		toSerialize["cameraMake"] = o.CameraMake
-	}
-	if o.CameraModel != nil {
-		toSerialize["cameraModel"] = o.CameraModel
-	}
-	if o.ExposureDenominator != nil {
-		toSerialize["exposureDenominator"] = o.ExposureDenominator
-	}
-	if o.ExposureNumerator != nil {
-		toSerialize["exposureNumerator"] = o.ExposureNumerator
-	}
-	if o.FNumber != nil {
-		toSerialize["fNumber"] = o.FNumber
-	}
-	if o.FocalLength != nil {
-		toSerialize["focalLength"] = o.FocalLength
-	}
-	if o.Iso != nil {
-		toSerialize["iso"] = o.Iso
-	}
-	if o.Orientation != nil {
-		toSerialize["orientation"] = o.Orientation
-	}
-	if o.TakenDateTime != nil {
-		toSerialize["takenDateTime"] = o.TakenDateTime
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o Photo) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.CameraMake) {
+		toSerialize["cameraMake"] = o.CameraMake
+	}
+	if !IsNil(o.CameraModel) {
+		toSerialize["cameraModel"] = o.CameraModel
+	}
+	if !IsNil(o.ExposureDenominator) {
+		toSerialize["exposureDenominator"] = o.ExposureDenominator
+	}
+	if !IsNil(o.ExposureNumerator) {
+		toSerialize["exposureNumerator"] = o.ExposureNumerator
+	}
+	if !IsNil(o.FNumber) {
+		toSerialize["fNumber"] = o.FNumber
+	}
+	if !IsNil(o.FocalLength) {
+		toSerialize["focalLength"] = o.FocalLength
+	}
+	if !IsNil(o.Iso) {
+		toSerialize["iso"] = o.Iso
+	}
+	if !IsNil(o.Orientation) {
+		toSerialize["orientation"] = o.Orientation
+	}
+	if !IsNil(o.TakenDateTime) {
+		toSerialize["takenDateTime"] = o.TakenDateTime
+	}
+	return toSerialize, nil
 }
 
 type NullablePhoto struct {

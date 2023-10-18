@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SharePointIdentitySet type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SharePointIdentitySet{}
+
 // SharePointIdentitySet This resource is used to represent a set of identities associated with various events for an item, such as created by or last modified by.
 type SharePointIdentitySet struct {
 	User  *Identity `json:"user,omitempty"`
@@ -39,7 +42,7 @@ func NewSharePointIdentitySetWithDefaults() *SharePointIdentitySet {
 
 // GetUser returns the User field value if set, zero value otherwise.
 func (o *SharePointIdentitySet) GetUser() Identity {
-	if o == nil || o.User == nil {
+	if o == nil || IsNil(o.User) {
 		var ret Identity
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *SharePointIdentitySet) GetUser() Identity {
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharePointIdentitySet) GetUserOk() (*Identity, bool) {
-	if o == nil || o.User == nil {
+	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
 	return o.User, true
@@ -57,7 +60,7 @@ func (o *SharePointIdentitySet) GetUserOk() (*Identity, bool) {
 
 // HasUser returns a boolean if a field has been set.
 func (o *SharePointIdentitySet) HasUser() bool {
-	if o != nil && o.User != nil {
+	if o != nil && !IsNil(o.User) {
 		return true
 	}
 
@@ -71,7 +74,7 @@ func (o *SharePointIdentitySet) SetUser(v Identity) {
 
 // GetGroup returns the Group field value if set, zero value otherwise.
 func (o *SharePointIdentitySet) GetGroup() Identity {
-	if o == nil || o.Group == nil {
+	if o == nil || IsNil(o.Group) {
 		var ret Identity
 		return ret
 	}
@@ -81,7 +84,7 @@ func (o *SharePointIdentitySet) GetGroup() Identity {
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharePointIdentitySet) GetGroupOk() (*Identity, bool) {
-	if o == nil || o.Group == nil {
+	if o == nil || IsNil(o.Group) {
 		return nil, false
 	}
 	return o.Group, true
@@ -89,7 +92,7 @@ func (o *SharePointIdentitySet) GetGroupOk() (*Identity, bool) {
 
 // HasGroup returns a boolean if a field has been set.
 func (o *SharePointIdentitySet) HasGroup() bool {
-	if o != nil && o.Group != nil {
+	if o != nil && !IsNil(o.Group) {
 		return true
 	}
 
@@ -102,14 +105,22 @@ func (o *SharePointIdentitySet) SetGroup(v Identity) {
 }
 
 func (o SharePointIdentitySet) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.User != nil {
-		toSerialize["user"] = o.User
-	}
-	if o.Group != nil {
-		toSerialize["group"] = o.Group
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SharePointIdentitySet) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.User) {
+		toSerialize["user"] = o.User
+	}
+	if !IsNil(o.Group) {
+		toSerialize["group"] = o.Group
+	}
+	return toSerialize, nil
 }
 
 type NullableSharePointIdentitySet struct {

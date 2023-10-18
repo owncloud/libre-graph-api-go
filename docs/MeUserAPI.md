@@ -1,10 +1,10 @@
-# \MeUserApi
+# \MeUserAPI
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetOwnUser**](MeUserApi.md#GetOwnUser) | **Get** /me | Get current user
+[**GetOwnUser**](MeUserAPI.md#GetOwnUser) | **Get** /me | Get current user
 
 
 
@@ -23,7 +23,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeUserApi.GetOwnUser(context.Background()).Expand(expand).Execute()
+    resp, r, err := apiClient.MeUserAPI.GetOwnUser(context.Background()).Expand(expand).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeUserApi.GetOwnUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MeUserAPI.GetOwnUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOwnUser`: User
-    fmt.Fprintf(os.Stdout, "Response from `MeUserApi.GetOwnUser`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MeUserAPI.GetOwnUser`: %v\n", resp)
 }
 ```
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 

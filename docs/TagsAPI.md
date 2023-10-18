@@ -1,12 +1,12 @@
-# \TagsApi
+# \TagsAPI
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AssignTags**](TagsApi.md#AssignTags) | **Put** /extensions/org.libregraph/tags | Assign tags to a resource
-[**GetTags**](TagsApi.md#GetTags) | **Get** /extensions/org.libregraph/tags | Get all known tags
-[**UnassignTags**](TagsApi.md#UnassignTags) | **Delete** /extensions/org.libregraph/tags | Unassign tags from a resource
+[**AssignTags**](TagsAPI.md#AssignTags) | **Put** /extensions/org.libregraph/tags | Assign tags to a resource
+[**GetTags**](TagsAPI.md#GetTags) | **Get** /extensions/org.libregraph/tags | Get all known tags
+[**UnassignTags**](TagsAPI.md#UnassignTags) | **Delete** /extensions/org.libregraph/tags | Unassign tags from a resource
 
 
 
@@ -25,7 +25,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -33,9 +33,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TagsApi.AssignTags(context.Background()).TagAssignment(tagAssignment).Execute()
+    r, err := apiClient.TagsAPI.AssignTags(context.Background()).TagAssignment(tagAssignment).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TagsApi.AssignTags``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.AssignTags``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 
@@ -87,20 +87,20 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TagsApi.GetTags(context.Background()).Execute()
+    resp, r, err := apiClient.TagsAPI.GetTags(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TagsApi.GetTags``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.GetTags``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTags`: CollectionOfTags
-    fmt.Fprintf(os.Stdout, "Response from `TagsApi.GetTags`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TagsAPI.GetTags`: %v\n", resp)
 }
 ```
 
@@ -119,7 +119,7 @@ Other parameters are passed through a pointer to a apiGetTagsRequest struct via 
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 
@@ -146,7 +146,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -154,9 +154,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TagsApi.UnassignTags(context.Background()).TagUnassignment(tagUnassignment).Execute()
+    r, err := apiClient.TagsAPI.UnassignTags(context.Background()).TagUnassignment(tagUnassignment).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TagsApi.UnassignTags``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.UnassignTags``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 

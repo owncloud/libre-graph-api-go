@@ -13,17 +13,17 @@ package libregraph
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
 
-// MeDriveRootChildrenApiService MeDriveRootChildrenApi service
-type MeDriveRootChildrenApiService service
+// MeDriveRootChildrenAPIService MeDriveRootChildrenAPI service
+type MeDriveRootChildrenAPIService service
 
 type ApiHomeGetChildrenRequest struct {
 	ctx        context.Context
-	ApiService *MeDriveRootChildrenApiService
+	ApiService *MeDriveRootChildrenAPIService
 }
 
 func (r ApiHomeGetChildrenRequest) Execute() (*CollectionOfDriveItems, *http.Response, error) {
@@ -36,7 +36,7 @@ HomeGetChildren Get children from drive
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiHomeGetChildrenRequest
 */
-func (a *MeDriveRootChildrenApiService) HomeGetChildren(ctx context.Context) ApiHomeGetChildrenRequest {
+func (a *MeDriveRootChildrenAPIService) HomeGetChildren(ctx context.Context) ApiHomeGetChildrenRequest {
 	return ApiHomeGetChildrenRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -45,7 +45,7 @@ func (a *MeDriveRootChildrenApiService) HomeGetChildren(ctx context.Context) Api
 
 // Execute executes the request
 //  @return CollectionOfDriveItems
-func (a *MeDriveRootChildrenApiService) HomeGetChildrenExecute(r ApiHomeGetChildrenRequest) (*CollectionOfDriveItems, *http.Response, error) {
+func (a *MeDriveRootChildrenAPIService) HomeGetChildrenExecute(r ApiHomeGetChildrenRequest) (*CollectionOfDriveItems, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -53,7 +53,7 @@ func (a *MeDriveRootChildrenApiService) HomeGetChildrenExecute(r ApiHomeGetChild
 		localVarReturnValue *CollectionOfDriveItems
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootChildrenApiService.HomeGetChildren")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootChildrenAPIService.HomeGetChildren")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -91,9 +91,9 @@ func (a *MeDriveRootChildrenApiService) HomeGetChildrenExecute(r ApiHomeGetChild
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -109,6 +109,7 @@ func (a *MeDriveRootChildrenApiService) HomeGetChildrenExecute(r ApiHomeGetChild
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

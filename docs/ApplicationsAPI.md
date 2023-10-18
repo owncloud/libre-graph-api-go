@@ -1,11 +1,11 @@
-# \ApplicationsApi
+# \ApplicationsAPI
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApplication**](ApplicationsApi.md#GetApplication) | **Get** /applications/{application-id} | Get application by id
-[**ListApplications**](ApplicationsApi.md#ListApplications) | **Get** /applications | Get all applications
+[**GetApplication**](ApplicationsAPI.md#GetApplication) | **Get** /applications/{application-id} | Get application by id
+[**ListApplications**](ApplicationsAPI.md#ListApplications) | **Get** /applications | Get all applications
 
 
 
@@ -24,7 +24,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -32,13 +32,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ApplicationsApi.GetApplication(context.Background(), applicationId).Execute()
+    resp, r, err := apiClient.ApplicationsAPI.GetApplication(context.Background(), applicationId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationsApi.GetApplication``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationsAPI.GetApplication``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetApplication`: Application
-    fmt.Fprintf(os.Stdout, "Response from `ApplicationsApi.GetApplication`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ApplicationsAPI.GetApplication`: %v\n", resp)
 }
 ```
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 
@@ -92,20 +92,20 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ApplicationsApi.ListApplications(context.Background()).Execute()
+    resp, r, err := apiClient.ApplicationsAPI.ListApplications(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationsApi.ListApplications``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationsAPI.ListApplications``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListApplications`: CollectionOfApplications
-    fmt.Fprintf(os.Stdout, "Response from `ApplicationsApi.ListApplications`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ApplicationsAPI.ListApplications`: %v\n", resp)
 }
 ```
 
@@ -124,7 +124,7 @@ Other parameters are passed through a pointer to a apiListApplicationsRequest st
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 

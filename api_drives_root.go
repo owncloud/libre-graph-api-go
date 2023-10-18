@@ -13,18 +13,18 @@ package libregraph
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-// DrivesRootApiService DrivesRootApi service
-type DrivesRootApiService service
+// DrivesRootAPIService DrivesRootAPI service
+type DrivesRootAPIService service
 
 type ApiGetRootRequest struct {
 	ctx        context.Context
-	ApiService *DrivesRootApiService
+	ApiService *DrivesRootAPIService
 	driveId    string
 }
 
@@ -39,7 +39,7 @@ GetRoot Get root from arbitrary space
  @param driveId key: id of drive
  @return ApiGetRootRequest
 */
-func (a *DrivesRootApiService) GetRoot(ctx context.Context, driveId string) ApiGetRootRequest {
+func (a *DrivesRootAPIService) GetRoot(ctx context.Context, driveId string) ApiGetRootRequest {
 	return ApiGetRootRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -49,7 +49,7 @@ func (a *DrivesRootApiService) GetRoot(ctx context.Context, driveId string) ApiG
 
 // Execute executes the request
 //  @return DriveItem
-func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, *http.Response, error) {
+func (a *DrivesRootAPIService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -57,13 +57,13 @@ func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, 
 		localVarReturnValue *DriveItem
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.GetRoot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootAPIService.GetRoot")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/drives/{drive-id}/root"
-	localVarPath = strings.Replace(localVarPath, "{"+"drive-id"+"}", url.PathEscape(parameterToString(r.driveId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"drive-id"+"}", url.PathEscape(parameterValueToString(r.driveId, "driveId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -96,9 +96,9 @@ func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -114,6 +114,7 @@ func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, 
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

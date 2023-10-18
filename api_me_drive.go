@@ -13,17 +13,17 @@ package libregraph
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
 
-// MeDriveApiService MeDriveApi service
-type MeDriveApiService service
+// MeDriveAPIService MeDriveAPI service
+type MeDriveAPIService service
 
 type ApiGetHomeRequest struct {
 	ctx        context.Context
-	ApiService *MeDriveApiService
+	ApiService *MeDriveAPIService
 }
 
 func (r ApiGetHomeRequest) Execute() (*Drive, *http.Response, error) {
@@ -36,7 +36,7 @@ GetHome Get personal space for user
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetHomeRequest
 */
-func (a *MeDriveApiService) GetHome(ctx context.Context) ApiGetHomeRequest {
+func (a *MeDriveAPIService) GetHome(ctx context.Context) ApiGetHomeRequest {
 	return ApiGetHomeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -45,7 +45,7 @@ func (a *MeDriveApiService) GetHome(ctx context.Context) ApiGetHomeRequest {
 
 // Execute executes the request
 //  @return Drive
-func (a *MeDriveApiService) GetHomeExecute(r ApiGetHomeRequest) (*Drive, *http.Response, error) {
+func (a *MeDriveAPIService) GetHomeExecute(r ApiGetHomeRequest) (*Drive, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -53,7 +53,7 @@ func (a *MeDriveApiService) GetHomeExecute(r ApiGetHomeRequest) (*Drive, *http.R
 		localVarReturnValue *Drive
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveApiService.GetHome")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveAPIService.GetHome")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -91,9 +91,9 @@ func (a *MeDriveApiService) GetHomeExecute(r ApiGetHomeRequest) (*Drive, *http.R
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -109,6 +109,7 @@ func (a *MeDriveApiService) GetHomeExecute(r ApiGetHomeRequest) (*Drive, *http.R
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -127,7 +128,7 @@ func (a *MeDriveApiService) GetHomeExecute(r ApiGetHomeRequest) (*Drive, *http.R
 
 type ApiListSharedByMeRequest struct {
 	ctx        context.Context
-	ApiService *MeDriveApiService
+	ApiService *MeDriveAPIService
 }
 
 func (r ApiListSharedByMeRequest) Execute() (*CollectionOfDriveItems1, *http.Response, error) {
@@ -143,7 +144,7 @@ The `driveItems` returned from the `sharedByMe` method always include the `permi
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListSharedByMeRequest
 */
-func (a *MeDriveApiService) ListSharedByMe(ctx context.Context) ApiListSharedByMeRequest {
+func (a *MeDriveAPIService) ListSharedByMe(ctx context.Context) ApiListSharedByMeRequest {
 	return ApiListSharedByMeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -152,7 +153,7 @@ func (a *MeDriveApiService) ListSharedByMe(ctx context.Context) ApiListSharedByM
 
 // Execute executes the request
 //  @return CollectionOfDriveItems1
-func (a *MeDriveApiService) ListSharedByMeExecute(r ApiListSharedByMeRequest) (*CollectionOfDriveItems1, *http.Response, error) {
+func (a *MeDriveAPIService) ListSharedByMeExecute(r ApiListSharedByMeRequest) (*CollectionOfDriveItems1, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -160,7 +161,7 @@ func (a *MeDriveApiService) ListSharedByMeExecute(r ApiListSharedByMeRequest) (*
 		localVarReturnValue *CollectionOfDriveItems1
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveApiService.ListSharedByMe")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveAPIService.ListSharedByMe")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -198,9 +199,9 @@ func (a *MeDriveApiService) ListSharedByMeExecute(r ApiListSharedByMeRequest) (*
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -216,6 +217,7 @@ func (a *MeDriveApiService) ListSharedByMeExecute(r ApiListSharedByMeRequest) (*
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -234,7 +236,7 @@ func (a *MeDriveApiService) ListSharedByMeExecute(r ApiListSharedByMeRequest) (*
 
 type ApiListSharedWithMeRequest struct {
 	ctx        context.Context
-	ApiService *MeDriveApiService
+	ApiService *MeDriveAPIService
 }
 
 func (r ApiListSharedWithMeRequest) Execute() (*CollectionOfDriveItems1, *http.Response, error) {
@@ -250,7 +252,7 @@ The `driveItems` returned from the `sharedWithMe` method always include the `rem
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListSharedWithMeRequest
 */
-func (a *MeDriveApiService) ListSharedWithMe(ctx context.Context) ApiListSharedWithMeRequest {
+func (a *MeDriveAPIService) ListSharedWithMe(ctx context.Context) ApiListSharedWithMeRequest {
 	return ApiListSharedWithMeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -259,7 +261,7 @@ func (a *MeDriveApiService) ListSharedWithMe(ctx context.Context) ApiListSharedW
 
 // Execute executes the request
 //  @return CollectionOfDriveItems1
-func (a *MeDriveApiService) ListSharedWithMeExecute(r ApiListSharedWithMeRequest) (*CollectionOfDriveItems1, *http.Response, error) {
+func (a *MeDriveAPIService) ListSharedWithMeExecute(r ApiListSharedWithMeRequest) (*CollectionOfDriveItems1, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -267,7 +269,7 @@ func (a *MeDriveApiService) ListSharedWithMeExecute(r ApiListSharedWithMeRequest
 		localVarReturnValue *CollectionOfDriveItems1
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveApiService.ListSharedWithMe")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveAPIService.ListSharedWithMe")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -305,9 +307,9 @@ func (a *MeDriveApiService) ListSharedWithMeExecute(r ApiListSharedWithMeRequest
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -323,6 +325,7 @@ func (a *MeDriveApiService) ListSharedWithMeExecute(r ApiListSharedWithMeRequest
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

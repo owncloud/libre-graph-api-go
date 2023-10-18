@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the DriveItem type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DriveItem{}
+
 // DriveItem Represents a resource inside a drive. Read-only.
 type DriveItem struct {
 	// Read-only.
@@ -80,7 +83,7 @@ func NewDriveItemWithDefaults() *DriveItem {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *DriveItem) GetId() string {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		var ret string
 		return ret
 	}
@@ -90,7 +93,7 @@ func (o *DriveItem) GetId() string {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -98,7 +101,7 @@ func (o *DriveItem) GetIdOk() (*string, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *DriveItem) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -112,7 +115,7 @@ func (o *DriveItem) SetId(v string) {
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
 func (o *DriveItem) GetCreatedBy() IdentitySet {
-	if o == nil || o.CreatedBy == nil {
+	if o == nil || IsNil(o.CreatedBy) {
 		var ret IdentitySet
 		return ret
 	}
@@ -122,7 +125,7 @@ func (o *DriveItem) GetCreatedBy() IdentitySet {
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetCreatedByOk() (*IdentitySet, bool) {
-	if o == nil || o.CreatedBy == nil {
+	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
 	return o.CreatedBy, true
@@ -130,7 +133,7 @@ func (o *DriveItem) GetCreatedByOk() (*IdentitySet, bool) {
 
 // HasCreatedBy returns a boolean if a field has been set.
 func (o *DriveItem) HasCreatedBy() bool {
-	if o != nil && o.CreatedBy != nil {
+	if o != nil && !IsNil(o.CreatedBy) {
 		return true
 	}
 
@@ -144,7 +147,7 @@ func (o *DriveItem) SetCreatedBy(v IdentitySet) {
 
 // GetCreatedDateTime returns the CreatedDateTime field value if set, zero value otherwise.
 func (o *DriveItem) GetCreatedDateTime() time.Time {
-	if o == nil || o.CreatedDateTime == nil {
+	if o == nil || IsNil(o.CreatedDateTime) {
 		var ret time.Time
 		return ret
 	}
@@ -154,7 +157,7 @@ func (o *DriveItem) GetCreatedDateTime() time.Time {
 // GetCreatedDateTimeOk returns a tuple with the CreatedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetCreatedDateTimeOk() (*time.Time, bool) {
-	if o == nil || o.CreatedDateTime == nil {
+	if o == nil || IsNil(o.CreatedDateTime) {
 		return nil, false
 	}
 	return o.CreatedDateTime, true
@@ -162,7 +165,7 @@ func (o *DriveItem) GetCreatedDateTimeOk() (*time.Time, bool) {
 
 // HasCreatedDateTime returns a boolean if a field has been set.
 func (o *DriveItem) HasCreatedDateTime() bool {
-	if o != nil && o.CreatedDateTime != nil {
+	if o != nil && !IsNil(o.CreatedDateTime) {
 		return true
 	}
 
@@ -176,7 +179,7 @@ func (o *DriveItem) SetCreatedDateTime(v time.Time) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *DriveItem) GetDescription() string {
-	if o == nil || o.Description == nil {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -186,7 +189,7 @@ func (o *DriveItem) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetDescriptionOk() (*string, bool) {
-	if o == nil || o.Description == nil {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -194,7 +197,7 @@ func (o *DriveItem) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *DriveItem) HasDescription() bool {
-	if o != nil && o.Description != nil {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -208,7 +211,7 @@ func (o *DriveItem) SetDescription(v string) {
 
 // GetETag returns the ETag field value if set, zero value otherwise.
 func (o *DriveItem) GetETag() string {
-	if o == nil || o.ETag == nil {
+	if o == nil || IsNil(o.ETag) {
 		var ret string
 		return ret
 	}
@@ -218,7 +221,7 @@ func (o *DriveItem) GetETag() string {
 // GetETagOk returns a tuple with the ETag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetETagOk() (*string, bool) {
-	if o == nil || o.ETag == nil {
+	if o == nil || IsNil(o.ETag) {
 		return nil, false
 	}
 	return o.ETag, true
@@ -226,7 +229,7 @@ func (o *DriveItem) GetETagOk() (*string, bool) {
 
 // HasETag returns a boolean if a field has been set.
 func (o *DriveItem) HasETag() bool {
-	if o != nil && o.ETag != nil {
+	if o != nil && !IsNil(o.ETag) {
 		return true
 	}
 
@@ -240,7 +243,7 @@ func (o *DriveItem) SetETag(v string) {
 
 // GetLastModifiedBy returns the LastModifiedBy field value if set, zero value otherwise.
 func (o *DriveItem) GetLastModifiedBy() IdentitySet {
-	if o == nil || o.LastModifiedBy == nil {
+	if o == nil || IsNil(o.LastModifiedBy) {
 		var ret IdentitySet
 		return ret
 	}
@@ -250,7 +253,7 @@ func (o *DriveItem) GetLastModifiedBy() IdentitySet {
 // GetLastModifiedByOk returns a tuple with the LastModifiedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetLastModifiedByOk() (*IdentitySet, bool) {
-	if o == nil || o.LastModifiedBy == nil {
+	if o == nil || IsNil(o.LastModifiedBy) {
 		return nil, false
 	}
 	return o.LastModifiedBy, true
@@ -258,7 +261,7 @@ func (o *DriveItem) GetLastModifiedByOk() (*IdentitySet, bool) {
 
 // HasLastModifiedBy returns a boolean if a field has been set.
 func (o *DriveItem) HasLastModifiedBy() bool {
-	if o != nil && o.LastModifiedBy != nil {
+	if o != nil && !IsNil(o.LastModifiedBy) {
 		return true
 	}
 
@@ -272,7 +275,7 @@ func (o *DriveItem) SetLastModifiedBy(v IdentitySet) {
 
 // GetLastModifiedDateTime returns the LastModifiedDateTime field value if set, zero value otherwise.
 func (o *DriveItem) GetLastModifiedDateTime() time.Time {
-	if o == nil || o.LastModifiedDateTime == nil {
+	if o == nil || IsNil(o.LastModifiedDateTime) {
 		var ret time.Time
 		return ret
 	}
@@ -282,7 +285,7 @@ func (o *DriveItem) GetLastModifiedDateTime() time.Time {
 // GetLastModifiedDateTimeOk returns a tuple with the LastModifiedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetLastModifiedDateTimeOk() (*time.Time, bool) {
-	if o == nil || o.LastModifiedDateTime == nil {
+	if o == nil || IsNil(o.LastModifiedDateTime) {
 		return nil, false
 	}
 	return o.LastModifiedDateTime, true
@@ -290,7 +293,7 @@ func (o *DriveItem) GetLastModifiedDateTimeOk() (*time.Time, bool) {
 
 // HasLastModifiedDateTime returns a boolean if a field has been set.
 func (o *DriveItem) HasLastModifiedDateTime() bool {
-	if o != nil && o.LastModifiedDateTime != nil {
+	if o != nil && !IsNil(o.LastModifiedDateTime) {
 		return true
 	}
 
@@ -304,7 +307,7 @@ func (o *DriveItem) SetLastModifiedDateTime(v time.Time) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *DriveItem) GetName() string {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -314,7 +317,7 @@ func (o *DriveItem) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -322,7 +325,7 @@ func (o *DriveItem) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *DriveItem) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -336,7 +339,7 @@ func (o *DriveItem) SetName(v string) {
 
 // GetParentReference returns the ParentReference field value if set, zero value otherwise.
 func (o *DriveItem) GetParentReference() ItemReference {
-	if o == nil || o.ParentReference == nil {
+	if o == nil || IsNil(o.ParentReference) {
 		var ret ItemReference
 		return ret
 	}
@@ -346,7 +349,7 @@ func (o *DriveItem) GetParentReference() ItemReference {
 // GetParentReferenceOk returns a tuple with the ParentReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetParentReferenceOk() (*ItemReference, bool) {
-	if o == nil || o.ParentReference == nil {
+	if o == nil || IsNil(o.ParentReference) {
 		return nil, false
 	}
 	return o.ParentReference, true
@@ -354,7 +357,7 @@ func (o *DriveItem) GetParentReferenceOk() (*ItemReference, bool) {
 
 // HasParentReference returns a boolean if a field has been set.
 func (o *DriveItem) HasParentReference() bool {
-	if o != nil && o.ParentReference != nil {
+	if o != nil && !IsNil(o.ParentReference) {
 		return true
 	}
 
@@ -368,7 +371,7 @@ func (o *DriveItem) SetParentReference(v ItemReference) {
 
 // GetWebUrl returns the WebUrl field value if set, zero value otherwise.
 func (o *DriveItem) GetWebUrl() string {
-	if o == nil || o.WebUrl == nil {
+	if o == nil || IsNil(o.WebUrl) {
 		var ret string
 		return ret
 	}
@@ -378,7 +381,7 @@ func (o *DriveItem) GetWebUrl() string {
 // GetWebUrlOk returns a tuple with the WebUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetWebUrlOk() (*string, bool) {
-	if o == nil || o.WebUrl == nil {
+	if o == nil || IsNil(o.WebUrl) {
 		return nil, false
 	}
 	return o.WebUrl, true
@@ -386,7 +389,7 @@ func (o *DriveItem) GetWebUrlOk() (*string, bool) {
 
 // HasWebUrl returns a boolean if a field has been set.
 func (o *DriveItem) HasWebUrl() bool {
-	if o != nil && o.WebUrl != nil {
+	if o != nil && !IsNil(o.WebUrl) {
 		return true
 	}
 
@@ -400,7 +403,7 @@ func (o *DriveItem) SetWebUrl(v string) {
 
 // GetContent returns the Content field value if set, zero value otherwise.
 func (o *DriveItem) GetContent() string {
-	if o == nil || o.Content == nil {
+	if o == nil || IsNil(o.Content) {
 		var ret string
 		return ret
 	}
@@ -410,7 +413,7 @@ func (o *DriveItem) GetContent() string {
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetContentOk() (*string, bool) {
-	if o == nil || o.Content == nil {
+	if o == nil || IsNil(o.Content) {
 		return nil, false
 	}
 	return o.Content, true
@@ -418,7 +421,7 @@ func (o *DriveItem) GetContentOk() (*string, bool) {
 
 // HasContent returns a boolean if a field has been set.
 func (o *DriveItem) HasContent() bool {
-	if o != nil && o.Content != nil {
+	if o != nil && !IsNil(o.Content) {
 		return true
 	}
 
@@ -432,7 +435,7 @@ func (o *DriveItem) SetContent(v string) {
 
 // GetCTag returns the CTag field value if set, zero value otherwise.
 func (o *DriveItem) GetCTag() string {
-	if o == nil || o.CTag == nil {
+	if o == nil || IsNil(o.CTag) {
 		var ret string
 		return ret
 	}
@@ -442,7 +445,7 @@ func (o *DriveItem) GetCTag() string {
 // GetCTagOk returns a tuple with the CTag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetCTagOk() (*string, bool) {
-	if o == nil || o.CTag == nil {
+	if o == nil || IsNil(o.CTag) {
 		return nil, false
 	}
 	return o.CTag, true
@@ -450,7 +453,7 @@ func (o *DriveItem) GetCTagOk() (*string, bool) {
 
 // HasCTag returns a boolean if a field has been set.
 func (o *DriveItem) HasCTag() bool {
-	if o != nil && o.CTag != nil {
+	if o != nil && !IsNil(o.CTag) {
 		return true
 	}
 
@@ -464,7 +467,7 @@ func (o *DriveItem) SetCTag(v string) {
 
 // GetDeleted returns the Deleted field value if set, zero value otherwise.
 func (o *DriveItem) GetDeleted() Deleted {
-	if o == nil || o.Deleted == nil {
+	if o == nil || IsNil(o.Deleted) {
 		var ret Deleted
 		return ret
 	}
@@ -474,7 +477,7 @@ func (o *DriveItem) GetDeleted() Deleted {
 // GetDeletedOk returns a tuple with the Deleted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetDeletedOk() (*Deleted, bool) {
-	if o == nil || o.Deleted == nil {
+	if o == nil || IsNil(o.Deleted) {
 		return nil, false
 	}
 	return o.Deleted, true
@@ -482,7 +485,7 @@ func (o *DriveItem) GetDeletedOk() (*Deleted, bool) {
 
 // HasDeleted returns a boolean if a field has been set.
 func (o *DriveItem) HasDeleted() bool {
-	if o != nil && o.Deleted != nil {
+	if o != nil && !IsNil(o.Deleted) {
 		return true
 	}
 
@@ -496,7 +499,7 @@ func (o *DriveItem) SetDeleted(v Deleted) {
 
 // GetFile returns the File field value if set, zero value otherwise.
 func (o *DriveItem) GetFile() OpenGraphFile {
-	if o == nil || o.File == nil {
+	if o == nil || IsNil(o.File) {
 		var ret OpenGraphFile
 		return ret
 	}
@@ -506,7 +509,7 @@ func (o *DriveItem) GetFile() OpenGraphFile {
 // GetFileOk returns a tuple with the File field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetFileOk() (*OpenGraphFile, bool) {
-	if o == nil || o.File == nil {
+	if o == nil || IsNil(o.File) {
 		return nil, false
 	}
 	return o.File, true
@@ -514,7 +517,7 @@ func (o *DriveItem) GetFileOk() (*OpenGraphFile, bool) {
 
 // HasFile returns a boolean if a field has been set.
 func (o *DriveItem) HasFile() bool {
-	if o != nil && o.File != nil {
+	if o != nil && !IsNil(o.File) {
 		return true
 	}
 
@@ -528,7 +531,7 @@ func (o *DriveItem) SetFile(v OpenGraphFile) {
 
 // GetFileSystemInfo returns the FileSystemInfo field value if set, zero value otherwise.
 func (o *DriveItem) GetFileSystemInfo() FileSystemInfo {
-	if o == nil || o.FileSystemInfo == nil {
+	if o == nil || IsNil(o.FileSystemInfo) {
 		var ret FileSystemInfo
 		return ret
 	}
@@ -538,7 +541,7 @@ func (o *DriveItem) GetFileSystemInfo() FileSystemInfo {
 // GetFileSystemInfoOk returns a tuple with the FileSystemInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetFileSystemInfoOk() (*FileSystemInfo, bool) {
-	if o == nil || o.FileSystemInfo == nil {
+	if o == nil || IsNil(o.FileSystemInfo) {
 		return nil, false
 	}
 	return o.FileSystemInfo, true
@@ -546,7 +549,7 @@ func (o *DriveItem) GetFileSystemInfoOk() (*FileSystemInfo, bool) {
 
 // HasFileSystemInfo returns a boolean if a field has been set.
 func (o *DriveItem) HasFileSystemInfo() bool {
-	if o != nil && o.FileSystemInfo != nil {
+	if o != nil && !IsNil(o.FileSystemInfo) {
 		return true
 	}
 
@@ -560,7 +563,7 @@ func (o *DriveItem) SetFileSystemInfo(v FileSystemInfo) {
 
 // GetFolder returns the Folder field value if set, zero value otherwise.
 func (o *DriveItem) GetFolder() Folder {
-	if o == nil || o.Folder == nil {
+	if o == nil || IsNil(o.Folder) {
 		var ret Folder
 		return ret
 	}
@@ -570,7 +573,7 @@ func (o *DriveItem) GetFolder() Folder {
 // GetFolderOk returns a tuple with the Folder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetFolderOk() (*Folder, bool) {
-	if o == nil || o.Folder == nil {
+	if o == nil || IsNil(o.Folder) {
 		return nil, false
 	}
 	return o.Folder, true
@@ -578,7 +581,7 @@ func (o *DriveItem) GetFolderOk() (*Folder, bool) {
 
 // HasFolder returns a boolean if a field has been set.
 func (o *DriveItem) HasFolder() bool {
-	if o != nil && o.Folder != nil {
+	if o != nil && !IsNil(o.Folder) {
 		return true
 	}
 
@@ -592,7 +595,7 @@ func (o *DriveItem) SetFolder(v Folder) {
 
 // GetImage returns the Image field value if set, zero value otherwise.
 func (o *DriveItem) GetImage() Image {
-	if o == nil || o.Image == nil {
+	if o == nil || IsNil(o.Image) {
 		var ret Image
 		return ret
 	}
@@ -602,7 +605,7 @@ func (o *DriveItem) GetImage() Image {
 // GetImageOk returns a tuple with the Image field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetImageOk() (*Image, bool) {
-	if o == nil || o.Image == nil {
+	if o == nil || IsNil(o.Image) {
 		return nil, false
 	}
 	return o.Image, true
@@ -610,7 +613,7 @@ func (o *DriveItem) GetImageOk() (*Image, bool) {
 
 // HasImage returns a boolean if a field has been set.
 func (o *DriveItem) HasImage() bool {
-	if o != nil && o.Image != nil {
+	if o != nil && !IsNil(o.Image) {
 		return true
 	}
 
@@ -624,7 +627,7 @@ func (o *DriveItem) SetImage(v Image) {
 
 // GetPhoto returns the Photo field value if set, zero value otherwise.
 func (o *DriveItem) GetPhoto() Photo {
-	if o == nil || o.Photo == nil {
+	if o == nil || IsNil(o.Photo) {
 		var ret Photo
 		return ret
 	}
@@ -634,7 +637,7 @@ func (o *DriveItem) GetPhoto() Photo {
 // GetPhotoOk returns a tuple with the Photo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetPhotoOk() (*Photo, bool) {
-	if o == nil || o.Photo == nil {
+	if o == nil || IsNil(o.Photo) {
 		return nil, false
 	}
 	return o.Photo, true
@@ -642,7 +645,7 @@ func (o *DriveItem) GetPhotoOk() (*Photo, bool) {
 
 // HasPhoto returns a boolean if a field has been set.
 func (o *DriveItem) HasPhoto() bool {
-	if o != nil && o.Photo != nil {
+	if o != nil && !IsNil(o.Photo) {
 		return true
 	}
 
@@ -656,7 +659,7 @@ func (o *DriveItem) SetPhoto(v Photo) {
 
 // GetLocation returns the Location field value if set, zero value otherwise.
 func (o *DriveItem) GetLocation() GeoCoordinates {
-	if o == nil || o.Location == nil {
+	if o == nil || IsNil(o.Location) {
 		var ret GeoCoordinates
 		return ret
 	}
@@ -666,7 +669,7 @@ func (o *DriveItem) GetLocation() GeoCoordinates {
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetLocationOk() (*GeoCoordinates, bool) {
-	if o == nil || o.Location == nil {
+	if o == nil || IsNil(o.Location) {
 		return nil, false
 	}
 	return o.Location, true
@@ -674,7 +677,7 @@ func (o *DriveItem) GetLocationOk() (*GeoCoordinates, bool) {
 
 // HasLocation returns a boolean if a field has been set.
 func (o *DriveItem) HasLocation() bool {
-	if o != nil && o.Location != nil {
+	if o != nil && !IsNil(o.Location) {
 		return true
 	}
 
@@ -688,7 +691,7 @@ func (o *DriveItem) SetLocation(v GeoCoordinates) {
 
 // GetRoot returns the Root field value if set, zero value otherwise.
 func (o *DriveItem) GetRoot() map[string]interface{} {
-	if o == nil || o.Root == nil {
+	if o == nil || IsNil(o.Root) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -698,15 +701,15 @@ func (o *DriveItem) GetRoot() map[string]interface{} {
 // GetRootOk returns a tuple with the Root field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetRootOk() (map[string]interface{}, bool) {
-	if o == nil || o.Root == nil {
-		return nil, false
+	if o == nil || IsNil(o.Root) {
+		return map[string]interface{}{}, false
 	}
 	return o.Root, true
 }
 
 // HasRoot returns a boolean if a field has been set.
 func (o *DriveItem) HasRoot() bool {
-	if o != nil && o.Root != nil {
+	if o != nil && !IsNil(o.Root) {
 		return true
 	}
 
@@ -720,7 +723,7 @@ func (o *DriveItem) SetRoot(v map[string]interface{}) {
 
 // GetTrash returns the Trash field value if set, zero value otherwise.
 func (o *DriveItem) GetTrash() Trash {
-	if o == nil || o.Trash == nil {
+	if o == nil || IsNil(o.Trash) {
 		var ret Trash
 		return ret
 	}
@@ -730,7 +733,7 @@ func (o *DriveItem) GetTrash() Trash {
 // GetTrashOk returns a tuple with the Trash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetTrashOk() (*Trash, bool) {
-	if o == nil || o.Trash == nil {
+	if o == nil || IsNil(o.Trash) {
 		return nil, false
 	}
 	return o.Trash, true
@@ -738,7 +741,7 @@ func (o *DriveItem) GetTrashOk() (*Trash, bool) {
 
 // HasTrash returns a boolean if a field has been set.
 func (o *DriveItem) HasTrash() bool {
-	if o != nil && o.Trash != nil {
+	if o != nil && !IsNil(o.Trash) {
 		return true
 	}
 
@@ -752,7 +755,7 @@ func (o *DriveItem) SetTrash(v Trash) {
 
 // GetSpecialFolder returns the SpecialFolder field value if set, zero value otherwise.
 func (o *DriveItem) GetSpecialFolder() SpecialFolder {
-	if o == nil || o.SpecialFolder == nil {
+	if o == nil || IsNil(o.SpecialFolder) {
 		var ret SpecialFolder
 		return ret
 	}
@@ -762,7 +765,7 @@ func (o *DriveItem) GetSpecialFolder() SpecialFolder {
 // GetSpecialFolderOk returns a tuple with the SpecialFolder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetSpecialFolderOk() (*SpecialFolder, bool) {
-	if o == nil || o.SpecialFolder == nil {
+	if o == nil || IsNil(o.SpecialFolder) {
 		return nil, false
 	}
 	return o.SpecialFolder, true
@@ -770,7 +773,7 @@ func (o *DriveItem) GetSpecialFolderOk() (*SpecialFolder, bool) {
 
 // HasSpecialFolder returns a boolean if a field has been set.
 func (o *DriveItem) HasSpecialFolder() bool {
-	if o != nil && o.SpecialFolder != nil {
+	if o != nil && !IsNil(o.SpecialFolder) {
 		return true
 	}
 
@@ -784,7 +787,7 @@ func (o *DriveItem) SetSpecialFolder(v SpecialFolder) {
 
 // GetRemoteItem returns the RemoteItem field value if set, zero value otherwise.
 func (o *DriveItem) GetRemoteItem() RemoteItem {
-	if o == nil || o.RemoteItem == nil {
+	if o == nil || IsNil(o.RemoteItem) {
 		var ret RemoteItem
 		return ret
 	}
@@ -794,7 +797,7 @@ func (o *DriveItem) GetRemoteItem() RemoteItem {
 // GetRemoteItemOk returns a tuple with the RemoteItem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetRemoteItemOk() (*RemoteItem, bool) {
-	if o == nil || o.RemoteItem == nil {
+	if o == nil || IsNil(o.RemoteItem) {
 		return nil, false
 	}
 	return o.RemoteItem, true
@@ -802,7 +805,7 @@ func (o *DriveItem) GetRemoteItemOk() (*RemoteItem, bool) {
 
 // HasRemoteItem returns a boolean if a field has been set.
 func (o *DriveItem) HasRemoteItem() bool {
-	if o != nil && o.RemoteItem != nil {
+	if o != nil && !IsNil(o.RemoteItem) {
 		return true
 	}
 
@@ -816,7 +819,7 @@ func (o *DriveItem) SetRemoteItem(v RemoteItem) {
 
 // GetSize returns the Size field value if set, zero value otherwise.
 func (o *DriveItem) GetSize() int64 {
-	if o == nil || o.Size == nil {
+	if o == nil || IsNil(o.Size) {
 		var ret int64
 		return ret
 	}
@@ -826,7 +829,7 @@ func (o *DriveItem) GetSize() int64 {
 // GetSizeOk returns a tuple with the Size field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetSizeOk() (*int64, bool) {
-	if o == nil || o.Size == nil {
+	if o == nil || IsNil(o.Size) {
 		return nil, false
 	}
 	return o.Size, true
@@ -834,7 +837,7 @@ func (o *DriveItem) GetSizeOk() (*int64, bool) {
 
 // HasSize returns a boolean if a field has been set.
 func (o *DriveItem) HasSize() bool {
-	if o != nil && o.Size != nil {
+	if o != nil && !IsNil(o.Size) {
 		return true
 	}
 
@@ -848,7 +851,7 @@ func (o *DriveItem) SetSize(v int64) {
 
 // GetWebDavUrl returns the WebDavUrl field value if set, zero value otherwise.
 func (o *DriveItem) GetWebDavUrl() string {
-	if o == nil || o.WebDavUrl == nil {
+	if o == nil || IsNil(o.WebDavUrl) {
 		var ret string
 		return ret
 	}
@@ -858,7 +861,7 @@ func (o *DriveItem) GetWebDavUrl() string {
 // GetWebDavUrlOk returns a tuple with the WebDavUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetWebDavUrlOk() (*string, bool) {
-	if o == nil || o.WebDavUrl == nil {
+	if o == nil || IsNil(o.WebDavUrl) {
 		return nil, false
 	}
 	return o.WebDavUrl, true
@@ -866,7 +869,7 @@ func (o *DriveItem) GetWebDavUrlOk() (*string, bool) {
 
 // HasWebDavUrl returns a boolean if a field has been set.
 func (o *DriveItem) HasWebDavUrl() bool {
-	if o != nil && o.WebDavUrl != nil {
+	if o != nil && !IsNil(o.WebDavUrl) {
 		return true
 	}
 
@@ -880,7 +883,7 @@ func (o *DriveItem) SetWebDavUrl(v string) {
 
 // GetChildren returns the Children field value if set, zero value otherwise.
 func (o *DriveItem) GetChildren() []DriveItem {
-	if o == nil || o.Children == nil {
+	if o == nil || IsNil(o.Children) {
 		var ret []DriveItem
 		return ret
 	}
@@ -890,7 +893,7 @@ func (o *DriveItem) GetChildren() []DriveItem {
 // GetChildrenOk returns a tuple with the Children field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetChildrenOk() ([]DriveItem, bool) {
-	if o == nil || o.Children == nil {
+	if o == nil || IsNil(o.Children) {
 		return nil, false
 	}
 	return o.Children, true
@@ -898,7 +901,7 @@ func (o *DriveItem) GetChildrenOk() ([]DriveItem, bool) {
 
 // HasChildren returns a boolean if a field has been set.
 func (o *DriveItem) HasChildren() bool {
-	if o != nil && o.Children != nil {
+	if o != nil && !IsNil(o.Children) {
 		return true
 	}
 
@@ -912,7 +915,7 @@ func (o *DriveItem) SetChildren(v []DriveItem) {
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
 func (o *DriveItem) GetPermissions() []Permission {
-	if o == nil || o.Permissions == nil {
+	if o == nil || IsNil(o.Permissions) {
 		var ret []Permission
 		return ret
 	}
@@ -922,7 +925,7 @@ func (o *DriveItem) GetPermissions() []Permission {
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetPermissionsOk() ([]Permission, bool) {
-	if o == nil || o.Permissions == nil {
+	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
 	return o.Permissions, true
@@ -930,7 +933,7 @@ func (o *DriveItem) GetPermissionsOk() ([]Permission, bool) {
 
 // HasPermissions returns a boolean if a field has been set.
 func (o *DriveItem) HasPermissions() bool {
-	if o != nil && o.Permissions != nil {
+	if o != nil && !IsNil(o.Permissions) {
 		return true
 	}
 
@@ -944,7 +947,7 @@ func (o *DriveItem) SetPermissions(v []Permission) {
 
 // GetAudio returns the Audio field value if set, zero value otherwise.
 func (o *DriveItem) GetAudio() Audio {
-	if o == nil || o.Audio == nil {
+	if o == nil || IsNil(o.Audio) {
 		var ret Audio
 		return ret
 	}
@@ -954,7 +957,7 @@ func (o *DriveItem) GetAudio() Audio {
 // GetAudioOk returns a tuple with the Audio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItem) GetAudioOk() (*Audio, bool) {
-	if o == nil || o.Audio == nil {
+	if o == nil || IsNil(o.Audio) {
 		return nil, false
 	}
 	return o.Audio, true
@@ -962,7 +965,7 @@ func (o *DriveItem) GetAudioOk() (*Audio, bool) {
 
 // HasAudio returns a boolean if a field has been set.
 func (o *DriveItem) HasAudio() bool {
-	if o != nil && o.Audio != nil {
+	if o != nil && !IsNil(o.Audio) {
 		return true
 	}
 
@@ -975,92 +978,100 @@ func (o *DriveItem) SetAudio(v Audio) {
 }
 
 func (o DriveItem) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.CreatedBy != nil {
-		toSerialize["createdBy"] = o.CreatedBy
-	}
-	if o.CreatedDateTime != nil {
-		toSerialize["createdDateTime"] = o.CreatedDateTime
-	}
-	if o.Description != nil {
-		toSerialize["description"] = o.Description
-	}
-	if o.ETag != nil {
-		toSerialize["eTag"] = o.ETag
-	}
-	if o.LastModifiedBy != nil {
-		toSerialize["lastModifiedBy"] = o.LastModifiedBy
-	}
-	if o.LastModifiedDateTime != nil {
-		toSerialize["lastModifiedDateTime"] = o.LastModifiedDateTime
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
-	if o.ParentReference != nil {
-		toSerialize["parentReference"] = o.ParentReference
-	}
-	if o.WebUrl != nil {
-		toSerialize["webUrl"] = o.WebUrl
-	}
-	if o.Content != nil {
-		toSerialize["content"] = o.Content
-	}
-	if o.CTag != nil {
-		toSerialize["cTag"] = o.CTag
-	}
-	if o.Deleted != nil {
-		toSerialize["deleted"] = o.Deleted
-	}
-	if o.File != nil {
-		toSerialize["file"] = o.File
-	}
-	if o.FileSystemInfo != nil {
-		toSerialize["fileSystemInfo"] = o.FileSystemInfo
-	}
-	if o.Folder != nil {
-		toSerialize["folder"] = o.Folder
-	}
-	if o.Image != nil {
-		toSerialize["image"] = o.Image
-	}
-	if o.Photo != nil {
-		toSerialize["photo"] = o.Photo
-	}
-	if o.Location != nil {
-		toSerialize["location"] = o.Location
-	}
-	if o.Root != nil {
-		toSerialize["root"] = o.Root
-	}
-	if o.Trash != nil {
-		toSerialize["trash"] = o.Trash
-	}
-	if o.SpecialFolder != nil {
-		toSerialize["specialFolder"] = o.SpecialFolder
-	}
-	if o.RemoteItem != nil {
-		toSerialize["remoteItem"] = o.RemoteItem
-	}
-	if o.Size != nil {
-		toSerialize["size"] = o.Size
-	}
-	if o.WebDavUrl != nil {
-		toSerialize["webDavUrl"] = o.WebDavUrl
-	}
-	if o.Children != nil {
-		toSerialize["children"] = o.Children
-	}
-	if o.Permissions != nil {
-		toSerialize["permissions"] = o.Permissions
-	}
-	if o.Audio != nil {
-		toSerialize["audio"] = o.Audio
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DriveItem) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.CreatedBy) {
+		toSerialize["createdBy"] = o.CreatedBy
+	}
+	if !IsNil(o.CreatedDateTime) {
+		toSerialize["createdDateTime"] = o.CreatedDateTime
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.ETag) {
+		toSerialize["eTag"] = o.ETag
+	}
+	if !IsNil(o.LastModifiedBy) {
+		toSerialize["lastModifiedBy"] = o.LastModifiedBy
+	}
+	if !IsNil(o.LastModifiedDateTime) {
+		toSerialize["lastModifiedDateTime"] = o.LastModifiedDateTime
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.ParentReference) {
+		toSerialize["parentReference"] = o.ParentReference
+	}
+	if !IsNil(o.WebUrl) {
+		toSerialize["webUrl"] = o.WebUrl
+	}
+	if !IsNil(o.Content) {
+		toSerialize["content"] = o.Content
+	}
+	if !IsNil(o.CTag) {
+		toSerialize["cTag"] = o.CTag
+	}
+	if !IsNil(o.Deleted) {
+		toSerialize["deleted"] = o.Deleted
+	}
+	if !IsNil(o.File) {
+		toSerialize["file"] = o.File
+	}
+	if !IsNil(o.FileSystemInfo) {
+		toSerialize["fileSystemInfo"] = o.FileSystemInfo
+	}
+	if !IsNil(o.Folder) {
+		toSerialize["folder"] = o.Folder
+	}
+	if !IsNil(o.Image) {
+		toSerialize["image"] = o.Image
+	}
+	if !IsNil(o.Photo) {
+		toSerialize["photo"] = o.Photo
+	}
+	if !IsNil(o.Location) {
+		toSerialize["location"] = o.Location
+	}
+	if !IsNil(o.Root) {
+		toSerialize["root"] = o.Root
+	}
+	if !IsNil(o.Trash) {
+		toSerialize["trash"] = o.Trash
+	}
+	if !IsNil(o.SpecialFolder) {
+		toSerialize["specialFolder"] = o.SpecialFolder
+	}
+	if !IsNil(o.RemoteItem) {
+		toSerialize["remoteItem"] = o.RemoteItem
+	}
+	if !IsNil(o.Size) {
+		toSerialize["size"] = o.Size
+	}
+	if !IsNil(o.WebDavUrl) {
+		toSerialize["webDavUrl"] = o.WebDavUrl
+	}
+	if !IsNil(o.Children) {
+		toSerialize["children"] = o.Children
+	}
+	if !IsNil(o.Permissions) {
+		toSerialize["permissions"] = o.Permissions
+	}
+	if !IsNil(o.Audio) {
+		toSerialize["audio"] = o.Audio
+	}
+	return toSerialize, nil
 }
 
 type NullableDriveItem struct {

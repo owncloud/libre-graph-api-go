@@ -13,18 +13,18 @@ package libregraph
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-// UserAppRoleAssignmentApiService UserAppRoleAssignmentApi service
-type UserAppRoleAssignmentApiService service
+// UserAppRoleAssignmentAPIService UserAppRoleAssignmentAPI service
+type UserAppRoleAssignmentAPIService service
 
 type ApiUserCreateAppRoleAssignmentsRequest struct {
 	ctx               context.Context
-	ApiService        *UserAppRoleAssignmentApiService
+	ApiService        *UserAppRoleAssignmentAPIService
 	userId            string
 	appRoleAssignment *AppRoleAssignment
 }
@@ -52,7 +52,7 @@ Use this API to assign a global role to a user. To grant an app role assignment 
  @param userId key: id of user
  @return ApiUserCreateAppRoleAssignmentsRequest
 */
-func (a *UserAppRoleAssignmentApiService) UserCreateAppRoleAssignments(ctx context.Context, userId string) ApiUserCreateAppRoleAssignmentsRequest {
+func (a *UserAppRoleAssignmentAPIService) UserCreateAppRoleAssignments(ctx context.Context, userId string) ApiUserCreateAppRoleAssignmentsRequest {
 	return ApiUserCreateAppRoleAssignmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -62,7 +62,7 @@ func (a *UserAppRoleAssignmentApiService) UserCreateAppRoleAssignments(ctx conte
 
 // Execute executes the request
 //  @return AppRoleAssignment
-func (a *UserAppRoleAssignmentApiService) UserCreateAppRoleAssignmentsExecute(r ApiUserCreateAppRoleAssignmentsRequest) (*AppRoleAssignment, *http.Response, error) {
+func (a *UserAppRoleAssignmentAPIService) UserCreateAppRoleAssignmentsExecute(r ApiUserCreateAppRoleAssignmentsRequest) (*AppRoleAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -70,13 +70,13 @@ func (a *UserAppRoleAssignmentApiService) UserCreateAppRoleAssignmentsExecute(r 
 		localVarReturnValue *AppRoleAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentApiService.UserCreateAppRoleAssignments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentAPIService.UserCreateAppRoleAssignments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/users/{user-id}/appRoleAssignments"
-	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterToString(r.userId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterValueToString(r.userId, "userId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -114,9 +114,9 @@ func (a *UserAppRoleAssignmentApiService) UserCreateAppRoleAssignmentsExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -132,6 +132,7 @@ func (a *UserAppRoleAssignmentApiService) UserCreateAppRoleAssignmentsExecute(r 
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -150,7 +151,7 @@ func (a *UserAppRoleAssignmentApiService) UserCreateAppRoleAssignmentsExecute(r 
 
 type ApiUserDeleteAppRoleAssignmentsRequest struct {
 	ctx                 context.Context
-	ApiService          *UserAppRoleAssignmentApiService
+	ApiService          *UserAppRoleAssignmentAPIService
 	userId              string
 	appRoleAssignmentId string
 	ifMatch             *string
@@ -174,7 +175,7 @@ UserDeleteAppRoleAssignments Delete the appRoleAssignment from a user
  @param appRoleAssignmentId key: id of appRoleAssignment. This is the concatenated {user-id}:{appRole-id} separated by a colon.
  @return ApiUserDeleteAppRoleAssignmentsRequest
 */
-func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignments(ctx context.Context, userId string, appRoleAssignmentId string) ApiUserDeleteAppRoleAssignmentsRequest {
+func (a *UserAppRoleAssignmentAPIService) UserDeleteAppRoleAssignments(ctx context.Context, userId string, appRoleAssignmentId string) ApiUserDeleteAppRoleAssignmentsRequest {
 	return ApiUserDeleteAppRoleAssignmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -184,21 +185,21 @@ func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignments(ctx conte
 }
 
 // Execute executes the request
-func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignmentsExecute(r ApiUserDeleteAppRoleAssignmentsRequest) (*http.Response, error) {
+func (a *UserAppRoleAssignmentAPIService) UserDeleteAppRoleAssignmentsExecute(r ApiUserDeleteAppRoleAssignmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentApiService.UserDeleteAppRoleAssignments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentAPIService.UserDeleteAppRoleAssignments")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/users/{user-id}/appRoleAssignments/{appRoleAssignment-id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterToString(r.userId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"appRoleAssignment-id"+"}", url.PathEscape(parameterToString(r.appRoleAssignmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterValueToString(r.userId, "userId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"appRoleAssignment-id"+"}", url.PathEscape(parameterValueToString(r.appRoleAssignmentId, "appRoleAssignmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -222,7 +223,7 @@ func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignmentsExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifMatch != nil {
-		localVarHeaderParams["If-Match"] = parameterToString(*r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -234,9 +235,9 @@ func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignmentsExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -252,6 +253,7 @@ func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignmentsExecute(r 
 			newErr.error = err.Error()
 			return localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
@@ -261,7 +263,7 @@ func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignmentsExecute(r 
 
 type ApiUserListAppRoleAssignmentsRequest struct {
 	ctx        context.Context
-	ApiService *UserAppRoleAssignmentApiService
+	ApiService *UserAppRoleAssignmentAPIService
 	userId     string
 }
 
@@ -278,7 +280,7 @@ Represents the global roles a user has been granted for an application.
  @param userId key: id of user
  @return ApiUserListAppRoleAssignmentsRequest
 */
-func (a *UserAppRoleAssignmentApiService) UserListAppRoleAssignments(ctx context.Context, userId string) ApiUserListAppRoleAssignmentsRequest {
+func (a *UserAppRoleAssignmentAPIService) UserListAppRoleAssignments(ctx context.Context, userId string) ApiUserListAppRoleAssignmentsRequest {
 	return ApiUserListAppRoleAssignmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -288,7 +290,7 @@ func (a *UserAppRoleAssignmentApiService) UserListAppRoleAssignments(ctx context
 
 // Execute executes the request
 //  @return CollectionOfAppRoleAssignments
-func (a *UserAppRoleAssignmentApiService) UserListAppRoleAssignmentsExecute(r ApiUserListAppRoleAssignmentsRequest) (*CollectionOfAppRoleAssignments, *http.Response, error) {
+func (a *UserAppRoleAssignmentAPIService) UserListAppRoleAssignmentsExecute(r ApiUserListAppRoleAssignmentsRequest) (*CollectionOfAppRoleAssignments, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -296,13 +298,13 @@ func (a *UserAppRoleAssignmentApiService) UserListAppRoleAssignmentsExecute(r Ap
 		localVarReturnValue *CollectionOfAppRoleAssignments
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentApiService.UserListAppRoleAssignments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentAPIService.UserListAppRoleAssignments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/users/{user-id}/appRoleAssignments"
-	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterToString(r.userId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterValueToString(r.userId, "userId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -335,9 +337,9 @@ func (a *UserAppRoleAssignmentApiService) UserListAppRoleAssignmentsExecute(r Ap
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -353,6 +355,7 @@ func (a *UserAppRoleAssignmentApiService) UserListAppRoleAssignmentsExecute(r Ap
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

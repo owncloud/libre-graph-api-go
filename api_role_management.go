@@ -13,18 +13,18 @@ package libregraph
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-// RoleManagementApiService RoleManagementApi service
-type RoleManagementApiService service
+// RoleManagementAPIService RoleManagementAPI service
+type RoleManagementAPIService service
 
 type ApiGetPermissionRoleDefinitionRequest struct {
 	ctx        context.Context
-	ApiService *RoleManagementApiService
+	ApiService *RoleManagementAPIService
 	roleId     string
 }
 
@@ -42,7 +42,7 @@ Read the properties and relationships of a `unifiedRoleDefinition` object.
  @param roleId key: id of roleDefinition
  @return ApiGetPermissionRoleDefinitionRequest
 */
-func (a *RoleManagementApiService) GetPermissionRoleDefinition(ctx context.Context, roleId string) ApiGetPermissionRoleDefinitionRequest {
+func (a *RoleManagementAPIService) GetPermissionRoleDefinition(ctx context.Context, roleId string) ApiGetPermissionRoleDefinitionRequest {
 	return ApiGetPermissionRoleDefinitionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -52,7 +52,7 @@ func (a *RoleManagementApiService) GetPermissionRoleDefinition(ctx context.Conte
 
 // Execute executes the request
 //  @return UnifiedRoleDefinition
-func (a *RoleManagementApiService) GetPermissionRoleDefinitionExecute(r ApiGetPermissionRoleDefinitionRequest) (*UnifiedRoleDefinition, *http.Response, error) {
+func (a *RoleManagementAPIService) GetPermissionRoleDefinitionExecute(r ApiGetPermissionRoleDefinitionRequest) (*UnifiedRoleDefinition, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -60,13 +60,13 @@ func (a *RoleManagementApiService) GetPermissionRoleDefinitionExecute(r ApiGetPe
 		localVarReturnValue *UnifiedRoleDefinition
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleManagementApiService.GetPermissionRoleDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleManagementAPIService.GetPermissionRoleDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/roleManagement/permissions/roleDefinitions/{role-id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role-id"+"}", url.PathEscape(parameterToString(r.roleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role-id"+"}", url.PathEscape(parameterValueToString(r.roleId, "roleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -99,9 +99,9 @@ func (a *RoleManagementApiService) GetPermissionRoleDefinitionExecute(r ApiGetPe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -117,6 +117,7 @@ func (a *RoleManagementApiService) GetPermissionRoleDefinitionExecute(r ApiGetPe
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -135,7 +136,7 @@ func (a *RoleManagementApiService) GetPermissionRoleDefinitionExecute(r ApiGetPe
 
 type ApiListPermissionRoleDefinitionsRequest struct {
 	ctx        context.Context
-	ApiService *RoleManagementApiService
+	ApiService *RoleManagementAPIService
 }
 
 func (r ApiListPermissionRoleDefinitionsRequest) Execute() (*UnifiedRoleDefinition, *http.Response, error) {
@@ -151,7 +152,7 @@ Get a list of `unifiedRoleDefinition` objects for the permissions provider. This
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListPermissionRoleDefinitionsRequest
 */
-func (a *RoleManagementApiService) ListPermissionRoleDefinitions(ctx context.Context) ApiListPermissionRoleDefinitionsRequest {
+func (a *RoleManagementAPIService) ListPermissionRoleDefinitions(ctx context.Context) ApiListPermissionRoleDefinitionsRequest {
 	return ApiListPermissionRoleDefinitionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -160,7 +161,7 @@ func (a *RoleManagementApiService) ListPermissionRoleDefinitions(ctx context.Con
 
 // Execute executes the request
 //  @return UnifiedRoleDefinition
-func (a *RoleManagementApiService) ListPermissionRoleDefinitionsExecute(r ApiListPermissionRoleDefinitionsRequest) (*UnifiedRoleDefinition, *http.Response, error) {
+func (a *RoleManagementAPIService) ListPermissionRoleDefinitionsExecute(r ApiListPermissionRoleDefinitionsRequest) (*UnifiedRoleDefinition, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -168,7 +169,7 @@ func (a *RoleManagementApiService) ListPermissionRoleDefinitionsExecute(r ApiLis
 		localVarReturnValue *UnifiedRoleDefinition
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleManagementApiService.ListPermissionRoleDefinitions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleManagementAPIService.ListPermissionRoleDefinitions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -206,9 +207,9 @@ func (a *RoleManagementApiService) ListPermissionRoleDefinitionsExecute(r ApiLis
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -224,6 +225,7 @@ func (a *RoleManagementApiService) ListPermissionRoleDefinitionsExecute(r ApiLis
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

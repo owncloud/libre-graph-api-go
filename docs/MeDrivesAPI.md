@@ -1,18 +1,18 @@
-# \DrivesGetDrivesApi
+# \MeDrivesAPI
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListAllDrives**](DrivesGetDrivesApi.md#ListAllDrives) | **Get** /drives | Get all available drives
+[**ListMyDrives**](MeDrivesAPI.md#ListMyDrives) | **Get** /me/drives | Get all drives where the current user is a regular member of
 
 
 
-## ListAllDrives
+## ListMyDrives
 
-> CollectionOfDrives1 ListAllDrives(ctx).Orderby(orderby).Filter(filter).Execute()
+> CollectionOfDrives ListMyDrives(ctx).Orderby(orderby).Filter(filter).Execute()
 
-Get all available drives
+Get all drives where the current user is a regular member of
 
 ### Example
 
@@ -23,7 +23,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -32,13 +32,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesGetDrivesApi.ListAllDrives(context.Background()).Orderby(orderby).Filter(filter).Execute()
+    resp, r, err := apiClient.MeDrivesAPI.ListMyDrives(context.Background()).Orderby(orderby).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesGetDrivesApi.ListAllDrives``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesAPI.ListMyDrives``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListAllDrives`: CollectionOfDrives1
-    fmt.Fprintf(os.Stdout, "Response from `DrivesGetDrivesApi.ListAllDrives`: %v\n", resp)
+    // response from `ListMyDrives`: CollectionOfDrives
+    fmt.Fprintf(os.Stdout, "Response from `MeDrivesAPI.ListMyDrives`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListAllDrivesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListMyDrivesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -58,11 +58,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CollectionOfDrives1**](CollectionOfDrives1.md)
+[**CollectionOfDrives**](CollectionOfDrives.md)
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 

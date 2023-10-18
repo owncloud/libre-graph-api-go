@@ -1,13 +1,13 @@
-# \UserApi
+# \UserAPI
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteUser**](UserApi.md#DeleteUser) | **Delete** /users/{user-id} | Delete entity from users
-[**ExportPersonalData**](UserApi.md#ExportPersonalData) | **Post** /users/{user-id}/exportPersonalData | export personal data of a user
-[**GetUser**](UserApi.md#GetUser) | **Get** /users/{user-id} | Get entity from users by key
-[**UpdateUser**](UserApi.md#UpdateUser) | **Patch** /users/{user-id} | Update entity in users
+[**DeleteUser**](UserAPI.md#DeleteUser) | **Delete** /users/{user-id} | Delete entity from users
+[**ExportPersonalData**](UserAPI.md#ExportPersonalData) | **Post** /users/{user-id}/exportPersonalData | export personal data of a user
+[**GetUser**](UserAPI.md#GetUser) | **Get** /users/{user-id} | Get entity from users by key
+[**UpdateUser**](UserAPI.md#UpdateUser) | **Patch** /users/{user-id} | Update entity in users
 
 
 
@@ -26,7 +26,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -35,9 +35,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.DeleteUser(context.Background(), userId).IfMatch(ifMatch).Execute()
+    r, err := apiClient.UserAPI.DeleteUser(context.Background(), userId).IfMatch(ifMatch).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.DeleteUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.DeleteUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 
@@ -94,7 +94,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -103,9 +103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.ExportPersonalData(context.Background(), userId).ExportPersonalDataRequest(exportPersonalDataRequest).Execute()
+    r, err := apiClient.UserAPI.ExportPersonalData(context.Background(), userId).ExportPersonalDataRequest(exportPersonalDataRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.ExportPersonalData``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.ExportPersonalData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 
@@ -162,7 +162,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -172,13 +172,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.GetUser(context.Background(), userId).Select_(select_).Expand(expand).Execute()
+    resp, r, err := apiClient.UserAPI.GetUser(context.Background(), userId).Select_(select_).Expand(expand).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.GetUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.GetUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetUser`: User
-    fmt.Fprintf(os.Stdout, "Response from `UserApi.GetUser`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UserAPI.GetUser`: %v\n", resp)
 }
 ```
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 
@@ -234,7 +234,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -243,13 +243,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.UpdateUser(context.Background(), userId).User(user).Execute()
+    resp, r, err := apiClient.UserAPI.UpdateUser(context.Background(), userId).User(user).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.UpdateUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.UpdateUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateUser`: User
-    fmt.Fprintf(os.Stdout, "Response from `UserApi.UpdateUser`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UserAPI.UpdateUser`: %v\n", resp)
 }
 ```
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 

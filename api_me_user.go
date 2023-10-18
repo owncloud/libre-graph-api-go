@@ -13,17 +13,17 @@ package libregraph
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
 
-// MeUserApiService MeUserApi service
-type MeUserApiService service
+// MeUserAPIService MeUserAPI service
+type MeUserAPIService service
 
 type ApiGetOwnUserRequest struct {
 	ctx        context.Context
-	ApiService *MeUserApiService
+	ApiService *MeUserAPIService
 	expand     *[]string
 }
 
@@ -43,7 +43,7 @@ GetOwnUser Get current user
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetOwnUserRequest
 */
-func (a *MeUserApiService) GetOwnUser(ctx context.Context) ApiGetOwnUserRequest {
+func (a *MeUserAPIService) GetOwnUser(ctx context.Context) ApiGetOwnUserRequest {
 	return ApiGetOwnUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -52,7 +52,7 @@ func (a *MeUserApiService) GetOwnUser(ctx context.Context) ApiGetOwnUserRequest 
 
 // Execute executes the request
 //  @return User
-func (a *MeUserApiService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *http.Response, error) {
+func (a *MeUserAPIService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -60,7 +60,7 @@ func (a *MeUserApiService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *ht
 		localVarReturnValue *User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeUserApiService.GetOwnUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeUserAPIService.GetOwnUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -72,7 +72,7 @@ func (a *MeUserApiService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *ht
 	localVarFormParams := url.Values{}
 
 	if r.expand != nil {
-		localVarQueryParams.Add("$expand", parameterToString(*r.expand, "csv"))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$expand", r.expand, "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -101,9 +101,9 @@ func (a *MeUserApiService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *ht
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -119,6 +119,7 @@ func (a *MeUserApiService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *ht
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

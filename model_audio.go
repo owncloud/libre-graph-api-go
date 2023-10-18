@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Audio type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Audio{}
+
 // Audio The Audio resource groups audio-related properties on an item into a single structure.  If a DriveItem has a non-null audio facet, the item represents an audio file. The properties of the Audio resource are populated by extracting metadata from the file.
 type Audio struct {
 	// The title of the album for this audio file.
@@ -69,7 +72,7 @@ func NewAudioWithDefaults() *Audio {
 
 // GetAlbum returns the Album field value if set, zero value otherwise.
 func (o *Audio) GetAlbum() string {
-	if o == nil || o.Album == nil {
+	if o == nil || IsNil(o.Album) {
 		var ret string
 		return ret
 	}
@@ -79,7 +82,7 @@ func (o *Audio) GetAlbum() string {
 // GetAlbumOk returns a tuple with the Album field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetAlbumOk() (*string, bool) {
-	if o == nil || o.Album == nil {
+	if o == nil || IsNil(o.Album) {
 		return nil, false
 	}
 	return o.Album, true
@@ -87,7 +90,7 @@ func (o *Audio) GetAlbumOk() (*string, bool) {
 
 // HasAlbum returns a boolean if a field has been set.
 func (o *Audio) HasAlbum() bool {
-	if o != nil && o.Album != nil {
+	if o != nil && !IsNil(o.Album) {
 		return true
 	}
 
@@ -101,7 +104,7 @@ func (o *Audio) SetAlbum(v string) {
 
 // GetAlbumArtist returns the AlbumArtist field value if set, zero value otherwise.
 func (o *Audio) GetAlbumArtist() string {
-	if o == nil || o.AlbumArtist == nil {
+	if o == nil || IsNil(o.AlbumArtist) {
 		var ret string
 		return ret
 	}
@@ -111,7 +114,7 @@ func (o *Audio) GetAlbumArtist() string {
 // GetAlbumArtistOk returns a tuple with the AlbumArtist field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetAlbumArtistOk() (*string, bool) {
-	if o == nil || o.AlbumArtist == nil {
+	if o == nil || IsNil(o.AlbumArtist) {
 		return nil, false
 	}
 	return o.AlbumArtist, true
@@ -119,7 +122,7 @@ func (o *Audio) GetAlbumArtistOk() (*string, bool) {
 
 // HasAlbumArtist returns a boolean if a field has been set.
 func (o *Audio) HasAlbumArtist() bool {
-	if o != nil && o.AlbumArtist != nil {
+	if o != nil && !IsNil(o.AlbumArtist) {
 		return true
 	}
 
@@ -133,7 +136,7 @@ func (o *Audio) SetAlbumArtist(v string) {
 
 // GetArtist returns the Artist field value if set, zero value otherwise.
 func (o *Audio) GetArtist() string {
-	if o == nil || o.Artist == nil {
+	if o == nil || IsNil(o.Artist) {
 		var ret string
 		return ret
 	}
@@ -143,7 +146,7 @@ func (o *Audio) GetArtist() string {
 // GetArtistOk returns a tuple with the Artist field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetArtistOk() (*string, bool) {
-	if o == nil || o.Artist == nil {
+	if o == nil || IsNil(o.Artist) {
 		return nil, false
 	}
 	return o.Artist, true
@@ -151,7 +154,7 @@ func (o *Audio) GetArtistOk() (*string, bool) {
 
 // HasArtist returns a boolean if a field has been set.
 func (o *Audio) HasArtist() bool {
-	if o != nil && o.Artist != nil {
+	if o != nil && !IsNil(o.Artist) {
 		return true
 	}
 
@@ -165,7 +168,7 @@ func (o *Audio) SetArtist(v string) {
 
 // GetBitrate returns the Bitrate field value if set, zero value otherwise.
 func (o *Audio) GetBitrate() int64 {
-	if o == nil || o.Bitrate == nil {
+	if o == nil || IsNil(o.Bitrate) {
 		var ret int64
 		return ret
 	}
@@ -175,7 +178,7 @@ func (o *Audio) GetBitrate() int64 {
 // GetBitrateOk returns a tuple with the Bitrate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetBitrateOk() (*int64, bool) {
-	if o == nil || o.Bitrate == nil {
+	if o == nil || IsNil(o.Bitrate) {
 		return nil, false
 	}
 	return o.Bitrate, true
@@ -183,7 +186,7 @@ func (o *Audio) GetBitrateOk() (*int64, bool) {
 
 // HasBitrate returns a boolean if a field has been set.
 func (o *Audio) HasBitrate() bool {
-	if o != nil && o.Bitrate != nil {
+	if o != nil && !IsNil(o.Bitrate) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *Audio) SetBitrate(v int64) {
 
 // GetComposers returns the Composers field value if set, zero value otherwise.
 func (o *Audio) GetComposers() string {
-	if o == nil || o.Composers == nil {
+	if o == nil || IsNil(o.Composers) {
 		var ret string
 		return ret
 	}
@@ -207,7 +210,7 @@ func (o *Audio) GetComposers() string {
 // GetComposersOk returns a tuple with the Composers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetComposersOk() (*string, bool) {
-	if o == nil || o.Composers == nil {
+	if o == nil || IsNil(o.Composers) {
 		return nil, false
 	}
 	return o.Composers, true
@@ -215,7 +218,7 @@ func (o *Audio) GetComposersOk() (*string, bool) {
 
 // HasComposers returns a boolean if a field has been set.
 func (o *Audio) HasComposers() bool {
-	if o != nil && o.Composers != nil {
+	if o != nil && !IsNil(o.Composers) {
 		return true
 	}
 
@@ -229,7 +232,7 @@ func (o *Audio) SetComposers(v string) {
 
 // GetCopyright returns the Copyright field value if set, zero value otherwise.
 func (o *Audio) GetCopyright() string {
-	if o == nil || o.Copyright == nil {
+	if o == nil || IsNil(o.Copyright) {
 		var ret string
 		return ret
 	}
@@ -239,7 +242,7 @@ func (o *Audio) GetCopyright() string {
 // GetCopyrightOk returns a tuple with the Copyright field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetCopyrightOk() (*string, bool) {
-	if o == nil || o.Copyright == nil {
+	if o == nil || IsNil(o.Copyright) {
 		return nil, false
 	}
 	return o.Copyright, true
@@ -247,7 +250,7 @@ func (o *Audio) GetCopyrightOk() (*string, bool) {
 
 // HasCopyright returns a boolean if a field has been set.
 func (o *Audio) HasCopyright() bool {
-	if o != nil && o.Copyright != nil {
+	if o != nil && !IsNil(o.Copyright) {
 		return true
 	}
 
@@ -261,7 +264,7 @@ func (o *Audio) SetCopyright(v string) {
 
 // GetDisc returns the Disc field value if set, zero value otherwise.
 func (o *Audio) GetDisc() int32 {
-	if o == nil || o.Disc == nil {
+	if o == nil || IsNil(o.Disc) {
 		var ret int32
 		return ret
 	}
@@ -271,7 +274,7 @@ func (o *Audio) GetDisc() int32 {
 // GetDiscOk returns a tuple with the Disc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetDiscOk() (*int32, bool) {
-	if o == nil || o.Disc == nil {
+	if o == nil || IsNil(o.Disc) {
 		return nil, false
 	}
 	return o.Disc, true
@@ -279,7 +282,7 @@ func (o *Audio) GetDiscOk() (*int32, bool) {
 
 // HasDisc returns a boolean if a field has been set.
 func (o *Audio) HasDisc() bool {
-	if o != nil && o.Disc != nil {
+	if o != nil && !IsNil(o.Disc) {
 		return true
 	}
 
@@ -293,7 +296,7 @@ func (o *Audio) SetDisc(v int32) {
 
 // GetDiscCount returns the DiscCount field value if set, zero value otherwise.
 func (o *Audio) GetDiscCount() int32 {
-	if o == nil || o.DiscCount == nil {
+	if o == nil || IsNil(o.DiscCount) {
 		var ret int32
 		return ret
 	}
@@ -303,7 +306,7 @@ func (o *Audio) GetDiscCount() int32 {
 // GetDiscCountOk returns a tuple with the DiscCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetDiscCountOk() (*int32, bool) {
-	if o == nil || o.DiscCount == nil {
+	if o == nil || IsNil(o.DiscCount) {
 		return nil, false
 	}
 	return o.DiscCount, true
@@ -311,7 +314,7 @@ func (o *Audio) GetDiscCountOk() (*int32, bool) {
 
 // HasDiscCount returns a boolean if a field has been set.
 func (o *Audio) HasDiscCount() bool {
-	if o != nil && o.DiscCount != nil {
+	if o != nil && !IsNil(o.DiscCount) {
 		return true
 	}
 
@@ -325,7 +328,7 @@ func (o *Audio) SetDiscCount(v int32) {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *Audio) GetDuration() int64 {
-	if o == nil || o.Duration == nil {
+	if o == nil || IsNil(o.Duration) {
 		var ret int64
 		return ret
 	}
@@ -335,7 +338,7 @@ func (o *Audio) GetDuration() int64 {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetDurationOk() (*int64, bool) {
-	if o == nil || o.Duration == nil {
+	if o == nil || IsNil(o.Duration) {
 		return nil, false
 	}
 	return o.Duration, true
@@ -343,7 +346,7 @@ func (o *Audio) GetDurationOk() (*int64, bool) {
 
 // HasDuration returns a boolean if a field has been set.
 func (o *Audio) HasDuration() bool {
-	if o != nil && o.Duration != nil {
+	if o != nil && !IsNil(o.Duration) {
 		return true
 	}
 
@@ -357,7 +360,7 @@ func (o *Audio) SetDuration(v int64) {
 
 // GetGenre returns the Genre field value if set, zero value otherwise.
 func (o *Audio) GetGenre() string {
-	if o == nil || o.Genre == nil {
+	if o == nil || IsNil(o.Genre) {
 		var ret string
 		return ret
 	}
@@ -367,7 +370,7 @@ func (o *Audio) GetGenre() string {
 // GetGenreOk returns a tuple with the Genre field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetGenreOk() (*string, bool) {
-	if o == nil || o.Genre == nil {
+	if o == nil || IsNil(o.Genre) {
 		return nil, false
 	}
 	return o.Genre, true
@@ -375,7 +378,7 @@ func (o *Audio) GetGenreOk() (*string, bool) {
 
 // HasGenre returns a boolean if a field has been set.
 func (o *Audio) HasGenre() bool {
-	if o != nil && o.Genre != nil {
+	if o != nil && !IsNil(o.Genre) {
 		return true
 	}
 
@@ -389,7 +392,7 @@ func (o *Audio) SetGenre(v string) {
 
 // GetHasDrm returns the HasDrm field value if set, zero value otherwise.
 func (o *Audio) GetHasDrm() bool {
-	if o == nil || o.HasDrm == nil {
+	if o == nil || IsNil(o.HasDrm) {
 		var ret bool
 		return ret
 	}
@@ -399,7 +402,7 @@ func (o *Audio) GetHasDrm() bool {
 // GetHasDrmOk returns a tuple with the HasDrm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetHasDrmOk() (*bool, bool) {
-	if o == nil || o.HasDrm == nil {
+	if o == nil || IsNil(o.HasDrm) {
 		return nil, false
 	}
 	return o.HasDrm, true
@@ -407,7 +410,7 @@ func (o *Audio) GetHasDrmOk() (*bool, bool) {
 
 // HasHasDrm returns a boolean if a field has been set.
 func (o *Audio) HasHasDrm() bool {
-	if o != nil && o.HasDrm != nil {
+	if o != nil && !IsNil(o.HasDrm) {
 		return true
 	}
 
@@ -421,7 +424,7 @@ func (o *Audio) SetHasDrm(v bool) {
 
 // GetIsVariableBitrate returns the IsVariableBitrate field value if set, zero value otherwise.
 func (o *Audio) GetIsVariableBitrate() bool {
-	if o == nil || o.IsVariableBitrate == nil {
+	if o == nil || IsNil(o.IsVariableBitrate) {
 		var ret bool
 		return ret
 	}
@@ -431,7 +434,7 @@ func (o *Audio) GetIsVariableBitrate() bool {
 // GetIsVariableBitrateOk returns a tuple with the IsVariableBitrate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetIsVariableBitrateOk() (*bool, bool) {
-	if o == nil || o.IsVariableBitrate == nil {
+	if o == nil || IsNil(o.IsVariableBitrate) {
 		return nil, false
 	}
 	return o.IsVariableBitrate, true
@@ -439,7 +442,7 @@ func (o *Audio) GetIsVariableBitrateOk() (*bool, bool) {
 
 // HasIsVariableBitrate returns a boolean if a field has been set.
 func (o *Audio) HasIsVariableBitrate() bool {
-	if o != nil && o.IsVariableBitrate != nil {
+	if o != nil && !IsNil(o.IsVariableBitrate) {
 		return true
 	}
 
@@ -453,7 +456,7 @@ func (o *Audio) SetIsVariableBitrate(v bool) {
 
 // GetTitle returns the Title field value if set, zero value otherwise.
 func (o *Audio) GetTitle() string {
-	if o == nil || o.Title == nil {
+	if o == nil || IsNil(o.Title) {
 		var ret string
 		return ret
 	}
@@ -463,7 +466,7 @@ func (o *Audio) GetTitle() string {
 // GetTitleOk returns a tuple with the Title field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetTitleOk() (*string, bool) {
-	if o == nil || o.Title == nil {
+	if o == nil || IsNil(o.Title) {
 		return nil, false
 	}
 	return o.Title, true
@@ -471,7 +474,7 @@ func (o *Audio) GetTitleOk() (*string, bool) {
 
 // HasTitle returns a boolean if a field has been set.
 func (o *Audio) HasTitle() bool {
-	if o != nil && o.Title != nil {
+	if o != nil && !IsNil(o.Title) {
 		return true
 	}
 
@@ -485,7 +488,7 @@ func (o *Audio) SetTitle(v string) {
 
 // GetTrack returns the Track field value if set, zero value otherwise.
 func (o *Audio) GetTrack() int32 {
-	if o == nil || o.Track == nil {
+	if o == nil || IsNil(o.Track) {
 		var ret int32
 		return ret
 	}
@@ -495,7 +498,7 @@ func (o *Audio) GetTrack() int32 {
 // GetTrackOk returns a tuple with the Track field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetTrackOk() (*int32, bool) {
-	if o == nil || o.Track == nil {
+	if o == nil || IsNil(o.Track) {
 		return nil, false
 	}
 	return o.Track, true
@@ -503,7 +506,7 @@ func (o *Audio) GetTrackOk() (*int32, bool) {
 
 // HasTrack returns a boolean if a field has been set.
 func (o *Audio) HasTrack() bool {
-	if o != nil && o.Track != nil {
+	if o != nil && !IsNil(o.Track) {
 		return true
 	}
 
@@ -517,7 +520,7 @@ func (o *Audio) SetTrack(v int32) {
 
 // GetTrackCount returns the TrackCount field value if set, zero value otherwise.
 func (o *Audio) GetTrackCount() int32 {
-	if o == nil || o.TrackCount == nil {
+	if o == nil || IsNil(o.TrackCount) {
 		var ret int32
 		return ret
 	}
@@ -527,7 +530,7 @@ func (o *Audio) GetTrackCount() int32 {
 // GetTrackCountOk returns a tuple with the TrackCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetTrackCountOk() (*int32, bool) {
-	if o == nil || o.TrackCount == nil {
+	if o == nil || IsNil(o.TrackCount) {
 		return nil, false
 	}
 	return o.TrackCount, true
@@ -535,7 +538,7 @@ func (o *Audio) GetTrackCountOk() (*int32, bool) {
 
 // HasTrackCount returns a boolean if a field has been set.
 func (o *Audio) HasTrackCount() bool {
-	if o != nil && o.TrackCount != nil {
+	if o != nil && !IsNil(o.TrackCount) {
 		return true
 	}
 
@@ -549,7 +552,7 @@ func (o *Audio) SetTrackCount(v int32) {
 
 // GetYear returns the Year field value if set, zero value otherwise.
 func (o *Audio) GetYear() int32 {
-	if o == nil || o.Year == nil {
+	if o == nil || IsNil(o.Year) {
 		var ret int32
 		return ret
 	}
@@ -559,7 +562,7 @@ func (o *Audio) GetYear() int32 {
 // GetYearOk returns a tuple with the Year field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Audio) GetYearOk() (*int32, bool) {
-	if o == nil || o.Year == nil {
+	if o == nil || IsNil(o.Year) {
 		return nil, false
 	}
 	return o.Year, true
@@ -567,7 +570,7 @@ func (o *Audio) GetYearOk() (*int32, bool) {
 
 // HasYear returns a boolean if a field has been set.
 func (o *Audio) HasYear() bool {
-	if o != nil && o.Year != nil {
+	if o != nil && !IsNil(o.Year) {
 		return true
 	}
 
@@ -580,56 +583,64 @@ func (o *Audio) SetYear(v int32) {
 }
 
 func (o Audio) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Album != nil {
-		toSerialize["album"] = o.Album
-	}
-	if o.AlbumArtist != nil {
-		toSerialize["albumArtist"] = o.AlbumArtist
-	}
-	if o.Artist != nil {
-		toSerialize["artist"] = o.Artist
-	}
-	if o.Bitrate != nil {
-		toSerialize["bitrate"] = o.Bitrate
-	}
-	if o.Composers != nil {
-		toSerialize["composers"] = o.Composers
-	}
-	if o.Copyright != nil {
-		toSerialize["copyright"] = o.Copyright
-	}
-	if o.Disc != nil {
-		toSerialize["disc"] = o.Disc
-	}
-	if o.DiscCount != nil {
-		toSerialize["discCount"] = o.DiscCount
-	}
-	if o.Duration != nil {
-		toSerialize["duration"] = o.Duration
-	}
-	if o.Genre != nil {
-		toSerialize["genre"] = o.Genre
-	}
-	if o.HasDrm != nil {
-		toSerialize["hasDrm"] = o.HasDrm
-	}
-	if o.IsVariableBitrate != nil {
-		toSerialize["isVariableBitrate"] = o.IsVariableBitrate
-	}
-	if o.Title != nil {
-		toSerialize["title"] = o.Title
-	}
-	if o.Track != nil {
-		toSerialize["track"] = o.Track
-	}
-	if o.TrackCount != nil {
-		toSerialize["trackCount"] = o.TrackCount
-	}
-	if o.Year != nil {
-		toSerialize["year"] = o.Year
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o Audio) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Album) {
+		toSerialize["album"] = o.Album
+	}
+	if !IsNil(o.AlbumArtist) {
+		toSerialize["albumArtist"] = o.AlbumArtist
+	}
+	if !IsNil(o.Artist) {
+		toSerialize["artist"] = o.Artist
+	}
+	if !IsNil(o.Bitrate) {
+		toSerialize["bitrate"] = o.Bitrate
+	}
+	if !IsNil(o.Composers) {
+		toSerialize["composers"] = o.Composers
+	}
+	if !IsNil(o.Copyright) {
+		toSerialize["copyright"] = o.Copyright
+	}
+	if !IsNil(o.Disc) {
+		toSerialize["disc"] = o.Disc
+	}
+	if !IsNil(o.DiscCount) {
+		toSerialize["discCount"] = o.DiscCount
+	}
+	if !IsNil(o.Duration) {
+		toSerialize["duration"] = o.Duration
+	}
+	if !IsNil(o.Genre) {
+		toSerialize["genre"] = o.Genre
+	}
+	if !IsNil(o.HasDrm) {
+		toSerialize["hasDrm"] = o.HasDrm
+	}
+	if !IsNil(o.IsVariableBitrate) {
+		toSerialize["isVariableBitrate"] = o.IsVariableBitrate
+	}
+	if !IsNil(o.Title) {
+		toSerialize["title"] = o.Title
+	}
+	if !IsNil(o.Track) {
+		toSerialize["track"] = o.Track
+	}
+	if !IsNil(o.TrackCount) {
+		toSerialize["trackCount"] = o.TrackCount
+	}
+	if !IsNil(o.Year) {
+		toSerialize["year"] = o.Year
+	}
+	return toSerialize, nil
 }
 
 type NullableAudio struct {

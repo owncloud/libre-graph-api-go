@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the DriveItemInvite type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DriveItemInvite{}
+
 // DriveItemInvite struct for DriveItemInvite
 type DriveItemInvite struct {
 	// A collection of recipients who will receive access and the sharing invitation. Currently, only internal users or gorups are supported.
@@ -46,7 +49,7 @@ func NewDriveItemInviteWithDefaults() *DriveItemInvite {
 
 // GetRecipients returns the Recipients field value if set, zero value otherwise.
 func (o *DriveItemInvite) GetRecipients() []DriveRecipient {
-	if o == nil || o.Recipients == nil {
+	if o == nil || IsNil(o.Recipients) {
 		var ret []DriveRecipient
 		return ret
 	}
@@ -56,7 +59,7 @@ func (o *DriveItemInvite) GetRecipients() []DriveRecipient {
 // GetRecipientsOk returns a tuple with the Recipients field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItemInvite) GetRecipientsOk() ([]DriveRecipient, bool) {
-	if o == nil || o.Recipients == nil {
+	if o == nil || IsNil(o.Recipients) {
 		return nil, false
 	}
 	return o.Recipients, true
@@ -64,7 +67,7 @@ func (o *DriveItemInvite) GetRecipientsOk() ([]DriveRecipient, bool) {
 
 // HasRecipients returns a boolean if a field has been set.
 func (o *DriveItemInvite) HasRecipients() bool {
-	if o != nil && o.Recipients != nil {
+	if o != nil && !IsNil(o.Recipients) {
 		return true
 	}
 
@@ -78,7 +81,7 @@ func (o *DriveItemInvite) SetRecipients(v []DriveRecipient) {
 
 // GetRoles returns the Roles field value if set, zero value otherwise.
 func (o *DriveItemInvite) GetRoles() []string {
-	if o == nil || o.Roles == nil {
+	if o == nil || IsNil(o.Roles) {
 		var ret []string
 		return ret
 	}
@@ -88,7 +91,7 @@ func (o *DriveItemInvite) GetRoles() []string {
 // GetRolesOk returns a tuple with the Roles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItemInvite) GetRolesOk() ([]string, bool) {
-	if o == nil || o.Roles == nil {
+	if o == nil || IsNil(o.Roles) {
 		return nil, false
 	}
 	return o.Roles, true
@@ -96,7 +99,7 @@ func (o *DriveItemInvite) GetRolesOk() ([]string, bool) {
 
 // HasRoles returns a boolean if a field has been set.
 func (o *DriveItemInvite) HasRoles() bool {
-	if o != nil && o.Roles != nil {
+	if o != nil && !IsNil(o.Roles) {
 		return true
 	}
 
@@ -110,7 +113,7 @@ func (o *DriveItemInvite) SetRoles(v []string) {
 
 // GetLibreGraphPermissionsActions returns the LibreGraphPermissionsActions field value if set, zero value otherwise.
 func (o *DriveItemInvite) GetLibreGraphPermissionsActions() []string {
-	if o == nil || o.LibreGraphPermissionsActions == nil {
+	if o == nil || IsNil(o.LibreGraphPermissionsActions) {
 		var ret []string
 		return ret
 	}
@@ -120,7 +123,7 @@ func (o *DriveItemInvite) GetLibreGraphPermissionsActions() []string {
 // GetLibreGraphPermissionsActionsOk returns a tuple with the LibreGraphPermissionsActions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItemInvite) GetLibreGraphPermissionsActionsOk() ([]string, bool) {
-	if o == nil || o.LibreGraphPermissionsActions == nil {
+	if o == nil || IsNil(o.LibreGraphPermissionsActions) {
 		return nil, false
 	}
 	return o.LibreGraphPermissionsActions, true
@@ -128,7 +131,7 @@ func (o *DriveItemInvite) GetLibreGraphPermissionsActionsOk() ([]string, bool) {
 
 // HasLibreGraphPermissionsActions returns a boolean if a field has been set.
 func (o *DriveItemInvite) HasLibreGraphPermissionsActions() bool {
-	if o != nil && o.LibreGraphPermissionsActions != nil {
+	if o != nil && !IsNil(o.LibreGraphPermissionsActions) {
 		return true
 	}
 
@@ -142,7 +145,7 @@ func (o *DriveItemInvite) SetLibreGraphPermissionsActions(v []string) {
 
 // GetExpirationDateTime returns the ExpirationDateTime field value if set, zero value otherwise.
 func (o *DriveItemInvite) GetExpirationDateTime() time.Time {
-	if o == nil || o.ExpirationDateTime == nil {
+	if o == nil || IsNil(o.ExpirationDateTime) {
 		var ret time.Time
 		return ret
 	}
@@ -152,7 +155,7 @@ func (o *DriveItemInvite) GetExpirationDateTime() time.Time {
 // GetExpirationDateTimeOk returns a tuple with the ExpirationDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItemInvite) GetExpirationDateTimeOk() (*time.Time, bool) {
-	if o == nil || o.ExpirationDateTime == nil {
+	if o == nil || IsNil(o.ExpirationDateTime) {
 		return nil, false
 	}
 	return o.ExpirationDateTime, true
@@ -160,7 +163,7 @@ func (o *DriveItemInvite) GetExpirationDateTimeOk() (*time.Time, bool) {
 
 // HasExpirationDateTime returns a boolean if a field has been set.
 func (o *DriveItemInvite) HasExpirationDateTime() bool {
-	if o != nil && o.ExpirationDateTime != nil {
+	if o != nil && !IsNil(o.ExpirationDateTime) {
 		return true
 	}
 
@@ -173,20 +176,28 @@ func (o *DriveItemInvite) SetExpirationDateTime(v time.Time) {
 }
 
 func (o DriveItemInvite) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Recipients != nil {
-		toSerialize["recipients"] = o.Recipients
-	}
-	if o.Roles != nil {
-		toSerialize["roles"] = o.Roles
-	}
-	if o.LibreGraphPermissionsActions != nil {
-		toSerialize["@libre.graph.permissions.actions"] = o.LibreGraphPermissionsActions
-	}
-	if o.ExpirationDateTime != nil {
-		toSerialize["expirationDateTime"] = o.ExpirationDateTime
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DriveItemInvite) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Recipients) {
+		toSerialize["recipients"] = o.Recipients
+	}
+	if !IsNil(o.Roles) {
+		toSerialize["roles"] = o.Roles
+	}
+	if !IsNil(o.LibreGraphPermissionsActions) {
+		toSerialize["@libre.graph.permissions.actions"] = o.LibreGraphPermissionsActions
+	}
+	if !IsNil(o.ExpirationDateTime) {
+		toSerialize["expirationDateTime"] = o.ExpirationDateTime
+	}
+	return toSerialize, nil
 }
 
 type NullableDriveItemInvite struct {

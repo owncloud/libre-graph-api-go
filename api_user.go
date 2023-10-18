@@ -13,18 +13,18 @@ package libregraph
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-// UserApiService UserApi service
-type UserApiService service
+// UserAPIService UserAPI service
+type UserAPIService service
 
 type ApiDeleteUserRequest struct {
 	ctx        context.Context
-	ApiService *UserApiService
+	ApiService *UserAPIService
 	userId     string
 	ifMatch    *string
 }
@@ -46,7 +46,7 @@ DeleteUser Delete entity from users
  @param userId key: id or name of user
  @return ApiDeleteUserRequest
 */
-func (a *UserApiService) DeleteUser(ctx context.Context, userId string) ApiDeleteUserRequest {
+func (a *UserAPIService) DeleteUser(ctx context.Context, userId string) ApiDeleteUserRequest {
 	return ApiDeleteUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -55,20 +55,20 @@ func (a *UserApiService) DeleteUser(ctx context.Context, userId string) ApiDelet
 }
 
 // Execute executes the request
-func (a *UserApiService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Response, error) {
+func (a *UserAPIService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.DeleteUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.DeleteUser")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/users/{user-id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterToString(r.userId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterValueToString(r.userId, "userId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -92,7 +92,7 @@ func (a *UserApiService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Respon
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifMatch != nil {
-		localVarHeaderParams["If-Match"] = parameterToString(*r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -104,9 +104,9 @@ func (a *UserApiService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Respon
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -122,6 +122,7 @@ func (a *UserApiService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Respon
 			newErr.error = err.Error()
 			return localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
@@ -131,7 +132,7 @@ func (a *UserApiService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Respon
 
 type ApiExportPersonalDataRequest struct {
 	ctx                       context.Context
-	ApiService                *UserApiService
+	ApiService                *UserAPIService
 	userId                    string
 	exportPersonalDataRequest *ExportPersonalDataRequest
 }
@@ -153,7 +154,7 @@ ExportPersonalData export personal data of a user
  @param userId key: id or name of user
  @return ApiExportPersonalDataRequest
 */
-func (a *UserApiService) ExportPersonalData(ctx context.Context, userId string) ApiExportPersonalDataRequest {
+func (a *UserAPIService) ExportPersonalData(ctx context.Context, userId string) ApiExportPersonalDataRequest {
 	return ApiExportPersonalDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -162,20 +163,20 @@ func (a *UserApiService) ExportPersonalData(ctx context.Context, userId string) 
 }
 
 // Execute executes the request
-func (a *UserApiService) ExportPersonalDataExecute(r ApiExportPersonalDataRequest) (*http.Response, error) {
+func (a *UserAPIService) ExportPersonalDataExecute(r ApiExportPersonalDataRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.ExportPersonalData")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.ExportPersonalData")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/users/{user-id}/exportPersonalData"
-	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterToString(r.userId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterValueToString(r.userId, "userId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -210,9 +211,9 @@ func (a *UserApiService) ExportPersonalDataExecute(r ApiExportPersonalDataReques
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -228,6 +229,7 @@ func (a *UserApiService) ExportPersonalDataExecute(r ApiExportPersonalDataReques
 			newErr.error = err.Error()
 			return localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
@@ -237,7 +239,7 @@ func (a *UserApiService) ExportPersonalDataExecute(r ApiExportPersonalDataReques
 
 type ApiGetUserRequest struct {
 	ctx        context.Context
-	ApiService *UserApiService
+	ApiService *UserAPIService
 	userId     string
 	select_    *[]string
 	expand     *[]string
@@ -266,7 +268,7 @@ GetUser Get entity from users by key
  @param userId key: id or name of user
  @return ApiGetUserRequest
 */
-func (a *UserApiService) GetUser(ctx context.Context, userId string) ApiGetUserRequest {
+func (a *UserAPIService) GetUser(ctx context.Context, userId string) ApiGetUserRequest {
 	return ApiGetUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -276,7 +278,7 @@ func (a *UserApiService) GetUser(ctx context.Context, userId string) ApiGetUserR
 
 // Execute executes the request
 //  @return User
-func (a *UserApiService) GetUserExecute(r ApiGetUserRequest) (*User, *http.Response, error) {
+func (a *UserAPIService) GetUserExecute(r ApiGetUserRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -284,23 +286,23 @@ func (a *UserApiService) GetUserExecute(r ApiGetUserRequest) (*User, *http.Respo
 		localVarReturnValue *User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.GetUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.GetUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/users/{user-id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterToString(r.userId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterValueToString(r.userId, "userId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.select_ != nil {
-		localVarQueryParams.Add("$select", parameterToString(*r.select_, "csv"))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$select", r.select_, "csv")
 	}
 	if r.expand != nil {
-		localVarQueryParams.Add("$expand", parameterToString(*r.expand, "csv"))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$expand", r.expand, "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -329,9 +331,9 @@ func (a *UserApiService) GetUserExecute(r ApiGetUserRequest) (*User, *http.Respo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -347,6 +349,7 @@ func (a *UserApiService) GetUserExecute(r ApiGetUserRequest) (*User, *http.Respo
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -365,7 +368,7 @@ func (a *UserApiService) GetUserExecute(r ApiGetUserRequest) (*User, *http.Respo
 
 type ApiUpdateUserRequest struct {
 	ctx        context.Context
-	ApiService *UserApiService
+	ApiService *UserAPIService
 	userId     string
 	user       *User
 }
@@ -387,7 +390,7 @@ UpdateUser Update entity in users
  @param userId key: id of user
  @return ApiUpdateUserRequest
 */
-func (a *UserApiService) UpdateUser(ctx context.Context, userId string) ApiUpdateUserRequest {
+func (a *UserAPIService) UpdateUser(ctx context.Context, userId string) ApiUpdateUserRequest {
 	return ApiUpdateUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -397,7 +400,7 @@ func (a *UserApiService) UpdateUser(ctx context.Context, userId string) ApiUpdat
 
 // Execute executes the request
 //  @return User
-func (a *UserApiService) UpdateUserExecute(r ApiUpdateUserRequest) (*User, *http.Response, error) {
+func (a *UserAPIService) UpdateUserExecute(r ApiUpdateUserRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -405,13 +408,13 @@ func (a *UserApiService) UpdateUserExecute(r ApiUpdateUserRequest) (*User, *http
 		localVarReturnValue *User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.UpdateUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.UpdateUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/users/{user-id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterToString(r.userId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterValueToString(r.userId, "userId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -449,9 +452,9 @@ func (a *UserApiService) UpdateUserExecute(r ApiUpdateUserRequest) (*User, *http
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -467,6 +470,7 @@ func (a *UserApiService) UpdateUserExecute(r ApiUpdateUserRequest) (*User, *http
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

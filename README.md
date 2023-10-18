@@ -15,7 +15,6 @@ Install the following dependencies:
 
 ```shell
 go get github.com/stretchr/testify/assert
-go get golang.org/x/oauth2
 go get golang.org/x/net/context
 ```
 
@@ -78,77 +77,77 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ApplicationsApi* | [**GetApplication**](docs/ApplicationsApi.md#getapplication) | **Get** /applications/{application-id} | Get application by id
-*ApplicationsApi* | [**ListApplications**](docs/ApplicationsApi.md#listapplications) | **Get** /applications | Get all applications
-*DrivesApi* | [**CreateDrive**](docs/DrivesApi.md#createdrive) | **Post** /drives | Create a new drive of a specific type
-*DrivesApi* | [**DeleteDrive**](docs/DrivesApi.md#deletedrive) | **Delete** /drives/{drive-id} | Delete a specific space
-*DrivesApi* | [**GetDrive**](docs/DrivesApi.md#getdrive) | **Get** /drives/{drive-id} | Get drive by id
-*DrivesApi* | [**UpdateDrive**](docs/DrivesApi.md#updatedrive) | **Patch** /drives/{drive-id} | Update the drive
-*DrivesGetDrivesApi* | [**ListAllDrives**](docs/DrivesGetDrivesApi.md#listalldrives) | **Get** /drives | Get all available drives
-*DrivesPermissionsApi* | [**CreateLink**](docs/DrivesPermissionsApi.md#createlink) | **Post** /drives/{drive-id}/items/{item-id}/createLink | Create a sharing link for a DriveItem
-*DrivesPermissionsApi* | [**DeletePermission**](docs/DrivesPermissionsApi.md#deletepermission) | **Delete** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Delete entity from groups
-*DrivesPermissionsApi* | [**GetPermission**](docs/DrivesPermissionsApi.md#getpermission) | **Get** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Get sharing permission for a file or folder
-*DrivesPermissionsApi* | [**Invite**](docs/DrivesPermissionsApi.md#invite) | **Post** /drives/{drive-id}/items/{item-id}/invite | Send a sharing invitation
-*DrivesPermissionsApi* | [**ListPermissions**](docs/DrivesPermissionsApi.md#listpermissions) | **Get** /drives/{drive-id}/items/{item-id}/permissions | List the effective sharing permissions on a driveItem.
-*DrivesPermissionsApi* | [**UpdatePermission**](docs/DrivesPermissionsApi.md#updatepermission) | **Patch** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Update sharing permission
-*DrivesRootApi* | [**GetRoot**](docs/DrivesRootApi.md#getroot) | **Get** /drives/{drive-id}/root | Get root from arbitrary space
-*EducationClassApi* | [**AddUserToClass**](docs/EducationClassApi.md#addusertoclass) | **Post** /education/classes/{class-id}/members/$ref | Assign a user to a class
-*EducationClassApi* | [**CreateClass**](docs/EducationClassApi.md#createclass) | **Post** /education/classes | Add new education class
-*EducationClassApi* | [**DeleteClass**](docs/EducationClassApi.md#deleteclass) | **Delete** /education/classes/{class-id} | Delete education class
-*EducationClassApi* | [**DeleteUserFromClass**](docs/EducationClassApi.md#deleteuserfromclass) | **Delete** /education/classes/{class-id}/members/{user-id}/$ref | Unassign user from a class
-*EducationClassApi* | [**GetClass**](docs/EducationClassApi.md#getclass) | **Get** /education/classes/{class-id} | Get class by key
-*EducationClassApi* | [**ListClassMembers**](docs/EducationClassApi.md#listclassmembers) | **Get** /education/classes/{class-id}/members | Get the educationClass resources owned by an educationSchool
-*EducationClassApi* | [**ListClasses**](docs/EducationClassApi.md#listclasses) | **Get** /education/classes | list education classes
-*EducationClassApi* | [**UpdateClass**](docs/EducationClassApi.md#updateclass) | **Patch** /education/classes/{class-id} | Update properties of a education class
-*EducationClassTeachersApi* | [**AddTeacherToClass**](docs/EducationClassTeachersApi.md#addteachertoclass) | **Post** /education/classes/{class-id}/teachers/$ref | Assign a teacher to a class
-*EducationClassTeachersApi* | [**DeleteTeacherFromClass**](docs/EducationClassTeachersApi.md#deleteteacherfromclass) | **Delete** /education/classes/{class-id}/teachers/{user-id}/$ref | Unassign user as teacher of a class
-*EducationClassTeachersApi* | [**GetTeachers**](docs/EducationClassTeachersApi.md#getteachers) | **Get** /education/classes/{class-id}/teachers | Get the teachers for a class
-*EducationSchoolApi* | [**AddClassToSchool**](docs/EducationSchoolApi.md#addclasstoschool) | **Post** /education/schools/{school-id}/classes/$ref | Assign a class to a school
-*EducationSchoolApi* | [**AddUserToSchool**](docs/EducationSchoolApi.md#addusertoschool) | **Post** /education/schools/{school-id}/users/$ref | Assign a user to a school
-*EducationSchoolApi* | [**CreateSchool**](docs/EducationSchoolApi.md#createschool) | **Post** /education/schools | Add new school
-*EducationSchoolApi* | [**DeleteClassFromSchool**](docs/EducationSchoolApi.md#deleteclassfromschool) | **Delete** /education/schools/{school-id}/classes/{class-id}/$ref | Unassign class from a school
-*EducationSchoolApi* | [**DeleteSchool**](docs/EducationSchoolApi.md#deleteschool) | **Delete** /education/schools/{school-id} | Delete school
-*EducationSchoolApi* | [**DeleteUserFromSchool**](docs/EducationSchoolApi.md#deleteuserfromschool) | **Delete** /education/schools/{school-id}/users/{user-id}/$ref | Unassign user from a school
-*EducationSchoolApi* | [**GetSchool**](docs/EducationSchoolApi.md#getschool) | **Get** /education/schools/{school-id} | Get the properties of a specific school
-*EducationSchoolApi* | [**ListSchoolClasses**](docs/EducationSchoolApi.md#listschoolclasses) | **Get** /education/schools/{school-id}/classes | Get the educationClass resources owned by an educationSchool
-*EducationSchoolApi* | [**ListSchoolUsers**](docs/EducationSchoolApi.md#listschoolusers) | **Get** /education/schools/{school-id}/users | Get the educationUser resources associated with an educationSchool
-*EducationSchoolApi* | [**ListSchools**](docs/EducationSchoolApi.md#listschools) | **Get** /education/schools | Get a list of schools and their properties
-*EducationSchoolApi* | [**UpdateSchool**](docs/EducationSchoolApi.md#updateschool) | **Patch** /education/schools/{school-id} | Update properties of a school
-*EducationUserApi* | [**CreateEducationUser**](docs/EducationUserApi.md#createeducationuser) | **Post** /education/users | Add new education user
-*EducationUserApi* | [**DeleteEducationUser**](docs/EducationUserApi.md#deleteeducationuser) | **Delete** /education/users/{user-id} | Delete educationUser
-*EducationUserApi* | [**GetEducationUser**](docs/EducationUserApi.md#geteducationuser) | **Get** /education/users/{user-id} | Get properties of educationUser
-*EducationUserApi* | [**ListEducationUsers**](docs/EducationUserApi.md#listeducationusers) | **Get** /education/users | Get entities from education users
-*EducationUserApi* | [**UpdateEducationUser**](docs/EducationUserApi.md#updateeducationuser) | **Patch** /education/users/{user-id} | Update properties of educationUser
-*GroupApi* | [**AddMember**](docs/GroupApi.md#addmember) | **Post** /groups/{group-id}/members/$ref | Add a member to a group
-*GroupApi* | [**DeleteGroup**](docs/GroupApi.md#deletegroup) | **Delete** /groups/{group-id} | Delete entity from groups
-*GroupApi* | [**DeleteMember**](docs/GroupApi.md#deletemember) | **Delete** /groups/{group-id}/members/{directory-object-id}/$ref | Delete member from a group
-*GroupApi* | [**GetGroup**](docs/GroupApi.md#getgroup) | **Get** /groups/{group-id} | Get entity from groups by key
-*GroupApi* | [**ListMembers**](docs/GroupApi.md#listmembers) | **Get** /groups/{group-id}/members | Get a list of the group&#39;s direct members
-*GroupApi* | [**UpdateGroup**](docs/GroupApi.md#updategroup) | **Patch** /groups/{group-id} | Update entity in groups
-*GroupsApi* | [**CreateGroup**](docs/GroupsApi.md#creategroup) | **Post** /groups | Add new entity to groups
-*GroupsApi* | [**ListGroups**](docs/GroupsApi.md#listgroups) | **Get** /groups | Get entities from groups
-*MeChangepasswordApi* | [**ChangeOwnPassword**](docs/MeChangepasswordApi.md#changeownpassword) | **Post** /me/changePassword | Chanage your own password
-*MeDriveApi* | [**GetHome**](docs/MeDriveApi.md#gethome) | **Get** /me/drive | Get personal space for user
-*MeDriveApi* | [**ListSharedByMe**](docs/MeDriveApi.md#listsharedbyme) | **Get** /me/drive/sharedByMe | Get a list of driveItem objects shared by the current user.
-*MeDriveApi* | [**ListSharedWithMe**](docs/MeDriveApi.md#listsharedwithme) | **Get** /me/drive/sharedWithMe | Get a list of driveItem objects shared with the owner of a drive.
-*MeDriveRootApi* | [**HomeGetRoot**](docs/MeDriveRootApi.md#homegetroot) | **Get** /me/drive/root | Get root from personal space
-*MeDriveRootChildrenApi* | [**HomeGetChildren**](docs/MeDriveRootChildrenApi.md#homegetchildren) | **Get** /me/drive/root/children | Get children from drive
-*MeDrivesApi* | [**ListMyDrives**](docs/MeDrivesApi.md#listmydrives) | **Get** /me/drives | Get all drives where the current user is a regular member of
-*MeUserApi* | [**GetOwnUser**](docs/MeUserApi.md#getownuser) | **Get** /me | Get current user
-*RoleManagementApi* | [**GetPermissionRoleDefinition**](docs/RoleManagementApi.md#getpermissionroledefinition) | **Get** /roleManagement/permissions/roleDefinitions/{role-id} | Get unifiedRoleDefinition
-*RoleManagementApi* | [**ListPermissionRoleDefinitions**](docs/RoleManagementApi.md#listpermissionroledefinitions) | **Get** /roleManagement/permissions/roleDefinitions | List roleDefinitions
-*TagsApi* | [**AssignTags**](docs/TagsApi.md#assigntags) | **Put** /extensions/org.libregraph/tags | Assign tags to a resource
-*TagsApi* | [**GetTags**](docs/TagsApi.md#gettags) | **Get** /extensions/org.libregraph/tags | Get all known tags
-*TagsApi* | [**UnassignTags**](docs/TagsApi.md#unassigntags) | **Delete** /extensions/org.libregraph/tags | Unassign tags from a resource
-*UserApi* | [**DeleteUser**](docs/UserApi.md#deleteuser) | **Delete** /users/{user-id} | Delete entity from users
-*UserApi* | [**ExportPersonalData**](docs/UserApi.md#exportpersonaldata) | **Post** /users/{user-id}/exportPersonalData | export personal data of a user
-*UserApi* | [**GetUser**](docs/UserApi.md#getuser) | **Get** /users/{user-id} | Get entity from users by key
-*UserApi* | [**UpdateUser**](docs/UserApi.md#updateuser) | **Patch** /users/{user-id} | Update entity in users
-*UserAppRoleAssignmentApi* | [**UserCreateAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#usercreateapproleassignments) | **Post** /users/{user-id}/appRoleAssignments | Grant an appRoleAssignment to a user
-*UserAppRoleAssignmentApi* | [**UserDeleteAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#userdeleteapproleassignments) | **Delete** /users/{user-id}/appRoleAssignments/{appRoleAssignment-id} | Delete the appRoleAssignment from a user
-*UserAppRoleAssignmentApi* | [**UserListAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#userlistapproleassignments) | **Get** /users/{user-id}/appRoleAssignments | Get appRoleAssignments from a user
-*UsersApi* | [**CreateUser**](docs/UsersApi.md#createuser) | **Post** /users | Add new entity to users
-*UsersApi* | [**ListUsers**](docs/UsersApi.md#listusers) | **Get** /users | Get entities from users
+*ApplicationsAPI* | [**GetApplication**](docs/ApplicationsAPI.md#getapplication) | **Get** /applications/{application-id} | Get application by id
+*ApplicationsAPI* | [**ListApplications**](docs/ApplicationsAPI.md#listapplications) | **Get** /applications | Get all applications
+*DrivesAPI* | [**CreateDrive**](docs/DrivesAPI.md#createdrive) | **Post** /drives | Create a new drive of a specific type
+*DrivesAPI* | [**DeleteDrive**](docs/DrivesAPI.md#deletedrive) | **Delete** /drives/{drive-id} | Delete a specific space
+*DrivesAPI* | [**GetDrive**](docs/DrivesAPI.md#getdrive) | **Get** /drives/{drive-id} | Get drive by id
+*DrivesAPI* | [**UpdateDrive**](docs/DrivesAPI.md#updatedrive) | **Patch** /drives/{drive-id} | Update the drive
+*DrivesGetDrivesAPI* | [**ListAllDrives**](docs/DrivesGetDrivesAPI.md#listalldrives) | **Get** /drives | Get all available drives
+*DrivesPermissionsAPI* | [**CreateLink**](docs/DrivesPermissionsAPI.md#createlink) | **Post** /drives/{drive-id}/items/{item-id}/createLink | Create a sharing link for a DriveItem
+*DrivesPermissionsAPI* | [**DeletePermission**](docs/DrivesPermissionsAPI.md#deletepermission) | **Delete** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Delete entity from groups
+*DrivesPermissionsAPI* | [**GetPermission**](docs/DrivesPermissionsAPI.md#getpermission) | **Get** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Get sharing permission for a file or folder
+*DrivesPermissionsAPI* | [**Invite**](docs/DrivesPermissionsAPI.md#invite) | **Post** /drives/{drive-id}/items/{item-id}/invite | Send a sharing invitation
+*DrivesPermissionsAPI* | [**ListPermissions**](docs/DrivesPermissionsAPI.md#listpermissions) | **Get** /drives/{drive-id}/items/{item-id}/permissions | List the effective sharing permissions on a driveItem.
+*DrivesPermissionsAPI* | [**UpdatePermission**](docs/DrivesPermissionsAPI.md#updatepermission) | **Patch** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Update sharing permission
+*DrivesRootAPI* | [**GetRoot**](docs/DrivesRootAPI.md#getroot) | **Get** /drives/{drive-id}/root | Get root from arbitrary space
+*EducationClassAPI* | [**AddUserToClass**](docs/EducationClassAPI.md#addusertoclass) | **Post** /education/classes/{class-id}/members/$ref | Assign a user to a class
+*EducationClassAPI* | [**CreateClass**](docs/EducationClassAPI.md#createclass) | **Post** /education/classes | Add new education class
+*EducationClassAPI* | [**DeleteClass**](docs/EducationClassAPI.md#deleteclass) | **Delete** /education/classes/{class-id} | Delete education class
+*EducationClassAPI* | [**DeleteUserFromClass**](docs/EducationClassAPI.md#deleteuserfromclass) | **Delete** /education/classes/{class-id}/members/{user-id}/$ref | Unassign user from a class
+*EducationClassAPI* | [**GetClass**](docs/EducationClassAPI.md#getclass) | **Get** /education/classes/{class-id} | Get class by key
+*EducationClassAPI* | [**ListClassMembers**](docs/EducationClassAPI.md#listclassmembers) | **Get** /education/classes/{class-id}/members | Get the educationClass resources owned by an educationSchool
+*EducationClassAPI* | [**ListClasses**](docs/EducationClassAPI.md#listclasses) | **Get** /education/classes | list education classes
+*EducationClassAPI* | [**UpdateClass**](docs/EducationClassAPI.md#updateclass) | **Patch** /education/classes/{class-id} | Update properties of a education class
+*EducationClassTeachersAPI* | [**AddTeacherToClass**](docs/EducationClassTeachersAPI.md#addteachertoclass) | **Post** /education/classes/{class-id}/teachers/$ref | Assign a teacher to a class
+*EducationClassTeachersAPI* | [**DeleteTeacherFromClass**](docs/EducationClassTeachersAPI.md#deleteteacherfromclass) | **Delete** /education/classes/{class-id}/teachers/{user-id}/$ref | Unassign user as teacher of a class
+*EducationClassTeachersAPI* | [**GetTeachers**](docs/EducationClassTeachersAPI.md#getteachers) | **Get** /education/classes/{class-id}/teachers | Get the teachers for a class
+*EducationSchoolAPI* | [**AddClassToSchool**](docs/EducationSchoolAPI.md#addclasstoschool) | **Post** /education/schools/{school-id}/classes/$ref | Assign a class to a school
+*EducationSchoolAPI* | [**AddUserToSchool**](docs/EducationSchoolAPI.md#addusertoschool) | **Post** /education/schools/{school-id}/users/$ref | Assign a user to a school
+*EducationSchoolAPI* | [**CreateSchool**](docs/EducationSchoolAPI.md#createschool) | **Post** /education/schools | Add new school
+*EducationSchoolAPI* | [**DeleteClassFromSchool**](docs/EducationSchoolAPI.md#deleteclassfromschool) | **Delete** /education/schools/{school-id}/classes/{class-id}/$ref | Unassign class from a school
+*EducationSchoolAPI* | [**DeleteSchool**](docs/EducationSchoolAPI.md#deleteschool) | **Delete** /education/schools/{school-id} | Delete school
+*EducationSchoolAPI* | [**DeleteUserFromSchool**](docs/EducationSchoolAPI.md#deleteuserfromschool) | **Delete** /education/schools/{school-id}/users/{user-id}/$ref | Unassign user from a school
+*EducationSchoolAPI* | [**GetSchool**](docs/EducationSchoolAPI.md#getschool) | **Get** /education/schools/{school-id} | Get the properties of a specific school
+*EducationSchoolAPI* | [**ListSchoolClasses**](docs/EducationSchoolAPI.md#listschoolclasses) | **Get** /education/schools/{school-id}/classes | Get the educationClass resources owned by an educationSchool
+*EducationSchoolAPI* | [**ListSchoolUsers**](docs/EducationSchoolAPI.md#listschoolusers) | **Get** /education/schools/{school-id}/users | Get the educationUser resources associated with an educationSchool
+*EducationSchoolAPI* | [**ListSchools**](docs/EducationSchoolAPI.md#listschools) | **Get** /education/schools | Get a list of schools and their properties
+*EducationSchoolAPI* | [**UpdateSchool**](docs/EducationSchoolAPI.md#updateschool) | **Patch** /education/schools/{school-id} | Update properties of a school
+*EducationUserAPI* | [**CreateEducationUser**](docs/EducationUserAPI.md#createeducationuser) | **Post** /education/users | Add new education user
+*EducationUserAPI* | [**DeleteEducationUser**](docs/EducationUserAPI.md#deleteeducationuser) | **Delete** /education/users/{user-id} | Delete educationUser
+*EducationUserAPI* | [**GetEducationUser**](docs/EducationUserAPI.md#geteducationuser) | **Get** /education/users/{user-id} | Get properties of educationUser
+*EducationUserAPI* | [**ListEducationUsers**](docs/EducationUserAPI.md#listeducationusers) | **Get** /education/users | Get entities from education users
+*EducationUserAPI* | [**UpdateEducationUser**](docs/EducationUserAPI.md#updateeducationuser) | **Patch** /education/users/{user-id} | Update properties of educationUser
+*GroupAPI* | [**AddMember**](docs/GroupAPI.md#addmember) | **Post** /groups/{group-id}/members/$ref | Add a member to a group
+*GroupAPI* | [**DeleteGroup**](docs/GroupAPI.md#deletegroup) | **Delete** /groups/{group-id} | Delete entity from groups
+*GroupAPI* | [**DeleteMember**](docs/GroupAPI.md#deletemember) | **Delete** /groups/{group-id}/members/{directory-object-id}/$ref | Delete member from a group
+*GroupAPI* | [**GetGroup**](docs/GroupAPI.md#getgroup) | **Get** /groups/{group-id} | Get entity from groups by key
+*GroupAPI* | [**ListMembers**](docs/GroupAPI.md#listmembers) | **Get** /groups/{group-id}/members | Get a list of the group&#39;s direct members
+*GroupAPI* | [**UpdateGroup**](docs/GroupAPI.md#updategroup) | **Patch** /groups/{group-id} | Update entity in groups
+*GroupsAPI* | [**CreateGroup**](docs/GroupsAPI.md#creategroup) | **Post** /groups | Add new entity to groups
+*GroupsAPI* | [**ListGroups**](docs/GroupsAPI.md#listgroups) | **Get** /groups | Get entities from groups
+*MeChangepasswordAPI* | [**ChangeOwnPassword**](docs/MeChangepasswordAPI.md#changeownpassword) | **Post** /me/changePassword | Chanage your own password
+*MeDriveAPI* | [**GetHome**](docs/MeDriveAPI.md#gethome) | **Get** /me/drive | Get personal space for user
+*MeDriveAPI* | [**ListSharedByMe**](docs/MeDriveAPI.md#listsharedbyme) | **Get** /me/drive/sharedByMe | Get a list of driveItem objects shared by the current user.
+*MeDriveAPI* | [**ListSharedWithMe**](docs/MeDriveAPI.md#listsharedwithme) | **Get** /me/drive/sharedWithMe | Get a list of driveItem objects shared with the owner of a drive.
+*MeDriveRootAPI* | [**HomeGetRoot**](docs/MeDriveRootAPI.md#homegetroot) | **Get** /me/drive/root | Get root from personal space
+*MeDriveRootChildrenAPI* | [**HomeGetChildren**](docs/MeDriveRootChildrenAPI.md#homegetchildren) | **Get** /me/drive/root/children | Get children from drive
+*MeDrivesAPI* | [**ListMyDrives**](docs/MeDrivesAPI.md#listmydrives) | **Get** /me/drives | Get all drives where the current user is a regular member of
+*MeUserAPI* | [**GetOwnUser**](docs/MeUserAPI.md#getownuser) | **Get** /me | Get current user
+*RoleManagementAPI* | [**GetPermissionRoleDefinition**](docs/RoleManagementAPI.md#getpermissionroledefinition) | **Get** /roleManagement/permissions/roleDefinitions/{role-id} | Get unifiedRoleDefinition
+*RoleManagementAPI* | [**ListPermissionRoleDefinitions**](docs/RoleManagementAPI.md#listpermissionroledefinitions) | **Get** /roleManagement/permissions/roleDefinitions | List roleDefinitions
+*TagsAPI* | [**AssignTags**](docs/TagsAPI.md#assigntags) | **Put** /extensions/org.libregraph/tags | Assign tags to a resource
+*TagsAPI* | [**GetTags**](docs/TagsAPI.md#gettags) | **Get** /extensions/org.libregraph/tags | Get all known tags
+*TagsAPI* | [**UnassignTags**](docs/TagsAPI.md#unassigntags) | **Delete** /extensions/org.libregraph/tags | Unassign tags from a resource
+*UserAPI* | [**DeleteUser**](docs/UserAPI.md#deleteuser) | **Delete** /users/{user-id} | Delete entity from users
+*UserAPI* | [**ExportPersonalData**](docs/UserAPI.md#exportpersonaldata) | **Post** /users/{user-id}/exportPersonalData | export personal data of a user
+*UserAPI* | [**GetUser**](docs/UserAPI.md#getuser) | **Get** /users/{user-id} | Get entity from users by key
+*UserAPI* | [**UpdateUser**](docs/UserAPI.md#updateuser) | **Patch** /users/{user-id} | Update entity in users
+*UserAppRoleAssignmentAPI* | [**UserCreateAppRoleAssignments**](docs/UserAppRoleAssignmentAPI.md#usercreateapproleassignments) | **Post** /users/{user-id}/appRoleAssignments | Grant an appRoleAssignment to a user
+*UserAppRoleAssignmentAPI* | [**UserDeleteAppRoleAssignments**](docs/UserAppRoleAssignmentAPI.md#userdeleteapproleassignments) | **Delete** /users/{user-id}/appRoleAssignments/{appRoleAssignment-id} | Delete the appRoleAssignment from a user
+*UserAppRoleAssignmentAPI* | [**UserListAppRoleAssignments**](docs/UserAppRoleAssignmentAPI.md#userlistapproleassignments) | **Get** /users/{user-id}/appRoleAssignments | Get appRoleAssignments from a user
+*UsersAPI* | [**CreateUser**](docs/UsersAPI.md#createuser) | **Post** /users | Add new entity to users
+*UsersAPI* | [**ListUsers**](docs/UsersAPI.md#listusers) | **Get** /users | Get entities from users
 
 
 ## Documentation For Models
@@ -228,6 +227,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Authorization
 
 
+Authentication schemes defined for the API:
+### openId
 
 ### bearerAuth
 

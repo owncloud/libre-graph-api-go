@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DriveRecipient type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DriveRecipient{}
+
 // DriveRecipient Represents a person, group, or other recipient to share a drive item with using the invite action.  When using invite to add permissions, the `driveRecipient` object would specify the `email`, `alias`, or `objectId` of the recipient. Only one of these values is required; multiple values are not accepted.
 type DriveRecipient struct {
 	// The unique identifier for the recipient in the directory.
@@ -45,7 +48,7 @@ func NewDriveRecipientWithDefaults() *DriveRecipient {
 
 // GetObjectId returns the ObjectId field value if set, zero value otherwise.
 func (o *DriveRecipient) GetObjectId() string {
-	if o == nil || o.ObjectId == nil {
+	if o == nil || IsNil(o.ObjectId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +58,7 @@ func (o *DriveRecipient) GetObjectId() string {
 // GetObjectIdOk returns a tuple with the ObjectId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveRecipient) GetObjectIdOk() (*string, bool) {
-	if o == nil || o.ObjectId == nil {
+	if o == nil || IsNil(o.ObjectId) {
 		return nil, false
 	}
 	return o.ObjectId, true
@@ -63,7 +66,7 @@ func (o *DriveRecipient) GetObjectIdOk() (*string, bool) {
 
 // HasObjectId returns a boolean if a field has been set.
 func (o *DriveRecipient) HasObjectId() bool {
-	if o != nil && o.ObjectId != nil {
+	if o != nil && !IsNil(o.ObjectId) {
 		return true
 	}
 
@@ -77,7 +80,7 @@ func (o *DriveRecipient) SetObjectId(v string) {
 
 // GetLibreGraphRecipientType returns the LibreGraphRecipientType field value if set, zero value otherwise.
 func (o *DriveRecipient) GetLibreGraphRecipientType() string {
-	if o == nil || o.LibreGraphRecipientType == nil {
+	if o == nil || IsNil(o.LibreGraphRecipientType) {
 		var ret string
 		return ret
 	}
@@ -87,7 +90,7 @@ func (o *DriveRecipient) GetLibreGraphRecipientType() string {
 // GetLibreGraphRecipientTypeOk returns a tuple with the LibreGraphRecipientType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveRecipient) GetLibreGraphRecipientTypeOk() (*string, bool) {
-	if o == nil || o.LibreGraphRecipientType == nil {
+	if o == nil || IsNil(o.LibreGraphRecipientType) {
 		return nil, false
 	}
 	return o.LibreGraphRecipientType, true
@@ -95,7 +98,7 @@ func (o *DriveRecipient) GetLibreGraphRecipientTypeOk() (*string, bool) {
 
 // HasLibreGraphRecipientType returns a boolean if a field has been set.
 func (o *DriveRecipient) HasLibreGraphRecipientType() bool {
-	if o != nil && o.LibreGraphRecipientType != nil {
+	if o != nil && !IsNil(o.LibreGraphRecipientType) {
 		return true
 	}
 
@@ -108,14 +111,22 @@ func (o *DriveRecipient) SetLibreGraphRecipientType(v string) {
 }
 
 func (o DriveRecipient) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.ObjectId != nil {
-		toSerialize["objectId"] = o.ObjectId
-	}
-	if o.LibreGraphRecipientType != nil {
-		toSerialize["@libre.graph.recipient.type"] = o.LibreGraphRecipientType
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DriveRecipient) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ObjectId) {
+		toSerialize["objectId"] = o.ObjectId
+	}
+	if !IsNil(o.LibreGraphRecipientType) {
+		toSerialize["@libre.graph.recipient.type"] = o.LibreGraphRecipientType
+	}
+	return toSerialize, nil
 }
 
 type NullableDriveRecipient struct {

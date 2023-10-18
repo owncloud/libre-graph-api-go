@@ -1,11 +1,11 @@
-# \RoleManagementApi
+# \RoleManagementAPI
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetPermissionRoleDefinition**](RoleManagementApi.md#GetPermissionRoleDefinition) | **Get** /roleManagement/permissions/roleDefinitions/{role-id} | Get unifiedRoleDefinition
-[**ListPermissionRoleDefinitions**](RoleManagementApi.md#ListPermissionRoleDefinitions) | **Get** /roleManagement/permissions/roleDefinitions | List roleDefinitions
+[**GetPermissionRoleDefinition**](RoleManagementAPI.md#GetPermissionRoleDefinition) | **Get** /roleManagement/permissions/roleDefinitions/{role-id} | Get unifiedRoleDefinition
+[**ListPermissionRoleDefinitions**](RoleManagementAPI.md#ListPermissionRoleDefinitions) | **Get** /roleManagement/permissions/roleDefinitions | List roleDefinitions
 
 
 
@@ -26,7 +26,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -34,13 +34,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleManagementApi.GetPermissionRoleDefinition(context.Background(), roleId).Execute()
+    resp, r, err := apiClient.RoleManagementAPI.GetPermissionRoleDefinition(context.Background(), roleId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleManagementApi.GetPermissionRoleDefinition``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RoleManagementAPI.GetPermissionRoleDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPermissionRoleDefinition`: UnifiedRoleDefinition
-    fmt.Fprintf(os.Stdout, "Response from `RoleManagementApi.GetPermissionRoleDefinition`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RoleManagementAPI.GetPermissionRoleDefinition`: %v\n", resp)
 }
 ```
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 
@@ -96,20 +96,20 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleManagementApi.ListPermissionRoleDefinitions(context.Background()).Execute()
+    resp, r, err := apiClient.RoleManagementAPI.ListPermissionRoleDefinitions(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleManagementApi.ListPermissionRoleDefinitions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RoleManagementAPI.ListPermissionRoleDefinitions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListPermissionRoleDefinitions`: UnifiedRoleDefinition
-    fmt.Fprintf(os.Stdout, "Response from `RoleManagementApi.ListPermissionRoleDefinitions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RoleManagementAPI.ListPermissionRoleDefinitions`: %v\n", resp)
 }
 ```
 
@@ -128,7 +128,7 @@ Other parameters are passed through a pointer to a apiListPermissionRoleDefiniti
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 

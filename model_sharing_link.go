@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SharingLink type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SharingLink{}
+
 // SharingLink The `SharingLink` resource groups link-related data items into a single structure.  If a `permission` resource has a non-null `sharingLink` facet, the permission represents a sharing link (as opposed to permissions granted to a person or group).
 type SharingLink struct {
 	Type *SharingLinkType `json:"type,omitempty"`
@@ -44,7 +47,7 @@ func NewSharingLinkWithDefaults() *SharingLink {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *SharingLink) GetType() SharingLinkType {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		var ret SharingLinkType
 		return ret
 	}
@@ -54,7 +57,7 @@ func (o *SharingLink) GetType() SharingLinkType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharingLink) GetTypeOk() (*SharingLinkType, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -62,7 +65,7 @@ func (o *SharingLink) GetTypeOk() (*SharingLinkType, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *SharingLink) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -76,7 +79,7 @@ func (o *SharingLink) SetType(v SharingLinkType) {
 
 // GetPreventsDownload returns the PreventsDownload field value if set, zero value otherwise.
 func (o *SharingLink) GetPreventsDownload() bool {
-	if o == nil || o.PreventsDownload == nil {
+	if o == nil || IsNil(o.PreventsDownload) {
 		var ret bool
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *SharingLink) GetPreventsDownload() bool {
 // GetPreventsDownloadOk returns a tuple with the PreventsDownload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharingLink) GetPreventsDownloadOk() (*bool, bool) {
-	if o == nil || o.PreventsDownload == nil {
+	if o == nil || IsNil(o.PreventsDownload) {
 		return nil, false
 	}
 	return o.PreventsDownload, true
@@ -94,7 +97,7 @@ func (o *SharingLink) GetPreventsDownloadOk() (*bool, bool) {
 
 // HasPreventsDownload returns a boolean if a field has been set.
 func (o *SharingLink) HasPreventsDownload() bool {
-	if o != nil && o.PreventsDownload != nil {
+	if o != nil && !IsNil(o.PreventsDownload) {
 		return true
 	}
 
@@ -108,7 +111,7 @@ func (o *SharingLink) SetPreventsDownload(v bool) {
 
 // GetWebUrl returns the WebUrl field value if set, zero value otherwise.
 func (o *SharingLink) GetWebUrl() string {
-	if o == nil || o.WebUrl == nil {
+	if o == nil || IsNil(o.WebUrl) {
 		var ret string
 		return ret
 	}
@@ -118,7 +121,7 @@ func (o *SharingLink) GetWebUrl() string {
 // GetWebUrlOk returns a tuple with the WebUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharingLink) GetWebUrlOk() (*string, bool) {
-	if o == nil || o.WebUrl == nil {
+	if o == nil || IsNil(o.WebUrl) {
 		return nil, false
 	}
 	return o.WebUrl, true
@@ -126,7 +129,7 @@ func (o *SharingLink) GetWebUrlOk() (*string, bool) {
 
 // HasWebUrl returns a boolean if a field has been set.
 func (o *SharingLink) HasWebUrl() bool {
-	if o != nil && o.WebUrl != nil {
+	if o != nil && !IsNil(o.WebUrl) {
 		return true
 	}
 
@@ -140,7 +143,7 @@ func (o *SharingLink) SetWebUrl(v string) {
 
 // GetLibreGraphDisplayName returns the LibreGraphDisplayName field value if set, zero value otherwise.
 func (o *SharingLink) GetLibreGraphDisplayName() string {
-	if o == nil || o.LibreGraphDisplayName == nil {
+	if o == nil || IsNil(o.LibreGraphDisplayName) {
 		var ret string
 		return ret
 	}
@@ -150,7 +153,7 @@ func (o *SharingLink) GetLibreGraphDisplayName() string {
 // GetLibreGraphDisplayNameOk returns a tuple with the LibreGraphDisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharingLink) GetLibreGraphDisplayNameOk() (*string, bool) {
-	if o == nil || o.LibreGraphDisplayName == nil {
+	if o == nil || IsNil(o.LibreGraphDisplayName) {
 		return nil, false
 	}
 	return o.LibreGraphDisplayName, true
@@ -158,7 +161,7 @@ func (o *SharingLink) GetLibreGraphDisplayNameOk() (*string, bool) {
 
 // HasLibreGraphDisplayName returns a boolean if a field has been set.
 func (o *SharingLink) HasLibreGraphDisplayName() bool {
-	if o != nil && o.LibreGraphDisplayName != nil {
+	if o != nil && !IsNil(o.LibreGraphDisplayName) {
 		return true
 	}
 
@@ -171,20 +174,28 @@ func (o *SharingLink) SetLibreGraphDisplayName(v string) {
 }
 
 func (o SharingLink) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
-	if o.PreventsDownload != nil {
-		toSerialize["preventsDownload"] = o.PreventsDownload
-	}
-	if o.WebUrl != nil {
-		toSerialize["webUrl"] = o.WebUrl
-	}
-	if o.LibreGraphDisplayName != nil {
-		toSerialize["@libre.graph.displayName"] = o.LibreGraphDisplayName
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SharingLink) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.PreventsDownload) {
+		toSerialize["preventsDownload"] = o.PreventsDownload
+	}
+	if !IsNil(o.WebUrl) {
+		toSerialize["webUrl"] = o.WebUrl
+	}
+	if !IsNil(o.LibreGraphDisplayName) {
+		toSerialize["@libre.graph.displayName"] = o.LibreGraphDisplayName
+	}
+	return toSerialize, nil
 }
 
 type NullableSharingLink struct {

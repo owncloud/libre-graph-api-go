@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the DriveItemCreateLink type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DriveItemCreateLink{}
+
 // DriveItemCreateLink struct for DriveItemCreateLink
 type DriveItemCreateLink struct {
 	Type *SharingLinkType `json:"type,omitempty"`
@@ -45,7 +48,7 @@ func NewDriveItemCreateLinkWithDefaults() *DriveItemCreateLink {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *DriveItemCreateLink) GetType() SharingLinkType {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		var ret SharingLinkType
 		return ret
 	}
@@ -55,7 +58,7 @@ func (o *DriveItemCreateLink) GetType() SharingLinkType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItemCreateLink) GetTypeOk() (*SharingLinkType, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -63,7 +66,7 @@ func (o *DriveItemCreateLink) GetTypeOk() (*SharingLinkType, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *DriveItemCreateLink) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -77,7 +80,7 @@ func (o *DriveItemCreateLink) SetType(v SharingLinkType) {
 
 // GetExpirationDateTime returns the ExpirationDateTime field value if set, zero value otherwise.
 func (o *DriveItemCreateLink) GetExpirationDateTime() time.Time {
-	if o == nil || o.ExpirationDateTime == nil {
+	if o == nil || IsNil(o.ExpirationDateTime) {
 		var ret time.Time
 		return ret
 	}
@@ -87,7 +90,7 @@ func (o *DriveItemCreateLink) GetExpirationDateTime() time.Time {
 // GetExpirationDateTimeOk returns a tuple with the ExpirationDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItemCreateLink) GetExpirationDateTimeOk() (*time.Time, bool) {
-	if o == nil || o.ExpirationDateTime == nil {
+	if o == nil || IsNil(o.ExpirationDateTime) {
 		return nil, false
 	}
 	return o.ExpirationDateTime, true
@@ -95,7 +98,7 @@ func (o *DriveItemCreateLink) GetExpirationDateTimeOk() (*time.Time, bool) {
 
 // HasExpirationDateTime returns a boolean if a field has been set.
 func (o *DriveItemCreateLink) HasExpirationDateTime() bool {
-	if o != nil && o.ExpirationDateTime != nil {
+	if o != nil && !IsNil(o.ExpirationDateTime) {
 		return true
 	}
 
@@ -109,7 +112,7 @@ func (o *DriveItemCreateLink) SetExpirationDateTime(v time.Time) {
 
 // GetPassword returns the Password field value if set, zero value otherwise.
 func (o *DriveItemCreateLink) GetPassword() string {
-	if o == nil || o.Password == nil {
+	if o == nil || IsNil(o.Password) {
 		var ret string
 		return ret
 	}
@@ -119,7 +122,7 @@ func (o *DriveItemCreateLink) GetPassword() string {
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItemCreateLink) GetPasswordOk() (*string, bool) {
-	if o == nil || o.Password == nil {
+	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
 	return o.Password, true
@@ -127,7 +130,7 @@ func (o *DriveItemCreateLink) GetPasswordOk() (*string, bool) {
 
 // HasPassword returns a boolean if a field has been set.
 func (o *DriveItemCreateLink) HasPassword() bool {
-	if o != nil && o.Password != nil {
+	if o != nil && !IsNil(o.Password) {
 		return true
 	}
 
@@ -141,7 +144,7 @@ func (o *DriveItemCreateLink) SetPassword(v string) {
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
 func (o *DriveItemCreateLink) GetDisplayName() string {
-	if o == nil || o.DisplayName == nil {
+	if o == nil || IsNil(o.DisplayName) {
 		var ret string
 		return ret
 	}
@@ -151,7 +154,7 @@ func (o *DriveItemCreateLink) GetDisplayName() string {
 // GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DriveItemCreateLink) GetDisplayNameOk() (*string, bool) {
-	if o == nil || o.DisplayName == nil {
+	if o == nil || IsNil(o.DisplayName) {
 		return nil, false
 	}
 	return o.DisplayName, true
@@ -159,7 +162,7 @@ func (o *DriveItemCreateLink) GetDisplayNameOk() (*string, bool) {
 
 // HasDisplayName returns a boolean if a field has been set.
 func (o *DriveItemCreateLink) HasDisplayName() bool {
-	if o != nil && o.DisplayName != nil {
+	if o != nil && !IsNil(o.DisplayName) {
 		return true
 	}
 
@@ -172,20 +175,28 @@ func (o *DriveItemCreateLink) SetDisplayName(v string) {
 }
 
 func (o DriveItemCreateLink) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
-	if o.ExpirationDateTime != nil {
-		toSerialize["expirationDateTime"] = o.ExpirationDateTime
-	}
-	if o.Password != nil {
-		toSerialize["password"] = o.Password
-	}
-	if o.DisplayName != nil {
-		toSerialize["displayName"] = o.DisplayName
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DriveItemCreateLink) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.ExpirationDateTime) {
+		toSerialize["expirationDateTime"] = o.ExpirationDateTime
+	}
+	if !IsNil(o.Password) {
+		toSerialize["password"] = o.Password
+	}
+	if !IsNil(o.DisplayName) {
+		toSerialize["displayName"] = o.DisplayName
+	}
+	return toSerialize, nil
 }
 
 type NullableDriveItemCreateLink struct {

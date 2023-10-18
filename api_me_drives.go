@@ -13,17 +13,17 @@ package libregraph
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
 
-// MeDrivesApiService MeDrivesApi service
-type MeDrivesApiService service
+// MeDrivesAPIService MeDrivesAPI service
+type MeDrivesAPIService service
 
 type ApiListMyDrivesRequest struct {
 	ctx        context.Context
-	ApiService *MeDrivesApiService
+	ApiService *MeDrivesAPIService
 	orderby    *string
 	filter     *string
 }
@@ -50,7 +50,7 @@ ListMyDrives Get all drives where the current user is a regular member of
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListMyDrivesRequest
 */
-func (a *MeDrivesApiService) ListMyDrives(ctx context.Context) ApiListMyDrivesRequest {
+func (a *MeDrivesAPIService) ListMyDrives(ctx context.Context) ApiListMyDrivesRequest {
 	return ApiListMyDrivesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -59,7 +59,7 @@ func (a *MeDrivesApiService) ListMyDrives(ctx context.Context) ApiListMyDrivesRe
 
 // Execute executes the request
 //  @return CollectionOfDrives
-func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (*CollectionOfDrives, *http.Response, error) {
+func (a *MeDrivesAPIService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (*CollectionOfDrives, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -67,7 +67,7 @@ func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (*Col
 		localVarReturnValue *CollectionOfDrives
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDrivesApiService.ListMyDrives")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDrivesAPIService.ListMyDrives")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -79,10 +79,10 @@ func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (*Col
 	localVarFormParams := url.Values{}
 
 	if r.orderby != nil {
-		localVarQueryParams.Add("$orderby", parameterToString(*r.orderby, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$orderby", r.orderby, "")
 	}
 	if r.filter != nil {
-		localVarQueryParams.Add("$filter", parameterToString(*r.filter, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$filter", r.filter, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -111,9 +111,9 @@ func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (*Col
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -129,6 +129,7 @@ func (a *MeDrivesApiService) ListMyDrivesExecute(r ApiListMyDrivesRequest) (*Col
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

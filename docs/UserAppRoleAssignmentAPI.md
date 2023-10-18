@@ -1,12 +1,12 @@
-# \UserAppRoleAssignmentApi
+# \UserAppRoleAssignmentAPI
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**UserCreateAppRoleAssignments**](UserAppRoleAssignmentApi.md#UserCreateAppRoleAssignments) | **Post** /users/{user-id}/appRoleAssignments | Grant an appRoleAssignment to a user
-[**UserDeleteAppRoleAssignments**](UserAppRoleAssignmentApi.md#UserDeleteAppRoleAssignments) | **Delete** /users/{user-id}/appRoleAssignments/{appRoleAssignment-id} | Delete the appRoleAssignment from a user
-[**UserListAppRoleAssignments**](UserAppRoleAssignmentApi.md#UserListAppRoleAssignments) | **Get** /users/{user-id}/appRoleAssignments | Get appRoleAssignments from a user
+[**UserCreateAppRoleAssignments**](UserAppRoleAssignmentAPI.md#UserCreateAppRoleAssignments) | **Post** /users/{user-id}/appRoleAssignments | Grant an appRoleAssignment to a user
+[**UserDeleteAppRoleAssignments**](UserAppRoleAssignmentAPI.md#UserDeleteAppRoleAssignments) | **Delete** /users/{user-id}/appRoleAssignments/{appRoleAssignment-id} | Delete the appRoleAssignment from a user
+[**UserListAppRoleAssignments**](UserAppRoleAssignmentAPI.md#UserListAppRoleAssignments) | **Get** /users/{user-id}/appRoleAssignments | Get appRoleAssignments from a user
 
 
 
@@ -27,7 +27,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -36,13 +36,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserAppRoleAssignmentApi.UserCreateAppRoleAssignments(context.Background(), userId).AppRoleAssignment(appRoleAssignment).Execute()
+    resp, r, err := apiClient.UserAppRoleAssignmentAPI.UserCreateAppRoleAssignments(context.Background(), userId).AppRoleAssignment(appRoleAssignment).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserAppRoleAssignmentApi.UserCreateAppRoleAssignments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UserAppRoleAssignmentAPI.UserCreateAppRoleAssignments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UserCreateAppRoleAssignments`: AppRoleAssignment
-    fmt.Fprintf(os.Stdout, "Response from `UserAppRoleAssignmentApi.UserCreateAppRoleAssignments`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UserAppRoleAssignmentAPI.UserCreateAppRoleAssignments`: %v\n", resp)
 }
 ```
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -107,9 +107,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserAppRoleAssignmentApi.UserDeleteAppRoleAssignments(context.Background(), userId, appRoleAssignmentId).IfMatch(ifMatch).Execute()
+    r, err := apiClient.UserAppRoleAssignmentAPI.UserDeleteAppRoleAssignments(context.Background(), userId, appRoleAssignmentId).IfMatch(ifMatch).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserAppRoleAssignmentApi.UserDeleteAppRoleAssignments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UserAppRoleAssignmentAPI.UserDeleteAppRoleAssignments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 
@@ -170,7 +170,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -178,13 +178,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserAppRoleAssignmentApi.UserListAppRoleAssignments(context.Background(), userId).Execute()
+    resp, r, err := apiClient.UserAppRoleAssignmentAPI.UserListAppRoleAssignments(context.Background(), userId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserAppRoleAssignmentApi.UserListAppRoleAssignments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UserAppRoleAssignmentAPI.UserListAppRoleAssignments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UserListAppRoleAssignments`: CollectionOfAppRoleAssignments
-    fmt.Fprintf(os.Stdout, "Response from `UserAppRoleAssignmentApi.UserListAppRoleAssignments`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UserAppRoleAssignmentAPI.UserListAppRoleAssignments`: %v\n", resp)
 }
 ```
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 

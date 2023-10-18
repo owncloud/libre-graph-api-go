@@ -1,10 +1,10 @@
-# \MeChangepasswordApi
+# \MeChangepasswordAPI
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ChangeOwnPassword**](MeChangepasswordApi.md#ChangeOwnPassword) | **Post** /me/changePassword | Chanage your own password
+[**ChangeOwnPassword**](MeChangepasswordAPI.md#ChangeOwnPassword) | **Post** /me/changePassword | Chanage your own password
 
 
 
@@ -23,7 +23,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -31,9 +31,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeChangepasswordApi.ChangeOwnPassword(context.Background()).PasswordChange(passwordChange).Execute()
+    r, err := apiClient.MeChangepasswordAPI.ChangeOwnPassword(context.Background()).PasswordChange(passwordChange).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeChangepasswordApi.ChangeOwnPassword``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MeChangepasswordAPI.ChangeOwnPassword``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[openId](../README.md#openId)
 
 ### HTTP request headers
 

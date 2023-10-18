@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the UnifiedRoleDefinition type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnifiedRoleDefinition{}
+
 // UnifiedRoleDefinition A role definition is a collection of permissions in libre graph listing the operations that can be performed and the resources against which they can performed.
 type UnifiedRoleDefinition struct {
 	// The description for the unifiedRoleDefinition.
@@ -47,7 +50,7 @@ func NewUnifiedRoleDefinitionWithDefaults() *UnifiedRoleDefinition {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *UnifiedRoleDefinition) GetDescription() string {
-	if o == nil || o.Description == nil {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -57,7 +60,7 @@ func (o *UnifiedRoleDefinition) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnifiedRoleDefinition) GetDescriptionOk() (*string, bool) {
-	if o == nil || o.Description == nil {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -65,7 +68,7 @@ func (o *UnifiedRoleDefinition) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *UnifiedRoleDefinition) HasDescription() bool {
-	if o != nil && o.Description != nil {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -79,7 +82,7 @@ func (o *UnifiedRoleDefinition) SetDescription(v string) {
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
 func (o *UnifiedRoleDefinition) GetDisplayName() string {
-	if o == nil || o.DisplayName == nil {
+	if o == nil || IsNil(o.DisplayName) {
 		var ret string
 		return ret
 	}
@@ -89,7 +92,7 @@ func (o *UnifiedRoleDefinition) GetDisplayName() string {
 // GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnifiedRoleDefinition) GetDisplayNameOk() (*string, bool) {
-	if o == nil || o.DisplayName == nil {
+	if o == nil || IsNil(o.DisplayName) {
 		return nil, false
 	}
 	return o.DisplayName, true
@@ -97,7 +100,7 @@ func (o *UnifiedRoleDefinition) GetDisplayNameOk() (*string, bool) {
 
 // HasDisplayName returns a boolean if a field has been set.
 func (o *UnifiedRoleDefinition) HasDisplayName() bool {
-	if o != nil && o.DisplayName != nil {
+	if o != nil && !IsNil(o.DisplayName) {
 		return true
 	}
 
@@ -111,7 +114,7 @@ func (o *UnifiedRoleDefinition) SetDisplayName(v string) {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *UnifiedRoleDefinition) GetId() string {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		var ret string
 		return ret
 	}
@@ -121,7 +124,7 @@ func (o *UnifiedRoleDefinition) GetId() string {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnifiedRoleDefinition) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -129,7 +132,7 @@ func (o *UnifiedRoleDefinition) GetIdOk() (*string, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *UnifiedRoleDefinition) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -143,7 +146,7 @@ func (o *UnifiedRoleDefinition) SetId(v string) {
 
 // GetRolePermissions returns the RolePermissions field value if set, zero value otherwise.
 func (o *UnifiedRoleDefinition) GetRolePermissions() []UnifiedRolePermission {
-	if o == nil || o.RolePermissions == nil {
+	if o == nil || IsNil(o.RolePermissions) {
 		var ret []UnifiedRolePermission
 		return ret
 	}
@@ -153,7 +156,7 @@ func (o *UnifiedRoleDefinition) GetRolePermissions() []UnifiedRolePermission {
 // GetRolePermissionsOk returns a tuple with the RolePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnifiedRoleDefinition) GetRolePermissionsOk() ([]UnifiedRolePermission, bool) {
-	if o == nil || o.RolePermissions == nil {
+	if o == nil || IsNil(o.RolePermissions) {
 		return nil, false
 	}
 	return o.RolePermissions, true
@@ -161,7 +164,7 @@ func (o *UnifiedRoleDefinition) GetRolePermissionsOk() ([]UnifiedRolePermission,
 
 // HasRolePermissions returns a boolean if a field has been set.
 func (o *UnifiedRoleDefinition) HasRolePermissions() bool {
-	if o != nil && o.RolePermissions != nil {
+	if o != nil && !IsNil(o.RolePermissions) {
 		return true
 	}
 
@@ -175,7 +178,7 @@ func (o *UnifiedRoleDefinition) SetRolePermissions(v []UnifiedRolePermission) {
 
 // GetLibreGraphWeight returns the LibreGraphWeight field value if set, zero value otherwise.
 func (o *UnifiedRoleDefinition) GetLibreGraphWeight() int32 {
-	if o == nil || o.LibreGraphWeight == nil {
+	if o == nil || IsNil(o.LibreGraphWeight) {
 		var ret int32
 		return ret
 	}
@@ -185,7 +188,7 @@ func (o *UnifiedRoleDefinition) GetLibreGraphWeight() int32 {
 // GetLibreGraphWeightOk returns a tuple with the LibreGraphWeight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnifiedRoleDefinition) GetLibreGraphWeightOk() (*int32, bool) {
-	if o == nil || o.LibreGraphWeight == nil {
+	if o == nil || IsNil(o.LibreGraphWeight) {
 		return nil, false
 	}
 	return o.LibreGraphWeight, true
@@ -193,7 +196,7 @@ func (o *UnifiedRoleDefinition) GetLibreGraphWeightOk() (*int32, bool) {
 
 // HasLibreGraphWeight returns a boolean if a field has been set.
 func (o *UnifiedRoleDefinition) HasLibreGraphWeight() bool {
-	if o != nil && o.LibreGraphWeight != nil {
+	if o != nil && !IsNil(o.LibreGraphWeight) {
 		return true
 	}
 
@@ -206,23 +209,31 @@ func (o *UnifiedRoleDefinition) SetLibreGraphWeight(v int32) {
 }
 
 func (o UnifiedRoleDefinition) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Description != nil {
-		toSerialize["description"] = o.Description
-	}
-	if o.DisplayName != nil {
-		toSerialize["displayName"] = o.DisplayName
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.RolePermissions != nil {
-		toSerialize["rolePermissions"] = o.RolePermissions
-	}
-	if o.LibreGraphWeight != nil {
-		toSerialize["@libre.graph.weight"] = o.LibreGraphWeight
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o UnifiedRoleDefinition) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.DisplayName) {
+		toSerialize["displayName"] = o.DisplayName
+	}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.RolePermissions) {
+		toSerialize["rolePermissions"] = o.RolePermissions
+	}
+	if !IsNil(o.LibreGraphWeight) {
+		toSerialize["@libre.graph.weight"] = o.LibreGraphWeight
+	}
+	return toSerialize, nil
 }
 
 type NullableUnifiedRoleDefinition struct {

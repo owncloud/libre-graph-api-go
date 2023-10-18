@@ -1,17 +1,17 @@
-# \EducationClassApi
+# \EducationClassAPI
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddUserToClass**](EducationClassApi.md#AddUserToClass) | **Post** /education/classes/{class-id}/members/$ref | Assign a user to a class
-[**CreateClass**](EducationClassApi.md#CreateClass) | **Post** /education/classes | Add new education class
-[**DeleteClass**](EducationClassApi.md#DeleteClass) | **Delete** /education/classes/{class-id} | Delete education class
-[**DeleteUserFromClass**](EducationClassApi.md#DeleteUserFromClass) | **Delete** /education/classes/{class-id}/members/{user-id}/$ref | Unassign user from a class
-[**GetClass**](EducationClassApi.md#GetClass) | **Get** /education/classes/{class-id} | Get class by key
-[**ListClassMembers**](EducationClassApi.md#ListClassMembers) | **Get** /education/classes/{class-id}/members | Get the educationClass resources owned by an educationSchool
-[**ListClasses**](EducationClassApi.md#ListClasses) | **Get** /education/classes | list education classes
-[**UpdateClass**](EducationClassApi.md#UpdateClass) | **Patch** /education/classes/{class-id} | Update properties of a education class
+[**AddUserToClass**](EducationClassAPI.md#AddUserToClass) | **Post** /education/classes/{class-id}/members/$ref | Assign a user to a class
+[**CreateClass**](EducationClassAPI.md#CreateClass) | **Post** /education/classes | Add new education class
+[**DeleteClass**](EducationClassAPI.md#DeleteClass) | **Delete** /education/classes/{class-id} | Delete education class
+[**DeleteUserFromClass**](EducationClassAPI.md#DeleteUserFromClass) | **Delete** /education/classes/{class-id}/members/{user-id}/$ref | Unassign user from a class
+[**GetClass**](EducationClassAPI.md#GetClass) | **Get** /education/classes/{class-id} | Get class by key
+[**ListClassMembers**](EducationClassAPI.md#ListClassMembers) | **Get** /education/classes/{class-id}/members | Get the educationClass resources owned by an educationSchool
+[**ListClasses**](EducationClassAPI.md#ListClasses) | **Get** /education/classes | list education classes
+[**UpdateClass**](EducationClassAPI.md#UpdateClass) | **Patch** /education/classes/{class-id} | Update properties of a education class
 
 
 
@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -39,9 +39,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationClassApi.AddUserToClass(context.Background(), classId).ClassMemberReference(classMemberReference).Execute()
+    r, err := apiClient.EducationClassAPI.AddUserToClass(context.Background(), classId).ClassMemberReference(classMemberReference).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassApi.AddUserToClass``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassAPI.AddUserToClass``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -106,13 +106,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationClassApi.CreateClass(context.Background()).EducationClass(educationClass).Execute()
+    resp, r, err := apiClient.EducationClassAPI.CreateClass(context.Background()).EducationClass(educationClass).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassApi.CreateClass``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassAPI.CreateClass``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateClass`: EducationClass
-    fmt.Fprintf(os.Stdout, "Response from `EducationClassApi.CreateClass`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationClassAPI.CreateClass`: %v\n", resp)
 }
 ```
 
@@ -162,7 +162,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -170,9 +170,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationClassApi.DeleteClass(context.Background(), classId).Execute()
+    r, err := apiClient.EducationClassAPI.DeleteClass(context.Background(), classId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassApi.DeleteClass``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassAPI.DeleteClass``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -228,7 +228,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -237,9 +237,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationClassApi.DeleteUserFromClass(context.Background(), classId, userId).Execute()
+    r, err := apiClient.EducationClassAPI.DeleteUserFromClass(context.Background(), classId, userId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassApi.DeleteUserFromClass``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassAPI.DeleteUserFromClass``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -297,7 +297,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -305,13 +305,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationClassApi.GetClass(context.Background(), classId).Execute()
+    resp, r, err := apiClient.EducationClassAPI.GetClass(context.Background(), classId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassApi.GetClass``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassAPI.GetClass``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetClass`: EducationClass
-    fmt.Fprintf(os.Stdout, "Response from `EducationClassApi.GetClass`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationClassAPI.GetClass`: %v\n", resp)
 }
 ```
 
@@ -365,7 +365,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -373,13 +373,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationClassApi.ListClassMembers(context.Background(), classId).Execute()
+    resp, r, err := apiClient.EducationClassAPI.ListClassMembers(context.Background(), classId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassApi.ListClassMembers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassAPI.ListClassMembers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListClassMembers`: CollectionOfEducationUser
-    fmt.Fprintf(os.Stdout, "Response from `EducationClassApi.ListClassMembers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationClassAPI.ListClassMembers`: %v\n", resp)
 }
 ```
 
@@ -433,20 +433,20 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationClassApi.ListClasses(context.Background()).Execute()
+    resp, r, err := apiClient.EducationClassAPI.ListClasses(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassApi.ListClasses``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassAPI.ListClasses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListClasses`: CollectionOfClass
-    fmt.Fprintf(os.Stdout, "Response from `EducationClassApi.ListClasses`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationClassAPI.ListClasses`: %v\n", resp)
 }
 ```
 
@@ -492,7 +492,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
@@ -501,13 +501,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationClassApi.UpdateClass(context.Background(), classId).EducationClass(educationClass).Execute()
+    resp, r, err := apiClient.EducationClassAPI.UpdateClass(context.Background(), classId).EducationClass(educationClass).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassApi.UpdateClass``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassAPI.UpdateClass``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateClass`: EducationClass
-    fmt.Fprintf(os.Stdout, "Response from `EducationClassApi.UpdateClass`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationClassAPI.UpdateClass`: %v\n", resp)
 }
 ```
 

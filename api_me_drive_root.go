@@ -13,17 +13,17 @@ package libregraph
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
 
-// MeDriveRootApiService MeDriveRootApi service
-type MeDriveRootApiService service
+// MeDriveRootAPIService MeDriveRootAPI service
+type MeDriveRootAPIService service
 
 type ApiHomeGetRootRequest struct {
 	ctx        context.Context
-	ApiService *MeDriveRootApiService
+	ApiService *MeDriveRootAPIService
 }
 
 func (r ApiHomeGetRootRequest) Execute() (*DriveItem, *http.Response, error) {
@@ -36,7 +36,7 @@ HomeGetRoot Get root from personal space
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiHomeGetRootRequest
 */
-func (a *MeDriveRootApiService) HomeGetRoot(ctx context.Context) ApiHomeGetRootRequest {
+func (a *MeDriveRootAPIService) HomeGetRoot(ctx context.Context) ApiHomeGetRootRequest {
 	return ApiHomeGetRootRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -45,7 +45,7 @@ func (a *MeDriveRootApiService) HomeGetRoot(ctx context.Context) ApiHomeGetRootR
 
 // Execute executes the request
 //  @return DriveItem
-func (a *MeDriveRootApiService) HomeGetRootExecute(r ApiHomeGetRootRequest) (*DriveItem, *http.Response, error) {
+func (a *MeDriveRootAPIService) HomeGetRootExecute(r ApiHomeGetRootRequest) (*DriveItem, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -53,7 +53,7 @@ func (a *MeDriveRootApiService) HomeGetRootExecute(r ApiHomeGetRootRequest) (*Dr
 		localVarReturnValue *DriveItem
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootApiService.HomeGetRoot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootAPIService.HomeGetRoot")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -91,9 +91,9 @@ func (a *MeDriveRootApiService) HomeGetRootExecute(r ApiHomeGetRootRequest) (*Dr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -109,6 +109,7 @@ func (a *MeDriveRootApiService) HomeGetRootExecute(r ApiHomeGetRootRequest) (*Dr
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

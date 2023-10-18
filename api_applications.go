@@ -13,18 +13,18 @@ package libregraph
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-// ApplicationsApiService ApplicationsApi service
-type ApplicationsApiService service
+// ApplicationsAPIService ApplicationsAPI service
+type ApplicationsAPIService service
 
 type ApiGetApplicationRequest struct {
 	ctx           context.Context
-	ApiService    *ApplicationsApiService
+	ApiService    *ApplicationsAPIService
 	applicationId string
 }
 
@@ -39,7 +39,7 @@ GetApplication Get application by id
  @param applicationId key: id of application
  @return ApiGetApplicationRequest
 */
-func (a *ApplicationsApiService) GetApplication(ctx context.Context, applicationId string) ApiGetApplicationRequest {
+func (a *ApplicationsAPIService) GetApplication(ctx context.Context, applicationId string) ApiGetApplicationRequest {
 	return ApiGetApplicationRequest{
 		ApiService:    a,
 		ctx:           ctx,
@@ -49,7 +49,7 @@ func (a *ApplicationsApiService) GetApplication(ctx context.Context, application
 
 // Execute executes the request
 //  @return Application
-func (a *ApplicationsApiService) GetApplicationExecute(r ApiGetApplicationRequest) (*Application, *http.Response, error) {
+func (a *ApplicationsAPIService) GetApplicationExecute(r ApiGetApplicationRequest) (*Application, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -57,13 +57,13 @@ func (a *ApplicationsApiService) GetApplicationExecute(r ApiGetApplicationReques
 		localVarReturnValue *Application
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationsApiService.GetApplication")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationsAPIService.GetApplication")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/applications/{application-id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"application-id"+"}", url.PathEscape(parameterToString(r.applicationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"application-id"+"}", url.PathEscape(parameterValueToString(r.applicationId, "applicationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -96,9 +96,9 @@ func (a *ApplicationsApiService) GetApplicationExecute(r ApiGetApplicationReques
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -114,6 +114,7 @@ func (a *ApplicationsApiService) GetApplicationExecute(r ApiGetApplicationReques
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -132,7 +133,7 @@ func (a *ApplicationsApiService) GetApplicationExecute(r ApiGetApplicationReques
 
 type ApiListApplicationsRequest struct {
 	ctx        context.Context
-	ApiService *ApplicationsApiService
+	ApiService *ApplicationsAPIService
 }
 
 func (r ApiListApplicationsRequest) Execute() (*CollectionOfApplications, *http.Response, error) {
@@ -145,7 +146,7 @@ ListApplications Get all applications
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListApplicationsRequest
 */
-func (a *ApplicationsApiService) ListApplications(ctx context.Context) ApiListApplicationsRequest {
+func (a *ApplicationsAPIService) ListApplications(ctx context.Context) ApiListApplicationsRequest {
 	return ApiListApplicationsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -154,7 +155,7 @@ func (a *ApplicationsApiService) ListApplications(ctx context.Context) ApiListAp
 
 // Execute executes the request
 //  @return CollectionOfApplications
-func (a *ApplicationsApiService) ListApplicationsExecute(r ApiListApplicationsRequest) (*CollectionOfApplications, *http.Response, error) {
+func (a *ApplicationsAPIService) ListApplicationsExecute(r ApiListApplicationsRequest) (*CollectionOfApplications, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -162,7 +163,7 @@ func (a *ApplicationsApiService) ListApplicationsExecute(r ApiListApplicationsRe
 		localVarReturnValue *CollectionOfApplications
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationsApiService.ListApplications")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationsAPIService.ListApplications")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -200,9 +201,9 @@ func (a *ApplicationsApiService) ListApplicationsExecute(r ApiListApplicationsRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,6 +219,7 @@ func (a *ApplicationsApiService) ListApplicationsExecute(r ApiListApplicationsRe
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

@@ -13,17 +13,17 @@ package libregraph
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
 
-// UsersApiService UsersApi service
-type UsersApiService service
+// UsersAPIService UsersAPI service
+type UsersAPIService service
 
 type ApiCreateUserRequest struct {
 	ctx        context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	user       *User
 }
 
@@ -43,7 +43,7 @@ CreateUser Add new entity to users
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateUserRequest
 */
-func (a *UsersApiService) CreateUser(ctx context.Context) ApiCreateUserRequest {
+func (a *UsersAPIService) CreateUser(ctx context.Context) ApiCreateUserRequest {
 	return ApiCreateUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -52,7 +52,7 @@ func (a *UsersApiService) CreateUser(ctx context.Context) ApiCreateUserRequest {
 
 // Execute executes the request
 //  @return User
-func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (*User, *http.Response, error) {
+func (a *UsersAPIService) CreateUserExecute(r ApiCreateUserRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -60,7 +60,7 @@ func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (*User, *htt
 		localVarReturnValue *User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.CreateUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.CreateUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -103,9 +103,9 @@ func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (*User, *htt
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -121,6 +121,7 @@ func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (*User, *htt
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -139,7 +140,7 @@ func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (*User, *htt
 
 type ApiListUsersRequest struct {
 	ctx        context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	search     *string
 	filter     *string
 	orderby    *[]string
@@ -187,7 +188,7 @@ ListUsers Get entities from users
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListUsersRequest
 */
-func (a *UsersApiService) ListUsers(ctx context.Context) ApiListUsersRequest {
+func (a *UsersAPIService) ListUsers(ctx context.Context) ApiListUsersRequest {
 	return ApiListUsersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -196,7 +197,7 @@ func (a *UsersApiService) ListUsers(ctx context.Context) ApiListUsersRequest {
 
 // Execute executes the request
 //  @return CollectionOfUser
-func (a *UsersApiService) ListUsersExecute(r ApiListUsersRequest) (*CollectionOfUser, *http.Response, error) {
+func (a *UsersAPIService) ListUsersExecute(r ApiListUsersRequest) (*CollectionOfUser, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -204,7 +205,7 @@ func (a *UsersApiService) ListUsersExecute(r ApiListUsersRequest) (*CollectionOf
 		localVarReturnValue *CollectionOfUser
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.ListUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.ListUsers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -216,19 +217,19 @@ func (a *UsersApiService) ListUsersExecute(r ApiListUsersRequest) (*CollectionOf
 	localVarFormParams := url.Values{}
 
 	if r.search != nil {
-		localVarQueryParams.Add("$search", parameterToString(*r.search, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$search", r.search, "")
 	}
 	if r.filter != nil {
-		localVarQueryParams.Add("$filter", parameterToString(*r.filter, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$filter", r.filter, "")
 	}
 	if r.orderby != nil {
-		localVarQueryParams.Add("$orderby", parameterToString(*r.orderby, "csv"))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$orderby", r.orderby, "csv")
 	}
 	if r.select_ != nil {
-		localVarQueryParams.Add("$select", parameterToString(*r.select_, "csv"))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$select", r.select_, "csv")
 	}
 	if r.expand != nil {
-		localVarQueryParams.Add("$expand", parameterToString(*r.expand, "csv"))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$expand", r.expand, "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -257,9 +258,9 @@ func (a *UsersApiService) ListUsersExecute(r ApiListUsersRequest) (*CollectionOf
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -275,6 +276,7 @@ func (a *UsersApiService) ListUsersExecute(r ApiListUsersRequest) (*CollectionOf
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

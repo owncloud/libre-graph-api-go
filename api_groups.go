@@ -13,17 +13,17 @@ package libregraph
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
 
-// GroupsApiService GroupsApi service
-type GroupsApiService service
+// GroupsAPIService GroupsAPI service
+type GroupsAPIService service
 
 type ApiCreateGroupRequest struct {
 	ctx        context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	group      *Group
 }
 
@@ -43,7 +43,7 @@ CreateGroup Add new entity to groups
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateGroupRequest
 */
-func (a *GroupsApiService) CreateGroup(ctx context.Context) ApiCreateGroupRequest {
+func (a *GroupsAPIService) CreateGroup(ctx context.Context) ApiCreateGroupRequest {
 	return ApiCreateGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -52,7 +52,7 @@ func (a *GroupsApiService) CreateGroup(ctx context.Context) ApiCreateGroupReques
 
 // Execute executes the request
 //  @return Group
-func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, *http.Response, error) {
+func (a *GroupsAPIService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -60,7 +60,7 @@ func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, 
 		localVarReturnValue *Group
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.CreateGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.CreateGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -103,9 +103,9 @@ func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -121,6 +121,7 @@ func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, 
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -139,7 +140,7 @@ func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, 
 
 type ApiListGroupsRequest struct {
 	ctx        context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	search     *string
 	orderby    *[]string
 	select_    *[]string
@@ -180,7 +181,7 @@ ListGroups Get entities from groups
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListGroupsRequest
 */
-func (a *GroupsApiService) ListGroups(ctx context.Context) ApiListGroupsRequest {
+func (a *GroupsAPIService) ListGroups(ctx context.Context) ApiListGroupsRequest {
 	return ApiListGroupsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -189,7 +190,7 @@ func (a *GroupsApiService) ListGroups(ctx context.Context) ApiListGroupsRequest 
 
 // Execute executes the request
 //  @return CollectionOfGroup
-func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (*CollectionOfGroup, *http.Response, error) {
+func (a *GroupsAPIService) ListGroupsExecute(r ApiListGroupsRequest) (*CollectionOfGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -197,7 +198,7 @@ func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (*Collectio
 		localVarReturnValue *CollectionOfGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.ListGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.ListGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -209,16 +210,16 @@ func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (*Collectio
 	localVarFormParams := url.Values{}
 
 	if r.search != nil {
-		localVarQueryParams.Add("$search", parameterToString(*r.search, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$search", r.search, "")
 	}
 	if r.orderby != nil {
-		localVarQueryParams.Add("$orderby", parameterToString(*r.orderby, "csv"))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$orderby", r.orderby, "csv")
 	}
 	if r.select_ != nil {
-		localVarQueryParams.Add("$select", parameterToString(*r.select_, "csv"))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$select", r.select_, "csv")
 	}
 	if r.expand != nil {
-		localVarQueryParams.Add("$expand", parameterToString(*r.expand, "csv"))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$expand", r.expand, "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -247,9 +248,9 @@ func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (*Collectio
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -265,6 +266,7 @@ func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (*Collectio
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
