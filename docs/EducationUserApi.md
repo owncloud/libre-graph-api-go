@@ -1,14 +1,14 @@
-# \EducationUserAPI
+# \EducationUserApi
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateEducationUser**](EducationUserAPI.md#CreateEducationUser) | **Post** /education/users | Add new education user
-[**DeleteEducationUser**](EducationUserAPI.md#DeleteEducationUser) | **Delete** /education/users/{user-id} | Delete educationUser
-[**GetEducationUser**](EducationUserAPI.md#GetEducationUser) | **Get** /education/users/{user-id} | Get properties of educationUser
-[**ListEducationUsers**](EducationUserAPI.md#ListEducationUsers) | **Get** /education/users | Get entities from education users
-[**UpdateEducationUser**](EducationUserAPI.md#UpdateEducationUser) | **Patch** /education/users/{user-id} | Update properties of educationUser
+[**CreateEducationUser**](EducationUserApi.md#CreateEducationUser) | **Post** /education/users | Add new education user
+[**DeleteEducationUser**](EducationUserApi.md#DeleteEducationUser) | **Delete** /education/users/{user-id} | Delete educationUser
+[**GetEducationUser**](EducationUserApi.md#GetEducationUser) | **Get** /education/users/{user-id} | Get properties of educationUser
+[**ListEducationUsers**](EducationUserApi.md#ListEducationUsers) | **Get** /education/users | Get entities from education users
+[**UpdateEducationUser**](EducationUserApi.md#UpdateEducationUser) | **Patch** /education/users/{user-id} | Update properties of educationUser
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationUserAPI.CreateEducationUser(context.Background()).EducationUser(educationUser).Execute()
+    resp, r, err := apiClient.EducationUserApi.CreateEducationUser(context.Background()).EducationUser(educationUser).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationUserAPI.CreateEducationUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationUserApi.CreateEducationUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateEducationUser`: EducationUser
-    fmt.Fprintf(os.Stdout, "Response from `EducationUserAPI.CreateEducationUser`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationUserApi.CreateEducationUser`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.EducationUserAPI.DeleteEducationUser(context.Background(), userId).Execute()
+    r, err := apiClient.EducationUserApi.DeleteEducationUser(context.Background(), userId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationUserAPI.DeleteEducationUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationUserApi.DeleteEducationUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -166,13 +166,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationUserAPI.GetEducationUser(context.Background(), userId).Expand(expand).Execute()
+    resp, r, err := apiClient.EducationUserApi.GetEducationUser(context.Background(), userId).Expand(expand).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationUserAPI.GetEducationUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationUserApi.GetEducationUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetEducationUser`: EducationUser
-    fmt.Fprintf(os.Stdout, "Response from `EducationUserAPI.GetEducationUser`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationUserApi.GetEducationUser`: %v\n", resp)
 }
 ```
 
@@ -236,13 +236,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationUserAPI.ListEducationUsers(context.Background()).Orderby(orderby).Expand(expand).Execute()
+    resp, r, err := apiClient.EducationUserApi.ListEducationUsers(context.Background()).Orderby(orderby).Expand(expand).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationUserAPI.ListEducationUsers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationUserApi.ListEducationUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListEducationUsers`: CollectionOfEducationUser
-    fmt.Fprintf(os.Stdout, "Response from `EducationUserAPI.ListEducationUsers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationUserApi.ListEducationUsers`: %v\n", resp)
 }
 ```
 
@@ -302,13 +302,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationUserAPI.UpdateEducationUser(context.Background(), userId).EducationUser(educationUser).Execute()
+    resp, r, err := apiClient.EducationUserApi.UpdateEducationUser(context.Background(), userId).EducationUser(educationUser).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationUserAPI.UpdateEducationUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationUserApi.UpdateEducationUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateEducationUser`: EducationUser
-    fmt.Fprintf(os.Stdout, "Response from `EducationUserAPI.UpdateEducationUser`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationUserApi.UpdateEducationUser`: %v\n", resp)
 }
 ```
 

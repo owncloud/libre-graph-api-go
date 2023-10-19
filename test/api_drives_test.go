@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing DrivesAPIService
+Testing DrivesApiService
 
 */
 
@@ -17,16 +17,16 @@ import (
 	"testing"
 )
 
-func Test_libregraph_DrivesAPIService(t *testing.T) {
+func Test_libregraph_DrivesApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DrivesAPIService CreateDrive", func(t *testing.T) {
+	t.Run("Test DrivesApiService CreateDrive", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DrivesAPI.CreateDrive(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DrivesApi.CreateDrive(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,26 +34,26 @@ func Test_libregraph_DrivesAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DrivesAPIService DeleteDrive", func(t *testing.T) {
+	t.Run("Test DrivesApiService DeleteDrive", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var driveId string
 
-		httpRes, err := apiClient.DrivesAPI.DeleteDrive(context.Background(), driveId).Execute()
+		httpRes, err := apiClient.DrivesApi.DeleteDrive(context.Background(), driveId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DrivesAPIService GetDrive", func(t *testing.T) {
+	t.Run("Test DrivesApiService GetDrive", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var driveId string
 
-		resp, httpRes, err := apiClient.DrivesAPI.GetDrive(context.Background(), driveId).Execute()
+		resp, httpRes, err := apiClient.DrivesApi.GetDrive(context.Background(), driveId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -61,13 +61,13 @@ func Test_libregraph_DrivesAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DrivesAPIService UpdateDrive", func(t *testing.T) {
+	t.Run("Test DrivesApiService UpdateDrive", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var driveId string
 
-		resp, httpRes, err := apiClient.DrivesAPI.UpdateDrive(context.Background(), driveId).Execute()
+		resp, httpRes, err := apiClient.DrivesApi.UpdateDrive(context.Background(), driveId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

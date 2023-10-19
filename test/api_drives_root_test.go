@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing DrivesRootAPIService
+Testing DrivesRootApiService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	"testing"
 )
 
-func Test_libregraph_DrivesRootAPIService(t *testing.T) {
+func Test_libregraph_DrivesRootApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DrivesRootAPIService GetRoot", func(t *testing.T) {
+	t.Run("Test DrivesRootApiService GetRoot", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var driveId string
 
-		resp, httpRes, err := apiClient.DrivesRootAPI.GetRoot(context.Background(), driveId).Execute()
+		resp, httpRes, err := apiClient.DrivesRootApi.GetRoot(context.Background(), driveId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

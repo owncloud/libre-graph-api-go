@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing MeDriveAPIService
+Testing MeDriveApiService
 
 */
 
@@ -17,16 +17,16 @@ import (
 	"testing"
 )
 
-func Test_libregraph_MeDriveAPIService(t *testing.T) {
+func Test_libregraph_MeDriveApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test MeDriveAPIService GetHome", func(t *testing.T) {
+	t.Run("Test MeDriveApiService GetHome", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.MeDriveAPI.GetHome(context.Background()).Execute()
+		resp, httpRes, err := apiClient.MeDriveApi.GetHome(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_libregraph_MeDriveAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test MeDriveAPIService ListSharedByMe", func(t *testing.T) {
+	t.Run("Test MeDriveApiService ListSharedByMe", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.MeDriveAPI.ListSharedByMe(context.Background()).Execute()
+		resp, httpRes, err := apiClient.MeDriveApi.ListSharedByMe(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,11 @@ func Test_libregraph_MeDriveAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test MeDriveAPIService ListSharedWithMe", func(t *testing.T) {
+	t.Run("Test MeDriveApiService ListSharedWithMe", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.MeDriveAPI.ListSharedWithMe(context.Background()).Execute()
+		resp, httpRes, err := apiClient.MeDriveApi.ListSharedWithMe(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -1,19 +1,19 @@
-# \UsersAPI
+# \GroupsApi
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateUser**](UsersAPI.md#CreateUser) | **Post** /users | Add new entity to users
-[**ListUsers**](UsersAPI.md#ListUsers) | **Get** /users | Get entities from users
+[**CreateGroup**](GroupsApi.md#CreateGroup) | **Post** /groups | Add new entity to groups
+[**ListGroups**](GroupsApi.md#ListGroups) | **Get** /groups | Get entities from groups
 
 
 
-## CreateUser
+## CreateGroup
 
-> User CreateUser(ctx).User(user).Execute()
+> Group CreateGroup(ctx).Group(group).Execute()
 
-Add new entity to users
+Add new entity to groups
 
 ### Example
 
@@ -28,17 +28,17 @@ import (
 )
 
 func main() {
-    user := *openapiclient.NewUser() // User | New entity
+    group := *openapiclient.NewGroup() // Group | New entity
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.CreateUser(context.Background()).User(user).Execute()
+    resp, r, err := apiClient.GroupsApi.CreateGroup(context.Background()).Group(group).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.CreateUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GroupsApi.CreateGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateUser`: User
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.CreateUser`: %v\n", resp)
+    // response from `CreateGroup`: Group
+    fmt.Fprintf(os.Stdout, "Response from `GroupsApi.CreateGroup`: %v\n", resp)
 }
 ```
 
@@ -48,16 +48,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateGroupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | [**User**](User.md) | New entity | 
+ **group** | [**Group**](Group.md) | New entity | 
 
 ### Return type
 
-[**User**](User.md)
+[**Group**](Group.md)
 
 ### Authorization
 
@@ -73,11 +73,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListUsers
+## ListGroups
 
-> CollectionOfUser ListUsers(ctx).Search(search).Filter(filter).Orderby(orderby).Select_(select_).Expand(expand).Execute()
+> CollectionOfGroup ListGroups(ctx).Search(search).Orderby(orderby).Select_(select_).Expand(expand).Execute()
 
-Get entities from users
+Get entities from groups
 
 ### Example
 
@@ -93,20 +93,19 @@ import (
 
 func main() {
     search := "search_example" // string | Search items by search phrases (optional)
-    filter := "memberOf/any(x:x/id eq 910367f9-4041-4db1-961b-d1e98f708eaf)" // string | Filter users by property values and relationship attributes (optional)
     orderby := []string{"Orderby_example"} // []string | Order items by property values (optional)
     select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
     expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.ListUsers(context.Background()).Search(search).Filter(filter).Orderby(orderby).Select_(select_).Expand(expand).Execute()
+    resp, r, err := apiClient.GroupsApi.ListGroups(context.Background()).Search(search).Orderby(orderby).Select_(select_).Expand(expand).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.ListUsers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GroupsApi.ListGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListUsers`: CollectionOfUser
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.ListUsers`: %v\n", resp)
+    // response from `ListGroups`: CollectionOfGroup
+    fmt.Fprintf(os.Stdout, "Response from `GroupsApi.ListGroups`: %v\n", resp)
 }
 ```
 
@@ -116,20 +115,19 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListUsersRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListGroupsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **search** | **string** | Search items by search phrases | 
- **filter** | **string** | Filter users by property values and relationship attributes | 
  **orderby** | **[]string** | Order items by property values | 
  **select_** | **[]string** | Select properties to be returned | 
  **expand** | **[]string** | Expand related entities | 
 
 ### Return type
 
-[**CollectionOfUser**](CollectionOfUser.md)
+[**CollectionOfGroup**](CollectionOfGroup.md)
 
 ### Authorization
 

@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// MeUserAPIService MeUserAPI service
-type MeUserAPIService service
+// MeUserApiService MeUserApi service
+type MeUserApiService service
 
 type ApiGetOwnUserRequest struct {
 	ctx        context.Context
-	ApiService *MeUserAPIService
+	ApiService *MeUserApiService
 	expand     *[]string
 }
 
@@ -43,7 +43,7 @@ GetOwnUser Get current user
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetOwnUserRequest
 */
-func (a *MeUserAPIService) GetOwnUser(ctx context.Context) ApiGetOwnUserRequest {
+func (a *MeUserApiService) GetOwnUser(ctx context.Context) ApiGetOwnUserRequest {
 	return ApiGetOwnUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -52,7 +52,7 @@ func (a *MeUserAPIService) GetOwnUser(ctx context.Context) ApiGetOwnUserRequest 
 
 // Execute executes the request
 //  @return User
-func (a *MeUserAPIService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *http.Response, error) {
+func (a *MeUserApiService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -60,7 +60,7 @@ func (a *MeUserAPIService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *ht
 		localVarReturnValue *User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeUserAPIService.GetOwnUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeUserApiService.GetOwnUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// GroupsAPIService GroupsAPI service
-type GroupsAPIService service
+// GroupsApiService GroupsApi service
+type GroupsApiService service
 
 type ApiCreateGroupRequest struct {
 	ctx        context.Context
-	ApiService *GroupsAPIService
+	ApiService *GroupsApiService
 	group      *Group
 }
 
@@ -43,7 +43,7 @@ CreateGroup Add new entity to groups
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateGroupRequest
 */
-func (a *GroupsAPIService) CreateGroup(ctx context.Context) ApiCreateGroupRequest {
+func (a *GroupsApiService) CreateGroup(ctx context.Context) ApiCreateGroupRequest {
 	return ApiCreateGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -52,7 +52,7 @@ func (a *GroupsAPIService) CreateGroup(ctx context.Context) ApiCreateGroupReques
 
 // Execute executes the request
 //  @return Group
-func (a *GroupsAPIService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, *http.Response, error) {
+func (a *GroupsApiService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -60,7 +60,7 @@ func (a *GroupsAPIService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, 
 		localVarReturnValue *Group
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.CreateGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.CreateGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *GroupsAPIService) CreateGroupExecute(r ApiCreateGroupRequest) (*Group, 
 
 type ApiListGroupsRequest struct {
 	ctx        context.Context
-	ApiService *GroupsAPIService
+	ApiService *GroupsApiService
 	search     *string
 	orderby    *[]string
 	select_    *[]string
@@ -181,7 +181,7 @@ ListGroups Get entities from groups
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListGroupsRequest
 */
-func (a *GroupsAPIService) ListGroups(ctx context.Context) ApiListGroupsRequest {
+func (a *GroupsApiService) ListGroups(ctx context.Context) ApiListGroupsRequest {
 	return ApiListGroupsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -190,7 +190,7 @@ func (a *GroupsAPIService) ListGroups(ctx context.Context) ApiListGroupsRequest 
 
 // Execute executes the request
 //  @return CollectionOfGroup
-func (a *GroupsAPIService) ListGroupsExecute(r ApiListGroupsRequest) (*CollectionOfGroup, *http.Response, error) {
+func (a *GroupsApiService) ListGroupsExecute(r ApiListGroupsRequest) (*CollectionOfGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -198,7 +198,7 @@ func (a *GroupsAPIService) ListGroupsExecute(r ApiListGroupsRequest) (*Collectio
 		localVarReturnValue *CollectionOfGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.ListGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.ListGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

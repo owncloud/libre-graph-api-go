@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// UsersAPIService UsersAPI service
-type UsersAPIService service
+// UsersApiService UsersApi service
+type UsersApiService service
 
 type ApiCreateUserRequest struct {
 	ctx        context.Context
-	ApiService *UsersAPIService
+	ApiService *UsersApiService
 	user       *User
 }
 
@@ -43,7 +43,7 @@ CreateUser Add new entity to users
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateUserRequest
 */
-func (a *UsersAPIService) CreateUser(ctx context.Context) ApiCreateUserRequest {
+func (a *UsersApiService) CreateUser(ctx context.Context) ApiCreateUserRequest {
 	return ApiCreateUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -52,7 +52,7 @@ func (a *UsersAPIService) CreateUser(ctx context.Context) ApiCreateUserRequest {
 
 // Execute executes the request
 //  @return User
-func (a *UsersAPIService) CreateUserExecute(r ApiCreateUserRequest) (*User, *http.Response, error) {
+func (a *UsersApiService) CreateUserExecute(r ApiCreateUserRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -60,7 +60,7 @@ func (a *UsersAPIService) CreateUserExecute(r ApiCreateUserRequest) (*User, *htt
 		localVarReturnValue *User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.CreateUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.CreateUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *UsersAPIService) CreateUserExecute(r ApiCreateUserRequest) (*User, *htt
 
 type ApiListUsersRequest struct {
 	ctx        context.Context
-	ApiService *UsersAPIService
+	ApiService *UsersApiService
 	search     *string
 	filter     *string
 	orderby    *[]string
@@ -188,7 +188,7 @@ ListUsers Get entities from users
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListUsersRequest
 */
-func (a *UsersAPIService) ListUsers(ctx context.Context) ApiListUsersRequest {
+func (a *UsersApiService) ListUsers(ctx context.Context) ApiListUsersRequest {
 	return ApiListUsersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -197,7 +197,7 @@ func (a *UsersAPIService) ListUsers(ctx context.Context) ApiListUsersRequest {
 
 // Execute executes the request
 //  @return CollectionOfUser
-func (a *UsersAPIService) ListUsersExecute(r ApiListUsersRequest) (*CollectionOfUser, *http.Response, error) {
+func (a *UsersApiService) ListUsersExecute(r ApiListUsersRequest) (*CollectionOfUser, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -205,7 +205,7 @@ func (a *UsersAPIService) ListUsersExecute(r ApiListUsersRequest) (*CollectionOf
 		localVarReturnValue *CollectionOfUser
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.ListUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.ListUsers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

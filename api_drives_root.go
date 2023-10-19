@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// DrivesRootAPIService DrivesRootAPI service
-type DrivesRootAPIService service
+// DrivesRootApiService DrivesRootApi service
+type DrivesRootApiService service
 
 type ApiGetRootRequest struct {
 	ctx        context.Context
-	ApiService *DrivesRootAPIService
+	ApiService *DrivesRootApiService
 	driveId    string
 }
 
@@ -39,7 +39,7 @@ GetRoot Get root from arbitrary space
  @param driveId key: id of drive
  @return ApiGetRootRequest
 */
-func (a *DrivesRootAPIService) GetRoot(ctx context.Context, driveId string) ApiGetRootRequest {
+func (a *DrivesRootApiService) GetRoot(ctx context.Context, driveId string) ApiGetRootRequest {
 	return ApiGetRootRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -49,7 +49,7 @@ func (a *DrivesRootAPIService) GetRoot(ctx context.Context, driveId string) ApiG
 
 // Execute executes the request
 //  @return DriveItem
-func (a *DrivesRootAPIService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, *http.Response, error) {
+func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -57,7 +57,7 @@ func (a *DrivesRootAPIService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, 
 		localVarReturnValue *DriveItem
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootAPIService.GetRoot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.GetRoot")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

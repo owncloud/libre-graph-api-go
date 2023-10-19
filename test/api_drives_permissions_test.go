@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing DrivesPermissionsAPIService
+Testing DrivesPermissionsApiService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	"testing"
 )
 
-func Test_libregraph_DrivesPermissionsAPIService(t *testing.T) {
+func Test_libregraph_DrivesPermissionsApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DrivesPermissionsAPIService CreateLink", func(t *testing.T) {
+	t.Run("Test DrivesPermissionsApiService CreateLink", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var driveId string
 		var itemId string
 
-		resp, httpRes, err := apiClient.DrivesPermissionsAPI.CreateLink(context.Background(), driveId, itemId).Execute()
+		resp, httpRes, err := apiClient.DrivesPermissionsApi.CreateLink(context.Background(), driveId, itemId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,7 +37,7 @@ func Test_libregraph_DrivesPermissionsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DrivesPermissionsAPIService DeletePermission", func(t *testing.T) {
+	t.Run("Test DrivesPermissionsApiService DeletePermission", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
@@ -45,14 +45,14 @@ func Test_libregraph_DrivesPermissionsAPIService(t *testing.T) {
 		var itemId string
 		var permId string
 
-		httpRes, err := apiClient.DrivesPermissionsAPI.DeletePermission(context.Background(), driveId, itemId, permId).Execute()
+		httpRes, err := apiClient.DrivesPermissionsApi.DeletePermission(context.Background(), driveId, itemId, permId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DrivesPermissionsAPIService GetPermission", func(t *testing.T) {
+	t.Run("Test DrivesPermissionsApiService GetPermission", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
@@ -60,7 +60,7 @@ func Test_libregraph_DrivesPermissionsAPIService(t *testing.T) {
 		var itemId string
 		var permId string
 
-		resp, httpRes, err := apiClient.DrivesPermissionsAPI.GetPermission(context.Background(), driveId, itemId, permId).Execute()
+		resp, httpRes, err := apiClient.DrivesPermissionsApi.GetPermission(context.Background(), driveId, itemId, permId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -68,14 +68,14 @@ func Test_libregraph_DrivesPermissionsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DrivesPermissionsAPIService Invite", func(t *testing.T) {
+	t.Run("Test DrivesPermissionsApiService Invite", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var driveId string
 		var itemId string
 
-		resp, httpRes, err := apiClient.DrivesPermissionsAPI.Invite(context.Background(), driveId, itemId).Execute()
+		resp, httpRes, err := apiClient.DrivesPermissionsApi.Invite(context.Background(), driveId, itemId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -83,14 +83,14 @@ func Test_libregraph_DrivesPermissionsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DrivesPermissionsAPIService ListPermissions", func(t *testing.T) {
+	t.Run("Test DrivesPermissionsApiService ListPermissions", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var driveId string
 		var itemId string
 
-		resp, httpRes, err := apiClient.DrivesPermissionsAPI.ListPermissions(context.Background(), driveId, itemId).Execute()
+		resp, httpRes, err := apiClient.DrivesPermissionsApi.ListPermissions(context.Background(), driveId, itemId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -98,7 +98,7 @@ func Test_libregraph_DrivesPermissionsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DrivesPermissionsAPIService UpdatePermission", func(t *testing.T) {
+	t.Run("Test DrivesPermissionsApiService UpdatePermission", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
@@ -106,7 +106,7 @@ func Test_libregraph_DrivesPermissionsAPIService(t *testing.T) {
 		var itemId string
 		var permId string
 
-		resp, httpRes, err := apiClient.DrivesPermissionsAPI.UpdatePermission(context.Background(), driveId, itemId, permId).Execute()
+		resp, httpRes, err := apiClient.DrivesPermissionsApi.UpdatePermission(context.Background(), driveId, itemId, permId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

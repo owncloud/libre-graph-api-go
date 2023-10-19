@@ -48,49 +48,49 @@ type APIClient struct {
 
 	// API Services
 
-	ApplicationsAPI *ApplicationsAPIService
+	ApplicationsApi *ApplicationsApiService
 
-	DrivesAPI *DrivesAPIService
+	DrivesApi *DrivesApiService
 
-	DrivesGetDrivesAPI *DrivesGetDrivesAPIService
+	DrivesGetDrivesApi *DrivesGetDrivesApiService
 
-	DrivesPermissionsAPI *DrivesPermissionsAPIService
+	DrivesPermissionsApi *DrivesPermissionsApiService
 
-	DrivesRootAPI *DrivesRootAPIService
+	DrivesRootApi *DrivesRootApiService
 
-	EducationClassAPI *EducationClassAPIService
+	EducationClassApi *EducationClassApiService
 
-	EducationClassTeachersAPI *EducationClassTeachersAPIService
+	EducationClassTeachersApi *EducationClassTeachersApiService
 
-	EducationSchoolAPI *EducationSchoolAPIService
+	EducationSchoolApi *EducationSchoolApiService
 
-	EducationUserAPI *EducationUserAPIService
+	EducationUserApi *EducationUserApiService
 
-	GroupAPI *GroupAPIService
+	GroupApi *GroupApiService
 
-	GroupsAPI *GroupsAPIService
+	GroupsApi *GroupsApiService
 
-	MeChangepasswordAPI *MeChangepasswordAPIService
+	MeChangepasswordApi *MeChangepasswordApiService
 
-	MeDriveAPI *MeDriveAPIService
+	MeDriveApi *MeDriveApiService
 
-	MeDriveRootAPI *MeDriveRootAPIService
+	MeDriveRootApi *MeDriveRootApiService
 
-	MeDriveRootChildrenAPI *MeDriveRootChildrenAPIService
+	MeDriveRootChildrenApi *MeDriveRootChildrenApiService
 
-	MeDrivesAPI *MeDrivesAPIService
+	MeDrivesApi *MeDrivesApiService
 
-	MeUserAPI *MeUserAPIService
+	MeUserApi *MeUserApiService
 
-	RoleManagementAPI *RoleManagementAPIService
+	RoleManagementApi *RoleManagementApiService
 
-	TagsAPI *TagsAPIService
+	TagsApi *TagsApiService
 
-	UserAPI *UserAPIService
+	UserApi *UserApiService
 
-	UserAppRoleAssignmentAPI *UserAppRoleAssignmentAPIService
+	UserAppRoleAssignmentApi *UserAppRoleAssignmentApiService
 
-	UsersAPI *UsersAPIService
+	UsersApi *UsersApiService
 }
 
 type service struct {
@@ -109,28 +109,28 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.ApplicationsAPI = (*ApplicationsAPIService)(&c.common)
-	c.DrivesAPI = (*DrivesAPIService)(&c.common)
-	c.DrivesGetDrivesAPI = (*DrivesGetDrivesAPIService)(&c.common)
-	c.DrivesPermissionsAPI = (*DrivesPermissionsAPIService)(&c.common)
-	c.DrivesRootAPI = (*DrivesRootAPIService)(&c.common)
-	c.EducationClassAPI = (*EducationClassAPIService)(&c.common)
-	c.EducationClassTeachersAPI = (*EducationClassTeachersAPIService)(&c.common)
-	c.EducationSchoolAPI = (*EducationSchoolAPIService)(&c.common)
-	c.EducationUserAPI = (*EducationUserAPIService)(&c.common)
-	c.GroupAPI = (*GroupAPIService)(&c.common)
-	c.GroupsAPI = (*GroupsAPIService)(&c.common)
-	c.MeChangepasswordAPI = (*MeChangepasswordAPIService)(&c.common)
-	c.MeDriveAPI = (*MeDriveAPIService)(&c.common)
-	c.MeDriveRootAPI = (*MeDriveRootAPIService)(&c.common)
-	c.MeDriveRootChildrenAPI = (*MeDriveRootChildrenAPIService)(&c.common)
-	c.MeDrivesAPI = (*MeDrivesAPIService)(&c.common)
-	c.MeUserAPI = (*MeUserAPIService)(&c.common)
-	c.RoleManagementAPI = (*RoleManagementAPIService)(&c.common)
-	c.TagsAPI = (*TagsAPIService)(&c.common)
-	c.UserAPI = (*UserAPIService)(&c.common)
-	c.UserAppRoleAssignmentAPI = (*UserAppRoleAssignmentAPIService)(&c.common)
-	c.UsersAPI = (*UsersAPIService)(&c.common)
+	c.ApplicationsApi = (*ApplicationsApiService)(&c.common)
+	c.DrivesApi = (*DrivesApiService)(&c.common)
+	c.DrivesGetDrivesApi = (*DrivesGetDrivesApiService)(&c.common)
+	c.DrivesPermissionsApi = (*DrivesPermissionsApiService)(&c.common)
+	c.DrivesRootApi = (*DrivesRootApiService)(&c.common)
+	c.EducationClassApi = (*EducationClassApiService)(&c.common)
+	c.EducationClassTeachersApi = (*EducationClassTeachersApiService)(&c.common)
+	c.EducationSchoolApi = (*EducationSchoolApiService)(&c.common)
+	c.EducationUserApi = (*EducationUserApiService)(&c.common)
+	c.GroupApi = (*GroupApiService)(&c.common)
+	c.GroupsApi = (*GroupsApiService)(&c.common)
+	c.MeChangepasswordApi = (*MeChangepasswordApiService)(&c.common)
+	c.MeDriveApi = (*MeDriveApiService)(&c.common)
+	c.MeDriveRootApi = (*MeDriveRootApiService)(&c.common)
+	c.MeDriveRootChildrenApi = (*MeDriveRootChildrenApiService)(&c.common)
+	c.MeDrivesApi = (*MeDrivesApiService)(&c.common)
+	c.MeUserApi = (*MeUserApiService)(&c.common)
+	c.RoleManagementApi = (*RoleManagementApiService)(&c.common)
+	c.TagsApi = (*TagsApiService)(&c.common)
+	c.UserApi = (*UserApiService)(&c.common)
+	c.UserAppRoleAssignmentApi = (*UserAppRoleAssignmentApiService)(&c.common)
+	c.UsersApi = (*UsersApiService)(&c.common)
 
 	return c
 }

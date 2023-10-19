@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing GroupsAPIService
+Testing GroupsApiService
 
 */
 
@@ -17,16 +17,16 @@ import (
 	"testing"
 )
 
-func Test_libregraph_GroupsAPIService(t *testing.T) {
+func Test_libregraph_GroupsApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test GroupsAPIService CreateGroup", func(t *testing.T) {
+	t.Run("Test GroupsApiService CreateGroup", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.GroupsAPI.CreateGroup(context.Background()).Execute()
+		resp, httpRes, err := apiClient.GroupsApi.CreateGroup(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_libregraph_GroupsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test GroupsAPIService ListGroups", func(t *testing.T) {
+	t.Run("Test GroupsApiService ListGroups", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.GroupsAPI.ListGroups(context.Background()).Execute()
+		resp, httpRes, err := apiClient.GroupsApi.ListGroups(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

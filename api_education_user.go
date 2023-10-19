@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// EducationUserAPIService EducationUserAPI service
-type EducationUserAPIService service
+// EducationUserApiService EducationUserApi service
+type EducationUserApiService service
 
 type ApiCreateEducationUserRequest struct {
 	ctx           context.Context
-	ApiService    *EducationUserAPIService
+	ApiService    *EducationUserApiService
 	educationUser *EducationUser
 }
 
@@ -44,7 +44,7 @@ CreateEducationUser Add new education user
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateEducationUserRequest
 */
-func (a *EducationUserAPIService) CreateEducationUser(ctx context.Context) ApiCreateEducationUserRequest {
+func (a *EducationUserApiService) CreateEducationUser(ctx context.Context) ApiCreateEducationUserRequest {
 	return ApiCreateEducationUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -53,7 +53,7 @@ func (a *EducationUserAPIService) CreateEducationUser(ctx context.Context) ApiCr
 
 // Execute executes the request
 //  @return EducationUser
-func (a *EducationUserAPIService) CreateEducationUserExecute(r ApiCreateEducationUserRequest) (*EducationUser, *http.Response, error) {
+func (a *EducationUserApiService) CreateEducationUserExecute(r ApiCreateEducationUserRequest) (*EducationUser, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -61,7 +61,7 @@ func (a *EducationUserAPIService) CreateEducationUserExecute(r ApiCreateEducatio
 		localVarReturnValue *EducationUser
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserAPIService.CreateEducationUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserApiService.CreateEducationUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -141,7 +141,7 @@ func (a *EducationUserAPIService) CreateEducationUserExecute(r ApiCreateEducatio
 
 type ApiDeleteEducationUserRequest struct {
 	ctx        context.Context
-	ApiService *EducationUserAPIService
+	ApiService *EducationUserApiService
 	userId     string
 }
 
@@ -156,7 +156,7 @@ DeleteEducationUser Delete educationUser
  @param userId key: id or username of user
  @return ApiDeleteEducationUserRequest
 */
-func (a *EducationUserAPIService) DeleteEducationUser(ctx context.Context, userId string) ApiDeleteEducationUserRequest {
+func (a *EducationUserApiService) DeleteEducationUser(ctx context.Context, userId string) ApiDeleteEducationUserRequest {
 	return ApiDeleteEducationUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -165,14 +165,14 @@ func (a *EducationUserAPIService) DeleteEducationUser(ctx context.Context, userI
 }
 
 // Execute executes the request
-func (a *EducationUserAPIService) DeleteEducationUserExecute(r ApiDeleteEducationUserRequest) (*http.Response, error) {
+func (a *EducationUserApiService) DeleteEducationUserExecute(r ApiDeleteEducationUserRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserAPIService.DeleteEducationUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserApiService.DeleteEducationUser")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -239,7 +239,7 @@ func (a *EducationUserAPIService) DeleteEducationUserExecute(r ApiDeleteEducatio
 
 type ApiGetEducationUserRequest struct {
 	ctx        context.Context
-	ApiService *EducationUserAPIService
+	ApiService *EducationUserApiService
 	userId     string
 	expand     *[]string
 }
@@ -261,7 +261,7 @@ GetEducationUser Get properties of educationUser
  @param userId key: id or username of user
  @return ApiGetEducationUserRequest
 */
-func (a *EducationUserAPIService) GetEducationUser(ctx context.Context, userId string) ApiGetEducationUserRequest {
+func (a *EducationUserApiService) GetEducationUser(ctx context.Context, userId string) ApiGetEducationUserRequest {
 	return ApiGetEducationUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -271,7 +271,7 @@ func (a *EducationUserAPIService) GetEducationUser(ctx context.Context, userId s
 
 // Execute executes the request
 //  @return EducationUser
-func (a *EducationUserAPIService) GetEducationUserExecute(r ApiGetEducationUserRequest) (*EducationUser, *http.Response, error) {
+func (a *EducationUserApiService) GetEducationUserExecute(r ApiGetEducationUserRequest) (*EducationUser, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -279,7 +279,7 @@ func (a *EducationUserAPIService) GetEducationUserExecute(r ApiGetEducationUserR
 		localVarReturnValue *EducationUser
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserAPIService.GetEducationUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserApiService.GetEducationUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -358,7 +358,7 @@ func (a *EducationUserAPIService) GetEducationUserExecute(r ApiGetEducationUserR
 
 type ApiListEducationUsersRequest struct {
 	ctx        context.Context
-	ApiService *EducationUserAPIService
+	ApiService *EducationUserApiService
 	orderby    *[]string
 	expand     *[]string
 }
@@ -385,7 +385,7 @@ ListEducationUsers Get entities from education users
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListEducationUsersRequest
 */
-func (a *EducationUserAPIService) ListEducationUsers(ctx context.Context) ApiListEducationUsersRequest {
+func (a *EducationUserApiService) ListEducationUsers(ctx context.Context) ApiListEducationUsersRequest {
 	return ApiListEducationUsersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -394,7 +394,7 @@ func (a *EducationUserAPIService) ListEducationUsers(ctx context.Context) ApiLis
 
 // Execute executes the request
 //  @return CollectionOfEducationUser
-func (a *EducationUserAPIService) ListEducationUsersExecute(r ApiListEducationUsersRequest) (*CollectionOfEducationUser, *http.Response, error) {
+func (a *EducationUserApiService) ListEducationUsersExecute(r ApiListEducationUsersRequest) (*CollectionOfEducationUser, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -402,7 +402,7 @@ func (a *EducationUserAPIService) ListEducationUsersExecute(r ApiListEducationUs
 		localVarReturnValue *CollectionOfEducationUser
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserAPIService.ListEducationUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserApiService.ListEducationUsers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -483,7 +483,7 @@ func (a *EducationUserAPIService) ListEducationUsersExecute(r ApiListEducationUs
 
 type ApiUpdateEducationUserRequest struct {
 	ctx           context.Context
-	ApiService    *EducationUserAPIService
+	ApiService    *EducationUserApiService
 	userId        string
 	educationUser *EducationUser
 }
@@ -505,7 +505,7 @@ UpdateEducationUser Update properties of educationUser
  @param userId key: id or username of user
  @return ApiUpdateEducationUserRequest
 */
-func (a *EducationUserAPIService) UpdateEducationUser(ctx context.Context, userId string) ApiUpdateEducationUserRequest {
+func (a *EducationUserApiService) UpdateEducationUser(ctx context.Context, userId string) ApiUpdateEducationUserRequest {
 	return ApiUpdateEducationUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -515,7 +515,7 @@ func (a *EducationUserAPIService) UpdateEducationUser(ctx context.Context, userI
 
 // Execute executes the request
 //  @return EducationUser
-func (a *EducationUserAPIService) UpdateEducationUserExecute(r ApiUpdateEducationUserRequest) (*EducationUser, *http.Response, error) {
+func (a *EducationUserApiService) UpdateEducationUserExecute(r ApiUpdateEducationUserRequest) (*EducationUser, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -523,7 +523,7 @@ func (a *EducationUserAPIService) UpdateEducationUserExecute(r ApiUpdateEducatio
 		localVarReturnValue *EducationUser
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserAPIService.UpdateEducationUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationUserApiService.UpdateEducationUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

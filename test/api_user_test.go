@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing UserAPIService
+Testing UserApiService
 
 */
 
@@ -17,44 +17,44 @@ import (
 	"testing"
 )
 
-func Test_libregraph_UserAPIService(t *testing.T) {
+func Test_libregraph_UserApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test UserAPIService DeleteUser", func(t *testing.T) {
+	t.Run("Test UserApiService DeleteUser", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var userId string
 
-		httpRes, err := apiClient.UserAPI.DeleteUser(context.Background(), userId).Execute()
+		httpRes, err := apiClient.UserApi.DeleteUser(context.Background(), userId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test UserAPIService ExportPersonalData", func(t *testing.T) {
+	t.Run("Test UserApiService ExportPersonalData", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var userId string
 
-		httpRes, err := apiClient.UserAPI.ExportPersonalData(context.Background(), userId).Execute()
+		httpRes, err := apiClient.UserApi.ExportPersonalData(context.Background(), userId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test UserAPIService GetUser", func(t *testing.T) {
+	t.Run("Test UserApiService GetUser", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var userId string
 
-		resp, httpRes, err := apiClient.UserAPI.GetUser(context.Background(), userId).Execute()
+		resp, httpRes, err := apiClient.UserApi.GetUser(context.Background(), userId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -62,13 +62,13 @@ func Test_libregraph_UserAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test UserAPIService UpdateUser", func(t *testing.T) {
+	t.Run("Test UserApiService UpdateUser", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var userId string
 
-		resp, httpRes, err := apiClient.UserAPI.UpdateUser(context.Background(), userId).Execute()
+		resp, httpRes, err := apiClient.UserApi.UpdateUser(context.Background(), userId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// DrivesGetDrivesAPIService DrivesGetDrivesAPI service
-type DrivesGetDrivesAPIService service
+// DrivesGetDrivesApiService DrivesGetDrivesApi service
+type DrivesGetDrivesApiService service
 
 type ApiListAllDrivesRequest struct {
 	ctx        context.Context
-	ApiService *DrivesGetDrivesAPIService
+	ApiService *DrivesGetDrivesApiService
 	orderby    *string
 	filter     *string
 }
@@ -50,7 +50,7 @@ ListAllDrives Get all available drives
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListAllDrivesRequest
 */
-func (a *DrivesGetDrivesAPIService) ListAllDrives(ctx context.Context) ApiListAllDrivesRequest {
+func (a *DrivesGetDrivesApiService) ListAllDrives(ctx context.Context) ApiListAllDrivesRequest {
 	return ApiListAllDrivesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -59,7 +59,7 @@ func (a *DrivesGetDrivesAPIService) ListAllDrives(ctx context.Context) ApiListAl
 
 // Execute executes the request
 //  @return CollectionOfDrives1
-func (a *DrivesGetDrivesAPIService) ListAllDrivesExecute(r ApiListAllDrivesRequest) (*CollectionOfDrives1, *http.Response, error) {
+func (a *DrivesGetDrivesApiService) ListAllDrivesExecute(r ApiListAllDrivesRequest) (*CollectionOfDrives1, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -67,7 +67,7 @@ func (a *DrivesGetDrivesAPIService) ListAllDrivesExecute(r ApiListAllDrivesReque
 		localVarReturnValue *CollectionOfDrives1
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesGetDrivesAPIService.ListAllDrives")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesGetDrivesApiService.ListAllDrives")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

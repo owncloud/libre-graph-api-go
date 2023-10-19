@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// TagsAPIService TagsAPI service
-type TagsAPIService service
+// TagsApiService TagsApi service
+type TagsApiService service
 
 type ApiAssignTagsRequest struct {
 	ctx           context.Context
-	ApiService    *TagsAPIService
+	ApiService    *TagsApiService
 	tagAssignment *TagAssignment
 }
 
@@ -42,7 +42,7 @@ AssignTags Assign tags to a resource
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiAssignTagsRequest
 */
-func (a *TagsAPIService) AssignTags(ctx context.Context) ApiAssignTagsRequest {
+func (a *TagsApiService) AssignTags(ctx context.Context) ApiAssignTagsRequest {
 	return ApiAssignTagsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -50,14 +50,14 @@ func (a *TagsAPIService) AssignTags(ctx context.Context) ApiAssignTagsRequest {
 }
 
 // Execute executes the request
-func (a *TagsAPIService) AssignTagsExecute(r ApiAssignTagsRequest) (*http.Response, error) {
+func (a *TagsApiService) AssignTagsExecute(r ApiAssignTagsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPut
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.AssignTags")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsApiService.AssignTags")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -125,7 +125,7 @@ func (a *TagsAPIService) AssignTagsExecute(r ApiAssignTagsRequest) (*http.Respon
 
 type ApiGetTagsRequest struct {
 	ctx        context.Context
-	ApiService *TagsAPIService
+	ApiService *TagsApiService
 }
 
 func (r ApiGetTagsRequest) Execute() (*CollectionOfTags, *http.Response, error) {
@@ -138,7 +138,7 @@ GetTags Get all known tags
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetTagsRequest
 */
-func (a *TagsAPIService) GetTags(ctx context.Context) ApiGetTagsRequest {
+func (a *TagsApiService) GetTags(ctx context.Context) ApiGetTagsRequest {
 	return ApiGetTagsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -147,7 +147,7 @@ func (a *TagsAPIService) GetTags(ctx context.Context) ApiGetTagsRequest {
 
 // Execute executes the request
 //  @return CollectionOfTags
-func (a *TagsAPIService) GetTagsExecute(r ApiGetTagsRequest) (*CollectionOfTags, *http.Response, error) {
+func (a *TagsApiService) GetTagsExecute(r ApiGetTagsRequest) (*CollectionOfTags, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -155,7 +155,7 @@ func (a *TagsAPIService) GetTagsExecute(r ApiGetTagsRequest) (*CollectionOfTags,
 		localVarReturnValue *CollectionOfTags
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.GetTags")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsApiService.GetTags")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -230,7 +230,7 @@ func (a *TagsAPIService) GetTagsExecute(r ApiGetTagsRequest) (*CollectionOfTags,
 
 type ApiUnassignTagsRequest struct {
 	ctx             context.Context
-	ApiService      *TagsAPIService
+	ApiService      *TagsApiService
 	tagUnassignment *TagUnassignment
 }
 
@@ -249,7 +249,7 @@ UnassignTags Unassign tags from a resource
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUnassignTagsRequest
 */
-func (a *TagsAPIService) UnassignTags(ctx context.Context) ApiUnassignTagsRequest {
+func (a *TagsApiService) UnassignTags(ctx context.Context) ApiUnassignTagsRequest {
 	return ApiUnassignTagsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -257,14 +257,14 @@ func (a *TagsAPIService) UnassignTags(ctx context.Context) ApiUnassignTagsReques
 }
 
 // Execute executes the request
-func (a *TagsAPIService) UnassignTagsExecute(r ApiUnassignTagsRequest) (*http.Response, error) {
+func (a *TagsApiService) UnassignTagsExecute(r ApiUnassignTagsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.UnassignTags")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsApiService.UnassignTags")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,10 +1,10 @@
-# \DrivesRootAPI
+# \DrivesRootApi
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetRoot**](DrivesRootAPI.md#GetRoot) | **Get** /drives/{drive-id}/root | Get root from arbitrary space
+[**GetRoot**](DrivesRootApi.md#GetRoot) | **Get** /drives/{drive-id}/root | Get root from arbitrary space
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesRootAPI.GetRoot(context.Background(), driveId).Execute()
+    resp, r, err := apiClient.DrivesRootApi.GetRoot(context.Background(), driveId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootAPI.GetRoot``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.GetRoot``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetRoot`: DriveItem
-    fmt.Fprintf(os.Stdout, "Response from `DrivesRootAPI.GetRoot`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.GetRoot`: %v\n", resp)
 }
 ```
 

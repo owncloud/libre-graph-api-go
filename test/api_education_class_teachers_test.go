@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing EducationClassTeachersAPIService
+Testing EducationClassTeachersApiService
 
 */
 
@@ -17,45 +17,45 @@ import (
 	"testing"
 )
 
-func Test_libregraph_EducationClassTeachersAPIService(t *testing.T) {
+func Test_libregraph_EducationClassTeachersApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test EducationClassTeachersAPIService AddTeacherToClass", func(t *testing.T) {
+	t.Run("Test EducationClassTeachersApiService AddTeacherToClass", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var classId string
 
-		httpRes, err := apiClient.EducationClassTeachersAPI.AddTeacherToClass(context.Background(), classId).Execute()
+		httpRes, err := apiClient.EducationClassTeachersApi.AddTeacherToClass(context.Background(), classId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test EducationClassTeachersAPIService DeleteTeacherFromClass", func(t *testing.T) {
+	t.Run("Test EducationClassTeachersApiService DeleteTeacherFromClass", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var classId string
 		var userId string
 
-		httpRes, err := apiClient.EducationClassTeachersAPI.DeleteTeacherFromClass(context.Background(), classId, userId).Execute()
+		httpRes, err := apiClient.EducationClassTeachersApi.DeleteTeacherFromClass(context.Background(), classId, userId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test EducationClassTeachersAPIService GetTeachers", func(t *testing.T) {
+	t.Run("Test EducationClassTeachersApiService GetTeachers", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var classId string
 
-		resp, httpRes, err := apiClient.EducationClassTeachersAPI.GetTeachers(context.Background(), classId).Execute()
+		resp, httpRes, err := apiClient.EducationClassTeachersApi.GetTeachers(context.Background(), classId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

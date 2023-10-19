@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// RoleManagementAPIService RoleManagementAPI service
-type RoleManagementAPIService service
+// RoleManagementApiService RoleManagementApi service
+type RoleManagementApiService service
 
 type ApiGetPermissionRoleDefinitionRequest struct {
 	ctx        context.Context
-	ApiService *RoleManagementAPIService
+	ApiService *RoleManagementApiService
 	roleId     string
 }
 
@@ -42,7 +42,7 @@ Read the properties and relationships of a `unifiedRoleDefinition` object.
  @param roleId key: id of roleDefinition
  @return ApiGetPermissionRoleDefinitionRequest
 */
-func (a *RoleManagementAPIService) GetPermissionRoleDefinition(ctx context.Context, roleId string) ApiGetPermissionRoleDefinitionRequest {
+func (a *RoleManagementApiService) GetPermissionRoleDefinition(ctx context.Context, roleId string) ApiGetPermissionRoleDefinitionRequest {
 	return ApiGetPermissionRoleDefinitionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -52,7 +52,7 @@ func (a *RoleManagementAPIService) GetPermissionRoleDefinition(ctx context.Conte
 
 // Execute executes the request
 //  @return UnifiedRoleDefinition
-func (a *RoleManagementAPIService) GetPermissionRoleDefinitionExecute(r ApiGetPermissionRoleDefinitionRequest) (*UnifiedRoleDefinition, *http.Response, error) {
+func (a *RoleManagementApiService) GetPermissionRoleDefinitionExecute(r ApiGetPermissionRoleDefinitionRequest) (*UnifiedRoleDefinition, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -60,7 +60,7 @@ func (a *RoleManagementAPIService) GetPermissionRoleDefinitionExecute(r ApiGetPe
 		localVarReturnValue *UnifiedRoleDefinition
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleManagementAPIService.GetPermissionRoleDefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleManagementApiService.GetPermissionRoleDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -136,7 +136,7 @@ func (a *RoleManagementAPIService) GetPermissionRoleDefinitionExecute(r ApiGetPe
 
 type ApiListPermissionRoleDefinitionsRequest struct {
 	ctx        context.Context
-	ApiService *RoleManagementAPIService
+	ApiService *RoleManagementApiService
 }
 
 func (r ApiListPermissionRoleDefinitionsRequest) Execute() (*UnifiedRoleDefinition, *http.Response, error) {
@@ -152,7 +152,7 @@ Get a list of `unifiedRoleDefinition` objects for the permissions provider. This
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListPermissionRoleDefinitionsRequest
 */
-func (a *RoleManagementAPIService) ListPermissionRoleDefinitions(ctx context.Context) ApiListPermissionRoleDefinitionsRequest {
+func (a *RoleManagementApiService) ListPermissionRoleDefinitions(ctx context.Context) ApiListPermissionRoleDefinitionsRequest {
 	return ApiListPermissionRoleDefinitionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -161,7 +161,7 @@ func (a *RoleManagementAPIService) ListPermissionRoleDefinitions(ctx context.Con
 
 // Execute executes the request
 //  @return UnifiedRoleDefinition
-func (a *RoleManagementAPIService) ListPermissionRoleDefinitionsExecute(r ApiListPermissionRoleDefinitionsRequest) (*UnifiedRoleDefinition, *http.Response, error) {
+func (a *RoleManagementApiService) ListPermissionRoleDefinitionsExecute(r ApiListPermissionRoleDefinitionsRequest) (*UnifiedRoleDefinition, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -169,7 +169,7 @@ func (a *RoleManagementAPIService) ListPermissionRoleDefinitionsExecute(r ApiLis
 		localVarReturnValue *UnifiedRoleDefinition
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleManagementAPIService.ListPermissionRoleDefinitions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleManagementApiService.ListPermissionRoleDefinitions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

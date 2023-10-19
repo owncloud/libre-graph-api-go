@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// MeChangepasswordAPIService MeChangepasswordAPI service
-type MeChangepasswordAPIService service
+// MeChangepasswordApiService MeChangepasswordApi service
+type MeChangepasswordApiService service
 
 type ApiChangeOwnPasswordRequest struct {
 	ctx            context.Context
-	ApiService     *MeChangepasswordAPIService
+	ApiService     *MeChangepasswordApiService
 	passwordChange *PasswordChange
 }
 
@@ -43,7 +43,7 @@ ChangeOwnPassword Chanage your own password
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiChangeOwnPasswordRequest
 */
-func (a *MeChangepasswordAPIService) ChangeOwnPassword(ctx context.Context) ApiChangeOwnPasswordRequest {
+func (a *MeChangepasswordApiService) ChangeOwnPassword(ctx context.Context) ApiChangeOwnPasswordRequest {
 	return ApiChangeOwnPasswordRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -51,14 +51,14 @@ func (a *MeChangepasswordAPIService) ChangeOwnPassword(ctx context.Context) ApiC
 }
 
 // Execute executes the request
-func (a *MeChangepasswordAPIService) ChangeOwnPasswordExecute(r ApiChangeOwnPasswordRequest) (*http.Response, error) {
+func (a *MeChangepasswordApiService) ChangeOwnPasswordExecute(r ApiChangeOwnPasswordRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeChangepasswordAPIService.ChangeOwnPassword")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeChangepasswordApiService.ChangeOwnPassword")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

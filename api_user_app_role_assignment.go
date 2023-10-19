@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// UserAppRoleAssignmentAPIService UserAppRoleAssignmentAPI service
-type UserAppRoleAssignmentAPIService service
+// UserAppRoleAssignmentApiService UserAppRoleAssignmentApi service
+type UserAppRoleAssignmentApiService service
 
 type ApiUserCreateAppRoleAssignmentsRequest struct {
 	ctx               context.Context
-	ApiService        *UserAppRoleAssignmentAPIService
+	ApiService        *UserAppRoleAssignmentApiService
 	userId            string
 	appRoleAssignment *AppRoleAssignment
 }
@@ -52,7 +52,7 @@ Use this API to assign a global role to a user. To grant an app role assignment 
  @param userId key: id of user
  @return ApiUserCreateAppRoleAssignmentsRequest
 */
-func (a *UserAppRoleAssignmentAPIService) UserCreateAppRoleAssignments(ctx context.Context, userId string) ApiUserCreateAppRoleAssignmentsRequest {
+func (a *UserAppRoleAssignmentApiService) UserCreateAppRoleAssignments(ctx context.Context, userId string) ApiUserCreateAppRoleAssignmentsRequest {
 	return ApiUserCreateAppRoleAssignmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -62,7 +62,7 @@ func (a *UserAppRoleAssignmentAPIService) UserCreateAppRoleAssignments(ctx conte
 
 // Execute executes the request
 //  @return AppRoleAssignment
-func (a *UserAppRoleAssignmentAPIService) UserCreateAppRoleAssignmentsExecute(r ApiUserCreateAppRoleAssignmentsRequest) (*AppRoleAssignment, *http.Response, error) {
+func (a *UserAppRoleAssignmentApiService) UserCreateAppRoleAssignmentsExecute(r ApiUserCreateAppRoleAssignmentsRequest) (*AppRoleAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -70,7 +70,7 @@ func (a *UserAppRoleAssignmentAPIService) UserCreateAppRoleAssignmentsExecute(r 
 		localVarReturnValue *AppRoleAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentAPIService.UserCreateAppRoleAssignments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentApiService.UserCreateAppRoleAssignments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,7 +151,7 @@ func (a *UserAppRoleAssignmentAPIService) UserCreateAppRoleAssignmentsExecute(r 
 
 type ApiUserDeleteAppRoleAssignmentsRequest struct {
 	ctx                 context.Context
-	ApiService          *UserAppRoleAssignmentAPIService
+	ApiService          *UserAppRoleAssignmentApiService
 	userId              string
 	appRoleAssignmentId string
 	ifMatch             *string
@@ -175,7 +175,7 @@ UserDeleteAppRoleAssignments Delete the appRoleAssignment from a user
  @param appRoleAssignmentId key: id of appRoleAssignment. This is the concatenated {user-id}:{appRole-id} separated by a colon.
  @return ApiUserDeleteAppRoleAssignmentsRequest
 */
-func (a *UserAppRoleAssignmentAPIService) UserDeleteAppRoleAssignments(ctx context.Context, userId string, appRoleAssignmentId string) ApiUserDeleteAppRoleAssignmentsRequest {
+func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignments(ctx context.Context, userId string, appRoleAssignmentId string) ApiUserDeleteAppRoleAssignmentsRequest {
 	return ApiUserDeleteAppRoleAssignmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -185,14 +185,14 @@ func (a *UserAppRoleAssignmentAPIService) UserDeleteAppRoleAssignments(ctx conte
 }
 
 // Execute executes the request
-func (a *UserAppRoleAssignmentAPIService) UserDeleteAppRoleAssignmentsExecute(r ApiUserDeleteAppRoleAssignmentsRequest) (*http.Response, error) {
+func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignmentsExecute(r ApiUserDeleteAppRoleAssignmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentAPIService.UserDeleteAppRoleAssignments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentApiService.UserDeleteAppRoleAssignments")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -263,7 +263,7 @@ func (a *UserAppRoleAssignmentAPIService) UserDeleteAppRoleAssignmentsExecute(r 
 
 type ApiUserListAppRoleAssignmentsRequest struct {
 	ctx        context.Context
-	ApiService *UserAppRoleAssignmentAPIService
+	ApiService *UserAppRoleAssignmentApiService
 	userId     string
 }
 
@@ -280,7 +280,7 @@ Represents the global roles a user has been granted for an application.
  @param userId key: id of user
  @return ApiUserListAppRoleAssignmentsRequest
 */
-func (a *UserAppRoleAssignmentAPIService) UserListAppRoleAssignments(ctx context.Context, userId string) ApiUserListAppRoleAssignmentsRequest {
+func (a *UserAppRoleAssignmentApiService) UserListAppRoleAssignments(ctx context.Context, userId string) ApiUserListAppRoleAssignmentsRequest {
 	return ApiUserListAppRoleAssignmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -290,7 +290,7 @@ func (a *UserAppRoleAssignmentAPIService) UserListAppRoleAssignments(ctx context
 
 // Execute executes the request
 //  @return CollectionOfAppRoleAssignments
-func (a *UserAppRoleAssignmentAPIService) UserListAppRoleAssignmentsExecute(r ApiUserListAppRoleAssignmentsRequest) (*CollectionOfAppRoleAssignments, *http.Response, error) {
+func (a *UserAppRoleAssignmentApiService) UserListAppRoleAssignmentsExecute(r ApiUserListAppRoleAssignmentsRequest) (*CollectionOfAppRoleAssignments, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -298,7 +298,7 @@ func (a *UserAppRoleAssignmentAPIService) UserListAppRoleAssignmentsExecute(r Ap
 		localVarReturnValue *CollectionOfAppRoleAssignments
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentAPIService.UserListAppRoleAssignments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentApiService.UserListAppRoleAssignments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

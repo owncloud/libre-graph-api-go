@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// EducationSchoolAPIService EducationSchoolAPI service
-type EducationSchoolAPIService service
+// EducationSchoolApiService EducationSchoolApi service
+type EducationSchoolApiService service
 
 type ApiAddClassToSchoolRequest struct {
 	ctx            context.Context
-	ApiService     *EducationSchoolAPIService
+	ApiService     *EducationSchoolApiService
 	schoolId       string
 	classReference *ClassReference
 }
@@ -46,7 +46,7 @@ AddClassToSchool Assign a class to a school
  @param schoolId key: id or schoolNumber of school
  @return ApiAddClassToSchoolRequest
 */
-func (a *EducationSchoolAPIService) AddClassToSchool(ctx context.Context, schoolId string) ApiAddClassToSchoolRequest {
+func (a *EducationSchoolApiService) AddClassToSchool(ctx context.Context, schoolId string) ApiAddClassToSchoolRequest {
 	return ApiAddClassToSchoolRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -55,14 +55,14 @@ func (a *EducationSchoolAPIService) AddClassToSchool(ctx context.Context, school
 }
 
 // Execute executes the request
-func (a *EducationSchoolAPIService) AddClassToSchoolExecute(r ApiAddClassToSchoolRequest) (*http.Response, error) {
+func (a *EducationSchoolApiService) AddClassToSchoolExecute(r ApiAddClassToSchoolRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolAPIService.AddClassToSchool")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolApiService.AddClassToSchool")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *EducationSchoolAPIService) AddClassToSchoolExecute(r ApiAddClassToSchoo
 
 type ApiAddUserToSchoolRequest struct {
 	ctx                    context.Context
-	ApiService             *EducationSchoolAPIService
+	ApiService             *EducationSchoolApiService
 	schoolId               string
 	educationUserReference *EducationUserReference
 }
@@ -156,7 +156,7 @@ AddUserToSchool Assign a user to a school
  @param schoolId key: id or schoolNumber of school
  @return ApiAddUserToSchoolRequest
 */
-func (a *EducationSchoolAPIService) AddUserToSchool(ctx context.Context, schoolId string) ApiAddUserToSchoolRequest {
+func (a *EducationSchoolApiService) AddUserToSchool(ctx context.Context, schoolId string) ApiAddUserToSchoolRequest {
 	return ApiAddUserToSchoolRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -165,14 +165,14 @@ func (a *EducationSchoolAPIService) AddUserToSchool(ctx context.Context, schoolI
 }
 
 // Execute executes the request
-func (a *EducationSchoolAPIService) AddUserToSchoolExecute(r ApiAddUserToSchoolRequest) (*http.Response, error) {
+func (a *EducationSchoolApiService) AddUserToSchoolExecute(r ApiAddUserToSchoolRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolAPIService.AddUserToSchool")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolApiService.AddUserToSchool")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -244,7 +244,7 @@ func (a *EducationSchoolAPIService) AddUserToSchoolExecute(r ApiAddUserToSchoolR
 
 type ApiCreateSchoolRequest struct {
 	ctx             context.Context
-	ApiService      *EducationSchoolAPIService
+	ApiService      *EducationSchoolApiService
 	educationSchool *EducationSchool
 }
 
@@ -264,7 +264,7 @@ CreateSchool Add new school
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateSchoolRequest
 */
-func (a *EducationSchoolAPIService) CreateSchool(ctx context.Context) ApiCreateSchoolRequest {
+func (a *EducationSchoolApiService) CreateSchool(ctx context.Context) ApiCreateSchoolRequest {
 	return ApiCreateSchoolRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -273,7 +273,7 @@ func (a *EducationSchoolAPIService) CreateSchool(ctx context.Context) ApiCreateS
 
 // Execute executes the request
 //  @return EducationSchool
-func (a *EducationSchoolAPIService) CreateSchoolExecute(r ApiCreateSchoolRequest) (*EducationSchool, *http.Response, error) {
+func (a *EducationSchoolApiService) CreateSchoolExecute(r ApiCreateSchoolRequest) (*EducationSchool, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -281,7 +281,7 @@ func (a *EducationSchoolAPIService) CreateSchoolExecute(r ApiCreateSchoolRequest
 		localVarReturnValue *EducationSchool
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolAPIService.CreateSchool")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolApiService.CreateSchool")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -361,7 +361,7 @@ func (a *EducationSchoolAPIService) CreateSchoolExecute(r ApiCreateSchoolRequest
 
 type ApiDeleteClassFromSchoolRequest struct {
 	ctx        context.Context
-	ApiService *EducationSchoolAPIService
+	ApiService *EducationSchoolApiService
 	schoolId   string
 	classId    string
 }
@@ -378,7 +378,7 @@ DeleteClassFromSchool Unassign class from a school
  @param classId key: id or externalId of the class to unassign from school
  @return ApiDeleteClassFromSchoolRequest
 */
-func (a *EducationSchoolAPIService) DeleteClassFromSchool(ctx context.Context, schoolId string, classId string) ApiDeleteClassFromSchoolRequest {
+func (a *EducationSchoolApiService) DeleteClassFromSchool(ctx context.Context, schoolId string, classId string) ApiDeleteClassFromSchoolRequest {
 	return ApiDeleteClassFromSchoolRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -388,14 +388,14 @@ func (a *EducationSchoolAPIService) DeleteClassFromSchool(ctx context.Context, s
 }
 
 // Execute executes the request
-func (a *EducationSchoolAPIService) DeleteClassFromSchoolExecute(r ApiDeleteClassFromSchoolRequest) (*http.Response, error) {
+func (a *EducationSchoolApiService) DeleteClassFromSchoolExecute(r ApiDeleteClassFromSchoolRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolAPIService.DeleteClassFromSchool")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolApiService.DeleteClassFromSchool")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -463,7 +463,7 @@ func (a *EducationSchoolAPIService) DeleteClassFromSchoolExecute(r ApiDeleteClas
 
 type ApiDeleteSchoolRequest struct {
 	ctx        context.Context
-	ApiService *EducationSchoolAPIService
+	ApiService *EducationSchoolApiService
 	schoolId   string
 }
 
@@ -480,7 +480,7 @@ Deletes a school. A school can only be delete if it has the terminationDate prop
  @param schoolId key: id or schoolNumber of school
  @return ApiDeleteSchoolRequest
 */
-func (a *EducationSchoolAPIService) DeleteSchool(ctx context.Context, schoolId string) ApiDeleteSchoolRequest {
+func (a *EducationSchoolApiService) DeleteSchool(ctx context.Context, schoolId string) ApiDeleteSchoolRequest {
 	return ApiDeleteSchoolRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -489,14 +489,14 @@ func (a *EducationSchoolAPIService) DeleteSchool(ctx context.Context, schoolId s
 }
 
 // Execute executes the request
-func (a *EducationSchoolAPIService) DeleteSchoolExecute(r ApiDeleteSchoolRequest) (*http.Response, error) {
+func (a *EducationSchoolApiService) DeleteSchoolExecute(r ApiDeleteSchoolRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolAPIService.DeleteSchool")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolApiService.DeleteSchool")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -563,7 +563,7 @@ func (a *EducationSchoolAPIService) DeleteSchoolExecute(r ApiDeleteSchoolRequest
 
 type ApiDeleteUserFromSchoolRequest struct {
 	ctx        context.Context
-	ApiService *EducationSchoolAPIService
+	ApiService *EducationSchoolApiService
 	schoolId   string
 	userId     string
 }
@@ -580,7 +580,7 @@ DeleteUserFromSchool Unassign user from a school
  @param userId key: id or username of the user to unassign from school
  @return ApiDeleteUserFromSchoolRequest
 */
-func (a *EducationSchoolAPIService) DeleteUserFromSchool(ctx context.Context, schoolId string, userId string) ApiDeleteUserFromSchoolRequest {
+func (a *EducationSchoolApiService) DeleteUserFromSchool(ctx context.Context, schoolId string, userId string) ApiDeleteUserFromSchoolRequest {
 	return ApiDeleteUserFromSchoolRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -590,14 +590,14 @@ func (a *EducationSchoolAPIService) DeleteUserFromSchool(ctx context.Context, sc
 }
 
 // Execute executes the request
-func (a *EducationSchoolAPIService) DeleteUserFromSchoolExecute(r ApiDeleteUserFromSchoolRequest) (*http.Response, error) {
+func (a *EducationSchoolApiService) DeleteUserFromSchoolExecute(r ApiDeleteUserFromSchoolRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolAPIService.DeleteUserFromSchool")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolApiService.DeleteUserFromSchool")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -665,7 +665,7 @@ func (a *EducationSchoolAPIService) DeleteUserFromSchoolExecute(r ApiDeleteUserF
 
 type ApiGetSchoolRequest struct {
 	ctx        context.Context
-	ApiService *EducationSchoolAPIService
+	ApiService *EducationSchoolApiService
 	schoolId   string
 }
 
@@ -680,7 +680,7 @@ GetSchool Get the properties of a specific school
  @param schoolId key: id or schoolNumber of school
  @return ApiGetSchoolRequest
 */
-func (a *EducationSchoolAPIService) GetSchool(ctx context.Context, schoolId string) ApiGetSchoolRequest {
+func (a *EducationSchoolApiService) GetSchool(ctx context.Context, schoolId string) ApiGetSchoolRequest {
 	return ApiGetSchoolRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -690,7 +690,7 @@ func (a *EducationSchoolAPIService) GetSchool(ctx context.Context, schoolId stri
 
 // Execute executes the request
 //  @return EducationSchool
-func (a *EducationSchoolAPIService) GetSchoolExecute(r ApiGetSchoolRequest) (*EducationSchool, *http.Response, error) {
+func (a *EducationSchoolApiService) GetSchoolExecute(r ApiGetSchoolRequest) (*EducationSchool, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -698,7 +698,7 @@ func (a *EducationSchoolAPIService) GetSchoolExecute(r ApiGetSchoolRequest) (*Ed
 		localVarReturnValue *EducationSchool
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolAPIService.GetSchool")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolApiService.GetSchool")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -774,7 +774,7 @@ func (a *EducationSchoolAPIService) GetSchoolExecute(r ApiGetSchoolRequest) (*Ed
 
 type ApiListSchoolClassesRequest struct {
 	ctx        context.Context
-	ApiService *EducationSchoolAPIService
+	ApiService *EducationSchoolApiService
 	schoolId   string
 }
 
@@ -789,7 +789,7 @@ ListSchoolClasses Get the educationClass resources owned by an educationSchool
  @param schoolId key: id or schoolNumber of school
  @return ApiListSchoolClassesRequest
 */
-func (a *EducationSchoolAPIService) ListSchoolClasses(ctx context.Context, schoolId string) ApiListSchoolClassesRequest {
+func (a *EducationSchoolApiService) ListSchoolClasses(ctx context.Context, schoolId string) ApiListSchoolClassesRequest {
 	return ApiListSchoolClassesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -799,7 +799,7 @@ func (a *EducationSchoolAPIService) ListSchoolClasses(ctx context.Context, schoo
 
 // Execute executes the request
 //  @return CollectionOfEducationClass
-func (a *EducationSchoolAPIService) ListSchoolClassesExecute(r ApiListSchoolClassesRequest) (*CollectionOfEducationClass, *http.Response, error) {
+func (a *EducationSchoolApiService) ListSchoolClassesExecute(r ApiListSchoolClassesRequest) (*CollectionOfEducationClass, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -807,7 +807,7 @@ func (a *EducationSchoolAPIService) ListSchoolClassesExecute(r ApiListSchoolClas
 		localVarReturnValue *CollectionOfEducationClass
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolAPIService.ListSchoolClasses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolApiService.ListSchoolClasses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -883,7 +883,7 @@ func (a *EducationSchoolAPIService) ListSchoolClassesExecute(r ApiListSchoolClas
 
 type ApiListSchoolUsersRequest struct {
 	ctx        context.Context
-	ApiService *EducationSchoolAPIService
+	ApiService *EducationSchoolApiService
 	schoolId   string
 }
 
@@ -898,7 +898,7 @@ ListSchoolUsers Get the educationUser resources associated with an educationScho
  @param schoolId key: id or schoolNumber of school
  @return ApiListSchoolUsersRequest
 */
-func (a *EducationSchoolAPIService) ListSchoolUsers(ctx context.Context, schoolId string) ApiListSchoolUsersRequest {
+func (a *EducationSchoolApiService) ListSchoolUsers(ctx context.Context, schoolId string) ApiListSchoolUsersRequest {
 	return ApiListSchoolUsersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -908,7 +908,7 @@ func (a *EducationSchoolAPIService) ListSchoolUsers(ctx context.Context, schoolI
 
 // Execute executes the request
 //  @return CollectionOfEducationUser1
-func (a *EducationSchoolAPIService) ListSchoolUsersExecute(r ApiListSchoolUsersRequest) (*CollectionOfEducationUser1, *http.Response, error) {
+func (a *EducationSchoolApiService) ListSchoolUsersExecute(r ApiListSchoolUsersRequest) (*CollectionOfEducationUser1, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -916,7 +916,7 @@ func (a *EducationSchoolAPIService) ListSchoolUsersExecute(r ApiListSchoolUsersR
 		localVarReturnValue *CollectionOfEducationUser1
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolAPIService.ListSchoolUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolApiService.ListSchoolUsers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -992,7 +992,7 @@ func (a *EducationSchoolAPIService) ListSchoolUsersExecute(r ApiListSchoolUsersR
 
 type ApiListSchoolsRequest struct {
 	ctx        context.Context
-	ApiService *EducationSchoolAPIService
+	ApiService *EducationSchoolApiService
 }
 
 func (r ApiListSchoolsRequest) Execute() (*CollectionOfSchools, *http.Response, error) {
@@ -1005,7 +1005,7 @@ ListSchools Get a list of schools and their properties
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListSchoolsRequest
 */
-func (a *EducationSchoolAPIService) ListSchools(ctx context.Context) ApiListSchoolsRequest {
+func (a *EducationSchoolApiService) ListSchools(ctx context.Context) ApiListSchoolsRequest {
 	return ApiListSchoolsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1014,7 +1014,7 @@ func (a *EducationSchoolAPIService) ListSchools(ctx context.Context) ApiListScho
 
 // Execute executes the request
 //  @return CollectionOfSchools
-func (a *EducationSchoolAPIService) ListSchoolsExecute(r ApiListSchoolsRequest) (*CollectionOfSchools, *http.Response, error) {
+func (a *EducationSchoolApiService) ListSchoolsExecute(r ApiListSchoolsRequest) (*CollectionOfSchools, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1022,7 +1022,7 @@ func (a *EducationSchoolAPIService) ListSchoolsExecute(r ApiListSchoolsRequest) 
 		localVarReturnValue *CollectionOfSchools
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolAPIService.ListSchools")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolApiService.ListSchools")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1097,7 +1097,7 @@ func (a *EducationSchoolAPIService) ListSchoolsExecute(r ApiListSchoolsRequest) 
 
 type ApiUpdateSchoolRequest struct {
 	ctx             context.Context
-	ApiService      *EducationSchoolAPIService
+	ApiService      *EducationSchoolApiService
 	schoolId        string
 	educationSchool *EducationSchool
 }
@@ -1119,7 +1119,7 @@ UpdateSchool Update properties of a school
  @param schoolId key: id or schoolNumber of school
  @return ApiUpdateSchoolRequest
 */
-func (a *EducationSchoolAPIService) UpdateSchool(ctx context.Context, schoolId string) ApiUpdateSchoolRequest {
+func (a *EducationSchoolApiService) UpdateSchool(ctx context.Context, schoolId string) ApiUpdateSchoolRequest {
 	return ApiUpdateSchoolRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1129,7 +1129,7 @@ func (a *EducationSchoolAPIService) UpdateSchool(ctx context.Context, schoolId s
 
 // Execute executes the request
 //  @return EducationSchool
-func (a *EducationSchoolAPIService) UpdateSchoolExecute(r ApiUpdateSchoolRequest) (*EducationSchool, *http.Response, error) {
+func (a *EducationSchoolApiService) UpdateSchoolExecute(r ApiUpdateSchoolRequest) (*EducationSchool, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -1137,7 +1137,7 @@ func (a *EducationSchoolAPIService) UpdateSchoolExecute(r ApiUpdateSchoolRequest
 		localVarReturnValue *EducationSchool
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolAPIService.UpdateSchool")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationSchoolApiService.UpdateSchool")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,12 +1,12 @@
-# \EducationClassTeachersAPI
+# \EducationClassTeachersApi
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddTeacherToClass**](EducationClassTeachersAPI.md#AddTeacherToClass) | **Post** /education/classes/{class-id}/teachers/$ref | Assign a teacher to a class
-[**DeleteTeacherFromClass**](EducationClassTeachersAPI.md#DeleteTeacherFromClass) | **Delete** /education/classes/{class-id}/teachers/{user-id}/$ref | Unassign user as teacher of a class
-[**GetTeachers**](EducationClassTeachersAPI.md#GetTeachers) | **Get** /education/classes/{class-id}/teachers | Get the teachers for a class
+[**AddTeacherToClass**](EducationClassTeachersApi.md#AddTeacherToClass) | **Post** /education/classes/{class-id}/teachers/$ref | Assign a teacher to a class
+[**DeleteTeacherFromClass**](EducationClassTeachersApi.md#DeleteTeacherFromClass) | **Delete** /education/classes/{class-id}/teachers/{user-id}/$ref | Unassign user as teacher of a class
+[**GetTeachers**](EducationClassTeachersApi.md#GetTeachers) | **Get** /education/classes/{class-id}/teachers | Get the teachers for a class
 
 
 
@@ -34,9 +34,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.EducationClassTeachersAPI.AddTeacherToClass(context.Background(), classId).ClassTeacherReference(classTeacherReference).Execute()
+    r, err := apiClient.EducationClassTeachersApi.AddTeacherToClass(context.Background(), classId).ClassTeacherReference(classTeacherReference).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassTeachersAPI.AddTeacherToClass``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassTeachersApi.AddTeacherToClass``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -102,9 +102,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.EducationClassTeachersAPI.DeleteTeacherFromClass(context.Background(), classId, userId).Execute()
+    r, err := apiClient.EducationClassTeachersApi.DeleteTeacherFromClass(context.Background(), classId, userId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassTeachersAPI.DeleteTeacherFromClass``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassTeachersApi.DeleteTeacherFromClass``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -170,13 +170,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationClassTeachersAPI.GetTeachers(context.Background(), classId).Execute()
+    resp, r, err := apiClient.EducationClassTeachersApi.GetTeachers(context.Background(), classId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassTeachersAPI.GetTeachers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassTeachersApi.GetTeachers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTeachers`: CollectionOfEducationUser
-    fmt.Fprintf(os.Stdout, "Response from `EducationClassTeachersAPI.GetTeachers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationClassTeachersApi.GetTeachers`: %v\n", resp)
 }
 ```
 

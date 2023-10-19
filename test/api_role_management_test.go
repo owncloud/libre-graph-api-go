@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing RoleManagementAPIService
+Testing RoleManagementApiService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	"testing"
 )
 
-func Test_libregraph_RoleManagementAPIService(t *testing.T) {
+func Test_libregraph_RoleManagementApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test RoleManagementAPIService GetPermissionRoleDefinition", func(t *testing.T) {
+	t.Run("Test RoleManagementApiService GetPermissionRoleDefinition", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var roleId string
 
-		resp, httpRes, err := apiClient.RoleManagementAPI.GetPermissionRoleDefinition(context.Background(), roleId).Execute()
+		resp, httpRes, err := apiClient.RoleManagementApi.GetPermissionRoleDefinition(context.Background(), roleId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,11 +36,11 @@ func Test_libregraph_RoleManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoleManagementAPIService ListPermissionRoleDefinitions", func(t *testing.T) {
+	t.Run("Test RoleManagementApiService ListPermissionRoleDefinitions", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.RoleManagementAPI.ListPermissionRoleDefinitions(context.Background()).Execute()
+		resp, httpRes, err := apiClient.RoleManagementApi.ListPermissionRoleDefinitions(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

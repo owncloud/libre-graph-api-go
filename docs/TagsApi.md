@@ -1,20 +1,82 @@
-# \MeDriveAPI
+# \TagsApi
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetHome**](MeDriveAPI.md#GetHome) | **Get** /me/drive | Get personal space for user
-[**ListSharedByMe**](MeDriveAPI.md#ListSharedByMe) | **Get** /me/drive/sharedByMe | Get a list of driveItem objects shared by the current user.
-[**ListSharedWithMe**](MeDriveAPI.md#ListSharedWithMe) | **Get** /me/drive/sharedWithMe | Get a list of driveItem objects shared with the owner of a drive.
+[**AssignTags**](TagsApi.md#AssignTags) | **Put** /extensions/org.libregraph/tags | Assign tags to a resource
+[**GetTags**](TagsApi.md#GetTags) | **Get** /extensions/org.libregraph/tags | Get all known tags
+[**UnassignTags**](TagsApi.md#UnassignTags) | **Delete** /extensions/org.libregraph/tags | Unassign tags from a resource
 
 
 
-## GetHome
+## AssignTags
 
-> Drive GetHome(ctx).Execute()
+> AssignTags(ctx).TagAssignment(tagAssignment).Execute()
 
-Get personal space for user
+Assign tags to a resource
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
+)
+
+func main() {
+    tagAssignment := *openapiclient.NewTagAssignment("ResourceId_example", []string{"Tags_example"}) // TagAssignment |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.TagsApi.AssignTags(context.Background()).TagAssignment(tagAssignment).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `TagsApi.AssignTags``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAssignTagsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tagAssignment** | [**TagAssignment**](TagAssignment.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[openId](../README.md#openId)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTags
+
+> CollectionOfTags GetTags(ctx).Execute()
+
+Get all known tags
 
 ### Example
 
@@ -32,13 +94,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeDriveAPI.GetHome(context.Background()).Execute()
+    resp, r, err := apiClient.TagsApi.GetTags(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveAPI.GetHome``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TagsApi.GetTags``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetHome`: Drive
-    fmt.Fprintf(os.Stdout, "Response from `MeDriveAPI.GetHome`: %v\n", resp)
+    // response from `GetTags`: CollectionOfTags
+    fmt.Fprintf(os.Stdout, "Response from `TagsApi.GetTags`: %v\n", resp)
 }
 ```
 
@@ -48,12 +110,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetHomeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTagsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**Drive**](Drive.md)
+[**CollectionOfTags**](CollectionOfTags.md)
 
 ### Authorization
 
@@ -69,13 +131,11 @@ Other parameters are passed through a pointer to a apiGetHomeRequest struct via 
 [[Back to README]](../README.md)
 
 
-## ListSharedByMe
+## UnassignTags
 
-> CollectionOfDriveItems1 ListSharedByMe(ctx).Execute()
+> UnassignTags(ctx).TagUnassignment(tagUnassignment).Execute()
 
-Get a list of driveItem objects shared by the current user.
-
-
+Unassign tags from a resource
 
 ### Example
 
@@ -90,31 +150,34 @@ import (
 )
 
 func main() {
+    tagUnassignment := *openapiclient.NewTagUnassignment("ResourceId_example", []string{"Tags_example"}) // TagUnassignment |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeDriveAPI.ListSharedByMe(context.Background()).Execute()
+    r, err := apiClient.TagsApi.UnassignTags(context.Background()).TagUnassignment(tagUnassignment).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveAPI.ListSharedByMe``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TagsApi.UnassignTags``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListSharedByMe`: CollectionOfDriveItems1
-    fmt.Fprintf(os.Stdout, "Response from `MeDriveAPI.ListSharedByMe`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListSharedByMeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUnassignTagsRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tagUnassignment** | [**TagUnassignment**](TagUnassignment.md) |  | 
 
 ### Return type
 
-[**CollectionOfDriveItems1**](CollectionOfDriveItems1.md)
+ (empty response body)
 
 ### Authorization
 
@@ -122,68 +185,7 @@ Other parameters are passed through a pointer to a apiListSharedByMeRequest stru
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ListSharedWithMe
-
-> CollectionOfDriveItems1 ListSharedWithMe(ctx).Execute()
-
-Get a list of driveItem objects shared with the owner of a drive.
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeDriveAPI.ListSharedWithMe(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveAPI.ListSharedWithMe``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListSharedWithMe`: CollectionOfDriveItems1
-    fmt.Fprintf(os.Stdout, "Response from `MeDriveAPI.ListSharedWithMe`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiListSharedWithMeRequest struct via the builder pattern
-
-
-### Return type
-
-[**CollectionOfDriveItems1**](CollectionOfDriveItems1.md)
-
-### Authorization
-
-[openId](../README.md#openId)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

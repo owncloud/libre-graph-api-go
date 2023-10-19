@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing TagsAPIService
+Testing TagsApiService
 
 */
 
@@ -17,27 +17,27 @@ import (
 	"testing"
 )
 
-func Test_libregraph_TagsAPIService(t *testing.T) {
+func Test_libregraph_TagsApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test TagsAPIService AssignTags", func(t *testing.T) {
+	t.Run("Test TagsApiService AssignTags", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.TagsAPI.AssignTags(context.Background()).Execute()
+		httpRes, err := apiClient.TagsApi.AssignTags(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test TagsAPIService GetTags", func(t *testing.T) {
+	t.Run("Test TagsApiService GetTags", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.TagsAPI.GetTags(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TagsApi.GetTags(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -45,11 +45,11 @@ func Test_libregraph_TagsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TagsAPIService UnassignTags", func(t *testing.T) {
+	t.Run("Test TagsApiService UnassignTags", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.TagsAPI.UnassignTags(context.Background()).Execute()
+		httpRes, err := apiClient.TagsApi.UnassignTags(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

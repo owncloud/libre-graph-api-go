@@ -1,15 +1,15 @@
-# \DrivesPermissionsAPI
+# \DrivesPermissionsApi
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateLink**](DrivesPermissionsAPI.md#CreateLink) | **Post** /drives/{drive-id}/items/{item-id}/createLink | Create a sharing link for a DriveItem
-[**DeletePermission**](DrivesPermissionsAPI.md#DeletePermission) | **Delete** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Delete entity from groups
-[**GetPermission**](DrivesPermissionsAPI.md#GetPermission) | **Get** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Get sharing permission for a file or folder
-[**Invite**](DrivesPermissionsAPI.md#Invite) | **Post** /drives/{drive-id}/items/{item-id}/invite | Send a sharing invitation
-[**ListPermissions**](DrivesPermissionsAPI.md#ListPermissions) | **Get** /drives/{drive-id}/items/{item-id}/permissions | List the effective sharing permissions on a driveItem.
-[**UpdatePermission**](DrivesPermissionsAPI.md#UpdatePermission) | **Patch** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Update sharing permission
+[**CreateLink**](DrivesPermissionsApi.md#CreateLink) | **Post** /drives/{drive-id}/items/{item-id}/createLink | Create a sharing link for a DriveItem
+[**DeletePermission**](DrivesPermissionsApi.md#DeletePermission) | **Delete** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Delete entity from groups
+[**GetPermission**](DrivesPermissionsApi.md#GetPermission) | **Get** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Get sharing permission for a file or folder
+[**Invite**](DrivesPermissionsApi.md#Invite) | **Post** /drives/{drive-id}/items/{item-id}/invite | Send a sharing invitation
+[**ListPermissions**](DrivesPermissionsApi.md#ListPermissions) | **Get** /drives/{drive-id}/items/{item-id}/permissions | List the effective sharing permissions on a driveItem.
+[**UpdatePermission**](DrivesPermissionsApi.md#UpdatePermission) | **Patch** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Update sharing permission
 
 
 
@@ -40,13 +40,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesPermissionsAPI.CreateLink(context.Background(), driveId, itemId).DriveItemCreateLink(driveItemCreateLink).Execute()
+    resp, r, err := apiClient.DrivesPermissionsApi.CreateLink(context.Background(), driveId, itemId).DriveItemCreateLink(driveItemCreateLink).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsAPI.CreateLink``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsApi.CreateLink``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateLink`: Permission
-    fmt.Fprintf(os.Stdout, "Response from `DrivesPermissionsAPI.CreateLink`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DrivesPermissionsApi.CreateLink`: %v\n", resp)
 }
 ```
 
@@ -115,9 +115,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DrivesPermissionsAPI.DeletePermission(context.Background(), driveId, itemId, permId).Execute()
+    r, err := apiClient.DrivesPermissionsApi.DeletePermission(context.Background(), driveId, itemId, permId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsAPI.DeletePermission``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsApi.DeletePermission``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -189,13 +189,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesPermissionsAPI.GetPermission(context.Background(), driveId, itemId, permId).Execute()
+    resp, r, err := apiClient.DrivesPermissionsApi.GetPermission(context.Background(), driveId, itemId, permId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsAPI.GetPermission``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsApi.GetPermission``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPermission`: Permission
-    fmt.Fprintf(os.Stdout, "Response from `DrivesPermissionsAPI.GetPermission`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DrivesPermissionsApi.GetPermission`: %v\n", resp)
 }
 ```
 
@@ -265,13 +265,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesPermissionsAPI.Invite(context.Background(), driveId, itemId).DriveItemInvite(driveItemInvite).Execute()
+    resp, r, err := apiClient.DrivesPermissionsApi.Invite(context.Background(), driveId, itemId).DriveItemInvite(driveItemInvite).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsAPI.Invite``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsApi.Invite``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `Invite`: Permission
-    fmt.Fprintf(os.Stdout, "Response from `DrivesPermissionsAPI.Invite`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DrivesPermissionsApi.Invite`: %v\n", resp)
 }
 ```
 
@@ -339,13 +339,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesPermissionsAPI.ListPermissions(context.Background(), driveId, itemId).Execute()
+    resp, r, err := apiClient.DrivesPermissionsApi.ListPermissions(context.Background(), driveId, itemId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsAPI.ListPermissions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsApi.ListPermissions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListPermissions`: CollectionOfPermissions
-    fmt.Fprintf(os.Stdout, "Response from `DrivesPermissionsAPI.ListPermissions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DrivesPermissionsApi.ListPermissions`: %v\n", resp)
 }
 ```
 
@@ -414,13 +414,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesPermissionsAPI.UpdatePermission(context.Background(), driveId, itemId, permId).Permission(permission).Execute()
+    resp, r, err := apiClient.DrivesPermissionsApi.UpdatePermission(context.Background(), driveId, itemId, permId).Permission(permission).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsAPI.UpdatePermission``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsApi.UpdatePermission``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdatePermission`: Permission
-    fmt.Fprintf(os.Stdout, "Response from `DrivesPermissionsAPI.UpdatePermission`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DrivesPermissionsApi.UpdatePermission`: %v\n", resp)
 }
 ```
 

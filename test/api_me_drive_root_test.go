@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing MeDriveRootAPIService
+Testing MeDriveRootApiService
 
 */
 
@@ -17,16 +17,16 @@ import (
 	"testing"
 )
 
-func Test_libregraph_MeDriveRootAPIService(t *testing.T) {
+func Test_libregraph_MeDriveRootApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test MeDriveRootAPIService HomeGetRoot", func(t *testing.T) {
+	t.Run("Test MeDriveRootApiService HomeGetRoot", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.MeDriveRootAPI.HomeGetRoot(context.Background()).Execute()
+		resp, httpRes, err := apiClient.MeDriveRootApi.HomeGetRoot(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

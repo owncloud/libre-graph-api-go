@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// DrivesPermissionsAPIService DrivesPermissionsAPI service
-type DrivesPermissionsAPIService service
+// DrivesPermissionsApiService DrivesPermissionsApi service
+type DrivesPermissionsApiService service
 
 type ApiCreateLinkRequest struct {
 	ctx                 context.Context
-	ApiService          *DrivesPermissionsAPIService
+	ApiService          *DrivesPermissionsApiService
 	driveId             string
 	itemId              string
 	driveItemCreateLink *DriveItemCreateLink
@@ -65,7 +65,7 @@ For now, The following values are allowed for the type parameter.
  @param itemId key: id of item
  @return ApiCreateLinkRequest
 */
-func (a *DrivesPermissionsAPIService) CreateLink(ctx context.Context, driveId string, itemId string) ApiCreateLinkRequest {
+func (a *DrivesPermissionsApiService) CreateLink(ctx context.Context, driveId string, itemId string) ApiCreateLinkRequest {
 	return ApiCreateLinkRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -76,7 +76,7 @@ func (a *DrivesPermissionsAPIService) CreateLink(ctx context.Context, driveId st
 
 // Execute executes the request
 //  @return Permission
-func (a *DrivesPermissionsAPIService) CreateLinkExecute(r ApiCreateLinkRequest) (*Permission, *http.Response, error) {
+func (a *DrivesPermissionsApiService) CreateLinkExecute(r ApiCreateLinkRequest) (*Permission, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -84,7 +84,7 @@ func (a *DrivesPermissionsAPIService) CreateLinkExecute(r ApiCreateLinkRequest) 
 		localVarReturnValue *Permission
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsAPIService.CreateLink")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsApiService.CreateLink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -163,7 +163,7 @@ func (a *DrivesPermissionsAPIService) CreateLinkExecute(r ApiCreateLinkRequest) 
 
 type ApiDeletePermissionRequest struct {
 	ctx        context.Context
-	ApiService *DrivesPermissionsAPIService
+	ApiService *DrivesPermissionsApiService
 	driveId    string
 	itemId     string
 	permId     string
@@ -187,7 +187,7 @@ Only sharing permissions that are not inherited can be deleted. The `inheritedFr
  @param permId key: id of permission
  @return ApiDeletePermissionRequest
 */
-func (a *DrivesPermissionsAPIService) DeletePermission(ctx context.Context, driveId string, itemId string, permId string) ApiDeletePermissionRequest {
+func (a *DrivesPermissionsApiService) DeletePermission(ctx context.Context, driveId string, itemId string, permId string) ApiDeletePermissionRequest {
 	return ApiDeletePermissionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -198,14 +198,14 @@ func (a *DrivesPermissionsAPIService) DeletePermission(ctx context.Context, driv
 }
 
 // Execute executes the request
-func (a *DrivesPermissionsAPIService) DeletePermissionExecute(r ApiDeletePermissionRequest) (*http.Response, error) {
+func (a *DrivesPermissionsApiService) DeletePermissionExecute(r ApiDeletePermissionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsAPIService.DeletePermission")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsApiService.DeletePermission")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -274,7 +274,7 @@ func (a *DrivesPermissionsAPIService) DeletePermissionExecute(r ApiDeletePermiss
 
 type ApiGetPermissionRequest struct {
 	ctx        context.Context
-	ApiService *DrivesPermissionsAPIService
+	ApiService *DrivesPermissionsApiService
 	driveId    string
 	itemId     string
 	permId     string
@@ -296,7 +296,7 @@ Return the effective sharing permission for a particular permission resource.
  @param permId key: id of permission
  @return ApiGetPermissionRequest
 */
-func (a *DrivesPermissionsAPIService) GetPermission(ctx context.Context, driveId string, itemId string, permId string) ApiGetPermissionRequest {
+func (a *DrivesPermissionsApiService) GetPermission(ctx context.Context, driveId string, itemId string, permId string) ApiGetPermissionRequest {
 	return ApiGetPermissionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -308,7 +308,7 @@ func (a *DrivesPermissionsAPIService) GetPermission(ctx context.Context, driveId
 
 // Execute executes the request
 //  @return Permission
-func (a *DrivesPermissionsAPIService) GetPermissionExecute(r ApiGetPermissionRequest) (*Permission, *http.Response, error) {
+func (a *DrivesPermissionsApiService) GetPermissionExecute(r ApiGetPermissionRequest) (*Permission, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -316,7 +316,7 @@ func (a *DrivesPermissionsAPIService) GetPermissionExecute(r ApiGetPermissionReq
 		localVarReturnValue *Permission
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsAPIService.GetPermission")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsApiService.GetPermission")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -394,7 +394,7 @@ func (a *DrivesPermissionsAPIService) GetPermissionExecute(r ApiGetPermissionReq
 
 type ApiInviteRequest struct {
 	ctx             context.Context
-	ApiService      *DrivesPermissionsAPIService
+	ApiService      *DrivesPermissionsApiService
 	driveId         string
 	itemId          string
 	driveItemInvite *DriveItemInvite
@@ -427,7 +427,7 @@ For now, roles are only identified by a uuid. There are no hardcoded aliases lik
  @param itemId key: id of item
  @return ApiInviteRequest
 */
-func (a *DrivesPermissionsAPIService) Invite(ctx context.Context, driveId string, itemId string) ApiInviteRequest {
+func (a *DrivesPermissionsApiService) Invite(ctx context.Context, driveId string, itemId string) ApiInviteRequest {
 	return ApiInviteRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -438,7 +438,7 @@ func (a *DrivesPermissionsAPIService) Invite(ctx context.Context, driveId string
 
 // Execute executes the request
 //  @return Permission
-func (a *DrivesPermissionsAPIService) InviteExecute(r ApiInviteRequest) (*Permission, *http.Response, error) {
+func (a *DrivesPermissionsApiService) InviteExecute(r ApiInviteRequest) (*Permission, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -446,7 +446,7 @@ func (a *DrivesPermissionsAPIService) InviteExecute(r ApiInviteRequest) (*Permis
 		localVarReturnValue *Permission
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsAPIService.Invite")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsApiService.Invite")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -536,7 +536,7 @@ func (a *DrivesPermissionsAPIService) InviteExecute(r ApiInviteRequest) (*Permis
 
 type ApiListPermissionsRequest struct {
 	ctx        context.Context
-	ApiService *DrivesPermissionsAPIService
+	ApiService *DrivesPermissionsApiService
 	driveId    string
 	itemId     string
 }
@@ -564,7 +564,7 @@ All permission objects have an `id`. A permission representing
  @param itemId key: id of item
  @return ApiListPermissionsRequest
 */
-func (a *DrivesPermissionsAPIService) ListPermissions(ctx context.Context, driveId string, itemId string) ApiListPermissionsRequest {
+func (a *DrivesPermissionsApiService) ListPermissions(ctx context.Context, driveId string, itemId string) ApiListPermissionsRequest {
 	return ApiListPermissionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -575,7 +575,7 @@ func (a *DrivesPermissionsAPIService) ListPermissions(ctx context.Context, drive
 
 // Execute executes the request
 //  @return CollectionOfPermissions
-func (a *DrivesPermissionsAPIService) ListPermissionsExecute(r ApiListPermissionsRequest) (*CollectionOfPermissions, *http.Response, error) {
+func (a *DrivesPermissionsApiService) ListPermissionsExecute(r ApiListPermissionsRequest) (*CollectionOfPermissions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -583,7 +583,7 @@ func (a *DrivesPermissionsAPIService) ListPermissionsExecute(r ApiListPermission
 		localVarReturnValue *CollectionOfPermissions
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsAPIService.ListPermissions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsApiService.ListPermissions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -660,7 +660,7 @@ func (a *DrivesPermissionsAPIService) ListPermissionsExecute(r ApiListPermission
 
 type ApiUpdatePermissionRequest struct {
 	ctx        context.Context
-	ApiService *DrivesPermissionsAPIService
+	ApiService *DrivesPermissionsApiService
 	driveId    string
 	itemId     string
 	permId     string
@@ -691,7 +691,7 @@ Only the `roles`, `expirationDateTime` and `password` properties can be modified
  @param permId key: id of permission
  @return ApiUpdatePermissionRequest
 */
-func (a *DrivesPermissionsAPIService) UpdatePermission(ctx context.Context, driveId string, itemId string, permId string) ApiUpdatePermissionRequest {
+func (a *DrivesPermissionsApiService) UpdatePermission(ctx context.Context, driveId string, itemId string, permId string) ApiUpdatePermissionRequest {
 	return ApiUpdatePermissionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -703,7 +703,7 @@ func (a *DrivesPermissionsAPIService) UpdatePermission(ctx context.Context, driv
 
 // Execute executes the request
 //  @return Permission
-func (a *DrivesPermissionsAPIService) UpdatePermissionExecute(r ApiUpdatePermissionRequest) (*Permission, *http.Response, error) {
+func (a *DrivesPermissionsApiService) UpdatePermissionExecute(r ApiUpdatePermissionRequest) (*Permission, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -711,7 +711,7 @@ func (a *DrivesPermissionsAPIService) UpdatePermissionExecute(r ApiUpdatePermiss
 		localVarReturnValue *Permission
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsAPIService.UpdatePermission")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsApiService.UpdatePermission")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,21 +1,21 @@
-# \UserAPI
+# \DrivesApi
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteUser**](UserAPI.md#DeleteUser) | **Delete** /users/{user-id} | Delete entity from users
-[**ExportPersonalData**](UserAPI.md#ExportPersonalData) | **Post** /users/{user-id}/exportPersonalData | export personal data of a user
-[**GetUser**](UserAPI.md#GetUser) | **Get** /users/{user-id} | Get entity from users by key
-[**UpdateUser**](UserAPI.md#UpdateUser) | **Patch** /users/{user-id} | Update entity in users
+[**CreateDrive**](DrivesApi.md#CreateDrive) | **Post** /drives | Create a new drive of a specific type
+[**DeleteDrive**](DrivesApi.md#DeleteDrive) | **Delete** /drives/{drive-id} | Delete a specific space
+[**GetDrive**](DrivesApi.md#GetDrive) | **Get** /drives/{drive-id} | Get drive by id
+[**UpdateDrive**](DrivesApi.md#UpdateDrive) | **Patch** /drives/{drive-id} | Update the drive
 
 
 
-## DeleteUser
+## CreateDrive
 
-> DeleteUser(ctx, userId).IfMatch(ifMatch).Execute()
+> Drive CreateDrive(ctx).Drive(drive).Execute()
 
-Delete entity from users
+Create a new drive of a specific type
 
 ### Example
 
@@ -30,14 +30,78 @@ import (
 )
 
 func main() {
-    userId := "userId_example" // string | key: id or name of user
+    drive := *openapiclient.NewDrive("Name_example") // Drive | New space property values
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DrivesApi.CreateDrive(context.Background()).Drive(drive).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.CreateDrive``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateDrive`: Drive
+    fmt.Fprintf(os.Stdout, "Response from `DrivesApi.CreateDrive`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateDriveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drive** | [**Drive**](Drive.md) | New space property values | 
+
+### Return type
+
+[**Drive**](Drive.md)
+
+### Authorization
+
+[openId](../README.md#openId)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteDrive
+
+> DeleteDrive(ctx, driveId).IfMatch(ifMatch).Execute()
+
+Delete a specific space
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
+)
+
+func main() {
+    driveId := "driveId_example" // string | key: id of drive
     ifMatch := "ifMatch_example" // string | ETag (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UserAPI.DeleteUser(context.Background(), userId).IfMatch(ifMatch).Execute()
+    r, err := apiClient.DrivesApi.DeleteDrive(context.Background(), driveId).IfMatch(ifMatch).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.DeleteUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.DeleteDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -49,11 +113,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | key: id or name of user | 
+**driveId** | **string** | key: id of drive | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteDriveRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -79,79 +143,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ExportPersonalData
+## GetDrive
 
-> ExportPersonalData(ctx, userId).ExportPersonalDataRequest(exportPersonalDataRequest).Execute()
+> Drive GetDrive(ctx, driveId).Execute()
 
-export personal data of a user
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
-)
-
-func main() {
-    userId := "userId_example" // string | key: id or name of user
-    exportPersonalDataRequest := *openapiclient.NewExportPersonalDataRequest() // ExportPersonalDataRequest | destination the file should be created at (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UserAPI.ExportPersonalData(context.Background(), userId).ExportPersonalDataRequest(exportPersonalDataRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.ExportPersonalData``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | key: id or name of user | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiExportPersonalDataRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **exportPersonalDataRequest** | [**ExportPersonalDataRequest**](ExportPersonalDataRequest.md) | destination the file should be created at | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[openId](../README.md#openId)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetUser
-
-> User GetUser(ctx, userId).Select_(select_).Expand(expand).Execute()
-
-Get entity from users by key
+Get drive by id
 
 ### Example
 
@@ -166,19 +162,17 @@ import (
 )
 
 func main() {
-    userId := "userId_example" // string | key: id or name of user
-    select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
-    expand := []string{"Expand_example"} // []string | Expand related entities (optional)
+    driveId := "driveId_example" // string | key: id of drive
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserAPI.GetUser(context.Background(), userId).Select_(select_).Expand(expand).Execute()
+    resp, r, err := apiClient.DrivesApi.GetDrive(context.Background(), driveId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.GetUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.GetDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetUser`: User
-    fmt.Fprintf(os.Stdout, "Response from `UserAPI.GetUser`: %v\n", resp)
+    // response from `GetDrive`: Drive
+    fmt.Fprintf(os.Stdout, "Response from `DrivesApi.GetDrive`: %v\n", resp)
 }
 ```
 
@@ -188,22 +182,20 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | key: id or name of user | 
+**driveId** | **string** | key: id of drive | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetDriveRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **select_** | **[]string** | Select properties to be returned | 
- **expand** | **[]string** | Expand related entities | 
 
 ### Return type
 
-[**User**](User.md)
+[**Drive**](Drive.md)
 
 ### Authorization
 
@@ -219,11 +211,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateUser
+## UpdateDrive
 
-> User UpdateUser(ctx, userId).User(user).Execute()
+> Drive UpdateDrive(ctx, driveId).Drive(drive).Execute()
 
-Update entity in users
+Update the drive
 
 ### Example
 
@@ -238,18 +230,18 @@ import (
 )
 
 func main() {
-    userId := "userId_example" // string | key: id of user
-    user := *openapiclient.NewUser() // User | New property values
+    driveId := "driveId_example" // string | key: id of drive
+    drive := *openapiclient.NewDrive("Name_example") // Drive | New space values
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserAPI.UpdateUser(context.Background(), userId).User(user).Execute()
+    resp, r, err := apiClient.DrivesApi.UpdateDrive(context.Background(), driveId).Drive(drive).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.UpdateUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.UpdateDrive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateUser`: User
-    fmt.Fprintf(os.Stdout, "Response from `UserAPI.UpdateUser`: %v\n", resp)
+    // response from `UpdateDrive`: Drive
+    fmt.Fprintf(os.Stdout, "Response from `DrivesApi.UpdateDrive`: %v\n", resp)
 }
 ```
 
@@ -259,21 +251,21 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | key: id of user | 
+**driveId** | **string** | key: id of drive | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateDriveRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **user** | [**User**](User.md) | New property values | 
+ **drive** | [**Drive**](Drive.md) | New space values | 
 
 ### Return type
 
-[**User**](User.md)
+[**Drive**](Drive.md)
 
 ### Authorization
 

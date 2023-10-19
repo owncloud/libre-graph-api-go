@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// MeDriveRootAPIService MeDriveRootAPI service
-type MeDriveRootAPIService service
+// MeDriveRootApiService MeDriveRootApi service
+type MeDriveRootApiService service
 
 type ApiHomeGetRootRequest struct {
 	ctx        context.Context
-	ApiService *MeDriveRootAPIService
+	ApiService *MeDriveRootApiService
 }
 
 func (r ApiHomeGetRootRequest) Execute() (*DriveItem, *http.Response, error) {
@@ -36,7 +36,7 @@ HomeGetRoot Get root from personal space
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiHomeGetRootRequest
 */
-func (a *MeDriveRootAPIService) HomeGetRoot(ctx context.Context) ApiHomeGetRootRequest {
+func (a *MeDriveRootApiService) HomeGetRoot(ctx context.Context) ApiHomeGetRootRequest {
 	return ApiHomeGetRootRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -45,7 +45,7 @@ func (a *MeDriveRootAPIService) HomeGetRoot(ctx context.Context) ApiHomeGetRootR
 
 // Execute executes the request
 //  @return DriveItem
-func (a *MeDriveRootAPIService) HomeGetRootExecute(r ApiHomeGetRootRequest) (*DriveItem, *http.Response, error) {
+func (a *MeDriveRootApiService) HomeGetRootExecute(r ApiHomeGetRootRequest) (*DriveItem, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -53,7 +53,7 @@ func (a *MeDriveRootAPIService) HomeGetRootExecute(r ApiHomeGetRootRequest) (*Dr
 		localVarReturnValue *DriveItem
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootAPIService.HomeGetRoot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootApiService.HomeGetRoot")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

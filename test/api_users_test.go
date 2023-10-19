@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing UsersAPIService
+Testing UsersApiService
 
 */
 
@@ -17,16 +17,16 @@ import (
 	"testing"
 )
 
-func Test_libregraph_UsersAPIService(t *testing.T) {
+func Test_libregraph_UsersApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test UsersAPIService CreateUser", func(t *testing.T) {
+	t.Run("Test UsersApiService CreateUser", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersAPI.CreateUser(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersApi.CreateUser(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_libregraph_UsersAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersAPIService ListUsers", func(t *testing.T) {
+	t.Run("Test UsersApiService ListUsers", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersAPI.ListUsers(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersApi.ListUsers(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

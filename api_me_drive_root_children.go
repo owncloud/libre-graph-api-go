@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// MeDriveRootChildrenAPIService MeDriveRootChildrenAPI service
-type MeDriveRootChildrenAPIService service
+// MeDriveRootChildrenApiService MeDriveRootChildrenApi service
+type MeDriveRootChildrenApiService service
 
 type ApiHomeGetChildrenRequest struct {
 	ctx        context.Context
-	ApiService *MeDriveRootChildrenAPIService
+	ApiService *MeDriveRootChildrenApiService
 }
 
 func (r ApiHomeGetChildrenRequest) Execute() (*CollectionOfDriveItems, *http.Response, error) {
@@ -36,7 +36,7 @@ HomeGetChildren Get children from drive
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiHomeGetChildrenRequest
 */
-func (a *MeDriveRootChildrenAPIService) HomeGetChildren(ctx context.Context) ApiHomeGetChildrenRequest {
+func (a *MeDriveRootChildrenApiService) HomeGetChildren(ctx context.Context) ApiHomeGetChildrenRequest {
 	return ApiHomeGetChildrenRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -45,7 +45,7 @@ func (a *MeDriveRootChildrenAPIService) HomeGetChildren(ctx context.Context) Api
 
 // Execute executes the request
 //  @return CollectionOfDriveItems
-func (a *MeDriveRootChildrenAPIService) HomeGetChildrenExecute(r ApiHomeGetChildrenRequest) (*CollectionOfDriveItems, *http.Response, error) {
+func (a *MeDriveRootChildrenApiService) HomeGetChildrenExecute(r ApiHomeGetChildrenRequest) (*CollectionOfDriveItems, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -53,7 +53,7 @@ func (a *MeDriveRootChildrenAPIService) HomeGetChildrenExecute(r ApiHomeGetChild
 		localVarReturnValue *CollectionOfDriveItems
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootChildrenAPIService.HomeGetChildren")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveRootChildrenApiService.HomeGetChildren")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

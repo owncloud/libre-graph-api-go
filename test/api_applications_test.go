@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing ApplicationsAPIService
+Testing ApplicationsApiService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	"testing"
 )
 
-func Test_libregraph_ApplicationsAPIService(t *testing.T) {
+func Test_libregraph_ApplicationsApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ApplicationsAPIService GetApplication", func(t *testing.T) {
+	t.Run("Test ApplicationsApiService GetApplication", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var applicationId string
 
-		resp, httpRes, err := apiClient.ApplicationsAPI.GetApplication(context.Background(), applicationId).Execute()
+		resp, httpRes, err := apiClient.ApplicationsApi.GetApplication(context.Background(), applicationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,11 +36,11 @@ func Test_libregraph_ApplicationsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ApplicationsAPIService ListApplications", func(t *testing.T) {
+	t.Run("Test ApplicationsApiService ListApplications", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.ApplicationsAPI.ListApplications(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ApplicationsApi.ListApplications(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

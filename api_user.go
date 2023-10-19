@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// UserAPIService UserAPI service
-type UserAPIService service
+// UserApiService UserApi service
+type UserApiService service
 
 type ApiDeleteUserRequest struct {
 	ctx        context.Context
-	ApiService *UserAPIService
+	ApiService *UserApiService
 	userId     string
 	ifMatch    *string
 }
@@ -46,7 +46,7 @@ DeleteUser Delete entity from users
  @param userId key: id or name of user
  @return ApiDeleteUserRequest
 */
-func (a *UserAPIService) DeleteUser(ctx context.Context, userId string) ApiDeleteUserRequest {
+func (a *UserApiService) DeleteUser(ctx context.Context, userId string) ApiDeleteUserRequest {
 	return ApiDeleteUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -55,14 +55,14 @@ func (a *UserAPIService) DeleteUser(ctx context.Context, userId string) ApiDelet
 }
 
 // Execute executes the request
-func (a *UserAPIService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Response, error) {
+func (a *UserApiService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.DeleteUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.DeleteUser")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -132,7 +132,7 @@ func (a *UserAPIService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Respon
 
 type ApiExportPersonalDataRequest struct {
 	ctx                       context.Context
-	ApiService                *UserAPIService
+	ApiService                *UserApiService
 	userId                    string
 	exportPersonalDataRequest *ExportPersonalDataRequest
 }
@@ -154,7 +154,7 @@ ExportPersonalData export personal data of a user
  @param userId key: id or name of user
  @return ApiExportPersonalDataRequest
 */
-func (a *UserAPIService) ExportPersonalData(ctx context.Context, userId string) ApiExportPersonalDataRequest {
+func (a *UserApiService) ExportPersonalData(ctx context.Context, userId string) ApiExportPersonalDataRequest {
 	return ApiExportPersonalDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -163,14 +163,14 @@ func (a *UserAPIService) ExportPersonalData(ctx context.Context, userId string) 
 }
 
 // Execute executes the request
-func (a *UserAPIService) ExportPersonalDataExecute(r ApiExportPersonalDataRequest) (*http.Response, error) {
+func (a *UserApiService) ExportPersonalDataExecute(r ApiExportPersonalDataRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.ExportPersonalData")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.ExportPersonalData")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -239,7 +239,7 @@ func (a *UserAPIService) ExportPersonalDataExecute(r ApiExportPersonalDataReques
 
 type ApiGetUserRequest struct {
 	ctx        context.Context
-	ApiService *UserAPIService
+	ApiService *UserApiService
 	userId     string
 	select_    *[]string
 	expand     *[]string
@@ -268,7 +268,7 @@ GetUser Get entity from users by key
  @param userId key: id or name of user
  @return ApiGetUserRequest
 */
-func (a *UserAPIService) GetUser(ctx context.Context, userId string) ApiGetUserRequest {
+func (a *UserApiService) GetUser(ctx context.Context, userId string) ApiGetUserRequest {
 	return ApiGetUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -278,7 +278,7 @@ func (a *UserAPIService) GetUser(ctx context.Context, userId string) ApiGetUserR
 
 // Execute executes the request
 //  @return User
-func (a *UserAPIService) GetUserExecute(r ApiGetUserRequest) (*User, *http.Response, error) {
+func (a *UserApiService) GetUserExecute(r ApiGetUserRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -286,7 +286,7 @@ func (a *UserAPIService) GetUserExecute(r ApiGetUserRequest) (*User, *http.Respo
 		localVarReturnValue *User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.GetUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.GetUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -368,7 +368,7 @@ func (a *UserAPIService) GetUserExecute(r ApiGetUserRequest) (*User, *http.Respo
 
 type ApiUpdateUserRequest struct {
 	ctx        context.Context
-	ApiService *UserAPIService
+	ApiService *UserApiService
 	userId     string
 	user       *User
 }
@@ -390,7 +390,7 @@ UpdateUser Update entity in users
  @param userId key: id of user
  @return ApiUpdateUserRequest
 */
-func (a *UserAPIService) UpdateUser(ctx context.Context, userId string) ApiUpdateUserRequest {
+func (a *UserApiService) UpdateUser(ctx context.Context, userId string) ApiUpdateUserRequest {
 	return ApiUpdateUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -400,7 +400,7 @@ func (a *UserAPIService) UpdateUser(ctx context.Context, userId string) ApiUpdat
 
 // Execute executes the request
 //  @return User
-func (a *UserAPIService) UpdateUserExecute(r ApiUpdateUserRequest) (*User, *http.Response, error) {
+func (a *UserApiService) UpdateUserExecute(r ApiUpdateUserRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -408,7 +408,7 @@ func (a *UserAPIService) UpdateUserExecute(r ApiUpdateUserRequest) (*User, *http
 		localVarReturnValue *User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.UpdateUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.UpdateUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

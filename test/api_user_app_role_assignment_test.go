@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing UserAppRoleAssignmentAPIService
+Testing UserAppRoleAssignmentApiService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	"testing"
 )
 
-func Test_libregraph_UserAppRoleAssignmentAPIService(t *testing.T) {
+func Test_libregraph_UserAppRoleAssignmentApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test UserAppRoleAssignmentAPIService UserCreateAppRoleAssignments", func(t *testing.T) {
+	t.Run("Test UserAppRoleAssignmentApiService UserCreateAppRoleAssignments", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var userId string
 
-		resp, httpRes, err := apiClient.UserAppRoleAssignmentAPI.UserCreateAppRoleAssignments(context.Background(), userId).Execute()
+		resp, httpRes, err := apiClient.UserAppRoleAssignmentApi.UserCreateAppRoleAssignments(context.Background(), userId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,27 +36,27 @@ func Test_libregraph_UserAppRoleAssignmentAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test UserAppRoleAssignmentAPIService UserDeleteAppRoleAssignments", func(t *testing.T) {
+	t.Run("Test UserAppRoleAssignmentApiService UserDeleteAppRoleAssignments", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var userId string
 		var appRoleAssignmentId string
 
-		httpRes, err := apiClient.UserAppRoleAssignmentAPI.UserDeleteAppRoleAssignments(context.Background(), userId, appRoleAssignmentId).Execute()
+		httpRes, err := apiClient.UserAppRoleAssignmentApi.UserDeleteAppRoleAssignments(context.Background(), userId, appRoleAssignmentId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test UserAppRoleAssignmentAPIService UserListAppRoleAssignments", func(t *testing.T) {
+	t.Run("Test UserAppRoleAssignmentApiService UserListAppRoleAssignments", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var userId string
 
-		resp, httpRes, err := apiClient.UserAppRoleAssignmentAPI.UserListAppRoleAssignments(context.Background(), userId).Execute()
+		resp, httpRes, err := apiClient.UserAppRoleAssignmentApi.UserListAppRoleAssignments(context.Background(), userId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

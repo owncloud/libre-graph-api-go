@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing MeChangepasswordAPIService
+Testing MeChangepasswordApiService
 
 */
 
@@ -17,16 +17,16 @@ import (
 	"testing"
 )
 
-func Test_libregraph_MeChangepasswordAPIService(t *testing.T) {
+func Test_libregraph_MeChangepasswordApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test MeChangepasswordAPIService ChangeOwnPassword", func(t *testing.T) {
+	t.Run("Test MeChangepasswordApiService ChangeOwnPassword", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.MeChangepasswordAPI.ChangeOwnPassword(context.Background()).Execute()
+		httpRes, err := apiClient.MeChangepasswordApi.ChangeOwnPassword(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

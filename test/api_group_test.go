@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing GroupAPIService
+Testing GroupApiService
 
 */
 
@@ -17,72 +17,58 @@ import (
 	"testing"
 )
 
-func Test_libregraph_GroupAPIService(t *testing.T) {
+func Test_libregraph_GroupApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test GroupAPIService AddMember", func(t *testing.T) {
+	t.Run("Test GroupApiService AddMember", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var groupId string
 
-		httpRes, err := apiClient.GroupAPI.AddMember(context.Background(), groupId).Execute()
+		httpRes, err := apiClient.GroupApi.AddMember(context.Background(), groupId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test GroupAPIService DeleteGroup", func(t *testing.T) {
+	t.Run("Test GroupApiService DeleteGroup", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var groupId string
 
-		httpRes, err := apiClient.GroupAPI.DeleteGroup(context.Background(), groupId).Execute()
+		httpRes, err := apiClient.GroupApi.DeleteGroup(context.Background(), groupId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test GroupAPIService DeleteMember", func(t *testing.T) {
+	t.Run("Test GroupApiService DeleteMember", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var groupId string
 		var directoryObjectId string
 
-		httpRes, err := apiClient.GroupAPI.DeleteMember(context.Background(), groupId, directoryObjectId).Execute()
+		httpRes, err := apiClient.GroupApi.DeleteMember(context.Background(), groupId, directoryObjectId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test GroupAPIService GetGroup", func(t *testing.T) {
+	t.Run("Test GroupApiService GetGroup", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var groupId string
 
-		resp, httpRes, err := apiClient.GroupAPI.GetGroup(context.Background(), groupId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test GroupAPIService ListMembers", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		var groupId string
-
-		resp, httpRes, err := apiClient.GroupAPI.ListMembers(context.Background(), groupId).Execute()
+		resp, httpRes, err := apiClient.GroupApi.GetGroup(context.Background(), groupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -90,13 +76,27 @@ func Test_libregraph_GroupAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test GroupAPIService UpdateGroup", func(t *testing.T) {
+	t.Run("Test GroupApiService ListMembers", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var groupId string
 
-		httpRes, err := apiClient.GroupAPI.UpdateGroup(context.Background(), groupId).Execute()
+		resp, httpRes, err := apiClient.GroupApi.ListMembers(context.Background(), groupId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GroupApiService UpdateGroup", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var groupId string
+
+		httpRes, err := apiClient.GroupApi.UpdateGroup(context.Background(), groupId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

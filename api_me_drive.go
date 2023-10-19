@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// MeDriveAPIService MeDriveAPI service
-type MeDriveAPIService service
+// MeDriveApiService MeDriveApi service
+type MeDriveApiService service
 
 type ApiGetHomeRequest struct {
 	ctx        context.Context
-	ApiService *MeDriveAPIService
+	ApiService *MeDriveApiService
 }
 
 func (r ApiGetHomeRequest) Execute() (*Drive, *http.Response, error) {
@@ -36,7 +36,7 @@ GetHome Get personal space for user
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetHomeRequest
 */
-func (a *MeDriveAPIService) GetHome(ctx context.Context) ApiGetHomeRequest {
+func (a *MeDriveApiService) GetHome(ctx context.Context) ApiGetHomeRequest {
 	return ApiGetHomeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -45,7 +45,7 @@ func (a *MeDriveAPIService) GetHome(ctx context.Context) ApiGetHomeRequest {
 
 // Execute executes the request
 //  @return Drive
-func (a *MeDriveAPIService) GetHomeExecute(r ApiGetHomeRequest) (*Drive, *http.Response, error) {
+func (a *MeDriveApiService) GetHomeExecute(r ApiGetHomeRequest) (*Drive, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -53,7 +53,7 @@ func (a *MeDriveAPIService) GetHomeExecute(r ApiGetHomeRequest) (*Drive, *http.R
 		localVarReturnValue *Drive
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveAPIService.GetHome")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveApiService.GetHome")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -128,7 +128,7 @@ func (a *MeDriveAPIService) GetHomeExecute(r ApiGetHomeRequest) (*Drive, *http.R
 
 type ApiListSharedByMeRequest struct {
 	ctx        context.Context
-	ApiService *MeDriveAPIService
+	ApiService *MeDriveApiService
 }
 
 func (r ApiListSharedByMeRequest) Execute() (*CollectionOfDriveItems1, *http.Response, error) {
@@ -144,7 +144,7 @@ The `driveItems` returned from the `sharedByMe` method always include the `permi
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListSharedByMeRequest
 */
-func (a *MeDriveAPIService) ListSharedByMe(ctx context.Context) ApiListSharedByMeRequest {
+func (a *MeDriveApiService) ListSharedByMe(ctx context.Context) ApiListSharedByMeRequest {
 	return ApiListSharedByMeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -153,7 +153,7 @@ func (a *MeDriveAPIService) ListSharedByMe(ctx context.Context) ApiListSharedByM
 
 // Execute executes the request
 //  @return CollectionOfDriveItems1
-func (a *MeDriveAPIService) ListSharedByMeExecute(r ApiListSharedByMeRequest) (*CollectionOfDriveItems1, *http.Response, error) {
+func (a *MeDriveApiService) ListSharedByMeExecute(r ApiListSharedByMeRequest) (*CollectionOfDriveItems1, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -161,7 +161,7 @@ func (a *MeDriveAPIService) ListSharedByMeExecute(r ApiListSharedByMeRequest) (*
 		localVarReturnValue *CollectionOfDriveItems1
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveAPIService.ListSharedByMe")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveApiService.ListSharedByMe")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -236,7 +236,7 @@ func (a *MeDriveAPIService) ListSharedByMeExecute(r ApiListSharedByMeRequest) (*
 
 type ApiListSharedWithMeRequest struct {
 	ctx        context.Context
-	ApiService *MeDriveAPIService
+	ApiService *MeDriveApiService
 }
 
 func (r ApiListSharedWithMeRequest) Execute() (*CollectionOfDriveItems1, *http.Response, error) {
@@ -252,7 +252,7 @@ The `driveItems` returned from the `sharedWithMe` method always include the `rem
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListSharedWithMeRequest
 */
-func (a *MeDriveAPIService) ListSharedWithMe(ctx context.Context) ApiListSharedWithMeRequest {
+func (a *MeDriveApiService) ListSharedWithMe(ctx context.Context) ApiListSharedWithMeRequest {
 	return ApiListSharedWithMeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -261,7 +261,7 @@ func (a *MeDriveAPIService) ListSharedWithMe(ctx context.Context) ApiListSharedW
 
 // Execute executes the request
 //  @return CollectionOfDriveItems1
-func (a *MeDriveAPIService) ListSharedWithMeExecute(r ApiListSharedWithMeRequest) (*CollectionOfDriveItems1, *http.Response, error) {
+func (a *MeDriveApiService) ListSharedWithMeExecute(r ApiListSharedWithMeRequest) (*CollectionOfDriveItems1, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *MeDriveAPIService) ListSharedWithMeExecute(r ApiListSharedWithMeRequest
 		localVarReturnValue *CollectionOfDriveItems1
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveAPIService.ListSharedWithMe")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeDriveApiService.ListSharedWithMe")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

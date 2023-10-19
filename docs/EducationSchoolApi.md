@@ -1,20 +1,20 @@
-# \EducationSchoolAPI
+# \EducationSchoolApi
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddClassToSchool**](EducationSchoolAPI.md#AddClassToSchool) | **Post** /education/schools/{school-id}/classes/$ref | Assign a class to a school
-[**AddUserToSchool**](EducationSchoolAPI.md#AddUserToSchool) | **Post** /education/schools/{school-id}/users/$ref | Assign a user to a school
-[**CreateSchool**](EducationSchoolAPI.md#CreateSchool) | **Post** /education/schools | Add new school
-[**DeleteClassFromSchool**](EducationSchoolAPI.md#DeleteClassFromSchool) | **Delete** /education/schools/{school-id}/classes/{class-id}/$ref | Unassign class from a school
-[**DeleteSchool**](EducationSchoolAPI.md#DeleteSchool) | **Delete** /education/schools/{school-id} | Delete school
-[**DeleteUserFromSchool**](EducationSchoolAPI.md#DeleteUserFromSchool) | **Delete** /education/schools/{school-id}/users/{user-id}/$ref | Unassign user from a school
-[**GetSchool**](EducationSchoolAPI.md#GetSchool) | **Get** /education/schools/{school-id} | Get the properties of a specific school
-[**ListSchoolClasses**](EducationSchoolAPI.md#ListSchoolClasses) | **Get** /education/schools/{school-id}/classes | Get the educationClass resources owned by an educationSchool
-[**ListSchoolUsers**](EducationSchoolAPI.md#ListSchoolUsers) | **Get** /education/schools/{school-id}/users | Get the educationUser resources associated with an educationSchool
-[**ListSchools**](EducationSchoolAPI.md#ListSchools) | **Get** /education/schools | Get a list of schools and their properties
-[**UpdateSchool**](EducationSchoolAPI.md#UpdateSchool) | **Patch** /education/schools/{school-id} | Update properties of a school
+[**AddClassToSchool**](EducationSchoolApi.md#AddClassToSchool) | **Post** /education/schools/{school-id}/classes/$ref | Assign a class to a school
+[**AddUserToSchool**](EducationSchoolApi.md#AddUserToSchool) | **Post** /education/schools/{school-id}/users/$ref | Assign a user to a school
+[**CreateSchool**](EducationSchoolApi.md#CreateSchool) | **Post** /education/schools | Add new school
+[**DeleteClassFromSchool**](EducationSchoolApi.md#DeleteClassFromSchool) | **Delete** /education/schools/{school-id}/classes/{class-id}/$ref | Unassign class from a school
+[**DeleteSchool**](EducationSchoolApi.md#DeleteSchool) | **Delete** /education/schools/{school-id} | Delete school
+[**DeleteUserFromSchool**](EducationSchoolApi.md#DeleteUserFromSchool) | **Delete** /education/schools/{school-id}/users/{user-id}/$ref | Unassign user from a school
+[**GetSchool**](EducationSchoolApi.md#GetSchool) | **Get** /education/schools/{school-id} | Get the properties of a specific school
+[**ListSchoolClasses**](EducationSchoolApi.md#ListSchoolClasses) | **Get** /education/schools/{school-id}/classes | Get the educationClass resources owned by an educationSchool
+[**ListSchoolUsers**](EducationSchoolApi.md#ListSchoolUsers) | **Get** /education/schools/{school-id}/users | Get the educationUser resources associated with an educationSchool
+[**ListSchools**](EducationSchoolApi.md#ListSchools) | **Get** /education/schools | Get a list of schools and their properties
+[**UpdateSchool**](EducationSchoolApi.md#UpdateSchool) | **Patch** /education/schools/{school-id} | Update properties of a school
 
 
 
@@ -42,9 +42,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.EducationSchoolAPI.AddClassToSchool(context.Background(), schoolId).ClassReference(classReference).Execute()
+    r, err := apiClient.EducationSchoolApi.AddClassToSchool(context.Background(), schoolId).ClassReference(classReference).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolAPI.AddClassToSchool``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.AddClassToSchool``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -110,9 +110,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.EducationSchoolAPI.AddUserToSchool(context.Background(), schoolId).EducationUserReference(educationUserReference).Execute()
+    r, err := apiClient.EducationSchoolApi.AddUserToSchool(context.Background(), schoolId).EducationUserReference(educationUserReference).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolAPI.AddUserToSchool``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.AddUserToSchool``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -177,13 +177,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationSchoolAPI.CreateSchool(context.Background()).EducationSchool(educationSchool).Execute()
+    resp, r, err := apiClient.EducationSchoolApi.CreateSchool(context.Background()).EducationSchool(educationSchool).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolAPI.CreateSchool``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.CreateSchool``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateSchool`: EducationSchool
-    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolAPI.CreateSchool`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolApi.CreateSchool`: %v\n", resp)
 }
 ```
 
@@ -242,9 +242,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.EducationSchoolAPI.DeleteClassFromSchool(context.Background(), schoolId, classId).Execute()
+    r, err := apiClient.EducationSchoolApi.DeleteClassFromSchool(context.Background(), schoolId, classId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolAPI.DeleteClassFromSchool``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.DeleteClassFromSchool``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -312,9 +312,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.EducationSchoolAPI.DeleteSchool(context.Background(), schoolId).Execute()
+    r, err := apiClient.EducationSchoolApi.DeleteSchool(context.Background(), schoolId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolAPI.DeleteSchool``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.DeleteSchool``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -379,9 +379,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.EducationSchoolAPI.DeleteUserFromSchool(context.Background(), schoolId, userId).Execute()
+    r, err := apiClient.EducationSchoolApi.DeleteUserFromSchool(context.Background(), schoolId, userId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolAPI.DeleteUserFromSchool``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.DeleteUserFromSchool``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -447,13 +447,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationSchoolAPI.GetSchool(context.Background(), schoolId).Execute()
+    resp, r, err := apiClient.EducationSchoolApi.GetSchool(context.Background(), schoolId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolAPI.GetSchool``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.GetSchool``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSchool`: EducationSchool
-    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolAPI.GetSchool`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolApi.GetSchool`: %v\n", resp)
 }
 ```
 
@@ -515,13 +515,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationSchoolAPI.ListSchoolClasses(context.Background(), schoolId).Execute()
+    resp, r, err := apiClient.EducationSchoolApi.ListSchoolClasses(context.Background(), schoolId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolAPI.ListSchoolClasses``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.ListSchoolClasses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListSchoolClasses`: CollectionOfEducationClass
-    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolAPI.ListSchoolClasses`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolApi.ListSchoolClasses`: %v\n", resp)
 }
 ```
 
@@ -583,13 +583,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationSchoolAPI.ListSchoolUsers(context.Background(), schoolId).Execute()
+    resp, r, err := apiClient.EducationSchoolApi.ListSchoolUsers(context.Background(), schoolId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolAPI.ListSchoolUsers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.ListSchoolUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListSchoolUsers`: CollectionOfEducationUser1
-    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolAPI.ListSchoolUsers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolApi.ListSchoolUsers`: %v\n", resp)
 }
 ```
 
@@ -650,13 +650,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationSchoolAPI.ListSchools(context.Background()).Execute()
+    resp, r, err := apiClient.EducationSchoolApi.ListSchools(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolAPI.ListSchools``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.ListSchools``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListSchools`: CollectionOfSchools
-    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolAPI.ListSchools`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolApi.ListSchools`: %v\n", resp)
 }
 ```
 
@@ -711,13 +711,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationSchoolAPI.UpdateSchool(context.Background(), schoolId).EducationSchool(educationSchool).Execute()
+    resp, r, err := apiClient.EducationSchoolApi.UpdateSchool(context.Background(), schoolId).EducationSchool(educationSchool).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolAPI.UpdateSchool``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.UpdateSchool``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSchool`: EducationSchool
-    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolAPI.UpdateSchool`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EducationSchoolApi.UpdateSchool`: %v\n", resp)
 }
 ```
 

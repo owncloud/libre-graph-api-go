@@ -1,7 +1,7 @@
 /*
 Libre Graph API
 
-Testing EducationSchoolAPIService
+Testing EducationSchoolApiService
 
 */
 
@@ -17,42 +17,42 @@ import (
 	"testing"
 )
 
-func Test_libregraph_EducationSchoolAPIService(t *testing.T) {
+func Test_libregraph_EducationSchoolApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test EducationSchoolAPIService AddClassToSchool", func(t *testing.T) {
+	t.Run("Test EducationSchoolApiService AddClassToSchool", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var schoolId string
 
-		httpRes, err := apiClient.EducationSchoolAPI.AddClassToSchool(context.Background(), schoolId).Execute()
+		httpRes, err := apiClient.EducationSchoolApi.AddClassToSchool(context.Background(), schoolId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test EducationSchoolAPIService AddUserToSchool", func(t *testing.T) {
+	t.Run("Test EducationSchoolApiService AddUserToSchool", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var schoolId string
 
-		httpRes, err := apiClient.EducationSchoolAPI.AddUserToSchool(context.Background(), schoolId).Execute()
+		httpRes, err := apiClient.EducationSchoolApi.AddUserToSchool(context.Background(), schoolId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test EducationSchoolAPIService CreateSchool", func(t *testing.T) {
+	t.Run("Test EducationSchoolApiService CreateSchool", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.EducationSchoolAPI.CreateSchool(context.Background()).Execute()
+		resp, httpRes, err := apiClient.EducationSchoolApi.CreateSchool(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -60,54 +60,54 @@ func Test_libregraph_EducationSchoolAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test EducationSchoolAPIService DeleteClassFromSchool", func(t *testing.T) {
+	t.Run("Test EducationSchoolApiService DeleteClassFromSchool", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var schoolId string
 		var classId string
 
-		httpRes, err := apiClient.EducationSchoolAPI.DeleteClassFromSchool(context.Background(), schoolId, classId).Execute()
+		httpRes, err := apiClient.EducationSchoolApi.DeleteClassFromSchool(context.Background(), schoolId, classId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test EducationSchoolAPIService DeleteSchool", func(t *testing.T) {
+	t.Run("Test EducationSchoolApiService DeleteSchool", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var schoolId string
 
-		httpRes, err := apiClient.EducationSchoolAPI.DeleteSchool(context.Background(), schoolId).Execute()
+		httpRes, err := apiClient.EducationSchoolApi.DeleteSchool(context.Background(), schoolId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test EducationSchoolAPIService DeleteUserFromSchool", func(t *testing.T) {
+	t.Run("Test EducationSchoolApiService DeleteUserFromSchool", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var schoolId string
 		var userId string
 
-		httpRes, err := apiClient.EducationSchoolAPI.DeleteUserFromSchool(context.Background(), schoolId, userId).Execute()
+		httpRes, err := apiClient.EducationSchoolApi.DeleteUserFromSchool(context.Background(), schoolId, userId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test EducationSchoolAPIService GetSchool", func(t *testing.T) {
+	t.Run("Test EducationSchoolApiService GetSchool", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var schoolId string
 
-		resp, httpRes, err := apiClient.EducationSchoolAPI.GetSchool(context.Background(), schoolId).Execute()
+		resp, httpRes, err := apiClient.EducationSchoolApi.GetSchool(context.Background(), schoolId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -115,13 +115,13 @@ func Test_libregraph_EducationSchoolAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test EducationSchoolAPIService ListSchoolClasses", func(t *testing.T) {
+	t.Run("Test EducationSchoolApiService ListSchoolClasses", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var schoolId string
 
-		resp, httpRes, err := apiClient.EducationSchoolAPI.ListSchoolClasses(context.Background(), schoolId).Execute()
+		resp, httpRes, err := apiClient.EducationSchoolApi.ListSchoolClasses(context.Background(), schoolId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -129,13 +129,13 @@ func Test_libregraph_EducationSchoolAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test EducationSchoolAPIService ListSchoolUsers", func(t *testing.T) {
+	t.Run("Test EducationSchoolApiService ListSchoolUsers", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var schoolId string
 
-		resp, httpRes, err := apiClient.EducationSchoolAPI.ListSchoolUsers(context.Background(), schoolId).Execute()
+		resp, httpRes, err := apiClient.EducationSchoolApi.ListSchoolUsers(context.Background(), schoolId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -143,11 +143,11 @@ func Test_libregraph_EducationSchoolAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test EducationSchoolAPIService ListSchools", func(t *testing.T) {
+	t.Run("Test EducationSchoolApiService ListSchools", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.EducationSchoolAPI.ListSchools(context.Background()).Execute()
+		resp, httpRes, err := apiClient.EducationSchoolApi.ListSchools(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -155,13 +155,13 @@ func Test_libregraph_EducationSchoolAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test EducationSchoolAPIService UpdateSchool", func(t *testing.T) {
+	t.Run("Test EducationSchoolApiService UpdateSchool", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var schoolId string
 
-		resp, httpRes, err := apiClient.EducationSchoolAPI.UpdateSchool(context.Background(), schoolId).Execute()
+		resp, httpRes, err := apiClient.EducationSchoolApi.UpdateSchool(context.Background(), schoolId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

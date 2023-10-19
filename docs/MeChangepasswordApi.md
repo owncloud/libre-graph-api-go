@@ -1,18 +1,18 @@
-# \MeUserAPI
+# \MeChangepasswordApi
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetOwnUser**](MeUserAPI.md#GetOwnUser) | **Get** /me | Get current user
+[**ChangeOwnPassword**](MeChangepasswordApi.md#ChangeOwnPassword) | **Post** /me/changePassword | Chanage your own password
 
 
 
-## GetOwnUser
+## ChangeOwnPassword
 
-> User GetOwnUser(ctx).Expand(expand).Execute()
+> ChangeOwnPassword(ctx).PasswordChange(passwordChange).Execute()
 
-Get current user
+Chanage your own password
 
 ### Example
 
@@ -27,17 +27,15 @@ import (
 )
 
 func main() {
-    expand := []string{"Expand_example"} // []string | Expand related entities (optional)
+    passwordChange := *openapiclient.NewPasswordChange("CurrentPassword_example", "NewPassword_example") // PasswordChange | Password change request
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeUserAPI.GetOwnUser(context.Background()).Expand(expand).Execute()
+    r, err := apiClient.MeChangepasswordApi.ChangeOwnPassword(context.Background()).PasswordChange(passwordChange).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeUserAPI.GetOwnUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MeChangepasswordApi.ChangeOwnPassword``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetOwnUser`: User
-    fmt.Fprintf(os.Stdout, "Response from `MeUserAPI.GetOwnUser`: %v\n", resp)
 }
 ```
 
@@ -47,16 +45,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetOwnUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiChangeOwnPasswordRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **expand** | **[]string** | Expand related entities | 
+ **passwordChange** | [**PasswordChange**](PasswordChange.md) | Password change request | 
 
 ### Return type
 
-[**User**](User.md)
+ (empty response body)
 
 ### Authorization
 
@@ -64,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

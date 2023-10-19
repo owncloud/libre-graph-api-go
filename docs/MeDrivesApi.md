@@ -1,10 +1,10 @@
-# \MeDrivesAPI
+# \MeDrivesApi
 
 All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListMyDrives**](MeDrivesAPI.md#ListMyDrives) | **Get** /me/drives | Get all drives where the current user is a regular member of
+[**ListMyDrives**](MeDrivesApi.md#ListMyDrives) | **Get** /me/drives | Get all drives where the current user is a regular member of
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeDrivesAPI.ListMyDrives(context.Background()).Orderby(orderby).Filter(filter).Execute()
+    resp, r, err := apiClient.MeDrivesApi.ListMyDrives(context.Background()).Orderby(orderby).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesAPI.ListMyDrives``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.ListMyDrives``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListMyDrives`: CollectionOfDrives
-    fmt.Fprintf(os.Stdout, "Response from `MeDrivesAPI.ListMyDrives`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MeDrivesApi.ListMyDrives`: %v\n", resp)
 }
 ```
 
