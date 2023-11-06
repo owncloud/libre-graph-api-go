@@ -5,7 +5,7 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateLink**](DrivesPermissionsApi.md#CreateLink) | **Post** /drives/{drive-id}/items/{item-id}/createLink | Create a sharing link for a DriveItem
-[**DeletePermission**](DrivesPermissionsApi.md#DeletePermission) | **Delete** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Delete entity from groups
+[**DeletePermission**](DrivesPermissionsApi.md#DeletePermission) | **Delete** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Remove access to a DriveItem
 [**GetPermission**](DrivesPermissionsApi.md#GetPermission) | **Get** /drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Get sharing permission for a file or folder
 [**Invite**](DrivesPermissionsApi.md#Invite) | **Post** /drives/{drive-id}/items/{item-id}/invite | Send a sharing invitation
 [**ListPermissions**](DrivesPermissionsApi.md#ListPermissions) | **Get** /drives/{drive-id}/items/{item-id}/permissions | List the effective sharing permissions on a driveItem.
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 > DeletePermission(ctx, driveId, itemId, permId).Execute()
 
-Delete entity from groups
+Remove access to a DriveItem
 
 
 

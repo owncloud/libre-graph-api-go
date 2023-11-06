@@ -174,7 +174,7 @@ func (r ApiDeletePermissionRequest) Execute() (*http.Response, error) {
 }
 
 /*
-DeletePermission Delete entity from groups
+DeletePermission Remove access to a DriveItem
 
 Remove access to a DriveItem.
 
