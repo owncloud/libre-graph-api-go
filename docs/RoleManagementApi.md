@@ -1,11 +1,11 @@
 # \RoleManagementApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetPermissionRoleDefinition**](RoleManagementApi.md#GetPermissionRoleDefinition) | **Get** /roleManagement/permissions/roleDefinitions/{role-id} | Get unifiedRoleDefinition
-[**ListPermissionRoleDefinitions**](RoleManagementApi.md#ListPermissionRoleDefinitions) | **Get** /roleManagement/permissions/roleDefinitions | List roleDefinitions
+[**GetPermissionRoleDefinition**](RoleManagementApi.md#GetPermissionRoleDefinition) | **Get** /v1beta1/roleManagement/permissions/roleDefinitions/{role-id} | Get unifiedRoleDefinition
+[**ListPermissionRoleDefinitions**](RoleManagementApi.md#ListPermissionRoleDefinitions) | **Get** /v1beta1/roleManagement/permissions/roleDefinitions | List roleDefinitions
 
 
 

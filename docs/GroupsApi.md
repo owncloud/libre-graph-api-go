@@ -1,11 +1,11 @@
 # \GroupsApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateGroup**](GroupsApi.md#CreateGroup) | **Post** /groups | Add new entity to groups
-[**ListGroups**](GroupsApi.md#ListGroups) | **Get** /groups | Get entities from groups
+[**CreateGroup**](GroupsApi.md#CreateGroup) | **Post** /v1.0/groups | Add new entity to groups
+[**ListGroups**](GroupsApi.md#ListGroups) | **Get** /v1.0/groups | Get entities from groups
 
 
 

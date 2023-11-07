@@ -1,10 +1,10 @@
 # \MeChangepasswordApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ChangeOwnPassword**](MeChangepasswordApi.md#ChangeOwnPassword) | **Post** /me/changePassword | Chanage your own password
+[**ChangeOwnPassword**](MeChangepasswordApi.md#ChangeOwnPassword) | **Post** /v1.0/me/changePassword | Chanage your own password
 
 
 

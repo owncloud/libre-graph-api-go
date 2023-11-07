@@ -1,11 +1,11 @@
 # \ApplicationsApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApplication**](ApplicationsApi.md#GetApplication) | **Get** /applications/{application-id} | Get application by id
-[**ListApplications**](ApplicationsApi.md#ListApplications) | **Get** /applications | Get all applications
+[**GetApplication**](ApplicationsApi.md#GetApplication) | **Get** /v1.0/applications/{application-id} | Get application by id
+[**ListApplications**](ApplicationsApi.md#ListApplications) | **Get** /v1.0/applications | Get all applications
 
 
 

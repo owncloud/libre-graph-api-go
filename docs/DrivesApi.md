@@ -1,13 +1,13 @@
 # \DrivesApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateDrive**](DrivesApi.md#CreateDrive) | **Post** /drives | Create a new drive of a specific type
-[**DeleteDrive**](DrivesApi.md#DeleteDrive) | **Delete** /drives/{drive-id} | Delete a specific space
-[**GetDrive**](DrivesApi.md#GetDrive) | **Get** /drives/{drive-id} | Get drive by id
-[**UpdateDrive**](DrivesApi.md#UpdateDrive) | **Patch** /drives/{drive-id} | Update the drive
+[**CreateDrive**](DrivesApi.md#CreateDrive) | **Post** /v1.0/drives | Create a new drive of a specific type
+[**DeleteDrive**](DrivesApi.md#DeleteDrive) | **Delete** /v1.0/drives/{drive-id} | Delete a specific space
+[**GetDrive**](DrivesApi.md#GetDrive) | **Get** /v1.0/drives/{drive-id} | Get drive by id
+[**UpdateDrive**](DrivesApi.md#UpdateDrive) | **Patch** /v1.0/drives/{drive-id} | Update the drive
 
 
 

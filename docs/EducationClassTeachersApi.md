@@ -1,12 +1,12 @@
 # \EducationClassTeachersApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddTeacherToClass**](EducationClassTeachersApi.md#AddTeacherToClass) | **Post** /education/classes/{class-id}/teachers/$ref | Assign a teacher to a class
-[**DeleteTeacherFromClass**](EducationClassTeachersApi.md#DeleteTeacherFromClass) | **Delete** /education/classes/{class-id}/teachers/{user-id}/$ref | Unassign user as teacher of a class
-[**GetTeachers**](EducationClassTeachersApi.md#GetTeachers) | **Get** /education/classes/{class-id}/teachers | Get the teachers for a class
+[**AddTeacherToClass**](EducationClassTeachersApi.md#AddTeacherToClass) | **Post** /v1.0/education/classes/{class-id}/teachers/$ref | Assign a teacher to a class
+[**DeleteTeacherFromClass**](EducationClassTeachersApi.md#DeleteTeacherFromClass) | **Delete** /v1.0/education/classes/{class-id}/teachers/{user-id}/$ref | Unassign user as teacher of a class
+[**GetTeachers**](EducationClassTeachersApi.md#GetTeachers) | **Get** /v1.0/education/classes/{class-id}/teachers | Get the teachers for a class
 
 
 

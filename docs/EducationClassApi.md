@@ -1,17 +1,17 @@
 # \EducationClassApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddUserToClass**](EducationClassApi.md#AddUserToClass) | **Post** /education/classes/{class-id}/members/$ref | Assign a user to a class
-[**CreateClass**](EducationClassApi.md#CreateClass) | **Post** /education/classes | Add new education class
-[**DeleteClass**](EducationClassApi.md#DeleteClass) | **Delete** /education/classes/{class-id} | Delete education class
-[**DeleteUserFromClass**](EducationClassApi.md#DeleteUserFromClass) | **Delete** /education/classes/{class-id}/members/{user-id}/$ref | Unassign user from a class
-[**GetClass**](EducationClassApi.md#GetClass) | **Get** /education/classes/{class-id} | Get class by key
-[**ListClassMembers**](EducationClassApi.md#ListClassMembers) | **Get** /education/classes/{class-id}/members | Get the educationClass resources owned by an educationSchool
-[**ListClasses**](EducationClassApi.md#ListClasses) | **Get** /education/classes | list education classes
-[**UpdateClass**](EducationClassApi.md#UpdateClass) | **Patch** /education/classes/{class-id} | Update properties of a education class
+[**AddUserToClass**](EducationClassApi.md#AddUserToClass) | **Post** /v1.0/education/classes/{class-id}/members/$ref | Assign a user to a class
+[**CreateClass**](EducationClassApi.md#CreateClass) | **Post** /v1.0/education/classes | Add new education class
+[**DeleteClass**](EducationClassApi.md#DeleteClass) | **Delete** /v1.0/education/classes/{class-id} | Delete education class
+[**DeleteUserFromClass**](EducationClassApi.md#DeleteUserFromClass) | **Delete** /v1.0/education/classes/{class-id}/members/{user-id}/$ref | Unassign user from a class
+[**GetClass**](EducationClassApi.md#GetClass) | **Get** /v1.0/education/classes/{class-id} | Get class by key
+[**ListClassMembers**](EducationClassApi.md#ListClassMembers) | **Get** /v1.0/education/classes/{class-id}/members | Get the educationClass resources owned by an educationSchool
+[**ListClasses**](EducationClassApi.md#ListClasses) | **Get** /v1.0/education/classes | list education classes
+[**UpdateClass**](EducationClassApi.md#UpdateClass) | **Patch** /v1.0/education/classes/{class-id} | Update properties of a education class
 
 
 

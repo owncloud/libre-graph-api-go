@@ -1,12 +1,12 @@
 # \UserAppRoleAssignmentApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**UserCreateAppRoleAssignments**](UserAppRoleAssignmentApi.md#UserCreateAppRoleAssignments) | **Post** /users/{user-id}/appRoleAssignments | Grant an appRoleAssignment to a user
-[**UserDeleteAppRoleAssignments**](UserAppRoleAssignmentApi.md#UserDeleteAppRoleAssignments) | **Delete** /users/{user-id}/appRoleAssignments/{appRoleAssignment-id} | Delete the appRoleAssignment from a user
-[**UserListAppRoleAssignments**](UserAppRoleAssignmentApi.md#UserListAppRoleAssignments) | **Get** /users/{user-id}/appRoleAssignments | Get appRoleAssignments from a user
+[**UserCreateAppRoleAssignments**](UserAppRoleAssignmentApi.md#UserCreateAppRoleAssignments) | **Post** /v1.0/users/{user-id}/appRoleAssignments | Grant an appRoleAssignment to a user
+[**UserDeleteAppRoleAssignments**](UserAppRoleAssignmentApi.md#UserDeleteAppRoleAssignments) | **Delete** /v1.0/users/{user-id}/appRoleAssignments/{appRoleAssignment-id} | Delete the appRoleAssignment from a user
+[**UserListAppRoleAssignments**](UserAppRoleAssignmentApi.md#UserListAppRoleAssignments) | **Get** /v1.0/users/{user-id}/appRoleAssignments | Get appRoleAssignments from a user
 
 
 

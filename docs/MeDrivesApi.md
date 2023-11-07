@@ -1,10 +1,10 @@
 # \MeDrivesApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListMyDrives**](MeDrivesApi.md#ListMyDrives) | **Get** /me/drives | Get all drives where the current user is a regular member of
+[**ListMyDrives**](MeDrivesApi.md#ListMyDrives) | **Get** /v1.0/me/drives | Get all drives where the current user is a regular member of
 
 
 

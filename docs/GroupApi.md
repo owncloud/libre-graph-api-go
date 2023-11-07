@@ -1,15 +1,15 @@
 # \GroupApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddMember**](GroupApi.md#AddMember) | **Post** /groups/{group-id}/members/$ref | Add a member to a group
-[**DeleteGroup**](GroupApi.md#DeleteGroup) | **Delete** /groups/{group-id} | Delete entity from groups
-[**DeleteMember**](GroupApi.md#DeleteMember) | **Delete** /groups/{group-id}/members/{directory-object-id}/$ref | Delete member from a group
-[**GetGroup**](GroupApi.md#GetGroup) | **Get** /groups/{group-id} | Get entity from groups by key
-[**ListMembers**](GroupApi.md#ListMembers) | **Get** /groups/{group-id}/members | Get a list of the group&#39;s direct members
-[**UpdateGroup**](GroupApi.md#UpdateGroup) | **Patch** /groups/{group-id} | Update entity in groups
+[**AddMember**](GroupApi.md#AddMember) | **Post** /v1.0/groups/{group-id}/members/$ref | Add a member to a group
+[**DeleteGroup**](GroupApi.md#DeleteGroup) | **Delete** /v1.0/groups/{group-id} | Delete entity from groups
+[**DeleteMember**](GroupApi.md#DeleteMember) | **Delete** /v1.0/groups/{group-id}/members/{directory-object-id}/$ref | Delete member from a group
+[**GetGroup**](GroupApi.md#GetGroup) | **Get** /v1.0/groups/{group-id} | Get entity from groups by key
+[**ListMembers**](GroupApi.md#ListMembers) | **Get** /v1.0/groups/{group-id}/members | Get a list of the group&#39;s direct members
+[**UpdateGroup**](GroupApi.md#UpdateGroup) | **Patch** /v1.0/groups/{group-id} | Update entity in groups
 
 
 

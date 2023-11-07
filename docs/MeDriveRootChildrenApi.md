@@ -1,10 +1,10 @@
 # \MeDriveRootChildrenApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**HomeGetChildren**](MeDriveRootChildrenApi.md#HomeGetChildren) | **Get** /me/drive/root/children | Get children from drive
+[**HomeGetChildren**](MeDriveRootChildrenApi.md#HomeGetChildren) | **Get** /v1.0/me/drive/root/children | Get children from drive
 
 
 

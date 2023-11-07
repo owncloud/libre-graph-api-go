@@ -1,10 +1,10 @@
 # \MeDriveRootApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**HomeGetRoot**](MeDriveRootApi.md#HomeGetRoot) | **Get** /me/drive/root | Get root from personal space
+[**HomeGetRoot**](MeDriveRootApi.md#HomeGetRoot) | **Get** /v1.0/me/drive/root | Get root from personal space
 
 
 

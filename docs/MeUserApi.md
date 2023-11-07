@@ -1,10 +1,10 @@
 # \MeUserApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetOwnUser**](MeUserApi.md#GetOwnUser) | **Get** /me | Get current user
+[**GetOwnUser**](MeUserApi.md#GetOwnUser) | **Get** /v1.0/me | Get current user
 
 
 

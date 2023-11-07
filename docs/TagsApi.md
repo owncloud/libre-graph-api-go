@@ -1,12 +1,12 @@
 # \TagsApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AssignTags**](TagsApi.md#AssignTags) | **Put** /extensions/org.libregraph/tags | Assign tags to a resource
-[**GetTags**](TagsApi.md#GetTags) | **Get** /extensions/org.libregraph/tags | Get all known tags
-[**UnassignTags**](TagsApi.md#UnassignTags) | **Delete** /extensions/org.libregraph/tags | Unassign tags from a resource
+[**AssignTags**](TagsApi.md#AssignTags) | **Put** /v1.0/extensions/org.libregraph/tags | Assign tags to a resource
+[**GetTags**](TagsApi.md#GetTags) | **Get** /v1.0/extensions/org.libregraph/tags | Get all known tags
+[**UnassignTags**](TagsApi.md#UnassignTags) | **Delete** /v1.0/extensions/org.libregraph/tags | Unassign tags from a resource
 
 
 

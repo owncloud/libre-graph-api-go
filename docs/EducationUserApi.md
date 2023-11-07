@@ -1,14 +1,14 @@
 # \EducationUserApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateEducationUser**](EducationUserApi.md#CreateEducationUser) | **Post** /education/users | Add new education user
-[**DeleteEducationUser**](EducationUserApi.md#DeleteEducationUser) | **Delete** /education/users/{user-id} | Delete educationUser
-[**GetEducationUser**](EducationUserApi.md#GetEducationUser) | **Get** /education/users/{user-id} | Get properties of educationUser
-[**ListEducationUsers**](EducationUserApi.md#ListEducationUsers) | **Get** /education/users | Get entities from education users
-[**UpdateEducationUser**](EducationUserApi.md#UpdateEducationUser) | **Patch** /education/users/{user-id} | Update properties of educationUser
+[**CreateEducationUser**](EducationUserApi.md#CreateEducationUser) | **Post** /v1.0/education/users | Add new education user
+[**DeleteEducationUser**](EducationUserApi.md#DeleteEducationUser) | **Delete** /v1.0/education/users/{user-id} | Delete educationUser
+[**GetEducationUser**](EducationUserApi.md#GetEducationUser) | **Get** /v1.0/education/users/{user-id} | Get properties of educationUser
+[**ListEducationUsers**](EducationUserApi.md#ListEducationUsers) | **Get** /v1.0/education/users | Get entities from education users
+[**UpdateEducationUser**](EducationUserApi.md#UpdateEducationUser) | **Patch** /v1.0/education/users/{user-id} | Update properties of educationUser
 
 
 

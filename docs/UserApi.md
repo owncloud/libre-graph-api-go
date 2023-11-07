@@ -1,13 +1,13 @@
 # \UserApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteUser**](UserApi.md#DeleteUser) | **Delete** /users/{user-id} | Delete entity from users
-[**ExportPersonalData**](UserApi.md#ExportPersonalData) | **Post** /users/{user-id}/exportPersonalData | export personal data of a user
-[**GetUser**](UserApi.md#GetUser) | **Get** /users/{user-id} | Get entity from users by key
-[**UpdateUser**](UserApi.md#UpdateUser) | **Patch** /users/{user-id} | Update entity in users
+[**DeleteUser**](UserApi.md#DeleteUser) | **Delete** /v1.0/users/{user-id} | Delete entity from users
+[**ExportPersonalData**](UserApi.md#ExportPersonalData) | **Post** /v1.0/users/{user-id}/exportPersonalData | export personal data of a user
+[**GetUser**](UserApi.md#GetUser) | **Get** /v1.0/users/{user-id} | Get entity from users by key
+[**UpdateUser**](UserApi.md#UpdateUser) | **Patch** /v1.0/users/{user-id} | Update entity in users
 
 
 

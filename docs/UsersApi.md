@@ -1,11 +1,11 @@
 # \UsersApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateUser**](UsersApi.md#CreateUser) | **Post** /users | Add new entity to users
-[**ListUsers**](UsersApi.md#ListUsers) | **Get** /users | Get entities from users
+[**CreateUser**](UsersApi.md#CreateUser) | **Post** /v1.0/users | Add new entity to users
+[**ListUsers**](UsersApi.md#ListUsers) | **Get** /v1.0/users | Get entities from users
 
 
 

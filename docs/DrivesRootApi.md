@@ -1,10 +1,10 @@
 # \DrivesRootApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph/v1.0*
+All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetRoot**](DrivesRootApi.md#GetRoot) | **Get** /drives/{drive-id}/root | Get root from arbitrary space
+[**GetRoot**](DrivesRootApi.md#GetRoot) | **Get** /v1.0/drives/{drive-id}/root | Get root from arbitrary space
 
 
 
