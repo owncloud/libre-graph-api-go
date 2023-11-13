@@ -5,6 +5,7 @@ All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetOwnUser**](MeUserApi.md#GetOwnUser) | **Get** /v1.0/me | Get current user
+[**UpdateOwnUser**](MeUserApi.md#UpdateOwnUser) | **Patch** /v1.0/me | Update the current user
 
 
 
@@ -65,6 +66,70 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateOwnUser
+
+> User UpdateOwnUser(ctx).User(user).Execute()
+
+Update the current user
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
+)
+
+func main() {
+    user := *openapiclient.NewUser() // User | New user values (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MeUserApi.UpdateOwnUser(context.Background()).User(user).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MeUserApi.UpdateOwnUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateOwnUser`: User
+    fmt.Fprintf(os.Stdout, "Response from `MeUserApi.UpdateOwnUser`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateOwnUserRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user** | [**User**](User.md) | New user values | 
+
+### Return type
+
+[**User**](User.md)
+
+### Authorization
+
+[openId](../README.md#openId)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

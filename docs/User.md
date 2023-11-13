@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **Surname** | Pointer to **string** | The user&#39;s surname (family name or last name). Returned by default. | [optional] 
 **GivenName** | Pointer to **string** | The user&#39;s givenName. Returned by default. | [optional] 
 **UserType** | Pointer to **string** | The user&#x60;s type. This can be either \&quot;Member\&quot; for regular user, or \&quot;Guest\&quot; for guest users. | [optional] 
+**PreferredLanguage** | Pointer to **string** | Represents the users language setting, ISO-639-1 Code | [optional] 
 
 ## Methods
 
@@ -387,6 +388,31 @@ SetUserType sets UserType field to given value.
 `func (o *User) HasUserType() bool`
 
 HasUserType returns a boolean if a field has been set.
+
+### GetPreferredLanguage
+
+`func (o *User) GetPreferredLanguage() string`
+
+GetPreferredLanguage returns the PreferredLanguage field if non-nil, zero value otherwise.
+
+### GetPreferredLanguageOk
+
+`func (o *User) GetPreferredLanguageOk() (*string, bool)`
+
+GetPreferredLanguageOk returns a tuple with the PreferredLanguage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreferredLanguage
+
+`func (o *User) SetPreferredLanguage(v string)`
+
+SetPreferredLanguage sets PreferredLanguage field to given value.
+
+### HasPreferredLanguage
+
+`func (o *User) HasPreferredLanguage() bool`
+
+HasPreferredLanguage returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
