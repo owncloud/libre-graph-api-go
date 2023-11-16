@@ -3,6 +3,8 @@
 ## Enum
 
 
+* `INTERNAL` (value: `"internal"`)
+
 * `VIEW` (value: `"view"`)
 
 * `UPLOAD` (value: `"upload"`)

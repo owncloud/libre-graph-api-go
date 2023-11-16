@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ExpirationDateTime** | Pointer to **time.Time** | Optional. A String with format of yyyy-MM-ddTHH:mm:ssZ of DateTime indicates the expiration time of the permission. | [optional] 
 **Password** | Pointer to **string** | Optional.The password of the sharing link that is set by the creator. | [optional] 
 **DisplayName** | Pointer to **string** | Provides a user-visible display name of the link. Optional. Libregraph only. | [optional] 
+**LibreGraphQuickLink** | Pointer to **bool** | The quicklink property can be assigned to only one link per resource. A quicklink can be used in the clients to provide a one-click copy to clipboard action. Optional. Libregraph only. | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetDisplayName sets DisplayName field to given value.
 `func (o *DriveItemCreateLink) HasDisplayName() bool`
 
 HasDisplayName returns a boolean if a field has been set.
+
+### GetLibreGraphQuickLink
+
+`func (o *DriveItemCreateLink) GetLibreGraphQuickLink() bool`
+
+GetLibreGraphQuickLink returns the LibreGraphQuickLink field if non-nil, zero value otherwise.
+
+### GetLibreGraphQuickLinkOk
+
+`func (o *DriveItemCreateLink) GetLibreGraphQuickLinkOk() (*bool, bool)`
+
+GetLibreGraphQuickLinkOk returns a tuple with the LibreGraphQuickLink field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLibreGraphQuickLink
+
+`func (o *DriveItemCreateLink) SetLibreGraphQuickLink(v bool)`
+
+SetLibreGraphQuickLink sets LibreGraphQuickLink field to given value.
+
+### HasLibreGraphQuickLink
+
+`func (o *DriveItemCreateLink) HasLibreGraphQuickLink() bool`
+
+HasLibreGraphQuickLink returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
