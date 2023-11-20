@@ -98,6 +98,22 @@ func Test_libregraph_DrivesPermissionsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test DrivesPermissionsApiService SetPermissionPassword", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var driveId string
+		var itemId string
+		var permId string
+
+		resp, httpRes, err := apiClient.DrivesPermissionsApi.SetPermissionPassword(context.Background(), driveId, itemId, permId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test DrivesPermissionsApiService UpdatePermission", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

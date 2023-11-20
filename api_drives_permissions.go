@@ -658,6 +658,140 @@ func (a *DrivesPermissionsApiService) ListPermissionsExecute(r ApiListPermission
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiSetPermissionPasswordRequest struct {
+	ctx                 context.Context
+	ApiService          *DrivesPermissionsApiService
+	driveId             string
+	itemId              string
+	permId              string
+	sharingLinkPassword *SharingLinkPassword
+}
+
+// New password value
+func (r ApiSetPermissionPasswordRequest) SharingLinkPassword(sharingLinkPassword SharingLinkPassword) ApiSetPermissionPasswordRequest {
+	r.sharingLinkPassword = &sharingLinkPassword
+	return r
+}
+
+func (r ApiSetPermissionPasswordRequest) Execute() (*Permission, *http.Response, error) {
+	return r.ApiService.SetPermissionPasswordExecute(r)
+}
+
+/*
+SetPermissionPassword Set sharing link password
+
+Set the password of a sharing permission.
+
+Only the `password` property can be modified this way.
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @param itemId key: id of item
+ @param permId key: id of permission
+ @return ApiSetPermissionPasswordRequest
+*/
+func (a *DrivesPermissionsApiService) SetPermissionPassword(ctx context.Context, driveId string, itemId string, permId string) ApiSetPermissionPasswordRequest {
+	return ApiSetPermissionPasswordRequest{
+		ApiService: a,
+		ctx:        ctx,
+		driveId:    driveId,
+		itemId:     itemId,
+		permId:     permId,
+	}
+}
+
+// Execute executes the request
+//  @return Permission
+func (a *DrivesPermissionsApiService) SetPermissionPasswordExecute(r ApiSetPermissionPasswordRequest) (*Permission, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Permission
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsApiService.SetPermissionPassword")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1beta1/drives/{drive-id}/items/{item-id}/permissions/{perm-id}/setPassword"
+	localVarPath = strings.Replace(localVarPath, "{"+"drive-id"+"}", url.PathEscape(parameterValueToString(r.driveId, "driveId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"item-id"+"}", url.PathEscape(parameterValueToString(r.itemId, "itemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"perm-id"+"}", url.PathEscape(parameterValueToString(r.permId, "permId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.sharingLinkPassword == nil {
+		return localVarReturnValue, nil, reportError("sharingLinkPassword is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.sharingLinkPassword
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiUpdatePermissionRequest struct {
 	ctx        context.Context
 	ApiService *DrivesPermissionsApiService

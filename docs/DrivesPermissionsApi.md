@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**GetPermission**](DrivesPermissionsApi.md#GetPermission) | **Get** /v1beta1/drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Get sharing permission for a file or folder
 [**Invite**](DrivesPermissionsApi.md#Invite) | **Post** /v1beta1/drives/{drive-id}/items/{item-id}/invite | Send a sharing invitation
 [**ListPermissions**](DrivesPermissionsApi.md#ListPermissions) | **Get** /v1beta1/drives/{drive-id}/items/{item-id}/permissions | List the effective sharing permissions on a driveItem.
+[**SetPermissionPassword**](DrivesPermissionsApi.md#SetPermissionPassword) | **Post** /v1beta1/drives/{drive-id}/items/{item-id}/permissions/{perm-id}/setPassword | Set sharing link password
 [**UpdatePermission**](DrivesPermissionsApi.md#UpdatePermission) | **Patch** /v1beta1/drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Update sharing permission
 
 
@@ -379,6 +380,84 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SetPermissionPassword
+
+> Permission SetPermissionPassword(ctx, driveId, itemId, permId).SharingLinkPassword(sharingLinkPassword).Execute()
+
+Set sharing link password
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/owncloud/libre-graph-api-go"
+)
+
+func main() {
+    driveId := "driveId_example" // string | key: id of drive
+    itemId := "itemId_example" // string | key: id of item
+    permId := "permId_example" // string | key: id of permission
+    sharingLinkPassword := *openapiclient.NewSharingLinkPassword() // SharingLinkPassword | New password value
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DrivesPermissionsApi.SetPermissionPassword(context.Background(), driveId, itemId, permId).SharingLinkPassword(sharingLinkPassword).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsApi.SetPermissionPassword``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SetPermissionPassword`: Permission
+    fmt.Fprintf(os.Stdout, "Response from `DrivesPermissionsApi.SetPermissionPassword`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**driveId** | **string** | key: id of drive | 
+**itemId** | **string** | key: id of item | 
+**permId** | **string** | key: id of permission | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSetPermissionPasswordRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **sharingLinkPassword** | [**SharingLinkPassword**](SharingLinkPassword.md) | New password value | 
+
+### Return type
+
+[**Permission**](Permission.md)
+
+### Authorization
+
+[openId](../README.md#openId)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
