@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 
 ## ListSchoolUsers
 
-> CollectionOfEducationUser1 ListSchoolUsers(ctx, schoolId).Execute()
+> CollectionOfEducationUser ListSchoolUsers(ctx, schoolId).Execute()
 
 Get the educationUser resources associated with an educationSchool
 
@@ -588,7 +588,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.ListSchoolUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListSchoolUsers`: CollectionOfEducationUser1
+    // response from `ListSchoolUsers`: CollectionOfEducationUser
     fmt.Fprintf(os.Stdout, "Response from `EducationSchoolApi.ListSchoolUsers`: %v\n", resp)
 }
 ```
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CollectionOfEducationUser1**](CollectionOfEducationUser1.md)
+[**CollectionOfEducationUser**](CollectionOfEducationUser.md)
 
 ### Authorization
 

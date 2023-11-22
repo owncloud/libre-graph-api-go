@@ -170,7 +170,6 @@ Class | Method | HTTP request | Description
  - [CollectionOfDrives1](docs/CollectionOfDrives1.md)
  - [CollectionOfEducationClass](docs/CollectionOfEducationClass.md)
  - [CollectionOfEducationUser](docs/CollectionOfEducationUser.md)
- - [CollectionOfEducationUser1](docs/CollectionOfEducationUser1.md)
  - [CollectionOfGroup](docs/CollectionOfGroup.md)
  - [CollectionOfPermissions](docs/CollectionOfPermissions.md)
  - [CollectionOfSchools](docs/CollectionOfSchools.md)

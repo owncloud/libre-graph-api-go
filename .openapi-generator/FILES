@@ -43,7 +43,6 @@ docs/CollectionOfDrives.md
 docs/CollectionOfDrives1.md
 docs/CollectionOfEducationClass.md
 docs/CollectionOfEducationUser.md
-docs/CollectionOfEducationUser1.md
 docs/CollectionOfGroup.md
 docs/CollectionOfPermissions.md
 docs/CollectionOfSchools.md
@@ -138,7 +137,6 @@ model_collection_of_drives.go
 model_collection_of_drives_1.go
 model_collection_of_education_class.go
 model_collection_of_education_user.go
-model_collection_of_education_user_1.go
 model_collection_of_group.go
 model_collection_of_permissions.go
 model_collection_of_schools.go
