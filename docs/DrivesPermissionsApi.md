@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ## Invite
 
-> Permission Invite(ctx, driveId, itemId).DriveItemInvite(driveItemInvite).Execute()
+> CollectionOfPermissions Invite(ctx, driveId, itemId).DriveItemInvite(driveItemInvite).Execute()
 
 Send a sharing invitation
 
@@ -271,7 +271,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsApi.Invite``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `Invite`: Permission
+    // response from `Invite`: CollectionOfPermissions
     fmt.Fprintf(os.Stdout, "Response from `DrivesPermissionsApi.Invite`: %v\n", resp)
 }
 ```
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Permission**](Permission.md)
+[**CollectionOfPermissions**](CollectionOfPermissions.md)
 
 ### Authorization
 
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ## ListPermissions
 
-> CollectionOfPermissions ListPermissions(ctx, driveId, itemId).Execute()
+> CollectionOfPermissionsWithAllowedValues ListPermissions(ctx, driveId, itemId).Execute()
 
 List the effective sharing permissions on a driveItem.
 
@@ -345,7 +345,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DrivesPermissionsApi.ListPermissions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListPermissions`: CollectionOfPermissions
+    // response from `ListPermissions`: CollectionOfPermissionsWithAllowedValues
     fmt.Fprintf(os.Stdout, "Response from `DrivesPermissionsApi.ListPermissions`: %v\n", resp)
 }
 ```
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CollectionOfPermissions**](CollectionOfPermissions.md)
+[**CollectionOfPermissionsWithAllowedValues**](CollectionOfPermissionsWithAllowedValues.md)
 
 ### Authorization
 

@@ -172,6 +172,7 @@ Class | Method | HTTP request | Description
  - [CollectionOfEducationUser](docs/CollectionOfEducationUser.md)
  - [CollectionOfGroup](docs/CollectionOfGroup.md)
  - [CollectionOfPermissions](docs/CollectionOfPermissions.md)
+ - [CollectionOfPermissionsWithAllowedValues](docs/CollectionOfPermissionsWithAllowedValues.md)
  - [CollectionOfSchools](docs/CollectionOfSchools.md)
  - [CollectionOfTags](docs/CollectionOfTags.md)
  - [CollectionOfUser](docs/CollectionOfUser.md)

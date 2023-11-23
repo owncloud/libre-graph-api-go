@@ -406,7 +406,7 @@ func (r ApiInviteRequest) DriveItemInvite(driveItemInvite DriveItemInvite) ApiIn
 	return r
 }
 
-func (r ApiInviteRequest) Execute() (*Permission, *http.Response, error) {
+func (r ApiInviteRequest) Execute() (*CollectionOfPermissions, *http.Response, error) {
 	return r.ApiService.InviteExecute(r)
 }
 
@@ -437,13 +437,13 @@ func (a *DrivesPermissionsApiService) Invite(ctx context.Context, driveId string
 }
 
 // Execute executes the request
-//  @return Permission
-func (a *DrivesPermissionsApiService) InviteExecute(r ApiInviteRequest) (*Permission, *http.Response, error) {
+//  @return CollectionOfPermissions
+func (a *DrivesPermissionsApiService) InviteExecute(r ApiInviteRequest) (*CollectionOfPermissions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *Permission
+		localVarReturnValue *CollectionOfPermissions
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsApiService.Invite")
@@ -541,7 +541,7 @@ type ApiListPermissionsRequest struct {
 	itemId     string
 }
 
-func (r ApiListPermissionsRequest) Execute() (*CollectionOfPermissions, *http.Response, error) {
+func (r ApiListPermissionsRequest) Execute() (*CollectionOfPermissionsWithAllowedValues, *http.Response, error) {
 	return r.ApiService.ListPermissionsExecute(r)
 }
 
@@ -574,13 +574,13 @@ func (a *DrivesPermissionsApiService) ListPermissions(ctx context.Context, drive
 }
 
 // Execute executes the request
-//  @return CollectionOfPermissions
-func (a *DrivesPermissionsApiService) ListPermissionsExecute(r ApiListPermissionsRequest) (*CollectionOfPermissions, *http.Response, error) {
+//  @return CollectionOfPermissionsWithAllowedValues
+func (a *DrivesPermissionsApiService) ListPermissionsExecute(r ApiListPermissionsRequest) (*CollectionOfPermissionsWithAllowedValues, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CollectionOfPermissions
+		localVarReturnValue *CollectionOfPermissionsWithAllowedValues
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesPermissionsApiService.ListPermissions")
