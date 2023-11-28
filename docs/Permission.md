@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The unique identifier of the permission among all permissions on the item. Read-only. | [optional] [readonly] 
 **HasPassword** | Pointer to **bool** | Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only.  | [optional] [readonly] 
-**ExpirationDateTime** | Pointer to **time.Time** | An optional expiration date which limits the permission in time. | [optional] 
+**ExpirationDateTime** | Pointer to **NullableTime** | An optional expiration date which limits the permission in time. | [optional] 
 **GrantedToV2** | Pointer to [**SharePointIdentitySet**](SharePointIdentitySet.md) |  | [optional] 
 **Link** | Pointer to [**SharingLink**](SharingLink.md) |  | [optional] 
 **Roles** | Pointer to **[]string** |  | [optional] 
@@ -108,6 +108,16 @@ SetExpirationDateTime sets ExpirationDateTime field to given value.
 
 HasExpirationDateTime returns a boolean if a field has been set.
 
+### SetExpirationDateTimeNil
+
+`func (o *Permission) SetExpirationDateTimeNil(b bool)`
+
+ SetExpirationDateTimeNil sets the value for ExpirationDateTime to be an explicit nil
+
+### UnsetExpirationDateTime
+`func (o *Permission) UnsetExpirationDateTime()`
+
+UnsetExpirationDateTime ensures that no value is present for ExpirationDateTime, not even an explicit nil
 ### GetGrantedToV2
 
 `func (o *Permission) GetGrantedToV2() SharePointIdentitySet`
