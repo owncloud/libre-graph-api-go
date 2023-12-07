@@ -227,6 +227,7 @@ Class | Method | HTTP request | Description
  - [UnifiedRoleDefinition](docs/UnifiedRoleDefinition.md)
  - [UnifiedRolePermission](docs/UnifiedRolePermission.md)
  - [User](docs/User.md)
+ - [Video](docs/Video.md)
 
 
 ## Documentation For Authorization

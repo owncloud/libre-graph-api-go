@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **Children** | Pointer to [**[]DriveItem**](DriveItem.md) | Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable. | [optional] [readonly] 
 **Permissions** | Pointer to [**[]Permission**](Permission.md) | The set of permissions for the item. Read-only. Nullable. | [optional] [readonly] 
 **Audio** | Pointer to [**Audio**](Audio.md) |  | [optional] 
+**Video** | Pointer to [**Video**](Video.md) |  | [optional] 
 
 ## Methods
 
@@ -751,6 +752,31 @@ SetAudio sets Audio field to given value.
 `func (o *DriveItem) HasAudio() bool`
 
 HasAudio returns a boolean if a field has been set.
+
+### GetVideo
+
+`func (o *DriveItem) GetVideo() Video`
+
+GetVideo returns the Video field if non-nil, zero value otherwise.
+
+### GetVideoOk
+
+`func (o *DriveItem) GetVideoOk() (*Video, bool)`
+
+GetVideoOk returns a tuple with the Video field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVideo
+
+`func (o *DriveItem) SetVideo(v Video)`
+
+SetVideo sets Video field to given value.
+
+### HasVideo
+
+`func (o *DriveItem) HasVideo() bool`
+
+HasVideo returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

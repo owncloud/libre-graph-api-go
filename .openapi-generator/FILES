@@ -119,6 +119,7 @@ docs/User.md
 docs/UserApi.md
 docs/UserAppRoleAssignmentApi.md
 docs/UsersApi.md
+docs/Video.md
 git_push.sh
 go.mod
 go.sum
@@ -193,6 +194,7 @@ model_trash.go
 model_unified_role_definition.go
 model_unified_role_permission.go
 model_user.go
+model_video.go
 response.go
 test/api_applications_test.go
 test/api_drives_get_drives_test.go
