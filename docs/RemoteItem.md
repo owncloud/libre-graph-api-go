@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **CTag** | Pointer to **string** | An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only. | [optional] [readonly] 
 **ParentReference** | Pointer to [**ItemReference**](ItemReference.md) |  | [optional] 
 **Shared** | Pointer to [**Shared**](Shared.md) |  | [optional] 
+**Permissions** | Pointer to [**[]Permission**](Permission.md) | The set of permissions for the item. Read-only. Nullable. | [optional] [readonly] 
 **Size** | Pointer to **int64** | Size of the remote item. Read-only. | [optional] 
 **SpecialFolder** | Pointer to [**SpecialFolder**](SpecialFolder.md) |  | [optional] 
 **WebDavUrl** | Pointer to **string** | DAV compatible URL for the item. | [optional] 
@@ -469,6 +470,31 @@ SetShared sets Shared field to given value.
 `func (o *RemoteItem) HasShared() bool`
 
 HasShared returns a boolean if a field has been set.
+
+### GetPermissions
+
+`func (o *RemoteItem) GetPermissions() []Permission`
+
+GetPermissions returns the Permissions field if non-nil, zero value otherwise.
+
+### GetPermissionsOk
+
+`func (o *RemoteItem) GetPermissionsOk() (*[]Permission, bool)`
+
+GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPermissions
+
+`func (o *RemoteItem) SetPermissions(v []Permission)`
+
+SetPermissions sets Permissions field to given value.
+
+### HasPermissions
+
+`func (o *RemoteItem) HasPermissions() bool`
+
+HasPermissions returns a boolean if a field has been set.
 
 ### GetSize
 
