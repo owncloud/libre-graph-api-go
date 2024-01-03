@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **Roles** | Pointer to **[]string** |  | [optional] 
 **GrantedToIdentities** | Pointer to [**[]IdentitySet**](IdentitySet.md) | For link type permissions, the details of the identity to whom permission was granted. This could be used to grant access to a an external user that can be identified by email, aka guest accounts. | [optional] 
 **LibreGraphPermissionsActions** | Pointer to **[]string** | Use this to create a permission with custom actions. | [optional] 
-**UIHidden** | Pointer to **bool** | Properties or facets (see UI.Facet) annotated with this term will not be rendered if the annotation evaluates to true. Users can set this to hide permissons. | [optional] 
 
 ## Methods
 
@@ -242,31 +241,6 @@ SetLibreGraphPermissionsActions sets LibreGraphPermissionsActions field to given
 `func (o *Permission) HasLibreGraphPermissionsActions() bool`
 
 HasLibreGraphPermissionsActions returns a boolean if a field has been set.
-
-### GetUIHidden
-
-`func (o *Permission) GetUIHidden() bool`
-
-GetUIHidden returns the UIHidden field if non-nil, zero value otherwise.
-
-### GetUIHiddenOk
-
-`func (o *Permission) GetUIHiddenOk() (*bool, bool)`
-
-GetUIHiddenOk returns a tuple with the UIHidden field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUIHidden
-
-`func (o *Permission) SetUIHidden(v bool)`
-
-SetUIHidden sets UIHidden field to given value.
-
-### HasUIHidden
-
-`func (o *Permission) HasUIHidden() bool`
-
-HasUIHidden returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
