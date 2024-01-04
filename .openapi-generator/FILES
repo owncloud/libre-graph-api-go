@@ -3,6 +3,7 @@
 README.md
 api/openapi.yaml
 api_applications.go
+api_drive_item.go
 api_drives.go
 api_drives_get_drives.go
 api_drives_permissions.go
@@ -54,6 +55,7 @@ docs/Deleted.md
 docs/DirectoryObject.md
 docs/Drive.md
 docs/DriveItem.md
+docs/DriveItemApi.md
 docs/DriveItemCreateLink.md
 docs/DriveItemInvite.md
 docs/DriveRecipient.md
@@ -197,6 +199,7 @@ model_user.go
 model_video.go
 response.go
 test/api_applications_test.go
+test/api_drive_item_test.go
 test/api_drives_get_drives_test.go
 test/api_drives_permissions_test.go
 test/api_drives_root_test.go
