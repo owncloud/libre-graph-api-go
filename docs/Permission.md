@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **Roles** | Pointer to **[]string** |  | [optional] 
 **GrantedToIdentities** | Pointer to [**[]IdentitySet**](IdentitySet.md) | For link type permissions, the details of the identity to whom permission was granted. This could be used to grant access to a an external user that can be identified by email, aka guest accounts. | [optional] 
 **LibreGraphPermissionsActions** | Pointer to **[]string** | Use this to create a permission with custom actions. | [optional] 
+**ClientSynchronize** | Pointer to **bool** | Indicates if the item is synchronized with the underlying storage provider. Read-only. | [optional] 
+**UiHidden** | Pointer to **bool** | Properties or facets (see UI.Facet) annotated with this term will not be rendered if the annotation evaluates to true. Users can set this to hide permissons. | [optional] 
 
 ## Methods
 
@@ -241,6 +243,56 @@ SetLibreGraphPermissionsActions sets LibreGraphPermissionsActions field to given
 `func (o *Permission) HasLibreGraphPermissionsActions() bool`
 
 HasLibreGraphPermissionsActions returns a boolean if a field has been set.
+
+### GetClientSynchronize
+
+`func (o *Permission) GetClientSynchronize() bool`
+
+GetClientSynchronize returns the ClientSynchronize field if non-nil, zero value otherwise.
+
+### GetClientSynchronizeOk
+
+`func (o *Permission) GetClientSynchronizeOk() (*bool, bool)`
+
+GetClientSynchronizeOk returns a tuple with the ClientSynchronize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSynchronize
+
+`func (o *Permission) SetClientSynchronize(v bool)`
+
+SetClientSynchronize sets ClientSynchronize field to given value.
+
+### HasClientSynchronize
+
+`func (o *Permission) HasClientSynchronize() bool`
+
+HasClientSynchronize returns a boolean if a field has been set.
+
+### GetUiHidden
+
+`func (o *Permission) GetUiHidden() bool`
+
+GetUiHidden returns the UiHidden field if non-nil, zero value otherwise.
+
+### GetUiHiddenOk
+
+`func (o *Permission) GetUiHiddenOk() (*bool, bool)`
+
+GetUiHiddenOk returns a tuple with the UiHidden field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUiHidden
+
+`func (o *Permission) SetUiHidden(v bool)`
+
+SetUiHidden sets UiHidden field to given value.
+
+### HasUiHidden
+
+`func (o *Permission) HasUiHidden() bool`
+
+HasUiHidden returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

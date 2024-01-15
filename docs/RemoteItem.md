@@ -26,8 +26,6 @@ Name | Type | Description | Notes
 **SpecialFolder** | Pointer to [**SpecialFolder**](SpecialFolder.md) |  | [optional] 
 **WebDavUrl** | Pointer to **string** | DAV compatible URL for the item. | [optional] 
 **WebUrl** | Pointer to **string** | URL that displays the resource in the browser. Read-only. | [optional] 
-**ClientSynchronize** | Pointer to **bool** | Indicates if the item is synchronized with the underlying storage provider. Read-only. | [optional] 
-**UiHidden** | Pointer to **bool** | Properties or facets (see UI.Facet) annotated with this term will not be rendered if the annotation evaluates to true. Users can set this to hide permissons. | [optional] 
 
 ## Methods
 
@@ -597,56 +595,6 @@ SetWebUrl sets WebUrl field to given value.
 `func (o *RemoteItem) HasWebUrl() bool`
 
 HasWebUrl returns a boolean if a field has been set.
-
-### GetClientSynchronize
-
-`func (o *RemoteItem) GetClientSynchronize() bool`
-
-GetClientSynchronize returns the ClientSynchronize field if non-nil, zero value otherwise.
-
-### GetClientSynchronizeOk
-
-`func (o *RemoteItem) GetClientSynchronizeOk() (*bool, bool)`
-
-GetClientSynchronizeOk returns a tuple with the ClientSynchronize field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClientSynchronize
-
-`func (o *RemoteItem) SetClientSynchronize(v bool)`
-
-SetClientSynchronize sets ClientSynchronize field to given value.
-
-### HasClientSynchronize
-
-`func (o *RemoteItem) HasClientSynchronize() bool`
-
-HasClientSynchronize returns a boolean if a field has been set.
-
-### GetUiHidden
-
-`func (o *RemoteItem) GetUiHidden() bool`
-
-GetUiHidden returns the UiHidden field if non-nil, zero value otherwise.
-
-### GetUiHiddenOk
-
-`func (o *RemoteItem) GetUiHiddenOk() (*bool, bool)`
-
-GetUiHiddenOk returns a tuple with the UiHidden field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUiHidden
-
-`func (o *RemoteItem) SetUiHidden(v bool)`
-
-SetUiHidden sets UiHidden field to given value.
-
-### HasUiHidden
-
-`func (o *RemoteItem) HasUiHidden() bool`
-
-HasUiHidden returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
