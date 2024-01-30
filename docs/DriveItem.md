@@ -33,6 +33,8 @@ Name | Type | Description | Notes
 **Permissions** | Pointer to [**[]Permission**](Permission.md) | The set of permissions for the item. Read-only. Nullable. | [optional] [readonly] 
 **Audio** | Pointer to [**Audio**](Audio.md) |  | [optional] 
 **Video** | Pointer to [**Video**](Video.md) |  | [optional] 
+**ClientSynchronize** | Pointer to **bool** | Indicates if the item is synchronized with the underlying storage provider. Read-only. | [optional] 
+**UIHidden** | Pointer to **bool** | Properties or facets (see UI.Facet) annotated with this term will not be rendered if the annotation evaluates to true. Users can set this to hide permissons. | [optional] 
 
 ## Methods
 
@@ -777,6 +779,56 @@ SetVideo sets Video field to given value.
 `func (o *DriveItem) HasVideo() bool`
 
 HasVideo returns a boolean if a field has been set.
+
+### GetClientSynchronize
+
+`func (o *DriveItem) GetClientSynchronize() bool`
+
+GetClientSynchronize returns the ClientSynchronize field if non-nil, zero value otherwise.
+
+### GetClientSynchronizeOk
+
+`func (o *DriveItem) GetClientSynchronizeOk() (*bool, bool)`
+
+GetClientSynchronizeOk returns a tuple with the ClientSynchronize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSynchronize
+
+`func (o *DriveItem) SetClientSynchronize(v bool)`
+
+SetClientSynchronize sets ClientSynchronize field to given value.
+
+### HasClientSynchronize
+
+`func (o *DriveItem) HasClientSynchronize() bool`
+
+HasClientSynchronize returns a boolean if a field has been set.
+
+### GetUIHidden
+
+`func (o *DriveItem) GetUIHidden() bool`
+
+GetUIHidden returns the UIHidden field if non-nil, zero value otherwise.
+
+### GetUIHiddenOk
+
+`func (o *DriveItem) GetUIHiddenOk() (*bool, bool)`
+
+GetUIHiddenOk returns a tuple with the UIHidden field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUIHidden
+
+`func (o *DriveItem) SetUIHidden(v bool)`
+
+SetUIHidden sets UIHidden field to given value.
+
+### HasUIHidden
+
+`func (o *DriveItem) HasUIHidden() bool`
+
+HasUIHidden returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

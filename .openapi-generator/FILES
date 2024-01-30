@@ -103,7 +103,7 @@ docs/Quota.md
 docs/RemoteItem.md
 docs/RoleManagementApi.md
 docs/SharePointIdentitySet.md
-docs/Shared.md
+docs/SharingInvitation.md
 docs/SharingLink.md
 docs/SharingLinkPassword.md
 docs/SharingLinkType.md
@@ -179,7 +179,7 @@ model_photo.go
 model_quota.go
 model_remote_item.go
 model_share_point_identity_set.go
-model_shared.go
+model_sharing_invitation.go
 model_sharing_link.go
 model_sharing_link_password.go
 model_sharing_link_type.go

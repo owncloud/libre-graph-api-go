@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **ETag** | Pointer to **string** | ETag for the item. Read-only. | [optional] [readonly] 
 **CTag** | Pointer to **string** | An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only. | [optional] [readonly] 
 **ParentReference** | Pointer to [**ItemReference**](ItemReference.md) |  | [optional] 
-**Shared** | Pointer to [**Shared**](Shared.md) |  | [optional] 
 **Permissions** | Pointer to [**[]Permission**](Permission.md) | The set of permissions for the item. Read-only. Nullable. | [optional] [readonly] 
 **Size** | Pointer to **int64** | Size of the remote item. Read-only. | [optional] 
 **SpecialFolder** | Pointer to [**SpecialFolder**](SpecialFolder.md) |  | [optional] 
@@ -445,31 +444,6 @@ SetParentReference sets ParentReference field to given value.
 `func (o *RemoteItem) HasParentReference() bool`
 
 HasParentReference returns a boolean if a field has been set.
-
-### GetShared
-
-`func (o *RemoteItem) GetShared() Shared`
-
-GetShared returns the Shared field if non-nil, zero value otherwise.
-
-### GetSharedOk
-
-`func (o *RemoteItem) GetSharedOk() (*Shared, bool)`
-
-GetSharedOk returns a tuple with the Shared field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetShared
-
-`func (o *RemoteItem) SetShared(v Shared)`
-
-SetShared sets Shared field to given value.
-
-### HasShared
-
-`func (o *RemoteItem) HasShared() bool`
-
-HasShared returns a boolean if a field has been set.
 
 ### GetPermissions
 
