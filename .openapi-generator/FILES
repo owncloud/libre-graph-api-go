@@ -111,6 +111,8 @@ docs/SpecialFolder.md
 docs/TagAssignment.md
 docs/TagUnassignment.md
 docs/TagsApi.md
+docs/Thumbnail.md
+docs/ThumbnailSet.md
 docs/Trash.md
 docs/UnifiedRoleDefinition.md
 docs/UnifiedRolePermission.md
@@ -186,6 +188,8 @@ model_sharing_link_type.go
 model_special_folder.go
 model_tag_assignment.go
 model_tag_unassignment.go
+model_thumbnail.go
+model_thumbnail_set.go
 model_trash.go
 model_unified_role_definition.go
 model_unified_role_permission.go

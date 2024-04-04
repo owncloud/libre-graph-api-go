@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **Image** | Pointer to [**Image**](Image.md) |  | [optional] 
 **Photo** | Pointer to [**Photo**](Photo.md) |  | [optional] 
 **Location** | Pointer to [**GeoCoordinates**](GeoCoordinates.md) |  | [optional] 
+**Thumbnails** | Pointer to [**[]ThumbnailSet**](ThumbnailSet.md) | Collection containing ThumbnailSet objects associated with the item. Read-only. Nullable. | [optional] 
 **Root** | Pointer to **map[string]interface{}** | If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive. | [optional] 
 **Trash** | Pointer to [**Trash**](Trash.md) |  | [optional] 
 **SpecialFolder** | Pointer to [**SpecialFolder**](SpecialFolder.md) |  | [optional] 
@@ -529,6 +530,31 @@ SetLocation sets Location field to given value.
 `func (o *DriveItem) HasLocation() bool`
 
 HasLocation returns a boolean if a field has been set.
+
+### GetThumbnails
+
+`func (o *DriveItem) GetThumbnails() []ThumbnailSet`
+
+GetThumbnails returns the Thumbnails field if non-nil, zero value otherwise.
+
+### GetThumbnailsOk
+
+`func (o *DriveItem) GetThumbnailsOk() (*[]ThumbnailSet, bool)`
+
+GetThumbnailsOk returns a tuple with the Thumbnails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetThumbnails
+
+`func (o *DriveItem) SetThumbnails(v []ThumbnailSet)`
+
+SetThumbnails sets Thumbnails field to given value.
+
+### HasThumbnails
+
+`func (o *DriveItem) HasThumbnails() bool`
+
+HasThumbnails returns a boolean if a field has been set.
 
 ### GetRoot
 
