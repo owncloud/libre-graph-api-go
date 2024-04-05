@@ -94,7 +94,14 @@ Class | Method | HTTP request | Description
 *DrivesPermissionsApi* | [**SetPermissionPassword**](docs/DrivesPermissionsApi.md#setpermissionpassword) | **Post** /v1beta1/drives/{drive-id}/items/{item-id}/permissions/{perm-id}/setPassword | Set sharing link password
 *DrivesPermissionsApi* | [**UpdatePermission**](docs/DrivesPermissionsApi.md#updatepermission) | **Patch** /v1beta1/drives/{drive-id}/items/{item-id}/permissions/{perm-id} | Update sharing permission
 *DrivesRootApi* | [**CreateDriveItem**](docs/DrivesRootApi.md#createdriveitem) | **Post** /v1beta1/drives/{drive-id}/root/children | Create a drive item
+*DrivesRootApi* | [**CreateLinkSpaceRoot**](docs/DrivesRootApi.md#createlinkspaceroot) | **Post** /v1beta1/drives/{drive-id}/root/createLink | Create a sharing link for the root item of a Drive
+*DrivesRootApi* | [**DeletePermissionSpaceRoot**](docs/DrivesRootApi.md#deletepermissionspaceroot) | **Delete** /v1beta1/drives/{drive-id}/root/permissions/{perm-id} | Remove access to a DriveItem
+*DrivesRootApi* | [**GetPermissionSpaceRoot**](docs/DrivesRootApi.md#getpermissionspaceroot) | **Get** /v1beta1/drives/{drive-id}/root/permissions/{perm-id} | Get a single sharing permission for the root item of a drive
 *DrivesRootApi* | [**GetRoot**](docs/DrivesRootApi.md#getroot) | **Get** /v1.0/drives/{drive-id}/root | Get root from arbitrary space
+*DrivesRootApi* | [**InviteSpaceRoot**](docs/DrivesRootApi.md#invitespaceroot) | **Post** /v1beta1/drives/{drive-id}/root/invite | Send a sharing invitation
+*DrivesRootApi* | [**ListPermissionsSpaceRoot**](docs/DrivesRootApi.md#listpermissionsspaceroot) | **Get** /v1beta1/drives/{drive-id}/root/permissions | List the effective permissions on the root item of a drive.
+*DrivesRootApi* | [**SetPermissionPasswordSpaceRoot**](docs/DrivesRootApi.md#setpermissionpasswordspaceroot) | **Post** /v1beta1/drives/{drive-id}/root/permissions/{perm-id}/setPassword | Set sharing link password for the root item of a drive
+*DrivesRootApi* | [**UpdatePermissionSpaceRoot**](docs/DrivesRootApi.md#updatepermissionspaceroot) | **Patch** /v1beta1/drives/{drive-id}/root/permissions/{perm-id} | Update sharing permission
 *EducationClassApi* | [**AddUserToClass**](docs/EducationClassApi.md#addusertoclass) | **Post** /v1.0/education/classes/{class-id}/members/$ref | Assign a user to a class
 *EducationClassApi* | [**CreateClass**](docs/EducationClassApi.md#createclass) | **Post** /v1.0/education/classes | Add new education class
 *EducationClassApi* | [**DeleteClass**](docs/EducationClassApi.md#deleteclass) | **Delete** /v1.0/education/classes/{class-id} | Delete education class
