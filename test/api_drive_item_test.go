@@ -36,4 +36,18 @@ func Test_libregraph_DriveItemApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test DriveItemApiService UpdateDriveItem", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var driveId string
+		var itemId string
+
+		httpRes, err := apiClient.DriveItemApi.UpdateDriveItem(context.Background(), driveId, itemId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 }

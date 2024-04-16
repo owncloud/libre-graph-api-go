@@ -130,3 +130,127 @@ func (a *DriveItemApiService) DeleteDriveItemExecute(r ApiDeleteDriveItemRequest
 
 	return localVarHTTPResponse, nil
 }
+
+type ApiUpdateDriveItemRequest struct {
+	ctx        context.Context
+	ApiService *DriveItemApiService
+	driveId    string
+	itemId     string
+	driveItem  *DriveItem
+}
+
+// DriveItem properties to update
+func (r ApiUpdateDriveItemRequest) DriveItem(driveItem DriveItem) ApiUpdateDriveItemRequest {
+	r.driveItem = &driveItem
+	return r
+}
+
+func (r ApiUpdateDriveItemRequest) Execute() (*http.Response, error) {
+	return r.ApiService.UpdateDriveItemExecute(r)
+}
+
+/*
+UpdateDriveItem Update a DriveItem.
+
+Update a DriveItem.
+
+The request body must include a JSON object with the properties to update.
+Only the properties that are provided will be updated.
+
+Currently it supports updating the following properties:
+
+* `@UI.Hidden` - Hides the item from the UI.
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @param itemId key: id of item
+ @return ApiUpdateDriveItemRequest
+*/
+func (a *DriveItemApiService) UpdateDriveItem(ctx context.Context, driveId string, itemId string) ApiUpdateDriveItemRequest {
+	return ApiUpdateDriveItemRequest{
+		ApiService: a,
+		ctx:        ctx,
+		driveId:    driveId,
+		itemId:     itemId,
+	}
+}
+
+// Execute executes the request
+func (a *DriveItemApiService) UpdateDriveItemExecute(r ApiUpdateDriveItemRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodPatch
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DriveItemApiService.UpdateDriveItem")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1beta1/drives/{drive-id}/items/{item-id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"drive-id"+"}", url.PathEscape(parameterValueToString(r.driveId, "driveId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"item-id"+"}", url.PathEscape(parameterValueToString(r.itemId, "itemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.driveItem == nil {
+		return nil, reportError("driveItem is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.driveItem
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v OdataError
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
