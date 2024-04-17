@@ -290,7 +290,7 @@ func (r ApiDeletePermissionSpaceRootRequest) Execute() (*http.Response, error) {
 }
 
 /*
-DeletePermissionSpaceRoot Remove access to a DriveItem
+DeletePermissionSpaceRoot Remove access to a Drive
 
 Remove access to the root item of a drive.
 

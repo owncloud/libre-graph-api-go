@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateDriveItem**](DrivesRootApi.md#CreateDriveItem) | **Post** /v1beta1/drives/{drive-id}/root/children | Create a drive item
 [**CreateLinkSpaceRoot**](DrivesRootApi.md#CreateLinkSpaceRoot) | **Post** /v1beta1/drives/{drive-id}/root/createLink | Create a sharing link for the root item of a Drive
-[**DeletePermissionSpaceRoot**](DrivesRootApi.md#DeletePermissionSpaceRoot) | **Delete** /v1beta1/drives/{drive-id}/root/permissions/{perm-id} | Remove access to a DriveItem
+[**DeletePermissionSpaceRoot**](DrivesRootApi.md#DeletePermissionSpaceRoot) | **Delete** /v1beta1/drives/{drive-id}/root/permissions/{perm-id} | Remove access to a Drive
 [**GetPermissionSpaceRoot**](DrivesRootApi.md#GetPermissionSpaceRoot) | **Get** /v1beta1/drives/{drive-id}/root/permissions/{perm-id} | Get a single sharing permission for the root item of a drive
 [**GetRoot**](DrivesRootApi.md#GetRoot) | **Get** /v1.0/drives/{drive-id}/root | Get root from arbitrary space
 [**InviteSpaceRoot**](DrivesRootApi.md#InviteSpaceRoot) | **Post** /v1beta1/drives/{drive-id}/root/invite | Send a sharing invitation
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 > DeletePermissionSpaceRoot(ctx, driveId, permId).Execute()
 
-Remove access to a DriveItem
+Remove access to a Drive
 
 
 
