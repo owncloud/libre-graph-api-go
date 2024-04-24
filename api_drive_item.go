@@ -145,7 +145,7 @@ func (r ApiUpdateDriveItemRequest) DriveItem(driveItem DriveItem) ApiUpdateDrive
 	return r
 }
 
-func (r ApiUpdateDriveItemRequest) Execute() (*http.Response, error) {
+func (r ApiUpdateDriveItemRequest) Execute() (*DriveItem, *http.Response, error) {
 	return r.ApiService.UpdateDriveItemExecute(r)
 }
 
@@ -177,16 +177,18 @@ func (a *DriveItemApiService) UpdateDriveItem(ctx context.Context, driveId strin
 }
 
 // Execute executes the request
-func (a *DriveItemApiService) UpdateDriveItemExecute(r ApiUpdateDriveItemRequest) (*http.Response, error) {
+//  @return DriveItem
+func (a *DriveItemApiService) UpdateDriveItemExecute(r ApiUpdateDriveItemRequest) (*DriveItem, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DriveItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DriveItemApiService.UpdateDriveItem")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/v1beta1/drives/{drive-id}/items/{item-id}"
@@ -197,7 +199,7 @@ func (a *DriveItemApiService) UpdateDriveItemExecute(r ApiUpdateDriveItemRequest
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.driveItem == nil {
-		return nil, reportError("driveItem is required and must be specified")
+		return localVarReturnValue, nil, reportError("driveItem is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -221,19 +223,19 @@ func (a *DriveItemApiService) UpdateDriveItemExecute(r ApiUpdateDriveItemRequest
 	localVarPostBody = r.driveItem
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -245,12 +247,21 @@ func (a *DriveItemApiService) UpdateDriveItemExecute(r ApiUpdateDriveItemRequest
 		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
-			return localVarHTTPResponse, newErr
+			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 		newErr.model = v
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

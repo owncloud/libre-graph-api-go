@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDriveItem
 
-> UpdateDriveItem(ctx, driveId, itemId).DriveItem(driveItem).Execute()
+> DriveItem UpdateDriveItem(ctx, driveId, itemId).DriveItem(driveItem).Execute()
 
 Update a DriveItem.
 
@@ -107,11 +107,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DriveItemApi.UpdateDriveItem(context.Background(), driveId, itemId).DriveItem(driveItem).Execute()
+    resp, r, err := apiClient.DriveItemApi.UpdateDriveItem(context.Background(), driveId, itemId).DriveItem(driveItem).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DriveItemApi.UpdateDriveItem``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `UpdateDriveItem`: DriveItem
+    fmt.Fprintf(os.Stdout, "Response from `DriveItemApi.UpdateDriveItem`: %v\n", resp)
 }
 ```
 
@@ -137,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**DriveItem**](DriveItem.md)
 
 ### Authorization
 

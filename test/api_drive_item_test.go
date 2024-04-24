@@ -43,9 +43,10 @@ func Test_libregraph_DriveItemApiService(t *testing.T) {
 		var driveId string
 		var itemId string
 
-		httpRes, err := apiClient.DriveItemApi.UpdateDriveItem(context.Background(), driveId, itemId).Execute()
+		resp, httpRes, err := apiClient.DriveItemApi.UpdateDriveItem(context.Background(), driveId, itemId).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
