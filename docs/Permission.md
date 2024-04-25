@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | The unique identifier of the permission among all permissions on the item. Read-only. | [optional] [readonly] 
 **HasPassword** | Pointer to **bool** | Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only.  | [optional] [readonly] 
 **ExpirationDateTime** | Pointer to **NullableTime** | An optional expiration date which limits the permission in time. | [optional] 
+**CreatedDateTime** | Pointer to **NullableTime** | An optional creation date. Libregraph only. | [optional] 
 **GrantedToV2** | Pointer to [**SharePointIdentitySet**](SharePointIdentitySet.md) |  | [optional] 
 **Link** | Pointer to [**SharingLink**](SharingLink.md) |  | [optional] 
 **Roles** | Pointer to **[]string** |  | [optional] 
@@ -118,6 +119,41 @@ HasExpirationDateTime returns a boolean if a field has been set.
 `func (o *Permission) UnsetExpirationDateTime()`
 
 UnsetExpirationDateTime ensures that no value is present for ExpirationDateTime, not even an explicit nil
+### GetCreatedDateTime
+
+`func (o *Permission) GetCreatedDateTime() time.Time`
+
+GetCreatedDateTime returns the CreatedDateTime field if non-nil, zero value otherwise.
+
+### GetCreatedDateTimeOk
+
+`func (o *Permission) GetCreatedDateTimeOk() (*time.Time, bool)`
+
+GetCreatedDateTimeOk returns a tuple with the CreatedDateTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedDateTime
+
+`func (o *Permission) SetCreatedDateTime(v time.Time)`
+
+SetCreatedDateTime sets CreatedDateTime field to given value.
+
+### HasCreatedDateTime
+
+`func (o *Permission) HasCreatedDateTime() bool`
+
+HasCreatedDateTime returns a boolean if a field has been set.
+
+### SetCreatedDateTimeNil
+
+`func (o *Permission) SetCreatedDateTimeNil(b bool)`
+
+ SetCreatedDateTimeNil sets the value for CreatedDateTime to be an explicit nil
+
+### UnsetCreatedDateTime
+`func (o *Permission) UnsetCreatedDateTime()`
+
+UnsetCreatedDateTime ensures that no value is present for CreatedDateTime, not even an explicit nil
 ### GetGrantedToV2
 
 `func (o *Permission) GetGrantedToV2() SharePointIdentitySet`
