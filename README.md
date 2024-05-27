@@ -258,6 +258,20 @@ auth := context.WithValue(context.Background(), libregraph.ContextAccessToken, "
 r, err := client.Service.Operation(auth, args)
 ```
 
+### basicAuth
+
+- **Type**: HTTP basic authentication
+
+Example
+
+```go
+auth := context.WithValue(context.Background(), libregraph.ContextBasicAuth, libregraph.BasicAuth{
+	UserName: "username",
+	Password: "password",
+})
+r, err := client.Service.Operation(auth, args)
+```
+
 
 ## Documentation for Utility Methods
 

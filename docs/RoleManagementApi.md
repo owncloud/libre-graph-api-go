@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[openId](../README.md#openId)
+[openId](../README.md#openId), [basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -128,7 +128,7 @@ Other parameters are passed through a pointer to a apiListPermissionRoleDefiniti
 
 ### Authorization
 
-[openId](../README.md#openId)
+[openId](../README.md#openId), [basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 

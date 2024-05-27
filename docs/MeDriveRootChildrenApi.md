@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiHomeGetChildrenRequest str
 
 ### Authorization
 
-[openId](../README.md#openId)
+[openId](../README.md#openId), [basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 

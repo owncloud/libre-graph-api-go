@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[openId](../README.md#openId)
+[openId](../README.md#openId), [basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -119,7 +119,7 @@ Other parameters are passed through a pointer to a apiGetTagsRequest struct via 
 
 ### Authorization
 
-[openId](../README.md#openId)
+[openId](../README.md#openId), [basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[openId](../README.md#openId)
+[openId](../README.md#openId), [basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
