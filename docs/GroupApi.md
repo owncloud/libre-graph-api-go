@@ -25,23 +25,23 @@ Add a member to a group
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    groupId := "groupId_example" // string | key: id of group
-    memberReference := *openapiclient.NewMemberReference() // MemberReference | Object to be added as member
+	groupId := "groupId_example" // string | key: id of group
+	memberReference := *openapiclient.NewMemberReference() // MemberReference | Object to be added as member
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GroupApi.AddMember(context.Background(), groupId).MemberReference(memberReference).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.AddMember``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GroupApi.AddMember(context.Background(), groupId).MemberReference(memberReference).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.AddMember``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -93,23 +93,23 @@ Delete entity from groups
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    groupId := "groupId_example" // string | key: id of group
-    ifMatch := "ifMatch_example" // string | ETag (optional)
+	groupId := "groupId_example" // string | key: id of group
+	ifMatch := "ifMatch_example" // string | ETag (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GroupApi.DeleteGroup(context.Background(), groupId).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.DeleteGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GroupApi.DeleteGroup(context.Background(), groupId).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.DeleteGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -161,24 +161,24 @@ Delete member from a group
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    groupId := "groupId_example" // string | key: id of group
-    directoryObjectId := "directoryObjectId_example" // string | key: id of group member to remove
-    ifMatch := "ifMatch_example" // string | ETag (optional)
+	groupId := "groupId_example" // string | key: id of group
+	directoryObjectId := "directoryObjectId_example" // string | key: id of group member to remove
+	ifMatch := "ifMatch_example" // string | ETag (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GroupApi.DeleteMember(context.Background(), groupId, directoryObjectId).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.DeleteMember``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GroupApi.DeleteMember(context.Background(), groupId, directoryObjectId).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.DeleteMember``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -232,26 +232,26 @@ Get entity from groups by key
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    groupId := "groupId_example" // string | key: id or name of group
-    select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
-    expand := []string{"Expand_example"} // []string | Expand related entities (optional)
+	groupId := "groupId_example" // string | key: id or name of group
+	select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
+	expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GroupApi.GetGroup(context.Background(), groupId).Select_(select_).Expand(expand).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.GetGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetGroup`: Group
-    fmt.Fprintf(os.Stdout, "Response from `GroupApi.GetGroup`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.GroupApi.GetGroup(context.Background(), groupId).Select_(select_).Expand(expand).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.GetGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGroup`: Group
+	fmt.Fprintf(os.Stdout, "Response from `GroupApi.GetGroup`: %v\n", resp)
 }
 ```
 
@@ -304,24 +304,24 @@ Get a list of the group's direct members
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    groupId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id or name of group
+	groupId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id or name of group
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GroupApi.ListMembers(context.Background(), groupId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.ListMembers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListMembers`: CollectionOfUsers
-    fmt.Fprintf(os.Stdout, "Response from `GroupApi.ListMembers`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.GroupApi.ListMembers(context.Background(), groupId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.ListMembers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListMembers`: CollectionOfUsers
+	fmt.Fprintf(os.Stdout, "Response from `GroupApi.ListMembers`: %v\n", resp)
 }
 ```
 
@@ -372,23 +372,23 @@ Update entity in groups
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    groupId := "groupId_example" // string | key: id of group
-    group := *openapiclient.NewGroup() // Group | New property values
+	groupId := "groupId_example" // string | key: id of group
+	group := *openapiclient.NewGroup() // Group | New property values
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GroupApi.UpdateGroup(context.Background(), groupId).Group(group).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.UpdateGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GroupApi.UpdateGroup(context.Background(), groupId).Group(group).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupApi.UpdateGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 

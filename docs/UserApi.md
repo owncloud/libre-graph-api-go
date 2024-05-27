@@ -23,23 +23,23 @@ Delete entity from users
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    userId := "userId_example" // string | key: id or name of user
-    ifMatch := "ifMatch_example" // string | ETag (optional)
+	userId := "userId_example" // string | key: id or name of user
+	ifMatch := "ifMatch_example" // string | ETag (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UserApi.DeleteUser(context.Background(), userId).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.DeleteUser``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.UserApi.DeleteUser(context.Background(), userId).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UserApi.DeleteUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -91,23 +91,23 @@ export personal data of a user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    userId := "userId_example" // string | key: id or name of user
-    exportPersonalDataRequest := *openapiclient.NewExportPersonalDataRequest() // ExportPersonalDataRequest | destination the file should be created at (optional)
+	userId := "userId_example" // string | key: id or name of user
+	exportPersonalDataRequest := *openapiclient.NewExportPersonalDataRequest() // ExportPersonalDataRequest | destination the file should be created at (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UserApi.ExportPersonalData(context.Background(), userId).ExportPersonalDataRequest(exportPersonalDataRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.ExportPersonalData``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.UserApi.ExportPersonalData(context.Background(), userId).ExportPersonalDataRequest(exportPersonalDataRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UserApi.ExportPersonalData``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -159,26 +159,26 @@ Get entity from users by key
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    userId := "userId_example" // string | key: id or name of user
-    select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
-    expand := []string{"Expand_example"} // []string | Expand related entities (optional)
+	userId := "userId_example" // string | key: id or name of user
+	select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
+	expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.GetUser(context.Background(), userId).Select_(select_).Expand(expand).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.GetUser``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetUser`: User
-    fmt.Fprintf(os.Stdout, "Response from `UserApi.GetUser`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UserApi.GetUser(context.Background(), userId).Select_(select_).Expand(expand).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UserApi.GetUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetUser`: User
+	fmt.Fprintf(os.Stdout, "Response from `UserApi.GetUser`: %v\n", resp)
 }
 ```
 
@@ -231,25 +231,25 @@ Update entity in users
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    userId := "userId_example" // string | key: id of user
-    user := *openapiclient.NewUser() // User | New property values
+	userId := "userId_example" // string | key: id of user
+	user := *openapiclient.NewUser() // User | New property values
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.UpdateUser(context.Background(), userId).User(user).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.UpdateUser``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateUser`: User
-    fmt.Fprintf(os.Stdout, "Response from `UserApi.UpdateUser`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UserApi.UpdateUser(context.Background(), userId).User(user).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UserApi.UpdateUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateUser`: User
+	fmt.Fprintf(os.Stdout, "Response from `UserApi.UpdateUser`: %v\n", resp)
 }
 ```
 

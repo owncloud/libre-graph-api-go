@@ -11,7 +11,9 @@ API version: v1.0.4
 package libregraph
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -49,6 +51,8 @@ type Drive struct {
 	// A collection of special drive resources.
 	Special []DriveItem `json:"special,omitempty"`
 }
+
+type _Drive Drive
 
 // NewDrive instantiates a new Drive object
 // This constructor will assign default values to properties that have it defined,
@@ -664,6 +668,43 @@ func (o Drive) ToMap() (map[string]interface{}, error) {
 		toSerialize["special"] = o.Special
 	}
 	return toSerialize, nil
+}
+
+func (o *Drive) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varDrive := _Drive{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varDrive)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Drive(varDrive)
+
+	return err
 }
 
 type NullableDrive struct {

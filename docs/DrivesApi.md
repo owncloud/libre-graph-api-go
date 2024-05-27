@@ -23,24 +23,24 @@ Create a new drive of a specific type
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    drive := *openapiclient.NewDrive("Name_example") // Drive | New space property values
+	drive := *openapiclient.NewDrive("Name_example") // Drive | New space property values
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesApi.CreateDrive(context.Background()).Drive(drive).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.CreateDrive``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateDrive`: Drive
-    fmt.Fprintf(os.Stdout, "Response from `DrivesApi.CreateDrive`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DrivesApi.CreateDrive(context.Background()).Drive(drive).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.CreateDrive``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateDrive`: Drive
+	fmt.Fprintf(os.Stdout, "Response from `DrivesApi.CreateDrive`: %v\n", resp)
 }
 ```
 
@@ -87,23 +87,23 @@ Delete a specific space
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    driveId := "driveId_example" // string | key: id of drive
-    ifMatch := "ifMatch_example" // string | ETag (optional)
+	driveId := "driveId_example" // string | key: id of drive
+	ifMatch := "ifMatch_example" // string | ETag (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DrivesApi.DeleteDrive(context.Background(), driveId).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.DeleteDrive``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.DrivesApi.DeleteDrive(context.Background(), driveId).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.DeleteDrive``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -155,24 +155,24 @@ Get drive by id
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    driveId := "driveId_example" // string | key: id of drive
+	driveId := "driveId_example" // string | key: id of drive
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesApi.GetDrive(context.Background(), driveId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.GetDrive``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDrive`: Drive
-    fmt.Fprintf(os.Stdout, "Response from `DrivesApi.GetDrive`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DrivesApi.GetDrive(context.Background(), driveId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.GetDrive``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDrive`: Drive
+	fmt.Fprintf(os.Stdout, "Response from `DrivesApi.GetDrive`: %v\n", resp)
 }
 ```
 
@@ -223,25 +223,25 @@ Update the drive
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    driveId := "driveId_example" // string | key: id of drive
-    drive := *openapiclient.NewDrive("Name_example") // Drive | New space values
+	driveId := "driveId_example" // string | key: id of drive
+	drive := *openapiclient.NewDrive("Name_example") // Drive | New space values
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesApi.UpdateDrive(context.Background(), driveId).Drive(drive).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.UpdateDrive``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateDrive`: Drive
-    fmt.Fprintf(os.Stdout, "Response from `DrivesApi.UpdateDrive`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DrivesApi.UpdateDrive(context.Background(), driveId).Drive(drive).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.UpdateDrive``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateDrive`: Drive
+	fmt.Fprintf(os.Stdout, "Response from `DrivesApi.UpdateDrive`: %v\n", resp)
 }
 ```
 

@@ -24,25 +24,25 @@ Grant an appRoleAssignment to a user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    userId := "userId_example" // string | key: id of user
-    appRoleAssignment := *openapiclient.NewAppRoleAssignment("AppRoleId_example", "PrincipalId_example", "ResourceId_example") // AppRoleAssignment | New app role assignment value
+	userId := "userId_example" // string | key: id of user
+	appRoleAssignment := *openapiclient.NewAppRoleAssignment("AppRoleId_example", "PrincipalId_example", "ResourceId_example") // AppRoleAssignment | New app role assignment value
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserAppRoleAssignmentApi.UserCreateAppRoleAssignments(context.Background(), userId).AppRoleAssignment(appRoleAssignment).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserAppRoleAssignmentApi.UserCreateAppRoleAssignments``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserCreateAppRoleAssignments`: AppRoleAssignment
-    fmt.Fprintf(os.Stdout, "Response from `UserAppRoleAssignmentApi.UserCreateAppRoleAssignments`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UserAppRoleAssignmentApi.UserCreateAppRoleAssignments(context.Background(), userId).AppRoleAssignment(appRoleAssignment).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UserAppRoleAssignmentApi.UserCreateAppRoleAssignments``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserCreateAppRoleAssignments`: AppRoleAssignment
+	fmt.Fprintf(os.Stdout, "Response from `UserAppRoleAssignmentApi.UserCreateAppRoleAssignments`: %v\n", resp)
 }
 ```
 
@@ -94,24 +94,24 @@ Delete the appRoleAssignment from a user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    userId := "userId_example" // string | key: id of user
-    appRoleAssignmentId := "appRoleAssignmentId_example" // string | key: id of appRoleAssignment. This is the concatenated {user-id}:{appRole-id} separated by a colon.
-    ifMatch := "ifMatch_example" // string | ETag (optional)
+	userId := "userId_example" // string | key: id of user
+	appRoleAssignmentId := "appRoleAssignmentId_example" // string | key: id of appRoleAssignment. This is the concatenated {user-id}:{appRole-id} separated by a colon.
+	ifMatch := "ifMatch_example" // string | ETag (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UserAppRoleAssignmentApi.UserDeleteAppRoleAssignments(context.Background(), userId, appRoleAssignmentId).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserAppRoleAssignmentApi.UserDeleteAppRoleAssignments``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.UserAppRoleAssignmentApi.UserDeleteAppRoleAssignments(context.Background(), userId, appRoleAssignmentId).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UserAppRoleAssignmentApi.UserDeleteAppRoleAssignments``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -167,24 +167,24 @@ Get appRoleAssignments from a user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    userId := "userId_example" // string | key: id of user
+	userId := "userId_example" // string | key: id of user
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserAppRoleAssignmentApi.UserListAppRoleAssignments(context.Background(), userId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserAppRoleAssignmentApi.UserListAppRoleAssignments``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserListAppRoleAssignments`: CollectionOfAppRoleAssignments
-    fmt.Fprintf(os.Stdout, "Response from `UserAppRoleAssignmentApi.UserListAppRoleAssignments`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UserAppRoleAssignmentApi.UserListAppRoleAssignments(context.Background(), userId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UserAppRoleAssignmentApi.UserListAppRoleAssignments``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserListAppRoleAssignments`: CollectionOfAppRoleAssignments
+	fmt.Fprintf(os.Stdout, "Response from `UserAppRoleAssignmentApi.UserListAppRoleAssignments`: %v\n", resp)
 }
 ```
 

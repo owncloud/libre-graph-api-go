@@ -20,23 +20,23 @@ Get children from drive
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeDriveRootChildrenApi.HomeGetChildren(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootChildrenApi.HomeGetChildren``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `HomeGetChildren`: CollectionOfDriveItems
-    fmt.Fprintf(os.Stdout, "Response from `MeDriveRootChildrenApi.HomeGetChildren`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MeDriveRootChildrenApi.HomeGetChildren(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootChildrenApi.HomeGetChildren``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `HomeGetChildren`: CollectionOfDriveItems
+	fmt.Fprintf(os.Stdout, "Response from `MeDriveRootChildrenApi.HomeGetChildren`: %v\n", resp)
 }
 ```
 

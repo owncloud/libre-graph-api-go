@@ -30,25 +30,25 @@ Create a drive item
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    driveId := "a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668" // string | key: id of drive
-    driveItem := *openapiclient.NewDriveItem() // DriveItem | In the request body, provide a JSON object with the following parameters. For mounting a share the necessary remoteItem id and permission id can be taken from the [sharedWithMe](#/me.drive/ListSharedWithMe) endpoint. (optional)
+	driveId := "a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668" // string | key: id of drive
+	driveItem := *openapiclient.NewDriveItem() // DriveItem | In the request body, provide a JSON object with the following parameters. For mounting a share the necessary remoteItem id and permission id can be taken from the [sharedWithMe](#/me.drive/ListSharedWithMe) endpoint. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesRootApi.CreateDriveItem(context.Background(), driveId).DriveItem(driveItem).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.CreateDriveItem``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateDriveItem`: DriveItem
-    fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.CreateDriveItem`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DrivesRootApi.CreateDriveItem(context.Background(), driveId).DriveItem(driveItem).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.CreateDriveItem``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateDriveItem`: DriveItem
+	fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.CreateDriveItem`: %v\n", resp)
 }
 ```
 
@@ -102,25 +102,25 @@ Create a sharing link for the root item of a Drive
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    driveId := "driveId_example" // string | key: id of drive
-    driveItemCreateLink := *openapiclient.NewDriveItemCreateLink() // DriveItemCreateLink | In the request body, provide a JSON object with the following parameters. (optional)
+	driveId := "driveId_example" // string | key: id of drive
+	driveItemCreateLink := *openapiclient.NewDriveItemCreateLink() // DriveItemCreateLink | In the request body, provide a JSON object with the following parameters. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesRootApi.CreateLinkSpaceRoot(context.Background(), driveId).DriveItemCreateLink(driveItemCreateLink).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.CreateLinkSpaceRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateLinkSpaceRoot`: Permission
-    fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.CreateLinkSpaceRoot`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DrivesRootApi.CreateLinkSpaceRoot(context.Background(), driveId).DriveItemCreateLink(driveItemCreateLink).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.CreateLinkSpaceRoot``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateLinkSpaceRoot`: Permission
+	fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.CreateLinkSpaceRoot`: %v\n", resp)
 }
 ```
 
@@ -174,23 +174,23 @@ Remove access to a Drive
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    driveId := "driveId_example" // string | key: id of drive
-    permId := "permId_example" // string | key: id of permission
+	driveId := "driveId_example" // string | key: id of drive
+	permId := "permId_example" // string | key: id of permission
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DrivesRootApi.DeletePermissionSpaceRoot(context.Background(), driveId, permId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.DeletePermissionSpaceRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.DrivesRootApi.DeletePermissionSpaceRoot(context.Background(), driveId, permId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.DeletePermissionSpaceRoot``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -245,25 +245,25 @@ Get a single sharing permission for the root item of a drive
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    driveId := "driveId_example" // string | key: id of drive
-    permId := "permId_example" // string | key: id of permission
+	driveId := "driveId_example" // string | key: id of drive
+	permId := "permId_example" // string | key: id of permission
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesRootApi.GetPermissionSpaceRoot(context.Background(), driveId, permId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.GetPermissionSpaceRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetPermissionSpaceRoot`: Permission
-    fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.GetPermissionSpaceRoot`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DrivesRootApi.GetPermissionSpaceRoot(context.Background(), driveId, permId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.GetPermissionSpaceRoot``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPermissionSpaceRoot`: Permission
+	fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.GetPermissionSpaceRoot`: %v\n", resp)
 }
 ```
 
@@ -316,24 +316,24 @@ Get root from arbitrary space
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    driveId := "driveId_example" // string | key: id of drive
+	driveId := "driveId_example" // string | key: id of drive
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesRootApi.GetRoot(context.Background(), driveId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.GetRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetRoot`: DriveItem
-    fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.GetRoot`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DrivesRootApi.GetRoot(context.Background(), driveId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.GetRoot``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRoot`: DriveItem
+	fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.GetRoot`: %v\n", resp)
 }
 ```
 
@@ -386,25 +386,25 @@ Send a sharing invitation
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    driveId := "driveId_example" // string | key: id of drive
-    driveItemInvite := *openapiclient.NewDriveItemInvite() // DriveItemInvite | In the request body, provide a JSON object with the following parameters. To create a custom role submit a list of actions instead of roles. (optional)
+	driveId := "driveId_example" // string | key: id of drive
+	driveItemInvite := *openapiclient.NewDriveItemInvite() // DriveItemInvite | In the request body, provide a JSON object with the following parameters. To create a custom role submit a list of actions instead of roles. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesRootApi.InviteSpaceRoot(context.Background(), driveId).DriveItemInvite(driveItemInvite).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.InviteSpaceRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `InviteSpaceRoot`: CollectionOfPermissions
-    fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.InviteSpaceRoot`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DrivesRootApi.InviteSpaceRoot(context.Background(), driveId).DriveItemInvite(driveItemInvite).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.InviteSpaceRoot``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InviteSpaceRoot`: CollectionOfPermissions
+	fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.InviteSpaceRoot`: %v\n", resp)
 }
 ```
 
@@ -458,24 +458,24 @@ List the effective permissions on the root item of a drive.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    driveId := "driveId_example" // string | key: id of drive
+	driveId := "driveId_example" // string | key: id of drive
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesRootApi.ListPermissionsSpaceRoot(context.Background(), driveId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.ListPermissionsSpaceRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListPermissionsSpaceRoot`: CollectionOfPermissionsWithAllowedValues
-    fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.ListPermissionsSpaceRoot`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DrivesRootApi.ListPermissionsSpaceRoot(context.Background(), driveId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.ListPermissionsSpaceRoot``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListPermissionsSpaceRoot`: CollectionOfPermissionsWithAllowedValues
+	fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.ListPermissionsSpaceRoot`: %v\n", resp)
 }
 ```
 
@@ -528,26 +528,26 @@ Set sharing link password for the root item of a drive
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    driveId := "driveId_example" // string | key: id of drive
-    permId := "permId_example" // string | key: id of permission
-    sharingLinkPassword := *openapiclient.NewSharingLinkPassword() // SharingLinkPassword | New password value
+	driveId := "driveId_example" // string | key: id of drive
+	permId := "permId_example" // string | key: id of permission
+	sharingLinkPassword := *openapiclient.NewSharingLinkPassword() // SharingLinkPassword | New password value
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesRootApi.SetPermissionPasswordSpaceRoot(context.Background(), driveId, permId).SharingLinkPassword(sharingLinkPassword).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.SetPermissionPasswordSpaceRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SetPermissionPasswordSpaceRoot`: Permission
-    fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.SetPermissionPasswordSpaceRoot`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DrivesRootApi.SetPermissionPasswordSpaceRoot(context.Background(), driveId, permId).SharingLinkPassword(sharingLinkPassword).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.SetPermissionPasswordSpaceRoot``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SetPermissionPasswordSpaceRoot`: Permission
+	fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.SetPermissionPasswordSpaceRoot`: %v\n", resp)
 }
 ```
 
@@ -603,26 +603,26 @@ Update sharing permission
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    driveId := "driveId_example" // string | key: id of drive
-    permId := "permId_example" // string | key: id of permission
-    permission := *openapiclient.NewPermission() // Permission | New property values
+	driveId := "driveId_example" // string | key: id of drive
+	permId := "permId_example" // string | key: id of permission
+	permission := *openapiclient.NewPermission() // Permission | New property values
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrivesRootApi.UpdatePermissionSpaceRoot(context.Background(), driveId, permId).Permission(permission).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.UpdatePermissionSpaceRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdatePermissionSpaceRoot`: Permission
-    fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.UpdatePermissionSpaceRoot`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DrivesRootApi.UpdatePermissionSpaceRoot(context.Background(), driveId, permId).Permission(permission).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.UpdatePermissionSpaceRoot``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdatePermissionSpaceRoot`: Permission
+	fmt.Fprintf(os.Stdout, "Response from `DrivesRootApi.UpdatePermissionSpaceRoot`: %v\n", resp)
 }
 ```
 

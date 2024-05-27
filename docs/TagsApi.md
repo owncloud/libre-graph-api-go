@@ -22,22 +22,22 @@ Assign tags to a resource
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    tagAssignment := *openapiclient.NewTagAssignment("ResourceId_example", []string{"Tags_example"}) // TagAssignment |  (optional)
+	tagAssignment := *openapiclient.NewTagAssignment("ResourceId_example", []string{"Tags_example"}) // TagAssignment |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TagsApi.AssignTags(context.Background()).TagAssignment(tagAssignment).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TagsApi.AssignTags``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.TagsApi.AssignTags(context.Background()).TagAssignment(tagAssignment).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TagsApi.AssignTags``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -84,23 +84,23 @@ Get all known tags
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TagsApi.GetTags(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TagsApi.GetTags``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTags`: CollectionOfTags
-    fmt.Fprintf(os.Stdout, "Response from `TagsApi.GetTags`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TagsApi.GetTags(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TagsApi.GetTags``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTags`: CollectionOfTags
+	fmt.Fprintf(os.Stdout, "Response from `TagsApi.GetTags`: %v\n", resp)
 }
 ```
 
@@ -143,22 +143,22 @@ Unassign tags from a resource
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    tagUnassignment := *openapiclient.NewTagUnassignment("ResourceId_example", []string{"Tags_example"}) // TagUnassignment |  (optional)
+	tagUnassignment := *openapiclient.NewTagUnassignment("ResourceId_example", []string{"Tags_example"}) // TagUnassignment |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TagsApi.UnassignTags(context.Background()).TagUnassignment(tagUnassignment).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TagsApi.UnassignTags``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.TagsApi.UnassignTags(context.Background()).TagUnassignment(tagUnassignment).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TagsApi.UnassignTags``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 

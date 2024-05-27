@@ -21,24 +21,24 @@ Add new entity to groups
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    group := *openapiclient.NewGroup() // Group | New entity
+	group := *openapiclient.NewGroup() // Group | New entity
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GroupsApi.CreateGroup(context.Background()).Group(group).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GroupsApi.CreateGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateGroup`: Group
-    fmt.Fprintf(os.Stdout, "Response from `GroupsApi.CreateGroup`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.GroupsApi.CreateGroup(context.Background()).Group(group).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupsApi.CreateGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateGroup`: Group
+	fmt.Fprintf(os.Stdout, "Response from `GroupsApi.CreateGroup`: %v\n", resp)
 }
 ```
 
@@ -85,27 +85,27 @@ Get entities from groups
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    search := "search_example" // string | Search items by search phrases (optional)
-    orderby := []string{"Orderby_example"} // []string | Order items by property values (optional)
-    select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
-    expand := []string{"Expand_example"} // []string | Expand related entities (optional)
+	search := "search_example" // string | Search items by search phrases (optional)
+	orderby := []string{"Orderby_example"} // []string | Order items by property values (optional)
+	select_ := []string{"Select_example"} // []string | Select properties to be returned (optional)
+	expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GroupsApi.ListGroups(context.Background()).Search(search).Orderby(orderby).Select_(select_).Expand(expand).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GroupsApi.ListGroups``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListGroups`: CollectionOfGroup
-    fmt.Fprintf(os.Stdout, "Response from `GroupsApi.ListGroups`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.GroupsApi.ListGroups(context.Background()).Search(search).Orderby(orderby).Select_(select_).Expand(expand).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupsApi.ListGroups``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListGroups`: CollectionOfGroup
+	fmt.Fprintf(os.Stdout, "Response from `GroupsApi.ListGroups`: %v\n", resp)
 }
 ```
 

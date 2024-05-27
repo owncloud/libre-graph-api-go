@@ -21,25 +21,25 @@ Get all drives where the current user is a regular member of
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    orderby := "lastModifiedDateTime desc" // string | The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc. (optional)
-    filter := "driveType eq 'project'" // string | Filter items by property values (optional)
+	orderby := "lastModifiedDateTime desc" // string | The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc. (optional)
+	filter := "driveType eq 'project'" // string | Filter items by property values (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeDrivesApi.ListMyDrives(context.Background()).Orderby(orderby).Filter(filter).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.ListMyDrives``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListMyDrives`: CollectionOfDrives
-    fmt.Fprintf(os.Stdout, "Response from `MeDrivesApi.ListMyDrives`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MeDrivesApi.ListMyDrives(context.Background()).Orderby(orderby).Filter(filter).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.ListMyDrives``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListMyDrives`: CollectionOfDrives
+	fmt.Fprintf(os.Stdout, "Response from `MeDrivesApi.ListMyDrives`: %v\n", resp)
 }
 ```
 
@@ -87,25 +87,25 @@ Alias for '/v1.0/drives', the difference is that grantedtoV2 is used and roles c
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    orderby := "lastModifiedDateTime desc" // string | The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc. (optional)
-    filter := "driveType eq 'project'" // string | Filter items by property values (optional)
+	orderby := "lastModifiedDateTime desc" // string | The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc. (optional)
+	filter := "driveType eq 'project'" // string | Filter items by property values (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeDrivesApi.ListMyDrivesBeta(context.Background()).Orderby(orderby).Filter(filter).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.ListMyDrivesBeta``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListMyDrivesBeta`: CollectionOfDrives
-    fmt.Fprintf(os.Stdout, "Response from `MeDrivesApi.ListMyDrivesBeta`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MeDrivesApi.ListMyDrivesBeta(context.Background()).Orderby(orderby).Filter(filter).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.ListMyDrivesBeta``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListMyDrivesBeta`: CollectionOfDrives
+	fmt.Fprintf(os.Stdout, "Response from `MeDrivesApi.ListMyDrivesBeta`: %v\n", resp)
 }
 ```
 

@@ -20,22 +20,22 @@ Chanage your own password
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    passwordChange := *openapiclient.NewPasswordChange("CurrentPassword_example", "NewPassword_example") // PasswordChange | Password change request
+	passwordChange := *openapiclient.NewPasswordChange("CurrentPassword_example", "NewPassword_example") // PasswordChange | Password change request
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MeChangepasswordApi.ChangeOwnPassword(context.Background()).PasswordChange(passwordChange).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeChangepasswordApi.ChangeOwnPassword``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MeChangepasswordApi.ChangeOwnPassword(context.Background()).PasswordChange(passwordChange).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MeChangepasswordApi.ChangeOwnPassword``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 

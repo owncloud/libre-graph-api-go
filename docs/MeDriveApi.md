@@ -22,23 +22,23 @@ Get personal space for user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeDriveApi.GetHome(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveApi.GetHome``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetHome`: Drive
-    fmt.Fprintf(os.Stdout, "Response from `MeDriveApi.GetHome`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MeDriveApi.GetHome(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MeDriveApi.GetHome``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetHome`: Drive
+	fmt.Fprintf(os.Stdout, "Response from `MeDriveApi.GetHome`: %v\n", resp)
 }
 ```
 
@@ -83,23 +83,23 @@ Get a list of driveItem objects shared by the current user.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeDriveApi.ListSharedByMe(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveApi.ListSharedByMe``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListSharedByMe`: CollectionOfDriveItems1
-    fmt.Fprintf(os.Stdout, "Response from `MeDriveApi.ListSharedByMe`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MeDriveApi.ListSharedByMe(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MeDriveApi.ListSharedByMe``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListSharedByMe`: CollectionOfDriveItems1
+	fmt.Fprintf(os.Stdout, "Response from `MeDriveApi.ListSharedByMe`: %v\n", resp)
 }
 ```
 
@@ -144,23 +144,23 @@ Get a list of driveItem objects shared with the owner of a drive.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeDriveApi.ListSharedWithMe(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveApi.ListSharedWithMe``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListSharedWithMe`: CollectionOfDriveItems1
-    fmt.Fprintf(os.Stdout, "Response from `MeDriveApi.ListSharedWithMe`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MeDriveApi.ListSharedWithMe(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MeDriveApi.ListSharedWithMe``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListSharedWithMe`: CollectionOfDriveItems1
+	fmt.Fprintf(os.Stdout, "Response from `MeDriveApi.ListSharedWithMe`: %v\n", resp)
 }
 ```
 

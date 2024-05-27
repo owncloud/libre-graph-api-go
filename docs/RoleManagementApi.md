@@ -23,24 +23,24 @@ Get unifiedRoleDefinition
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    roleId := "roleId_example" // string | key: id of roleDefinition
+	roleId := "roleId_example" // string | key: id of roleDefinition
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleManagementApi.GetPermissionRoleDefinition(context.Background(), roleId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleManagementApi.GetPermissionRoleDefinition``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetPermissionRoleDefinition`: UnifiedRoleDefinition
-    fmt.Fprintf(os.Stdout, "Response from `RoleManagementApi.GetPermissionRoleDefinition`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RoleManagementApi.GetPermissionRoleDefinition(context.Background(), roleId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RoleManagementApi.GetPermissionRoleDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPermissionRoleDefinition`: UnifiedRoleDefinition
+	fmt.Fprintf(os.Stdout, "Response from `RoleManagementApi.GetPermissionRoleDefinition`: %v\n", resp)
 }
 ```
 
@@ -93,23 +93,23 @@ List roleDefinitions
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleManagementApi.ListPermissionRoleDefinitions(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleManagementApi.ListPermissionRoleDefinitions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListPermissionRoleDefinitions`: UnifiedRoleDefinition
-    fmt.Fprintf(os.Stdout, "Response from `RoleManagementApi.ListPermissionRoleDefinitions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RoleManagementApi.ListPermissionRoleDefinitions(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RoleManagementApi.ListPermissionRoleDefinitions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListPermissionRoleDefinitions`: UnifiedRoleDefinition
+	fmt.Fprintf(os.Stdout, "Response from `RoleManagementApi.ListPermissionRoleDefinitions`: %v\n", resp)
 }
 ```
 

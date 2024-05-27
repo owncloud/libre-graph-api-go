@@ -21,24 +21,24 @@ Get current user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    expand := []string{"Expand_example"} // []string | Expand related entities (optional)
+	expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeUserApi.GetOwnUser(context.Background()).Expand(expand).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeUserApi.GetOwnUser``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOwnUser`: User
-    fmt.Fprintf(os.Stdout, "Response from `MeUserApi.GetOwnUser`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MeUserApi.GetOwnUser(context.Background()).Expand(expand).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MeUserApi.GetOwnUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOwnUser`: User
+	fmt.Fprintf(os.Stdout, "Response from `MeUserApi.GetOwnUser`: %v\n", resp)
 }
 ```
 
@@ -85,24 +85,24 @@ Update the current user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    user := *openapiclient.NewUser() // User | New user values (optional)
+	user := *openapiclient.NewUser() // User | New user values (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeUserApi.UpdateOwnUser(context.Background()).User(user).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeUserApi.UpdateOwnUser``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateOwnUser`: User
-    fmt.Fprintf(os.Stdout, "Response from `MeUserApi.UpdateOwnUser`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MeUserApi.UpdateOwnUser(context.Background()).User(user).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MeUserApi.UpdateOwnUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateOwnUser`: User
+	fmt.Fprintf(os.Stdout, "Response from `MeUserApi.UpdateOwnUser`: %v\n", resp)
 }
 ```
 

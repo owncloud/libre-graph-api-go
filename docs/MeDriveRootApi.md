@@ -20,23 +20,23 @@ Get root from personal space
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MeDriveRootApi.HomeGetRoot(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootApi.HomeGetRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `HomeGetRoot`: DriveItem
-    fmt.Fprintf(os.Stdout, "Response from `MeDriveRootApi.HomeGetRoot`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MeDriveRootApi.HomeGetRoot(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootApi.HomeGetRoot``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `HomeGetRoot`: DriveItem
+	fmt.Fprintf(os.Stdout, "Response from `MeDriveRootApi.HomeGetRoot`: %v\n", resp)
 }
 ```
 

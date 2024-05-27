@@ -22,23 +22,23 @@ Assign a teacher to a class
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id or externalId of class
-    classTeacherReference := *openapiclient.NewClassTeacherReference() // ClassTeacherReference | educationUser to be added as teacher
+	classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id or externalId of class
+	classTeacherReference := *openapiclient.NewClassTeacherReference() // ClassTeacherReference | educationUser to be added as teacher
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.EducationClassTeachersApi.AddTeacherToClass(context.Background(), classId).ClassTeacherReference(classTeacherReference).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassTeachersApi.AddTeacherToClass``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.EducationClassTeachersApi.AddTeacherToClass(context.Background(), classId).ClassTeacherReference(classTeacherReference).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `EducationClassTeachersApi.AddTeacherToClass``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -90,23 +90,23 @@ Unassign user as teacher of a class
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    classId := "classId_example" // string | key: id or externalId of class
-    userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: id or username of the user to unassign as teacher
+	classId := "classId_example" // string | key: id or externalId of class
+	userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: id or username of the user to unassign as teacher
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.EducationClassTeachersApi.DeleteTeacherFromClass(context.Background(), classId, userId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassTeachersApi.DeleteTeacherFromClass``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.EducationClassTeachersApi.DeleteTeacherFromClass(context.Background(), classId, userId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `EducationClassTeachersApi.DeleteTeacherFromClass``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -159,24 +159,24 @@ Get the teachers for a class
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/owncloud/libre-graph-api-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/owncloud/libre-graph-api-go"
 )
 
 func main() {
-    classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id or externalId of class
+	classId := "86948e45-96a6-43df-b83d-46e92afd30de" // string | key: id or externalId of class
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EducationClassTeachersApi.GetTeachers(context.Background(), classId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EducationClassTeachersApi.GetTeachers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTeachers`: CollectionOfEducationUser
-    fmt.Fprintf(os.Stdout, "Response from `EducationClassTeachersApi.GetTeachers`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.EducationClassTeachersApi.GetTeachers(context.Background(), classId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `EducationClassTeachersApi.GetTeachers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTeachers`: CollectionOfEducationUser
+	fmt.Fprintf(os.Stdout, "Response from `EducationClassTeachersApi.GetTeachers`: %v\n", resp)
 }
 ```
 
