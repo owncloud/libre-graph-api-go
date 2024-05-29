@@ -58,6 +58,7 @@ docs/DriveItemApi.md
 docs/DriveItemCreateLink.md
 docs/DriveItemInvite.md
 docs/DriveRecipient.md
+docs/DriveUpdate.md
 docs/DrivesApi.md
 docs/DrivesGetDrivesApi.md
 docs/DrivesPermissionsApi.md
@@ -153,6 +154,7 @@ model_drive_item.go
 model_drive_item_create_link.go
 model_drive_item_invite.go
 model_drive_recipient.go
+model_drive_update.go
 model_education_class.go
 model_education_school.go
 model_education_user.go

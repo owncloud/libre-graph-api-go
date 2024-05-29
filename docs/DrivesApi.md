@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDrive
 
-> Drive UpdateDrive(ctx, driveId).Drive(drive).Execute()
+> Drive UpdateDrive(ctx, driveId).DriveUpdate(driveUpdate).Execute()
 
 Update the drive
 
@@ -231,11 +231,11 @@ import (
 
 func main() {
 	driveId := "driveId_example" // string | key: id of drive
-	drive := *openapiclient.NewDrive("Name_example") // Drive | New space values
+	driveUpdate := *openapiclient.NewDriveUpdate() // DriveUpdate | New space values
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DrivesApi.UpdateDrive(context.Background(), driveId).Drive(drive).Execute()
+	resp, r, err := apiClient.DrivesApi.UpdateDrive(context.Background(), driveId).DriveUpdate(driveUpdate).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.UpdateDrive``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -261,7 +261,7 @@ Other parameters are passed through a pointer to a apiUpdateDriveRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **drive** | [**Drive**](Drive.md) | New space values | 
+ **driveUpdate** | [**DriveUpdate**](DriveUpdate.md) | New space values | 
 
 ### Return type
 

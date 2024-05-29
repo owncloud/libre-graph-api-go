@@ -197,6 +197,7 @@ Class | Method | HTTP request | Description
  - [DriveItemCreateLink](docs/DriveItemCreateLink.md)
  - [DriveItemInvite](docs/DriveItemInvite.md)
  - [DriveRecipient](docs/DriveRecipient.md)
+ - [DriveUpdate](docs/DriveUpdate.md)
  - [EducationClass](docs/EducationClass.md)
  - [EducationSchool](docs/EducationSchool.md)
  - [EducationUser](docs/EducationUser.md)

@@ -359,15 +359,15 @@ func (a *DrivesApiService) GetDriveExecute(r ApiGetDriveRequest) (*Drive, *http.
 }
 
 type ApiUpdateDriveRequest struct {
-	ctx        context.Context
-	ApiService *DrivesApiService
-	driveId    string
-	drive      *Drive
+	ctx         context.Context
+	ApiService  *DrivesApiService
+	driveId     string
+	driveUpdate *DriveUpdate
 }
 
 // New space values
-func (r ApiUpdateDriveRequest) Drive(drive Drive) ApiUpdateDriveRequest {
-	r.drive = &drive
+func (r ApiUpdateDriveRequest) DriveUpdate(driveUpdate DriveUpdate) ApiUpdateDriveRequest {
+	r.driveUpdate = &driveUpdate
 	return r
 }
 
@@ -412,8 +412,8 @@ func (a *DrivesApiService) UpdateDriveExecute(r ApiUpdateDriveRequest) (*Drive, 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.drive == nil {
-		return localVarReturnValue, nil, reportError("drive is required and must be specified")
+	if r.driveUpdate == nil {
+		return localVarReturnValue, nil, reportError("driveUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -434,7 +434,7 @@ func (a *DrivesApiService) UpdateDriveExecute(r ApiUpdateDriveRequest) (*Drive, 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.drive
+	localVarPostBody = r.driveUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
