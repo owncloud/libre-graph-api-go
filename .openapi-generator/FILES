@@ -2,6 +2,7 @@
 .travis.yml
 README.md
 api/openapi.yaml
+api_activities.go
 api_applications.go
 api_drive_item.go
 api_drives.go
@@ -27,6 +28,10 @@ api_user_app_role_assignment.go
 api_users.go
 client.go
 configuration.go
+docs/ActivitiesApi.md
+docs/Activity.md
+docs/ActivityTemplate.md
+docs/ActivityTimes.md
 docs/AppRole.md
 docs/AppRoleAssignment.md
 docs/Application.md
@@ -35,6 +40,7 @@ docs/Audio.md
 docs/ClassMemberReference.md
 docs/ClassReference.md
 docs/ClassTeacherReference.md
+docs/CollectionOfActivities.md
 docs/CollectionOfAppRoleAssignments.md
 docs/CollectionOfApplications.md
 docs/CollectionOfClass.md
@@ -125,6 +131,9 @@ docs/Video.md
 git_push.sh
 go.mod
 go.sum
+model_activity.go
+model_activity_template.go
+model_activity_times.go
 model_app_role.go
 model_app_role_assignment.go
 model_application.go
@@ -132,6 +141,7 @@ model_audio.go
 model_class_member_reference.go
 model_class_reference.go
 model_class_teacher_reference.go
+model_collection_of_activities.go
 model_collection_of_app_role_assignments.go
 model_collection_of_applications.go
 model_collection_of_class.go
@@ -198,6 +208,7 @@ model_unified_role_permission.go
 model_user.go
 model_video.go
 response.go
+test/api_activities_test.go
 test/api_applications_test.go
 test/api_drive_item_test.go
 test/api_drives_get_drives_test.go
