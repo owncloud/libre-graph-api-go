@@ -239,7 +239,7 @@ import (
 
 func main() {
 	userId := "userId_example" // string | key: id of user
-	user := *openapiclient.NewUser() // User | New property values
+	user := *openapiclient.NewUser("DisplayName_example", "Mail_example", "OnPremisesSamAccountName_example") // User | New property values
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

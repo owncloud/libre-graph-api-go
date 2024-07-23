@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | Read-only. | [optional] [readonly] 
 **AccountEnabled** | Pointer to **bool** | Set to \&quot;true\&quot; when the account is enabled. | [optional] 
 **AppRoleAssignments** | Pointer to [**[]AppRoleAssignment**](AppRoleAssignment.md) | The apps and app roles which this user has been assigned. | [optional] [readonly] 
-**DisplayName** | Pointer to **string** | The name displayed in the address book for the user. This value is usually the combination of the user&#39;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $orderby. | [optional] 
+**DisplayName** | **string** | The name displayed in the address book for the user. This value is usually the combination of the user&#39;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $orderby. | 
 **Drives** | Pointer to [**[]Drive**](Drive.md) | A collection of drives available for this user. Read-only. | [optional] [readonly] 
 **Drive** | Pointer to [**Drive**](Drive.md) |  | [optional] 
 **Identities** | Pointer to [**[]ObjectIdentity**](ObjectIdentity.md) | Identities associated with this account. | [optional] 
-**Mail** | Pointer to **string** | The SMTP address for the user, for example, &#39;jeff@contoso.onowncloud.com&#39;. Returned by default. | [optional] 
+**Mail** | **string** | The SMTP address for the user, for example, &#39;jeff@contoso.onowncloud.com&#39;. Returned by default. | 
 **MemberOf** | Pointer to [**[]Group**](Group.md) | Groups that this user is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand. | [optional] 
-**OnPremisesSamAccountName** | Pointer to **string** | Contains the on-premises SAM account name synchronized from the on-premises directory. Read-only. | [optional] 
+**OnPremisesSamAccountName** | **string** | Contains the on-premises SAM account name synchronized from the on-premises directory. | 
 **PasswordProfile** | Pointer to [**PasswordProfile**](PasswordProfile.md) |  | [optional] 
 **Surname** | Pointer to **string** | The user&#39;s surname (family name or last name). Returned by default. | [optional] 
 **GivenName** | Pointer to **string** | The user&#39;s givenName. Returned by default. | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewUser
 
-`func NewUser() *User`
+`func NewUser(displayName string, mail string, onPremisesSamAccountName string, ) *User`
 
 NewUser instantiates a new User object
 This constructor will assign default values to properties that have it defined,
@@ -133,11 +133,6 @@ and a boolean to check if the value has been set.
 
 SetDisplayName sets DisplayName field to given value.
 
-### HasDisplayName
-
-`func (o *User) HasDisplayName() bool`
-
-HasDisplayName returns a boolean if a field has been set.
 
 ### GetDrives
 
@@ -233,11 +228,6 @@ and a boolean to check if the value has been set.
 
 SetMail sets Mail field to given value.
 
-### HasMail
-
-`func (o *User) HasMail() bool`
-
-HasMail returns a boolean if a field has been set.
 
 ### GetMemberOf
 
@@ -283,11 +273,6 @@ and a boolean to check if the value has been set.
 
 SetOnPremisesSamAccountName sets OnPremisesSamAccountName field to given value.
 
-### HasOnPremisesSamAccountName
-
-`func (o *User) HasOnPremisesSamAccountName() bool`
-
-HasOnPremisesSamAccountName returns a boolean if a field has been set.
 
 ### GetPasswordProfile
 

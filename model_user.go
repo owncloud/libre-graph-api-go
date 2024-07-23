@@ -11,7 +11,9 @@ API version: v1.0.4
 package libregraph
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the User type satisfies the MappedNullable interface at compile time
@@ -26,18 +28,18 @@ type User struct {
 	// The apps and app roles which this user has been assigned.
 	AppRoleAssignments []AppRoleAssignment `json:"appRoleAssignments,omitempty"`
 	// The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $orderby.
-	DisplayName *string `json:"displayName,omitempty"`
+	DisplayName string `json:"displayName"`
 	// A collection of drives available for this user. Read-only.
 	Drives []Drive `json:"drives,omitempty"`
 	Drive  *Drive  `json:"drive,omitempty"`
 	// Identities associated with this account.
 	Identities []ObjectIdentity `json:"identities,omitempty"`
 	// The SMTP address for the user, for example, 'jeff@contoso.onowncloud.com'. Returned by default.
-	Mail *string `json:"mail,omitempty"`
+	Mail string `json:"mail"`
 	// Groups that this user is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 	MemberOf []Group `json:"memberOf,omitempty"`
-	// Contains the on-premises SAM account name synchronized from the on-premises directory. Read-only.
-	OnPremisesSamAccountName *string          `json:"onPremisesSamAccountName,omitempty"`
+	// Contains the on-premises SAM account name synchronized from the on-premises directory.
+	OnPremisesSamAccountName string           `json:"onPremisesSamAccountName"`
 	PasswordProfile          *PasswordProfile `json:"passwordProfile,omitempty"`
 	// The user's surname (family name or last name). Returned by default.
 	Surname *string `json:"surname,omitempty"`
@@ -49,12 +51,17 @@ type User struct {
 	PreferredLanguage *string `json:"preferredLanguage,omitempty"`
 }
 
+type _User User
+
 // NewUser instantiates a new User object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUser() *User {
+func NewUser(displayName string, mail string, onPremisesSamAccountName string) *User {
 	this := User{}
+	this.DisplayName = displayName
+	this.Mail = mail
+	this.OnPremisesSamAccountName = onPremisesSamAccountName
 	return &this
 }
 
@@ -162,36 +169,28 @@ func (o *User) SetAppRoleAssignments(v []AppRoleAssignment) {
 	o.AppRoleAssignments = v
 }
 
-// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
+// GetDisplayName returns the DisplayName field value
 func (o *User) GetDisplayName() string {
-	if o == nil || IsNil(o.DisplayName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.DisplayName
+
+	return o.DisplayName
 }
 
-// GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
+// GetDisplayNameOk returns a tuple with the DisplayName field value
 // and a boolean to check if the value has been set.
 func (o *User) GetDisplayNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DisplayName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DisplayName, true
+	return &o.DisplayName, true
 }
 
-// HasDisplayName returns a boolean if a field has been set.
-func (o *User) HasDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
-// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
+// SetDisplayName sets field value
 func (o *User) SetDisplayName(v string) {
-	o.DisplayName = &v
+	o.DisplayName = v
 }
 
 // GetDrives returns the Drives field value if set, zero value otherwise.
@@ -290,36 +289,28 @@ func (o *User) SetIdentities(v []ObjectIdentity) {
 	o.Identities = v
 }
 
-// GetMail returns the Mail field value if set, zero value otherwise.
+// GetMail returns the Mail field value
 func (o *User) GetMail() string {
-	if o == nil || IsNil(o.Mail) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Mail
+
+	return o.Mail
 }
 
-// GetMailOk returns a tuple with the Mail field value if set, nil otherwise
+// GetMailOk returns a tuple with the Mail field value
 // and a boolean to check if the value has been set.
 func (o *User) GetMailOk() (*string, bool) {
-	if o == nil || IsNil(o.Mail) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Mail, true
+	return &o.Mail, true
 }
 
-// HasMail returns a boolean if a field has been set.
-func (o *User) HasMail() bool {
-	if o != nil && !IsNil(o.Mail) {
-		return true
-	}
-
-	return false
-}
-
-// SetMail gets a reference to the given string and assigns it to the Mail field.
+// SetMail sets field value
 func (o *User) SetMail(v string) {
-	o.Mail = &v
+	o.Mail = v
 }
 
 // GetMemberOf returns the MemberOf field value if set, zero value otherwise.
@@ -354,36 +345,28 @@ func (o *User) SetMemberOf(v []Group) {
 	o.MemberOf = v
 }
 
-// GetOnPremisesSamAccountName returns the OnPremisesSamAccountName field value if set, zero value otherwise.
+// GetOnPremisesSamAccountName returns the OnPremisesSamAccountName field value
 func (o *User) GetOnPremisesSamAccountName() string {
-	if o == nil || IsNil(o.OnPremisesSamAccountName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.OnPremisesSamAccountName
+
+	return o.OnPremisesSamAccountName
 }
 
-// GetOnPremisesSamAccountNameOk returns a tuple with the OnPremisesSamAccountName field value if set, nil otherwise
+// GetOnPremisesSamAccountNameOk returns a tuple with the OnPremisesSamAccountName field value
 // and a boolean to check if the value has been set.
 func (o *User) GetOnPremisesSamAccountNameOk() (*string, bool) {
-	if o == nil || IsNil(o.OnPremisesSamAccountName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OnPremisesSamAccountName, true
+	return &o.OnPremisesSamAccountName, true
 }
 
-// HasOnPremisesSamAccountName returns a boolean if a field has been set.
-func (o *User) HasOnPremisesSamAccountName() bool {
-	if o != nil && !IsNil(o.OnPremisesSamAccountName) {
-		return true
-	}
-
-	return false
-}
-
-// SetOnPremisesSamAccountName gets a reference to the given string and assigns it to the OnPremisesSamAccountName field.
+// SetOnPremisesSamAccountName sets field value
 func (o *User) SetOnPremisesSamAccountName(v string) {
-	o.OnPremisesSamAccountName = &v
+	o.OnPremisesSamAccountName = v
 }
 
 // GetPasswordProfile returns the PasswordProfile field value if set, zero value otherwise.
@@ -565,9 +548,7 @@ func (o User) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AppRoleAssignments) {
 		toSerialize["appRoleAssignments"] = o.AppRoleAssignments
 	}
-	if !IsNil(o.DisplayName) {
-		toSerialize["displayName"] = o.DisplayName
-	}
+	toSerialize["displayName"] = o.DisplayName
 	if !IsNil(o.Drives) {
 		toSerialize["drives"] = o.Drives
 	}
@@ -577,15 +558,11 @@ func (o User) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Identities) {
 		toSerialize["identities"] = o.Identities
 	}
-	if !IsNil(o.Mail) {
-		toSerialize["mail"] = o.Mail
-	}
+	toSerialize["mail"] = o.Mail
 	if !IsNil(o.MemberOf) {
 		toSerialize["memberOf"] = o.MemberOf
 	}
-	if !IsNil(o.OnPremisesSamAccountName) {
-		toSerialize["onPremisesSamAccountName"] = o.OnPremisesSamAccountName
-	}
+	toSerialize["onPremisesSamAccountName"] = o.OnPremisesSamAccountName
 	if !IsNil(o.PasswordProfile) {
 		toSerialize["passwordProfile"] = o.PasswordProfile
 	}
@@ -602,6 +579,45 @@ func (o User) ToMap() (map[string]interface{}, error) {
 		toSerialize["preferredLanguage"] = o.PreferredLanguage
 	}
 	return toSerialize, nil
+}
+
+func (o *User) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"displayName",
+		"mail",
+		"onPremisesSamAccountName",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varUser := _User{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varUser)
+
+	if err != nil {
+		return err
+	}
+
+	*o = User(varUser)
+
+	return err
 }
 
 type NullableUser struct {

@@ -92,7 +92,7 @@ import (
 )
 
 func main() {
-	user := *openapiclient.NewUser() // User | New user values (optional)
+	user := *openapiclient.NewUser("DisplayName_example", "Mail_example", "OnPremisesSamAccountName_example") // User | New user values (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

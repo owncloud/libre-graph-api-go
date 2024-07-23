@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-	user := *openapiclient.NewUser() // User | New entity
+	user := *openapiclient.NewUser("DisplayName_example", "Mail_example", "OnPremisesSamAccountName_example") // User | New entity
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
