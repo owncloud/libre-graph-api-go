@@ -1,6 +1,6 @@
 # \DrivesRootApi
 
-All URIs are relative to *https://ocis.ocis-traefik.latest.owncloud.works/graph*
+All URIs are relative to *https://ocis.ocis.rolling.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
