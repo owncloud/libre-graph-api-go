@@ -4,7 +4,7 @@ All URIs are relative to *https://ocis.ocis.rolling.owncloud.works/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ChangeOwnPassword**](MeChangepasswordApi.md#ChangeOwnPassword) | **Post** /v1.0/me/changePassword | Chanage your own password
+[**ChangeOwnPassword**](MeChangepasswordApi.md#ChangeOwnPassword) | **Post** /v1.0/me/changePassword | Change your own password
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > ChangeOwnPassword(ctx).PasswordChange(passwordChange).Execute()
 
-Chanage your own password
+Change your own password
 
 ### Example
 

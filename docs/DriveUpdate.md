@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The unique idenfier for this drive. | [optional] [readonly] 
+**Id** | Pointer to **string** | The unique identifier for this drive. | [optional] [readonly] 
 **CreatedBy** | Pointer to [**IdentitySet**](IdentitySet.md) |  | [optional] 
 **CreatedDateTime** | Pointer to **time.Time** | Date and time of item creation. Read-only. | [optional] [readonly] 
 **Description** | Pointer to **string** | Provides a user-visible description of the item. Optional. | [optional] 

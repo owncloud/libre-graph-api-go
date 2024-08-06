@@ -17,7 +17,7 @@ import (
 // checks if the EducationUser type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &EducationUser{}
 
-// EducationUser And extension of user with education specific attributes
+// EducationUser An extension of user with education-specific attributes
 type EducationUser struct {
 	// Read-only.
 	Id *string `json:"id,omitempty"`

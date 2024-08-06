@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **Audio** | Pointer to [**Audio**](Audio.md) |  | [optional] 
 **Video** | Pointer to [**Video**](Video.md) |  | [optional] 
 **ClientSynchronize** | Pointer to **bool** | Indicates if the item is synchronized with the underlying storage provider. Read-only. | [optional] 
-**UIHidden** | Pointer to **bool** | Properties or facets (see UI.Facet) annotated with this term will not be rendered if the annotation evaluates to true. Users can set this to hide permissons. | [optional] 
+**UIHidden** | Pointer to **bool** | Properties or facets (see UI.Facet) annotated with this term will not be rendered if the annotation evaluates to true. Users can set this to hide permissions. | [optional] 
 
 ## Methods
 

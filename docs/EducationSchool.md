@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The unique idenfier for an entity. Read-only. | [optional] [readonly] 
+**Id** | Pointer to **string** | The unique identifier for an entity. Read-only. | [optional] [readonly] 
 **DisplayName** | Pointer to **string** | The organization name | [optional] 
 **SchoolNumber** | Pointer to **string** | School number | [optional] 
 **TerminationDate** | Pointer to **NullableTime** | Date and time at which the service for this organization is scheduled to be terminated | [optional] 
