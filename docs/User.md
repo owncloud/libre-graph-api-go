@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **PasswordProfile** | Pointer to [**PasswordProfile**](PasswordProfile.md) |  | [optional] 
 **Surname** | Pointer to **string** | The user&#39;s surname (family name or last name). Returned by default. | [optional] 
 **GivenName** | Pointer to **string** | The user&#39;s givenName. Returned by default. | [optional] 
-**UserType** | Pointer to **string** | The user&#x60;s type. This can be either \&quot;Member\&quot; for regular user, or \&quot;Guest\&quot; for guest users. | [optional] 
+**UserType** | Pointer to **string** | The user&#x60;s type. This can be either \&quot;Member\&quot; for regular user, \&quot;Guest\&quot; for guest users or \&quot;Federated\&quot; for users imported from a federated instance. | [optional] 
 **PreferredLanguage** | Pointer to **string** | Represents the users language setting, ISO-639-1 Code | [optional] 
 
 ## Methods

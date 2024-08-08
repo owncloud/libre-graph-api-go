@@ -43,7 +43,7 @@ type EducationUser struct {
 	GivenName *string `json:"givenName,omitempty"`
 	// The user`s default role. Such as \"student\" or \"teacher\"
 	PrimaryRole *string `json:"primaryRole,omitempty"`
-	// The user`s type. This can be either \"Member\" for regular user, or \"Guest\" for guest users.
+	// The user`s type. This can be either \"Member\" for regular user, \"Guest\" for guest users or \"Federated\" for users imported from a federated instance.
 	UserType *string `json:"userType,omitempty"`
 }
 
