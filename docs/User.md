@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Drives** | Pointer to [**[]Drive**](Drive.md) | A collection of drives available for this user. Read-only. | [optional] [readonly] 
 **Drive** | Pointer to [**Drive**](Drive.md) |  | [optional] 
 **Identities** | Pointer to [**[]ObjectIdentity**](ObjectIdentity.md) | Identities associated with this account. | [optional] 
-**Mail** | **string** | The SMTP address for the user, for example, &#39;jeff@contoso.onowncloud.com&#39;. Returned by default. | 
+**Mail** | Pointer to **string** | The SMTP address for the user, for example, &#39;jeff@contoso.onowncloud.com&#39;. Returned by default. | [optional] 
 **MemberOf** | Pointer to [**[]Group**](Group.md) | Groups that this user is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand. | [optional] 
 **OnPremisesSamAccountName** | **string** | Contains the on-premises SAM account name synchronized from the on-premises directory. | 
 **PasswordProfile** | Pointer to [**PasswordProfile**](PasswordProfile.md) |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewUser
 
-`func NewUser(displayName string, mail string, onPremisesSamAccountName string, ) *User`
+`func NewUser(displayName string, onPremisesSamAccountName string, ) *User`
 
 NewUser instantiates a new User object
 This constructor will assign default values to properties that have it defined,
@@ -228,6 +228,11 @@ and a boolean to check if the value has been set.
 
 SetMail sets Mail field to given value.
 
+### HasMail
+
+`func (o *User) HasMail() bool`
+
+HasMail returns a boolean if a field has been set.
 
 ### GetMemberOf
 

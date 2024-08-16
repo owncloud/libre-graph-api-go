@@ -244,6 +244,7 @@ Class | Method | HTTP request | Description
  - [UnifiedRoleDefinition](docs/UnifiedRoleDefinition.md)
  - [UnifiedRolePermission](docs/UnifiedRolePermission.md)
  - [User](docs/User.md)
+ - [UserUpdate](docs/UserUpdate.md)
  - [Video](docs/Video.md)
 
 

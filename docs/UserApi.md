@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ## UpdateUser
 
-> User UpdateUser(ctx, userId).User(user).Execute()
+> User UpdateUser(ctx, userId).UserUpdate(userUpdate).Execute()
 
 Update entity in users
 
@@ -239,11 +239,11 @@ import (
 
 func main() {
 	userId := "userId_example" // string | key: id of user
-	user := *openapiclient.NewUser("DisplayName_example", "Mail_example", "OnPremisesSamAccountName_example") // User | New property values
+	userUpdate := *openapiclient.NewUserUpdate() // UserUpdate | New property values
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserApi.UpdateUser(context.Background(), userId).User(user).Execute()
+	resp, r, err := apiClient.UserApi.UpdateUser(context.Background(), userId).UserUpdate(userUpdate).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserApi.UpdateUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -269,7 +269,7 @@ Other parameters are passed through a pointer to a apiUpdateUserRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **user** | [**User**](User.md) | New property values | 
+ **userUpdate** | [**UserUpdate**](UserUpdate.md) | New property values | 
 
 ### Return type
 

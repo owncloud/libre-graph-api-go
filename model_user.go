@@ -35,7 +35,7 @@ type User struct {
 	// Identities associated with this account.
 	Identities []ObjectIdentity `json:"identities,omitempty"`
 	// The SMTP address for the user, for example, 'jeff@contoso.onowncloud.com'. Returned by default.
-	Mail string `json:"mail"`
+	Mail *string `json:"mail,omitempty"`
 	// Groups that this user is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 	MemberOf []Group `json:"memberOf,omitempty"`
 	// Contains the on-premises SAM account name synchronized from the on-premises directory.
@@ -57,10 +57,9 @@ type _User User
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUser(displayName string, mail string, onPremisesSamAccountName string) *User {
+func NewUser(displayName string, onPremisesSamAccountName string) *User {
 	this := User{}
 	this.DisplayName = displayName
-	this.Mail = mail
 	this.OnPremisesSamAccountName = onPremisesSamAccountName
 	return &this
 }
@@ -289,28 +288,36 @@ func (o *User) SetIdentities(v []ObjectIdentity) {
 	o.Identities = v
 }
 
-// GetMail returns the Mail field value
+// GetMail returns the Mail field value if set, zero value otherwise.
 func (o *User) GetMail() string {
-	if o == nil {
+	if o == nil || IsNil(o.Mail) {
 		var ret string
 		return ret
 	}
-
-	return o.Mail
+	return *o.Mail
 }
 
-// GetMailOk returns a tuple with the Mail field value
+// GetMailOk returns a tuple with the Mail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *User) GetMailOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Mail) {
 		return nil, false
 	}
-	return &o.Mail, true
+	return o.Mail, true
 }
 
-// SetMail sets field value
+// HasMail returns a boolean if a field has been set.
+func (o *User) HasMail() bool {
+	if o != nil && !IsNil(o.Mail) {
+		return true
+	}
+
+	return false
+}
+
+// SetMail gets a reference to the given string and assigns it to the Mail field.
 func (o *User) SetMail(v string) {
-	o.Mail = v
+	o.Mail = &v
 }
 
 // GetMemberOf returns the MemberOf field value if set, zero value otherwise.
@@ -558,7 +565,9 @@ func (o User) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Identities) {
 		toSerialize["identities"] = o.Identities
 	}
-	toSerialize["mail"] = o.Mail
+	if !IsNil(o.Mail) {
+		toSerialize["mail"] = o.Mail
+	}
 	if !IsNil(o.MemberOf) {
 		toSerialize["memberOf"] = o.MemberOf
 	}
@@ -587,7 +596,6 @@ func (o *User) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"displayName",
-		"mail",
 		"onPremisesSamAccountName",
 	}
 

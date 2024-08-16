@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ## UpdateOwnUser
 
-> User UpdateOwnUser(ctx).User(user).Execute()
+> User UpdateOwnUser(ctx).UserUpdate(userUpdate).Execute()
 
 Update the current user
 
@@ -92,11 +92,11 @@ import (
 )
 
 func main() {
-	user := *openapiclient.NewUser("DisplayName_example", "Mail_example", "OnPremisesSamAccountName_example") // User | New user values (optional)
+	userUpdate := *openapiclient.NewUserUpdate() // UserUpdate | New user values (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MeUserApi.UpdateOwnUser(context.Background()).User(user).Execute()
+	resp, r, err := apiClient.MeUserApi.UpdateOwnUser(context.Background()).UserUpdate(userUpdate).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MeUserApi.UpdateOwnUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -117,7 +117,7 @@ Other parameters are passed through a pointer to a apiUpdateOwnUserRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | [**User**](User.md) | New user values | 
+ **userUpdate** | [**UserUpdate**](UserUpdate.md) | New user values | 
 
 ### Return type
 
