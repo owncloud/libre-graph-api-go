@@ -114,6 +114,7 @@ docs/SharingInvitation.md
 docs/SharingLink.md
 docs/SharingLinkPassword.md
 docs/SharingLinkType.md
+docs/SignInActivity.md
 docs/SpecialFolder.md
 docs/TagAssignment.md
 docs/TagUnassignment.md
@@ -198,6 +199,7 @@ model_sharing_invitation.go
 model_sharing_link.go
 model_sharing_link_password.go
 model_sharing_link_type.go
+model_sign_in_activity.go
 model_special_folder.go
 model_tag_assignment.go
 model_tag_unassignment.go

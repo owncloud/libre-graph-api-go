@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **GivenName** | Pointer to **string** | The user&#39;s givenName. Returned by default. | [optional] 
 **UserType** | Pointer to **string** | The user&#x60;s type. This can be either \&quot;Member\&quot; for regular user, \&quot;Guest\&quot; for guest users or \&quot;Federated\&quot; for users imported from a federated instance. | [optional] [readonly] 
 **PreferredLanguage** | Pointer to **string** | Represents the users language setting, ISO-639-1 Code | [optional] 
+**SignInActivity** | Pointer to [**SignInActivity**](SignInActivity.md) |  | [optional] 
 
 ## Methods
 
@@ -403,6 +404,31 @@ SetPreferredLanguage sets PreferredLanguage field to given value.
 `func (o *User) HasPreferredLanguage() bool`
 
 HasPreferredLanguage returns a boolean if a field has been set.
+
+### GetSignInActivity
+
+`func (o *User) GetSignInActivity() SignInActivity`
+
+GetSignInActivity returns the SignInActivity field if non-nil, zero value otherwise.
+
+### GetSignInActivityOk
+
+`func (o *User) GetSignInActivityOk() (*SignInActivity, bool)`
+
+GetSignInActivityOk returns a tuple with the SignInActivity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSignInActivity
+
+`func (o *User) SetSignInActivity(v SignInActivity)`
+
+SetSignInActivity sets SignInActivity field to given value.
+
+### HasSignInActivity
+
+`func (o *User) HasSignInActivity() bool`
+
+HasSignInActivity returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
