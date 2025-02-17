@@ -6,17 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | Read-only. | [optional] [readonly] 
 **Description** | Pointer to **string** | An optional description for the group. Returned by default. | [optional] 
-**DisplayName** | **string** | The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $search and $orderBy. | 
+**DisplayName** | Pointer to **string** | The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $search and $orderBy. | [optional] 
 **Members** | Pointer to [**[]User**](User.md) | Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), Nullable. Supports $expand. | [optional] 
 **MembersodataBind** | Pointer to **[]string** | A list of member references to the members to be added. Up to 20 members can be added with a single request | [optional] 
-**Classification** | **string** | Classification of the group, i.e. \&quot;class\&quot; or \&quot;course\&quot; | 
+**Classification** | Pointer to **string** | Classification of the group, i.e. \&quot;class\&quot; or \&quot;course\&quot; | [optional] 
 **ExternalId** | Pointer to **string** | An external unique ID for the class | [optional] 
 
 ## Methods
 
 ### NewEducationClass
 
-`func NewEducationClass(displayName string, classification string, ) *EducationClass`
+`func NewEducationClass() *EducationClass`
 
 NewEducationClass instantiates a new EducationClass object
 This constructor will assign default values to properties that have it defined,
@@ -100,6 +100,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayName sets DisplayName field to given value.
 
+### HasDisplayName
+
+`func (o *EducationClass) HasDisplayName() bool`
+
+HasDisplayName returns a boolean if a field has been set.
 
 ### GetMembers
 
@@ -170,6 +175,11 @@ and a boolean to check if the value has been set.
 
 SetClassification sets Classification field to given value.
 
+### HasClassification
+
+`func (o *EducationClass) HasClassification() bool`
+
+HasClassification returns a boolean if a field has been set.
 
 ### GetExternalId
 
