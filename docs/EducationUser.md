@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **GivenName** | Pointer to **string** | The user&#39;s givenName. Returned by default. | [optional] 
 **PrimaryRole** | Pointer to **string** | The user&#x60;s default role. Such as \&quot;student\&quot; or \&quot;teacher\&quot; | [optional] 
 **UserType** | Pointer to **string** | The user&#x60;s type. This can be either \&quot;Member\&quot; for regular user, \&quot;Guest\&quot; for guest users or \&quot;Federated\&quot; for users imported from a federated instance. | [optional] 
+**ExternalID** | Pointer to **string** | A unique identifier for the user assigned by the school or institution. | [optional] 
 
 ## Methods
 
@@ -387,6 +388,31 @@ SetUserType sets UserType field to given value.
 `func (o *EducationUser) HasUserType() bool`
 
 HasUserType returns a boolean if a field has been set.
+
+### GetExternalID
+
+`func (o *EducationUser) GetExternalID() string`
+
+GetExternalID returns the ExternalID field if non-nil, zero value otherwise.
+
+### GetExternalIDOk
+
+`func (o *EducationUser) GetExternalIDOk() (*string, bool)`
+
+GetExternalIDOk returns a tuple with the ExternalID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalID
+
+`func (o *EducationUser) SetExternalID(v string)`
+
+SetExternalID sets ExternalID field to given value.
+
+### HasExternalID
+
+`func (o *EducationUser) HasExternalID() bool`
+
+HasExternalID returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
