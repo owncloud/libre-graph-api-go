@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **UserType** | Pointer to **string** | The user&#x60;s type. This can be either \&quot;Member\&quot; for regular user, \&quot;Guest\&quot; for guest users or \&quot;Federated\&quot; for users imported from a federated instance. | [optional] [readonly] 
 **PreferredLanguage** | Pointer to **string** | Represents the users language setting, ISO-639-1 Code | [optional] 
 **SignInActivity** | Pointer to [**SignInActivity**](SignInActivity.md) |  | [optional] 
+**ExternalID** | Pointer to **string** | A unique identifier assigned to the user by the organization. | [optional] 
 
 ## Methods
 
@@ -429,6 +430,31 @@ SetSignInActivity sets SignInActivity field to given value.
 `func (o *User) HasSignInActivity() bool`
 
 HasSignInActivity returns a boolean if a field has been set.
+
+### GetExternalID
+
+`func (o *User) GetExternalID() string`
+
+GetExternalID returns the ExternalID field if non-nil, zero value otherwise.
+
+### GetExternalIDOk
+
+`func (o *User) GetExternalIDOk() (*string, bool)`
+
+GetExternalIDOk returns a tuple with the ExternalID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalID
+
+`func (o *User) SetExternalID(v string)`
+
+SetExternalID sets ExternalID field to given value.
+
+### HasExternalID
+
+`func (o *User) HasExternalID() bool`
+
+HasExternalID returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
