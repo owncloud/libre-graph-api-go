@@ -34,6 +34,18 @@ func Test_libregraph_DrivesApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test DrivesApiService CreateDriveBeta", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.DrivesApi.CreateDriveBeta(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test DrivesApiService DeleteDrive", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -41,6 +53,19 @@ func Test_libregraph_DrivesApiService(t *testing.T) {
 		var driveId string
 
 		httpRes, err := apiClient.DrivesApi.DeleteDrive(context.Background(), driveId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DrivesApiService DeleteDriveBeta", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var driveId string
+
+		httpRes, err := apiClient.DrivesApi.DeleteDriveBeta(context.Background(), driveId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -61,6 +86,20 @@ func Test_libregraph_DrivesApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test DrivesApiService GetDriveBeta", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var driveId string
+
+		resp, httpRes, err := apiClient.DrivesApi.GetDriveBeta(context.Background(), driveId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test DrivesApiService UpdateDrive", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -68,6 +107,20 @@ func Test_libregraph_DrivesApiService(t *testing.T) {
 		var driveId string
 
 		resp, httpRes, err := apiClient.DrivesApi.UpdateDrive(context.Background(), driveId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DrivesApiService UpdateDriveBeta", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var driveId string
+
+		resp, httpRes, err := apiClient.DrivesApi.UpdateDriveBeta(context.Background(), driveId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
