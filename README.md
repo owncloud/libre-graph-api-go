@@ -221,6 +221,7 @@ Class | Method | HTTP request | Description
  - [Identity](docs/Identity.md)
  - [IdentitySet](docs/IdentitySet.md)
  - [Image](docs/Image.md)
+ - [Instance](docs/Instance.md)
  - [ItemReference](docs/ItemReference.md)
  - [MemberReference](docs/MemberReference.md)
  - [ObjectIdentity](docs/ObjectIdentity.md)

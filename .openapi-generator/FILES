@@ -89,6 +89,7 @@ docs/Hashes.md
 docs/Identity.md
 docs/IdentitySet.md
 docs/Image.md
+docs/Instance.md
 docs/ItemReference.md
 docs/MeChangepasswordApi.md
 docs/MeDriveApi.md
@@ -181,6 +182,7 @@ model_hashes.go
 model_identity.go
 model_identity_set.go
 model_image.go
+model_instance.go
 model_item_reference.go
 model_member_reference.go
 model_object_identity.go

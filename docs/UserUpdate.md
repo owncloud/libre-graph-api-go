@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **PreferredLanguage** | Pointer to **string** | Represents the users language setting, ISO-639-1 Code | [optional] 
 **SignInActivity** | Pointer to [**SignInActivity**](SignInActivity.md) |  | [optional] 
 **ExternalID** | Pointer to **string** | A unique identifier assigned to the user by the organization. | [optional] 
+**CrossInstanceReference** | Pointer to **string** | A unique reference to the user. This is used to query the user from a different oCIS instance connected to the same identity provider. | [optional] 
+**Instances** | Pointer to [**[]Instance**](Instance.md) | oCIS instances that the user is either a member or a guest of. | [optional] 
 
 ## Methods
 
@@ -465,6 +467,56 @@ SetExternalID sets ExternalID field to given value.
 `func (o *UserUpdate) HasExternalID() bool`
 
 HasExternalID returns a boolean if a field has been set.
+
+### GetCrossInstanceReference
+
+`func (o *UserUpdate) GetCrossInstanceReference() string`
+
+GetCrossInstanceReference returns the CrossInstanceReference field if non-nil, zero value otherwise.
+
+### GetCrossInstanceReferenceOk
+
+`func (o *UserUpdate) GetCrossInstanceReferenceOk() (*string, bool)`
+
+GetCrossInstanceReferenceOk returns a tuple with the CrossInstanceReference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCrossInstanceReference
+
+`func (o *UserUpdate) SetCrossInstanceReference(v string)`
+
+SetCrossInstanceReference sets CrossInstanceReference field to given value.
+
+### HasCrossInstanceReference
+
+`func (o *UserUpdate) HasCrossInstanceReference() bool`
+
+HasCrossInstanceReference returns a boolean if a field has been set.
+
+### GetInstances
+
+`func (o *UserUpdate) GetInstances() []Instance`
+
+GetInstances returns the Instances field if non-nil, zero value otherwise.
+
+### GetInstancesOk
+
+`func (o *UserUpdate) GetInstancesOk() (*[]Instance, bool)`
+
+GetInstancesOk returns a tuple with the Instances field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstances
+
+`func (o *UserUpdate) SetInstances(v []Instance)`
+
+SetInstances sets Instances field to given value.
+
+### HasInstances
+
+`func (o *UserUpdate) HasInstances() bool`
+
+HasInstances returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
