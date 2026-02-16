@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **SpecialFolder** | Pointer to [**SpecialFolder**](SpecialFolder.md) |  | [optional] 
 **WebDavUrl** | Pointer to **string** | DAV compatible URL for the item. | [optional] 
 **WebUrl** | Pointer to **string** | URL that displays the resource in the browser. Read-only. | [optional] 
+**SpaceId** | Pointer to **string** | The UUID of the space that contains the item. | [optional] 
 
 ## Methods
 
@@ -569,6 +570,31 @@ SetWebUrl sets WebUrl field to given value.
 `func (o *RemoteItem) HasWebUrl() bool`
 
 HasWebUrl returns a boolean if a field has been set.
+
+### GetSpaceId
+
+`func (o *RemoteItem) GetSpaceId() string`
+
+GetSpaceId returns the SpaceId field if non-nil, zero value otherwise.
+
+### GetSpaceIdOk
+
+`func (o *RemoteItem) GetSpaceIdOk() (*string, bool)`
+
+GetSpaceIdOk returns a tuple with the SpaceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpaceId
+
+`func (o *RemoteItem) SetSpaceId(v string)`
+
+SetSpaceId sets SpaceId field to given value.
+
+### HasSpaceId
+
+`func (o *RemoteItem) HasSpaceId() bool`
+
+HasSpaceId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
