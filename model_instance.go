@@ -11,7 +11,9 @@ API version: v1.0.4
 package libregraph
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the Instance type satisfies the MappedNullable interface at compile time
@@ -20,17 +22,21 @@ var _ MappedNullable = &Instance{}
 // Instance An oCIS instance that the user is either a member or a guest of.
 type Instance struct {
 	// The URL of the oCIS instance.
-	Url *string `json:"url,omitempty"`
+	Url string `json:"url"`
 	// Whether the instance is the user's primary instance.
-	Primary *bool `json:"primary,omitempty"`
+	Primary bool `json:"primary"`
 }
+
+type _Instance Instance
 
 // NewInstance instantiates a new Instance object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstance() *Instance {
+func NewInstance(url string, primary bool) *Instance {
 	this := Instance{}
+	this.Url = url
+	this.Primary = primary
 	return &this
 }
 
@@ -42,68 +48,52 @@ func NewInstanceWithDefaults() *Instance {
 	return &this
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise.
+// GetUrl returns the Url field value
 func (o *Instance) GetUrl() string {
-	if o == nil || IsNil(o.Url) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Url
+
+	return o.Url
 }
 
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// GetUrlOk returns a tuple with the Url field value
 // and a boolean to check if the value has been set.
 func (o *Instance) GetUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.Url) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Url, true
+	return &o.Url, true
 }
 
-// HasUrl returns a boolean if a field has been set.
-func (o *Instance) HasUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrl gets a reference to the given string and assigns it to the Url field.
+// SetUrl sets field value
 func (o *Instance) SetUrl(v string) {
-	o.Url = &v
+	o.Url = v
 }
 
-// GetPrimary returns the Primary field value if set, zero value otherwise.
+// GetPrimary returns the Primary field value
 func (o *Instance) GetPrimary() bool {
-	if o == nil || IsNil(o.Primary) {
+	if o == nil {
 		var ret bool
 		return ret
 	}
-	return *o.Primary
+
+	return o.Primary
 }
 
-// GetPrimaryOk returns a tuple with the Primary field value if set, nil otherwise
+// GetPrimaryOk returns a tuple with the Primary field value
 // and a boolean to check if the value has been set.
 func (o *Instance) GetPrimaryOk() (*bool, bool) {
-	if o == nil || IsNil(o.Primary) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Primary, true
+	return &o.Primary, true
 }
 
-// HasPrimary returns a boolean if a field has been set.
-func (o *Instance) HasPrimary() bool {
-	if o != nil && !IsNil(o.Primary) {
-		return true
-	}
-
-	return false
-}
-
-// SetPrimary gets a reference to the given bool and assigns it to the Primary field.
+// SetPrimary sets field value
 func (o *Instance) SetPrimary(v bool) {
-	o.Primary = &v
+	o.Primary = v
 }
 
 func (o Instance) MarshalJSON() ([]byte, error) {
@@ -116,13 +106,47 @@ func (o Instance) MarshalJSON() ([]byte, error) {
 
 func (o Instance) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Url) {
-		toSerialize["url"] = o.Url
-	}
-	if !IsNil(o.Primary) {
-		toSerialize["primary"] = o.Primary
-	}
+	toSerialize["url"] = o.Url
+	toSerialize["primary"] = o.Primary
 	return toSerialize, nil
+}
+
+func (o *Instance) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"url",
+		"primary",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varInstance := _Instance{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Instance(varInstance)
+
+	return err
 }
 
 type NullableInstance struct {

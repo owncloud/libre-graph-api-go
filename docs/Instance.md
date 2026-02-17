@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Url** | Pointer to **string** | The URL of the oCIS instance. | [optional] 
-**Primary** | Pointer to **bool** | Whether the instance is the user&#39;s primary instance. | [optional] 
+**Url** | **string** | The URL of the oCIS instance. | 
+**Primary** | **bool** | Whether the instance is the user&#39;s primary instance. | 
 
 ## Methods
 
 ### NewInstance
 
-`func NewInstance() *Instance`
+`func NewInstance(url string, primary bool, ) *Instance`
 
 NewInstance instantiates a new Instance object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
-### HasUrl
-
-`func (o *Instance) HasUrl() bool`
-
-HasUrl returns a boolean if a field has been set.
 
 ### GetPrimary
 
@@ -70,11 +65,6 @@ and a boolean to check if the value has been set.
 
 SetPrimary sets Primary field to given value.
 
-### HasPrimary
-
-`func (o *Instance) HasPrimary() bool`
-
-HasPrimary returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
