@@ -1,4 +1,4 @@
-# agents.md -- Libre Graph API Go Client
+# AGENTS.md -- Libre Graph API Go Client
 
 ## Repository Overview
 
